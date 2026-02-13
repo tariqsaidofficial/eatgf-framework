@@ -50,7 +50,7 @@ This repository contains the **authoritative source** for enterprise governance 
 
 ### 🔐 Specialized Domains
 
-- **[AI Governance](./ai-governance/AI_GOVERNANCE_FRAMEWORK.md)** - Responsible AI
+- **[AI Governance](../05_DOMAIN_FRAMEWORKS/AI_GOVERNANCE_FRAMEWORK.md)** - Responsible AI
 - **[API Governance](../05_DOMAIN_FRAMEWORKS/API_GOVERNANCE_FRAMEWORK.md)** - API security & lifecycle
 - **[Information Security](../04_POLICY_LAYER/02_INFORMATION_SECURITY_POLICY.md)** - Data protection
 - **[Data Governance](../04_POLICY_LAYER/03_DATA_GOVERNANCE_POLICY.md)** - Data management
@@ -63,7 +63,7 @@ This repository contains the **authoritative source** for enterprise governance 
 
 ### 📋 Templates & Tools
 
-- **[Evidence Templates](./evidence-templates/EVIDENCE_TEMPLATES.md)** - Compliance documentation
+- Evidence Templates - Compliance documentation
 
 ---
 
@@ -135,7 +135,7 @@ Governance Framework
 - **SaaS?** → 2-3 months setup time, 2-3 FTE team  
 - **Enterprise?** → 4-6 months setup time, 8-12 FTE team
 
-See [Governance by Team Size](./GOVERNANCE_BY_TEAM_SIZE.md)
+See [Governance by Team Size](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md)
 
 ### 2. Review Foundation Documents
 
