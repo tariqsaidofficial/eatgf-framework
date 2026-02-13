@@ -33,17 +33,13 @@ The Foundation Layer contains the authoritative governance identity and the comp
 - Standards alignment and scope
 - Implementation guidance
 
-### NAMING_FREEZE_CONFIRMATION.md
-- Official naming freeze confirmation
-- Repository designation (eatgf-framework)
-- v1.0-Foundation freeze date and status
-- Post-v1.0 versioning rules
-
-### FINAL_NAMING_FREEZE_SUMMARY.md
-- Summary of naming freeze completion
-- All confirmations received (repository selection, integrity capabilities, team assignments)
-- Phase 2 timeline with frozen naming
-- Sign-off documentation
+### BASELINE_DECLARATION_v1.0.md
+- Official baseline declaration (consolidated naming authorization)
+- Official designation (EATGF – locked)
+- Repository authority (eatgf-framework & governance-docs-site)
+- v1.0-Foundation version baseline (frozen)
+- Baseline immutability & post-v1.0 versioning rules
+- Complete governance anchor for EATGF framework
 
 ---
 

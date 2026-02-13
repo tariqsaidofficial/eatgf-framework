@@ -79,8 +79,7 @@ Authority, naming conventions, and control inventory
 - **OFFICIAL_DESIGNATION.md** – Framework identity and naming standards
 - **MASTER_CONTROL_MATRIX.md** – 35 controls, 7 domains (sole control authority)
 - **GOVERNANCE_FRAMEWORK_README.md** – Framework overview and governance philosophy
-- **NAMING_FREEZE_CONFIRMATION.md** – Official versioning and naming freeze
-- **FINAL_NAMING_FREEZE_SUMMARY.md** – Summary of v1.0-Foundation baseline
+- **BASELINE_DECLARATION_v1.0.md** – Official baseline declaration (naming freeze, version freeze, governance anchor)
 
 ---
 
@@ -150,9 +149,9 @@ Audit methodology and assurance framework
 ---
 
 ### **[07_REFERENCE_AND_EVOLUTION](07_REFERENCE_AND_EVOLUTION/README.md)**  
-Implementation history, roadmap, and operational archives
+Implementation history, evolution records, and historical artifacts
 
-Evolution history documents the framework's development phases and governance architecture maturity progression. **Note:** OPERATIONS_ARCHIVE contains operational execution materials (reference-only); not part of the authoritative governance framework.
+Framework development history, strategic decisions from governance architecture evolution, and historical implementation materials. **Reference-only layer:** Not part of the authoritative governance framework; provided for context and governance methodology understanding.
 
 ---
 

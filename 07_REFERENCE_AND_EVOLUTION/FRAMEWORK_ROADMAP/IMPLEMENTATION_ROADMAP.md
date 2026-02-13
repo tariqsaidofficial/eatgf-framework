@@ -159,7 +159,7 @@ Month  1-3     4-6        7-9         10-12
   - [ ] AI registry created
   - [ ] Development standards documented
 - [ ] API Governance (if APIs exist)
-  - [ ] API standard standards documented
+  - [ ] API standards documented
   - [ ] OpenAPI requirement enforced
   - [ ] API catalog launched
 - [ ] Architecture Controls
@@ -472,7 +472,7 @@ Result: Enterprise-grade governance with certifications
 2. Customize timeline for your organization size (Startup/SaaS/Enterprise)
 3. Identify risks & dependencies
 4. Secure executive commitment
-5. Move to Phase 1: Foundation
+5. Proceed with governance framework deployment
 
 ---
 
