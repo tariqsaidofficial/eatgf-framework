@@ -1,22 +1,75 @@
 # Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
-**Authoritative Governance Architecture | Version 1.0-Foundation**
+**Global Reference Governance Architecture & Knowledge Centre**  
+**Version 1.0 – Foundation Edition**
 
 ---
 
-## 🏛 Overview
+## 1. Purpose
 
-EATGF is a professional-grade, vendor-neutral governance framework designed to align enterprise technology, AI systems, and operations with international standards. This repository serves as the **single source of authority** for governance specifications, control definitions, and architectural guidance.
+EATGF is a vendor-neutral, standards-aligned governance architecture designed to provide a structured and traceable model for:
 
-**Framework Status:**
-- ✅ **Version:** EATGF-v1.0-Foundation (Frozen)
-- ✅ **Phase:** 2 – Management System Layer (Operational Validation)
-- ✅ **Effective Date:** February 2026
-- 🟡 **Operational Timeline:** Weeks 1–6 stabilization cycle (Feb 16 – Mar 31, 2026)
+- **Enterprise IT Governance** – Infrastructure, systems, and technology controls
+- **Information Security Governance** – Aligned with ISO/IEC 27001:2022
+- **AI Governance** – Aligned with ISO/IEC 42001:2023 and NIST AI RMF
+- **API Governance** – Security and lifecycle management (OWASP-aligned)
+- **Risk & Assurance Models** – Assessment frameworks and audit methodology
+
+This repository serves as the **Authoritative Knowledge Centre Edition** of the framework. It provides governance architecture, structured control definitions, cross-standard alignment, adoption guidance, and reference implementations for organizations of varying sizes and maturity levels.
 
 ---
 
-## 🏗 Framework Architecture (8 Layers)
+## 2. Scope
+
+This repository includes:
+
+✅ **Master Control Matrix** – Single authoritative control inventory (35 controls across 7 COBIT domains)
+
+✅ **ISO-aligned Management System Specifications** – ISMS (ISO/IEC 27001:2022) and AIMS (ISO/IEC 42001:2023)
+
+✅ **Cross-standard Mapping Architecture** – COBIT ↔ ISO ↔ NIST alignment matrices
+
+✅ **Governance Maturity and Performance Models** – Capability assessment frameworks and KPI definitions
+
+✅ **Policy Architecture Examples** – Governance charters and formal policy templates
+
+✅ **Domain-specific Governance Extensions** – AI and API governance frameworks
+
+✅ **Audit and Assurance Framework Design** – Methodology aligned with ISO 19011:2018
+
+**This repository does not include:**
+
+❌ Operational tooling (no Excel, SharePoint, or deployment scripts)
+
+❌ Vendor-specific configurations
+
+❌ Organization-specific execution playbooks
+
+❌ Deployment automation
+
+---
+
+## 3. Architectural Principles
+
+EATGF is built on seven core architectural principles:
+
+1. **Single Control Authority** – The Master Control Matrix serves as the sole control source of truth; no alternative control taxonomies
+
+2. **Standards Traceability** – Every control and policy maps to recognized international standards (ISO, COBIT, NIST)
+
+3. **Governance Before Tooling** – Architectural decisions precede technology selection; no vendor lock-in
+
+4. **Architecture Before Execution** – Supply the governance model; organizations implement according to their context
+
+5. **Vendor Neutrality** – Framework operates independently of any commercial platform or proprietary solution
+
+6. **Audit Defensibility** – All controls defensible against external audit standards and regulatory frameworks
+
+7. **Scalable Governance Models** – Single architecture adapts to startups, SaaS, and large regulated enterprises
+
+---
+
+## 4. Framework Architecture (8 Layers)
 
 EATGF is organized into eight authoritative layers, each serving a distinct governance function:
 
@@ -99,184 +152,127 @@ Audit methodology and assurance framework
 ### **[07_REFERENCE_AND_EVOLUTION](07_REFERENCE_AND_EVOLUTION/README.md)**  
 Implementation history, roadmap, and operational archives
 
-**Evolution History**
-- **IMPLEMENTATION_ROADMAP.md** – 5-phase delivery roadmap
-- **PHASE_1.5_CONTROL_EXPANSION.md** – Control library expansion
-- **PHASE_2_COMPLETION_SUMMARY.md** – Phase 2 architecture completion
-- **PHASE_2_STABILIZATION_PLAN.md** – 6-week operational validation cycle
-- **PHASE_2_vs_PHASE_3_DECISION_FRAMEWORK.md** – Phase progression strategy
-
-**Operational Archives**
-- **OPERATIONS_ARCHIVE/** – Week 1 execution plans, evidence specifications, and operational decision gates
-  - Used during Phase 2 operational execution (Feb 16 – Mar 31)
-  - Not part of authoritative governance framework
-  - Reference-only for implementation teams
+Evolution history documents the framework's development phases and governance architecture maturity progression. **Note:** OPERATIONS_ARCHIVE contains operational execution materials (reference-only); not part of the authoritative governance framework.
 
 ---
 
-## 📊 Quick Navigation
+## 5. Standards Alignment
 
-### By Role
+EATGF structurally aligns with leading international governance frameworks:
 
-**Governance Leaders**
-1. Read: [OFFICIAL_DESIGNATION.md](00_FOUNDATION/OFFICIAL_DESIGNATION.md) – Framework authority
-2. Reference: [MASTER_CONTROL_MATRIX.md](00_FOUNDATION/MASTER_CONTROL_MATRIX.md) – All 35 controls
-3. Study: [GOVERNANCE_FRAMEWORK_README.md](00_FOUNDATION/GOVERNANCE_FRAMEWORK_README.md) – Philosophy
-4. Review: [ISMS_MANUAL_v1.0.md](01_MANAGEMENT_SYSTEMS/ISMS/ISMS_MANUAL_v1.0.md) – Security system
-5. Review: [AIMS_MANUAL_v1.0.md](01_MANAGEMENT_SYSTEMS/AIMS/AIMS_MANUAL_v1.0.md) – AI system
+| Standard | Scope | EATGF Alignment |
+|----------|-------|-----------------|
+| **COBIT 2019** | IT investment & risk management | Control mapping (7 domains, 35 controls) |
+| **ISO/IEC 27001:2022** | Information security management | ISMS manual + Annex A controls + SoA template |
+| **ISO/IEC 42001:2023** | AI governance & risk management | AIMS manual + 7-area AI lifecycle framework |
+| **ISO 19011:2018** | Audit methodology | Internal audit procedure design |
+| **ISO 31000** | Risk management framework | Risk assessment methodology + definitions |
+| **NIST AI Risk Management Framework** | AI governance | Control alignment + lifecycle integration |
+| **NIST SP 800-53** | Information security controls | Cross-reference mapping to COBIT/ISO |
+| **OWASP API Security Top 10** | API security governance | Domain framework alignment |
 
-**Control Owners**
-1. Understand: [CONTROL_OBJECTIVES.md](02_CONTROL_ARCHITECTURE/CONTROL_OBJECTIVES.md) – Your control requirements
-2. Reference: [MASTER_CONTROL_MATRIX.md](00_FOUNDATION/MASTER_CONTROL_MATRIX.md) – Control definitions
-3. Align: [FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md](02_CONTROL_ARCHITECTURE/FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md) – Standards alignment
-4. Archive: [OPERATIONS_ARCHIVE/](07_REFERENCE_AND_EVOLUTION/OPERATIONS_ARCHIVE/) – Evidence tracking specs
-
-**Internal Auditors**
-1. Read: [INTERNAL_AUDIT_PROCEDURE_v1.0.md](06_AUDIT_AND_ASSURANCE/INTERNAL_AUDIT_PROCEDURE_v1.0.md) – Audit methodology
-2. Reference: [MASTER_CONTROL_MATRIX.md](00_FOUNDATION/MASTER_CONTROL_MATRIX.md) – Audit scope
-3. Use: [ISMS_MANUAL_v1.0.md](01_MANAGEMENT_SYSTEMS/ISMS/ISMS_MANUAL_v1.0.md) + [AIMS_MANUAL_v1.0.md](01_MANAGEMENT_SYSTEMS/AIMS/AIMS_MANUAL_v1.0.md) – Audit criteria
-4. Archive: [OPERATIONS_ARCHIVE/](07_REFERENCE_AND_EVOLUTION/OPERATIONS_ARCHIVE/) – Week 1 audit specifications
-
-**External Auditors / Certification Bodies**
-1. Request: [OFFICIAL_DESIGNATION.md](00_FOUNDATION/OFFICIAL_DESIGNATION.md) – Framework overview
-2. Review: [ISMS_MANUAL_v1.0.md](01_MANAGEMENT_SYSTEMS/ISMS/ISMS_MANUAL_v1.0.md) + [AIMS_MANUAL_v1.0.md](01_MANAGEMENT_SYSTEMS/AIMS/AIMS_MANUAL_v1.0.md) – Management systems
-3. Evaluate: [MASTER_CONTROL_MATRIX.md](00_FOUNDATION/MASTER_CONTROL_MATRIX.md) – Control inventory
-4. Assess: [INTERNAL_AUDIT_PROCEDURE_v1.0.md](06_AUDIT_AND_ASSURANCE/INTERNAL_AUDIT_PROCEDURE_v1.0.md) – Internal audit results
+**Important Note:** EATGF respects the intellectual property rights of all referenced standards. The framework does not reproduce proprietary standard content and does not claim certification equivalence.
 
 ---
 
-## 🔒 Version & Baseline
+## 6. Adoption Model
 
-**Current Baseline:** EATGF-v1.0-Foundation  
-**Tag:** `EATGF-v1.0-Foundation`  
-**Status:** 🔒 **FROZEN** – No structural changes allowed
+EATGF is designed for organizations of varying sizes and maturity levels:
 
-### What's in v1.0-Foundation
-```
-✅ Master Control Matrix (35 controls, 7 COBIT domains)
-✅ ISMS Manual (ISO 27001:2022 complete)
-✅ AIMS Manual (ISO 42001:2023 complete)
-✅ Internal Audit Procedure (ISO 19011:2018)
-✅ Control architecture and mappings
-✅ Governance policies and charters
-✅ Domain-specific frameworks (AI, API)
-✅ Maturity and performance models
-```
+**Foundational Support:**
+- Startups (essential governance foundation)
+- SaaS organizations (security & compliance baseline)
+- Medium-sized enterprises (scalable governance)
+- Large regulated enterprises (audit-defensible architecture)
 
-### Post-v1.0 Progression
+**Governance Adaptation Factors:**
 
-```
-EATGF-v1.0-Foundation (Feb 13, 2026) ← CURRENT
-    ↓
-EATGF-v1.1-[Description] (IF refinements needed during Weeks 1-6)
-    ↓
-EATGF-v2.0-Edition-Deployment (IF Phase 2 passes ≥90% compliance by Mar 31)
-    ↓
-EATGF-v2.1-Startup, v2.2-SaaS, v2.3-Enterprise (Edition-specific)
-```
+Organizations adapt EATGF based on:
+
+- **Organizational size** – Startup vs. enterprise governance complexity
+- **Regulatory exposure** – Industry-specific compliance requirements
+- **AI usage intensity** – From minimal to mission-critical AI deployment
+- **Risk profile** – Data sensitivity, criticality, and stakeholder exposure
+- **Maturity level** – Initial to optimized capability progression
+
+**Implementation Philosophy:** EATGF supplies the governance architecture and structuring models. Implementation decisions remain organization-specific and context-dependent.
 
 ---
 
-## 📅 Phase 2 Operational Timeline
+## 7. Versioning Policy
 
-**Current Phase:** 2 – Management System Layer Establishment  
-**Status:** Execution Mode (Week 1 starts Feb 16, 2026)
+**Version Progression Model:**
 
-| Week | Milestone | Deliverable |
-|------|-----------|-------------|
-| **1** (Feb 16–20) | Build & Configure | Excel register + SharePoint repository |
-| **2** (Feb 23–27) | Data Population | 8 critical controls loaded |
-| **3** (Mar 3–7) | Pilot Audit | 10 controls audited, hash verified |
-| **4** (Mar 10–14) | Refinement | Gap hardening, no restructure |
-| **5–6** (Mar 17–31) | Full Audit | All 35 controls audited, management review |
-| **Decision** (Mar 31) | Phase 2 Gate | ≥90% compliance required for Phase 3 |
+- **Structural modifications** (architecture changes, domain additions) → Major version increment (v2.0+)
+- **Control clarifications, policy updates** → Minor increment (v1.1, v1.2)
+- **Documentation improvements, examples** → Patch increment (v1.0.1)
 
-**Operational execution details:** [OPERATIONS_ARCHIVE/](07_REFERENCE_AND_EVOLUTION/OPERATIONS_ARCHIVE/)
+**Baseline Immutability:** Versions tagged in git are immutable. All structural governance specifications are locked at tag time.
 
 ---
 
-## 🏢 Repository Information
+## 8. Intellectual Property & Attribution
 
-**Authority Repository:**
-```
-https://github.com/tariqsaidofficial/eatgf-framework.git
-Repository: eatgf-framework
-Owner: tariqsaidofficial
-```
+**Standards References:**
 
-**Documentation Portal:**
+All referenced standards remain the intellectual property of their respective issuing bodies:
+
+- ISO/IEC standards – International Organization for Standardization
+- COBIT – Information Systems Audit and Control Association (ISACA)
+- NIST frameworks – National Institute of Standards and Technology (USA)
+- OWASP – Open Worldwide Application Security Project
+
+**EATGF Intellectual Property:**
+
+EATGF represents an original governance architecture synthesis developed by combining and structuring guidance from multiple international standards into a unified, traceable framework.
+
+EATGF:
+
+- ✅ Creates novel control taxonomy and cross-standard alignment
+- ✅ Provides original governance architecture design
+- ✅ Supplies structured implementation guidance
+- ❌ Does not replicate proprietary standard content
+- ❌ Does not claim certification equivalence
+- ❌ Does not substitute for acquiring licenses to referenced standards
+
+**Attribution Format:**
+
 ```
-https://github.com/tariqsaidofficial/governance-docs-site.git
-Repository: governance-docs-site
-Owner: tariqsaidofficial
+Enterprise AI-Aligned Technical Governance Framework (EATGF)
+Version 1.0 – Foundation Edition
+Source: https://github.com/tariqsaidofficial/eatgf-framework
 ```
 
 ---
 
-## 📚 Standards Alignment
+## 9. Repository Status
 
-EATGF aligns with:
-- **COBIT 2019** – IT governance framework  
-- **ISO 27001:2022** – Information security management
-- **ISO 42001:2023** – AI management systems
-- **ISO 19011:2018** – Audit methodology
-- **ISO 31000** – Risk management
-- **NIST AI Risk Management Framework** – AI governance
-- **NIST 800-53** – Security controls
-- **OWASP API Security** – API governance
-
----
-
-## 🎯 Governance Principles
-
-1. **Single Authority** – MCM is the only control source (no duplication)
-2. **Control-Centric** – Everything traces back to control definitions
-3. **Audit-Defensible** – ISO-aligned, evidence-traceable, retention-managed
-4. **Operationally Ready** – Not theoretical; ready for immediate deployment
-5. **Vendor Neutral** – No proprietary dependencies
-6. **Scalable** – Adapted to team size and operational complexity
+| Element | Status |
+|---------|--------|
+| **Repository Type** | Public – Reference Architecture & Knowledge Centre |
+| **Framework Status** | Baseline v1.0-Foundation released |
+| **Edition Type** | Foundation – Governance Architecture (non-operational) |
+| **Operational Status** | Reference-only; no deployment automation included |
+| **Version Control** | Git with immutable baseline tags |
+| **Documentation Language** | English (UK) |
+| **Last Updated** | 13 February 2026 |
 
 ---
 
-## 🔐 Access & Governance
+## 📖 How to Use This Framework
 
-**This repository is:**
-- ✅ Public (reference implementations)
-- ✅ Version controlled (git history maintained)
-- ✅ Baseline frozen (v1.0-Foundation locked)
-- ✅ Structured professionally (8-layer architecture)
-- ✅ Authority-driven (MCM is sole control source)
+**For Governance Professionals:** Start with [00_FOUNDATION](00_FOUNDATION/README.md) to understand framework authority and control inventory.
 
-**Changes to v1.0-Foundation:**
-- ❌ NOT allowed (baseline is frozen)
-- 📈 Post-v1.0 modifications → increment to v1.1
-- 🚀 Phase 3 authorization → create v2.0 (if Phase 2 passes)
+**For Security Teams:** Review [01_MANAGEMENT_SYSTEMS](01_MANAGEMENT_SYSTEMS/README.md) for ISMS architecture aligned with ISO 27001:2022.
+
+**For AI Governance:** Study [05_DOMAIN_FRAMEWORKS](05_DOMAIN_FRAMEWORKS/README.md) for AI lifecycle governance aligned with ISO 42001:2023.
+
+**For Compliance & Audit:** Use [06_AUDIT_AND_ASSURANCE](06_AUDIT_AND_ASSURANCE/README.md) for audit methodology and control assessment.
+
+**For Architecture Decisions:** Reference [02_CONTROL_ARCHITECTURE](02_CONTROL_ARCHITECTURE/README.md) for control definitions and cross-standard alignment.
 
 ---
 
-## 📖 Documentation Convention
-
-All documents in EATGF use standardized headers:
-
-```markdown
-**Enterprise AI-Aligned Technical Governance Framework (EATGF)**
-[Document Title Here]
-
----
-[Document content...]
-```
-
----
-
-## 📞 Support & Governance
-
-**Framework Authority:** Tariq Said Official  
-**Current Phase:** 2 – Management System Operational Validation  
-**Last Updated:** February 13, 2026  
-**Next Review:** March 31, 2026 (Phase 2 completion gate)
-
----
-
-**🏛 EATGF – Professional Governance Architecture**  
-**🔒 Version 1.0-Foundation LOCKED**  
-**📅 Phase 2 Execution Active (Feb 16 – Mar 31, 2026)**
+**EATGF – Governance Architecture & Knowledge Centre**  
+**Version 1.0 – Foundation Baseline**  
+**Authoritative Reference Edition**
