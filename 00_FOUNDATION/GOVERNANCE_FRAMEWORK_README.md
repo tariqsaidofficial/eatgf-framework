@@ -291,7 +291,7 @@ A: Semi-annually (February & August) based on regulatory changes and feedback.
 
 ## ⚖️ License
 
-This framework is provided as-is for organizational use. See [LICENSE](./LICENSE) for details.
+This framework is provided as-is for organizational use. See the repository LICENSE file for details.
 
 ---
 
