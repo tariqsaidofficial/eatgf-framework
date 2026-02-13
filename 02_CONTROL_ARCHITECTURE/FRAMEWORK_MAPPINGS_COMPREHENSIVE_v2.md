@@ -909,7 +909,7 @@ Satisfies:
 
 ---
 
-## 📊 SECTION 3: APPLICABILITY MATRIX BY ORGANIZATION SIZE
+## 📊 SECTION 3: APPLICABILITY MATRIX BY ORGANIZATION SIZE {#section-3-applicability-matrix-by-organization-size}
 
 ### Which Controls Are Mandatory by Edition?
 
