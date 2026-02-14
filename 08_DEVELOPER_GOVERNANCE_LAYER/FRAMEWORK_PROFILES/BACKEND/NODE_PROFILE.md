@@ -26,11 +26,13 @@ This profile applies to:
 ## Architectural Position
 
 **EATGF Layer:**
+
 - Primary: `08_DEVELOPER_GOVERNANCE_LAYER` → `FRAMEWORK_PROFILES` → `BACKEND`
 - References: Layer 01 (Secure SDLC), Layer 05 (API Governance), Layer 03 (DevSecOps)
 
 **Scope:**
 Node.js functions as:
+
 - HTTP boundary enforcement layer
 - Middleware execution chain
 - Token validation layer
@@ -38,6 +40,7 @@ Node.js functions as:
 - Runtime request lifecycle controller
 
 **Node.js Classification:**
+
 - Middleware-driven enforcement framework
 - TypeScript-capable (NestJS)
 - Async callback-based (Express)
@@ -45,6 +48,7 @@ Node.js functions as:
 - Application security boundary
 
 **Conformance Obligations:**
+
 - ✅ 01_SECURE_SDLC standards
 - ✅ 02_API_GOVERNANCE standards (REST-specific controls)
 - ✅ 03_DEVSECOPS standards
@@ -53,21 +57,27 @@ Node.js functions as:
 ## Relationship to EATGF Layers
 
 ### Layer 01: Secure SDLC
+
 Node.js profiles enforce:
+
 - **Dependency scanning:** `npm audit`, `yarn audit`, `snyk` in CI/CD
 - **SAST rules:** ESLint with security plugins, `SonarQube`
 - **Code review workflow:** PR-based with security checklist
 - **Test coverage requirement:** Minimum 80% unit + integration test coverage
 
 ### Layer 03: DevSecOps Governance
+
 Node.js profiles reference:
+
 - **Container security:** Node.js Alpine/slim images, non-root user
 - **CI/CD pipeline gates:** Pre-merge, pre-release, pre-production stages
 - **Secrets management:** Environment variables from HashiCorp Vault or AWS Secrets Manager
 - **Image scanning:** Trivy vulnerability scanning + SBOM generation
 
 ### Layer 05: Domain Frameworks
+
 Node.js profiles implement API Governance controls:
+
 - **Authentication:** JWT/OIDC via `@nestjs/jwt` or `passport.js`
 - **Authorization:** Decorator-based or middleware-based guards
 - **Rate Limiting:** `express-rate-limit` or NestJS throttle guards
@@ -75,7 +85,9 @@ Node.js profiles implement API Governance controls:
 - **Versioning:** URL-based versioning (`/api/v1/`, `/api/v2/`)
 
 ### Layer 04: Cloud Governance (Conditional)
+
 If deployed in cloud infrastructure:
+
 - **HTTPS enforcement:** TLS termination at load balancer or via reverse proxy
 - **Environment config:** CloudFormation/Terraform for Node.js instance configuration
 - **Database encryption:** Database encryption at rest + TLS in transit
@@ -92,13 +104,15 @@ Security middleware must execute before any route logic.
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 
-app.use(helmet());  // Security headers
-app.use(rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-  standardHeaders: true,
-  legacyHeaders: false
-}));
+app.use(helmet()); // Security headers
+app.use(
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    standardHeaders: true,
+    legacyHeaders: false,
+  }),
+);
 app.use(express.json({ limit: "1mb" }));
 
 // Routes added AFTER middleware
@@ -106,10 +120,14 @@ app.get("/api/v1/invoices", authMiddleware, getInvoices);
 
 // NestJS
 @Module({
-  imports: [ThrottlerModule.forRoot([{
-    ttl: 60000,
-    limit: 10,
-  }])],
+  imports: [
+    ThrottlerModule.forRoot([
+      {
+        ttl: 60000,
+        limit: 10,
+      },
+    ]),
+  ],
 })
 export class AppModule {}
 ```
@@ -163,16 +181,22 @@ export class JwtAuthGuard implements CanActivate {
 
 // Express with Passport
 const JwtStrategy = require("passport-jwt").Strategy;
-passport.use(new JwtStrategy({
-  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_PUBLIC_KEY,
-  audience: "https://api.example.com",
-}, (payload, done) => {
-  done(null, payload);
-}));
+passport.use(
+  new JwtStrategy(
+    {
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      secretOrKey: process.env.JWT_PUBLIC_KEY,
+      audience: "https://api.example.com",
+    },
+    (payload, done) => {
+      done(null, payload);
+    },
+  ),
+);
 ```
 
 **Token must include:**
+
 - `exp` (expiration timestamp)
 - `sub` (subject/user ID)
 - `tenant_id` (tenant scope)
@@ -253,12 +277,12 @@ import * as winston from "winston";
 const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-    winston.format.json()
+    winston.format.json(),
   ),
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: "combined.log" })
-  ]
+    new winston.transports.File({ filename: "combined.log" }),
+  ],
 });
 
 // Middleware for request logging
@@ -277,6 +301,7 @@ app.use((req, res, next) => {
 ```
 
 **Logs must include:**
+
 - `correlation_id` (request tracing)
 - `tenant_id` (multi-tenant audit)
 - `route` (endpoint identification)
@@ -292,6 +317,7 @@ This section maps the 8 mandatory controls from Layer 05 (API Governance) to Nod
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-1-authentication)
 
 **Node.js Implementation Pattern:**
+
 - NestJS: `@nestjs/jwt` with `JwtStrategy` guard
 - Express: `passport-jwt` strategy for token validation
 - Validate token signature against IdP public keys (cached)
@@ -299,6 +325,7 @@ This section maps the 8 mandatory controls from Layer 05 (API Governance) to Nod
 - Reject sessions for API endpoints
 
 **Compliant Example (NestJS):**
+
 ```typescript
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -330,11 +357,12 @@ export class InvoiceController {
 ```
 
 **Non-Compliant Example:**
+
 ```typescript
 // ❌ Session authentication for API
 @Controller("api/v1")
 export class InvoiceController {
-  @UseGuards(SessionGuard)  // Vulnerable
+  @UseGuards(SessionGuard) // Vulnerable
   @Get("invoices")
   async getInvoices(@Session() session: any) {
     return { user: session.user };
@@ -347,12 +375,14 @@ export class InvoiceController {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-2-authorization)
 
 **Node.js Implementation Pattern:**
+
 - Define custom guard classes (NestJS) or middleware (Express)
 - Enforce tenant scoping + role checks
 - Use decorators for permission composition
 - Deny by default; explicitly grant scopes
 
 **Compliant Example:**
+
 ```typescript
 @Injectable()
 export class RolesGuard implements CanActivate {
@@ -367,7 +397,7 @@ export class RolesGuard implements CanActivate {
 
     const request = context.switchToHttp().getRequest();
     const user = request.user;
-    
+
     // Tenant check + role check
     return requiredRoles.some(role =>
       user.roles?.includes(role) && user.tenant_id === request.params.tenant_id
@@ -384,6 +414,7 @@ async getInvoices(@Req() req: Request) {
 ```
 
 **Non-Compliant Example:**
+
 ```typescript
 // ❌ No object-level permission check
 @Get(":tenantId/invoices")
@@ -399,24 +430,26 @@ async getInvoices(@Req() req: Request) {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-3-versioning)
 
 **Node.js Implementation Pattern:**
+
 - URL-based versioning: `/api/v1/`, `/api/v2/`
 - Maintain backward compatibility for 12 months
 - Deprecate with HTTP `Sunset` header
 - Document breaking changes in CHANGELOG
 
 **Compliant Example:**
+
 ```typescript
 // express-version-route package or manual routing
 const v1Router = express.Router();
 const v2Router = express.Router();
 
 v1Router.get("/invoices", (req, res) => {
-  res.json({ invoices: [], count: 0 });  // Legacy format
+  res.json({ invoices: [], count: 0 }); // Legacy format
 });
 
 v2Router.get("/invoices", (req, res) => {
   res.set("Sunset", "Sun, 31 Dec 2026 23:59:59 GMT");
-  res.json({ data: [], pagination: { count: 0, page: 1 } });  // New format
+  res.json({ data: [], pagination: { count: 0, page: 1 } }); // New format
 });
 
 app.use("/api/v1", v1Router);
@@ -424,10 +457,11 @@ app.use("/api/v2", v2Router);
 ```
 
 **Non-Compliant Example:**
+
 ```typescript
 // ❌ No versioning; breaking changes in production
 app.get("/api/invoices", (req, res) => {
-  res.json({ data: [] });  // Breaking change from old format
+  res.json({ data: [] }); // Breaking change from old format
 });
 ```
 
@@ -436,6 +470,7 @@ app.get("/api/invoices", (req, res) => {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-4-input-validation)
 
 **Node.js Implementation Pattern:**
+
 - NestJS: `class-validator` with DTOs
 - Express: `joi` or `express-validator`
 - Reject unknown fields
@@ -443,6 +478,7 @@ app.get("/api/invoices", (req, res) => {
 - Sanitize before database queries
 
 **Compliant Example (NestJS):**
+
 ```typescript
 import { IsString, IsNumber, Min, Max, Length } from "class-validator";
 
@@ -469,6 +505,7 @@ async create(@Body() dto: CreateInvoiceDto) {
 ```
 
 **Non-Compliant Example:**
+
 ```typescript
 // ❌ No validation; raw request body
 @Post("invoices")
@@ -482,6 +519,7 @@ async create(@Body() invoice: any) {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-5-rate-limiting)
 
 **Node.js Implementation Pattern:**
+
 - `express-rate-limit` for Express
 - `@nestjs/throttler` for NestJS
 - Per-IP and per-user-tier enforcement
@@ -489,6 +527,7 @@ async create(@Body() invoice: any) {
 - Log hits for abuse detection
 
 **Compliant Example:**
+
 ```typescript
 // NestJS
 @Module({
@@ -524,6 +563,7 @@ app.get("/api/v1/invoices", limiter, getInvoices);
 ```
 
 **Non-Compliant Example:**
+
 ```typescript
 // ❌ No rate limiting; open to DoS
 @Get("invoices")
@@ -537,12 +577,14 @@ async getInvoices(@Req() req: Request) {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-6-testing)
 
 **Node.js Implementation Pattern:**
+
 - Unit tests ≥80% coverage with Jest/Mocha
 - Integration tests for all API endpoints
 - OpenAPI schema auto-generated with `@nestjs/swagger`
 - Document breaking changes in CHANGELOG.md
 
 **Compliant Example:**
+
 ```typescript
 // tests/invoice.controller.spec.ts
 import { Test, TestingModule } from "@nestjs/testing";
@@ -563,9 +605,7 @@ describe("InvoiceController", () => {
   });
 
   it("should filter invoices by tenant", async () => {
-    const mockInvoices = [
-      { id: 1, tenant_id: "tenant-1", amount: 100 },
-    ];
+    const mockInvoices = [{ id: 1, tenant_id: "tenant-1", amount: 100 }];
     jest.spyOn(service, "findByTenant").mockResolvedValue(mockInvoices);
 
     const result = await controller.getInvoices({
@@ -581,12 +621,13 @@ describe("InvoiceController", () => {
     const invoice = { id: 2, tenant_id: "tenant-2" };
 
     const result = await controller.getInvoice(2, req as any);
-    expect(result).toBeNull();  // Or throw 403
+    expect(result).toBeNull(); // Or throw 403
   });
 });
 ```
 
 **Non-Compliant Example:**
+
 ```typescript
 // ❌ No tests; no schema validation
 // No test files present
@@ -598,12 +639,14 @@ describe("InvoiceController", () => {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-7-logging)
 
 **Node.js Implementation Pattern:**
+
 - Structured JSON logging via Winston/Pino
 - Include correlation_id, user_id, tenant_id, action, result
 - Retain logs ≥90 days
 - Real-time alerting on 5xx errors, auth failures
 
 **Compliant Example:**
+
 ```typescript
 import { Injectable, NestMiddleware } from "@nestjs/common";
 import * as winston from "winston";
@@ -642,9 +685,10 @@ export class LoggerMiddleware implements NestMiddleware {
 ```
 
 **Non-Compliant Example:**
+
 ```typescript
 // ❌ No structured logging
-logger.info(`User ${req.user} accessed ${req.path}`);  // Plain text
+logger.info(`User ${req.user} accessed ${req.path}`); // Plain text
 ```
 
 ### Control 8: Zero Trust Networking
@@ -652,12 +696,14 @@ logger.info(`User ${req.user} accessed ${req.path}`);  // Plain text
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-8-zero-trust)
 
 **Node.js Implementation Pattern:**
+
 - Enforce HTTPS/TLS (via reverse proxy or middleware)
 - CORS headers (whitelist origins)
 - JWT audience validation
 - Optional: mTLS for service-to-service
 
 **Compliant Example:**
+
 ```typescript
 import * as helmet from "helmet";
 import * as cors from "cors";
@@ -666,13 +712,15 @@ import * as cors from "cors";
 app.use(helmet());
 
 // CORS configuration
-app.use(cors({
-  origin: ["https://app.example.com", "https://admin.example.com"],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Authorization", "Content-Type", "X-Correlation-ID"],
-  maxAge: 3600,
-}));
+app.use(
+  cors({
+    origin: ["https://app.example.com", "https://admin.example.com"],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Authorization", "Content-Type", "X-Correlation-ID"],
+    maxAge: 3600,
+  }),
+);
 
 // HTTPS redirect (optional if behind load balancer)
 app.use((req, res, next) => {
@@ -686,9 +734,10 @@ app.use((req, res, next) => {
 ```
 
 **Non-Compliant Example:**
+
 ```typescript
 // ❌ CORS wide open; HTTP allowed
-app.use(cors({ origin: "*" }));  // Dangerous
+app.use(cors({ origin: "*" })); // Dangerous
 // No HTTPS redirect in production
 ```
 
@@ -746,6 +795,7 @@ Node.js apps declare dependencies in `package.json` with locked versions:
 ### Vulnerability Scanning
 
 CI/CD pipeline runs:
+
 ```bash
 npm audit --audit-level high
 snyk test
@@ -764,12 +814,14 @@ snyk test
 ### License Compliance
 
 Approved licenses:
+
 - MIT
 - Apache 2.0
 - BSD (2-Clause, 3-Clause)
 - ISC
 
 Forbidden licenses:
+
 - GPL 2.0 / AGPL
 
 SBOM via `npm install cyclonedx-npm && cyclonedx-npm`
@@ -860,14 +912,17 @@ jobs:
 ### Deployment Risks
 
 **Middleware execution order:**
+
 - Risk: Security middleware bypassed if added after routes
 - Mitigation: Security middleware declared first in `app.ts`
 
 **Connection pool exhaustion:**
+
 - Risk: Database connections exhausted under load
 - Mitigation: Configure pool size correctly; connection limits
 
 **Unhandled promise rejections:**
+
 - Risk: Silent failures; requests hang indefinitely
 - Mitigation: Global error handlers + promise rejection listeners
 
@@ -892,16 +947,16 @@ jobs:
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | OWASP ASVS | NIST 800-53 | COBIT 2019 |
-|---|---|---|---|---|---|
-| Security Headers (Helmet) | A.8.9 | PW.8 | V14 | SC-8 | DSS05.04 |
-| Authentication | A.8.5 | PW.2 | V2 | IA-2 | DSS05.03 |
-| Tenant Isolation | A.8.21 | PW.1 | V1.2 | AC-3 | APO13.01 |
-| Authorization (Guards) | A.8.35 | PW.3 | V4 | AC-2 | APO13.02 |
-| Dependency Governance | A.8.28 | PW.4 | V14 | SI-7 | BAI09 |
-| Logging & Monitoring | A.8.15 | RV.1 | V15 | AU-2 | MEA01 |
-| Rate Limiting | A.8.22 | PW.6 | V5 | SC-7 | DSS05.03 |
-| Zero Trust (CORS/HTTPS) | A.8.23 | PW.7 | V1.1 | AC-4 | APO13.03 |
+| EATGF Control             | ISO 27001:2022 | NIST SSDF | OWASP ASVS | NIST 800-53 | COBIT 2019 |
+| ------------------------- | -------------- | --------- | ---------- | ----------- | ---------- |
+| Security Headers (Helmet) | A.8.9          | PW.8      | V14        | SC-8        | DSS05.04   |
+| Authentication            | A.8.5          | PW.2      | V2         | IA-2        | DSS05.03   |
+| Tenant Isolation          | A.8.21         | PW.1      | V1.2       | AC-3        | APO13.01   |
+| Authorization (Guards)    | A.8.35         | PW.3      | V4         | AC-2        | APO13.02   |
+| Dependency Governance     | A.8.28         | PW.4      | V14        | SI-7        | BAI09      |
+| Logging & Monitoring      | A.8.15         | RV.1      | V15        | AU-2        | MEA01      |
+| Rate Limiting             | A.8.22         | PW.6      | V5         | SC-7        | DSS05.03   |
+| Zero Trust (CORS/HTTPS)   | A.8.23         | PW.7      | V1.1       | AC-4        | APO13.03   |
 
 ## Developer Checklist
 
@@ -931,31 +986,37 @@ Before production deployment:
 ### If Not Implemented
 
 **XSS exposure:**
+
 - Risk: Unvalidated output in responses
 - Impact: Account compromise, data theft
 - Audit finding: OWASP ASVS V14 (Middleware) violation
 
 **Injection vulnerabilities:**
+
 - Risk: SQL/NoSQL/Command injection via unvalidated input
 - Impact: Data breach, RCE
 - Audit finding: OWASP ASVS V5 violation
 
 **DoS attacks:**
+
 - Risk: Unbounded payloads exhaust memory
 - Impact: Service outage
 - Audit finding: NIST 800-53 SC-7 violation
 
 **Cross-tenant leakage:**
+
 - Risk: Query without tenant filter
 - Impact: GDPR violations, contract breach
 - Audit finding: ISO 27001 A.8.21 violation
 
 **Supply chain compromise:**
+
 - Risk: Vulnerable dependency in production
 - Impact: RCE, data breach
 - Audit finding: NIST SSDF PW.4 violation
 
 **Non-conformance consequences:**
+
 - Audit findings escalate to board
 - Customer SLAs violated
 - Financial penalties if breach occurs
@@ -975,13 +1036,13 @@ Before production deployment:
 
 ## Version Information
 
-| Field | Value |
-|---|---|
-| **Version** | 1.0 |
-| **Release Date** | 2026-02-14 |
-| **Change Type** | Major (First Release) |
-| **EATGF Baseline** | v1.0 (Phases 12a-b Complete) |
-| **Next Review** | Q2 2026 (NestJS 11 release) |
-| **Author** | EATGF Governance Council |
-| **Status** | Ready for Enterprise Deployment |
-| **Applies To** | Express 4.x+, NestJS 9.x+, Node.js 18+LTS |
+| Field              | Value                                     |
+| ------------------ | ----------------------------------------- |
+| **Version**        | 1.0                                       |
+| **Release Date**   | 2026-02-14                                |
+| **Change Type**    | Major (First Release)                     |
+| **EATGF Baseline** | v1.0 (Phases 12a-b Complete)              |
+| **Next Review**    | Q2 2026 (NestJS 11 release)               |
+| **Author**         | EATGF Governance Council                  |
+| **Status**         | Ready for Enterprise Deployment           |
+| **Applies To**     | Express 4.x+, NestJS 9.x+, Node.js 18+LTS |
