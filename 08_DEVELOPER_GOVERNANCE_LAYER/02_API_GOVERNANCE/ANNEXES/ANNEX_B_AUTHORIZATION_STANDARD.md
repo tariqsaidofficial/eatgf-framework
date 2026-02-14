@@ -1,5 +1,7 @@
 # API Authorization Governance Standard
 
+> **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.
+
 ## Purpose
 
 Defines mandatory access control policies for API resources.

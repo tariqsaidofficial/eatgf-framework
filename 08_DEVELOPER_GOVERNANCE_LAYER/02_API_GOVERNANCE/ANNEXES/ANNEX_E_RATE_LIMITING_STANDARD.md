@@ -1,5 +1,7 @@
 # Rate Limiting & Quota Governance Standard
 
+> **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.
+
 ## Purpose
 
 Defines rate limiting policies to prevent resource exhaustion and DoS attacks.

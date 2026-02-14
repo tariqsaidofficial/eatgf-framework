@@ -1,5 +1,7 @@
 # Webhook Security Governance Standard
 
+> **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.
+
 ## Purpose
 
 Defines security requirements for webhook delivery and reception.

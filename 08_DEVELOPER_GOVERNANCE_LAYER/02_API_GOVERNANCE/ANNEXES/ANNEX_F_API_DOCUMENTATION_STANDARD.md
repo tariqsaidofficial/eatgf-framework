@@ -1,5 +1,7 @@
 # API Documentation & Specification Standard
 
+> **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.
+
 ## Purpose
 
 Defines requirements for API documentation, specification formats, and developer experience.

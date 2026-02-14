@@ -1,5 +1,7 @@
 # OAuth 2.0 & Identity Governance Profile
 
+> **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.
+
 ## Purpose
 
 OAuth 2.0 and OpenID Connect provide standardized mechanisms for authentication and authorization delegation. This profile establishes governance requirements for identity provider integration, token validation, scope enforcement, and identity lifecycle management across all APIs. OAuth serves as the cross-cutting authentication layer enabling secure API access by external applications and users.

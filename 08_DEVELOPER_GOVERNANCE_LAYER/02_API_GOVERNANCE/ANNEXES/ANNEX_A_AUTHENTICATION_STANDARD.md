@@ -1,5 +1,7 @@
 # API Authentication Governance Standard
 
+> **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.
+
 ## Purpose
 
 Defines mandatory authentication mechanisms for API endpoints.

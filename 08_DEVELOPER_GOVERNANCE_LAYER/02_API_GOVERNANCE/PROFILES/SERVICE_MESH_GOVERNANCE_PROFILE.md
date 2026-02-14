@@ -1,5 +1,7 @@
 # Service Mesh Governance Profile
 
+> **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.
+
 ## Purpose
 
 Service mesh platforms (Istio, Linkerd, Kuma) manage service-to-service communication, security policies, and observability in distributed systems. This profile establishes governance requirements for mesh deployment, mTLS enforcement, authorization policy management, and traffic telemetry collection. Service mesh serves as the runtime security enforcement layer complementing API Gateway policies at the service boundary.

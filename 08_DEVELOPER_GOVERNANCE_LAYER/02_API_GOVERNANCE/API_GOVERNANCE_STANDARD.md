@@ -2,6 +2,8 @@
 
 Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
+> **Authority Notice:** This document is the authoritative governance definition. Annexes and Profiles are derivative and must not redefine controls.
+
 ## Purpose
 
 Define mandatory governance controls for designing, building, securing, versioning, operating, and decommissioning APIs across Web, Mobile, SaaS, and Enterprise systems.
