@@ -60,6 +60,7 @@ This profile implements controls from:
   - Performance Model (delivery and idempotency guarantees)
 
 **Integration Points:**
+
 - Webhook authentication must follow Secure SDLC token patterns (Layer 08.01)
 - Event schema validation enforced by DevSecOps CI/CD gates (Layer 08.03)
 - Event retention policy tied to organizational profile (Layer 03)
@@ -74,6 +75,58 @@ This profile implements controls from:
 - **Event Schema:** Events must conform to published schema; unknown fields handled gracefully
 - **Timeout Enforcement:** Webhook handlers must respond within SLA (3 seconds default)
 - **Deployment Gating:** Deployment without governance validation gates is non-compliant
+
+## Governance Conformance
+
+This section demonstrates how webhook/event-driven APIs implement each mandatory control from [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md). No new controls are defined here; this profile clarifies async event patterns only.
+
+### Control 1: Authentication (MANDATORY)
+
+**Root Standard Requirement:** All requests must authenticate using OAuth 2.0, mTLS, or equivalent.
+
+**Webhook Implementation:** Event sender signs request payload with HMAC-SHA256. Receiver validates signature using shared secret. For internal webhooks, mTLS required between systems.
+
+### Control 2: Authorization (MANDATORY)
+
+**Root Standard Requirement:** Verify request has permission to send this event to this subscriber.
+
+**Webhook Implementation:** Subscriber endpoint must be pre-registered and approved. Webhook sender verifies subscriber is allowed to receive this event class. Tenant isolation enforced for multi-tenant events.
+
+### Control 3: Event Schema Versioning (MANDATORY)
+
+**Root Standard Requirement:** Breaking changes prohibited without major version increment.
+
+**Webhook Implementation:** Event schemas versioned. New optional fields allowed. Old subscribers continue receiving compatible events. Event type includes version (e.g., `user.created.v1`).
+
+### Control 4: Signature & HMAC Verification (MANDATORY)
+
+**Root Standard Requirement:** Verify message authenticity and integrity.
+
+**Webhook Implementation:** Every webhook request includes `X-Webhook-Signature: sha256=<hmac>`. Receiver recomputes signature on request body with shared secret. Timestamp validation (5-min window) prevents replay attacks.
+
+### Control 5: Delivery Reliability & Idempotency (MANDATORY)
+
+**Root Standard Requirement:** Ensure predictable behavior. Rate limits enforced.
+
+**Webhook Implementation:** Events delivered at-least-once. Receiver must be idempotent (deduplicate via event ID). Retry policy: exponential backoff (1s, 2s, 4s, 8s, 16s). Max 5 retries over 30 minutes.
+
+### Control 6: Logging & Event Tracing (MANDATORY)
+
+**Root Standard Requirement:** All requests logged with correlation IDs and delivery status.
+
+**Webhook Implementation:** Each event delivery logged with event ID, subscriber endpoint, HTTP status, delivery latency. Delivery audit trail retained for 90 days. Failed deliveries alerted to operator.
+
+### Control 7: Timeout & Resource Protection (MANDATORY)
+
+**Root Standard Requirement:** Prevent remote service from exhausting local resources.
+
+**Webhook Implementation:** Handler timeout: 3 seconds. Payload size limit: 1 MB. Per-subscriber retry queue size limited. Circuit breaker: temporarily pause delivery if endpoint remains unresponsive.
+
+### Control 8: Subscriber Verification (MANDATORY)
+
+**Root Standard Requirement:** Subscribers must be verified and authorized.
+
+**Webhook Implementation:** Webhook endpoint URI must respond to verification challenge (random token in query param). Only verified endpoints added to subscriber list. Subscription requires admin approval for sensitive events.
 
 ## Webhook & Event-Driven Governance Requirements
 

@@ -60,6 +60,7 @@ This profile implements controls from:
   - Performance Model (latency, throughput, resource consumption)
 
 **Integration Points:**
+
 - gRPC mTLS must integrate with Secure SDLC certificate management (Layer 08.01)
 - Proto schema changes enforced by DevSecOps breaking-change detection (Layer 08.03)
 - Service mesh integration tied to organizational size model (Layer 03)
@@ -74,6 +75,58 @@ This profile implements controls from:
 - **Backward Compatibility:** New fields must be optional; old clients must not break
 - **Metadata Propagation:** Trace context propagated across service boundaries
 - **Deployment Gating:** Deployment without governance validation gates is non-compliant
+
+## Governance Conformance
+
+This section demonstrates how gRPC APIs implement each mandatory control from [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md). No new controls are defined here; this profile clarifies gRPC-specific patterns only.
+
+### Control 1: Authentication (MANDATORY)
+
+**Root Standard Requirement:** All RPCs must authenticate every request using mTLS or OAuth2.
+
+**gRPC Implementation:** Service identity verified via mTLS certificates. Client certificates presented during TLS handshake. For user identity within service calls, OAuth2 bearer tokens passed in gRPC metadata headers (`authorization` key).
+
+### Control 2: Authorization (MANDATORY)
+
+**Root Standard Requirement:** Verify every RPC call has permission to invoke this method and access the requested resources.
+
+**gRPC Implementation:** RPC handler checks user identity (from certificate CN or bearer token), methods checked against allowed roles, resource ownership verified for specific protobuf fields.
+
+### Control 3: Proto Schema Versioning (MANDATORY)
+
+**Root Standard Requirement:** Breaking changes prohibited without major version increment. Deprecation timelines ≥6 months.
+
+**gRPC Implementation:** Proto files versioned `major.minor.patch`. New fields optional only. Deprecated methods marked with comments. Breaking change detection enforced in CI/CD gates before merge.
+
+### Control 4: Mutual TLS (MANDATORY for Service-to-Service)
+
+**Root Standard Requirement:** Service-to-service requires mTLS. Client certificate required and validated.
+
+**gRPC Implementation:** All gRPC connections use TLS. Client and server certificates validated. Service mesh (Istio/Linkerd) automates mTLS sidecar injection and certificate rotation.
+
+### Control 5: Stream Security & Rate Limiting (MANDATORY)
+
+**Root Standard Requirement:** Enforce rate limits per user/service. Prevent resource exhaustion.
+
+**gRPC Implementation:** Connection-level limits (max concurrent streams). Per-call rate limiting via metadata annotations. Large message size limits enforced. Bidirectional streams must respect per-message authentication windows.
+
+### Control 6: Observability & Metadata Tracing (MANDATORY)
+
+**Root Standard Requirement:** All requests logged with correlation IDs and authorization decisions.
+
+**gRPC Implementation:** Request ID propagated in gRPC metadata (grpc-trace-bin). Service mesh collects telemetry for all RPC calls. Authorization audit events logged per method invocation.
+
+### Control 7: Backward Compatibility (MANDATORY)
+
+**Root Standard Requirement:** API changes must not break existing clients.
+
+**gRPC Implementation:** Proto3 enforces optional fields. Old services continue working with new proto definitions. Field numbers never reused. Deprecated fields clearly marked with deadline.
+
+### Control 8: Cross-Service Authorization (MANDATORY)
+
+**Root Standard Requirement:** Service-to-service calls require explicit authorization. No implicit trust.
+
+**gRPC Implementation:** Each service validates caller certificate CN. Service mesh policies restrict which services can call which methods. Service accounts used for authorization decisions.
 
 ## gRPC & Protocol Buffers Governance Requirements
 

@@ -36,6 +36,7 @@ This profile implements controls from:
   - Performance Model (token issuance latency, identity provider availability)
 
 **Integration Points:**
+
 - OAuth2/OIDC token format and validation enforces Secure SDLC requirements (Layer 08.01)
 - IdP failover and token refresh policies enforced by DevSecOps (Layer 08.03)
 - MFA requirements scale with organizational profile (Layer 03)
@@ -50,6 +51,60 @@ This profile implements controls from:
 - **Secure Token Storage:** Tokens protected in transit (TLS) and at rest (encrypted storage)
 - **Audit Trail:** All authentication/authorization decisions logged for compliance
 - **Multi-Factor Authentication:** Integration with MFA providers for high-security contexts
+
+---
+
+## Governance Conformance
+
+This section demonstrates how OAuth 2.0/OIDC identity profiles implement each mandatory control from [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md). No new controls are defined here; this profile clarifies identity-specific patterns only.
+
+### Control 1: OAuth2 Token-Based Authentication (MANDATORY)
+
+**Root Standard Requirement:** All APIs must authenticate using OAuth 2.0, OIDC, or equivalent.
+
+**OAuth Implementation:** User authenticates with IdP. IdP issues access token (JWT). API validates signature using IdP's public key. Token contains user identity and scopes.
+
+### Control 2: Scope-Based Authorization (MANDATORY)
+
+**Root Standard Requirement:** Enforce fine-grained authorization. Verify user has permission for specific resource.
+
+**OAuth Implementation:** Scopes define permissions. Token includes granted scopes. API checks scopes before allowing action. Resource ownership verified.
+
+### Control 3: Token Refresh & Expiration (MANDATORY)
+
+**Root Standard Requirement:** Enforce token expiration. Enable revocation and credential rotation.
+
+**OAuth Implementation:** Access tokens expire in 1 hour max. Refresh tokens expire in 30 days. Revocation immediately invalidates both tokens.
+
+### Control 4: Token Signature Validation (MANDATORY)
+
+**Root Standard Requirement:** Verify token authenticity and integrity. Prevent token forgery.
+
+**OAuth Implementation:** IdP signs with RS256 (asymmetric). API caches public key. Signature validated before accepting. Token exp claim validated.
+
+### Control 5: PKCE for Public Clients (MANDATORY)
+
+**Root Standard Requirement:** Protect against authorization code interception attacks.
+
+**OAuth Implementation:** Public clients use PKCE. Client generates code_challenge. Auth server returns auth code. Client exchanges code + code_verifier for token.
+
+### Control 6: MFA Integration (MANDATORY for Sensitive Operations)
+
+**Root Standard Requirement:** High-security operations require multi-factor authentication.
+
+**OAuth Implementation:** IdP supports MFA. APIs with sensitive scopes require MFA. Token includes `acr` claim indicating MFA completion.
+
+### Control 7: Token Revocation (MANDATORY)
+
+**Root Standard Requirement:** Enable logout and credential invalidation on compromise.
+
+**OAuth Implementation:** IdP provides revocation endpoint. Client can revoke tokens. API checks revocation blocklist (refreshed every 5 minutes).
+
+### Control 8: Cross-Tenant Isolation (MANDATORY for SaaS)
+
+**Root Standard Requirement:** Multi-tenant systems must isolate data per tenant.
+
+**OAuth Implementation:** Token includes tenant ID. APIs verify tenant matches resource. IdP enforces tenant context—no cross-tenant access.
 
 ---
 

@@ -36,6 +36,7 @@ This profile implements controls from:
   - Performance Model (policy enforcement latency, traffic throughput)
 
 **Integration Points:**
+
 - mTLS certificate management enforces Secure SDLC key rotation (Layer 08.01)
 - Service authorization policies enforced by DevSecOps governance (Layer 08.03)
 - Observability requirements tied to organizational maturity (Layer 03)
@@ -49,6 +50,60 @@ This profile implements controls from:
 - **Observable Security:** All policy decisions logged; traffic patterns visible in dashboards
 - **Gradual Enforcement:** Permissive mode for discovery → audit mode for validation → enforce mode for production
 - **Zero Trust Networking:** No implicit trust; all services verify peer certificates and permissions
+
+---
+
+## Governance Conformance
+
+This section demonstrates how service mesh implements each mandatory control from [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md). No new controls are defined here; this profile clarifies service-to-service patterns only.
+
+### Control 1: Mutual TLS (MANDATORY)
+
+**Root Standard Requirement:** Service-to-service communication requires mTLS. Both client and server authenticated.
+
+**Service Mesh Implementation:** Istio/Linkerd injects sidecar proxies. All outbound traffic intercepted and TLS-wrapped. Service certificates provisioned automatically. Certificate CN = service identity.
+
+### Control 2: Authorization Policies (MANDATORY)
+
+**Root Standard Requirement:** Explicitly authorize each service-to-service connection. deny-by-default.
+
+**Service Mesh Implementation:** AuthorizationPolicy resources define allowed traffic. Source identity validated. Method-level granularity for gRPC. Policies versioned in Git.
+
+### Control 3: Traffic Management (MANDATORY)
+
+**Root Standard Requirement:** Enforce rate limits and prevent resource exhaustion.
+
+**Service Mesh Implementation:** VirtualService defines route rules, timeouts, retries. Rate limiting via quotas. Circuit breaker limits concurrent connections. Automatic failover.
+
+### Control 4: Observability (MANDATORY)
+
+**Root Standard Requirement:** All traffic observable and auditable. 90-day minimum logs.
+
+**Service Mesh Implementation:** Sidecar proxies collect metrics. Envoy access logs capture source, destination, status, latency. Distributed tracing enabled.
+
+### Control 5: Service Account Management (MANDATORY)
+
+**Root Standard Requirement:** Verify caller identity. No implicit trust between services.
+
+**Service Mesh Implementation:** Each service has ServiceAccount. SPIFFE identity from service account. AuthorizationPolicies check principal.
+
+### Control 6: Sidecar Deployment (MANDATORY)
+
+**Root Standard Requirement:** All services must enforce mTLS. No opt-out.
+
+**Service Mesh Implementation:** Admission webhook auto-injects sidecar. PeerAuthentication enforces mTLS STRICT mode. No plaintext allowed.
+
+### Control 7: Certificate Lifecycle (MANDATORY)
+
+**Root Standard Requirement:** Certificates rotated automatically before expiration. No manual intervention.
+
+**Service Mesh Implementation:** Istio CA issues certificates. Rotation every 24 hours. Sidecar auto-refreshes before deadline. Chain validated on every connection.
+
+### Control 8: Canary Deployments (MANDATORY)
+
+**Root Standard Requirement:** Deploy changes safely. Gradual rollout with monitoring.
+
+**Service Mesh Implementation:** VirtualService supports traffic splitting (90% v1, 10% v2). Gradual increase while monitoring errors. Automatic rollback.
 
 ---
 

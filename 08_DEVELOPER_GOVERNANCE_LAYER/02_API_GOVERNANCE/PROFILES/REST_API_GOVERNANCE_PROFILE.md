@@ -59,6 +59,7 @@ This profile implements controls from:
   - Performance Model (control effectiveness measurement)
 
 **Integration Points:**
+
 - REST APIs must implement Secure SDLC authentication patterns (Layer 08.01)
 - REST deployment gates enforced by DevSecOps Governance rules (Layer 08.03)
 - REST control maturity tracked against organizational profile (Layer 03)
@@ -73,6 +74,261 @@ This profile implements controls from:
 - **Observable & Auditable:** All requests must be loggable, traceable, and auditable with correlation IDs
 - **Deployment Gating:** Deployment without governance validation gates is non-compliant
 - **No API Mutation Hiding:** Business logic cannot be hidden behind misleading status codes or response patterns
+
+## Governance Conformance
+
+This section demonstrates how REST APIs implement each mandatory control from [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md). No new controls are defined here; this profile clarifies REST-specific implementation patterns only.
+
+### Control 1: Authentication (MANDATORY)
+
+**Root Standard Requirement:**
+
+> All APIs must explicitly authenticate every request using OAuth 2.0, OpenID Connect, mTLS, or equivalent. No implicit trust; every request must present credentials.
+
+**REST Implementation Pattern:**
+REST APIs implement authentication via HTTP Authorization header or custom security headers:
+
+- **OAuth2 Bearer Token:** `Authorization: Bearer <access_token>`
+- **Mutual TLS:** Client certificate presented during TLS handshake
+- **API Key (Internal Only):** `Authorization: ApiKey <key>` or custom headers
+- **JWT:** Self-contained token with cryptographic signature (RS256/ES256)
+
+**Compliant Pattern:**
+
+```http
+GET /api/v1/users/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
+X-Request-ID: corr-abc123
+```
+
+**Non-Compliant Pattern:**
+
+```http
+GET /api/v1/users/profile HTTP/1.1
+# Missing: no Authorization header = implicit (wrong)
+```
+
+---
+
+### Control 2: Authorization (MANDATORY)
+
+**Root Standard Requirement:**
+
+> Enforce authorization at resource level using RBAC or ABAC. Verify every request has permission to access the specific resource being requested.
+
+**REST Implementation Pattern:**
+
+- Resource ownership checks: `GET /users/{userId}` must verify the requesting user owns this resource
+- RBAC via scopes: OAuth2 scopes map to resource types/actions
+- ABAC via attributes: Authorization policies evaluate user, resource, and action attributes
+- Tenant isolation: Multi-tenant APIs verify tenant context matches resource ownership
+
+**Compliant Pattern:**
+
+```http
+GET /api/v1/users/123/profile HTTP/1.1
+Authorization: Bearer <token_with_user_id=456>
+# Server verifies: Can token user (456) access user 123's profile?
+# If user_id != 123 AND not admin → return 403 Forbidden
+```
+
+**Non-Compliant Pattern:**
+
+```http
+GET /api/v1/users/123/profile HTTP/1.1
+Authorization: Bearer <token>
+# Returns 200 OK regardless of token user identity = BOLA vulnerability
+```
+
+---
+
+### Control 3: API Versioning (MANDATORY)
+
+**Root Standard Requirement:**
+
+> Breaking API changes prohibited without major version increment. Deprecated versions must have published sunset dates ≥6 months.
+
+**REST Implementation Pattern:**
+
+- URL versioning: `/api/v1/users`, `/api/v2/users`
+- Header versioning: `Accept: application/vnd.api+json;version=2`
+- Sunset policy: `Sunset: Fri, 31 Dec 2025 23:59:59 GMT` header in responses
+
+**Compliant Pattern:**
+
+```http
+GET /api/v1/users HTTP/1.1
+
+HTTP/1.1 200 OK
+Sunset: Sun, 31 Dec 2025 23:59:59 GMT
+Deprecation: true
+Link: </api/v2/users>; rel="successor-version"
+```
+
+**Non-Compliant Pattern:**
+
+```http
+GET /api/users HTTP/1.1
+# No version specified = breaking changes become invisible to clients
+```
+
+---
+
+### Control 4: Input Validation (Maps to Secure SDLC - MANDATORY)
+
+**Root Standard Requirement:**
+
+> Validate all inputs against declared schema. Reject requests with unknown fields, type mismatches, or size violations.
+
+**REST Implementation Pattern:**
+
+- JSON Schema validation via Content-Type schema
+- Request body constraints: max size, required fields
+- Path/query parameters: type checking (integers, UUIDs, enums)
+- Field-level validation: min/max length, patterns, allowed values
+
+**Compliant Pattern:**
+
+```json
+POST /api/v1/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "age": 25,
+  "role": "viewer"
+}
+# All fields validated against schema; unknown fields rejected
+```
+
+---
+
+### Control 5: Rate Limiting (MANDATORY)
+
+**Root Standard Requirement:**
+
+> Enforce per-tier rate limits. Return 429 Too Many Requests when limit exceeded. Provide quota headers in responses.
+
+**REST Implementation Pattern:**
+
+- Headers return quota: `RateLimit-Limit`, `RateLimit-Remaining`, `RateLimit-Reset`
+- Per-tier limits: Free tier 100/hour, Pro tier 10,000/hour
+- Per-user limits: All tokens from same user share quota
+- Response on limit: `HTTP/1.1 429 Too Many Requests`
+
+**Compliant Pattern:**
+
+```http
+GET /api/v1/users HTTP/1.1
+
+HTTP/1.1 200 OK
+RateLimit-Limit: 1000
+RateLimit-Remaining: 42
+RateLimit-Reset: 1708107600
+
+HTTP/1.1 429 Too Many Requests
+Retry-After: 3600
+# Quota exceeded; client must wait 1 hour
+```
+
+---
+
+### Control 6: Testing & Documentation (MANDATORY)
+
+**Root Standard Requirement:**
+
+> APIs must be described in machine-readable format (OpenAPI 3.0+). OpenAPI spec must be current and validated on every release.
+
+**REST Implementation Pattern:**
+
+- OpenAPI 3.0 spec: documented in `openapi.yaml` or `openapi.json`
+- Operation documentation: summary, description, parameters, responses
+- Schema definitions: component schemas for all request/response types
+- Example values: realistic examples for every field
+
+**Compliant Pattern - OpenAPI:**
+
+```yaml
+openapi: 3.0.3
+info:
+  title: User API
+  version: 1.0.0
+paths:
+  /users/{userId}:
+    get:
+      summary: Get user profile
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: User profile retrieved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+```
+
+---
+
+### Control 7: Logging & Observability (MANDATORY)
+
+**Root Standard Requirement:**
+
+> All requests must be logged with correlation IDs, user identity, resource ID, action, and result (ALLOW/DENY). JSON-structured format required; 90-day retention minimum.
+
+**REST Implementation Pattern:**
+
+- Correlation ID: `X-Request-ID: corr-abc123` sent in request/response headers
+- Structured logging: JSON format with fields: `user_id`, `resource_id`, `method`, `path`, `status`, `timestamp`
+- Authorization audit: Log every allow/deny decision with justification
+- Error logging: Never expose PII; log error codes, not error details
+
+**Compliant Pattern:**
+
+```json
+{
+  "timestamp": "2024-02-14T10:00:00Z",
+  "correlation_id": "corr-abc123",
+  "user_id": "user-456",
+  "method": "GET",
+  "path": "/api/v1/users/789",
+  "status": 200,
+  "action": "READ",
+  "resource_id": "user-789",
+  "result": "ALLOW",
+  "latency_ms": 45
+}
+```
+
+---
+
+### Control 8: Zero Trust & mTLS (MANDATORY for Service-to-Service)
+
+**Root Standard Requirement:**
+
+> Service-to-service REST APIs must use mutual TLS. Client certificate required and validated; bearer tokens insufficient for internal APIs.
+
+**REST Implementation Pattern:**
+
+- mTLS handshake: Both client and server present certificates
+- Certificate validation: CN/SAN must match expected service identity
+- Automated rotation: Certificates refreshed via PKI before expiration
+- Policy enforcement: API gateway/service mesh enforces mTLS requirement
+
+**Compliant Pattern - mTLS Request:**
+
+```
+Client Certificate: CN=service-a.default.svc.cluster.local
+Server Certificate: CN=service-b.default.svc.cluster.local
+TLS Handshake: Mutual validation ✓
+Request Succeeds: Both sides authenticated
+```
+
+---
 
 ## REST Governance Requirements
 

@@ -60,6 +60,7 @@ This profile implements controls from:
   - Performance Model (authorization policy effectiveness)
 
 **Integration Points:**
+
 - GraphQL field authorization enforces Secure SDLC authorization policies (Layer 08.01)
 - Schema validation gates enforced by DevSecOps Governance CI/CD rules (Layer 08.03)
 - Query complexity control tied to maturity progression (Layer 03)
@@ -75,6 +76,243 @@ This profile implements controls from:
 - **Batch Query Protection:** Prevent resource exhaustion via query batching
 - **Dependency Tracking:** Document field-to-field authorization dependencies
 - **Deployment Gating:** Deployment without governance validation gates is non-compliant
+
+## Governance Conformance
+
+This section demonstrates how GraphQL APIs implement each mandatory control from [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md). No new controls are defined here; this profile clarifies GraphQL-specific implementation patterns only.
+
+### Control 1: Authentication (MANDATORY)
+
+**Root Standard Requirement:**
+> All APIs must explicitly authenticate every request using OAuth 2.0, OpenID Connect, mTLS, or equivalent.
+
+**GraphQL Implementation Pattern:**
+GraphQL queries are HTTP POST requests; authentication follows HTTP standards via Authorization header:
+
+- Bearer token: `Authorization: Bearer <JWT>`
+- JWT must include subject (`sub`) claiming user identity
+- Subscriptions (WebSocket): Token passed in connection init message
+- Gateway enforces authentication before query reaches GraphQL resolver
+
+**Compliant Pattern:**
+
+```graphql
+POST /graphql HTTP/1.1
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInN1YiI6InVzZXItNDU2In0...
+Content-Type: application/json
+
+query {
+  viewer {
+    id
+    email
+  }
+}
+```
+
+---
+
+### Control 2: Authorization - Field-Level MANDATORY
+
+**Root Standard Requirement:**
+> Enforce authorization at resource level. Verify every request has permission to access specific data.
+
+**GraphQL Implementation Pattern:**
+GraphQL requires field-level authorization because queries can request any combination of fields:
+
+- Resolver-level checks: Each field resolver verifies user can access this field
+- Parent context: Authorization depends on parent object ownership
+- Directives: `@auth`, `@requires` directives enforce policy
+- Scopes: OAuth2 scopes limit available fields/mutations
+
+**Compliant Pattern:**
+
+```graphql
+type Query {
+  viewer: User @auth(requires: "authenticated")
+}
+
+type User {
+  id: ID! @auth(requires: "authenticated")
+  email: String! @auth(requires: "self_or_admin") # Only user or admin
+  ssn: String! @auth(requires: "admin") # Admin only
+  salary: Float! @auth(requires: "admin") # Admin only
+}
+
+# Resolve only grants email/ssn/salary if authorization check passes
+```
+
+---
+
+### Control 3: Query Complexity & Rate Limiting (MANDATORY)
+
+**Root Standard Requirement:**
+> Enforce per-tier rate limits. Prevent resource exhaustion attacks.
+
+**GraphQL Implementation Pattern:**
+GraphQL needs depth/breadth/complexity limits because queries can be exponentially expensive:
+
+- Depth limit: Max nesting level (e.g., depth ≤ 10)
+- Breadth limit: Max fields per level (e.g., first: 50)
+- Complexity score: Sum of field costs; max threshold per query
+- Subscription limits: Max active subscriptions per user (e.g., 10)
+
+**Compliant Pattern:**
+
+```graphql
+query {
+  viewer {                      # Depth 1
+    friends(first: 50) {        # Depth 2, breadth 50
+      posts(first: 10) {        # Depth 3, breadth 10
+        comments(first: 5) {    # Depth 4, breadth 5
+          author { name }       # Depth 5
+        }
+      }
+    }
+  }
+}
+# Complexity score calculated; if > limit → 429 Too Many Requests
+```
+
+---
+
+### Control 4: Introspection Control (MANDATORY)
+
+**Root Standard Requirement:**
+> Prevent reconnaissance attacks. Sensitive schema details must not be exposed.
+
+**GraphQL Implementation Pattern:**
+
+- Production introspection disabled: `introspectionFromSchema` returns empty
+- Admin-only introspection: Behind authentication + authorization
+- Schema documentation: Published separately via website/PDF
+- Error messages: Never reveal type names or fields in error responses
+
+**Compliant Pattern:**
+
+```graphql
+# Production: introspection query blocked
+query IntrospectionQuery {
+  __schema {
+    types {
+      name
+    }
+  }
+}
+# Response: { errors: [{ message: "Introspection disabled" }] }
+
+# Development/Admin: introspection allowed
+Authorization: Bearer <admin_token>
+# Response: Full schema returned
+```
+
+---
+
+### Control 5: Input Validation & Mutation Protection (MANDATORY)
+
+**Root Standard Requirement:**
+> Validate all inputs against declared schema. Reject requests with unknown fields or type mismatches.
+
+**GraphQL Implementation Pattern:**
+
+- GraphQL schema enforces type safety: `String!`, `Int!`, enums, custom scalars
+- Custom scalars: Email, DateTime, UUID with format validation
+- Input object validation: Required fields checked, unknown fields rejected
+- Mutation-level guards: Mutations require explicit scopes/permissions
+
+**Compliant Pattern:**
+
+```graphql
+input CreateUserInput {
+  email: Email! @email # Custom scalar with format validation
+  age: Int! @range(min: 0, max: 150)
+  role: UserRole! # Enum: restricted set of values
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User @auth(requires: "admin")
+}
+```
+
+---
+
+### Control 6: Logging & Error Handling (MANDATORY)
+
+**Root Standard Requirement:**
+> Log all requests with correlation IDs, user ID, resource access, and authorization decisions.
+
+**GraphQL Implementation Pattern:**
+
+- Request ID: Passed through HTTP header, included in all logs
+- Operation audit: Log query operation name, user, variables (sanitized)
+- Authorization audit: Every field resolution logged (ALLOW/DENY)
+- Error responses: Generic messages; detailed errors logged server-side only
+
+**Compliant Pattern - Audit Log:**
+
+```json
+{
+  "timestamp": "2024-02-14T10:00:00Z",
+  "correlation_id": "corr-xyz789",
+  "user_id": "user-456",
+  "operation": "GetUserProfile",
+  "fields_requested": ["id", "email", "posts"],
+  "fields_granted": ["id", "email"],
+  "fields_denied": [],
+  "status": "PARTIAL_SUCCESS"
+}
+```
+
+---
+
+### Control 7: Schema Versioning (MANDATORY)
+
+**Root Standard Requirement:**
+> Breaking API changes prohibited without major version increment. Deprecated fields must have sunset dates.
+
+**GraphQL Implementation Pattern:**
+
+- Deprecation directive: `@deprecated(reason: "Use newField instead", version: "2.0")`
+- Schema versioning: Versioned endpoint `/graphql/v1`, `/graphql/v2`
+- SDL versioning: OpenAPI-like approach with `version` metadata
+- Breaking change detection: CI/CD scans for breaking changes
+
+**Compliant Pattern:**
+
+```graphql
+type User {
+  id: ID!
+  email: String!
+  phone: String @deprecated(reason: "Use phoneNumbers field", version: "2.0")
+  phone Numbers: [PhoneNumber!]! # New field for multi-phone support
+}
+```
+
+---
+
+### Control 8: Federation & Service Authorization (MANDATORY)
+
+**Root Standard Requirement:**
+> Service-to-service requires mutual TLS. No implicit trust between services.
+
+**GraphQL Implementation Pattern:**
+
+- Apollo Federation: Sub-graphs must validate requests come from authenticated gateways
+- Service account validation: Each sub-graph verifies gateway identity via mTLS
+- Cross-graph authorization: Federation routing respects authorization boundaries
+- Token propagation: User context passed to sub-graphs; sub-graphs re-validate
+
+**Compliant Pattern:**
+
+```graphql
+# Sub-graph never trusts gateway context implicitly
+type Query {
+  user(id: ID!): User @authenticated @requiresMTLS
+}
+
+# Resolver re-validates user ID from JWT token, not gateway assertion
+```
+
+---
 
 ## GraphQL Governance Requirements
 
