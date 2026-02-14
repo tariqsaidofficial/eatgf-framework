@@ -1,4 +1,4 @@
-# OFFICIAL_DESIGNATION.md
+# Official Designation
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**
 

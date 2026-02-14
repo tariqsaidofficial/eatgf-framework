@@ -1,4 +1,4 @@
-# AIMS_MANUAL_v1.0
+# AIMS Manual v1.0
 
 **Enterprise AI-Aligned Technical Governance Framework**
 (ISO/IEC 42001:2023 Aligned – Audit-Ready Structure)

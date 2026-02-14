@@ -1,4 +1,4 @@
-# STATEMENT OF APPLICABILITY (SoA) - ISO 27001:2022
+# Statement of Applicability (SoA) - ISO 27001:2022
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
 **Organization:** [Organization Name]  

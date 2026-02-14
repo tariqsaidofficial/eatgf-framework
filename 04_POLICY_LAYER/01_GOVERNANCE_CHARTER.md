@@ -1,8 +1,16 @@
-# GOVERNANCE CHARTER
+# Governance Charter
 
-**Effective Date:** February 2026  
-**Authority:** Executive Leadership  
-**Next Review:** August 2026
+## Enterprise AI-Aligned Technical Governance Framework (EATGF)
+
+| Field | Value |
+|-------|-------|
+| Document Type | Policy |
+| Version | 1.1 |
+| Classification | Internal |
+| Effective Date | 2026-02-14 |
+| Authority | Executive Leadership |
+| MCM Reference | EATGF-EDM-GOV-01 |
+| Next Review | August 2026 |
 
 ---
 
@@ -168,5 +176,4 @@ This charter aligns with:
 
 ---
 
-**Next Review Date:** August 2026  
-**Questions?** Contact: governance@enterprise.com
+**Next Review Date:** August 2026

@@ -1,314 +1,136 @@
-# 🏛️ Enterprise Governance Framework
+# Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
-**Professional governance standards that scale from startups to enterprises**
+## Governance Framework Overview
 
-![Governance Framework](https://img.shields.io/badge/COBIT-2019-blue) ![Compliance](https://img.shields.io/badge/Compliance-ISO%2027001-green) ![AI Governance](https://img.shields.io/badge/Standard-ISO%2042001-purple) ![Status](https://img.shields.io/badge/Status-Active-success)
+| Field | Value |
+|-------|-------|
+| Document Type | Framework Overview |
+| Version | 2.0 |
+| Classification | Public |
+| Effective Date | 2026-02-14 |
+| Authority | Enterprise Architecture & Governance Office |
+| MCM Reference | EATGF-EDM-GOV-01 |
 
 ---
 
-## 📋 Overview
+## 1. Purpose
 
-This repository contains the **authoritative source** for enterprise governance policies, controls, and frameworks. It is the foundation for a comprehensive governance program aligned with:
+This document provides a navigational overview of the Enterprise AI-Aligned Technical Governance Framework (EATGF). The EATGF is a structured, 8-layer governance architecture containing 35 controls defined in the Master Control Matrix (MCM), aligned with international standards.
 
-- **COBIT 2019** - Control Objectives for IT
-- **ISO 27001:2022** - Information Security Management
-- **ISO 38500:2015** - Corporate Governance of IT
-- **ISO 42001:2024** - AI Management Systems
-- **OWASP 2023** - API Security
+## 2. Standards Alignment
 
-## 🎯 What It Contains
+The EATGF is aligned with the following standards:
+
+- **COBIT 2019** — Control Objectives for Information and Related Technologies
+- **ISO/IEC 27001:2022** — Information Security Management Systems
+- **ISO/IEC 38500:2015** — Corporate Governance of Information Technology
+- **ISO/IEC 42001:2023** — Artificial Intelligence Management Systems
+- **OWASP API Security Top 10 (2023)** — API Security
+
+## 3. Repository Structure
 
 ```
-└── enterprise-governance-framework/
-    ├── /policies                    # Core governance policies
-    ├── /controls                    # Control objectives & architecture
-    ├── /mappings                    # COBIT, ISO, OWASP mappings
-    ├── /ai-governance               # AI/ML governance framework
-    ├── /api-governance              # API lifecycle & security
-    ├── /evidence-templates          # Audit evidence collection
-    ├── /risk-model                  # Enterprise risk framework
-    ├── /performance-model           # KPI & measurement framework
-    ├── /maturity-model              # Governance maturity assessment
-    └── README.md                    # Framework overview
+eatgf-framework/
+├── 00_FOUNDATION/          Layer 0 — Baseline declarations and framework overview
+├── 01_MANAGEMENT_SYSTEMS/  Layer 1 — ISMS and AIMS manuals
+├── 02_CONTROL_ARCHITECTURE/ Layer 2 — MCM, control objectives, risk framework, mappings
+├── 03_GOVERNANCE_MODELS/   Layer 3 — Editions, maturity model, performance model
+├── 04_POLICY_LAYER/        Layer 4 — Governance charter, security and data policies
+├── 05_DOMAIN_FRAMEWORKS/   Layer 5 — AI governance, API governance
+├── 06_AUDIT_AND_ASSURANCE/ Layer 6 — Internal audit procedures
+└── 07_REFERENCE_AND_EVOLUTION/ Layer 7 — Roadmaps, decision records, historical artifacts
 ```
 
-## 🚀 Quick Navigation
+## 4. MCM Control Domains (35 Controls)
 
-### 🏪 By Organization Size
+| Domain | Controls | Description |
+|--------|----------|-------------|
+| EDM | 3 | Evaluate, Direct, Monitor — Board-level oversight |
+| APO | 4 | Align, Plan, Organize — Architecture, risk, ISMS, AIMS |
+| BAI | 3 | Build, Acquire, Implement — Change, configuration, QA |
+| DSS | 4 | Deliver, Service, Support — IAM, encryption, vulnerability, incident |
+| MEA | 3 | Monitor, Evaluate, Assess — Audit, performance, maturity |
+| AI | 2 | AI lifecycle governance and risk management |
+| API | 2 | API security and lifecycle management |
+| CLD | 4 | Cloud architecture, security, monitoring, resilience |
+| DEV | 4 | Secure SDLC, code scanning, supply chain, CI/CD |
+| DATA | 3 | DPIA, data retention, data minimization |
+| BCP | 3 | Business continuity planning, testing, RTO/RPO |
 
-- **[Startup Edition (1-10 people)](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md#edition-1-startup-governance-1-10-people)** - Lightweight governance
-- **[SaaS Edition (10-50 people)](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md#edition-2-saas-governance-10-50-people)** - Standard implementation
-- **[Enterprise Edition (50+ people)](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md#edition-3-enterprise-governance-50-people)** - Full framework
+## 5. Governance Editions
 
-### 📚 Core Documentation
+| Edition | Personnel | Setup Time | Governance FTE |
+|---------|-----------|------------|----------------|
+| Startup | 1-10 | 2 weeks | 1-2 |
+| SaaS | 10-50 | 2-3 months | 2-3 |
+| Enterprise | 50+ | 4-6 months | 8-12 |
 
-1. **[Governance Charter](../04_POLICY_LAYER/01_GOVERNANCE_CHARTER.md)** - Strategic direction
-2. **[Control Objectives](../02_CONTROL_ARCHITECTURE/CONTROL_OBJECTIVES.md)** - Control framework
-3. **[Framework Mappings](../02_CONTROL_ARCHITECTURE/FRAMEWORK_MAPPINGS.md)** - Standards alignment
-4. **[Maturity Model](../03_GOVERNANCE_MODELS/MATURITY_MODEL/MATURITY_ASSESSMENT.md)** - Assessment framework
-5. **[Risk Framework](../02_CONTROL_ARCHITECTURE/RISK_FRAMEWORK.md)** - Risk management
+Edition-specific guidance: [GOVERNANCE_BY_TEAM_SIZE.md](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md)
 
-### 🔐 Specialized Domains
+## 6. Core Document Navigation
 
-- **[AI Governance](../05_DOMAIN_FRAMEWORKS/AI_GOVERNANCE_FRAMEWORK.md)** - Responsible AI
-- **[API Governance](../05_DOMAIN_FRAMEWORKS/API_GOVERNANCE_FRAMEWORK.md)** - API security & lifecycle
-- **[Information Security](../04_POLICY_LAYER/02_INFORMATION_SECURITY_POLICY.md)** - Data protection
-- **[Data Governance](../04_POLICY_LAYER/03_DATA_GOVERNANCE_POLICY.md)** - Data management
+### Foundation and Authority
 
-### 📊 Models & Assessment
+| Document | Path | Purpose |
+|----------|------|---------|
+| Baseline Declaration | [BASELINE_DECLARATION_v1.0.md](BASELINE_DECLARATION_v1.0.md) | Framework baseline and version lock |
+| Master Control Matrix | [MASTER_CONTROL_MATRIX.md](MASTER_CONTROL_MATRIX.md) | Single source of truth for all 35 controls |
+| Official Designation | [OFFICIAL_DESIGNATION.md](OFFICIAL_DESIGNATION.md) | Framework naming and authority |
 
-- **[Maturity Assessment](../03_GOVERNANCE_MODELS/MATURITY_MODEL/MATURITY_ASSESSMENT.md)** - Evaluate readiness
-- **[Risk Framework](../02_CONTROL_ARCHITECTURE/RISK_FRAMEWORK.md)** - Risk identification & mitigation
-- **[Performance Model](../03_GOVERNANCE_MODELS/PERFORMANCE_MODEL/PERFORMANCE_MODEL.md)** - KPI & measurement
+### Policies
 
-### 📋 Templates & Tools
+| Document | Path | Purpose |
+|----------|------|---------|
+| Governance Charter | [01_GOVERNANCE_CHARTER.md](../04_POLICY_LAYER/01_GOVERNANCE_CHARTER.md) | Strategic governance direction |
+| Governance Charter (Formal) | [GOVERNANCE_CHARTER_FORMAL_v2.md](../04_POLICY_LAYER/GOVERNANCE_CHARTER_FORMAL_v2.md) | Board-level formal charter |
+| Information Security Policy | [02_INFORMATION_SECURITY_POLICY.md](../04_POLICY_LAYER/02_INFORMATION_SECURITY_POLICY.md) | Data protection requirements |
+| Data Governance Policy | [03_DATA_GOVERNANCE_POLICY.md](../04_POLICY_LAYER/03_DATA_GOVERNANCE_POLICY.md) | Data management requirements |
 
-- Evidence Templates - Compliance documentation
+### Control Architecture
 
----
+| Document | Path | Purpose |
+|----------|------|---------|
+| Control Objectives | [CONTROL_OBJECTIVES.md](../02_CONTROL_ARCHITECTURE/CONTROL_OBJECTIVES.md) | 35 control objectives with evidence requirements |
+| Framework Mappings | [FRAMEWORK_MAPPINGS.md](../02_CONTROL_ARCHITECTURE/FRAMEWORK_MAPPINGS.md) | COBIT, ISO, OWASP cross-mappings |
+| Risk Framework | [RISK_FRAMEWORK.md](../02_CONTROL_ARCHITECTURE/RISK_FRAMEWORK.md) | Enterprise risk management methodology |
 
-## 📖 Documentation Portal
+### Domain Frameworks
 
-This repository is the **source of truth**. For a formatted, navigable version:
+| Document | Path | Purpose |
+|----------|------|---------|
+| AI Governance | [AI_GOVERNANCE_FRAMEWORK.md](../05_DOMAIN_FRAMEWORKS/AI_GOVERNANCE_FRAMEWORK.md) | AI/ML system governance |
+| API Governance | [API_GOVERNANCE_FRAMEWORK.md](../05_DOMAIN_FRAMEWORKS/API_GOVERNANCE_FRAMEWORK.md) | API security and lifecycle |
 
-🔗 **[governance-docs-site](https://github.com/tariqsaidofficial/governance-docs-site)**
+### Assessment and Monitoring
 
-The companion Docusaurus site provides:
-- Formatted documentation
-- Navigation & search
-- Interactive guides
-- Blog & updates
+| Document | Path | Purpose |
+|----------|------|---------|
+| Maturity Assessment | [MATURITY_ASSESSMENT.md](../03_GOVERNANCE_MODELS/MATURITY_MODEL/MATURITY_ASSESSMENT.md) | Governance maturity evaluation |
+| Performance Model | [PERFORMANCE_MODEL.md](../03_GOVERNANCE_MODELS/PERFORMANCE_MODEL/PERFORMANCE_MODEL.md) | KPI and measurement framework |
+| Internal Audit | [INTERNAL_AUDIT_PROCEDURE_v1.0.md](../06_AUDIT_AND_ASSURANCE/INTERNAL_AUDIT_PROCEDURE_v1.0.md) | Audit program and procedures |
 
----
+## 7. Documentation Portal
 
-## 📊 Framework Structure
+The companion Docusaurus portal provides a formatted, navigable version of this framework:
 
-### COBIT 2019 Alignment
+- Repository: [governance-docs-site](https://github.com/tariqsaidofficial/governance-docs-site)
 
-```
-Governance Framework
-│
-├── EDM (Evaluate, Direct, Monitor)
-│   ├── Governance committee
-│   ├── Risk monitoring
-│   └── Strategic oversight
-│
-├── APO (Align, Plan, Organize)
-│   ├── Strategy alignment
-│   ├── Architecture standards
-│   └── Resource planning
-│
-├── BAI (Build, Acquire, Implement)
-│   ├── System delivery
-│   ├── AI governance
-│   └── API governance
-│
-├── DSS (Deliver, Service, Support)
-│   ├── Security controls
-│   ├── Operations
-│   └── Incident response
-│
-└── MEA (Monitor, Evaluate, Assess)
-    ├── Performance measurement
-    ├── Compliance monitoring
-    └── Maturity assessment
-```
+The portal renders this repository as its content source via Git submodule.
 
-### Control Categories
+## 8. Governance Enforcement Rules
 
-| Category | Controls | Description |
-|----------|----------|-------------|
-| **Architecture** | 3 controls | System design & standards |
-| **Security** | 3 controls | Identity, encryption, vulnerability |
-| **AI Governance** | 2 controls | Responsible AI development |
-| **API Governance** | 2 controls | API lifecycle & security |
-| **Risk** | 2 controls | Risk assessment & monitoring |
-| **Performance** | 2 controls | KPI tracking & maturity |
+1. The Master Control Matrix is the single source of truth for all control definitions. All documents in this repository derive authority from the MCM.
+2. Control IDs use the `EATGF-[DOMAIN]-[CATEGORY]-[NUMBER]` taxonomy exclusively.
+3. Framework updates follow the semi-annual review cycle (February and August).
+4. All documents must conform to the EATGF Document Template as defined in the Documentation Style Review Report.
 
 ---
 
-## 🎓 Getting Started
+**Document Control**
 
-### 1. Choose Your Edition
+| Version | Date | Author | Change Description |
+|---------|------|--------|-------------------|
+| 1.0 | 2026-02-01 | Governance Office | Initial framework overview |
+| 2.0 | 2026-02-14 | Enterprise Architecture & Governance Office | Corrected to 35-control MCM taxonomy; removed marketing content; corrected directory structure; standardized ISO 42001 to 2023; removed placeholder content |
 
-- **Startup?** → 2 weeks setup time, 1-2 FTE team
-- **SaaS?** → 2-3 months setup time, 2-3 FTE team  
-- **Enterprise?** → 4-6 months setup time, 8-12 FTE team
-
-See [Governance by Team Size](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md)
-
-### 2. Review Foundation Documents
-
-1. Read [Governance Charter](../04_POLICY_LAYER/01_GOVERNANCE_CHARTER.md) (30 min)
-2. Review [Control Objectives](../02_CONTROL_ARCHITECTURE/CONTROL_OBJECTIVES.md) (1 hour)
-3. Assess current state with [Maturity Model](../03_GOVERNANCE_MODELS/MATURITY_MODEL/MATURITY_ASSESSMENT.md) (2 hours)
-
-### 3. Implement by Phase
-
-**Phase 1: Foundation (Month 1)**
-- [ ] Charter approved & communicated
-- [ ] Governance team assigned
-- [ ] Risk register created
-- [ ] 3 core policies adopted
-
-**Phase 2: Controls (Months 2-3)**
-- [ ] Security controls implemented
-- [ ] Access control established
-- [ ] Monitoring activated
-- [ ] First control tests completed
-
-**Phase 3: Optimization (Months 4-12)**
-- [ ] Domain-specific controls (AI, API, etc.)
-- [ ] Maturity assessment & planning
-- [ ] Compliance certifications (SOC 2, ISO, etc.)
-- [ ] Continuous improvement
-
----
-
-## 📝 Key Documents
-
-### Policies (3 core policies)
-- [Governance Charter](../04_POLICY_LAYER/01_GOVERNANCE_CHARTER.md) - Framework authority
-- [Information Security Policy](../04_POLICY_LAYER/02_INFORMATION_SECURITY_POLICY.md) - Data protection
-- [Data Governance Policy](../04_POLICY_LAYER/03_DATA_GOVERNANCE_POLICY.md) - Data management
-
-### Frameworks
-- [Control Objectives](../02_CONTROL_ARCHITECTURE/CONTROL_OBJECTIVES.md) - 14 controls across domains
-- [Framework Mappings](../02_CONTROL_ARCHITECTURE/FRAMEWORK_MAPPINGS.md) - COBIT ↔ ISO ↔ OWASP
-- [AI Governance Framework](../05_DOMAIN_FRAMEWORKS/AI_GOVERNANCE_FRAMEWORK.md) - End-to-end AI governance
-- [API Governance Framework](../05_DOMAIN_FRAMEWORKS/API_GOVERNANCE_FRAMEWORK.md) - API security & lifecycle
-
-### Assessment Tools
-- [Maturity Model](../03_GOVERNANCE_MODELS/MATURITY_MODEL/MATURITY_ASSESSMENT.md) - Current state assessment
-- [Risk Framework](../02_CONTROL_ARCHITECTURE/RISK_FRAMEWORK.md) - Risk identification & mitigation
-- [Performance Model](../03_GOVERNANCE_MODELS/PERFORMANCE_MODEL/PERFORMANCE_MODEL.md) - KPI & measurement
-
-### Implementation
-- [Governance by Team Size](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md) - Edition-specific guidance
-
----
-
-## 🔧 How to Use This Framework
-
-### For Startups
-1. Read [Startup Edition](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md#edition-1-startup-governance-1-10-people)
-2. Implement core 3 policies
-3. Set up access control + backup
-4. Done! 🎉
-
-### For SaaS Companies  
-1. Read [SaaS Edition](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md#edition-2-saas-governance-10-50-people)
-2. Implement all 7 policies
-3. Establish governance council
-4. Pursue SOC 2 Type II
-5. Plan for scale
-
-### For Enterprises
-1. Read [Enterprise Edition](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md#edition-3-enterprise-governance-50-people)
-2. Implement complete framework
-3. Establish executive committee
-4. Pursue ISO 27001 + others
-5. Continuous optimization
-
----
-
-## 🤝 Contributing
-
-This framework is maintained by the Governance Team and evolves based on:
-- Regulatory changes
-- Industry best practices
-- Organizational feedback
-- New standards (ISO 42001, etc.)
-
-### Update Process
-
-If you have improvements or suggestions:
-1. Create an issue with proposed change
-2. Include rationale & impact
-3. Governance team reviews
-4. Updates published semi-annually (Feb & Aug)
-
----
-
-## 📅 Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | Feb 2026 | Initial framework release |
-
-### Next Review: August 2026
-
----
-
-## 📚 Resource Links
-
-### Standards & Frameworks
-- [COBIT 2019](https://www.isaca.org/resources/cobit) - Control objectives
-- [ISO 27001:2022](https://www.iso.org/standard/27001) - Information security
-- [ISO 38500:2015](https://www.iso.org/standard/38500) - Corporate governance of IT
-- [ISO 42001:2024](https://www.iso.org/standard/42001) - AI management systems
-- [OWASP API Security 2023](https://owasp.org/www-project-api-security/) - API security
-
-### Governance Resources
-- [ISACA](https://www.isaca.org/) - Governance certifications & training
-- [ISO](https://www.iso.org/) - International standards
-- [NIST](https://www.nist.gov/) - Cybersecurity framework
-- [COSO](https://www.coso.org/) - Internal control framework
-
----
-
-## ❓ FAQ
-
-**Q: Do we need to implement all controls?**  
-A: No. Choose your edition and implement applicable controls for your team size.
-
-**Q: What's the difference between this and other frameworks?**  
-A: This framework is practical and scalable. It includes specific, actionable guidance for startups through enterprises.
-
-**Q: How do we measure success?**  
-A: Use the [Maturity Model](../03_GOVERNANCE_MODELS/MATURITY_MODEL/MATURITY_ASSESSMENT.md) (assess annually) and [Performance Model](../03_GOVERNANCE_MODELS/PERFORMANCE_MODEL/PERFORMANCE_MODEL.md) (track monthly KPIs).
-
-**Q: Can we customize the framework?**  
-A: Yes. These are guidelines and best practices. Tailor to your organization's needs.
-
-**Q: How often is the framework updated?**  
-A: Semi-annually (February & August) based on regulatory changes and feedback.
-
----
-
-## 📞 Contact
-
-**Questions?**  
-📧 governance@enterprise.com
-
-**Found an issue?**  
-🔗 [GitHub Issues](https://github.com/tariqsaidofficial/enterprise-governance-framework/issues)
-
-**Want to contribute?**  
-📝 See Contributing Guidelines in the governance team documentation
-
----
-
-## ⚖️ License
-
-This framework is provided as-is for organizational use. See the repository LICENSE file for details.
-
----
-
-## 🌟 Quick Links
-
-| Link | Description |
-|------|-------------|
-| [Documentation Portal](https://governance-docs-site.tariqsaidofficial.com) | Formatted online docs |
-| [Governance Charter](../04_POLICY_LAYER/01_GOVERNANCE_CHARTER.md) | Strategic foundation |
-| [Control Framework](../02_CONTROL_ARCHITECTURE/CONTROL_OBJECTIVES.md) | 14 controls |
-| [Maturity Model](../03_GOVERNANCE_MODELS/MATURITY_MODEL/MATURITY_ASSESSMENT.md) | Assessment tool |
-| [Risk Framework](../02_CONTROL_ARCHITECTURE/RISK_FRAMEWORK.md) | Risk management |
-| [Team Size Guide](../03_GOVERNANCE_MODELS/GOVERNANCE_BY_TEAM_SIZE.md) | Edition selection |
-| [AI Governance](../05_DOMAIN_FRAMEWORKS/AI_GOVERNANCE_FRAMEWORK.md) | AI/ML governance |
-| [API Governance](../05_DOMAIN_FRAMEWORKS/API_GOVERNANCE_FRAMEWORK.md) | API security |
-
----
-
-**Made with ❤️ for governance professionals**  
-*Last Updated: February 2026*
+**Next Review:** August 2026

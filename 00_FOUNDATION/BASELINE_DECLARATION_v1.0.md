@@ -1,4 +1,4 @@
-# BASELINE_DECLARATION_v1.0.md
+# Baseline Declaration v1.0
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**
 

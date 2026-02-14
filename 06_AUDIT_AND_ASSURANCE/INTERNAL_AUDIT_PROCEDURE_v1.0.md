@@ -1,4 +1,4 @@
-# INTERNAL_AUDIT_PROCEDURE_v1.0
+# Internal Audit Procedure v1.0
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**
 

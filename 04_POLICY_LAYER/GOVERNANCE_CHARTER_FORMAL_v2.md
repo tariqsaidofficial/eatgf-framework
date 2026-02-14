@@ -10,20 +10,20 @@
 
 ---
 
-## 📋 EXECUTIVE SUMMARY
+## Executive Summary
 
-This Governance Charter establishes the formal governance framework for technology, information security, data management, and artificial intelligence systems within [Organization Name]. The charter is aligned with COBIT 2019, ISO 27001:2022, ISO 42001:2024, NIST AI Risk Management Framework, and is supported by 21 core control objectives documented in the **Master Control Matrix (MCM)**.
+This Governance Charter establishes the formal governance framework for technology, information security, data management, and artificial intelligence systems within [Organization Name]. The charter is aligned with COBIT 2019, ISO 27001:2022, ISO 42001:2023, NIST AI Risk Management Framework, and is supported by 35 control objectives across 11 domains documented in the **Master Control Matrix (MCM)**.
 
 The governance model ensures:
-- ✅ **Board-level oversight** of IT/AI risk and value
-- ✅ **Executive accountability** for information security and AI governance
-- ✅ **Formal compliance** with international standards
-- ✅ **Risk-based approach** to technology investments
-- ✅ **Continuous improvement** through monitoring and assessment
+- **Board-level oversight** of IT/AI risk and value
+- **Executive accountability** for information security and AI governance
+- **Formal compliance** with international standards
+- **Risk-based approach** to technology investments
+- **Continuous improvement** through monitoring and assessment
 
 ---
 
-## 1️⃣ GOVERNANCE FRAMEWORK STRUCTURE
+## 1. Governance Framework Structure
 
 ### 1.1 Five-Layer Governance Architecture
 
@@ -37,7 +37,7 @@ EATGF is structured in five formal layers (per Basel 3 governance model):
                       ↓
 ┌─────────────────────────────────────────────┐
 │   LAYER 2: MASTER CONTROL MATRIX (MCM)      │
-│  21 control objectives, mappings, evidence  │
+│  35 control objectives, mappings, evidence  │
 └─────────────────────────────────────────────┘
                       ↓
 ┌─────────────────────────────────────────────┐
@@ -79,7 +79,7 @@ EATGF is structured in five formal layers (per Basel 3 governance model):
 
 ---
 
-## 2️⃣ GOVERNANCE AUTHORITY & ACCOUNTABILITY
+## 2. Governance Authority and Accountability
 
 ### 2.1 Board-Level Responsibility
 
@@ -143,7 +143,7 @@ The **Board of Directors** retains ultimate accountability for:
 
 ---
 
-## 3️⃣ GOVERNANCE DOMAINS & COBIT ALIGNMENT
+## 3. Governance Domains and COBIT Alignment
 
 EATGF is structured around **5 COBIT 2019 domains** (33 COBIT processes) + AI/API extensions:
 
@@ -212,7 +212,7 @@ EATGF is structured around **5 COBIT 2019 domains** (33 COBIT processes) + AI/AP
 
 ---
 
-## 4️⃣ RISK APPETITE STATEMENT
+## 4. Risk Appetite Statement
 
 ### 4.1 Overall IT Risk Appetite
 [Organization Name] **ACCEPTS MODERATE IT RISK** in pursuit of digital transformation, while maintaining:
@@ -243,7 +243,7 @@ Control Reference: **EATGF-EDM-RISK-01**
 
 ---
 
-## 5️⃣ CONTROL STANDARDS ADOPTED
+## 5. Control Standards Adopted
 
 EATGF selects controls from the following international standards:
 
@@ -252,7 +252,7 @@ EATGF selects controls from the following international standards:
 |---|---|---|
 | **COBIT 2019** | Governance framework | All organizations |
 | **ISO 27001:2022** | Information Security | SaaS / Enterprise |
-| **ISO 42001:2024** | AI Management Systems | If AI systems used |
+| **ISO 42001:2023** | AI Management Systems | If AI systems used |
 
 ### 5.2 Secondary Standards
 | Standard | Scope | Applicability |
@@ -270,7 +270,7 @@ EATGF selects controls from the following international standards:
 
 ---
 
-## 6️⃣ GOVERNANCE COMPLIANCE REQUIREMENTS
+## 6. Governance Compliance Requirements
 
 ### 6.1 Mandatory Compliance Levels
 
@@ -302,7 +302,7 @@ EATGF selects controls from the following international standards:
 
 ---
 
-## 7️⃣ GOVERNANCE EXCEPTIONS & COMPENSATION
+## 7. Governance Exceptions and Compensation
 
 ### 7.1 Control Exception Process
 - **Owner:** Risk Officer + CISO
@@ -330,7 +330,7 @@ Compensating controls must be:
 
 ---
 
-## 8️⃣ GOVERNANCE DECISION RIGHTS (RACI MATRIX)
+## 8. Governance Decision Rights (RACI Matrix)
 
 ### 8.1 Strategic Decisions (Annual/Major)
 
@@ -356,7 +356,7 @@ Compensating controls must be:
 
 ---
 
-## 9️⃣ GOVERNANCE PERFORMANCE INDICATORS
+## 9. Governance Performance Indicators
 
 ### 9.1 Strategic KPIs (Board-Level)
 
@@ -383,7 +383,7 @@ Per control-level metrics defined in MCM (Section 📋)
 
 ---
 
-## 🔟 GOVERNANCE REVIEW & UPDATES
+## 10. Governance Review and Updates
 
 ### 10.1 Governance Charter Maintenance
 
@@ -416,7 +416,7 @@ Per control-level metrics defined in MCM (Section 📋)
 
 ---
 
-## 1️⃣1️⃣ ESCALATION PROCEDURES
+## 11. Escalation Procedures
 
 ### 11.1 Severity-Based Escalation
 
@@ -442,7 +442,7 @@ CEO/Board Notification (if relevant)
 
 ---
 
-## 1️⃣2️⃣ GOVERNANCE CONTACT DIRECTORY
+## 12. Governance Contact Directory
 
 | Role | Name | Email | Phone |
 |---|---|---|---|
@@ -489,7 +489,7 @@ This Governance Charter is approved and authorized by:
 
 **Effective Date:** February 13, 2026  
 **Next Review Date:** August 13, 2026  
-**Status:** ✅ **ACTIVE - Board Approved**
+**Status:** ACTIVE — Board Approved
 
 ---
 

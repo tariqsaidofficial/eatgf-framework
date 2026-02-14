@@ -1,8 +1,16 @@
-# GOVERNANCE MATURITY MODEL
+# Governance Maturity Model
 
-**Framework Version:** 1.0  
-**Assessment Frequency:** Annual  
-**Effective Date:** February 2026
+## Enterprise AI-Aligned Technical Governance Framework (EATGF)
+
+| Field | Value |
+|-------|-------|
+| Document Type | Assessment Framework |
+| Version | 1.1 |
+| Classification | Internal |
+| Effective Date | 2026-02-14 |
+| Assessment Frequency | Annual |
+| Authority | Enterprise Architecture & Governance Office |
+| MCM Reference | EATGF-MEA-MAT-01 |
 
 ---
 
@@ -378,4 +386,4 @@ Progress on Last Year's Goals:
 ---
 
 **Next Assessment:** Q1 2027  
-**Questions?** Contact: governance@enterprise.com
+**Questions:** Directed to the Governance Council via internal channels.

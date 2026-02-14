@@ -1,9 +1,17 @@
-# DATA GOVERNANCE POLICY
+# Data Governance Policy
 
-**Policy ID:** POL-DATA-001  
-**Effective Date:** February 2026  
-**Classification:** Controlled  
-**Review Cycle:** Annual
+## Enterprise AI-Aligned Technical Governance Framework (EATGF)
+
+| Field | Value |
+|-------|-------|
+| Document Type | Policy |
+| Policy ID | POL-DATA-001 |
+| Version | 1.1 |
+| Classification | Controlled |
+| Effective Date | 2026-02-14 |
+| Review Cycle | Annual |
+| Authority | Chief Data Officer |
+| MCM Reference | EATGF-DATA-PRIV-01, EATGF-DATA-RET-01, EATGF-DATA-MIN-01 |
 
 ---
 
@@ -76,4 +84,4 @@ Data is a strategic asset. This policy establishes standards for data collection
 
 ---
 
-**Questions?** Contact: data-governance@enterprise.com
+**Next Review:** August 2026

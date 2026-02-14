@@ -1,9 +1,16 @@
-# AI GOVERNANCE FRAMEWORK
+# AI Governance Framework
 
-**Framework Version:** 1.0  
-**Baseline:** ISO 42001  
-**Effective Date:** February 2026  
-**Classification:** Controlled
+## Enterprise AI-Aligned Technical Governance Framework (EATGF)
+
+| Field | Value |
+|-------|-------|
+| Document Type | Framework |
+| Version | 1.1 |
+| Classification | Controlled |
+| Effective Date | 2026-02-14 |
+| Baseline | ISO/IEC 42001:2023 |
+| Authority | Chief AI Officer |
+| MCM Reference | EATGF-AI-LC-01, EATGF-AI-RISK-01, EATGF-APO-AI-01 |
 
 ---
 
@@ -360,11 +367,9 @@ AI System Registry Template
 
 ---
 
-## 11. CONTACT & ESCALATION
+## 11. Contact and Escalation
 
-**Questions:** governance@enterprise.com  
-**Urgent Issues:** escalate@enterprise.com  
-**Policy Updates:** Visit governance-docs-site
+Refer to the Governance Contact Directory in the Governance Charter for escalation procedures.
 
 ---
 

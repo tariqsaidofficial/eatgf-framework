@@ -1,9 +1,17 @@
-# INFORMATION SECURITY POLICY
+# Information Security Policy
 
-**Policy ID:** POL-SEC-001  
-**Effective Date:** February 2026  
-**Classification:** Controlled  
-**Review Cycle:** Annual
+## Enterprise AI-Aligned Technical Governance Framework (EATGF)
+
+| Field | Value |
+|-------|-------|
+| Document Type | Policy |
+| Policy ID | POL-SEC-001 |
+| Version | 1.1 |
+| Classification | Controlled |
+| Effective Date | 2026-02-14 |
+| Review Cycle | Annual |
+| Authority | Chief Information Security Officer |
+| MCM Reference | EATGF-APO-SEC-01, EATGF-DSS-SEC-01, EATGF-DSS-ENC-01, EATGF-DSS-VULN-01 |
 
 ---
 
@@ -89,4 +97,4 @@ This policy will be:
 
 ---
 
-**Questions?** Contact: security@enterprise.com
+**Next Review:** August 2026

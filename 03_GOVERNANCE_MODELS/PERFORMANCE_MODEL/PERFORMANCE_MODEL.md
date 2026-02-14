@@ -1,7 +1,15 @@
-# GOVERNANCE PERFORMANCE MODEL
+# Governance Performance Model
 
-**Framework Version:** 1.0  
-**Effective Date:** February 2026
+## Enterprise AI-Aligned Technical Governance Framework (EATGF)
+
+| Field | Value |
+|-------|-------|
+| Document Type | Framework |
+| Version | 1.1 |
+| Classification | Internal |
+| Effective Date | 2026-02-14 |
+| Authority | Enterprise Architecture & Governance Office |
+| MCM Reference | EATGF-MEA-PERF-01 |
 
 ---
 
@@ -426,5 +434,4 @@ Next Actions:
 
 ---
 
-**Next Review:** March 2026  
-**Questions?** Contact: governance@enterprise.com
+**Next Review:** August 2026

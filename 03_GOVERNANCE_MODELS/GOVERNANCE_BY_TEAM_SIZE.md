@@ -1,13 +1,21 @@
-# GOVERNANCE BY TEAM SIZE
+# Governance by Team Size
 
-**Guide Version:** 1.0  
-**Effective Date:** February 2026
+## Enterprise AI-Aligned Technical Governance Framework (EATGF)
+
+| Field | Value |
+|-------|-------|
+| Document Type | Guide |
+| Version | 2.0 |
+| Classification | Internal |
+| Effective Date | 2026-02-14 |
+| Authority | Enterprise Architecture & Governance Office |
+| MCM Reference | All EATGF Controls (Edition-specific applicability) |
 
 ---
 
-## EDITION 1: STARTUP GOVERNANCE (1-10 People)
+## Edition 1: Startup Governance (1-10 Personnel)
 
-**Philosophy:** Lightweight, practical governance that doesn't slow down product delivery.
+**Philosophy:** Lightweight, practical governance aligned with delivery priorities.
 
 ---
 
@@ -31,12 +39,12 @@
 
 | Control | Requirement | Implementation | Time |
 |---------|------------|-----------------|------|
-| **SEC-01** (Access) | Passwords + strong auth | 1Password or similar | 1 week |
-| **SEC-02** (Encryption) | Encrypt sensitive data | Use default TLS/encryption | Already done |
-| **SEC-03** (Vulnerabilities) | Keep systems patched | Auto-updates enabled | Ongoing |
-| **AC-01** (Architecture) | Document system design | 1-page architecture diagram | 1 day |
-| **RISK-01** (Risk Register) | Know your top 5 risks | Spreadsheet with actions | 1 day |
-| **PERF-01** (KPIs) | Track what matters | System uptime + customer issues | 1 day |
+| **EATGF-DSS-SEC-01** (Access) | Passwords and strong auth | 1Password or similar | 1 week |
+| **EATGF-DSS-ENC-01** (Encryption) | Encrypt sensitive data | Use default TLS/encryption | Already done |
+| **EATGF-DSS-VULN-01** (Vulnerabilities) | Keep systems patched | Auto-updates enabled | Ongoing |
+| **EATGF-APO-ARCH-01** (Architecture) | Document system design | 1-page architecture diagram | 1 day |
+| **EATGF-APO-RISK-01** (Risk Register) | Know top 5 risks | Spreadsheet with actions | 1 day |
+| **EATGF-MEA-PERF-01** (KPIs) | Track what matters | System uptime and customer issues | 1 day |
 
 **Total Setup Time:** ~2 weeks for full startup pack
 
@@ -98,14 +106,14 @@
 - ✅ You can demonstrate SOC 2 Type I basics
 
 **Avoid:**
-- ❌ Lengthy 50-page policies nobody reads
-- ❌ Formal governance committees
-- ❌ Heavy compliance tools (spreadsheets are fine)
-- ❌ Over-engineering security before you have customers
+- Lengthy policies without implementation value
+- Formal governance committees at startup scale
+- Heavy compliance tooling (spreadsheets are sufficient)
+- Over-engineering security before achieving product-market fit
 
 ---
 
-## EDITION 2: SAAS GOVERNANCE (10-50 People)
+## Edition 2: SaaS Governance (10-50 Personnel)
 
 **Philosophy:** Structured governance with clear ownership without enterprise bureaucracy.
 
@@ -135,20 +143,20 @@
 
 | Domain | Control | Implementation |
 |--------|---------|-----------------|
-| **Architecture** | AC-01 | System architecture documented |
-| | AC-02 | Integration architecture + API specs |
-| | AC-03 | Technology platform standards |
-| **Security** | SEC-01 | IAM system (Okta/Auth0) |
-| | SEC-02 | Full encryption at rest + in transit |
-| | SEC-03 | Monthly vulnerability scanning |
-| **AI** | AI-01 | AI system intake & governance |
-| | AI-02 | Fairness/bias assessment |
-| **API** | API-01 | API design standards + OpenAPI |
-| | API-02 | OAuth 2.0 authentication |
-| **Risk** | RISK-01 | Annual risk assessment |
-| | RISK-02 | Monthly risk dashboard |
-| **Perf** | PERF-01 | Monthly KPI reporting |
-| | PERF-02 | Annual maturity assessment |
+| **Architecture** | EATGF-APO-ARCH-01 | System architecture documented |
+| | EATGF-BAI-CHG-01 | Integration architecture and change control |
+| | EATGF-BAI-CONF-01 | Technology platform standards |
+| **Security** | EATGF-DSS-SEC-01 | IAM system (Okta/Auth0) |
+| | EATGF-DSS-ENC-01 | Full encryption at rest and in transit |
+| | EATGF-DSS-VULN-01 | Monthly vulnerability scanning |
+| **AI** | EATGF-AI-LC-01 | AI system intake and governance |
+| | EATGF-AI-RISK-01 | Fairness/bias assessment |
+| **API** | EATGF-API-LC-01 | API design standards and OpenAPI |
+| | EATGF-API-SEC-01 | OAuth 2.0 authentication |
+| **Risk** | EATGF-APO-RISK-01 | Annual risk assessment |
+| | EATGF-MEA-PERF-01 | Monthly risk dashboard |
+| **Performance** | EATGF-MEA-PERF-01 | Monthly KPI reporting |
+| | EATGF-MEA-MAT-01 | Annual maturity assessment |
 
 ---
 
@@ -258,7 +266,7 @@ CEO/Founder
 
 ---
 
-## EDITION 3: ENTERPRISE GOVERNANCE (50+ People)
+## Edition 3: Enterprise Governance (50+ Personnel)
 
 **Philosophy:** Enterprise-grade governance with distributed accountability and continuous optimization.
 
@@ -425,7 +433,7 @@ Overall: 4.4 (Managed - Excellent practices)
 
 ---
 
-## COMPARING THE THREE EDITIONS
+## Comparing the Three Editions
 
 | Factor | Startup | SaaS | Enterprise |
 |--------|---------|------|-----------|
@@ -442,7 +450,7 @@ Overall: 4.4 (Managed - Excellent practices)
 
 ---
 
-## SCALING FROM ONE EDITION TO NEXT
+## Scaling from One Edition to the Next
 
 ### Startup → SaaS (Managing Growth)
 
@@ -476,5 +484,11 @@ Overall: 4.4 (Managed - Excellent practices)
 
 ---
 
-**Questions?** Contact: governance@enterprise.com  
-**Edition Assessment:** Need help determining your edition? scheduling-tool.com
+**Document Control**
+
+| Version | Date | Author | Change Description |
+|---------|------|--------|-------------------|
+| 1.0 | 2026-02-01 | Governance Office | Initial edition guide |
+| 2.0 | 2026-02-14 | Enterprise Architecture & Governance Office | Adopted EATGF-xxx control taxonomy; corrected tone; added EATGF header; removed placeholder content |
+
+**Next Review:** August 2026

@@ -17,7 +17,7 @@ This document provides **complete bidirectional mappings** between:
 1. **EATGF Master Control Matrix (MCM)** - Central control authority
 2. **COBIT 2019** - Governance domains (EDM/APO/BAI/DSS/MEA)
 3. **ISO 27001:2022** - Information Security Management (76 Annex A controls)
-4. **ISO 42001:2024** - AI Management Systems (if applicable)
+4. **ISO 42001:2023** - AI Management Systems (if applicable)
 5. **NIST AI Risk Management Framework (AI RMF)** - AI risk governance
 6. **OWASP 2023** - API security controls
 7. **NIST SP 800-53** - US government security controls (if applicable)
@@ -38,7 +38,7 @@ The mappings enable:
 ```
                         ┌─────────────────┐
                         │  EATGF MCM      │
-                        │ (21 Controls)   │
+                        │ (35 Controls)   │
                         └─────────────────┘
                                 │
                 ┌───────┬───────┼───────┬───────┬────────┐
@@ -80,7 +80,7 @@ EATGF-EDM-RISK-01
 │  ├─ Clause 6.1.2: Risk assessment process
 │  ├─ Clause 8.1: Operational planning and control
 │  └─ Clause 9.1: Monitoring and measurement
-├─ ISO 42001:2024
+├─ ISO 42001:2023
 │  ├─ Clause 6.1: Risk and opportunities
 │  └─ Clause 8.1: Operational planning
 └─ NIST AI RMF
@@ -1049,7 +1049,7 @@ Certification:
 ### Appendix B: ISO 27001:2022 Annex A - Complete Control List
 [See https://www.iso.org/standard/75652.html for complete standard]
 
-### Appendix C: ISO 42001:2024 Clause Structure
+### Appendix C: ISO 42001:2023 Clause Structure
 [See https://www.iso.org/standard/81399.html for complete standard]
 
 ### Appendix D: NIST AI RMF Categories
@@ -1072,7 +1072,7 @@ Certification:
 **Review Frequency:** Semi-annual (Feb & Aug)  
 **Version History:**
 - v1.0 (Feb 2024) - Initial framework
-- v2.0 (Feb 2026) - MCM-aligned with 21 controls
+- v2.0 (Feb 2026) - MCM-aligned with 35 controls
 
 **Next Review Date:** August 13, 2026
 
@@ -1080,4 +1080,4 @@ Certification:
 
 **Framework:** Enterprise AI-Aligned Technical Governance Framework (EATGF)  
 **Document Type:** Comprehensive Standards Mapping  
-**Status:** ✅ **COMPLETE AND AUDITOR-READY**
+**Status:** COMPLETE AND AUDITOR-READY

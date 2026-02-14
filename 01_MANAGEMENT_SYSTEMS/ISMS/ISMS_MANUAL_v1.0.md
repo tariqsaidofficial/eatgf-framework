@@ -1,4 +1,4 @@
-# ISMS_MANUAL_v1.0
+# ISMS Manual v1.0
 
 **Enterprise AI-Aligned Technical Governance Framework**
 (ISO/IEC 27001:2022 Aligned – Audit-Ready Structure)

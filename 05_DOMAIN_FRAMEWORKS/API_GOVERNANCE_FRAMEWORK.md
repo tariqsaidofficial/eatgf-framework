@@ -1,9 +1,16 @@
-# API GOVERNANCE FRAMEWORK
+# API Governance Framework
 
-**Framework Version:** 1.0  
-**Baseline:** OWASP API Security 2023  
-**Effective Date:** February 2026  
-**Classification:** Controlled
+## Enterprise AI-Aligned Technical Governance Framework (EATGF)
+
+| Field | Value |
+|-------|-------|
+| Document Type | Framework |
+| Version | 1.1 |
+| Classification | Controlled |
+| Effective Date | 2026-02-14 |
+| Baseline | OWASP API Security Top 10:2023 |
+| Authority | API Governance Lead |
+| MCM Reference | EATGF-API-SEC-01, EATGF-API-LC-01 |
 
 ---
 
@@ -488,11 +495,9 @@ user_response = {
 
 ---
 
-## 10. CONTACT & ESCALATION
+## 10. Contact and Escalation
 
-**Questions:** governance@enterprise.com  
-**Security Issue:** security@enterprise.com  
-**API Emergency:** escalate@enterprise.com
+Refer to the Governance Contact Directory in the Governance Charter for escalation procedures.
 
 ---
 

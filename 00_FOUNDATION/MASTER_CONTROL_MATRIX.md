@@ -1338,8 +1338,8 @@ Each control maps to specific evidence requirements:
 **Update Frequency:** Semi-annual (Feb & Aug)  
 **Emergency Updates:** As-needed for regulatory changes  
 
-**Questions:** governance@enterprise.com  
-**Escalation:** governance-escalation@enterprise.com
+**Questions:** Directed to the Governance Council via internal channels.  
+**Escalation:** Directed to the Chief Governance Officer via the defined escalation chain.
 
 ---
 
