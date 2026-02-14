@@ -37,12 +37,14 @@ FRAMEWORK_PROFILES/
 ## Authority Notice
 
 Framework Profiles are **implementation clarifications only**. They do NOT:
+
 - Define new controls
 - Override control severity/maturity
 - Create new framework mappings
 - Redefine policy
 
 Framework Profiles reference and implement controls defined in:
+
 - [API_GOVERNANCE_STANDARD.md](../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md) (Layer 05)
 - [SECURE_SDLC_STANDARD.md](../01_SECURE_SDLC/SECURE_SDLC_STANDARD.md) (Layer 01)
 - Future: DEVSECOPS_GOVERNANCE_STANDARD, CLOUD_GOVERNANCE_STANDARD
@@ -50,6 +52,7 @@ Framework Profiles reference and implement controls defined in:
 ## Conformance Model
 
 Each Framework Profile must include:
+
 1. ✅ Title & Authority Notice
 2. ✅ Purpose & Architectural Position
 3. ✅ Relationship to EATGF Layers
@@ -68,17 +71,20 @@ Each Framework Profile must include:
 ### BACKEND/
 
 **Django Profile** implements:
+
 - Layer 08.02.Control-1 (Authentication) → Django's `authentication_backends`, JWT integration
 - Layer 08.02.Control-2 (Authorization) → `django-guardian` RBAC, custom permission checks
 - Layer 05.API (Rate Limiting) → `django-ratelimit` decorator-based approach
 - Layer 01.SDLC (Dependency Management) → `pip`, `requirements.txt`, `pip-audit` verification
 
 **FastAPI Profile** implements:
+
 - Same Layer 08.02 controls using `FastAPI` decorators + `python-jose` JWT library
 - Layer 03.DevSecOps (SAST) → Bandit integration in CI/CD workflow
 - Different from Django in: async-first design, built-in OpenAPI validation, `HTTPExceptionhandling`
 
 **NestJS Profile** implements:
+
 - Same Layer 08.02 controls using **TypeScript** + `@nestjs/` libraries
 - Layer 04.Cloud (Container) → `Dockerfile` best practices for Node runtime
 - Layer 03.DevSecOps (Docker scanning) → Trivy integration for image vulnerability scanning
@@ -86,6 +92,7 @@ Each Framework Profile must include:
 ### FRONTEND/
 
 **React Profile** implements:
+
 - Layer 08.02.Control-1 (Authentication) → `react-jwt`, OAuth2 integration
 - Layer 05.Security (CSRF/XSS) → Content Security Policy headers, React's built-in XSS protection
 - Layer 01.SDLC (Dependency Auditing) → `npm audit`, dependency-check integration
@@ -94,11 +101,13 @@ Each Framework Profile must include:
 ### INFRASTRUCTURE/
 
 **Docker Profile** implements:
+
 - Layer 04.Container (Security) → Multi-stage builds, non-root users, minimal base images
 - Layer 03.DevSecOps (Image Scanning) → Trivy, Grype integration in Build step
 - Layer 01.SDLC (SBOM) → CycloneDX/SPDX generation during build
 
 **Kubernetes Profile** implements:
+
 - Layer 04.Kubernetes (Network Policy) → Istio mTLS, Pod admission controllers
 - Layer 03.DevSecOps (RBAC) → K8s RBAC for Team isolation, service account scoping
 - Layer 05.API (Rate Limiting) → Envoy rate limit servers in service mesh
@@ -111,6 +120,6 @@ Each Framework Profile must include:
 
 ---
 
-**Ready for:** Profile creation using Conformance Model template  
-**Next Phase:** BACKEND/DJANGO_GOVERNANCE_PROFILE.md (session N+1)  
+**Ready for:** Profile creation using Conformance Model template
+**Next Phase:** BACKEND/DJANGO_GOVERNANCE_PROFILE.md (session N+1)
 **Maintenance:** Quarterly reviews to ensure no control redefinition creep
