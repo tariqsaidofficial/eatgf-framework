@@ -1,13 +1,43 @@
 # ISMS Manual v1.0
 
-**Enterprise AI-Aligned Technical Governance Framework**
-(ISO/IEC 27001:2022 Aligned – Audit-Ready Structure)
+| Field | Value |
+|-------|-------|
+| Document Type | Management System Manual |
+| Version | 1.0 |
+| Classification | Controlled |
+| Effective Date | 2026-02-13 |
+| Authority | Board of Directors / Executive Steering Committee |
+| EATGF Layer | 01_MANAGEMENT_SYSTEMS |
+| MCM Reference | MASTER_CONTROL_MATRIX.md (MCM v1.0) |
+| Standards | ISO/IEC 27001:2022 |
 
 ---
 
-**Document Type:** Information Security Management System Manual  
-**Authority:** Board of Directors / Executive Steering Committee  
-**Control Authority Reference:** MASTER_CONTROL_MATRIX.md (MCM v1.0 – Freeze Edition)
+## Architectural Position
+
+This manual operates within **01_MANAGEMENT_SYSTEMS** as the organizational implementation of ISO/IEC 27001:2022.
+
+- **Upstream dependency:** Governance Charter (04_POLICY_LAYER) establishes governance authority; MASTER_CONTROL_MATRIX (00_FOUNDATION) defines all controls
+- **Downstream usage:** Operationalized through policies (Information Security Policy, Data Governance Policy), procedures, and control implementations
+- **Cross-layer reference:** ISMS clauses map to EATGF controls across all layers (00-08); Statement of Applicability derives from MCM; Internal Audit Procedure (Layer 06) validates ISMS effectiveness
+
+## Governance Principles
+
+1. **ISO 27001:2022 Conformity** – Full alignment with Clauses 4-10; no deviation from standard requirements
+2. **Control Authority Centralization** – MASTER_CONTROL_MATRIX is sole source of truth for controls; no duplicate control definitions
+3. **Risk-Based Security** – Risk assessment (EATGF-APO-RISK-01) drives control selection and Statement of Applicability
+4. **Continuous Improvement** – Annual management review, internal audit (EATGF-MEA-AUD-01), and corrective action drive ISMS evolution
+5. **Audit Defensibility** – All ISMS documentation structured for external certification audit; evidence linked to controls
+
+## Control Mapping
+
+| EATGF Context | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
+|---|---|---|---|---|
+| ISMS Governance | Clause 5 (Leadership) | N/A | N/A | EDM01 (Governance Framework) |
+| Risk Management | Clause 6 (Planning) | N/A | N/A | APO12 (Risk Management) |
+| Operational Controls | Clause 8 (Operation) | Multiple practices | ASVS | DSS05 (Security Services) |
+| Performance Evaluation | Clause 9 (Evaluation) | N/A | N/A | MEA01 (Performance Monitoring) |
+| Internal Audit | Clause 9.2 | N/A | N/A | MEA02 (Internal Control) |
 
 ---
 
@@ -285,6 +315,95 @@ Any control modification requires:
 - Governance Council approval
 - Version increment
 - Impact review on SoA
+
+---
+
+## Developer Checklist
+
+Before ISMS implementation:
+
+- [ ] Governance Charter approved and governance structure established
+- [ ] MASTER_CONTROL_MATRIX reviewed and applicable controls identified
+- [ ] Risk assessment (EATGF-APO-RISK-01) completed with heat map and mitigation plans
+- [ ] Statement of Applicability derived from MCM and risk assessment
+- [ ] Information Security Policy (EATGF-APO-SEC-01) approved and communicated
+- [ ] ISMS scope defined with included/excluded systems documented
+- [ ] Control owners assigned for all applicable EATGF controls
+- [ ] Evidence collection procedures established for audit readiness
+- [ ] Internal audit program (EATGF-MEA-AUD-01) scheduled annually
+- [ ] Management review scheduled quarterly minimum
+- [ ] All personnel trained on ISMS policies and their responsibilities
+- [ ] Board/Executive approval obtained for ISMS Manual
+
+---
+
+## Governance Implications
+
+### Organizational Authority
+
+This ISMS Manual establishes:
+
+- **Board/Executive Authority** – Ultimate accountability for information security; approves ISMS scope, objectives, and resource allocation
+- **CISO Responsibility** – Day-to-day ISMS operation; risk assessment coordination; control implementation oversight; management review preparation
+- **Control Ownership** – Each control in MCM assigned to designated owner responsible for implementation and evidence collection
+- **Audit Independence** – Internal audit function (EATGF-MEA-AUD-01) operates independently from operational teams to ensure objectivity
+
+### Risk if Not Implemented
+
+Without formal ISMS:
+
+- No systematic approach to information security risk management
+- Regulatory non-compliance (GDPR, industry requirements)
+- Customer trust erosion; inability to win enterprise contracts requiring ISO 27001 certification
+- Security incidents increase due to lack of preventive controls and monitoring
+
+### Operational Impact
+
+ISMS implementation requires:
+
+- **Resource allocation** – CISO/security team, audit function, governance administration
+- **Process discipline** – Quarterly risk reviews, annual audits, management reviews, control testing
+- **Documentation maintenance** – Policies, procedures, evidence collection, SoA updates
+- **Continuous monitoring** – Performance metrics (EATGF-MEA-PERF-01), incident tracking, vulnerability management
+
+### Audit Consequences
+
+ISMS enables:
+
+- **External certification** – ISO 27001 certification achievable with compliant ISMS
+- **Customer audits** – Structure and evidence support SOC 2, customer security questionnaires
+- **Regulatory compliance** – Demonstrates due diligence for data protection regulations
+- **Internal assurance** – Annual internal audit cycle validates control effectiveness before external audit
+
+### Cross-Team Dependencies
+
+ISMS requires collaboration:
+
+- **IT/Engineering** – Implements technical controls (encryption, IAM, patching)
+- **Legal/Compliance** – Interprets regulatory requirements; supports data protection obligations
+- **HR** – Enforces access control policies; conducts security awareness training
+- **Finance** – Approves ISMS budget; monitors benefits realization (EATGF-EDM-BEN-01)
+- **Audit** – Executes annual audit program; reports findings to governance council
+
+---
+
+## Official References
+
+- ISO/IEC 27001:2022 – Information Security Management Systems (Requirements)
+- ISO/IEC 27002:2022 – Information Security Controls (Implementation Guidance)
+- ISO 19011:2018 – Guidelines for Auditing Management Systems
+- NIST SP 800-53 Rev. 5 – Security and Privacy Controls for Information Systems
+- COBIT 2019 – Governance and Management Objectives for Enterprise IT
+
+---
+
+## Version Information
+
+- **Version:** 1.0
+- **Change Type:** Major (Initial Release)
+- **Date:** 2026-02-13
+- **Status:** Draft – Pending Governance Approval
+- **Relation to EATGF Baseline:** Aligns with EATGF v1.0-Foundation baseline
 
 ---
 

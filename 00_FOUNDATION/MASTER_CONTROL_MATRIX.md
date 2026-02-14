@@ -1,20 +1,22 @@
 # ENTERPRISE AI-ALIGNED TECHNICAL GOVERNANCE FRAMEWORK (EATGF)
+
 ## Master Control Matrix (MCM) v1.0
 
-**Framework Name:** Enterprise AI-Aligned Technical Governance Framework  
-**Document Type:** Master Control Matrix (Central Control Authority)  
-**Version:** 1.0  
-**Effective Date:** February 2026  
-**Classification:** Controlled - Internal Use Only  
+**Framework Name:** Enterprise AI-Aligned Technical Governance Framework
+**Document Type:** Master Control Matrix (Central Control Authority)
+**Version:** 1.0
+**Effective Date:** February 2026
+**Classification:** Controlled - Internal Use Only
 **Authority:** Board of Directors / Executive Steering Committee
 
 ---
 
-## ⚠️ IMPORTANT LEGAL DISCLAIMERS
+## IMPORTANT LEGAL DISCLAIMERS
 
 ### Implementation Status Statement
 
 The **Status** field in this MCM reflects the current **internal governance maturity level only** and does not constitute:
+
 - Certification or conformity statements under ISO/IEC standards
 - Claims of compliance with regulatory requirements
 - Auditor-verified controls (requires external audit validation)
@@ -24,6 +26,7 @@ Organizations using this framework must conduct independent assessments and obta
 ### Standards Alignment & Usage
 
 This framework provides **interpretive alignment references** to international standards:
+
 - **COBIT 2019 Framework** - governance reference model
 - **ISO/IEC 27001:2022** - information security management system
 - **ISO/IEC 42001:2023** - AI management system
@@ -41,6 +44,7 @@ This framework provides **interpretive alignment references** to international s
 The **Master Control Matrix (MCM)** is the authoritative, single source of truth for all governance controls within EATGF. It maps internal controls to international standards and provides the foundation for ISO 27001 Statement of Applicability (SoA), ISO 42001 compliance, and audit readiness.
 
 ### Purpose
+
 - Provide unified control identifier across all standards
 - Enable traceability from policy → control → evidence
 - Support ISO 27001 SoA and audit documentation
@@ -48,6 +52,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 - Facilitate internal and external audits
 
 ### Scope
+
 - **35 core governance controls** across 11 domains
 - Mappings to COBIT 2019, ISO 27001, ISO 42001, NIST AI RMF, OWASP, NIST 800-53
 - Evidence and ownership definitions
@@ -61,6 +66,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 **Format:** `EATGF-[DOMAIN]-[CATEGORY]-[NUMBER]`
 
 **Domain Codes:**
+
 - `EDM` = Evaluate, Direct, Monitor
 - `APO` = Align, Plan, Organize
 - `BAI` = Build, Acquire, Implement
@@ -74,6 +80,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 - `API` = API Security & Lifecycle
 
 **Category Codes:**
+
 | Code | Category | Domain | Examples |
 |------|----------|--------|----------|
 | RISK | Risk Management | EDM/APO/AI | Risk appetite, mitigation |
@@ -101,6 +108,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 **Number:** Sequential (01, 02, 03...)
 
 **Examples:**
+
 - `EATGF-EDM-RISK-01` = Risk Appetite Definition
 - `EATGF-CLD-ARCH-01` = Cloud Architecture
 - `EATGF-DEV-SCAN-01` = SAST/DAST/SCA Integration
@@ -160,6 +168,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Risk Appetite Statement approved and signed by Board
 - [ ] Risk thresholds defined (Critical/High/Medium/Low)
 - [ ] AI-specific risk appetite documented
@@ -186,6 +195,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Benefits realization dashboard live and updated
 - [ ] DORA metrics tracked monthly
 - [ ] Quarterly executive review meeting held
@@ -213,6 +223,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Governance Charter signed and approved
 - [ ] RACI matrix for governance decisions documented
 - [ ] Committee charters for each governance body
@@ -242,6 +253,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Architecture framework adopted (TOGAF/FEA/custom)
 - [ ] Technology standards document published
 - [ ] Architecture review board established with charter
@@ -271,6 +283,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Risk register maintained with 50+ material risks
 - [ ] Risks scored (Probability × Impact)
 - [ ] Risk heat map created and shared
@@ -299,6 +312,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] ISMS Manual (ISO 27001:2022) created and approved
 - [ ] Statement of Applicability (SoA) completed with justifications
 - [ ] All 76 Annex A controls mapped to organization
@@ -327,6 +341,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | In Progress ⏳ |
 
 **Evidence Checklist:**
+
 - [ ] AIMS Manual (ISO 42001:2023) created
 - [ ] AI System Registry populated and maintained
 - [ ] AI governance committee established
@@ -356,6 +371,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Change management process documented
 - [ ] Change Advisory Board (CAB) established and meeting
 - [ ] Change categories defined (emergency/standard/major)
@@ -383,6 +399,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Git repository centralized (GitHub/GitLab)
 - [ ] Commit signing enabled
 - [ ] Branch protection rules configured
@@ -412,6 +429,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Test plan for each release
 - [ ] Minimum code coverage standards (70%+)
 - [ ] Security testing required (SAST/DAST)
@@ -441,6 +459,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] IAM platform deployed (Okta/Auth0/similar)
 - [ ] RBAC matrix documented
 - [ ] MFA enabled for all sensitive systems
@@ -469,6 +488,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Data classification scheme implemented
 - [ ] Encryption standards documented (AES-256, TLS 1.2+)
 - [ ] Encryption enabled for all databases
@@ -497,6 +517,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Vulnerability scanning tool deployed (Qualys/Tenable/similar)
 - [ ] Monthly scans executed and reported
 - [ ] Remediation SLAs defined and tracked
@@ -525,6 +546,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Incident response plan published and tested
 - [ ] Severity classification scheme defined
 - [ ] Escalation procedures documented
@@ -555,6 +577,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Annual audit plan developed
 - [ ] Audit scope includes all major processes
 - [ ] Audit team independence confirmed
@@ -583,6 +606,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] KPI framework defined (COBIT metrics, security metrics, AI metrics)
 - [ ] Live dashboards created
 - [ ] Monthly reports generated and shared
@@ -610,6 +634,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] Maturity assessment conducted (facilitated session)
 - [ ] All 5 COBIT domains scored (1-5 scale)
 - [ ] Evidence validated for each rating
@@ -640,6 +665,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | In Progress ⏳ |
 
 **Evidence Checklist:**
+
 - [ ] AI intake process documented
 - [ ] AI system registry with all systems listed
 - [ ] Model development standards (framework, versioning)
@@ -671,6 +697,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | In Progress ⏳ |
 
 **Evidence Checklist:**
+
 - [ ] AI risk assessment template created
 - [ ] Bias testing framework defined (disparate impact, calibration, etc.)
 - [ ] Fairness metrics defined per model
@@ -702,6 +729,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] OAuth 2.0 or mTLS configured
 - [ ] API gateway deployed (Kong/Apigee/similar)
 - [ ] Rate limiting configured per tier
@@ -730,6 +758,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Framework Baseline |
 
 **Evidence Checklist:**
+
 - [ ] OpenAPI 3.0 spec for all APIs
 - [ ] API catalog with current listing
 - [ ] Versioning policy documented (e.g., semantic versioning)
@@ -738,6 +767,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 - [ ] API governance committee reviews
 
 ---
+
 ## 🔷 LAYER 8: CLOUD GOVERNANCE CONTROLS ⭐ NEW
 
 ### EATGF-CLD-ARCH-01: Cloud Architecture & Design Standards
@@ -762,6 +792,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] Cloud architecture standards document published
 - [ ] Multi-cloud strategy approved (single vs. multi-cloud decision)
 - [ ] Region selection policy (data residency, geopolitical)
@@ -795,6 +826,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] Cloud security baseline document (AWS/Azure/GCP CIS benchmarks applied)
 - [ ] Network security groups/firewall rules configured correctly
 - [ ] Encryption at rest (S3/blob storage) enabled with customer-managed keys
@@ -827,6 +859,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] Cloud cost dashboard live (AWS Cost Explorer / Azure Cost Management)
 - [ ] Cost anomaly alerts configured (>10% variance threshold)
 - [ ] Monthly cost review meeting held with stakeholders
@@ -859,6 +892,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] Multi-AZ/region architecture diagram documented
 - [ ] RTO target defined per system (e.g., 4 hours max)
 - [ ] RPO target defined per system (e.g., 1 hour max)
@@ -894,6 +928,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] SDLC process documented with security phases (design, code, test, deploy)
 - [ ] Threat modeling performed for critical systems (STRIDE/DFD)
 - [ ] Secure coding standards published (OWASP Top 10 compliance)
@@ -926,6 +961,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] SAST tool integrated in CI/CD (SonarQube/Checkmarx/similar)
 - [ ] SAST blocking on CRITICAL findings before merge
 - [ ] DAST scanner configured for pre-release testing (staging)
@@ -959,6 +995,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] SBOM generated for each release (CycloneDX or SPDX format)
 - [ ] Dependency vulnerability scanning implemented (npm audit/pip check/Snyk)
 - [ ] Build artifact signing enabled (Docker image signatures)
@@ -990,6 +1027,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] CI/CD pipeline documented (GitHub Actions/GitLab CI/Jenkins)
 - [ ] Automated tests required before deployment to production
 - [ ] Code review approval required before merge (CODEOWNERS)
@@ -1025,6 +1063,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] DPIA process documented and approved
 - [ ] DPIA template created (processing purpose, lawfulness, necessity)
 - [ ] Risk assessment for data handling completed
@@ -1057,6 +1096,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] Data retention schedule documented (all data types and retention periods)
 - [ ] Retention periods based on legal requirement, business need, compliance
 - [ ] Automated deletion process implemented (scheduled jobs)
@@ -1089,6 +1129,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] Data minimization policy documented and approved
 - [ ] Customer-facing forms/APIs collect only necessary fields
 - [ ] Data science/analytics teams restricted to non-PII or consented PII
@@ -1121,6 +1162,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] Comprehensive BC/DR plan document created (10+ pages)
 - [ ] Critical systems identified and prioritized with RTO/RPO
 - [ ] Recovery procedures detailed for each critical system
@@ -1152,6 +1194,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] Annual BC/DR test plan documented (scope, systems, procedures)
 - [ ] Full-scale recovery test completed (actual system failover)
 - [ ] Test results documented (success/failure, time to recover)
@@ -1183,6 +1226,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | **Status** | Planned |
 
 **Evidence Checklist:**
+
 - [ ] RTO targets defined per system (max hours downtime acceptable)
 - [ ] RPO targets defined per system (max hours data loss acceptable)
 - [ ] Backup frequency aligns with RPO targets
@@ -1193,6 +1237,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 - [ ] Test verification that RTO/RPO targets are achievable
 
 ---
+
 ## � CONTROL SUMMARY TABLE (Updated)
 
 | ID | Title | Domain | Type | Owner | Frequency | Startup | SaaS | Enterprise | Environment |
@@ -1219,21 +1264,21 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | EATGF-MEA-AUD-01 | Internal Audit | MEA | Detective | Compliance | Annual | ❌ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 | EATGF-MEA-PERF-01 | Performance Monitoring | MEA | Detective | Governance | Quarterly | ✅ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 | EATGF-MEA-MAT-01 | Maturity Assessment | MEA | Detective | Governance | Annual | ✅ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
-| **CLOUD GOVERNANCE LAYER** ⭐ NEW | | | | | | | | | |
+| **CLOUD GOVERNANCE LAYER** (NEW) | | | | | | | | | |
 | EATGF-CLD-ARCH-01 | Cloud Architecture | CLD | Preventive | Cloud Arch | Annual | ❌ | ✅ | ✅ | Cloud/Multi-Cloud/Hybrid |
 | EATGF-CLD-SEC-01 | Cloud Security | CLD | Preventive | Cloud Sec | Monthly | ❌ | ✅ | ✅ | Cloud/Multi-Cloud/Hybrid |
 | EATGF-CLD-MON-01 | Cloud Monitoring | CLD | Detective | Cloud Ops | Monthly | ❌ | ✅ | ✅ | Cloud/Multi-Cloud/Hybrid |
 | EATGF-CLD-RES-01 | Cloud Resilience | CLD | Preventive | CTO | Quarterly | ❌ | ✅ | ✅ | Cloud/Multi-Cloud/Hybrid |
-| **DEVSECOPS LAYER** ⭐ NEW | | | | | | | | | |
+| **DEVSECOPS LAYER** (NEW) | | | | | | | | | |
 | EATGF-DEV-SDLC-01 | Secure SDLC | DEV | Preventive | Eng Lead | Per Release | ✅ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 | EATGF-DEV-SCAN-01 | SAST/DAST/SCA | DEV | Detective | AppSec | Continuous | ✅ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 | EATGF-DEV-SUP-01 | Supply Chain & SBOM | DEV | Preventive | DevOps | Per Release | ✅ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 | EATGF-DEV-CI-01 | CI/CD Pipeline | DEV | Preventive | DevOps | Per Deploy | ✅ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
-| **DATA PRIVACY LAYER** ⭐ NEW | | | | | | | | | |
+| **DATA PRIVACY LAYER** (NEW) | | | | | | | | | |
 | EATGF-DATA-PRIV-01 | DPIA | DATA | Preventive | DPO | Per Activity | ✅* | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 | EATGF-DATA-RET-01 | Data Retention | DATA | Preventive | CDO | Annual | ✅* | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 | EATGF-DATA-MIN-01 | Data Minimization | DATA | Preventive | DPO | Quarterly | ✅* | ✅ | ✅ | Cloud/Hybrid/On-Prem |
-| **BUSINESS CONTINUITY LAYER** ⭐ NEW | | | | | | | | | |
+| **BUSINESS CONTINUITY LAYER** (NEW) | | | | | | | | | |
 | EATGF-BCP-PLAN-01 | BC/DR Planning | BCP | Preventive | Resilience | Annual | ❌ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 | EATGF-BCP-TEST-01 | BC/DR Testing | BCP | Detective | Resilience | Annual | ❌ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 | EATGF-BCP-RTO-01 | RTO/RPO Management | BCP | Detective | Ops | Monthly | ❌ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
@@ -1245,6 +1290,7 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 | EATGF-API-LC-01 | API Lifecycle | BAI | Preventive | API PM | Per Release | ✅ | ✅ | ✅ | Cloud/Hybrid/On-Prem |
 
 **Legend:**
+
 - ✅ = Mandatory for edition
 - ❌ = Not applicable for edition
 - ⚠️ = Conditional (if applicable to organization)
@@ -1253,17 +1299,19 @@ The **Master Control Matrix (MCM)** is the authoritative, single source of truth
 
 ---
 
-## 🔗 MCM TO EVIDENCE MAPPING
+## MCM TO EVIDENCE MAPPING
 
 Each control maps to specific evidence requirements:
 
 ### Evidence Types
+
 1. **Document-based:** Policy, procedure, charter, manual
 2. **System-based:** Dashboard, log, audit trail, configuration
 3. **Process-based:** Meeting minutes, review record, approval log
 4. **Assessment-based:** Assessment report, test results, audit report
 
 ### Evidence Lifecycle
+
 - **Collection:** Evidence gathered per review frequency
 - **Storage:** Centralized evidence repository (SharePoint/Confluence)
 - **Verification:** Evidence validated before audit
@@ -1275,24 +1323,28 @@ Each control maps to specific evidence requirements:
 ## 📊 MCM USAGE GUIDE
 
 ### For ISO 27001 SoA
+
 1. Filter/copy controls marked "ISO 27001 Annex A"
 2. Populate SoA Template with column mappings
 3. Add applicability justifications
 4. Review and approve
 
 ### For Audit Preparation
+
 1. Review all controls in MCM
 2. Gather evidence per checklist
 3. Verify completeness
 4. Submit to auditor
 
 ### For Control Assessment
+
 1. Select control by ID
 2. Review description and evidence
 3. Assess current state (implemented/partial/not)
 4. Plan remediation if needed
 
 ### For Compliance Reporting
+
 1. Filter by applicability (Startup/SaaS/Enterprise)
 2. Generate status dashboard
 3. Create exception report
@@ -1302,11 +1354,11 @@ Each control maps to specific evidence requirements:
 
 ## 📅 VERSION & STATUS
 
-**Framework:** EATGF v1.0 (MCM Complete - Phase 1.5 Integrated)  
-**Total Controls:** 35 (21 Foundation + 14 Expansion)  
-**Document Version:** 1.0 (Integrated)  
-**Last Updated:** February 13, 2026  
-**Status:** ✅ **UNIFIED MCM READY FOR PHASE 2**  
+**Framework:** EATGF v1.0 (MCM Complete - Phase 1.5 Integrated)
+**Total Controls:** 35 (21 Foundation + 14 Expansion)
+**Document Version:** 1.0 (Integrated)
+**Last Updated:** February 13, 2026
+**Status:** ✅ **UNIFIED MCM READY FOR PHASE 2**
 
 ---
 
@@ -1315,16 +1367,19 @@ Each control maps to specific evidence requirements:
 **These steps will be completed AFTER MCM v1.0 is fully integrated:**
 
 **Phase 2A (Week 1):**
+
 - [ ] Update Statement of Applicability Template with 35 controls
 - [ ] Update Governance Charter with CLD/DEV/DATA/BCP domains
 - [ ] Validate Framework Mappings with new controls
 
 **Phase 2B (Week 2):**
+
 - [ ] Create ISMS Manual outline (ISO 27001 - Layer 3)
 - [ ] Create AIMS Manual outline (ISO 42001 - Layer 3)
 - [ ] Create Internal Audit Procedure (MEA-AUD-01 implementation)
 
 **Phase 2C (Week 3):**
+
 - [ ] Create Evidence Register Template (centralized tracking)
 - [ ] Create Risk Appetite Statement (formal EDM-RISK-01 doc)
 - [ ] Create Management System Layer documentation
@@ -1333,12 +1388,12 @@ Each control maps to specific evidence requirements:
 
 ## 📞 GOVERNANCE & MAINTENANCE
 
-**MCM Authority:** Chief Governance Officer  
-**MCM Owner:** Governance Council  
-**Update Frequency:** Semi-annual (Feb & Aug)  
-**Emergency Updates:** As-needed for regulatory changes  
+**MCM Authority:** Chief Governance Officer
+**MCM Owner:** Governance Council
+**Update Frequency:** Semi-annual (Feb & Aug)
+**Emergency Updates:** As-needed for regulatory changes
 
-**Questions:** Directed to the Governance Council via internal channels.  
+**Questions:** Directed to the Governance Council via internal channels.
 **Escalation:** Directed to the Chief Governance Officer via the defined escalation chain.
 
 ---
@@ -1371,23 +1426,26 @@ This MCM does not reproduce or extract copyrighted text from these standards. Al
 ### Framework Authorities & Limitations
 
 **Governance Coverage:**
+
 - This framework provides comprehensive coverage of governance controls across COBIT 2019, ISO 27001:2022, and ISO 42001:2023.
 - Coverage is based on alignment interpretation and does not guarantee complete coverage of all standards' provisions.
 
 **Audit & Compliance:**
+
 - This MCM is designed for **internal governance guidance** and **audit preparation**.
 - External certification bodies must conduct independent compliance assessments and validation.
 - Status field reflects internal maturity only and requires external audit for certification claims.
 
 **AI Management System (AIMS):**
+
 - Controls mapped to ISO 42001:2023 reflect AI governance best practices.
 - ISO 27701 references for privacy controls are **informative guidance only** and do not imply PIMS (Privacy Information Management System) certification.
 
 ---
 
-**Framework:** Enterprise AI-Aligned Technical Governance Framework (EATGF)  
-**Document Type:** Master Control Matrix (Unified - Phase 1.5 Integrated)  
-**Document Version:** 1.0 (Phase 1.5 Complete: 35 Controls Integrated)  
-**Last Updated:** February 13, 2026  
-**Next Review:** August 2026  
+**Framework:** Enterprise AI-Aligned Technical Governance Framework (EATGF)
+**Document Type:** Master Control Matrix (Unified - Phase 1.5 Integrated)
+**Document Version:** 1.0 (Phase 1.5 Complete: 35 Controls Integrated)
+**Last Updated:** February 13, 2026
+**Next Review:** August 2026
 **Status:** ✅ **MCM v1.0 UNIFIED - READY FOR PHASE 2 (ISMS/AIMS/Audit Layer)**

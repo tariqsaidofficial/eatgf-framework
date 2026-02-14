@@ -1,354 +1,571 @@
-# EATGF Version Governance Policy
+# EATGF_VERSION_GOVERNANCE_POLICY
 
-## Enterprise AI-Aligned Technical Governance Framework (EATGF)
-
-| Field | Value |
-|-------|-------|
-| Document Type | Policy |
-| Version | 1.0 |
-| Classification | Internal |
-| Effective Date | 2026-02-14 |
-| Authority | Enterprise Architecture & Governance Office |
-| MCM Reference | EATGF-GOV-DOC-004 |
-
----
-
-## 1. Purpose
-
-This document establishes the version governance policy for the Enterprise AI-Aligned Technical Governance Framework (EATGF). It defines baseline freeze rules, version increment models, control modification impact scoring, deprecation and archival rules, edition branching strategy, public portal versioning, and changelog structure.
-
-## 2. Scope
-
-This policy applies to:
-
-- All versioned content within the EATGF authority repository (`tariqsaidofficial/eatgf-framework`)
-- All 8 governance layers (00–07) and their constituent documents
-- The Master Control Matrix and all control definitions
-- The public portal version display and version history
-- Edition-specific content variants (Startup, SaaS, Enterprise)
-
-This policy does not govern the version of the portal application itself (Docusaurus, Node.js dependencies), which is managed by the portal maintainer through standard package management.
-
-## 3. Definitions
-
-| Term | Definition |
-|------|-----------|
-| Baseline | A declared, immutable snapshot of the framework at a specific version tag. Once frozen, a baseline cannot be modified. |
-| Version Increment | A change to the version identifier following semantic versioning rules (Major.Minor.Patch). |
-| Control Modification Impact Score | A numeric assessment (1–10) of the governance significance of a change to an MCM control. |
-| Deprecation | The formal process of marking a document as superseded, with a defined transition period before archival. |
-| Archival | The permanent transfer of a deprecated document to the Reference & Evolution layer (Layer 07) in a read-only state. |
-| Edition | A tailored variant of the framework scaled for a specific organizational size (Startup, SaaS, Enterprise). |
-
-## 4. Responsibilities
-
-| Role | Responsibility |
-|------|---------------|
-| Framework Owner | Declares baselines, approves major version increments, and authorizes deprecation |
-| Governance Reviewer | Validates control modification impact scores and version increment classification |
-| Document Author | Assigns initial impact scores and maintains version history in Document Control blocks |
-| Portal Maintainer | Executes Docusaurus versioning commands and maintains the version dropdown |
+| Field          | Value                                                         |
+| -------------- | ------------------------------------------------------------- |
+| Document Type  | Policy                                                        |
+| Version        | 1.2                                                           |
+| Classification | Controlled                                                    |
+| Effective Date | 2026-02-14                                                    |
+| Authority      | Enterprise Architecture and Governance Office                 |
+| EATGF Layer    | 04_POLICY_LAYER                                               |
+| MCM Reference  | EATGF-BAI-CHG-01, EATGF-BAI-CONF-01                           |
+| Standards      | ISO 27001:2022 A.8.32/A.8.9, NIST SSDF PW.3/PW.4, COBIT BAI06 |
 
 ---
 
-## 5. Baseline Freeze Rules
+## Purpose
 
-### 5.1 Declaration
+This policy defines official version governance model for EATGF framework establishing semantic versioning structure (MAJOR.MINOR.PATCH), release discipline, tagging rules, governance freeze policies, change classification standards, and cross-repository version synchronization. Version governance ensures framework structural stability, change traceability, audit defensibility, and institutional credibility. All framework releases must comply with versioning standards to maintain baseline integrity and external audit reference.
 
-A baseline freeze is declared when the following conditions are met:
+## Architectural Position
 
-1. All documents in the target scope pass the 10-element Document Signature Template compliance check (per DOCUMENTATION_STYLE_REVIEW_REPORT.md).
-2. The Master Control Matrix contains no unresolved control taxonomy conflicts.
-3. All cross-references between layers are validated (no broken internal links).
-4. A Baseline Declaration document is authored and approved (per BASELINE_DECLARATION_v1.0.md precedent).
-5. An annotated Git tag is created on the `main` branch.
+This policy operates within **04_POLICY_LAYER** as the authoritative framework version control and release management standard.
 
-### 5.2 Immutability
+- **Upstream dependency:** Governance Charter (Layer 04) establishes change approval authority; Git Governance Policy defines branch and tag enforcement; BASELINE_DECLARATION (00_FOUNDATION) establishes version 1.0 baseline
+- **Downstream usage:** All EATGF framework documents reference version numbers per this policy; CHANGELOG.md tracked in 00_FOUNDATION per release requirements; governance documentation site displays current version; audit reports reference specific version baselines
+- **Cross-layer reference:** BAI-CHG-01 (Change Management) implemented through version release workflow; MEA-AUD-01 (Internal Audit) audits version compliance; MASTER_CONTROL_MATRIX remains control authority across all versions
 
-Once a baseline is declared:
+## Governance Principles
 
-1. The tagged commit is permanently immutable. The tag shall not be deleted or force-pushed.
-2. No changes may be made to any file at the tagged commit — corrections create a new version.
-3. The Baseline Declaration document is part of the frozen state and is itself immutable.
-4. The frozen state includes all 8 layers and their directory structure at that commit.
+1. **Baseline Freeze Discipline** – Published version baselines are immutable; corrections require new patch version release
+2. **Semantic Versioning Integrity** – All changes classified as MAJOR (breaking changes), MINOR (additions), or PATCH (corrections) without exception
+3. **Transparent Change History** – Every version includes changelog entry documenting changes, affected layers, and compatibility impact
+4. **Backward Compatibility Protection** – MINOR and PATCH versions maintain backward compatibility; MAJOR versions document breaking changes and migration guidance
+5. **Audit Traceability** – Git tags and version documentation provide audit trail for framework evolution and baseline verification
 
-### 5.3 Correction of Frozen Baselines
+## Technical Implementation
 
-If an error is discovered in a frozen baseline:
+### Semantic Versioning Model
 
-1. A new patch version is created (e.g., v1.0.0 → v1.0.1).
-2. The correction is documented in the changelog with a reference to the frozen baseline.
-3. The frozen baseline tag remains intact — it is never modified.
-4. The correction carries a `FIX` commit type per the Git Governance Policy.
-
----
-
-## 6. Version Increment Model
-
-### 6.1 Semantic Versioning
-
-The EATGF uses semantic versioning with governance-specific interpretation:
+EATGF versioning follows semantic versioning standard (SemVer 2.0.0):
 
 ```
-vMAJOR.MINOR.PATCH
+MAJOR.MINOR.PATCH
 ```
 
-| Component | Increment Trigger | Examples |
-|-----------|------------------|----------|
-| **PATCH** (v1.0.X) | Editorial corrections that do not alter meaning, scope, or authority | Typo fix, formatting correction, broken link repair, clarification of existing text without scope change |
-| **MINOR** (v1.X.0) | Content additions or updates that do not alter the control taxonomy or framework architecture | New policy document, section addition, framework mapping extension, governance model update, evidence specification addition |
-| **MAJOR** (vX.0.0) | Changes that alter the control taxonomy, framework layer structure, or architectural boundaries | MCM control addition/removal, layer restructuring, control ID format change, edition model redesign, management system scope change |
+**Version Component Definitions:**
 
-### 6.2 Version Increment Decision Matrix
+**MAJOR Version (X.0.0):**
 
-| Change Type | Impact Score | Version Increment | Approval |
-|-------------|-------------|-------------------|----------|
-| Editorial correction | 1–2 | Patch | 1 reviewer |
-| Content clarification | 2–3 | Patch | 1 reviewer |
-| New section in existing document | 3–4 | Minor | 1 reviewer |
-| New document addition | 4–5 | Minor | 2 reviewers |
-| Policy expansion | 5–6 | Minor | 2 reviewers + Framework Owner |
-| Framework mapping addition | 4–5 | Minor | 2 reviewers |
-| Control objective modification | 6–7 | Minor or Major | Framework Owner |
-| MCM control addition | 8–9 | Major | Executive Steering Committee |
-| Control taxonomy restructuring | 9–10 | Major | Executive Steering Committee |
-| Layer architecture change | 10 | Major | Executive Steering Committee |
+- Structural or architectural framework changes
+- Control taxonomy modifications (control ID changes, domain restructuring)
+- Breaking changes requiring organizational implementation updates
+- Layer additions or removal
+- Incompatible with previous major version
 
----
+Examples:
 
-## 7. Control Modification Impact Scoring
+- EATGF-v1.0-Foundation (Initial 14 controls)
+- EATGF-v2.0-Extended (35 controls, 11 domains added)
 
-### 7.1 Scoring Criteria
+**MINOR Version (1.X.0):**
 
-Every change that affects an MCM control shall be assigned an impact score on a scale of 1–10:
+- New domain frameworks added (e.g., Developer Governance Layer addition)
+- New controls added to existing domains without breaking taxonomy
+- Significant enhancements to existing documents maintaining compatibility
+- New policy additions
 
-| Score | Severity | Definition | Downstream Impact |
-|-------|----------|-----------|-------------------|
-| 1 | Negligible | Formatting or typographic correction within a control field | None |
-| 2 | Minimal | Clarification of a control description without scope change | None |
-| 3 | Low | Update to evidence requirements or evidence type specification | Evidence Register update |
-| 4 | Moderate-Low | Change to control owner assignment | RACI chart update |
-| 5 | Moderate | Modification of a control's mapping to external standards | Framework Mappings update |
-| 6 | Moderate-High | Change to a control objective's measurable target | Performance Model + Maturity Assessment update |
-| 7 | High | Addition of a new control within an existing domain | All dependent documents update |
-| 8 | High-Critical | Removal or merger of an existing control | All dependent documents + audit procedure update |
-| 9 | Critical | Change to the control ID naming convention | All documents referencing control IDs update |
-| 10 | Architectural | Restructuring of control domains or framework layers | Full framework review cycle |
+Examples:
 
-### 7.2 Scoring Process
+- EATGF-v1.1-Control-Enhancement (Control Objectives expanded)
+- EATGF-v1.2-Git-Governance (Git and Version policies formalized)
 
-1. The change author assigns the initial impact score in the pull request description.
-2. The Governance Reviewer validates or adjusts the score during review.
-3. Changes scoring 7+ require Framework Owner review.
-4. Changes scoring 9+ require Executive Steering Committee review.
-5. The final impact score is recorded in the changelog entry.
+**PATCH Version (1.1.X):**
 
----
+- Clarifications and corrections to existing content
+- Typo fixes and formatting improvements
+- Documentation enhancements without control changes
+- Minor evidence requirement clarifications
 
-## 8. Deprecation Rules
+Examples:
 
-### 8.1 Deprecation Process
+- EATGF-v1.1.1 (Typo corrections in FRAMEWORK_MAPPINGS.md)
+- EATGF-v1.2.1 (Formatting standardization across Layer 04 policies)
 
-When a document is superseded by a replacement:
+### Git Tagging Standard
 
-1. Add the following deprecation notice at the top of the document, immediately after the H1 title:
+All formal releases require Git tag creation:
 
-```markdown
-> **DEPRECATED** — This document has been superseded by [replacement document name](relative-link).
-> Deprecation Date: YYYY-MM-DD | Archival Target Date: YYYY-MM-DD
-> This document remains accessible during the transition period. After the archival target date,
-> it will be moved to 07_REFERENCE_AND_EVOLUTION/HISTORICAL_IMPLEMENTATION_ARTIFACTS/.
+**Tag Naming Convention:**
+
+```
+EATGF-vMAJOR.MINOR.PATCH
 ```
 
-2. Update the Version & Status Block with a final entry recording the deprecation.
-3. The replacement document shall include a reference to the deprecated document for traceability.
-4. Cross-references to the deprecated document across the framework shall be updated to point to the replacement.
-
-### 8.2 Transition Period
-
-- Deprecated documents remain in their current directory for **2 review cycles** of the replacement document.
-- Review cycle duration is defined in the replacement document's metadata (typically quarterly or semi-annually).
-- During the transition period, both documents are accessible. The deprecated document is read-only.
-
-### 8.3 Deprecation Candidates
-
-Documents eligible for deprecation:
-
-1. Documents superseded by a formal v2 replacement (e.g., `01_GOVERNANCE_CHARTER.md` → `GOVERNANCE_CHARTER_FORMAL_v2.md`)
-2. Documents with content absorbed into other authoritative documents
-3. Documents with obsolete references (e.g., pre-expansion 14-control taxonomy documents after in-place update)
-
----
-
-## 9. Archival Rules
-
-### 9.1 Archival Process
-
-After the transition period expires:
-
-1. Move the deprecated document to `07_REFERENCE_AND_EVOLUTION/HISTORICAL_IMPLEMENTATION_ARTIFACTS/`.
-2. Add `[ARCHIVED]` prefix to the H1 title:
-
-```markdown
-# [ARCHIVED] Original Document Title
-```
-
-3. Add archival metadata block immediately after the H1:
-
-```markdown
-| Archival Field | Value |
-|---------------|-------|
-| Original Location | [original path] |
-| Archive Date | YYYY-MM-DD |
-| Archival Authority | [approver name/role] |
-| Reason | Superseded by [replacement document] |
-| Replacement Document | [relative link to replacement] |
-```
-
-4. The archived document is **read-only** — no further modifications are permitted.
-5. Remove the deprecated document's entry from any `_category_.json` sidebar configuration (it should not appear in the portal navigation after archival, though it remains accessible via direct URL in the Reference & Evolution layer).
-
-### 9.2 Archival Exceptions
-
-The following documents shall not be archived regardless of age:
-
-- Baseline Declaration documents (historical baselines are governance artifacts)
-- MCM snapshots (each version represents a governance state)
-- Governance approval records (PHASE_2_WEEK_1_GO_APPROVAL.md, etc.)
-
----
-
-## 10. Edition Branching Rules
-
-### 10.1 Edition Definitions
-
-| Edition | Target Organization | Team Size | Control Scope | Version Track |
-|---------|--------------------|-----------|--------------|--------------| 
-| **Startup** | Early-stage organizations | 1–10 | Core controls per MCM applicability matrix | vX.Y-Startup |
-| **SaaS** | Growth-stage technology organizations | 11–100 | Core + domain-specific controls | vX.Y-SaaS |
-| **Enterprise** | Mature organizations with regulatory requirements | 100+ | Full 35-control MCM | vX.Y-Enterprise |
-
-### 10.2 Edition Version Tracking
-
-1. All editions share the same **major version** — they represent views of the same framework, not separate frameworks.
-2. Edition-specific minor versions are permitted when an edition requires content not applicable to other editions.
-3. The edition identifier is appended to the version tag: `EATGF-v1.0.0-Startup`, `EATGF-v1.0.0-Enterprise`.
-4. Control applicability per edition is defined in GOVERNANCE_BY_TEAM_SIZE.md (Layer 03).
-
-### 10.3 Edition Governance
-
-1. Changes to the MCM control applicability matrix require Framework Owner approval.
-2. A control marked as "Not Applicable" for an edition remains defined in the MCM — it is excluded from the edition's implementation scope, not from the framework itself.
-3. Edition-specific implementation guidance is maintained in GOVERNANCE_BY_TEAM_SIZE.md, not in separate repositories or branches.
-
----
-
-## 11. Public Portal Versioning
-
-### 11.1 Docusaurus Version Snapshots
-
-The public portal uses Docusaurus versioned documentation to maintain access to previous framework versions:
-
-1. **Create a version snapshot** when a new major or significant minor version is tagged:
+**Tag Creation Procedure:**
 
 ```bash
-cd governance-docs-site/portal
-npx docusaurus docs:version X.Y
+# Create annotated tag with descriptive message
+git tag -a EATGF-v1.2.0 -m "MINOR: Git Governance and Version Governance policies formalized"
+
+# Verify tag
+git tag -l "EATGF-v*"
+
+# Push tag to origin
+git push origin EAT GF-v1.2.0
 ```
 
-2. This creates a `versioned_docs/version-X.Y/` directory containing the framework state at that version.
-3. The portal navbar displays a version dropdown allowing readers to switch between versions.
+**For Signed Tags (Enterprise edition requirement):**
 
-### 11.2 Version Display Rules
+```bash
+# Create GPG-signed tag
+git tag -s EATGF-v1.2.0 -m "MINOR: Git Governance and Version Governance policies formalized"
 
-| Location | Display Format |
-|----------|---------------|
-| Navbar version dropdown | `v1.0`, `v1.1`, `v2.0` |
-| Footer | `EATGF v1.0 — Foundation Edition` |
-| Hero banner badge | `EATGF v1.0 | Foundation Edition | Baseline Frozen YYYY-MM-DD` |
-| Document header table | `Version: 1.0` (document-level version) |
+# Verify signature
+git tag -v EATGF-v1.2.0
 
-### 11.3 Version Lifecycle in Portal
+# Push signed tag
+git push origin EATGF-v1.2.0
+```
 
-| Portal Version State | Meaning |
-|---------------------|---------|
-| **Current** | The default version shown to all readers; the latest approved baseline |
-| **Maintained** | A previous version that is still referenced by adopters; accessible via dropdown |
-| **Unmaintained** | A historical version that is no longer updated; accessible via dropdown with notice |
-| **Archived** | Removed from the dropdown; accessible only via direct URL |
+**Tag Immutability:**
 
----
+- Once pushed to origin, tags must not be deleted or modified
+- Tag corrections require new patch version (e.g., EATGF-v1.2.1 replaces incorrect EATGF-v1.2.0)
+- Tag tampering triggers audit investigation per DSS-INC-01
 
-## 12. Changelog Structure
+### Release Branch Model
 
-### 12.1 Changelog File
+Standard branch structure for version management:
 
-Maintain `07_REFERENCE_AND_EVOLUTION/CHANGELOG.md` as the authoritative record of all framework changes.
+```
+main                → Stable baseline (always tagged with latest release)
+release/vX.Y        → Version preparation branches (e.g., release/v1.2)
+feature/*           → Development branches for new capabilities
+hotfix/*            → Emergency patch corrections
+```
 
-### 12.2 Changelog Format
+**Release Workflow:**
+
+1. **Feature Development:** Create feature branch from main
+2. **Feature Completion:** Merge feature to main via pull request
+3. **Release Preparation:** Create release/vX.Y branch when preparing new version
+4. **Release Candidate Testing:** Test release branch; apply fixes directly to release branch
+5. **Release Finalization:** Merge release branch to main, create tag, update changelog
+6. **Release Publication:** Push tag to origin, update documentation site
+
+**Branch Protection:** Main branch protected per Git Governance Policy (no direct commits, PR approval required).
+
+### Changelog Requirement
+
+Changelog location: `/00_FOUNDATION/CHANGELOG.md`
+
+**Changelog Entry Format:**
 
 ```markdown
-# EATGF Changelog
+## [X.Y.Z] - YYYY-MM-DD
 
-## [vX.Y.Z] — YYYY-MM-DD
+### Summary
 
-### Edition
-[Foundation / Startup / SaaS / Enterprise]
+Brief description of release purpose
 
-### Impact Classification
-[Minor / Structural / Control-Affecting]
+### Change Classification
 
-### Added
-- [LAYER-NN] Description of addition (MCM Ref: EATGF-XXX-YYY-NNN)
+- Type: MAJOR / MINOR / PATCH
+- Breaking Changes: Yes / No
 
-### Changed
-- [LAYER-NN] Description of change (MCM Ref: EATGF-XXX-YYY-NNN)
+### Affected Layers
 
-### Removed
-- [LAYER-NN] Description of removal (MCM Ref: EATGF-XXX-YYY-NNN)
+- List of EATGF layers modified
 
-### Fixed
-- [LAYER-NN] Description of correction
+### Changes
 
-### Security
-- [LAYER-NN] Description of security-related change (MCM Ref: EATGF-XXX-YYY-NNN)
+#### Added
 
-### Governance
-- Control Modification Impact Score: [1–10]
-- Approval Authority: [Reviewer / Framework Owner / Executive Steering Committee]
-- Baseline Freeze Status: [Active / Not applicable]
+- New features or documents added
+
+#### Changed
+
+- Modifications to existing documents
+
+#### Fixed
+
+- Corrections and bug fixes
+
+#### Removed
+
+- Deprecated or removed content
+
+### Impact Statement
+
+Description of how this version affects implementers
+
+### Compatibility Status
+
+- Backward Compatible: Yes / No
+- Migration Required: Yes / No
+- Migration Guide: [Link if applicable]
+
+### Control Impact
+
+- List of control IDs affected by this release
+
+### References
+
+- Related decision records
+- GitHub PR numbers
 ```
 
-### 12.3 Changelog Rules
+**Example Changelog Entry:**
 
-1. Every tagged version shall have a corresponding changelog entry.
-2. Changelog entries shall reference affected MCM control IDs where applicable.
-3. The changelog is append-only — previous entries shall not be modified.
-4. Changelog entries for Control-Affecting changes shall include the impact score.
+```markdown
+## [1.2.0] - 2026-02-14
+
+### Summary
+
+Formalization of Git Governance and Version Governance policies with comprehensive EATGF formatting standards enforcement.
+
+### Change Classification
+
+- Type: MINOR
+- Breaking Changes: No
+
+### Affected Layers
+
+- 04_POLICY_LAYER (Git and Version governance policies added)
+- 00_FOUNDATION (FORMATTING_STANDARDS_OFFICIAL.md added)
+
+### Changes
+
+#### Added
+
+- EATGF_GIT_GOVERNANCE_POLICY.md (comprehensive Git workflow governance)
+- EATGF_VERSION_GOVERNANCE_POLICY.md (semantic versioning standards)
+- FORMATTING_STANDARDS_OFFICIAL.md (8-section mandatory template)
+
+#### Changed
+
+- All layer README files reformatted to 8-section template
+- Policy documents updated with enhanced metadata tables
+
+### Impact Statement
+
+Organizations implementing EATGF should update documentation standards to align with 8-section template. No control changes; existing implementations remain valid.
+
+### Compatibility Status
+
+- Backward Compatible: Yes
+- Migration Required: No
+
+### Control Impact
+
+- EATGF-BAI-CHG-01: Git Governance Policy implements change management requirements
+- EATGF-BAI-CONF-01: Version Governance Policy implements configuration baseline requirements
+
+### References
+
+- Decision Record: PHASE_2_vs_PHASE_3_DECISION_FRAMEWORK.md
+- GitHub PR: #42, #43, #44
+```
+
+### Versioning Decision Matrix
+
+Decision tree for version classification:
+
+| Change Type                   | Control Changes | Layer Changes | Documentation Only | Version Classification |
+| ----------------------------- | --------------- | ------------- | ------------------ | ---------------------- |
+| Control ID modified           | Yes             | Any           | Any                | MAJOR                  |
+| Control added                 | Yes (new ID)    | No            | Any                | MINOR                  |
+| Layer added/removed           | No              | Yes           | Any                | MAJOR                  |
+| Policy added                  | No              | No            | Yes (new policy)   | MINOR                  |
+| Enhanced documentation        | No              | No            | Yes (existing doc) | PATCH                  |
+| Typo fixes                    | No              | No            | Yes                | PATCH                  |
+| Evidence requirements changed | Yes             | No            | Any                | MAJOR                  |
+| Mapping expanded              | No              | No            | Yes                | MINOR                  |
+
+**When in doubt:** Classify as MINOR. MAJOR reserved for breaking changes only.
+
+### Release Approval Authority
+
+Version release approval levels:
+
+| Version Type | Approval Authority           | Documentation Required                                                               |
+| ------------ | ---------------------------- | ------------------------------------------------------------------------------------ |
+| PATCH        | Technical Lead               | Changelog entry, PR approval                                                         |
+| MINOR        | Governance Council           | Changelog entry, impact assessment, PR approval                                      |
+| MAJOR        | Board or Executive Committee | Changelog entry, impact assessment, migration guide, board presentation, PR approval |
+
+Release authority documented in CODEOWNERS file per Git Governance Policy.
+
+### Cross-Repository Version Synchronization
+
+EATGF spans multiple repositories:
+
+- `eatgf-framework` (framework documents - authority repository)
+- `governance-docs-site` (Docusaurus portal)
+
+**Synchronization Requirement:**
+
+- Portal version must match framework version
+- Submodule reference in governance-docs-site updated with each framework release
+- Portal deployment triggered only after framework tag published
+
+**Synchronization Procedure:**
+
+```bash
+# In eatgf-framework repository
+git tag -a EATGF-v1.2.0 -m "MINOR: Git and Version governance formalization"
+git push origin EATGF-v1.2.0
+
+# In governance-docs-site repository
+cd framework
+git pull origin main
+git checkout EATGF-v1.2.0
+cd ..
+git add framework
+git commit -m "Update framework submodule to EATGF-v1.2.0"
+git tag -a portal-v1.2.0 -m "Portal release aligned with EATGF-v1.2.0"
+git push origin portal-v1.2.0
+```
+
+## Control Mapping
+
+| Governance Aspect       | ISO 27001:2022                      | NIST SSDF                          | OWASP                  | COBIT                         |
+| ----------------------- | ----------------------------------- | ---------------------------------- | ---------------------- | ----------------------------- |
+| Change Control          | A.8.32 (Change management)          | PW.3 (Change tracking)             | SAMM Governance        | BAI06 (Manage changes)        |
+| Configuration Integrity | A.8.9 (Configuration management)    | PW.4 (Configuration baseline)      | SAMM Implementation    | DSS01 (Operations management) |
+| Audit Traceability      | A.5.35 (Independent review)         | RV.1 (Verification and validation) | ASVS V1 (Architecture) | MEA03 (Compliance assurance)  |
+| Governance Oversight    | A.5.1 (Information security policy) | PO.1 (Define governance strategy)  | SAMM Governance        | EDM02 (Benefits delivery)     |
+
+Version governance supports:
+
+- EATGF-BAI-CHG-01 (Change Management) – Version release workflow enforces change approval
+- EATGF-BAI-CONF-01 (Configuration Management) – Git tags establish immutable configuration baselines
+- EATGF-MEA-AUD-01 (Internal Audit) – Version history provides audit trail for framework evolution
+
+## Developer Checklist
+
+Before creating any version release:
+
+- [ ] All changes classified as MAJOR, MINOR, or PATCH per versioning decision matrix
+- [ ] Changelog entry written following changelog entry format template
+- [ ] Impact statement completed (how version affects implementers)
+- [ ] Compatibility status determined (backward compatible yes/no)
+- [ ] Control impact identified (list of affected control IDs)
+- [ ] Git tag created with EATGF-vX.Y.Z naming convention
+- [ ] Tag message includes change type and brief summary
+- [ ] Signed tag created (if Enterprise edition requirement)
+- [ ] Branch protection verified active on main branch
+- [ ] Pull request approved by designated authority per approval authority table
+- [ ] No direct commits to main (all changes via PR)
+- [ ] CHANGELOG.md updated in /00_FOUNDATION/
+- [ ] For MAJOR versions: Migration guide prepared if backward incompatible
+- [ ] For portal release: Submodule reference updated in governance-docs-site
+- [ ] For portal release: Portal tag created matching framework version
+
+Critical requirement: No release is valid without complete checklist compliance.
+
+## Governance Implications
+
+### Framework Baseline Integrity
+
+If version governance not enforced:
+
+- Framework drift occurs without controlled baseline
+- Control mappings lose integrity (audit references invalid)
+- External auditors cannot verify baseline version during certification
+- Implementers deploy inconsistent framework versions
+- Governance documentation site publishes unreliable content
+- Institutional credibility compromised
+
+Enforcement requirement: Version discipline protects framework authority and organizational trust.
+
+### Change Traceability and Audit Defense
+
+- Git tags provide immutable version baselines for audit reference
+- Changelog entries document rationale for framework evolution
+- Version history demonstrates continuous improvement aligned with maturity progression
+- Audit findings reference specific version baselines (e.g., "Assessed against EATGF-v1.2.0")
+
+Audit preparation: Organizations specify EATGF version in Statement of Applicability for audit scope definition.
+
+### Release Authority and Accountability
+
+- MAJOR version releases require Board or Executive approval demonstrating governance oversight
+- MINOR version releases require Governance Council approval ensuring controlled enhancement
+- PATCH version releases delegated to technical authority for efficiency
+- CODEOWNERS enforce approval workflow per Git Governance Policy
+
+Release authority documentation: Governance Council minutes record version approval decisions.
+
+### Cross-Repository Consistency
+
+- Submodule synchronization ensures portal always displays current framework version
+- Version mismatch between repositories triggers configuration management audit finding
+- Portal deployment automation gated on framework tag publication
+
+Deployment discipline: Portal releases only occur after framework tag verified and published.
+
+## Official References
+
+- **Semantic Versioning 2.0.0** – SemVer specification (Preston-Werner, 2013)
+- **ISO/IEC 27001:2022 A.8.32** – Change Management (ISO, 2022)
+- **ISO/IEC 27001:2022 A.8.9** – Configuration Management (ISO, 2022)
+- **NIST SP 800-218** – Secure Software Development Framework, Practices PW.3, PW.4 (NIST, 2022)
+- **COBIT 2019** – BAI06 Managed Changes, MEA03 Compliance with External Requirements (ISACA, 2019)
+- **OWASP SAMM** – Software Assurance Maturity Model, Governance and Implementation (OWASP, 2020)
+- **Pro Git Book** – Tagging and Distributed Workflows (Chacon & Straub, 2014)
+
+This document defines the official version governance model for the Enterprise AI-Aligned Technical Governance Framework (EATGF).
+
+It establishes:
+
+- Version control structure for framework evolution
+- Release discipline and tagging rules
+- Governance freeze policies
+- Change classification (Major / Minor / Patch)
+- Cross-repository version synchronization
+
+This policy ensures structural stability, traceability, and audit defensibility.
 
 ---
 
-## 13. Governance Enforcement Rules
+## Architectural Position
 
-1. All version increments shall follow the semantic versioning model defined in Section 6.
-2. Baseline freezes are irrevocable except through the Emergency Unfreeze process defined in the Git Governance Policy.
-3. Control modifications scoring 7+ on the impact scale require formal governance review prior to merge.
-4. Deprecated documents that exceed their transition period without archival constitute a policy violation.
-5. Edition-specific changes that alter control applicability require Framework Owner approval.
-6. The changelog shall be updated as part of every version tag. Tags without corresponding changelog entries shall not be created.
-7. Public portal version snapshots shall be created for every major version and for minor versions that introduce new documents or policies.
+**EATGF Layer:** 00_FOUNDATION
+
+**Scope:** Governance Meta-Control (Framework-Level Control)
+
+**Authority Relationship:** Governs all documents across Layers 00–08
+
+This policy does not define operational controls.
+It governs how the framework itself evolves.
+
+MASTER_CONTROL_MATRIX remains the sole control authority.
 
 ---
 
-**Document Control**
+## Governance Principles
 
-| Version | Date | Author | Change Description |
-|---------|------|--------|-------------------|
-| 1.0 | 2026-02-14 | Enterprise Architecture & Governance Office | Initial version governance policy |
+- Baseline Freeze Discipline
+- Controlled Evolution
+- Transparent Change History
+- Semantic Versioning Integrity
+- Backward Compatibility Protection
+- Audit Traceability
 
-**Authority Sign-Off**
+Versioning is treated as a governance control, not a documentation convenience.
 
-| Role | Name | Date | Signature |
-|------|------|------|-----------|
-| Framework Owner | | | |
-| Chief Governance Officer | | | |
+---
+
+## Technical Implementation
+
+### 1. Semantic Versioning Model
+
+EATGF follows:
+
+```text
+MAJOR.MINOR.PATCH
+```
+
+Where:
+
+- **MAJOR** → Structural or architectural change
+- **MINOR** → New domain or significant addition
+- **PATCH** → Clarification, correction, formatting fix
+
+Example:
+
+```text
+EATGF-v1.0-Foundation
+EATGF-v1.1-Control-Enhancement
+EATGF-v2.0-Developer-Layer
+```
+
+### 2. Git Tagging Standard
+
+All releases must be tagged.
+
+```bash
+git tag -a EATGF-v1.1 -m "Minor enhancement: Added Developer Implementation Layer"
+git push origin EATGF-v1.1
+```
+
+Tags are immutable once published.
+
+### 3. Release Branch Model
+
+```text
+main           → stable baseline
+release/*      → candidate versions
+feature/*      → controlled development
+hotfix/*       → patch corrections
+```
+
+Branch protection must be enforced.
+
+### 4. Changelog Requirement
+
+Each version must include:
+
+- Summary of change
+- Change classification
+- Affected layers
+- Impact statement
+- Compatibility status
+
+Changelog must live in:
+
+```text
+/00_FOUNDATION/CHANGELOG.md
+```
+
+---
+
+## Control Mapping
+
+| Governance Aspect       | ISO 27001:2022                 | NIST SSDF | OWASP               | COBIT |
+| ----------------------- | ------------------------------ | --------- | ------------------- | ----- |
+| Change Control          | A.8.32 Change Management       | PW.3      | SAMM Governance     | BAI06 |
+| Configuration Integrity | A.8.9 Configuration Management | PW.4      | SAMM Implementation | DSS01 |
+| Audit Traceability      | A.5.35 Compliance              | RV.1      | ASVS V1             | MEA03 |
+| Governance Oversight    | A.5.1 Policies                 | PO.1      | SAMM Governance     | EDM02 |
+
+Version governance acts as a meta-layer alignment control.
+
+---
+
+## Developer Checklist
+
+- [ ] All changes classified as MAJOR / MINOR / PATCH
+- [ ] Changelog entry written
+- [ ] Git tag created
+- [ ] Branch protection active
+- [ ] Pull request approved by governance authority
+- [ ] No direct commits to main
+- [ ] Release notes updated
+
+No release is valid without these steps.
+
+---
+
+## Governance Implications
+
+If version governance is not enforced:
+
+- Framework drift occurs
+- Control mappings lose integrity
+- External auditors lose baseline reference
+- Developers implement inconsistent standards
+- Public portal becomes unreliable
+
+Version discipline protects institutional credibility.
+
+---
+
+## Official References
+
+- ISO/IEC 27001:2022 – Annex A.8.32 (Change Management)
+- ISO/IEC 27001:2022 – Annex A.8.9 (Configuration Management)
+- NIST SP 800-218 (SSDF) – PW.3, PW.4
+- COBIT 2019 – BAI06 (Managed Changes), MEA03 (Compliance)
+- OWASP SAMM – Governance & Implementation
+
+---
+
+## Version Declaration
+
+**Document Version:** 1.1
+**Change Type:** Structural Refactor (Template Alignment)
+**Date:** February 2026
+**Baseline Compatibility:** Fully compatible with EATGF-v1.0-Foundation

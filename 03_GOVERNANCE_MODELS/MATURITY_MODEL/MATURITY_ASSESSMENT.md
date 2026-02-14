@@ -2,15 +2,15 @@
 
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
-| Field | Value |
-|-------|-------|
-| Document Type | Assessment Framework |
-| Version | 1.1 |
-| Classification | Internal |
-| Effective Date | 2026-02-14 |
-| Assessment Frequency | Annual |
-| Authority | Enterprise Architecture & Governance Office |
-| MCM Reference | EATGF-MEA-MAT-01 |
+| Field                | Value                                       |
+| -------------------- | ------------------------------------------- |
+| Document Type        | Assessment Framework                        |
+| Version              | 1.1                                         |
+| Classification       | Internal                                    |
+| Effective Date       | 2026-02-14                                  |
+| Assessment Frequency | Annual                                      |
+| Authority            | Enterprise Architecture & Governance Office |
+| MCM Reference        | EATGF-MEA-MAT-01                            |
 
 ---
 
@@ -26,13 +26,13 @@ The governance maturity model measures organizational capability across 5 core d
 
 ### Maturity Levels
 
-| Level | Status | Characteristics |
-|-------|--------|-----------------|
-| **1 - Initial** | ⚫ Red | Ad-hoc, reactive, undocumented |
+| Level              | Status    | Characteristics                    |
+| ------------------ | --------- | ---------------------------------- |
+| **1 - Initial**    | ⚫ Red    | Ad-hoc, reactive, undocumented     |
 | **2 - Developing** | 🟠 Orange | Processes documented, inconsistent |
-| **3 - Defined** | 🟡 Yellow | Standardized, measured |
-| **4 - Managed** | 🟢 Green | Measured, controlled |
-| **5 - Optimized** | 🟣 Purple | Continuous improvement |
+| **3 - Defined**    | 🟡 Yellow | Standardized, measured             |
+| **4 - Managed**    | 🟢 Green  | Measured, controlled               |
+| **5 - Optimized**  | 🟣 Purple | Continuous improvement             |
 
 ---
 
@@ -41,30 +41,35 @@ The governance maturity model measures organizational capability across 5 core d
 ### Dimension 1: Process Maturity
 
 **Level 1 (Initial):** 0-20 points
+
 - Processes are informal
 - Decisions made ad-hoc
 - Documentation minimal
 - No standards defined
 
 **Level 2 (Developing):** 21-40 points
+
 - Processes starting to be documented
 - Some standards emerging
 - Inconsistent execution
 - Limited measurement
 
 **Level 3 (Defined):** 41-60 points
+
 - Processes documented & communicated
 - Standards established enterprise-wide
 - Measured and monitored
 - Regular reviews scheduled
 
 **Level 4 (Managed):** 61-80 points
+
 - Processes optimized
 - KPIs tracked actively
 - Variance analyzed & resolved
 - Continuous improvement evident
 
 **Level 5 (Optimized):** 81-100 points
+
 - Processes automated where possible
 - Predictive analytics used
 - Innovation piloted
@@ -76,12 +81,12 @@ The governance maturity model measures organizational capability across 5 core d
 
 **Assessment Questions:**
 
-| Question | 1-Initial | 2-Developing | 3-Defined | 4-Managed | 5-Optimized |
-|----------|-----------|-------------|-----------|-----------|-------------|
-| Do team members understand governance framework? | <20% know | 20-40% know | 40-60% aware | 60-80% proficient | >90% expert |
-| Is training provided? | No | Informal | Annual | Quarterly | Monthly + specialized |
-| Are there certified professionals? | None | 1-2 people | 5-10 people | 20%+ team | 50%+ team |
-| Is knowledge documented? | No | Scattered docs | Central wiki | Dynamic knowledge base | AI-assisted knowledge |
+| Question                                         | 1-Initial | 2-Developing   | 3-Defined    | 4-Managed              | 5-Optimized           |
+| ------------------------------------------------ | --------- | -------------- | ------------ | ---------------------- | --------------------- |
+| Do team members understand governance framework? | <20% know | 20-40% know    | 40-60% aware | 60-80% proficient      | >90% expert           |
+| Is training provided?                            | No        | Informal       | Annual       | Quarterly              | Monthly + specialized |
+| Are there certified professionals?               | None      | 1-2 people     | 5-10 people  | 20%+ team              | 50%+ team             |
+| Is knowledge documented?                         | No        | Scattered docs | Central wiki | Dynamic knowledge base | AI-assisted knowledge |
 
 **Scoring:** Assess each question, average to get People Capability score.
 
@@ -91,13 +96,13 @@ The governance maturity model measures organizational capability across 5 core d
 
 **Key Tools/Integrations:**
 
-| Tool/System | Level 1 | Level 2 | Level 3 | Level 4 | Level 5 |
-|-----------|---------|---------|---------|---------|---------|
-| Policy Management | Emails | Shared docs | Wiki/LMS | Integrated platform | AI-powered |
-| Risk Management | Spreadsheets | Basic tool | COTS solution | Integrated dashboard | Predictive |
-| Compliance Tracking | Manual | Spreadsheets | Database | Automated system | Self-healing |
-| Audit Evidence | Paper files | Folder structure | Digital system | Integrated system | Blockchain |
-| Reporting | Manual | Automated exports | Dashboards | Real-time BI | Predictive |
+| Tool/System         | Level 1      | Level 2           | Level 3        | Level 4              | Level 5      |
+| ------------------- | ------------ | ----------------- | -------------- | -------------------- | ------------ |
+| Policy Management   | Emails       | Shared docs       | Wiki/LMS       | Integrated platform  | AI-powered   |
+| Risk Management     | Spreadsheets | Basic tool        | COTS solution  | Integrated dashboard | Predictive   |
+| Compliance Tracking | Manual       | Spreadsheets      | Database       | Automated system     | Self-healing |
+| Audit Evidence      | Paper files  | Folder structure  | Digital system | Integrated system    | Blockchain   |
+| Reporting           | Manual       | Automated exports | Dashboards     | Real-time BI         | Predictive   |
 
 **Scoring:** 20 points per tool integrated at Level 3+, up to 100.
 
@@ -107,12 +112,12 @@ The governance maturity model measures organizational capability across 5 core d
 
 **Evidence Requirements by Level:**
 
-| Level | Audit Trail | Documentation | Approval | Verification |
-|-------|-----------|----------------|----------|--------------|
-| **1** | None | Minimal | None | Ad-hoc |
-| **2** | Partial | Basic | Manual | Manual checks |
-| **3** | Complete digital | Comprehensive | Workflow | Quarterly audit |
-| **4** | Complete + immutable | Detailed + versioned | Automated | Monthly + automated |
+| Level | Audit Trail          | Documentation         | Approval    | Verification           |
+| ----- | -------------------- | --------------------- | ----------- | ---------------------- |
+| **1** | None                 | Minimal               | None        | Ad-hoc                 |
+| **2** | Partial              | Basic                 | Manual      | Manual checks          |
+| **3** | Complete digital     | Comprehensive         | Workflow    | Quarterly audit        |
+| **4** | Complete + immutable | Detailed + versioned  | Automated   | Monthly + automated    |
 | **5** | Blockchain/audit log | Real-time + versioned | AI-assisted | Real-time + predictive |
 
 **Scoring:** Assess each requirement category. Maximum 100 points.
@@ -123,14 +128,14 @@ The governance maturity model measures organizational capability across 5 core d
 
 **Maturity Indicators:**
 
-| Indicator | Score |
-|-----------|-------|
-| Governance review cadence (Annual) | 10 |
-| Process improvement initiatives tracked | 15 |
-| Lessons learned database | 15 |
-| Feedback mechanisms in place | 15 |
-| Innovation pilots launched | 15 |
-| Maturity trending (improving over time?) | 15 |
+| Indicator                                | Score |
+| ---------------------------------------- | ----- |
+| Governance review cadence (Annual)       | 10    |
+| Process improvement initiatives tracked  | 15    |
+| Lessons learned database                 | 15    |
+| Feedback mechanisms in place             | 15    |
+| Innovation pilots launched               | 15    |
+| Maturity trending (improving over time?) | 15    |
 
 **Scoring:** 0-100 points based on initiatives and effectiveness.
 
@@ -140,12 +145,12 @@ The governance maturity model measures organizational capability across 5 core d
 
 ### Domain 1: EDM (Evaluate, Direct, Monitor)
 
-| Control | Level 1 | Level 2 | Level 3 | Level 4 | Level 5 |
-|---------|---------|---------|---------|---------|---------|
-| Governance committee | No | Informal | Official | Chartered | Strategic |
-| Board oversight | None | Annual | Quarterly | Monthly | Real-time |
-| Strategy alignment | Ad-hoc | Planned | Measured | Optimized | Predictive |
-| Risk monitoring | None | Manual | Dashboard | Automated | AI-driven |
+| Control              | Level 1 | Level 2  | Level 3   | Level 4   | Level 5    |
+| -------------------- | ------- | -------- | --------- | --------- | ---------- |
+| Governance committee | No      | Informal | Official  | Chartered | Strategic  |
+| Board oversight      | None    | Annual   | Quarterly | Monthly   | Real-time  |
+| Strategy alignment   | Ad-hoc  | Planned  | Measured  | Optimized | Predictive |
+| Risk monitoring      | None    | Manual   | Dashboard | Automated | AI-driven  |
 
 **EDM Maturity Score:** Average of control scores
 
@@ -153,12 +158,12 @@ The governance maturity model measures organizational capability across 5 core d
 
 ### Domain 2: APO (Align, Plan, Organize)
 
-| Control | Level 1 | Level 2 | Level 3 | Level 4 | Level 5 |
-|---------|---------|---------|---------|---------|---------|
-| Strategy documentation | None | Draft | Finalized | Living doc | Dynamic |
-| IT roadmap | None | Basic | Detailed | Prioritized | Capacity-based |
-| Organizational structure | Unclear | Defined | Optimized | Integrated | Adaptive |
-| Skills management | Ad-hoc | Planned | Tracked | Optimized | Predictive |
+| Control                  | Level 1 | Level 2 | Level 3   | Level 4     | Level 5        |
+| ------------------------ | ------- | ------- | --------- | ----------- | -------------- |
+| Strategy documentation   | None    | Draft   | Finalized | Living doc  | Dynamic        |
+| IT roadmap               | None    | Basic   | Detailed  | Prioritized | Capacity-based |
+| Organizational structure | Unclear | Defined | Optimized | Integrated  | Adaptive       |
+| Skills management        | Ad-hoc  | Planned | Tracked   | Optimized   | Predictive     |
 
 **APO Maturity Score:** Average of control scores
 
@@ -166,12 +171,12 @@ The governance maturity model measures organizational capability across 5 core d
 
 ### Domain 3: BAI (Build, Acquire, Implement)
 
-| Control | Level 1 | Level 2 | Level 3 | Level 4 | Level 5 |
-|---------|---------|---------|---------|---------|---------|
-| Project governance | None | Charter | Formal PMO | Integrated | AI-assisted |
-| Requirements management | Informal | Documented | Tracked | Managed | Adaptive |
-| System acceptance | Manual | Checklist | Testing | Automated | Self-validating |
-| Implementation control | Ad-hoc | Process | Gate reviews | Integrated | Continuous |
+| Control                 | Level 1  | Level 2    | Level 3      | Level 4    | Level 5         |
+| ----------------------- | -------- | ---------- | ------------ | ---------- | --------------- |
+| Project governance      | None     | Charter    | Formal PMO   | Integrated | AI-assisted     |
+| Requirements management | Informal | Documented | Tracked      | Managed    | Adaptive        |
+| System acceptance       | Manual   | Checklist  | Testing      | Automated  | Self-validating |
+| Implementation control  | Ad-hoc   | Process    | Gate reviews | Integrated | Continuous      |
 
 **BAI Maturity Score:** Average of control scores
 
@@ -179,12 +184,12 @@ The governance maturity model measures organizational capability across 5 core d
 
 ### Domain 4: DSS (Deliver, Service, Support)
 
-| Control | Level 1 | Level 2 | Level 3 | Level 4 | Level 5 |
-|---------|---------|---------|---------|---------|---------|
-| Service delivery | Informal | SLA defined | SLA managed | SLA guaranteed | Predictive |
-| Security incident mgmt | Reactive | Process | Automated | Real-time | Self-healing |
-| Availability mgmt | Ad-hoc | Monitored | Managed | Guaranteed | Predictive |
-| Change management | Informal | Process | Controlled | Automated | Continuous |
+| Control                | Level 1  | Level 2     | Level 3     | Level 4        | Level 5      |
+| ---------------------- | -------- | ----------- | ----------- | -------------- | ------------ |
+| Service delivery       | Informal | SLA defined | SLA managed | SLA guaranteed | Predictive   |
+| Security incident mgmt | Reactive | Process     | Automated   | Real-time      | Self-healing |
+| Availability mgmt      | Ad-hoc   | Monitored   | Managed     | Guaranteed     | Predictive   |
+| Change management      | Informal | Process     | Controlled  | Automated      | Continuous   |
 
 **DSS Maturity Score:** Average of control scores
 
@@ -192,12 +197,12 @@ The governance maturity model measures organizational capability across 5 core d
 
 ### Domain 5: MEA (Monitor, Evaluate, Assess)
 
-| Control | Level 1 | Level 2 | Level 3 | Level 4 | Level 5 |
-|---------|---------|---------|---------|---------|---------|
-| KPI definition | None | Basic | Comprehensive | Dynamic | AI-optimized |
-| Performance monitoring | Manual | Automated | Dashboards | Real-time | Predictive |
-| Compliance monitoring | Ad-hoc | Scheduled | Continuous | Automated | Self-healing |
-| Audit & assurance | Annual | Quarterly | Monthly | Continuous | Real-time |
+| Control                | Level 1 | Level 2   | Level 3       | Level 4    | Level 5      |
+| ---------------------- | ------- | --------- | ------------- | ---------- | ------------ |
+| KPI definition         | None    | Basic     | Comprehensive | Dynamic    | AI-optimized |
+| Performance monitoring | Manual  | Automated | Dashboards    | Real-time  | Predictive   |
+| Compliance monitoring  | Ad-hoc  | Scheduled | Continuous    | Automated  | Self-healing |
+| Audit & assurance      | Annual  | Quarterly | Monthly       | Continuous | Real-time    |
 
 **MEA Maturity Score:** Average of control scores
 
@@ -206,6 +211,7 @@ The governance maturity model measures organizational capability across 5 core d
 ## 4. OVERALL GOVERNANCE MATURITY SCORE
 
 **Formula:**
+
 ```
 Overall Score = (EDM + APO + BAI + DSS + MEA) / 5
 ```
@@ -239,12 +245,14 @@ Interpretation:
 ### Step 1: Questionnaire (2 hours)
 
 **Participants:**
+
 - Governance lead (facilitator)
 - Domain owners (5 COBIT domains)
 - Process owners
 - Compliance officer
 
 **Assessment for each control:**
+
 1. Read control description
 2. Rate current state (1-5)
 3. Provide evidence
@@ -253,6 +261,7 @@ Interpretation:
 ### Step 2: Evidence Validation (1 week)
 
 **Validate with documentation:**
+
 - Policies & procedures
 - Process flow diagrams
 - System screens/dashboards
@@ -262,6 +271,7 @@ Interpretation:
 ### Step 3: Executive Review (1 week)
 
 **Review & discuss:**
+
 - Overall trends
 - Strengths & weaknesses
 - Improvement priorities
@@ -270,6 +280,7 @@ Interpretation:
 ### Step 4: Roadmap Development (2 weeks)
 
 **Create 12-month improvement plan:**
+
 - Quick wins (1-3 months)
 - Medium-term (4-9 months)
 - Long-term (10-12+ months)
@@ -281,11 +292,13 @@ Interpretation:
 ### Near Term (Months 1-3): Foundation
 
 **Goals:**
+
 - Establish baseline maturity
 - Quick wins to gain momentum
 - Executive alignment
 
 **Sample Initiatives:**
+
 - [ ] Governance committee meetings formalized
 - [ ] Risk register created
 - [ ] Policy templates standardized
@@ -294,11 +307,13 @@ Interpretation:
 ### Medium Term (Months 4-9): Building
 
 **Goals:**
+
 - Standardize processes
 - Increase measurement
 - Build team capability
 
 **Sample Initiatives:**
+
 - [ ] Process documentation complete
 - [ ] KPI dashboards launched
 - [ ] Training program expanded
@@ -307,11 +322,13 @@ Interpretation:
 ### Long Term (Months 10-12+): Optimization
 
 **Goals:**
+
 - Continuous improvement culture
 - Predictive capabilities
 - Industry leadership
 
 **Sample Initiatives:**
+
 - [ ] Governance automation
 - [ ] AI-assisted monitoring
 - [ ] Benchmark against peer organizations
@@ -321,28 +338,31 @@ Interpretation:
 
 ## 7. MATURITY ASSESSMENT FREQUENCY
 
-| Assessment Level | Frequency | Owner | Duration |
-|-----------------|-----------|-------|----------|
-| Self-assessment | Quarterly | Domain leads | 4 hours |
-| Governance review | Semi-annual | Governance Council | 1 day |
-| External audit | Annual | External auditor | 2 weeks |
-| Peer benchmark | Bi-annual | Governance lead | 1 week |
+| Assessment Level  | Frequency   | Owner              | Duration |
+| ----------------- | ----------- | ------------------ | -------- |
+| Self-assessment   | Quarterly   | Domain leads       | 4 hours  |
+| Governance review | Semi-annual | Governance Council | 1 day    |
+| External audit    | Annual      | External auditor   | 2 weeks  |
+| Peer benchmark    | Bi-annual   | Governance lead    | 1 week   |
 
 ---
 
 ## 8. HISTORICAL MATURITY TRACKING
 
 **Year 1 (2026):**
+
 - Q1 Baseline: 2.5 (Developing)
 - Q3 Target: 3.0 (Defined)
 - Q4 Target: 3.2 (Defined+)
 
 **Year 2 (2027):**
+
 - Q1 Target: 3.5 (Defined/Managed)
 - Q3 Target: 4.0 (Managed)
 - Q4 Target: 4.2 (Managed+)
 
 **Stretch Goal (2028):**
+
 - Level 5 (Optimized) in AI governance
 - Level 4+ in all domains
 
@@ -371,10 +391,10 @@ Top 3 Improvement Areas:
   3. APO - Automated compliance tracking
 
 Progress on Last Year's Goals:
-  ✅ Governance committee established
-  ✅ Risk register implemented
-  ⏳ Tool integrations (70% complete)
-  ❌ AI governance framework (blocked on resource)
+  Governance committee established
+  Risk register implemented
+  Tool integrations (70% complete)
+  AI governance framework (blocked on resource)
 ```
 
 ---
@@ -385,5 +405,5 @@ Progress on Last Year's Goals:
 
 ---
 
-**Next Assessment:** Q1 2027  
+**Next Assessment:** Q1 2027
 **Questions:** Directed to the Governance Council via internal channels.

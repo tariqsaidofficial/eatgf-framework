@@ -1,379 +1,497 @@
-# EATGF Git Governance Policy
+# EATGF_GIT_GOVERNANCE_POLICY
 
-## Enterprise AI-Aligned Technical Governance Framework (EATGF)
-
-| Field | Value |
-|-------|-------|
-| Document Type | Policy |
-| Version | 1.0 |
-| Classification | Internal |
-| Effective Date | 2026-02-14 |
-| Authority | Enterprise Architecture & Governance Office |
-| MCM Reference | EATGF-GOV-DOC-003 |
-
----
-
-## 1. Purpose
-
-This document establishes the Git repository governance policy for the Enterprise AI-Aligned Technical Governance Framework (EATGF). It defines the authority repo and portal repo architecture, submodule management rules, version tagging strategy, branch discipline, pull request governance, change approval workflows, freeze policies, and commit message conventions.
-
-## 2. Scope
-
-This policy applies to:
-
-- The EATGF authority repository (`tariqsaidofficial/eatgf-framework`)
-- The EATGF portal repository (`governance-docs-site`)
-- All contributors, reviewers, and maintainers with write access to either repository
-- All branches, tags, releases, and submodule references within these repositories
-
-This policy does not govern third-party repositories or forks that are not under the control of the EATGF governance authority.
-
-## 3. Definitions
-
-| Term | Definition |
-|------|-----------|
-| Authority Repository | The single source of truth for all EATGF governance content. All content changes originate here. |
-| Portal Repository | The presentation layer — a Docusaurus site that renders the authority repository content via Git submodule. |
-| Submodule | A Git reference from the portal repository to a specific commit in the authority repository. The `framework/` directory in the portal is a read-only submodule. |
-| Baseline Freeze | A governance-mandated state in which no changes may be made to a tagged version. |
-| Control-Affecting Change | A modification that adds, removes, or alters a control in the Master Control Matrix. |
-
-## 4. Responsibilities
-
-| Role | Responsibility |
-|------|---------------|
-| Framework Owner | Approves all Structural and Control-affecting changes; manages version tags |
-| Governance Reviewer | Reviews pull requests for policy compliance, structural consistency, and writing identity |
-| Portal Maintainer | Updates submodule pointer after authority repo releases; maintains portal build integrity |
-| Contributor | Follows branch discipline, commit conventions, and PR requirements defined in this policy |
+| Field          | Value                                                         |
+| -------------- | ------------------------------------------------------------- |
+| Document Type  | Policy                                                        |
+| Version        | 1.2                                                           |
+| Classification | Controlled                                                    |
+| Effective Date | 2026-02-14                                                    |
+| Authority      | Enterprise Architecture and Governance Office                 |
+| EATGF Layer    | 04_POLICY_LAYER                                               |
+| MCM Reference  | EATGF-BAI-CHG-01, EATGF-BAI-CONF-01, EATGF-DEV-CI-01          |
+| Standards      | ISO 27001:2022 A.8.32/A.8.9, NIST SSDF PW.3/PW.4, COBIT BAI06 |
 
 ---
 
-## 5. Repository Architecture
+## Purpose
 
-### 5.1 Authority Repository
+This policy defines official Git governance model for EATGF framework repositories ensuring controlled, audit itable, and tamper-resistant framework evolution. Git is treated as governance control surface (not mere collaboration tool) with branch discipline, pull request controls, commit integrity standards, repository protection rules, review authority model, and security hardening expectations. All framework changes must comply with Git governance to preserve control alignment and version integrity.
 
-| Attribute | Value |
-|-----------|-------|
-| Repository | `tariqsaidofficial/eatgf-framework` |
-| Branch Model | `main` (protected) + feature/release/hotfix branches |
-| Content | All 8 governance layers (00–07), 44 documents, MCM, policies, controls |
-| Role | Single source of truth — content changes originate exclusively here |
+## Architectural Position
 
-### 5.2 Portal Repository
+This policy operates within **04_POLICY_LAYER** as the authoritative Git workflow and version control governance standard.
 
-| Attribute | Value |
-|-----------|-------|
-| Repository | `governance-docs-site` |
-| Branch Model | `main` (protected) + staging/hotfix branches |
-| Content | Docusaurus configuration, custom CSS, components, blog, portal-specific docs |
-| Submodule | `framework/` → read-only reference to `eatgf-framework` |
-| Role | Presentation layer — renders framework content; never modifies it |
+- **Upstream dependency:** Governance Charter (Layer 04) establishes change authority; Version Governance Policy defines semantic versioning rules; Master Control Matrix references change management controls (BAI-CHG-01)
+- **Downstream usage:** All EATGF framework repositories (`eatgf-framework`, `governance-docs-site`) implement branch protection and PR workflows per this policy; developer workflows (Layer 08) enforce Git standards; audit evidence collection (Layer 06) references Git commit history
+- **Cross-layer reference:** BAI-CHG-01 (Change Management) implemented through Git PR workflow; DEV-CI-01 (CI/CD Governance) enforces Git pipeline integration; MEA-AUD-01 (Internal Audit) audits Git commit compliance
 
-### 5.3 Submodule Architecture Rules
+## Governance Principles
 
-1. The `framework/` directory in the portal repository is a Git submodule pointing to the authority repository.
-2. Content changes shall never be made directly in the `framework/` submodule directory. All changes originate in the authority repository.
-3. The submodule pointer shall reference a tagged commit, not a branch HEAD, in production deployments.
-4. Portal repository maintainers update the submodule pointer via:
+1. **No Direct Commits to Main** – All framework changes require pull request review; direct commits to main branch prohibited without exception
+2. **Traceable Change History** – Every commit must include descriptive message with layer context, control impact, and version classification
+3. **Immutable Version Tags** – Release tags (EATGF-vX.Y format) are immutable once published; tag modification prohibited
+4. **Security-First Repository** – Secret scanning, dependency vulnerability alerts, and branch protection enabled across all EATGF repositories
+5. **Git as Audit Evidence** – Commit history, PR approvals, and branch protection logs serve as compliance evidence for change management audits
+
+## Technical Implementation
+
+### Branch Model
+
+Standard branch structure:
+
+```
+main                → Stable baseline (protected)
+release/*           → Version preparation branches
+feature/*           → Structured additions and enhancements
+hotfix/*            → Emergency corrections
+```
+
+Development workflow: No development occurs directly on main branch. All changes originate from feature or hotfix branches merged via pull request.
+
+### Branch Protection Rules
+
+Mandatory GitHub branch protection settings for main branch:
+
+- Require pull request before merging
+- Require at least 1 approval from codeowners
+- Require status checks to pass before merging
+- Prevent force pushes
+- Prevent branch deletion
+- Require signed commits (recommended for Enterprise edition)
+- Require linear history (optional)
+
+Configuration enforcement: Repository administrators verify branch protection quarterly per MEA-PERF-01 monitoring requirements.
+
+### Commit Message Standard
+
+Required commit message format:
+
+```
+[LAYER_CODE] Short summary (max 72 characters)
+
+Extended explanation (if required, wrapped at 72 chars)
+Control impact: [Control IDs affected]
+Version impact: [MAJOR/MINOR/PATCH]
+```
+
+Example commit message:
 
 ```bash
-cd governance-docs-site
-git submodule update --remote framework
-git add framework
-git commit -m "[META] SUBMODULE: Update framework to EATGF-vX.Y"
+git commit -m "[02_CONTROL_ARCHITECTURE] Add NIST SSDF mapping to API Governance
+
+Expanded Control Mapping table in API_GOVERNANCE_FRAMEWORK.md
+Control impact: EATGF-API-SEC-01, EATGF-DEV-SDLC-01
+Version impact: MINOR"
 ```
 
-5. After updating the submodule pointer, a portal build verification shall be executed prior to merge:
+Layer codes:
+
+- 00_FOUNDATION
+- 01_MANAGEMENT_SYSTEMS
+- 02_CONTROL_ARCHITECTURE
+- 03_GOVERNANCE_MODELS
+- 04_POLICY_LAYER
+- 05_DOMAIN_FRAMEWORKS
+- 06_AUDIT_AND_ASSURANCE
+- 07_REFERENCE_AND_EVOLUTION
+- 08_DEVELOPER_GOVERNANCE_LAYER
+
+### Pull Request Requirements
+
+Each pull request must include:
+
+**PR Title Format:**
+
+```
+[LAYER_CODE] Brief description of change
+```
+
+**PR Description Template:**
+
+```
+## Change Description
+[Detailed description of what changed and why]
+
+## Affected Layers
+- [ ] 00_FOUNDATION
+- [ ] 01_MANAGEMENT_SYSTEMS
+- [ ] 02_CONTROL_ARCHITECTURE
+- [ ] 03_GOVERNANCE_MODELS
+- [ ] 04_POLICY_LAYER
+- [ ] 05_DOMAIN_FRAMEWORKS
+- [ ] 06_AUDIT_AND_ASSURANCE
+- [ ] 07_REFERENCE_AND_EVOLUTION
+- [ ] 08_DEVELOPER_GOVERNANCE_LAYER
+
+## Control Impact Statement
+[List affected control IDs and impact description]
+
+## Version Classification
+- [ ] MAJOR (breaking changes, control structure modifications)
+- [ ] MINOR (new controls, enhancements)
+- [ ] PATCH (clarifications, typo fixes, documentation updates)
+
+## Documentation Confirmation
+- [ ] README updated (if applicable)
+- [ ] CHANGELOG updated (for MINOR/MAJOR changes)
+- [ ] Control Mapping verified (if control changes)
+- [ ] No secrets in diff
+
+## Reviewer Checklist
+- [ ] Change aligns with affected layer purpose
+- [ ] Control alignment preserved
+- [ ] Version impact correctly classified
+- [ ] Documentation complete
+```
+
+PR approval authority: Minimum 1 approval required from CODEOWNERS file designated reviewers. Major version changes require 2 approvals.
+
+### Signed Tags for Releases
+
+Release tagging procedure:
 
 ```bash
-cd portal && npm run build
+# Create signed tag
+git tag -s EATGF-v1.2.0 -m "Minor enhancement - Git Governance Policy formalization"
+
+# Verify tag signature
+git tag -v EATGF-v1.2.0
+
+# Push tag to origin
+git push origin EATGF-v1.2.0
 ```
+
+Tag naming convention: `EATGF-vMAJOR.MINOR.PATCH` (e.g., EATGF-v1.2.0)
+
+Tag immutability: Once pushed to origin, tags must not be deleted or modified. Tag corrections require new patch version.
+
+Tag signing: GPG signature required for all release tags in SaaS and Enterprise editions.
+
+### Repository Security Controls
+
+Mandatory security configurations:
+
+**Secret Scanning:**
+
+- GitHub secret scanning enabled
+- Pre-commit hooks to prevent secret commits (recommended)
+- Secret scanning alerts monitored weekly
+
+**Dependency Vulnerability Alerts:**
+
+- Dependabot enabled for all repositories
+- Security vulnerabilities addressed within SLA: Critical (24 hours), High (7 days), Medium (30 days)
+
+**Code Scanning (Optional but Recommended):**
+
+- CodeQL or similar static analysis enabled
+- Scan results reviewed before merge
+
+**Audit Log Access:**
+
+- Repository audit log reviewed quarterly
+- Audit log retention: 12 months minimum
+
+### CODEOWNERS File
+
+CODEOWNERS file structure:
+
+```
+# EATGF Framework Codeowners
+# Format: path pattern    @owner-username
+
+# Default owners for all files
+*                           @governance-team
+
+# Layer-specific ownership
+/00_FOUNDATION/             @architecture-lead @governance-lead
+/01_MANAGEMENT_SYSTEMS/     @isms-lead @audit-lead
+/02_CONTROL_ARCHITECTURE/   @architecture-lead @compliance-lead
+/03_GOVERNANCE_MODELS/      @governance-lead
+/04_POLICY_LAYER/           @governance-lead @legal-counsel
+/05_DOMAIN_FRAMEWORKS/      @domain-architects
+/06_AUDIT_AND_ASSURANCE/    @audit-lead
+/07_REFERENCE_AND_EVOLUTION/ @governance-lead
+/08_DEVELOPER_GOVERNANCE_LAYER/ @engineering-lead
+
+# Specific high-authority documents
+/00_FOUNDATION/MASTER_CONTROL_MATRIX.md    @ciso @governance-lead
+/04_POLICY_LAYER/GOVERNANCE_CHARTER*.md     @ceo @ciso @governance-lead
+```
+
+CODEOWNERS enforcement: GitHub automatically requests review from designated owners when files in their scope are modified.
+
+## Control Mapping
+
+| Governance Aspect     | ISO 27001:2022                 | NIST SSDF                     | OWASP                  | COBIT                  |
+| --------------------- | ------------------------------ | ----------------------------- | ---------------------- | ---------------------- |
+| Change Management     | A.8.32 (Change control)        | PW.3 (Change tracking)        | SAMM Governance        | BAI06 (Manage changes) |
+| Configuration Control | A.8.9 (Asset management)       | PW.4 (Configuration baseline) | ASVS V1 (Architecture) | DSS01 (Operations)     |
+| Secure Code Practices | A.8.28 (Secure coding)         | PW.7 (Code review)            | SAMM Implementation    | BAI03 (Solutions)      |
+| Compliance Monitoring | A.5.35 (Compliance monitoring) | RV.1 (Verification)           | SAMM Governance        | MEA03 (Assurance)      |
+| Governance Oversight  | A.5.1 (Policy framework)       | PO.1 (Governance)             | -                      | EDM02 (Benefits)       |
+
+Git governance directly supports:
+
+- EATGF-BAI-CHG-01 (Change Management) – PR workflow enforces change approval
+- EATGF-BAI-CONF-01 (Configuration Management) – Git history provides configuration baseline
+- EATGF-DEV-CI-01 (CI/CD Governance) – Branch protection integrates with pipeline gates
+- EATGF-MEA-AUD-01 (Internal Audit) – Git commit history serves as audit evidence
+
+## Developer Checklist
+
+Before merging any framework change:
+
+- [ ] Feature or hotfix branch created from main (not committed directly to main)
+- [ ] Branch name follows convention (feature/_, hotfix/_)
+- [ ] Commit messages follow [LAYER_CODE] format with control impact and version classification
+- [ ] Pull request created with complete PR description template
+- [ ] Affected layers identified in PR description
+- [ ] Control impact statement completed
+- [ ] Version impact classified (MAJOR/MINOR/PATCH)
+- [ ] Documentation updated (README, CHANGELOG if applicable)
+- [ ] No secrets detected in diff (verified via git-secrets or manual review)
+- [ ] At least 1 reviewer approval obtained from CODEOWNERS
+- [ ] All status checks passed (CI/CD pipeline green)
+- [ ] Branch protection rules satisfied
+- [ ] For releases: Signed tag prepared with EATGF-vX.Y.Z format
+- [ ] For releases: Tag verified with `git tag -v EATGF-vX.Y.Z`
+
+Critical requirement: No merge permitted without complete checklist compliance.
+
+## Governance Implications
+
+### Framework Integrity Risk
+
+If Git governance not enforced:
+
+- Framework drift occurs due to uncontrolled modifications
+- Version mapping becomes unreliable (tags modified or deleted)
+- Audit traceability lost (no PR approval evidence)
+- Unauthorized changes bypass review process
+- Control alignment weakens (no control impact assessment)
+- Compliance evidence chain broken (commit history incomplete)
+
+Enforcement requirement: Git governance discipline preserves framework authority and audit defensibility.
+
+### Change Authority and Accountability
+
+- Pull request approval serves as change authorization evidence for BAI-CHG-01 compliance
+- CODEOWNERS assignments establish clear accountability for framework changes
+- Commit author attribution provides audit trail for change responsibility
+- PR review comments document change rationale and impact assessment
+
+Governance Council oversight: Quarterly review of Git governance compliance metrics (PR approval rate, branch protection compliance, commit message quality).
+
+### Version Control and Release Management
+
+- Immutable tags ensure version baseline stability for audit reference
+- Semantic versioning (per Version Governance Policy) implemented through Git tag naming
+- Release branches enable controlled version preparation with pre-release testing
+- Tag signatures provide tamper-evidence for release authenticity (Enterprise edition requirement)
+
+Release authority: Only designated release managers (per CODEOWNERS) may create and push version tags.
+
+### Security and Confidentiality
+
+- Secret scanning prevents accidental credential exposure in framework documentation
+- Branch protection prevents unauthorized force pushes that could erase audit history
+- Repository audit logs track administrative actions (branch protection changes, tag deletions)
+- Access control (GitHub repository permissions) aligned with principle of least privilege
+
+Security incident response: Any detected secret in commit history triggers immediate rotation per DSS-INC-01.
+
+## Official References
+
+- **ISO/IEC 27001:2022 A.8.32** – Change Management (ISO, 2022)
+- **ISO/IEC 27001:2022 A.8.9** – Configuration Management (ISO, 2022)
+- **NIST SP 800-218** – Secure Software Development Framework, Practices PW.3, PW.4 (NIST, 2022)
+- **COBIT 2019** – BAI06 Managed Changes (ISACA, 2019)
+- **OWASP SAMM** – Software Assurance Maturity Model, Governance and Implementation (OWASP, 2020)
+- **GitHub Documentation** – Branch Protection Rules (GitHub, 2024)
+- **Pro Git Book** – Distributed Workflows and Tagging (Chacon & Straub, 2014)
+
+This document defines the official Git governance model for the Enterprise AI-Aligned Technical Governance Framework (EATGF).
+
+It establishes:
+
+- Branch discipline
+- Pull request controls
+- Commit integrity standards
+- Repository protection rules
+- Review authority model
+- Security hardening expectations
+
+This policy ensures that framework evolution is controlled, auditable, and resistant to accidental or unauthorized modification.
+
+**Git is treated as a governance control surface.**
 
 ---
 
-## 6. Branch Discipline
+## Architectural Position
 
-### 6.1 Authority Repository Branches
+**EATGF Layer:** 00_FOUNDATION
 
-| Branch Pattern | Purpose | Protection | Lifecycle |
-|---------------|---------|-----------|-----------|
-| `main` | Current approved baseline | Protected — requires PR + review | Permanent |
-| `release/vX.Y` | Release candidate preparation | Protected — freeze-eligible | Deleted after merge to `main` and tag |
-| `hotfix/[description]` | Critical corrections to released versions | Requires 1 reviewer | Deleted after merge |
-| `feature/[description]` | New content, new documents, structural changes | Requires PR | Deleted after merge |
+**Control Scope:** Framework Source Integrity
 
-### 6.2 Portal Repository Branches
+**Applies To:**
 
-| Branch Pattern | Purpose | Protection | Lifecycle |
-|---------------|---------|-----------|-----------|
-| `main` | Production-deployed portal | Protected — requires PR + build pass | Permanent |
-| `staging` | Pre-production validation | Build must pass | Permanent |
-| `hotfix/[description]` | Critical portal fixes | Requires 1 reviewer | Deleted after merge |
+- `eatgf-framework` (Authority Repo)
+- `governance-docs-site` (Portal Repo)
 
-### 6.3 Branch Naming Convention
+Git Governance enforces structural protection across all EATGF layers.
 
-```
-[type]/[layer-nn]-[brief-description]
-```
-
-**Examples:**
-
-| Branch Name | Description |
-|------------|-------------|
-| `feature/layer-02-update-risk-framework-taxonomy` | Update control IDs in Risk Framework |
-| `feature/layer-04-add-git-governance-policy` | Add new policy document |
-| `hotfix/fix-iso-42001-version-references` | Correct ISO version year across documents |
-| `release/v1.1` | Prepare v1.1 release candidate |
+This policy supports MASTER_CONTROL_MATRIX integrity but does not define business controls.
 
 ---
 
-## 7. Pull Request Governance
+## Governance Principles
 
-### 7.1 PR Description Template
+- No direct commits to `main`
+- All changes require Pull Request review
+- Branch protection must be enabled
+- Commits must be traceable and descriptive
+- Version tags are immutable
+- Security scanning must be enabled
+- Git history is part of audit evidence
 
-Every pull request to the authority repository shall follow this structure:
-
-```markdown
-## What
-[Brief description of the change]
-
-## Why
-[Governance rationale for the change]
-
-## Impact
-- [ ] Minor (editorial, formatting)
-- [ ] Structural (new document, section reorganization)
-- [ ] Control-affecting (MCM modification)
-
-## MCM Controls Affected
-[List EATGF-xxx control IDs, or "None"]
-
-## Layers Modified
-[List affected layers: 00, 01, 02, etc.]
-
-## Checklist
-- [ ] Document follows EATGF Document Signature Template
-- [ ] No prohibited phrasing (per Writing Identity Framework)
-- [ ] EATGF header signature present
-- [ ] Version & Status Block updated
-- [ ] No placeholder content (@enterprise.com, [Organization Name])
-```
-
-### 7.2 Review Requirements
-
-| Change Classification | Minimum Reviewers | Approval Authority |
-|----------------------|-------------------|-------------------|
-| Minor | 1 Governance Reviewer | Any reviewer |
-| Structural | 2 Governance Reviewers | Framework Owner |
-| Control-Affecting | 2 Governance Reviewers + Framework Owner | Executive Steering Committee |
-
-### 7.3 Review Criteria
-
-Reviewers shall validate:
-
-1. Compliance with the EATGF Document Signature Template (10-element checklist)
-2. Adherence to the EATGF Writing Identity Framework (tone, terminology, prohibited phrasing)
-3. Correct use of EATGF control IDs (no legacy taxonomy)
-4. Accurate ISO/standard version references
-5. No placeholder content
-6. Heading hierarchy discipline (per UX & Visual Standard Guide)
-7. Portal build passes without broken links (for structural changes)
+**Git workflow is an enforcement mechanism, not a collaboration convenience.**
 
 ---
 
-## 8. Governance Impact Classification
+## Technical Implementation
 
-### 8.1 Classification Definitions
-
-| Classification | Version Impact | Description | Examples |
-|---------------|---------------|-------------|----------|
-| **Minor** | v1.0 → v1.0.1 | Editorial corrections that do not alter the meaning, scope, or authority of any governance statement | Typo fixes, formatting corrections, broken link repairs, clarification of existing text |
-| **Structural** | v1.0 → v1.1.0 or v1.x → v2.0.0 | Changes that add, reorganize, or substantially modify document content without altering MCM controls | New documents, section additions, policy expansions, cross-reference updates, framework mapping additions |
-| **Control-Affecting** | Requires governance review | Changes that add, remove, modify, or reclassify any control within the Master Control Matrix | MCM control addition, control objective modification, control ID restructuring, taxonomy changes, evidence requirement changes |
-
-### 8.2 Classification Determination
-
-The change author assigns the initial classification. The Governance Reviewer validates or escalates the classification during pull request review. If a change is misclassified, the reviewer shall:
-
-1. Request reclassification with justification
-2. Block merge until correct classification is applied
-3. Ensure the appropriate review and approval chain is completed
-
----
-
-## 9. Version Tagging Strategy
-
-### 9.1 Tag Format
+### 1. Branch Model
 
 ```
-EATGF-vMAJOR.MINOR.PATCH[-Edition]
+main                → stable baseline
+release/*           → version preparation
+feature/*           → structured additions
+hotfix/*            → emergency correction
 ```
 
-**Examples:**
+**No development occurs directly on `main`.**
 
-| Tag | Meaning |
-|-----|---------|
-| `EATGF-v1.0.0-Foundation` | Initial baseline — Foundation Edition |
-| `EATGF-v1.1.0` | Minor release with structural additions |
-| `EATGF-v1.0.1` | Patch release with editorial corrections |
-| `EATGF-v2.0.0-Enterprise` | Major release — Enterprise Edition |
+### 2. Branch Protection Rules
 
-### 9.2 Tagging Rules
+Enable the following on GitHub:
 
-1. Tags are created on the `main` branch only, after a release branch has been merged.
-2. Tags are **immutable** — force-pushing tags is prohibited.
-3. Tags are created on the authority repository only. The portal repository references tags via submodule pointer.
-4. Every tag shall include an annotated message:
+- Require Pull Request before merging
+- Require at least 1 approval
+- Require status checks to pass
+- Prevent force pushes
+- Prevent branch deletion
+- Require signed commits (recommended)
+
+### 3. Commit Standard
+
+Commit messages must follow:
+
+```
+[Layer] Short summary
+
+Extended explanation (if required)
+Control impact (if applicable)
+Version impact (MAJOR/MINOR/PATCH)
+```
+
+**Example:**
 
 ```bash
-git tag -a EATGF-v1.1.0 -m "EATGF v1.1.0 — Structural additions: Git Governance Policy, Version Governance Policy, Writing Identity Framework"
+git commit -m "[02_CONTROL_ARCHITECTURE] Add NIST SSDF mapping to API Governance
+
+Expanded Control Mapping table
+Version impact: MINOR"
 ```
 
-5. Tags shall be pushed to the remote immediately after creation:
+### 4. Pull Request Requirements
+
+Each PR must include:
+
+- Change description
+- Affected layer(s)
+- Control impact statement
+- Version classification
+- Documentation confirmation
+
+**PR template must be enforced.**
+
+### 5. Signed Tags for Releases
 
 ```bash
-git push origin EATGF-v1.1.0
+git tag -s EATGF-v1.1 -m "Minor enhancement - Developer layer integration"
+git push origin EATGF-v1.1
 ```
+
+**Tags must not be modified once published.**
+
+### 6. Repository Security Controls
+
+Enable:
+
+- Secret scanning
+- Dependency vulnerability alerts
+- Code scanning (optional but recommended)
+- Audit log review access
 
 ---
 
-## 10. Commit Message Convention
+## Control Mapping
 
-### 10.1 Format
+| Governance Aspect     | ISO 27001:2022 | NIST SSDF | OWASP               | COBIT |
+| --------------------- | -------------- | --------- | ------------------- | ----- |
+| Change Management     | A.8.32         | PW.3      | SAMM Governance     | BAI06 |
+| Configuration Control | A.8.9          | PW.4      | ASVS V1             | DSS01 |
+| Secure Code Practices | A.8.28         | PW.7      | SAMM Implementation | BAI03 |
+| Compliance Monitoring | A.5.35         | RV.1      | SAMM Governance     | MEA03 |
+| Governance Oversight  | A.5.1          | PO.1      | —                   | EDM02 |
 
-```
-[LAYER-NN] TYPE: Brief description
-
-Extended description (optional — for Structural and Control-affecting changes)
-
-MCM-Refs: EATGF-XXX-YYY-NNN (if applicable)
-```
-
-### 10.2 Type Definitions
-
-| Type | Meaning | Example |
-|------|---------|---------|
-| `CONTROL` | Change to a control definition, objective, or evidence requirement | `[LAYER-00] CONTROL: Add EATGF-GOV-DOC-003 to MCM` |
-| `POLICY` | Change to a governance policy document | `[LAYER-04] POLICY: Add Git Governance Policy` |
-| `AUDIT` | Change to audit procedures or evidence specifications | `[LAYER-06] AUDIT: Update internal audit checklist` |
-| `DOC` | Content change to a non-policy/non-control document | `[LAYER-03] DOC: Update maturity assessment criteria` |
-| `FIX` | Correction of an error (typo, broken link, incorrect reference) | `[LAYER-02] FIX: Correct ISO 42001 version to 2023` |
-| `META` | Repository metadata, CI/CD, submodule updates | `[META] SUBMODULE: Update framework to EATGF-v1.1.0` |
-| `STYLE` | Formatting, heading hierarchy, template alignment | `[LAYER-05] STYLE: Add EATGF header to AI Governance Framework` |
-
-### 10.3 Commit Message Rules
-
-1. Subject line shall not exceed 72 characters.
-2. Subject line shall use imperative mood ("Add", "Update", "Remove", "Correct" — not "Added", "Updates").
-3. The `[LAYER-NN]` prefix is mandatory for all changes to framework content. Use `[META]` for repository-level changes.
-4. Emoji are prohibited in commit messages.
-5. Multi-layer changes shall use the primary affected layer in the prefix and list secondary layers in the body.
+Git governance directly supports structured software integrity practices.
 
 ---
 
-## 11. Freeze Policy
+## Developer Checklist
 
-### 11.1 Pre-Release Freeze
+Before merging any change:
 
-| Parameter | Value |
-|-----------|-------|
-| Duration | 72 hours before version tag creation |
-| Trigger | Release branch creation |
-| Scope | All content changes to the release branch |
-| Exceptions | Critical corrections classified as `FIX` with Framework Owner approval |
+- [ ] Branch created from `main`
+- [ ] No direct commit to `main`
+- [ ] PR created
+- [ ] Reviewer approval obtained
+- [ ] Version impact classified
+- [ ] Control impact assessed
+- [ ] No secrets in diff
+- [ ] Changelog updated (if applicable)
+- [ ] Tag prepared (if release)
 
-During a pre-release freeze:
-
-1. No new features or structural changes may be merged to the release branch.
-2. Only `FIX` commits are permitted, with explicit Framework Owner approval per commit.
-3. All reviewers are notified of the freeze via the release branch PR description.
-
-### 11.2 Baseline Freeze
-
-| Parameter | Value |
-|-----------|-------|
-| Duration | Indefinite — immutable once declared |
-| Trigger | Baseline Declaration document publication |
-| Scope | All content at the tagged commit |
-| Exceptions | None — create a new version for corrections |
-
-A baseline freeze establishes the immutable state of the framework at a specific version tag. Per the Baseline Declaration (BASELINE_DECLARATION_v1.0.md):
-
-1. The tagged commit is permanently locked.
-2. Corrections to frozen baselines create a new patch version (e.g., v1.0.1), never modify the frozen tag.
-3. The Baseline Declaration document itself is part of the frozen state.
-
-### 11.3 Emergency Unfreeze
-
-Emergency unfreeze is permitted only under the following conditions:
-
-1. A critical error is discovered that creates legal, compliance, or security risk.
-2. Written approval from the Framework Owner is obtained and documented in the PR.
-3. The unfreeze is limited to the specific correction — no scope expansion is permitted.
-4. The correction follows the hotfix branch process (Section 6.1).
-5. A revised tag is created per semantic versioning rules (patch increment).
+**No merge without checklist completion.**
 
 ---
 
-## 12. Change Approval Workflow
+## Governance Implications
 
-### 12.1 Standard Workflow
+If Git governance is not enforced:
 
-```
-1. Contributor creates feature branch
-2. Contributor makes changes and commits per convention (Section 10)
-3. Contributor opens PR with structured description (Section 7.1)
-4. Contributor assigns classification (Minor / Structural / Control-Affecting)
-5. Governance Reviewer validates classification and content
-6. Required reviewers approve (per Section 7.2)
-7. Framework Owner merges (for Structural+) or Reviewer merges (for Minor)
-8. Release branch created when accumulation warrants a version increment
-9. Pre-release freeze (72 hours)
-10. Tag created on main after release branch merge
-11. Portal submodule pointer updated
-12. Portal build verified
-```
+- Framework drift occurs
+- Version mapping becomes unreliable
+- Audit traceability is lost
+- Unauthorized changes may bypass review
+- Control alignment weakens
 
-### 12.2 Control-Affecting Workflow
-
-```
-1–4. Same as Standard Workflow
-5. Governance Reviewer escalates to Framework Owner
-6. Framework Owner prepares impact assessment:
-   - Which MCM controls are affected?
-   - What downstream documents require update?
-   - What is the risk of the change?
-7. Executive Steering Committee review (if required by impact score)
-8. Minimum 2 Governance Reviewers + Framework Owner approve
-9. Merge, tag, and cascade updates to all dependent documents
-10. Pre-release freeze includes validation of all dependent updates
-11. Tag and submodule update per standard process
-```
+**Git discipline preserves framework authority.**
 
 ---
 
-## 13. Governance Enforcement Rules
+## Official References
 
-1. All changes to the authority repository shall follow the branch discipline defined in Section 6. Direct commits to `main` are prohibited.
-2. Pull requests that do not include the structured description template (Section 7.1) shall not be reviewed.
-3. Misclassified changes shall be blocked until correct classification is applied by the Governance Reviewer.
-4. Tags are immutable. Force-pushing tags constitutes a policy violation subject to escalation.
-5. Submodule pointer updates in the portal repository shall reference tagged commits only in production deployments.
-6. Commit messages that do not follow the convention in Section 10 shall be corrected via interactive rebase before merge.
-7. Freeze violations require formal incident documentation.
+- ISO/IEC 27001:2022 – A.8.32 Change Management
+- ISO/IEC 27001:2022 – A.8.9 Configuration Management
+- NIST SP 800-218 (SSDF) – PW.3, PW.4
+- COBIT 2019 – BAI06 Managed Changes
+- OWASP SAMM – Governance & Implementation
 
 ---
 
-**Document Control**
-
-| Version | Date | Author | Change Description |
-|---------|------|--------|-------------------|
-| 1.0 | 2026-02-14 | Enterprise Architecture & Governance Office | Initial Git governance policy |
-
-**Authority Sign-Off**
-
-| Role | Name | Date | Signature |
-|------|------|------|-----------|
-| Framework Owner | | | |
-| Chief Governance Officer | | | |
+**Document Version:** 1.1
+**Change Type:** Structured Refactor
+**Baseline Compatibility:** EATGF-v1.0-Foundation Compatible

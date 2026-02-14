@@ -1,179 +1,219 @@
-# Governance Charter
+# 01_GOVERNANCE_CHARTER
 
-## Enterprise AI-Aligned Technical Governance Framework (EATGF)
-
-| Field | Value |
-|-------|-------|
-| Document Type | Policy |
-| Version | 1.1 |
-| Classification | Internal |
-| Effective Date | 2026-02-14 |
-| Authority | Executive Leadership |
-| MCM Reference | EATGF-EDM-GOV-01 |
-| Next Review | August 2026 |
+| Field          | Value                                           |
+| -------------- | ----------------------------------------------- |
+| Document Type  | Policy                                          |
+| Version        | 2.0                                             |
+| Classification | Controlled                                      |
+| Effective Date | 2026-02-14                                      |
+| Authority      | Executive Leadership (Chief Governance Officer) |
+| EATGF Layer    | 04_POLICY_LAYER                                 |
+| MCM Reference  | EATGF-EDM-GOV-01                                |
 
 ---
 
-## 1. PURPOSE & SCOPE
+## Purpose
 
-This charter establishes the enterprise governance framework that guides decision-making, risk management, and performance monitoring across the organization.
+This charter establishes the enterprise governance framework that guides strategic decision-making, risk management, and performance monitoring across the organization. It formalizes the governance structure, domains, control framework, and accountability mechanisms required for effective implementation of EATGF.
+
+## Architectural Position
+
+This policy operates within **04_POLICY_LAYER** as the foundational governance charter.
+
+- **Upstream dependency:** Framework authority from Layers 00-01 (Official Designation, Baseline Declaration, ISMS/AIMS)
+- **Downstream usage:** Operationalized through specific policies (Information Security Policy, Data Governance Policy, Domain-Specific Policies)
+- **Cross-layer reference:** Governance structure defined here invokes controls from Layer 02 (Control Architecture) and Layer 03 (Governance Models)
+
+## Governance Principles
+
+1. **Formal Authority Structure** – Executive Steering Committee establishes policy authority; escalation procedures formalize decision routes
+2. **Comprehensive Governance Scope** – Charter covers strategic planning, risk management, technology governance, AI/API governance, and performance measurement
+3. **Clear Accountability** – Each governance body and role has documented responsibilities; control ownership is assigned
+4. **Scalable Implementation** – Governance structure and control maturity levels adapt to organization size and capability (Startup/SaaS/Enterprise)
+5. **Audit Defensibility** – All governance decisions maintained in audit trail; non-compliance triggers documented escalation
+
+## Technical Implementation
 
 ### Governance Scope
-- Strategic planning and execution
-- Risk management and compliance
-- Technology and data governance
-- AI and API governance
-- Performance measurement
 
-### Applicability
-All teams, projects, and initiatives across the enterprise must comply with this charter.
+Charter establishes governance across:
 
----
+- **Strategic Planning and Execution** – IT and business strategy alignment with measurable value delivery
+- **Risk Management and Compliance** – Enterprise risk identification, assessment, and mitigation across operational domains
+- **Technology and Data Governance** – Architecture, security, data lifecycle, and emerging technology governance
+- **AI and API Governance** – Specialized governance for artificial intelligence and application programming interface implementations
+- **Performance Measurement** – KPI establishment and objective measurement of governance effectiveness
 
-## 2. GOVERNANCE OBJECTIVES
+Applicability: All teams, projects, and initiatives across the enterprise must comply with this charter.
 
-### 2.1 Strategic Alignment
-Ensure that IT and technology investments directly align with business objectives and deliver measurable value.
+### Governance Structure
 
-### 2.2 Risk Management
-Identify, assess, and mitigate enterprise risks across all operational domains.
+**Three-Level Governance Hierarchy:**
 
-### 2.3 Resource Optimization
-Optimize deployment of human, financial, and technological resources.
+| Level       | Body                            | Responsibility                                                                          |
+| ----------- | ------------------------------- | --------------------------------------------------------------------------------------- |
+| Strategic   | Executive Steering Committee    | Overall governance direction; policy approval; executive escalation authority           |
+| Tactical    | Governance Council              | Policy enforcement, control monitoring, escalation authority, cross-domain coordination |
+| Operational | Domain Teams and Control Owners | Day-to-day control implementation, evidence collection, local compliance verification   |
 
-### 2.4 Performance Management
-Establish clear KPIs and measure governance effectiveness through objective metrics.
+**Key Roles:**
 
-### 2.5 Compliance & Transparency
-Maintain compliance with applicable regulations and provide transparent, auditable governance.
+- **Chief Governance Officer (CGO)** – Overall framework ownership, policy approval and updates, executive escalation authority, governance reporting to CFO/CEO
+- **Domain Leads** – Domain-specific policy implementation, risk identification and remediation, evidence collection and control attestation
+- **Compliance and Control Officers** – Control implementation verification, audit readiness, regulatory liaison, corrective action oversight
+- **Control Owners** – Designated responsibility for specific EATGF controls; evidence collection and procedure documentation
 
----
+### Governance Domains
 
-## 3. GOVERNANCE STRUCTURE
+Charter formalizes governance across EATGF domains:
 
-### 3.1 Governance Bodies
+- **Evaluate, Direct, Monitor (EDM)** – Board and executive-level governance oversight (COBIT domain 1)
+- **Align, Plan, Organize (APO)** – IT and business strategy alignment; governance planning (COBIT domain 2)
+- **Build, Acquire, Implement (BAI)** – Technology delivery and implementation lifecycle management (COBIT domain 3)
+- **Deliver, Service, Support (DSS)** – Reliable and secure service delivery and operations (COBIT domain 4)
+- **Monitor, Evaluate, Assess (MEA)** – Governance effectiveness measurement and reporting (COBIT domain 5)
+- **AI Lifecycle (AI)** – Artificial intelligence governance from development through decommissioning
+- **API Lifecycle (API)** – Application programming interface governance across lifecycle
+- **Cloud and Infrastructure (CLD)** – Cloud/infrastructure architecture governance
+- **Development and DevSecOps (DEV)** – Development practices and secure operations
+- **Data Governance (DATA)** – Data lifecycle, classification, and protection governance
+- **Business Continuity and DR (BCP)** – Disaster recovery and continuity planning
 
-| Level | Body | Responsibility |
-|-------|------|-----------------|
-| Strategic | Executive Steering Committee | Overall governance direction |
-| Tactical | Governance Council | Policy enforcement & escalation |
-| Operational | Domain Teams | Day-to-day control implementation |
+### Control Framework
 
-### 3.2 Roles & Responsibilities
+**Control Categories:**
 
-**Chief Governance Officer (CGO)**
-- Overall framework ownership
-- Policy approval and updates
-- Executive escalation authority
+- **Architecture Controls** – System design, integration, and technology strategy implementation
+- **Security Controls** – Information security, access control, and protection mechanisms (ISO 27001 alignment)
+- **AI Controls** – AI/machine learning system governance, bias detection, model performance monitoring
+- **API Controls** – API lifecycle, security, rate limiting, authentication/authorization
+- **Risk Controls** – Risk assessment methodology, risk register maintenance, risk mitigation
+- **Performance Controls** – KPI definition, measurement, reporting, and improvement tracking
+- **Data Controls** – Data classification, protection, retention, and disposal procedures
+- **Compliance Controls** – Regulatory compliance monitoring, audit evidence, reporting
 
-**Domain Leads**
-- Domain-specific policy implementation
-- Risk identification and remediation
-- Evidence collection and reporting
+**Control Maturity Levels (5-Level Model):**
 
-**Compliance & Control Officers**
-- Control implementation verification
-- Audit readiness and evidence management
-- Regulatory liaison
+1. **Initial** – Ad-hoc processes; minimal documentation; inconsistent implementation
+2. **Developing** – Documented processes; partial automation; inconsistent compliance
+3. **Defined** – Standardized processes across organization; documented procedures; consistent implementation
+4. **Managed** – Measured and monitored effectiveness; KPI tracking; compliance verification
+5. **Optimized** – Continuously improved based on metrics; emerging technology integration; proactive risk management
 
----
+### Implementation Roadmap
 
-## 4. GOVERNANCE DOMAINS
+**Governance Implementation Phases:**
 
-### Domain 1: Evaluate, Direct, Monitor (EDM)
-Provides board and executive-level oversight of governance.
+| Phase   | Timeline     | Focus                                                                                                         |
+| ------- | ------------ | ------------------------------------------------------------------------------------------------------------- |
+| Phase 1 | Months 1-3   | Charter adoption and communication; governance body formation and training; roles/responsibilities assignment |
+| Phase 2 | Months 4-6   | Control implementation and baseline establishment; evidence collection processes; compliance procedures       |
+| Phase 3 | Months 7-9   | Evidence collection and compliance verification; first internal audit cycle; corrective action management     |
+| Phase 4 | Months 10-12 | Maturity assessment and optimization; strategic improvements; continuous improvement program establishment    |
 
-### Domain 2: Align, Plan, Organize (APO)
-Ensures alignment between IT and business strategy.
+### Escalation Procedures
 
-### Domain 3: Build, Acquire, Implement (BAI)
-Manages technology delivery and implementation.
+Governance escalation follows defined routing:
 
-### Domain 4: Deliver, Service, Support (DSS)
-Ensures reliable and secure service delivery.
+- **Level 1: Domain Team/Control Owner** – Initial issue resolution attempt; local control owner escalates if unable to resolve
+- **Level 2: Governance Council** – Tactical governance decisions; policy interpretation; cross-domain coordination; escalates unresolved issues
+- **Level 3: Executive Steering Committee** – Strategic governance decisions; policy exceptions; regulatory compliance issues; organizational impact decisions
+- **Level 4: Board/External Bodies** – External regulatory matters; strategic organizational changes affecting governance; board-level governance reviews
 
-### Domain 5: Monitor, Evaluate, Assess (MEA)
-Measures and reports on governance effectiveness.
+## Control Mapping
 
----
+### COBIT 2019 Alignment
 
-## 5. CONTROL FRAMEWORK
+Charter implements COBIT governance framework across:
 
-### Control Categories
-- **Architecture Controls** - System design and integration
-- **Security Controls** - Information and access security
-- **AI Controls** - AI/ML system governance
-- **API Controls** - API lifecycle and security
-- **Risk Controls** - Risk assessment and mitigation
-- **Performance Controls** - Measurement and reporting
+- **EDM04** – Strategic supervision and governance (Executive Steering Committee role)
+- **APO01** – IT strategy and planning (Policy framework)
+- **MEA01** – Governance effectiveness monitoring (Performance measurement and KPIs)
 
-### Control Maturity Levels
-1. **Initial** - Ad-hoc processes
-2. **Developing** - Documented processes
-3. **Defined** - Standardized across organization
-4. **Managed** - Measured and monitored
-5. **Optimized** - Continuously improved
+### ISO 38500 Corporate Governance of IT
 
----
+Charter aligns with three core principles:
 
-## 6. COMPLIANCE FRAMEWORK
+- **Responsibility** – Governance bodies assigned clear responsibility and authority
+- **Strategy** – Policy establishes IT strategy alignment with business objectives
+- **Accountability** – Control ownership and escalation procedures formalize accountability
 
-This charter aligns with:
-- **COBIT 2019** - Control objectives
-- **ISO 38500** - Corporate governance of IT
-- **ISO 27001** - Information security management
-- **ISO 42001** - AI management systems
-- **OWASP** - API security standards
+### ISO 27001:2022 Information Security Management
 
----
+Charter governance structure implements:
 
-## 7. IMPLEMENTATION ROADMAP
+- **Clause 4: Context of the organization** – Governance context and external factors
+- **Clause 5: Leadership** – Executive and management commitment to governance
+- **Clause 6: Planning** – Risk management and control planning
+- **Clause 7: Support** – Resource allocation and governance support structures
 
-| Phase | Timeline | Focus |
-|-------|----------|-------|
-| Phase 1 | Months 1-3 | Charter adoption & communication |
-| Phase 2 | Months 4-6 | Control implementation & baseline |
-| Phase 3 | Months 7-9 | Evidence collection & compliance |
-| Phase 4 | Months 10-12 | Maturity assessment & optimization |
+### NIST Cybersecurity Framework
 
----
+Charter aligns with governance functions:
 
-## 8. ESCALATION PROCEDURES
+- **Govern** – Framework and policy establishment
+- **Identify** – Risk identification and governance scope definition
 
-**Level 1: Domain Team** → Unable to resolve → **Level 2: Governance Council**  
-**Level 2: Governance Council** → Strategic issue → **Level 3: Executive Steering Committee**  
-**Level 3: Executive Steering Committee** → External/Regulatory → **Level 4: Board/External Bodies**
+## Developer Checklist
 
----
+Before implementing governance charter:
 
-## 9. GOVERNANCE PRINCIPLES
+- [ ] Executive Steering Committee established with defined membership and authorities
+- [ ] Chief Governance Officer role assigned with direct escalation authority
+- [ ] Governance Council formed with representatives from all primary domains
+- [ ] Domain Leads identified and trained on governance roles and responsibilities
+- [ ] Escalation procedures documented and communicated to all teams
+- [ ] Control Owner roles assigned across EATGF's 35 controls
+- [ ] Governance structure communicated to all organization personnel
+- [ ] Approval signatures obtained from CEO, CTO, CGO, and Board Chair
+- [ ] Revision procedure established for charter updates (requires executive approval)
+- [ ] Governance training scheduled for all personnel within 30 days
 
-1. **Clarity** - All standards are unambiguous and measurable
-2. **Accountability** - Clear ownership for each control
-3. **Enforceability** - Non-compliance triggers escalation
-4. **Scalability** - Framework adapts to organization size
-5. **Transparency** - Audit trail maintained for all decisions
-6. **Continuous Improvement** - Regular review and optimization
+## Governance Implications
 
----
+### Organizational Authority and Governance Bodies
 
-## 10. APPROVAL & ENDORSEMENT
+This charter formalizes organizational governance structure:
 
-| Role | Date | Signature |
-|------|------|-----------|
-| Chief Executive Officer | | |
-| Chief Technology Officer | | |
-| Chief Governance Officer | | |
-| Board Chair | | |
+- **Executive Steering Committee** – Highest governance authority; approves all policy changes and strategic decisions; meets quarterly minimum
+- **Chief Governance Officer** – Single point of authority for policy interpretation; escalation authority; reports directly to CFO/CEO
+- **Governance Council** – Operational policy enforcement body; meets monthly minimum; responsible for escalation decisions
+- **Domain Leads** – Ensure domain-specific compliance; responsible to CGO for their domain's control implementation
+- **Audit Authority** – Independent audit function per Layer 06 reports findings to Governance Council and Executive Steering Committee
 
----
+### Non-Compliance and Enforcement
 
-## 11. REVISION HISTORY
+- Governance violations escalate per defined escalation procedures
+- Persistent non-compliance triggers corrective action processes
+- Corrective action tracking maintained in governance evidence register
+- Audit verification of corrective action effectiveness
+- Executive-level escalation for unresolved non-compliance
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | Feb 2026 | Initial charter |
+### Policy Amendment and Evolution
 
----
+Charter amendments require:
 
-**Next Review Date:** August 2026
+- CGO proposal with business justification
+- Executive Steering Committee approval (unanimous required)
+- Board notification for significant changes
+- Versioning increment per [EATGF_VERSION_GOVERNANCE_POLICY.md](EATGF_VERSION_GOVERNANCE_POLICY.md)
+- Impact analysis on all policies in Layer 04
+
+### Organizational Cascade
+
+All sub-policies must:
+
+- Align with governance structure defined in this charter
+- Follow escalation procedures for disputes or exceptions
+- Use governance roles defined here for decision authority
+- Maintain audit evidence of policy compliance
+- Include revision procedures requiring Executive Steering Committee approval for major changes
+
+## Official References
+
+- **COBIT 2019** – Governance of Enterprise Information Technology (ISACA, 2019)
+- **ISO/IEC 38500:2015** – Corporate Governance of Information Technology (ISO, 2015)
+- **ISO/IEC 27001:2022** – Information Security Management Systems (ISO, 2022)
+- **ISO/IEC 27002:2022** – Code of practice for information security controls (ISO, 2022)
+- **NIST SP 800-53:Revision 5** – Security and Privacy Controls for Federal Information and Information Systems (NIST, 2020)
+- **NIST Cybersecurity Framework 2.0** – Governance Function and Governance Outcomes (NIST, 2024)

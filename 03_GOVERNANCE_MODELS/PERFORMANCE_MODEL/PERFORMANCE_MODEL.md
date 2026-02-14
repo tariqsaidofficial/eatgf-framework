@@ -2,14 +2,14 @@
 
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
-| Field | Value |
-|-------|-------|
-| Document Type | Framework |
-| Version | 1.1 |
-| Classification | Internal |
-| Effective Date | 2026-02-14 |
-| Authority | Enterprise Architecture & Governance Office |
-| MCM Reference | EATGF-MEA-PERF-01 |
+| Field          | Value                                       |
+| -------------- | ------------------------------------------- |
+| Document Type  | Framework                                   |
+| Version        | 1.1                                         |
+| Classification | Internal                                    |
+| Effective Date | 2026-02-14                                  |
+| Authority      | Enterprise Architecture & Governance Office |
+| MCM Reference  | EATGF-MEA-PERF-01                           |
 
 ---
 
@@ -41,6 +41,7 @@ Strategic KPIs (Board Level)
 **Owner:** Compliance Officer
 
 **Calculation:**
+
 ```
 (Met Requirements / Total Requirements) × 100
 
@@ -54,6 +55,7 @@ Score: (190 + 8×0.5) / 200 = 96%
 ```
 
 **Trending:**
+
 - 95%+ = Green (On track)
 - 85-94% = Yellow (Attention needed)
 - <85% = Red (Critical)
@@ -70,14 +72,15 @@ Score: (190 + 8×0.5) / 200 = 96%
 **Owner:** Chief Risk Officer
 
 **Dashboard Segment:**
+
 ```
 Red Risks (Critical): 3 total
-├── With mitigation plans: 3 (100%) ✅
+├── With mitigation plans: 3 (100%)
 ├── Avg risk score reduction: 25%
 └── Residual risk acceptable: Yes
 
 Orange Risks (High): 8 total
-├── With mitigation plans: 8 (100%) ✅
+├── With mitigation plans: 8 (100%)
 ├── Avg risk score reduction: 20%
 └── On-track execution: 75%
 ```
@@ -89,6 +92,7 @@ Orange Risks (High): 8 total
 **Definition:** Assessment of governance maturity across 5 COBIT domains
 
 **Target:**
+
 - Year 1 (2026): 3.0 (Defined)
 - Year 2 (2027): 4.0 (Managed)
 
@@ -115,6 +119,7 @@ Orange Risks (High): 8 total
 **Frequency:** Semi-annual
 
 **Assessment Method:**
+
 - Testing random sample of controls
 - Evidence collection
 - Expert assessment
@@ -123,12 +128,12 @@ Orange Risks (High): 8 total
 **Results:**
 | Control Domain | Sample Size | Effective | % |
 |----------------|-----------|-----------|------|
-| Architecture | 5 | 5 | 100% ✅ |
-| Security | 8 | 7 | 87.5% 🟡 |
-| AI Governance | 3 | 3 | 100% ✅ |
-| API Governance | 4 | 4 | 100% ✅ |
-| Risk Management | 3 | 3 | 100% ✅ |
-| **Overall** | **23** | **22** | **95.7%** ✅ |
+| Architecture | 5 | 5 | 100% |
+| Security | 8 | 7 | 87.5% |
+| AI Governance | 3 | 3 | 100% |
+| API Governance | 4 | 4 | 100% |
+| Risk Management | 3 | 3 | 100% |
+| **Overall** | **23** | **22** | **95.7%** |
 
 ---
 
@@ -139,6 +144,7 @@ Orange Risks (High): 8 total
 **Definition:** Average time from incident detection to containment
 
 **Target:**
+
 - Critical: < 1 hour
 - High: < 4 hours
 - Medium: < 1 day
@@ -146,18 +152,19 @@ Orange Risks (High): 8 total
 **Frequency:** Monthly
 
 **Sample Data:**
+
 ```
 Critical incidents (2):
-  - Avg response: 45 min ✅
-  - Avg containment: 2 hours ✅
+  - Avg response: 45 min
+  - Avg containment: 2 hours
 
 High incidents (5):
-  - Avg response: 2 hours ✅
-  - Avg containment: 6 hours 🟡 (Target: 4 hours)
+  - Avg response: 2 hours
+  - Avg containment: 6 hours (Target: 4 hours)
 
 Medium incidents (12):
-  - Avg response: 8 hours ✅
-  - Avg containment: 18 hours ✅
+  - Avg response: 8 hours
+  - Avg containment: 18 hours
 ```
 
 ---
@@ -171,6 +178,7 @@ Medium incidents (12):
 **Frequency:** Monthly
 
 **Timeline:**
+
 ```
 Jan - Apr: Evidence collection (Target: 25% each month)
 May - Jun: Review and validation (Target: 25% + remediation)
@@ -179,9 +187,9 @@ Sep: Findings & remediation plan
 
 Current Status (March):
 ├── Q1 target: 25%
-├── Current: 28% ✅
-├── Key docs collected: ✅ Policies, controls evidence
-└── Gaps: ⏳ Performance metrics for new AI systems
+├── Current: 28%
+├── Key docs collected: Policies, controls evidence
+└── Gaps: Performance metrics for new AI systems
 ```
 
 ---
@@ -197,14 +205,15 @@ Current Status (March):
 **Tracking:**
 | Policy | Applicable Users | Acknowledged | % |
 |--------|----------------|-------------|-----|
-| Security | 500 | 487 | 97% ✅ |
-| Data Governance | 500 | 475 | 95% ✅ |
-| AI Governance | 150 | 138 | 92% 🟡 |
-| API Governance | 200 | 182 | 91% 🟡 |
-| Remote Work | 400 | 392 | 98% ✅ |
-| **Overall** | | | **94.6%** 🟡 |
+| Security | 500 | 487 | 97% |
+| Data Governance | 500 | 475 | 95% |
+| AI Governance | 150 | 138 | 92% |
+| API Governance | 200 | 182 | 91% |
+| Remote Work | 400 | 392 | 98% |
+| **Overall** | | | **94.6%** |
 
 **Action Items:**
+
 - [ ] AI governance training: +12 users by Q2
 - [ ] API governance training: +18 users by Q2
 
@@ -217,6 +226,7 @@ Current Status (March):
 **Definition:** Average time from patch release to deployment
 
 **Target:**
+
 - Critical: < 24 hours
 - High: < 7 days
 - Medium: < 30 days
@@ -224,15 +234,16 @@ Current Status (March):
 **Frequency:** Continuous
 
 **Status:**
+
 ```
 Critical vulnerabilities (Feb 2026):
-├── CVE-2026-001: Patched in 12 hours ✅
-├── CVE-2026-002: Patched in 18 hours ✅
-└── Average: 15 hours ✅ (Target: 24h)
+├── CVE-2026-001: Patched in 12 hours
+├── CVE-2026-002: Patched in 18 hours
+└── Average: 15 hours (Target: 24h)
 
 High vulnerabilities (Feb 2026):
-├── Avg patch time: 5 days ✅ (Target: 7 days)
-└── % unpatched: 2% ✅ (Target: <5%)
+├── Avg patch time: 5 days (Target: 7 days)
+└── % unpatched: 2% (Target: <5%)
 ```
 
 ---
@@ -246,13 +257,14 @@ High vulnerabilities (Feb 2026):
 **Frequency:** Daily (auto-calculated)
 
 **Monthly Results (February):**
+
 ```
 Critical Systems:
-├── Database: 99.98% ✅
-├── API Gateway: 99.96% ✅
-├── Web Application: 99.94% ✅
-├── Message Queue: 99.87% ✅
-└── Average: 99.94% ✅ (Target: 99.5%)
+├── Database: 99.98%
+├── API Gateway: 99.96%
+├── Web Application: 99.94%
+├── Message Queue: 99.87%
+└── Average: 99.94% (Target: 99.5%)
 
 Incidents:
 ├── Outages: 1 (35 min planned maintenance)
@@ -271,16 +283,18 @@ Incidents:
 **Frequency:** Monthly
 
 **Assessment:**
-```
-Accuracy: 99.2% ✅ (Target: 99%)
-Completeness: 97.8% ⚠️ (Target: 99%)
-Consistency: 99.1% ✅ (Target: 99%)
-Timeliness: 98.5% ✅ (Target: 98%)
 
-Overall: 98.7% ✅
+```
+Accuracy: 99.2% (Target: 99%)
+Completeness: 97.8% (Target: 99%)
+Consistency: 99.1% (Target: 99%)
+Timeliness: 98.5% (Target: 98%)
+
+Overall: 98.7%
 ```
 
 **Gap Analysis:**
+
 - Completeness gap: Customer phone numbers missing in legacy systems
 - Mitigation: Data enrichment project (Q2 2026)
 
@@ -295,6 +309,7 @@ Overall: 98.7% ✅
 **Frequency:** Monthly
 
 **Trend Analysis:**
+
 ```
 Jan 2026: Overall Risk Score 12.5 (Average of all risks)
 Feb 2026: Overall Risk Score 11.8 (-5.6% improvement)
@@ -322,20 +337,21 @@ Orange Risks (High):
 **Frequency:** Quarterly
 
 **Assessment:**
+
 ```
 Risk R-001 (Data Breach):
 ├── Pre-mitigation score: 15
 ├── Mitigation implemented: MFA
-├── Post-mitigation score: 10 (-33% risk reduction) ✅
+├── Post-mitigation score: 10 (-33% risk reduction)
 ├── Effectiveness: Confirmed via penetration test
 
 Risk R-012 (AI Bias):
 ├── Pre-mitigation score: 16
 ├── Mitigations: Fairness monitoring + retraining
-├── Post-mitigation score: 12 (-25% reduction) ✅
+├── Post-mitigation score: 12 (-25% reduction)
 ├── Effectiveness: Confirmed via fairness audit
 
-Overall Effectiveness: 92% ✅ (Target: 85%)
+Overall Effectiveness: 92% (Target: 85%)
 ```
 
 ---
@@ -349,6 +365,7 @@ Overall Effectiveness: 92% ✅ (Target: 85%)
 **Target:** < 60 days for standard changes
 
 **Example:**
+
 ```
 Policy Update Timeline (Information Security Policy):
 ├── Decision approved: Jan 1
@@ -358,7 +375,7 @@ Policy Update Timeline (Information Security Policy):
 ├── Audit verification: Feb 8-22 (14 days)
 └── Full implementation: Feb 22
 
-Total: 52 days ✅ (Target: 60 days)
+Total: 52 days (Target: 60 days)
 ```
 
 ---
@@ -370,6 +387,7 @@ Total: 52 days ✅ (Target: 60 days)
 **Target:** $2,000 - $5,000 per employee (varies by industry)
 
 **Calculation (Sample):**
+
 ```
 Governance Budget:
 ├── Personnel (team): $1.5M
@@ -378,7 +396,7 @@ Governance Budget:
 └── Total: $2.0M
 
 Headcount: 500 employees
-Cost per employee: $2,000 / employee ✅
+Cost per employee: $2,000 / employee
 
 Allocation:
 - Security: 50% ($1.0M)
@@ -398,22 +416,22 @@ Governance Performance Dashboard - February 2026
 
 KPI Summary:
 ┌─────────────────────────────────────────┐
-│ Compliance Score:        96% 🟢          │
-│ Risk Mitigation Rate:   100% 🟢          │
-│ Incident Response (avg): 1.5h 🟢         │
-│ Maturity Index:         3.1  🟡          │
-│ Control Effectiveness:  95.7% 🟢         │
-│ System Availability:    99.94% 🟢        │
+│ Compliance Score:        96%            │
+│ Risk Mitigation Rate:   100%           │
+│ Incident Response (avg): 1.5h          │
+│ Maturity Index:         3.1            │
+│ Control Effectiveness:  95.7%          │
+│ System Availability:    99.94%         │
 └─────────────────────────────────────────┘
 
 Red Flags:
-⚠️  AI governance training at 92% (target: 95%)
-⚠️  Data quality completeness at 97.8% (target: 99%)
+  AI governance training at 92% (target: 95%)
+  Data quality completeness at 97.8% (target: 99%)
 
 On Track:
-✅ Vulnerability patching keeping SLA
-✅ Risk reduction progressing (5.6% improvement)
-✅ Incident response improving
+  Vulnerability patching keeping SLA
+  Risk reduction progressing (5.6% improvement)
+  Incident response improving
 
 Next Actions:
 □ Resolve AI governance training gap by March 15
@@ -425,12 +443,12 @@ Next Actions:
 
 ## 8. PERFORMANCE REVIEW CYCLE
 
-| Review Level | Frequency | Attendees | Duration |
-|-------------|-----------|-----------|----------|
-| Team standup | Weekly | Team leads | 15 min |
-| Department review | Monthly | Dept heads | 1 hour |
-| Leadership review | Quarterly | Executive team | 2 hours |
-| Board review | Semi-annual | Board/CEO | 2 hours |
+| Review Level      | Frequency   | Attendees      | Duration |
+| ----------------- | ----------- | -------------- | -------- |
+| Team standup      | Weekly      | Team leads     | 15 min   |
+| Department review | Monthly     | Dept heads     | 1 hour   |
+| Leadership review | Quarterly   | Executive team | 2 hours  |
+| Board review      | Semi-annual | Board/CEO      | 2 hours  |
 
 ---
 

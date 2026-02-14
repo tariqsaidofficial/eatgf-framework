@@ -1,1083 +1,916 @@
-# ENTERPRISE AI-ALIGNED TECHNICAL GOVERNANCE FRAMEWORK (EATGF)
-## COMPREHENSIVE STANDARDS MAPPING DOCUMENT
+# FRAMEWORK_MAPPINGS_COMPREHENSIVE
 
-**Framework:** EATGF v1.0  
-**Document Type:** Technical Mapping Reference  
-**Version:** 2.0 (MCM-Aligned)  
-**Date:** February 13, 2026  
-**Authority:** Enterprise Architecture & Governance Office  
-**Classification:** Technical - For Auditors & Compliance Officers
-
----
-
-## 📋 EXECUTIVE SUMMARY
-
-This document provides **complete bidirectional mappings** between:
-
-1. **EATGF Master Control Matrix (MCM)** - Central control authority
-2. **COBIT 2019** - Governance domains (EDM/APO/BAI/DSS/MEA)
-3. **ISO 27001:2022** - Information Security Management (76 Annex A controls)
-4. **ISO 42001:2023** - AI Management Systems (if applicable)
-5. **NIST AI Risk Management Framework (AI RMF)** - AI risk governance
-6. **OWASP 2023** - API security controls
-7. **NIST SP 800-53** - US government security controls (if applicable)
-
-The mappings enable:
-- ✅ Unified control architecture across standards
-- ✅ Single evidence collection for multiple standards (cost efficiency)
-- ✅ Audit readiness for ISO 27001, ISO 42001, SOC 2, frameworks
-- ✅ Risk-based control prioritization
-- ✅ Traceability from strategy to evidence
+| Field | Value |
+|-------|-------|
+| Document Type | Technical Mapping Reference |
+| Version | 2.0 |
+| Classification | Controlled |
+| Effective Date | 2026-02-14 |
+| Authority | Enterprise Architecture and Governance Office |
+| EATGF Layer | 02_CONTROL_ARCHITECTURE |
+| MCM Reference | All 35 EATGF Controls |
+| Standards | COBIT 2019, ISO 27001:2022, ISO 42001:2023, NIST AI RMF, NIST SP 800-53, OWASP 2023 |
 
 ---
 
-## 🔗 MAPPING ARCHITECTURE
+## Purpose
 
-### Central Hub Model
+This document provides authoritative bidirectional mappings between EATGF Master Control Matrix (35 controls) and external frameworks: COBIT 2019, ISO 27001:2022 (76 Annex A controls), ISO 42001:2023, NIST AI RMF, OWASP 2023 standards, and NIST SP 800-53. These mappings enable unified control architecture implementation, single evidence collection satisfying multiple standards, audit readiness across ISO/COBIT/SOC 2 frameworks, and traceability from strategic governance to tactical controls.
 
-```
-                        ┌─────────────────┐
-                        │  EATGF MCM      │
-                        │ (35 Controls)   │
-                        └─────────────────┘
-                                │
-                ┌───────┬───────┼───────┬───────┬────────┐
-                ↓       ↓       ↓       ↓       ↓        ↓
-             COBIT   ISO     ISO    NIST    OWASP   NIST
-             2019    27001   42001   AI RMF  2023    800-53
-```
+## Architectural Position
 
-**Key Principle:** EATGF MCM is the **central control authority**. All standards are mapped TO the MCM, not vice versa. This:
-1. Simplifies control implementation
-2. Enables evidence reuse across standards
-3. Reduces redundancy and conflicting controls
-4. Provides unified governance dashboard
+This document operates within **02_CONTROL_ARCHITECTURE** as the comprehensive cross-framework mapping authority.
 
----
+- **Upstream dependency:** Master Control Matrix (00_FOUNDATION) defines 35 EATGF controls as central hub; Control Objectives document specifies requirements for each control; Governance Charter (Layer 04 establishes control authority
+- **Downstream usage:** Statement of Applicability (Layer 01) maps organizational context to standard requirements; Internal Audit Procedure (Layer 06) uses mappings to scope multi-framework audits; Maturity Assessment (Layer 03) evaluates implementation across mapped standards
+- **Cross-layer reference:** Framework Mappings (basic) provides summary mappings; this document provides comprehensive detail for audit and compliance teams
 
-## 📊 SECTION 1: CONTROL-LEVEL MAPPINGS
+## Governance Principles
 
-### 1.1 EDM Domain - Evaluate, Direct, Monitor
+1. **Central Hub Model** – EATGF MCM serves as central control authority; all external standards mapped TO the MCM (not vice versa) for unified governance
+2. **Evidence Reuse** – Single control implementation with unified evidence collection satisfies multiple framework requirements simultaneously
+3. **Audit Defensibility** – Explicit bidirectional mapping tables demonstrate compliance chain from EATGF control to ISO/COBIT/NIST requirements
+4. **Edition Scalability** – Control applicability varies by organizational size (Startup/SaaS/Enterprise); mappings maintained across all editions
+5. **Living Documentation** – Mappings updated semi-annually aligned with framework publication cycles (ISO amendments, COBIT updates, OWASP releases)
 
-#### EATGF-EDM-RISK-01: IT & AI Risk Appetite Definition
+## Technical Implementation
 
-**Mapping Summary:**
+### Mapping Architecture Model
+
+EATGF MCM (35 controls) serves as central control authority with bidirectional mappings to:
+- COBIT 2019 (Process domains: EDM, APO, BAI, DSS, MEA)
+- ISO 27001:2022 (Information Security Management, 76 Annex A controls)
+- ISO 42001:2023 (AI Management System, when applicable)
+- NIST AI RMF (AI risk governance: GOVERN, MAP, MEASURE, MANAGE)
+- OWASP 2023 (API Security Top 10, Application Security)
+- NIST SP 800-53 (US government security controls, when applicable)
+
+Key principle: EATGF MCM is central authority. This architecture simplifies control implementation, enables evidence reuse across standards, reduces redundancy, and provides unified governance dashboard.
+
+### Control-Level Detailed Mappings
+
+#### EDM Domain — Evaluate, Direct, Monitor
+
+**EATGF-EDM-RISK-01: IT and AI Risk Appetite Definition**
+
+Mapping Summary:
+
 | Standard | Reference | Applicability | Evidence Linkage |
-|----------|-----------|---|---|
-| COBIT 2019 | EDM03 | ✅ All | Risk tolerance statement |
-| ISO 27001 | Clause 6.1.2 | ✅ SaaS/Enterprise | SoA, risk assessment |
-| ISO 42001 | Clause 6 | ⚠️ AI systems | AI risk framework |
-| NIST AI RMF | GOVERN-2 | ⚠️ AI systems | AI governance doc |
+|----------|-----------|---------------|------------------|
+| COBIT 2019 | EDM03 (Risk optimization) | All organizations | Risk tolerance statement |
+| ISO 27001:2022 | Clause 6.1.2 (Risk assessment) | SaaS/Enterprise | SoA, risk assessment |
+| ISO 42001:2023 | Clause 6 (Planning, risks/opportunities) | AI systems only | AI risk framework |
+| NIST AI RMF | GOVERN-2 (Risk and benefit analysis) | AI systems only | AI governance document |
 
-**Detailed Mapping:**
-```
-EATGF-EDM-RISK-01
-├─ COBIT 2019
-│  ├─ EDM03.01: Evaluate current IT governance
-│  ├─ EDM03.02: Direct IT governance implementation
-│  └─ EDM03.03: Monitor IT governance
-├─ ISO 27001:2022
-│  ├─ Clause 6.1.2: Risk assessment process
-│  ├─ Clause 8.1: Operational planning and control
-│  └─ Clause 9.1: Monitoring and measurement
-├─ ISO 42001:2023
-│  ├─ Clause 6.1: Risk and opportunities
-│  └─ Clause 8.1: Operational planning
-└─ NIST AI RMF
-   ├─ GOVERN-2: Risk and benefit analysis
-   └─ MEASURE-1: Data validation processes
-```
+Detailed Mapping Structure:
+- COBIT 2019: EDM03.01 (Evaluate current IT governance), EDM03.02 (Direct IT governance implementation), EDM03.03 (Monitor IT governance)
+- ISO 27001:2022: Clause 6.1.2 (Risk assessment process), Clause 8.1 (Operational planning), Clause 9.1 (Monitoring)
+- ISO 42001:2023: Clause 6.1 (Risks and opportunities), Clause 8.1 (Operational planning)
+- NIST AI RMF: GOVERN-2 (Risk and benefit analysis), MEASURE-1 (Data validation processes)
 
-**Minimum Evidence Required:**
-1. Board-approved Risk Appetite Statement (signed/dated)
-2. Risk tolerance thresholds (Critical/High/Medium/Low for each category)
-3. AI-specific risk thresholds (if applicable)
-4. Data breach/compliance thresholds
-5. Annual review documentation
+Minimum Evidence Required:
+- Board-approved Risk Appetite Statement (signed/dated)
+- Risk tolerance thresholds (Critical/High/Medium/Low per category)
+- AI-specific risk thresholds (if deploying AI systems)
+- Data breach and compliance thresholds
+- Annual review documentation
 
-**Owner:** Chief Governance Officer / Risk Officer  
-**Review Frequency:** Annual
+Owner: Chief Governance Officer / Chief Risk Officer  
+Review Frequency: Annual
 
----
+**EATGF-EDM-BEN-01: Technology Value and Benefits Monitoring**
 
-#### EATGF-EDM-BEN-01: Technology Value & Benefits Monitoring
+Mapping Summary:
 
 | Standard | Reference | Clauses | Applicability |
-|----------|-----------|---------|---|
-| COBIT 2019 | EDM02 | EDM02.01-03 | ✅ All |
-| ISO 27001 | Clause 9.1 | 9.1.1, 9.1.2 | ✅ SaaS/Enterprise |
-| NIST AI RMF | MEASURE-1 | Performance metrics | ⚠️ AI systems |
+|----------|-----------|---------|---------------|
+| COBIT 2019 | EDM02 (Benefits realization) | EDM02.01-03 | All organizations |
+| ISO 27001:2022 | Clause 9.1 (Monitoring/measurement) | 9.1.1, 9.1.2 | SaaS/Enterprise |
+| NIST AI RMF | MEASURE-1 | Performance metrics | AI systems only |
 
-**Mapping Logic:**
-- EDM02 (COBIT) = Benefits realization oversight → ISO 27001 Clause 9.1 (monitoring)
-- Governance KPIs (DORA, security, compliance) = Evidence for both standards
-- Monthly dashboards feed quarterly board reports
+Mapping Logic:
+- EDM02 (COBIT benefits realization oversight) aligns to ISO 27001 Clause 9.1 (monitoring and measurement)
+- Governance KPIs (DORA metrics, security metrics, compliance metrics) serve as evidence for both standards
+- Monthly dashboards feed quarterly board reporting requirements
 
----
+**EATGF-EDM-GOV-01: Governance Model and Structure**
 
-#### EATGF-EDM-GOV-01: Governance Model & Structure
+Mapping Summary:
 
 | Standard | Reference | Mapping Type | Status |
-|----------|-----------|---|---|
-| COBIT 2019 | EDM01 | PRIMARY | ✅ Mapped |
-| ISO 27001 | Clause 5.3 | Roles & responsibilities | ✅ Mapped |
-| ISO 42001 | Clause 5.4 | Accountability | ⚠️ If AI |
+|----------|-----------|--------------|--------|
+| COBIT 2019 | EDM01 (Governance framework) | PRIMARY | Mapped |
+| ISO 27001:2022 | Clause 5.3 (Roles/responsibilities) | SECONDARY | Mapped |
+| ISO 42001:2023 | Clause 5.4 (Accountability) | CONDITIONAL | If AI systems |
 
-**Evidence Mapping:**
-```
-Control Requirement:
-├─ Governance Charter (2+ pages)
-├─ RACI Matrix (responsibilities)
-├─ Committee Charters (3+)
-├─ Escalation Procedures
-└─ Approval Authority Matrix
+Evidence Mapping Chain:
+- Control Requirements: Governance Charter (2+ pages), RACI Matrix, Committee Charters (3+), Escalation Procedures, Approval Authority Matrix
+- Satisfies: COBIT EDM01 (Governance structure), ISO 27001 Clause 5.3 (Roles/responsibilities), ISO 27001 Clause 5.2 (Information security policy), ISO 42001 Clause 5.4 (Accountability)
 
-Satisfies:
-├─ COBIT EDM01 (Governance structure)
-├─ ISO 27001 5.3 (Roles & responsibilities)
-├─ ISO 27001 5.2 (Information security policy)
-└─ ISO 42001 5.4 (Accountability)
-```
+#### APO Domain — Align, Plan, Organize
 
----
+**EATGF-APO-ARCH-01: Enterprise Architecture Framework**
 
-### 1.2 APO Domain - Align, Plan, Organize
+Multi-Standard Mapping:
 
-#### EATGF-APO-ARCH-01: Enterprise Architecture Framework
+| COBIT 2019 | ISO 27001:2022 | NIST SP 800-53 | Evidence |
+|------------|----------------|----------------|----------|
+| APO03.02 (Architecture standards) | A.8.21 (Secure architecture) | N/A | Architecture standards document |
+| APO03.03 (Current state) | Clause 5.4 (Responsibilities) | N/A | Current-state architecture diagrams |
+| APO03.04 (Target state) | N/A | N/A | Target-state architecture diagrams |
 
-**Multi-Standard Mapping:**
+Evidence Linkage:
+- Architecture standards document (policies, patterns, controls)
+- Architecture review board charter
+- Current-state vs target-state architecture diagrams
+- Control mapping to architecture decisions
+- ARB decision log (monthly minimum)
 
-| COBIT | ISO | NIST | Evidence |
-|-------|-----|------|----------|
-| APO03.02 | A.8.21 | N/A | Architecture standards doc |
-| APO03.03 | 5.4 | N/A | Current-state architecture |
-| APO03.04 | N/A | N/A | Target-state architecture |
+Applicability Note: Mandatory for SaaS/Enterprise editions; optional for Startup edition (single-person teams may document informally).
 
-**Evidence Linkage:**
-1. Architecture standards document (policies, patterns)
-2. Architecture review board charter
-3. Current-state vs target-state diagrams
-4. Control mapping to architecture
-5. ARB decision log (monthly)
+**EATGF-APO-RISK-01: IT and AI Risk Register Management**
 
-**Applicability Note:**
-- Mandatory for SaaS/Enterprise
-- Optional for Startup (one-person team may document informally)
+Comprehensive Mapping Structure:
+- COBIT 2019 APO12 (Manage Risk): APO12.01 (Risk identification), APO12.02 (Risk assessment), APO12.03 (Risk response), APO12.04 (Risk monitoring), APO12.05 (Risk reporting)
+- ISO 27001:2022 Clause 6.1.2: Risk assessment scope, Risk assessment methodology, Risk criteria, Risk analysis, Risk evaluation
+- ISO 42001:2023 Clause 6.1.1: AI risk assessment, Mitigation planning
+- NIST AI RMF GOVERN-1, MAP-1: Risk categorization, Measurement frameworks
 
----
+Evidence Types Required:
+- Risk register (spreadsheet or system with 50+ identified risks minimum)
+- Risk assessment methodology documentation
+- Risk heat map (Probability x Impact matrix)
+- Top 10 Critical/High risk mitigation plans
+- Monthly escalation tracking log
+- Quarterly risk trending analysis
 
-#### EATGF-APO-RISK-01: IT & AI Risk Register Management
+System Integration: Risk data feeds into SoA, audit planning, board reporting; reused by ISO 27001 RTO/RPO risk analysis; extended by AI risk assessment (if AI systems deployed).
 
-**Comprehensive Mapping:**
+**EATGF-APO-SEC-01: Information Security Management System (ISMS)**
 
-```
-EATGF-APO-RISK-01
-├─ COBIT 2019: APO12 (Manage Risk)
-│  ├─ 12.01: Risk identification
-│  ├─ 12.02: Risk assessment
-│  ├─ 12.03: Risk response
-│  ├─ 12.04: Risk monitoring
-│  └─ 12.05: Risk reporting
-├─ ISO 27001: Clause 6.1.2
-│  ├─ Risk assessment scope
-│  ├─ Risk assessment methodology
-│  ├─ Risk criteria
-│  ├─ Risk analysis
-│  └─ Risk evaluation
-├─ ISO 42001: Clause 6.1.1
-│  ├─ AI risk assessment
-│  └─ Mitigation planning
-└─ NIST AI RMF: GOVERN-1, MAP-1
-   ├─ Risk categorization
-   └─ Measurement frameworks
-```
+Master Mapping (Extensive Alignment):
 
-**Evidence Types:**
-1. Risk register (spreadsheet/system) with 50+ identified risks
-2. Risk assessment methodology documentation
-3. Risk heat map (Probability × Impact)
-4. Top 10 Critical/High risk mitigation plans
-5. Monthly escalation tracking
-6. Quarterly risk trending analysis
+| COBIT 2019 | ISO 27001:2022 Clause | Scope |
+|------------|----------------------|-------|
+| APO13 (Manage Security) | Clauses 4-10 | Complete ISMS |
+| APO13.01 | Clause 5 (Leadership) | Policy governance |
+| APO13.02 | Clause 6 (Planning) | Risk planning |
+| APO13.03 | Clause 7 (Support) | Resource allocation |
+| APO13.04 | Clause 8 (Operations) | Control implementation |
+| APO13.05 | Clause 9 (Performance evaluation) | Measurement |
 
-**System Integration:**
-- Risk data feeds into: SoA, audit planning, board reporting
-- Reused by: ISO 27001 RTO/RPO risk analysis
-- Extended by: AI risk assessment (if applicable)
+Key Evidence Requirements:
+- ISMS Manual (structured per ISO 27001 clauses 4-10)
+- Statement of Applicability (SoA) with all 76 Annex A controls selected or excluded
+- Information security policy suite (7-10 policies minimum)
+- Risk assessment report
+- Internal audit reports
+- Corrective/preventive action tracking log
+- Management review meeting documentation
 
----
+Evidence Reuse Benefit: Single ISMS implementation satisfies both COBIT APO13 AND ISO 27001 requirements simultaneously; SoA directly supports audit readiness.
 
-#### EATGF-APO-SEC-01: Information Security Management System (ISMS)
+**EATGF-APO-AI-01: AI Governance System (AIMS)**
 
-**Master Mapping (Requires Extensive Alignment):**
-
-| COBIT | ISO 27001 | Scope |
-|-------|-----------|-------|
-| APO13 | Clauses 4-10 | Complete ISMS |
-| APO13.01 | 5 (Leadership) | Policy governance |
-| APO13.02 | 6 (Planning) | Risk planning |
-| APO13.03 | 7 (Support) | Resource allocation |
-| APO13.04 | 8 (Operations) | Control implementation |
-| APO13.05 | 9 (Performance eval) | Measurement |
-
-**Key Evidence:**
-1. ISMS Manual (ISO 27001 structured)
-2. Statement of Applicability (SoA) - 76 controls selected/excluded
-3. Information security policy suite (7-10 policies)
-4. Risk assessment report
-5. Internal audit reports
-6. Corrective/preventive action tracking
-7. Management review documentation
-
-**Evidence Reuse Benefit:**
-- Single ISMS implementation satisfies both COBIT APO13 AND ISO 27001 requirements
-- SoA directly supports audit readiness
-
----
-
-#### EATGF-APO-AI-01: AI Governance System (AIMS)
-
-**ISO 42001 Primary Mapping:**
+ISO 42001:2023 Primary Mapping:
 
 | ISO 42001 Clause | COBIT Equivalent | Mapping |
-|---|---|---|
-| 4 (Context) | APO01 | Organization understanding |
-| 5 (Leadership) | APO04 | AI governance leadership |
-| 6 (Planning) | APO12 | AI risk planning |
-| 7 (Support) | APO08 | Resource management |
-| 8 (Operation) | BAI03 | AI system lifecycle |
-| 9 (Performance) | MEA01 | AI performance monitoring |
-| 10 (Improvement) | MEA03 | AI audit and review |
+|------------------|------------------|---------|
+| Clause 4 (Context) | APO01 | Organization understanding |
+| Clause 5 (Leadership) | APO04 | AI governance leadership |
+| Clause 6 (Planning) | APO12 | AI risk planning |
+| Clause 7 (Support) | APO08 | Resource management |
+| Clause 8 (Operation) | BAI03 | AI system lifecycle |
+| Clause 9 (Performance) | MEA01 | AI performance monitoring |
+| Clause 10 (Improvement) | MEA03 | AI audit and review |
 
-**NIST AI RMF Alignment:**
+NIST AI RMF Alignment:
 
-| NIST AI RMF | AIMS Clause | Evidence |
-|---|---|---|
-| GOVERN | 5, 6 | AI governance charter |
-| MAP | 6 | AI risk mapping |
-| MEASURE | 9 | Model performance metrics |
-| MANAGE | 8 | AI lifecycle controls |
+| NIST AI RMF Category | ISO 42001 Clause | Evidence |
+|----------------------|------------------|----------|
+| GOVERN | Clauses 5, 6 | AI governance charter |
+| MAP | Clause 6 | AI risk mapping |
+| MEASURE | Clause 9 | Model performance metrics |
+| MANAGE | Clause 8 | AI lifecycle controls |
 
-**Evidence Structure:**
-1. AIMS Manual (ISO 42001 template)
-2. AI System Registry (all AI systems listed)
-3. AI governance committee charter
-4. AI model documentation standard
-5. Fairness/bias assessment process
-6. Model performance monitoring dashboard
-7. AI incident response procedures
+Evidence Structure Required:
+- AIMS Manual (ISO 42001 template structure)
+- AI System Registry (all AI systems catalogued)
+- AI governance committee charter
+- AI model documentation standard
+- Fairness/bias assessment process
+- Model performance monitoring dashboard
+- AI incident response procedures
 
----
+#### BAI Domain — Build, Acquire, Implement
 
-### 1.3 BAI Domain - Build, Acquire, Implement
+**EATGF-BAI-CHG-01: Controlled Change Management**
 
-#### EATGF-BAI-CHG-01: Controlled Change Management
-
-**Triple-Standard Mapping:**
+Triple-Standard Mapping:
 
 | Framework | Standard | Example Clause |
-|-----------|----------|---|
-| COBIT | BAI06 | Change request & approval |
+|-----------|----------|----------------|
+| COBIT | BAI06 (Manage changes) | Change request and approval procedures |
 | ISO 27001 | A.8.19 | Change approval procedures |
-| NIST 800-53 | CM-3 | Change control procedures |
+| NIST SP 800-53 | CM-3 | Configuration change control procedures |
 
-**Evidence Unified Approach:**
-```
-Single process satisfies all three:
-├─ Engineering change log (JIRA/ADO)
-│  ├─ Change request [BAI06, A.8.19]
-│  ├─ Risk assessment [BAI06]
-│  ├─ Approval gate [CM-3]
-│  └─ Deployment record [all three]
-├─ Change Advisory Board (CAB)
-│  ├─ Monthly meetings [BAI06.02]
-│  ├─ Approval authority [all three]
-│  └─ Decision log [all three]
-└─ Rollback testing
-   ├─ Recovery procedures [A.8.19]
-   └─ Test results [all three]
-```
+Unified Evidence Approach (Single process satisfies all three):
+- Engineering change log (JIRA/Azure DevOps/ServiceNow): Change request [BAI06, A.8.19], Risk assessment [BAI06], Approval gate [CM-3], Deployment record [all three]
+- Change Advisory Board (CAB): Monthly meetings [BAI06.02], Approval authority [all three], Decision log [all three]
+- Rollback testing: Recovery procedures [A.8.19], Test results [all three]
 
-**Integration:**
-- Change log is audit evidence for ISO 27001, SOC 2, COBIT
-- CAB minutes = Change impact assessment evidence
-- Zero additional process needed for compliance
+Integration Benefit: Change log serves as audit evidence for ISO 27001, SOC 2, and COBIT simultaneously; CAB minutes provide change impact assessment evidence; zero additional process overhead for multi-framework compliance.
 
----
+**EATGF-BAI-CONF-01: Configuration and Version Control**
 
-#### EATGF-BAI-CONF-01: Configuration & Version Control
+Mapping:
 
-**Mapping:**
+| COBIT 2019 | ISO 27001:2022 | Mapping |
+|------------|----------------|---------|
+| BAI10.01 (Configuration baselines) | A.8.9 (Asset management) | Configuration baselines |
+| BAI10.02 (Configuration tracking) | A.8.9 | Configuration tracking |
+| BAI10.03 (Configuration integrity) | A.8.9 | Configuration integrity |
 
-| COBIT | ISO 27001 | Mapping |
-|-------|-----------|---------|
-| BAI10.01 | A.8.9 | Configuration baselines |
-| BAI10.02 | A.8.9 | Configuration tracking |
-| BAI10.03 | A.8.9 | Configuration integrity |
+Evidence Types Required:
+- Git repository with branch protection rules enforced
+- Commit history and signed commits (GPG signatures)
+- Configuration baseline documentation
+- Access control for code and configuration (RBAC implementation)
+- Monthly audit of configuration changes
+- Infrastructure-as-code documentation (Terraform/CloudFormation)
 
-**Evidence Types:**
-1. Git repository with branch protection rules
-2. Commit history and signed commits
-3. Configuration baseline docs
-4. Access control for code/config (RBAC)
-5. Monthly audit of configuration changes
-6. Infrastructure-as-code documentation
+Satisfies: COBIT configuration management control objectives, ISO 27001 A.8.9 (Access to information and other assets), DevSecOps audit trail requirements.
 
-**Satisfies:**
-- COBIT: Configuration management control objectives
-- ISO 27001: A.8.9 (Access to information and other assets)
-- DevSecOps: Audit trail for compliance
+**EATGF-BAI-TEST-01: Quality Assurance and Testing**
 
----
-
-#### EATGF-BAI-TEST-01: Quality Assurance & Testing
-
-**Multi-Platform Mapping:**
+Multi-Platform Mapping:
 
 | Framework | Reference | Element |
 |-----------|-----------|---------|
-| COBIT | BAI03 | Configuration testing |
-| ISO 27001 | A.8.9 | Security testing |
-| NIST 800-53 | CA-2 | Security assessment |
-| OWASP | Testing Guide | SAST/DAST/SCA |
+| COBIT 2019 | BAI03 (Solutions implementation) | Configuration testing |
+| ISO 27001:2022 | A.8.9 (Asset management) | Security testing requirements |
+| NIST SP 800-53 | CA-2 (Security assessments) | Security assessment and authorization |
+| OWASP | Testing Guide | SAST/DAST/SCA methodologies |
 
-**Evidence Portfolio:**
-```
-Testing Requirements:
-├─ Unit Test Results (70%+ coverage required)
-├─ Integration Tests (100% of APIs)
-├─ Security Tests
-│  ├─ SAST (Static analysis) - per commit
-│  ├─ DAST (Dynamic analysis) - pre-release
-│  └─ SCA (Component scan) - continuous
-├─ Performance Tests (vs. baseline)
-├─ UAT Sign-Off (business acceptance)
-└─ Security Scan Results (OWASP scan report)
+Evidence Portfolio Structure:
+- Unit Test Results (70%+ code coverage required)
+- Integration Tests (100% of API endpoints)
+- Security Tests: SAST (per commit), DAST (pre-release), SCA (continuous dependency scanning)
+- Performance Tests (comparison against baseline)
+- UAT Sign-Off (business acceptance documentation)
+- Security Scan Results (OWASP ZAP or similar scan reports)
 
-Satisfies:
-├─ COBIT: BAI03 (Service configuration)
-├─ ISO 27001: A.8.9 (Change security testing)
-├─ OWASP: Testing practices
-└─ SOC 2: Change management
-```
+Satisfies: COBIT BAI03, ISO 27001 A.8.9, OWASP testing practices, SOC 2 change management requirements.
 
----
+#### DSS Domain — Deliver, Service, Support
 
-### 1.4 DSS Domain - Deliver, Service, Support
+**EATGF-DSS-SEC-01: Identity and Access Management (IAM)**
 
-#### EATGF-DSS-SEC-01: Identity & Access Management (IAM)
-
-**Universal Control (Applies to All Standards):**
+Universal Control (Applies to All Standards):
 
 | Standard | Clause | Scope |
 |----------|--------|-------|
-| COBIT | DSS05 (Manage Identity & Access) | All access types |
-| ISO 27001 | A.5.15-A.5.18 | User access control |
-| NIST 800-53 | AC-2, AC-3 | Account & access control |
-| SOC 2 | CC6.1-6.2 | Access control |
+| COBIT 2019 | DSS05 (Manage Identity and Access) | All access types |
+| ISO 27001:2022 | A.5.15-A.5.18 | User access control |
+| NIST SP 800-53 | AC-2, AC-3 | Account and access control |
+| SOC 2 | CC6.1-6.2 | Logical access controls |
 
-**Control Architecture:**
-
-```
-IAM Foundation
-├─ Centralized identity platform (Okta/Azure/similar)
-├─ Authentication
-│  ├─ MFA required for sensitive systems
-│  ├─ SSO for all cloud systems
-│  └─ Passwordless authentication (future target)
-├─ Authorization (RBAC)
-│  ├─ Role definitions per system
-│  ├─ Access control matrix (RACI)
-│  └─ Role review quarterly
-├─ Provisioning
-│  ├─ Automated (Okta/system connectors)
-│  └─ Approval workflow
-├─ Deprovisioning
-│  ├─ Same-day removal on termination
-│  └─ Service account rotation
-└─ Monitoring
-   ├─ Access review (quarterly)
-   ├─ Audit logs (12-month retention)
-   └─ Privileged access monitoring
+Control Architecture Components:
+- Centralized identity platform (Okta/Azure AD/similar)
+- Authentication: MFA required for sensitive systems, SSO for all cloud systems, passwordless authentication (future target)
+- Authorization (RBAC): Role definitions per system, Access control matrix (RACI), Quarterly role review
+- Provisioning: Automated provisioning (Okta/system connectors), Approval workflow
+- Deprovisioning: Same-day removal on termination, Service account rotation
+- Monitoring: Quarterly access review, 12-month audit log retention, Privileged access monitoring
 
 Evidence Satisfies:
-├─ COBIT DSS05 (5 control objectives)
-├─ ISO 27001 A.5.15-A.5.18 (4 control objectives)
-├─ NIST 800-53: AC-2, AC-3, AC-5
-├─ SOC 2: CC6 (6 trust service criteria)
-└─ Single audit exam for all frameworks
-```
+- COBIT DSS05 (5 control objectives)
+- ISO 27001 A.5.15-A.5.18 (4 control objectives)
+- NIST SP 800-53 AC-2, AC-3, AC-5
+- SOC 2 CC6 (6 trust service criteria)
+- Single audit examination for all frameworks
 
-**Evidence Reuse:**
-- Okta dashboard = COBIT evidence + ISO 27001 evidence + SOC 2 evidence
-- Quarterly access review = Compliance across all frameworks
-- Audit logs = Single evidence source for 4+ frameworks
+Evidence Reuse Efficiency: Okta dashboard serves as evidence for COBIT, ISO 27001, and SOC 2 simultaneously; quarterly access review satisfies compliance across all frameworks; audit logs provide single evidence source for 4+ frameworks.
 
----
+**EATGF-DSS-ENC-01: Data Encryption and Protection**
 
-#### EATGF-DSS-ENC-01: Data Encryption & Protection
-
-**Mapping:**
+Mapping:
 
 | Framework | Reference | Requirement |
-|-----------|-----------|---|
-| COBIT | DSS07 | Cryptographic security |
-| ISO 27001 | A.10.1 | Cryptographic controls |
-| NIST 800-53 | SC-7, SC-28 | Boundary protection, encryption |
+|-----------|-----------|-------------|
+| COBIT 2019 | DSS07 (Cryptographic security) | Cryptographic key management |
+| ISO 27001:2022 | A.10.1 (Cryptographic controls) | Cryptographic policy and key management |
+| NIST SP 800-53 | SC-7, SC-28 | Boundary protection, protection of information at rest |
 
-**Evidence Structure:**
-```
-Encryption Implementation:
-├─ At-Rest Encryption
-│  ├─ Database encryption (AES-256)
-│  ├─ Backup encryption (AES-256)
-│  └─ Archive encryption (AES-256)
-├─ In-Transit Encryption
-│  ├─ TLS 1.2+ (minimum)
-│  ├─ Certificate management
-│  └─ Perfect forward secrecy (ideal)
-├─ Key Management
-│  ├─ HSM for key storage
-│  ├─ Key rotation schedule (bi-annual)
-│  └─ Separation of duties
-└─ Evidence
-   ├─ Encryption audit report
-   ├─ Configuration screenshots
-   ├─ Key rotation logs
-   └─ Certificate inventory
+Evidence Structure:
+- At-Rest Encryption: Database encryption (AES-256), Backup encryption (AES-256), Archive encryption (AES-256)
+- In-Transit Encryption: TLS 1.2+ minimum, Certificate management procedures, Perfect forward secrecy (recommended)
+- Key Management: HSM for production key storage, Key rotation schedule (bi-annual minimum), Separation of duties for key access
+- Evidence Artifacts: Encryption audit report, Configuration screenshots/exports, Key rotation logs, Certificate inventory
 
-Satisfies:
-├─ COBIT DSS07 (3 control objectives)
-├─ ISO 27001 A.10.1 (2 control clauses)
-├─ NIST 800-53: SC-28 (information protection)
-└─ Regulatory: GDPR, HIPAA (encryption standards)
-```
+Satisfies: COBIT DSS07 (3 control objectives), ISO 27001 A.10.1 (2 control clauses), NIST SP 800-53 SC-28 (information protection), Regulatory requirements (GDPR, HIPAA encryption standards).
 
----
+**EATGF-DSS-VULN-01: Vulnerability and Patch Management**
 
-#### EATGF-DSS-VULN-01: Vulnerability & Patch Management
-
-**Mapping (Critical for Operational Security):**
+Mapping (Critical for Operational Security):
 
 | Framework | Reference | Scope |
-|----------|-----------|-------|
-| COBIT | DSS06 | Integrated monitoring |
-| ISO 27001 | A.12.6 | Vulnerability management |
-| NIST 800-53 | SI-2 | Flaw remediation |
+|-----------|-----------|-------|
+| COBIT 2019 | DSS06 (Integrated monitoring) | Security monitoring |
+| ISO 27001:2022 | A.12.6 (Technical vulnerability management) | Vulnerability management lifecycle |
+| NIST SP 800-53 | SI-2 (Flaw remediation) | Flaw identification and remediation |
 
-**Control Process:**
-
-```
 Vulnerability Management Lifecycle:
-├─ Scanning (Monthly minimum)
-│  ├─ Network scanning (Qualys/Tenable)
-│  ├─ Application scanning (SAST/DAST)
-│  └─ Threat intelligence integration
-├─ Classification
-│  ├─ Critical: 24-hour SLA
-│  ├─ High: 7-day SLA
-│  ├─ Medium: 30-day SLA
-│  └─ Low: 90-day SLA
-├─ Remediation
-│  ├─ Patch development/testing
-│  ├─ Deployment per SLA
-│  └─ Verification testing
-├─ Exception Process
-│  ├─ Risk acceptance (if not patching)
-│  ├─ Compensating control (required)
-│  └─ Exception duration limit
-└─ Evidence
-   ├─ Monthly scan reports
-   ├─ Patch deployment logs
-   ├─ Exception tracking
-   └─ Compliance metrics
+- Scanning (Monthly minimum): Network scanning (Qualys/Tenable), Application scanning (SAST/DAST), Threat intelligence integration
+- Classification and SLAs: Critical (24-hour remediation SLA), High (7-day SLA), Medium (30-day SLA), Low (90-day SLA)
+- Remediation: Patch development/testing, Deployment per SLA, Verification testing post-deployment
+- Exception Process: Risk acceptance (if not patching feasible), Compensating control (required for exceptions), Exception duration limit enforcement
+- Evidence: Monthly vulnerability scan reports, Patch deployment logs, Exception tracking log, Compliance metrics dashboard
 
-Satisfies:
-├─ COBIT: DSS06 (5 control objectives)
-├─ ISO 27001: A.12.6 (3 control objectives)
-├─ NIST 800-53: SI-2 (patch management)
-└─ Security best practice
-```
+Satisfies: COBIT DSS06 (5 control objectives), ISO 27001 A.12.6 (3 control objectives), NIST SP 800-53 SI-2 (patch management), Security operational best practices.
 
----
+**EATGF-DSS-INC-01: Incident Response**
 
-#### EATGF-DSS-INC-01: Incident Response Management
+Mapping:
 
-**Universal Control (All Standards):**
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| COBIT 2019 | DSS02 (Manage service requests and incidents) | Incident lifecycle management |
+| ISO 27001:2022 | A.5.24-A.5.27 | Incident response planning and management |
+| NIST SP 800-53 | IR-4, IR-5, IR-6 | Incident handling, monitoring, reporting |
 
-| Framework | Clause | Requirement |
-|-----------|--------|---|
-| COBIT | DSS02 | Incident management |
-| ISO 27001 | A.5.24-A.5.27 | Incident management (4 controls) |
-| NIST 800-53 | IR-1:IR-8 | Incident response |
-| SOC 2 | C1 | Availability |
+Control Requirements:
+- Incident response plan with defined roles and procedures
+- Incident severity classification (Severity 1-4 definitions)
+- Escalation procedures with defined timelines
+- Post-incident review requirements for Severity 1-2 incidents
+- Annual incident response tabletop exercises
 
-**Incident Response Process:**
+Evidence Requirements:
+- Incident response plan (approved by CISO)
+- Incident log with severity classification and timestamps
+- Post-incident review reports with root cause analysis
+- Tabletop exercise records and lessons learned
 
-```
-Incident Management Framework:
-├─ Detection
-│  ├─ SIEM monitoring (24/7)
-│  ├─ Alert thresholds
-│  └─ Threat intelligence
-├─ Response
-│  ├─ Incident classification (Severity 1-4)
-│  ├─ Notification (1 hour max)
-│  ├─ Investigation
-│  └─ Containment
-├─ Recovery
-│  ├─ Eradication
-│  ├─ System restoration
-│  └─ Evidence preservation
-├─ Post-Incident
-│  ├─ Root cause analysis (RCA)
-│  ├─ Lessons learned
-│  ├─ Improvement actions
-│  └─ Regulatory notification (if breach)
-└─ Evidence
-   ├─ Incident tickets (100% documented)
-   ├─ Timeline documentation
-   ├─ RCA reports
-   ├─ Remediation tracking
-   └─ Trend analysis (quarterly)
+Satisfies: COBIT DSS02, ISO 27001 A.5.24-A.5.27, NIST SP 800-53 IR family, SOC 2 CC7 (system operations).
 
-Satisfies:
-├─ COBIT: DSS02 (6 control objectives)
-├─ ISO 27001: A.5.24-A.5.27 (responses & breach notification)
-├─ NIST 800-53: IR-4 (incident handling)
-├─ Breach notification laws (GDPR, CCPA, etc.)
-└─ Insurance/ransomware response
-```
+#### MEA Domain — Monitor, Evaluate, Assess
 
----
+**EATGF-MEA-AUD-01: Internal Audit**
 
-### 1.5 MEA Domain - Monitor, Evaluate, Assess
+Mapping:
 
-#### EATGF-MEA-AUD-01: Internal Audit Program
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| COBIT 2019 | MEA03 (Independent assurance) | Internal audit function |
+| ISO 27001:2022 | Clause 9.2 (Internal audit) | ISMS audit requirements |
+| ISO 42001:2023 | Clause 9.2 (Internal audit) | AI MS audit requirements |
 
-**Mapping (Audit Oversight):**
+Requirements:
+- Annual audit plan covering all EATGF domains
+- Audit execution per Internal Audit Procedure (Layer 06)
+- Audit finding remediation tracking
+- Audit results reporting to Governance Council
 
-| Framework | Reference | Role |
-|-----------|-----------|------|
-| COBIT | MEA03 | Audit compliance |
-| ISO 27001 | Clause 9.2 | Internal audit requirements |
-| ISO 42001 | Clause 9 | Performance evaluation |
+Evidence: Annual audit plan, Audit reports with findings, Remediation tracker, Governance Council reporting.
 
-**Audit Structure:**
+**EATGF-MEA-PERF-01: Performance Monitoring**
 
-```
-Annual Internal Audit Program:
-├─ Audit Plan
-│  ├─ Audit scope (all major processes)
-│  ├─ Risk-based selection of audit areas
-│  ├─ Audit frequency per risk level
-│  └─ Audit team (internal OR external)
-├─ Audit Execution
-│  ├─ Pre-audit: Planning & scoping
-│  ├─ Fieldwork: Evidence gathering
-│  ├─ Testing: Control testing
-│  └─ Reporting: Findings documentation
-├─ Finding Classification
-│  ├─ Critical findings (immediate action)
-│  ├─ Major findings (30-day remediation)
-│  ├─ Minor findings (90-day remediation)
-│  └─ Observations (informational)
-├─ Remediation Tracking
-│  ├─ Management action plan (MAP)
-│  ├─ Responsible owner assignment
-│  ├─ Deadline tracking
-│  └─ Follow-up audit verification
-└─ Governance
-   ├─ Audit committee oversight
-   ├─ Executive reporting (quarterly)
-   ├─ Board presentation (annual)
-   └─ Independence verification
+Mapping:
 
-Satisfies:
-├─ COBIT: MEA03 (Monitor compliance)
-├─ ISO 27001: 9.2 (Internal audit requirements)
-├─ ISO 42001: 9 (Performance evaluation, if AI)
-├─ Governance best practice
-└─ Regulatory expectations
-```
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| COBIT 2019 | MEA01 (Performance monitoring) | Performance and conformance |
+| ISO 27001:2022 | Clause 9.1 (Monitoring and measurement) | ISMS performance |
+| ISO 42001:2023 | Clause 9.1 (Monitoring and measurement) | AI MS performance |
 
----
+Requirements:
+- KPI definitions for critical governance processes
+- Monthly KPI data collection and reporting
+- Quarterly performance reviews
+- Corrective action initiation when thresholds breached
 
-#### EATGF-MEA-PERF-01: Performance & Conformance Monitoring
+Evidence: KPI definitions and thresholds, Monthly KPI reports, Quarterly performance review minutes.
 
-**Strategic KPI Dashboard:**
+**EATGF-MEA-MAT-01: Maturity Assessment**
 
-| Framework | Metrics | Evidence |
-|-----------|---------|----------|
-| COBIT | Process performance, execution metrics | Dashboard/reports |
-| ISO 27001 | Control effectiveness, compliance | Monitoring results |
-| Business | DORA metrics, availability, security | Operational data |
+Mapping:
 
-**Evidence Dashboard:**
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| COBIT 2019 | MEA02 (Maturity tracking) | Process maturity |
+| ISO 27001:2022 | Clause 10 (Continual improvement) | ISMS improvement |
 
-```
-Governance KPI Monitor (Updated Monthly):
+Requirements:
+- Annual maturity assessment using EATGF Maturity Model (Layer 03)
+- Maturity assessment across all 11 domains
+- Improvement target definition and tracking
+- Reporting to Governance Council
 
-Strategic Level
-├─ Control Implementation Rate: __95%
-├─ Compliance Score: __90%
-├─ Risk Trend: __Stable
-└─ Board Approval: __Scheduled Board Meeting
+Evidence: Annual maturity assessment report, Maturity scoring by domain, Improvement action plan.
 
-Operational Level
-├─ Patch Compliance: __95%
-├─ Access Review: __On Schedule
-├─ Incident Response: __<1 hour (avg)
-└─ Change Success Rate: __98%
+#### AI Domain — Artificial Intelligence
 
-Reporting
-├─ Monthly: Operational team
-├─ Quarterly: Executive stakeholders
-├─ Annual: Board of Directors
-└─ Ad-hoc: Risk escalation
+**EATGF-AI-LC-01: AI Lifecycle Governance**
 
-Satisfies:
-├─ COBIT: MEA01 (Monitoring & measurement)
-├─ ISO 27001: 9.1 (Monitoring & measurement req)
-├─ Executive accountability
-└─ Risk-aware leadership
-```
+Mapping:
 
----
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 42001:2023 | Clause 8 (Operation) | AI system lifecycle management |
+| NIST AI RMF | MANAGE category | AI system management |
 
-#### EATGF-MEA-MAT-01: Governance Maturity Assessment
+Requirements:
+- AI model inventory with lifecycle stage tracking
+- Pre-deployment impact assessments
+- Model monitoring for drift and fairness
+- Annual review of deployed AI models
+- Decommission criteria and procedures
 
-**EATGF Maturity Model (5 Levels):**
+Evidence: AI model inventory, Impact assessments, Model monitoring dashboards, Annual review reports.
 
-| Level | COBIT Equivalent | Organizational Readiness |
-|-------|---|---|
-| 1: Initial | Ad-hoc | Startup (basic controls) |
-| 2: Developing | Repeatable | SaaS (documented processes) |
-| 3: Defined | Defined | Enterprise (standardized) |
-| 4: Managed | Managed | Data-driven optimization |
-| 5: Optimized | Optimized | Predictive, continuous improvement |
+**EATGF-AI-RISK-01: AI Risk and Bias Management**
 
-**Assessment Methodology:**
+Mapping:
 
-```
-Annual Maturity Assessment:
-├─ Facilitated Workshop (2 days)
-│  ├─ Cross-functional stakeholders
-│  ├─ 5 COBIT Domain reviews
-│  ├─ Process capability scoring
-│  └─ Evidence validation
-├─ Scoring (1-5 scale per domain)
-│  ├─ 1 = Awareness level only
-│  ├─ 2 = Process documented
-│  ├─ 3 = Process standardized
-│  ├─ 4 = Monitored & measured
-│  └─ 5 = Optimized & automated
-├─ Result
-│  ├─ Maturity heatmap (5 domains)
-│  ├─ Strengths & gaps analysis
-│  ├─ 3-year improvement roadmap
-│  └─ Executive presentation
-└─ Governance
-   ├─ Results approved by governance council
-   ├─ Roadmap integrated into IT strategy
-   └─ Annual progress tracking
+| Framework | Reference | Scope ||-----------|-----------|-------|
+| ISO 42001:2023 | Clause 6.1 (Risks and opportunities) | AI risk management |
+| NIST AI RMF | GOVERN-2, MAP, MEASURE | AI risk governance |
 
-Satisfies:
-├─ COBIT: Capability assessment
-├─ ISO 27001: Control effectiveness
-├─ Strategic planning
-└─ Investment prioritization
-```
+Requirements:
+- Bias testing during model development and before deployment
+- Fairness thresholds definition (e.g., disparate impact > 0.80)
+- Explainability documentation for high-risk AI models
+- Production model bias drift monitoring
+- AI risk register distinct from general risk register
 
----
+Evidence: Bias testing reports, Fairness threshold documentation, Explainability reports, AI risk register.
 
-### 1.6 AI Governance Controls (Extension)
+#### API Domain — Application Programming Interface
 
-#### EATGF-AI-LC-01: AI System Lifecycle Governance
+**EATGF-API-SEC-01: API Security**
 
-**ISO 42001 + NIST AI RMF Mapping:**
+Mapping:
 
-| Standard | Reference | Scope |
-|----------|-----------|-------|
-| ISO 42001 | Clause 8 | AI lifecycle end-to-end |
-| NIST AI RMF | All categories | Governance → Measure → Manage |
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| OWASP API Top 10:2023 | All 10 risks | API security controls |
+| ISO 27001:2022 | A.8.3 (Information transfer) | Secure information exchange |
+| NIST SP 800-53 | SC-8 (Transmission confidentiality) | Transmission protection |
 
-**AI Lifecycle Stages:**
+Requirements:
+- API gateway with authentication and rate limiting
+- OAuth 2.0 or equivalent for API authentication
+- API security testing aligned with OWASP ASVS 4.0
+- API traffic monitoring for anomalous patterns
 
-```
-AI System Lifecycle:
-├─ Stage 1: Intake & Planning
-│  ├─ Business case approval
-│  ├─ AI system registration
-│  ├─ Risk classification
-│  └─ Team assignment
-├─ Stage 2: Design & Development
-│  ├─ Expected fairness/accuracy targets
-│  ├─ Data quality requirements
-│  ├─ Model selection rationale
-│  └─ Training & validation plan
-├─ Stage 3: Validation & Testing
-│  ├─ Fairness assessment (bias metrics)
-│  ├─ Accuracy testing (holdout data)
-│  ├─ Security testing (adversarial)
-│  ├─ Explainability review (SHAP/LIME)
-│  └─ Regulatory compliance check
-├─ Stage 4: Deployment
-│  ├─ Production release checklist
-│  ├─ Monitoring setup
-│  ├─ Incident procedures
-│  └─ Stakeholder notification
-├─ Stage 5: Monitoring & Management
-│  ├─ Performance metrics (accuracy, fairness)
-│  ├─ Model drift detection
-│  ├─ Fairness drift detection
-│  ├─ Incident response
-│  └─ Scheduled retraining
-└─ Stage 6: Retirement
-   ├─ Deprecation timeline
-   ├─ Migration plan
-   ├─ Data archival
-   └─ Impact assessment
+Evidence: API gateway configuration, API security test reports, Traffic monitoring dashboards.
 
-Satisfies:
-├─ ISO 42001: Clause 8 (AI system lifecycle)
-├─ NIST AI RMF: MAP/MEASURE/MANAGE
-├─ Trustworthy AI principles
-└─ Governance accountability
-```
+**EATGF-API-LC-01: API Lifecycle Management**
 
----
+Mapping:
 
-#### EATGF-AI-RISK-01: AI Risk Assessment & Bias Management
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.8.3 (Information transfer) | Secure API management |
+| COBIT 2019 | BAI03 (Solutions implementation) | API lifecycle oversight |
 
-**Bias Testing Framework:**
+Requirements:
+- API catalog with version, owner, status
+- API deprecation policy with minimum notice period
+- API documentation (OpenAPI specifications)
+- Quarterly API portfolio review
 
-```
-AI Fairness Requirements:
-├─ Fairness Metrics (select applicable)
-│  ├─ Demographic parity (equal positive rate)
-│  ├─ Equalized odds (equal TPR & FPR across groups)
-│  ├─ Calibration (equal prediction accuracy)
-│  └─ Individual fairness (similar cases treated similarly)
-├─ Test Methodology
-│  ├─ Stratified holdout testing (by protected attributes)
-│  ├─ Statistical testing (p-value < 0.05)
-│  ├─ Problem-specific thresholds
-│  └─ Domain expert review
-├─ Acceptable Thresholds
-│  ├─ Disparity difference: <5% (typical)
-│  ├─ Accuracy variance: <2% across groups
-│  ├─ False positive rate variance: <1%
-│  └─ Custom thresholds per application
-└─ Continuous Monitoring
-   ├─ Monthly fairness metrics
-   ├─ Drift detection (>5% change threshold)
-   ├─ Incident investigation
-   └─ Remediation tracking
+Evidence: API catalog, Deprecation notices, API documentation, Quarterly review minutes.
 
-Satisfies:
-├─ ISO 42001: Clause 6 (Risk management)
-├─ ISO 42001: Clause 8.2 (Processing activities)
-├─ NIST AI RMF: MEASURE-3 (Fairness metrics)
-└─ Responsible AI principles
-```
+#### CLD Domain — Cloud
 
----
+**EATGF-CLD-ARCH-01: Cloud Architecture**
 
-### 1.7 API Governance Controls (Extension)
+Mapping:
 
-#### EATGF-API-SEC-01: API Authentication & Authorization
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| COBIT 2019 | APO03 (Enterprise architecture) | Cloud architecture standards |
+| ISO 27001:2022 | A.8.21 (Secure architecture) | Cloud-specific architecture |
 
-**OWASP API Security Mapping:**
+Requirements:
+- Cloud architecture standards (landing zone design)
+- Architecture review for all new cloud workloads
+- Cloud architecture documentation maintenance
+- Annual well-architected review
 
-| OWASP API | Title | Mapping |
-|-----------|-------|---------|
-| API1 | Broken Object Level Auth | EATGF-API-SEC-01 |
-| API2 | Broken Authentication | EATGF-API-SEC-01 |
-| API3 | Broken Object Property Auth | EATGF-API-SEC-01 |
+Evidence: Cloud architecture standards document, Architecture review records, Annual review report.
 
-**Control Implementation:**
+**EATGF-CLD-SEC-01: Cloud Security**
 
-```
-API Security Architecture:
-├─ API Gateway
-│  ├─ Central authentication point
-│  ├─ OAuth 2.0 or mTLS enforcement
-│  ├─ Token validation
-│  ├─ Rate limiting per client
-│  └─ Threat detection
-├─ Authentication
-│  ├─ OAuth 2.0 (standard implementation)
-│  ├─ Mutual TLS for service-to-service
-│  ├─ API keys (for non-sensitive operations)
-│  └─ Token expiration (max 1 hour)
-├─ Authorization (RBAC)
-│  ├─ Scope-based permissions
-│  ├─ Resource-level access control
-│  ├─ API version-specific permissions
-│  └─ Dynamic policy enforcement
-├─ Logging & Monitoring
-│  ├─ All API calls logged (call, user, timestamp)
-│  ├─ Audit trail (12-month minimum)
-│  ├─ Anomaly detection
-│  └─ Rate limit violations tracked
-└─ Evidence
-   ├─ API gateway configuration
-   ├─ OAuth server setup documentation
-   ├─ Rate limiting rules
-   ├─ Audit log samples
-   └─ Test results (authentication failures)
+Mapping:
 
-Satisfies:
-├─ OWASP: API2 (Broken authentication)
-├─ OWASP: API3 (Object-level authorization)
-├─ COBIT: DSS05 (Access management)
-├─ ISO 27001: A.5.18 (Access management)
-└─ API security best practice
-```
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.5.23 (Cloud services security) | Cloud security controls |
+| NIST SP 800-53 | AC-4 (Information flow enforcement) | Network segmentation |
 
----
+Requirements:
+- Cloud-native IAM implementation
+- Network segmentation and security groups enforcement
+- Cloud audit logging across all accounts
+- Data protection controls (encryption, DLP)
 
-#### EATGF-API-LC-01: API Lifecycle Management
+Evidence: Cloud IAM configuration, Network segmentation documentation, Audit log retention evidence, Data protection configuration.
 
-**OWASP API9 Mapping: Improper Inventory Management**
+**EATGF-CLD-MON-01: Cloud Monitoring**
 
-```
-API Lifecycle:
-├─ Design Phase
-│  ├─ OpenAPI 3.0 specification (contract-first)
-│  ├─ Versioning strategy (semantic versioning)
-│  ├─ Breaking change policy
-│  └─ Deprecation timeline
-├─ Development
-│  ├─ Standards compliance checking
-│  ├─ Security review
-│  ├─ Rate limiting configuration
-│  └─ Documentation completeness
-├─ Testing
-│  ├─ Functional testing
-│  ├─ Security testing (OWASP Top 10)
-│  ├─ Performance testing
-│  └─ Compatibility testing (backward)
-├─ Release
-│  ├─ Version tagging (Git)
-│  ├─ Release notes (breaking changes highlighted)
-│  ├─ Deployment approval
-│  └─ Monitoring setup
-├─ Maintenance
-│  ├─ Performance monitoring
-│  ├─ Error rate tracking
-│  ├─ Security patch application
-│  └─ Usage analytics
-├─ Deprecation
-│  ├─ Minimum 6-month notice
-│  ├─ Migration guide provision
-│  ├─ Client notification (90, 60, 30 days)
-│  └─ Sunset date enforcement
-└─ Evidence
-   ├─ API Catalog (central registry)
-   ├─ OpenAPI specs (all versions)
-   ├─ Release notes (6+ months)
-   ├─ Deprecation timeline (tracking)
-   └─ Audit log of API changes
+Mapping:
 
-Satisfies:
-├─ OWASP: API9 (Inventory management)
-├─ COBIT: BAI03 (Service configuration)
-├─ ISO 27001: A.8.19 (Change management)
-└─ API ecosystem governance
-```
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| COBIT 2019 | DSS06 (Integrated monitoring) | Cloud resource monitoring |
+| ISO 27001:2022 | A.8.16 (Monitoring activities) | Security monitoring |
 
----
+Requirements:
+- Cloud monitoring covering compute, storage, network
+- Alerting thresholds and escalation procedures definition
+- 12-month minimum monitoring data retention
+- Monthly cloud monitoring review
 
-## 📊 SECTION 2: CONTROL-TO-EVIDENCE MAPPING MATRIX
+Evidence: Cloud monitoring configuration, Alerting threshold documentation, Monthly monitoring review reports.
 
-### Quick Reference: What Evidence Proves What?
+**EATGF-CLD-RES-01: Cloud Resilience**
 
-| Evidence Type | COBIT | ISO 27001 | ISO 42001 | NIST AI RMF | OWASP |
-|---|---|---|---|---|---|
-| Policy document | EDM, APO | 5-7 | 5 | GOVERN | N/A |
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.5.30 (ICT readiness for business continuity) | Cloud availability |
+| COBIT 2019 | DSS04 (Manage continuity) | Cloud disaster recovery |
+
+Requirements:
+- Availability targets for all cloud workloads defined
+- Multi-availability-zone or multi-region deployments for critical workloads
+- Annual failover testing
+- Cloud disaster recovery documentation maintenance
+
+Evidence: Availability target documentation, Multi-AZ/region deployment evidence, Failover test reports, Cloud DR documentation.
+
+#### DEV Domain — Development
+
+**EATGF-DEV-SDLC-01: Secure SDLC**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| NIST SSDF | All practices | Secure software development |
+| ISO 27001:2022 | A.8.25 (Secure development lifecycle) | Development security |
+| OWASP | SAMM (Software Assurance Maturity Model) | Development maturity |
+
+Requirements:
+- Secure development standards definition
+- Threat modeling for new applications
+- Security reviews at design and pre-deployment gates
+- Annual security training for all developers
+
+Evidence: Secure development standards document, Threat model records, Security gate review records, Developer security training records.
+
+**EATGF-DEV-SCAN-01: Code Scanning**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| OWASP | ASVS 4.0 | Application security verification |
+| NIST SSDF | PW.1, PW.2 | Secure coding practices |
+| ISO 27001:2022 | A.8.25 (Secure development) | Code security testing |
+
+Requirements:
+- SAST (static application security testing) in CI/CD pipeline
+- DAST (dynamic application security testing) for deployed applications
+- Remediation SLAs by severity defined
+- Scanning coverage tracking across all repositories
+
+Evidence: SAST configuration and scan reports, DAST scan reports, Remediation tracking log, Coverage metrics.
+
+**EATGF-DEV-SUP-01: Supply Chain Security**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| NIST SSDF | PW.4.1 (Software component verification) | Dependency security |
+| ISO 27001:2022 | A.5.19 (Information security in supplier relationships) | Supply chain risk |
+| OWASP | Dependency-Check | Component analysis |
+
+Requirements:
+- SBOM (Software Bill of Materials) generation for all applications
+- Dependency vulnerability monitoring
+- Approved and prohibited dependency lists definition
+- Quarterly dependency review
+
+Evidence: SBOM records, Dependency vulnerability reports, Approved/prohibited dependency lists, Quarterly dependency review minutes.
+
+**EATGF-DEV-CI-01: CI/CD Governance**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.8.19 (Change control) | Deployment governance |
+| NIST SSDF | PW.9 (Build automation) | Pipeline security |
+
+Requirements:
+- Governance gates in CI/CD pipelines (build, test, scan, approve, deploy)
+- Human approval requirement for production deployments
+- Pipeline configuration maintained in version control
+- Pipeline execution log auditing
+
+Evidence: Pipeline configuration records (version controlled), Deployment approval records, Pipeline execution audit logs.
+
+#### DATA Domain — Data
+
+**EATGF-DATA-PRIV-01: Data Privacy**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.5.33- A.5.36 (Privacy and PII protection) | Personal data protection |
+| GDPR | Articles 5, 30, 35 | Privacy compliance |
+| CCPA | Section 1798.100 | California privacy compliance |
+
+Requirements:
+- Data processing inventory (register of processing activities)
+- DPIAs (Data Protection Impact Assessments) for high-risk processing
+- Data subject rights procedures implementation
+- Data classification scheme definition and enforcement
+
+Evidence: Data processing inventory, DPIA records, Data subject request log, Data classification policy.
+
+**EATGF-DATA-RET-01: Data Retention**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.5.34 (Privacy and PII protection) | Data retention controls |
+| GDPR | Article 5(1)(e) | Storage limitation |
+
+Requirements:
+- Data retention schedule defined by data category
+- Automated retention enforcement where feasible
+- Annual retention compliance review
+- Secure data disposal evidence maintenance
+
+Evidence: Data retention schedule, Retention enforcement configuration, Annual retention review report, Disposal certificates or logs.
+
+**EATGF-DATA-MIN-01: Data Minimization**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.5.33 (Privacy and PII protection) | Data minimization |
+| GDPR | Article 5(1)(c) | Data minimization principle |
+
+Requirements:
+- Data minimization principles defined in data governance policy
+- Annual review of data collection practices
+- Technical controls implementation to limit data collection
+- Data minimization metrics reporting to Governance Council
+
+Evidence: Data governance policy (with minimization section), Annual data collection review report, Data minimization metrics.
+
+#### BCP Domain — Business Continuity Planning
+
+**EATGF-BCP-PLAN-01: Business Continuity Planning**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.5.30 (ICT readiness for business continuity) | Business continuity planning |
+| COBIT 2019 | DSS04 (Manage continuity) | Continuity management |
+
+Requirements:
+- Business continuity plans for all critical services
+- Critical service inventory with business impact analysis
+- Annual BCP review and update
+- BCP coverage of technology, people, and process
+
+Evidence: Business continuity plans (approved), Critical service inventory, Business impact analysis, Annual BCP review records.
+
+**EATGF-BCP-TEST-01: Business Continuity Testing**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.5.30 (ICT readiness for business continuity) | Continuity testing |
+| COBIT 2019 | DSS04.08 (Manage continuity) | Test continuity plans |
+
+Requirements:
+- Annual business continuity test (tabletop or failover)
+- Test results documentation including gaps identified
+- BCP update based on test findings
+- Test results reporting to Governance Council
+
+Evidence: BCP test plan and results, Gap analysis from testing, BCP update records post-test.
+
+**EATGF-BCP-RTO-01: RTO/RPO Targets**
+
+Mapping:
+
+| Framework | Reference | Scope |
+|-----------|-----------|-------|
+| ISO 27001:2022 | A.5.30 (ICT readiness for business continuity) | Recovery objectives |
+| COBIT 2019 | DSS04.02 (Manage continuity) | Define continuity requirements |
+
+Requirements:
+- RTO and RPO targets defined for each critical service
+- RTO/RPO targets validated through testing
+- Backup and recovery mechanisms support defined targets
+- RTO/RPO compliance reporting to Governance Council
+
+Evidence: RTO/RPO target documentation, Test results validating RTO/RPO achievability, Backup and recovery configuration evidence.
+
+### Evidence Cross-Reference Matrix
+
+| Evidence Type | COBIT | ISO 27001 | ISO 42001 | NIST AI RMF | NIST 800-53 |
+|---------------|-------|-----------|-----------|-------------|-------------|
 | Risk register | APO12 | 6.1.2 | 6 | MAP | N/A |
-| Audit report | MEA3 | 9.2 | 9 | MEASURE | N/A |
-| Test results | BAI3, DSS6 | A.8.9 | 8.2 | MEASURE | All |
-| Access logs | DSS5 | A.5.15-18 | N/A | N/A | N/A |
-| Incident ticket | DSS2 | A.5.24-27 | 8.2 | GOVERN | N/A |
-| Dashboard | MEA1 | 9.1 | 9 | MEASURE | N/A |
-| Configuration | BAI10 | A.8.9 | 8.1 | N/A | N/A |
-| Training record | APO13 | A.6.3 | 7 | GOVERN | N/A |
-| Deployment log | BAI6 | A.8.19 | N/A | N/A | N/A |
+| Audit report | MEA03 | 9.2 | 9 | MEASURE | N/A |
+| Test results | BAI03, DSS06 | A.8.9 | 8.2 | MEASURE | All domains |
+| Access logs | DSS05 | A.5.15-A.5.18 | N/A | N/A | AC-2, AC-3 |
+| Incident ticket | DSS02 | A.5.24-A.5.27 | 8.2 | GOVERN | IR-4, IR-5, IR-6 |
+| Dashboard | MEA01 | 9.1 | 9 | MEASURE | N/A |
+| Configuration | BAI10 | A.8.9 | 8.1 | N/A | CM-2, CM-3 |
+| Training record | APO13 | A.6.3 | 7 | GOVERN | AT-2, AT-3 |
+| Deployment log | BAI06 | A.8.19 | N/A | N/A | CM-3 |
+| AI model inventory | N/A | N/A | 8 | ALL | N/A |
+| Bias testing report | N/A | N/A | 9 | MEASURE | N/A |
+| API catalog | BAI03 | A.8.3 | N/A | N/A | N/A |
+| Cloud audit logs | DSS06 | A.8.16 | N/A | N/A | AU-6, SI-4 |
 
----
+### Applicability Matrix by Organization Size
 
-## 📊 SECTION 3: APPLICABILITY MATRIX BY ORGANIZATION SIZE {#section-3-applicability-matrix-by-organization-size}
-
-### Which Controls Are Mandatory by Edition?
+Control applicability varies by edition:
 
 | EATGF Control | Startup (1-10) | SaaS (10-50) | Enterprise (50+) |
-|---|---|---|---|
+|---------------|----------------|--------------|------------------|
 | **EDM Controls** | | | |
-| EATGF-EDM-RISK-01 | ❌ | ✅ | ✅ |
-| EATGF-EDM-BEN-01 | ✅ | ✅ | ✅ |
-| EATGF-EDM-GOV-01 | ❌ | ✅ | ✅ |
+| EATGF-EDM-RISK-01 | Not applicable | Mandatory | Mandatory |
+| EATGF-EDM-BEN-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-EDM-GOV-01 | Not applicable | Mandatory | Mandatory |
 | **APO Controls** | | | |
-| EATGF-APO-ARCH-01 | ❌ | ✅ | ✅ |
-| EATGF-APO-RISK-01 | ✅ | ✅ | ✅ |
-| EATGF-APO-SEC-01 | ❌ | ✅ | ✅ |
-| EATGF-APO-AI-01 | ❌ | ⚠️* | ✅* |
+| EATGF-APO-ARCH-01 | Not applicable | Mandatory | Mandatory |
+| EATGF-APO-RISK-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-APO-SEC-01 | Not applicable | Mandatory | Mandatory |
+| EATGF-APO-AI-01 | Not applicable | Conditional (if AI) | Conditional (if AI) |
 | **BAI Controls** | | | |
-| EATGF-BAI-CHG-01 | ✅ | ✅ | ✅ |
-| EATGF-BAI-CONF-01 | ✅ | ✅ | ✅ |
-| EATGF-BAI-TEST-01 | ✅ | ✅ | ✅ |
+| EATGF-BAI-CHG-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-BAI-CONF-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-BAI-TEST-01 | Mandatory | Mandatory | Mandatory |
 | **DSS Controls** | | | |
-| EATGF-DSS-SEC-01 | ✅ | ✅ | ✅ |
-| EATGF-DSS-ENC-01 | ✅ | ✅ | ✅ |
-| EATGF-DSS-VULN-01 | ✅ | ✅ | ✅ |
-| EATGF-DSS-INC-01 | ✅ | ✅ | ✅ |
+| EATGF-DSS-SEC-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-DSS-ENC-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-DSS-VULN-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-DSS-INC-01 | Mandatory | Mandatory | Mandatory |
 | **MEA Controls** | | | |
-| EATGF-MEA-AUD-01 | ❌ | ✅ | ✅ |
-| EATGF-MEA-PERF-01 | ✅ | ✅ | ✅ |
-| EATGF-MEA-MAT-01 | ✅ | ✅ | ✅ |
+| EATGF-MEA-AUD-01 | Not applicable | Mandatory | Mandatory |
+| EATGF-MEA-PERF-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-MEA-MAT-01 | Mandatory | Mandatory | Mandatory |
 | **AI Controls** | | | |
-| EATGF-AI-LC-01 | ❌ | ⚠️* | ✅* |
-| EATGF-AI-RISK-01 | ❌ | ⚠️* | ✅* |
+| EATGF-AI-LC-01 | Not applicable | Conditional (if AI) | Conditional (if AI) |
+| EATGF-AI-RISK-01 | Not applicable | Conditional (if AI) | Conditional (if AI) |
 | **API Controls** | | | |
-| EATGF-API-SEC-01 | ✅ | ✅ | ✅ |
-| EATGF-API-LC-01 | ✅ | ✅ | ✅ |
+| EATGF-API-SEC-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-API-LC-01 | Mandatory | Mandatory | Mandatory |
+| **CLD Controls** | | | |
+| EATGF-CLD-ARCH-01 | Not applicable | Mandatory | Mandatory |
+| EATGF-CLD-SEC-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-CLD-MON-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-CLD-RES-01 | Not applicable | Mandatory | Mandatory |
+| **DEV Controls** | | | |
+| EATGF-DEV-SDLC-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-DEV-SCAN-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-DEV-SUP-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-DEV-CI-01 | Mandatory | Mandatory | Mandatory |
+| **DATA Controls** | | | |
+| EATGF-DATA-PRIV-01 | Conditional (if PII) | Mandatory | Mandatory |
+| EATGF-DATA-RET-01 | Mandatory | Mandatory | Mandatory |
+| EATGF-DATA-MIN-01 | Conditional (if PII) | Mandatory | Mandatory |
+| **BCP Controls** | | | |
+| EATGF-BCP-PLAN-01 | Not applicable | Mandatory | Mandatory |
+| EATGF-BCP-TEST-01 | Not applicable | Mandatory | Mandatory |
+| EATGF-BCP-RTO-01 | Not applicable | Mandatory | Mandatory |
 
-**Legend:**
-- ✅ = Mandatory
-- ⚠️* = Conditional (if AI systems used)
-- ❌ = Not applicable for this edition
+## Control Mapping
 
----
+### ISO 27001:2022 Coverage
 
-## 🎯 SECTION 4: AUDITOR READINESS CHECKLIST
+EATGF provides 93% coverage of ISO 27001:2022 Annex A controls:
 
-### Quick Audit Preparation
+- **A.5 Organizational Controls (37 controls)** – Mapped to EDM, APO, MEA domains
+- **A.6 People Controls (8 controls)** – Covered by DSS-SEC-01 (IAM), training requirements across DEV
+- **A.7 Physical Controls (14 controls)** – Not explicitly covered; organizations implement per physical security context
+- **A.8 Technological Controls (34 controls)** – Comprehensive coverage via DSS, DEV, CLD, API domains
 
-**Before ISO 27001 Certification Audit:**
-```
-Preparation Checklist (8 weeks before external audit):
+### ISO 42001:2023 AI Management System Coverage
 
-Week 1-2: Gap Assessment
-  ☐ Run internal audit on all mandatory controls
-  ☐ Document any gaps
-  ☐ Create remediation plan for gaps
+EATGF AI domain (AI-LC-01, AI-RISK-01) aligns with ISO 42001:2023 structure:
 
-Week 3-4: Evidence Gathering
-  ☐ Collect all control evidence per MCM evidence checklist
-  ☐ Organize evidence by control ID
-  ☐ Verify evidence completeness per control
+- **Clause 4 Context** – APO-AI-01 establishes organizational context for AI
+- **Clause 5 Leadership** – APO-AI-01 establishes AI governance policy and ethics board
+- **Clause 6 Planning** – AI-LC-01 requires impact assessments before deployment
+- **Clause 7 Support** – APO-AI-01 allocates resources for AI governance
+- **Clause 8 Operation** – AI-RISK-01 implements bias testing and fairness monitoring
+- **Clause 9 Performance Evaluation** – MEA-PERF-01 monitors AI system performance
+- **Clause 10 Improvement** – AI-LC-01 annual reviews drive continuous improvement
 
-Week 5: SoA Finalization
-  ☐ Complete SoA (all 76 controls included/excluded)
-  ☐ Verify all inclusions have evidence
-  ☐ Document all exclusion justifications
+### COBIT 2019 Process Mapping
 
-Week 6: Management Review
-  ☐ Management review meeting (formal)
-  ☐ Document meeting minutes
-  ☐ Close all action items
+EATGF domains directly map to COBIT 2019 process areas with 75% coverage:
 
-Week 7: Final Preparation
-  ☐ Conduct mock audit (if internal capability)
-  ☐ Address any additional findings
-  ☐ Prepare for auditor interviews
+- **EDM (Evaluate, Direct, Monitor)** – EATGF EDM domain (3 controls) covers EDM01-EDM03
+- **APO (Align, Plan, Organise)** – EATGF APO domain (4 controls) covers APO01, APO03, APO12, APO13
+- **BAI (Build, Acquire, Implement)** – EATGF BAI domain (3 controls) covers BAI03, BAI06, BAI10
+- **DSS (Deliver, Service, Support)** – EATGF DSS domain (4 controls) covers DSS02, DSS05, DSS06, DSS07
+- **MEA (Monitor, Evaluate, Assess)** – EATGF MEA domain (3 controls) covers MEA01, MEA02, MEA03
 
-Week 8: Audit Readiness
-  ☐ Brief control owners on audit focus areas
-  ☐ Prepare evidence documentation
-  ☐ Schedule auditor interviews
-```
+### NIST AI RMF Mapping
 
-**During ISO 27001 Audit:**
-```
-Audit Support:
-  ☐ Provide evidence per control selection
-  ☐ Support auditor interviews
-  ☐ Clarify control implementation approach
-  ☐ Track any non-conformances
-```
+EATGF AI controls map to NIST AI Risk Management Framework functions:
 
-**Post-Audit:**
-```
-Certification:
-  ☐ Address major non-conformances (before certificate issue)
-  ☐ Plan for minor non-conformance closure
-  ☐ Receive ISO 27001 certificate
-  ☐ Begin maintenance audit cycles (annual)
-```
+- **GOVERN** – APO-AI-01 (AI governance policy and structure)
+- **MAP** – APO-RISK-01 (AI risk mapping), AI-RISK-01 (AI-specific risk identification)
+- **MEASURE** – AI-RISK-01 (Bias testing and fairness measurement), MEA-PERF-01 (AI performance monitoring)
+- **MANAGE** – AI-LC-01 (AI lifecycle management and mitigation implementation)
 
----
+### OWASP Standards Mapping
 
-## 📝 SECTION 5: REFERENCE & NAVIGATION
+- **OWASP ASVS 4.0** – Referenced in DEV-SCAN-01 (code scanning requirements), API-SEC-01 (API security testing)
+- **OWASP API Security Top 10:2023** – 100% coverage by API-SEC-01 control requirements
+- **OWASP Top 10 Web Application Risks** – Addressed through DEV domain controls (SDLC, scanning, CI/CD)
+- **OWASP SAMM** – Aligned with DEV-SDLC-01 for development process maturity
 
-### How to Use This Document
+## Developer Checklist
 
-**For Implementation Teams:**
-1. Identify your organization edition (Startup/SaaS/Enterprise)
-2. Go to [Section 3](#section-3-applicability-matrix-by-organization-size)
-3. Find mandatory controls for your edition
-4. Use MCM to implement each control
-5. Collect evidence per control requirements
+Before implementing comprehensive framework mappings:
 
-**For Auditors:**
-1. Review control applicability per SoA
-2. Reference mapping to ISO/COBIT/NIST standards
-3. Verify evidence against MCM evidence checklists
-4. Use auditor readiness checklist
+- [ ] Review organizational context and determine applicable edition (Startup/SaaS/Enterprise)
+- [ ] Review applicability matrix for mandatory vs conditional controls
+- [ ] Identify external compliance requirements (ISO 27001, ISO 42001, SOC 2, GDPR, etc.)
+- [ ] Map external compliance requirements to EATGF controls using mapping tables
+- [ ] Identify evidence reuse opportunities (single evidence artifact satisfying multiple standards)
+- [ ] Configure unified evidence collection processes per evidence cross-reference matrix
+- [ ] Establish control ownership per Implementation Summary in Control Objectives document
+- [ ] Schedule audit readiness activities per framework certification requirements
+- [ ] Integrate EATGF mapping into Statement of Applicability (Layer 01)
+- [ ] Train audit teams on bidirectional mapping approach for multi-framework audits
+- [ ] Configure governance dashboard to report compliance across mapped frameworks
+- [ ] Establish semi-annual mapping review process to incorporate framework updates
+- [ ] Document any control implementation deviations with compensating controls
+- [ ] Prepare evidence portfolio organized by EATGF control ID (not external framework structure)
 
-**For Compliance Officers:**
-1. Maintain SoA (Section 4, Layer 4)
-2. Track control implementation status quarterly
-3. Report compliance dashboard (MEA-PERF-01)
-4. Plan audit schedule per MEA-AUD-01
+## Governance Implications
 
-**For Risk Managers:**
-1. Reference control risk mapping
-2. Use risk register to map risks to controls
-3. Track remediation plans per control
-4. Report to ESC quarterly
+### Central Hub Authority
 
----
+- Master Control Matrix (MCM) in Layer 00_FOUNDATION is single source of truth for all control requirements
+- External framework controls (ISO/COBIT/NIST) map TO the MCM (not vice versa) to establish unified governance
+- Organizations implement EATGF controls once; mappings demonstrate compliance to multiple frameworks simultaneously
+- Evidence collection unified under EATGF control structure eliminates redundant audit artifacts
 
-## 📚 APPENDICES
+### Evidence Reuse and Cost Efficiency
 
-### Appendix A: COBIT 2019 Reference Link
-[See https://www.isaca.org/resources/cobit for complete framework]
+- Single control implementation with unified evidence satisfies multiple framework requirements (e.g., IAM evidence for COBIT DSS05, ISO 27001 A.5.15-A.5.18, SOC 2 CC6)
+- Evidence cross-reference matrix demonstrates how each artifact type satisfies multiple standard clauses
+- Organizations achieve 40-60% audit preparation time reduction through evidence reuse
+- Audit costs reduced by conducting unified multi-framework audits referencing single EATGF control implementation
 
-### Appendix B: ISO 27001:2022 Annex A - Complete Control List
-[See https://www.iso.org/standard/75652.html for complete standard]
+### Audit Scope and Planning
 
-### Appendix C: ISO 42001:2023 Clause Structure
-[See https://www.iso.org/standard/81399.html for complete standard]
+- Internal Audit Procedure (Layer 06) scopes audits using EATGF control structure
+- Auditors map EATGF findings to external framework requirements using bidirectional mapping tables
+- Audit reports demonstrate compliance across all applicable frameworks (ISO 27001, ISO 42001, COBIT, SOC 2) simultaneously
+- Statement of Applicability (Layer 01) documents control applicability and mapping justifications for audit defensibility
 
-### Appendix D: NIST AI RMF Categories
-- GOVERN: Defines AI risks and values
-- MAP: Maps risks to controls
-- MEASURE: Measures control effectiveness
-- MANAGE: Manages identified risks
+### Edition Progression and Scalability
 
-### Appendix E: OWASP API Top 10 (2023)
-- API1: Broken Object Level Authorization
-- API2: Broken Authentication
-- API3: Broken Object Property Level Authorization
-...and 7 more
+- Organizations progress through editions as complexity increases (Startup → SaaS → Enterprise)
+- Control applicability scales per applicability matrix; mappings maintained across all editions
+- Framework requirements (e.g., ISO 27001 mandatory for SaaS/Enterprise) inform control prioritization
+- Edition progression documented in governance maturity assessment (MEA-MAT-01)
 
----
+## Official References
 
-## 📅 MAINTENANCE
-
-**Document Owner:** Enterprise Architecture & Governance Office  
-**Review Frequency:** Semi-annual (Feb & Aug)  
-**Version History:**
-- v1.0 (Feb 2024) - Initial framework
-- v2.0 (Feb 2026) - MCM-aligned with 35 controls
-
-**Next Review Date:** August 13, 2026
-
----
-
-**Framework:** Enterprise AI-Aligned Technical Governance Framework (EATGF)  
-**Document Type:** Comprehensive Standards Mapping  
-**Status:** COMPLETE AND AUDITOR-READY
+- **COBIT 2019** – Framework for Governance and Management of Enterprise IT (ISACA, 2019)
+- **ISO/IEC 27001:2022** – Information Security Management Systems, Requirements (ISO, 2022)
+- **ISO/IEC 27002:2022** – Code of Practice for Information Security Controls (ISO, 2022)
+- **ISO/IEC 42001:2023** – Artificial Intelligence Management System, Requirements (ISO, 2023)
+- **NIST AI Risk Management Framework** – AI RMF 1.0 (NIST, 2023)
+- **NIST SP 800-53 Revision 5** – Security and Privacy Controls for Information Systems (NIST, 2020)
+- **NIST Secure Software Development Framework (SSDF)** – SP 800-218 (NIST, 2022)
+- **OWASP ASVS 4.0** – Application Security Verification Standard (OWASP, 2019)
+- **OWASP API Security Top 10:2023** – API Security Risks (OWASP, 2023)
+- **OWASP SAMM** – Software Assurance Maturity Model (OWASP, 2020)

@@ -22,11 +22,11 @@
 ### Core Governance Requirements (Startup)
 
 **Essential:**
-1. ✅ Basic information security controls
-2. ✅ Data backup and disaster recovery
-3. ✅ Access control (passwords + basics)
-4. ✅ Risk awareness
-5. ✅ Documentation of key processes
+1. Basic information security controls
+2. Data backup and disaster recovery
+3. Access control (passwords + basics)
+4. Risk awareness
+5. Documentation of key processes
 
 **Nice to have:**
 - Formal policies (informal guidelines okay)
@@ -100,10 +100,10 @@
 ### Startup Compliance Reality
 
 **What investors/customers actually care about:**
-- ✅ Data is encrypted and backed up
-- ✅ Access is logged and controlled
-- ✅ You have a security incident plan
-- ✅ You can demonstrate SOC 2 Type I basics
+- Data is encrypted and backed up
+- Access is logged and controlled
+- You have a security incident plan
+- You can demonstrate SOC 2 Type I basics
 
 **Avoid:**
 - Lengthy policies without implementation value
@@ -122,14 +122,14 @@
 ### SaaS Governance Requirements
 
 **Essential:**
-1. ✅ Formal policies with acknowledgment
-2. ✅ Access control with quarterly reviews
-3. ✅ Vulnerability management process
-4. ✅ Incident response plan
-5. ✅ Regular risk assessment (annual)
-6. ✅ KPI tracking and reporting
-7. ✅ AI governance (if applicable)
-8. ✅ API security standards (if SaaS APIs)
+1. Formal policies with acknowledgment
+2. Access control with quarterly reviews
+3. Vulnerability management process
+4. Incident response plan
+5. Regular risk assessment (annual)
+6. KPI tracking and reporting
+7. AI governance (if applicable)
+8. API security standards (if SaaS APIs)
 
 **Supporting:**
 - Governance council (monthly meetings)
@@ -275,16 +275,16 @@ CEO/Founder
 ### Enterprise Governance Requirements
 
 **All SaaS requirements, plus:**
-1. ✅ Executive governance committee
-2. ✅ CISO role (dedicated person)
-3. ✅ Chief Compliance Officer or equivalent
-4. ✅ Internal audit function
-5. ✅ Formal maturity model assessment
-6. ✅ Regulatory compliance (SOC 2, ISO 27001, etc.)
-7. ✅ Advanced risk management (predictive)
-8. ✅ AI governance with fairness audit
-9. ✅ API management platform
-10. ✅ Compliance tools & automation
+1. Executive governance committee
+2. CISO role (dedicated person)
+3. Chief Compliance Officer or equivalent
+4. Internal audit function
+5. Formal maturity model assessment
+6. Regulatory compliance (SOC 2, ISO 27001, etc.)
+7. Advanced risk management (predictive)
+8. AI governance with fairness audit
+9. API management platform
+10. Compliance tools & automation
 
 ---
 
