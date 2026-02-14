@@ -43,6 +43,28 @@ This profile operationalizes the [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_
 
 **Mandatory for all GraphQL production APIs.**
 
+## Relationship to EATGF Layers
+
+This profile implements controls from:
+
+- **Layer 08 - Developer Governance Layer**
+  - Domain 02: API Governance (primary - root authority)
+  - Domain 01: Secure SDLC (field-level authorization, query validation patterns)
+  - Domain 03: DevSecOps Governance (schema scanning, complexity analyzers, dependency management)
+
+- **Layer 05 - Domain Frameworks**
+  - API Governance Framework (control definitions apply universally)
+
+- **Layer 03 - Governance Models**
+  - Maturity Model (5-level progression from Ad Hoc to Optimized)
+  - Performance Model (authorization policy effectiveness)
+
+**Integration Points:**
+- GraphQL field authorization enforces Secure SDLC authorization policies (Layer 08.01)
+- Schema validation gates enforced by DevSecOps Governance CI/CD rules (Layer 08.03)
+- Query complexity control tied to maturity progression (Layer 03)
+- GraphQL threat model mapped to OWASP controls (Layer 05)
+
 ## Governance Principles
 
 - **Query Complexity Limits:** Unbounded queries prohibited; depth + breadth limits enforced

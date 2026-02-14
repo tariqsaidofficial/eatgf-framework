@@ -43,6 +43,28 @@ This profile operationalizes the [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_
 
 **Mandatory for all webhook production systems.**
 
+## Relationship to EATGF Layers
+
+This profile implements controls from:
+
+- **Layer 08 - Developer Governance Layer**
+  - Domain 02: API Governance (primary - root authority)
+  - Domain 01: Secure SDLC (event authentication, secret management for webhook signing)
+  - Domain 03: DevSecOps Governance (event schema validation, retry policy auditing, dependency scanning)
+
+- **Layer 05 - Domain Frameworks**
+  - API Governance Framework (asynchronous control implementations)
+
+- **Layer 03 - Governance Models**
+  - Maturity Model (event-driven system capability levels)
+  - Performance Model (delivery and idempotency guarantees)
+
+**Integration Points:**
+- Webhook authentication must follow Secure SDLC token patterns (Layer 08.01)
+- Event schema validation enforced by DevSecOps CI/CD gates (Layer 08.03)
+- Event retention policy tied to organizational profile (Layer 03)
+- Webhook signature verification mapped to OWASP Crypto controls (Layer 05)
+
 ## Governance Principles
 
 - **Signature Verification:** Every webhook must include HMAC signature; receiver must validate

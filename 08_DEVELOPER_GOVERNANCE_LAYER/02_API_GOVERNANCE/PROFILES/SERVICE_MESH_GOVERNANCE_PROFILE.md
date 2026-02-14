@@ -19,6 +19,28 @@ Service mesh platforms (Istio, Linkerd, Kuma) manage service-to-service communic
 
 ---
 
+## Relationship to EATGF Layers
+
+This profile implements controls from:
+
+- **Layer 08 - Developer Governance Layer**
+  - Domain 02: API Governance (primary - service communication controls)
+  - Domain 01: Secure SDLC (mTLS, certificate lifecycle management)
+  - Domain 03: DevSecOps Governance (sidecar deployment gates, service account auditing, policy enforcement)
+
+- **Layer 05 - Domain Frameworks**
+  - API Governance Framework (communication security across all service types)
+
+- **Layer 03 - Governance Models**
+  - Maturity Model (zero-trust progression, observability capability)
+  - Performance Model (policy enforcement latency, traffic throughput)
+
+**Integration Points:**
+- mTLS certificate management enforces Secure SDLC key rotation (Layer 08.01)
+- Service authorization policies enforced by DevSecOps governance (Layer 08.03)
+- Observability requirements tied to organizational maturity (Layer 03)
+- Service mesh threat model aligned with NIST zero-trust architecture (Layer 05)
+
 ## Governance Principles
 
 - **Mutual TLS by Default:** All service-to-service communication encrypted and mutually authenticated

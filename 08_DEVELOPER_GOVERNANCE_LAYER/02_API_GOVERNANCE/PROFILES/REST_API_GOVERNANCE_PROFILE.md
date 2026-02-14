@@ -42,6 +42,28 @@ This profile operationalizes the [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_
 
 **Mandatory for all HTTP-based production APIs.**
 
+## Relationship to EATGF Layers
+
+This profile implements controls from:
+
+- **Layer 08 - Developer Governance Layer**
+  - Domain 02: API Governance (primary - root authority)
+  - Domain 01: Secure SDLC (authentication mechanisms, secret management)
+  - Domain 03: DevSecOps Governance (CI/CD gates, code scanning, dependency management)
+
+- **Layer 05 - Domain Frameworks**
+  - API Governance Framework (cross-architecture control definitions)
+
+- **Layer 03 - Governance Models**
+  - Maturity Model (5-level organizational capability progression)
+  - Performance Model (control effectiveness measurement)
+
+**Integration Points:**
+- REST APIs must implement Secure SDLC authentication patterns (Layer 08.01)
+- REST deployment gates enforced by DevSecOps Governance rules (Layer 08.03)
+- REST control maturity tracked against organizational profile (Layer 03)
+- REST framework alignment verified via control mapping appendix (Layer 05)
+
 ## Governance Principles
 
 - **RFC Compliance:** All REST APIs must follow RFC 9110 HTTP semantics and RFC 3986 URI standards

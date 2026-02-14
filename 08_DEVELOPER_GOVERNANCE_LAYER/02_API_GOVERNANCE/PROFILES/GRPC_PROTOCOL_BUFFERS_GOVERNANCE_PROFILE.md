@@ -43,6 +43,28 @@ This profile operationalizes the [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_
 
 **Mandatory for all gRPC production services.**
 
+## Relationship to EATGF Layers
+
+This profile implements controls from:
+
+- **Layer 08 - Developer Governance Layer**
+  - Domain 02: API Governance (primary - root authority)
+  - Domain 01: Secure SDLC (mTLS authentication, protobuf versioning)
+  - Domain 03: DevSecOps Governance (proto linting gates, breaking change detection, dependency auditing)
+
+- **Layer 05 - Domain Frameworks**
+  - API Governance Framework (binary protocol implementations)
+
+- **Layer 03 - Governance Models**
+  - Maturity Model (service mesh capability progression)
+  - Performance Model (latency, throughput, resource consumption)
+
+**Integration Points:**
+- gRPC mTLS must integrate with Secure SDLC certificate management (Layer 08.01)
+- Proto schema changes enforced by DevSecOps breaking-change detection (Layer 08.03)
+- Service mesh integration tied to organizational size model (Layer 03)
+- gRPC security properties mapped to NIST controls (Layer 05)
+
 ## Governance Principles
 
 - **Schema Versioning:** Proto files versioned semantically; backward compatibility enforced

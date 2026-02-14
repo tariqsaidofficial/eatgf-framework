@@ -19,6 +19,28 @@ OAuth 2.0 and OpenID Connect provide standardized mechanisms for authentication 
 
 ---
 
+## Relationship to EATGF Layers
+
+This profile implements controls from:
+
+- **Layer 08 - Developer Governance Layer**
+  - Domain 02: API Governance (primary - identity control root)
+  - Domain 01: Secure SDLC (credential issuance, token lifecycle, MFA integration)
+  - Domain 03: DevSecOps Governance (token validation, IdP endpoint hardening, secret rotation automation)
+
+- **Layer 05 - Domain Frameworks**
+  - API Governance Framework (authentication/authorization for all service types)
+
+- **Layer 03 - Governance Models**
+  - Maturity Model (identity infrastructure capability levels)
+  - Performance Model (token issuance latency, identity provider availability)
+
+**Integration Points:**
+- OAuth2/OIDC token format and validation enforces Secure SDLC requirements (Layer 08.01)
+- IdP failover and token refresh policies enforced by DevSecOps (Layer 08.03)
+- MFA requirements scale with organizational profile (Layer 03)
+- Identity threat landscape mapped to OWASP authentication controls (Layer 05)
+
 ## Governance Principles
 
 - **Delegated Authorization:** Users grant consent; identity provider issues fine-grained tokens
