@@ -18,11 +18,13 @@ This profile applies to:
 ## Architectural Position
 
 **EATGF Layer:**
+
 - Primary: `08_DEVELOPER_GOVERNANCE_LAYER` → `FRAMEWORK_PROFILES` → `BACKEND`
 - References: Layer 01 (Secure SDLC), Layer 05 (API Governance), Layer 03 (DevSecOps)
 
 **Scope:**
 Backend application layer responsible for:
+
 - HTTP request/response handling
 - ORM-based data access
 - Authentication and authorization
@@ -31,12 +33,14 @@ Backend application layer responsible for:
 - Session and token management
 
 **Django Classification:**
+
 - REST-capable backend framework
 - Policy enforcement boundary
 - Data protection control surface
 - Application security boundary
 
 **Conformance Obligations:**
+
 - ✅ 01_SECURE_SDLC standards
 - ✅ 02_API_GOVERNANCE standards (REST-specific controls)
 - ✅ 03_DEVSECOPS standards
@@ -45,21 +49,27 @@ Backend application layer responsible for:
 ## Relationship to EATGF Layers
 
 ### Layer 01: Secure SDLC
+
 Django profiles enforce:
+
 - **Dependency scanning:** `pip-audit`, `bandit` in CI/CD pipeline
 - **SAST rules:** Bandit plugin for Django security checks
 - **Code review workflow:** PR-based gate with security checklist
 - **Test coverage requirement:** Minimum 80% unit + integration test coverage
 
 ### Layer 03: DevSecOps Governance
+
 Django profiles reference:
+
 - **Container security:** `docker/Dockerfile` multi-stage builds with non-root user
 - **CI/CD pipeline gates:** Pre-merge, pre-release, pre-production stages
 - **Secrets management:** HashiCorp Vault integration or AWS Secrets Manager
 - **Image scanning:** Trivy/Grype vulnerability scanning in build pipeline
 
 ### Layer 05: Domain Frameworks
+
 Django profiles implement API Governance controls:
+
 - **Authentication:** JWT/OIDC (not session-based for APIs)
 - **Authorization:** Object-level permission checks
 - **Rate Limiting:** Per-IP, per-user tier enforcement
@@ -67,7 +77,9 @@ Django profiles implement API Governance controls:
 - **Versioning:** URL-based API versioning (`/api/v1/`, `/api/v2/`)
 
 ### Layer 04: Cloud Governance (Conditional)
+
 If deployed in cloud infrastructure:
+
 - **HTTPS enforcement:** HSTS headers, secure redirects
 - **Environment config:** CloudFormation or Terraform for reproducibility
 - **Database encryption:** RDS encryption at rest + TLS in transit
@@ -112,6 +124,7 @@ class InvoiceViewSet(ModelViewSet):
 Django must not rely on session authentication for APIs.
 
 Enterprise profile requires:
+
 - JWT or OIDC
 - Audience validation
 - Token expiry enforcement
@@ -145,6 +158,7 @@ class IsTenantOwner(BasePermission):
 Secrets must not exist in source code or committed `.env` files.
 
 **Acceptable patterns:**
+
 - HashiCorp Vault
 - AWS Secrets Manager
 - Azure Key Vault
@@ -198,12 +212,14 @@ This section maps the 8 mandatory controls from Layer 05 (API Governance) to Dja
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-1-authentication)
 
 **Django Implementation Pattern:**
+
 - Use `rest_framework_simplejwt` or `authlib` for JWT/OIDC
 - Validate token signature against IdP public keys (cached)
 - Enforce token expiry; refresh tokens rotated server-side
 - Reject sessions for API endpoints
 
 **Compliant Example:**
+
 ```python
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
@@ -217,11 +233,12 @@ class ProtectedView(APIView):
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ Session authentication for API
 class LegacyView(APIView):
     authentication_classes = [SessionAuthentication]  # Vulnerable
-    
+
     def get(self, request):
         return Response({"user": request.user.id})
 ```
@@ -231,12 +248,14 @@ class LegacyView(APIView):
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-2-authorization)
 
 **Django Implementation Pattern:**
+
 - Define custom permission classes for resource-level checks
 - Enforce tenant scoping at query layer
 - Use Django `@permission_required` decorators
 - Deny by default; explicitly grant scopes
 
 **Compliant Example:**
+
 ```python
 class IsResourceOwner(BasePermission):
     def has_object_permission(self, request, view, obj):
@@ -249,6 +268,7 @@ class DocumentDetailView(RetrieveUpdateDestroyAPIView):
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No object-level permission check
 class DocumentDetailView(RetrieveUpdateDestroyAPIView):
@@ -261,12 +281,14 @@ class DocumentDetailView(RetrieveUpdateDestroyAPIView):
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-3-versioning)
 
 **Django Implementation Pattern:**
+
 - Use URL-based versioning: `/api/v1/`, `/api/v2/`
 - Maintain backward compatibility for 12 months
 - Deprecate old versions with HTTP `Sunset` header
 - Document breaking changes in migration guide
 
 **Compliant Example:**
+
 ```python
 # urls.py
 urlpatterns = [
@@ -283,6 +305,7 @@ class UsersListV2View(APIView):
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No versioning; breaking changes in production
 urlpatterns = [
@@ -295,12 +318,14 @@ urlpatterns = [
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-4-input-validation)
 
 **Django Implementation Pattern:**
+
 - Use Django REST Framework serializers with strict validation
 - Reject extra fields: `extra = "forbid"` in serializers
 - Validate field types and ranges
 - Sanitize inputs before database queries
 
 **Compliant Example:**
+
 ```python
 from rest_framework import serializers
 
@@ -319,6 +344,7 @@ class UserSerializer(serializers.ModelSerializer):
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No validation; accepts arbitrary input
 class UserSerializer(serializers.ModelSerializer):
@@ -332,12 +358,14 @@ class UserSerializer(serializers.ModelSerializer):
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-5-rate-limiting)
 
 **Django Implementation Pattern:**
+
 - Use `django-ratelimit` or `rest-framework-throttle`
 - Enforce per-IP, per-user-tier limits
 - Return 429 with `Retry-After` header
 - Log all rate limit hits for abuse detection
 
 **Compliant Example:**
+
 ```python
 from rest_framework.throttling import UserRateThrottle
 
@@ -361,6 +389,7 @@ REST_FRAMEWORK = {
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No rate limiting; open to DoS
 REST_FRAMEWORK = {
@@ -373,12 +402,14 @@ REST_FRAMEWORK = {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-6-testing)
 
 **Django Implementation Pattern:**
+
 - Unit tests ≥80% code coverage
 - Integration tests for all API endpoints
 - Auto-generate OpenAPI schema with `drf-spectacular`
 - Document all breaking changes in CHANGELOG.md
 
 **Compliant Example:**
+
 ```python
 # tests/test_users_api.py
 class UsersAPITestCase(TestCase):
@@ -406,6 +437,7 @@ class UsersAPITestCase(TestCase):
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No tests; no documentation
 # No test coverage
@@ -417,12 +449,14 @@ class UsersAPITestCase(TestCase):
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-7-logging)
 
 **Django Implementation Pattern:**
+
 - Structured JSON logging for all security events
 - Include correlation_id, user_id, tenant_id, action, result
 - Retain logs for ≥90 days
 - Real-time alerting on 5xx errors, auth failures
 
 **Compliant Example:**
+
 ```python
 import logging
 import json
@@ -437,7 +471,7 @@ class SecurityLoggingMiddleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        
+
         log_entry = {
             'timestamp': datetime.utcnow().isoformat(),
             'correlation_id': request.META.get('HTTP_X_CORRELATION_ID'),
@@ -448,12 +482,13 @@ class SecurityLoggingMiddleware:
             'status': response.status_code,
             'result': 'ALLOW' if response.status_code < 400 else 'DENY',
         }
-        
+
         logger.info(json.dumps(log_entry))
         return response
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No structured logging; text-only format
 logger.info(f"User {request.user} accessed {request.path}")
@@ -464,12 +499,14 @@ logger.info(f"User {request.user} accessed {request.path}")
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-8-zero-trust)
 
 **Django Implementation Pattern:**
+
 - Require mTLS for inter-service communication
 - Implement CORS headers (whitelist only trusted origins)
 - Force HTTPS; disable HTTP
 - Validate JWT `aud` (audience) claim
 
 **Compliant Example:**
+
 ```python
 # settings/production.py
 CORS_ALLOWED_ORIGINS = [
@@ -489,6 +526,7 @@ SIMPLE_JWT = {
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ CORS wide open; HTTP allowed
 CORS_ALLOWED_ORIGINS = ["*"]
@@ -550,6 +588,7 @@ python-decouple==3.8
 ### Vulnerability Scanning
 
 CI/CD pipeline runs:
+
 ```bash
 pip install bandit pip-audit
 bandit -r .
@@ -569,12 +608,14 @@ pip-audit --desc
 ### License Compliance
 
 Approved licenses:
+
 - MIT
 - Apache 2.0
 - BSD (2-Clause, 3-Clause)
 - ISC
 
 Forbidden licenses:
+
 - GPL 2.0 (without SaaS exemption)
 - AGPL (no SaaS deployment)
 
@@ -677,14 +718,17 @@ jobs:
 ### Deployment Risks
 
 **Breaking API changes:**
+
 - Risk: Clients using old endpoints fail silently
 - Mitigation: Semantic versioning (v1 → v2 separate endpoints), 6+ month deprecation window
 
 **Database migration failures:**
+
 - Risk: Locks production database during upgrade
 - Mitigation: Test migrations on production-like staging; have automated rollback
 
 **Token validation latency:**
+
 - Risk: IdP becomes bottleneck; fails open (accepts invalid tokens)
 - Mitigation: Cache public keys; implement timeout with fallback
 
@@ -710,16 +754,16 @@ jobs:
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | OWASP ASVS | NIST 800-53 | COBIT 2019 |
-|---|---|---|---|---|---|
-| Secure Config | A.8.9 | PW.8 | V14 | CM-6 | DSS05.04 |
-| Authentication | A.8.5 | PW.2 | V2 | IA-2 | DSS05.03 |
-| Tenant Isolation | A.8.21 | PW.1 | V1.2 | AC-3 | APO13.01 |
-| Logging | A.8.15 | RV.1 | V15 | AU-2 | MEA01 |
-| Dependency Governance | A.8.28 | PW.4 | V14 | SI-7 | BAI09 |
-| Authorization | A.8.35 | PW.3 | V4 | AC-2 | APO13.02 |
-| Rate Limiting | A.8.22 | PW.6 | V5 | SC-7 | DSS05.03 |
-| Zero Trust | A.8.23 | PW.7 | V1.1 | AC-4 | APO13.03 |
+| EATGF Control         | ISO 27001:2022 | NIST SSDF | OWASP ASVS | NIST 800-53 | COBIT 2019 |
+| --------------------- | -------------- | --------- | ---------- | ----------- | ---------- |
+| Secure Config         | A.8.9          | PW.8      | V14        | CM-6        | DSS05.04   |
+| Authentication        | A.8.5          | PW.2      | V2         | IA-2        | DSS05.03   |
+| Tenant Isolation      | A.8.21         | PW.1      | V1.2       | AC-3        | APO13.01   |
+| Logging               | A.8.15         | RV.1      | V15        | AU-2        | MEA01      |
+| Dependency Governance | A.8.28         | PW.4      | V14        | SI-7        | BAI09      |
+| Authorization         | A.8.35         | PW.3      | V4         | AC-2        | APO13.02   |
+| Rate Limiting         | A.8.22         | PW.6      | V5         | SC-7        | DSS05.03   |
+| Zero Trust            | A.8.23         | PW.7      | V1.1       | AC-4        | APO13.03   |
 
 ## Developer Checklist
 
@@ -749,26 +793,31 @@ Before production deployment:
 ### If Not Implemented
 
 **Cross-tenant data exposure:**
+
 - Risk: Customer A queries Customer B data
 - Impact: GDPR/CCPA violations, contract breach, reputation damage
 - Audit finding: ISO 27001 A.8.21 (Access control) violation
 
 **Token misuse:**
+
 - Risk: Stale tokens accepted; compromised credentials reused
 - Impact: Account takeover, fraud, compliance failure
 - Audit finding: NIST 800-53 IA-2 (Authentication) violation
 
 **Supply chain compromise:**
+
 - Risk: Vulnerable dependency deployed to production
 - Impact: RCE, data breach, ransomware
 - Audit finding: NIST SSDF PW.4 (Dependency management) violation
 
 **PII exposure in logs:**
+
 - Risk: Customer data in plain-text logs
 - Impact: GDPR Article 32 violation, SOC2 Type I failure
 - Audit finding: ISO 27001 A.8.15 (Logging) violation
 
 **Audit failure:**
+
 - Django without governance = non-compliant under EATGF
 - SOC2 Type II certification blocked
 - PCI-DSS development control failure (missing code review, testing, logging)
@@ -786,12 +835,12 @@ Before production deployment:
 
 ## Version Information
 
-| Field | Value |
-|---|---|
-| **Version** | 1.0 |
-| **Release Date** | 2026-02-14 |
-| **Change Type** | Major (First Release) |
-| **EATGF Baseline** | v1.0 (Phases 12a-b Complete) |
-| **Next Review** | Q2 2026 (Django 6.0 LTS release) |
-| **Author** | EATGF Governance Council |
-| **Status** | Ready for Enterprise Deployment |
+| Field              | Value                            |
+| ------------------ | -------------------------------- |
+| **Version**        | 1.0                              |
+| **Release Date**   | 2026-02-14                       |
+| **Change Type**    | Major (First Release)            |
+| **EATGF Baseline** | v1.0 (Phases 12a-b Complete)     |
+| **Next Review**    | Q2 2026 (Django 6.0 LTS release) |
+| **Author**         | EATGF Governance Council         |
+| **Status**         | Ready for Enterprise Deployment  |
