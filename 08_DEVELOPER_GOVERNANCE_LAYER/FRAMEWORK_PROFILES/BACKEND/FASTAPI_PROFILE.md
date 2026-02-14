@@ -19,11 +19,13 @@ This profile applies to:
 ## Architectural Position
 
 **EATGF Layer:**
+
 - Primary: `08_DEVELOPER_GOVERNANCE_LAYER` → `FRAMEWORK_PROFILES` → `BACKEND`
 - References: Layer 01 (Secure SDLC), Layer 05 (API Governance), Layer 03 (DevSecOps)
 
 **Scope:**
 FastAPI acts as:
+
 - HTTP boundary enforcement layer
 - API contract generator (OpenAPI)
 - Input validation enforcement surface
@@ -31,6 +33,7 @@ FastAPI acts as:
 - Multi-tenant context propagator
 
 **FastAPI Classification:**
+
 - API-native enforcement framework
 - Automatic OpenAPI schema generation
 - Type-safe via Pydantic validation
@@ -38,6 +41,7 @@ FastAPI acts as:
 - Application security boundary
 
 **Conformance Obligations:**
+
 - ✅ 01_SECURE_SDLC standards
 - ✅ 02_API_GOVERNANCE standards (REST-specific controls)
 - ✅ 03_DEVSECOPS standards
@@ -46,21 +50,27 @@ FastAPI acts as:
 ## Relationship to EATGF Layers
 
 ### Layer 01: Secure SDLC
+
 FastAPI profiles enforce:
+
 - **Dependency scanning:** `pip-audit`, `bandit` in CI/CD pipeline
 - **SAST rules:** Bandit plugin for Python security checks
 - **Type checking:** `mypy` with strict mode for type safety
 - **Test coverage requirement:** Minimum 80% unit + integration test coverage
 
 ### Layer 03: DevSecOps Governance
+
 FastAPI profiles reference:
+
 - **Container security:** `docker/Dockerfile` multi-stage builds
 - **CI/CD pipeline gates:** Pre-merge, pre-release, pre-production stages
 - **Secrets management:** Environment variables from HashiCorp Vault or AWS Secrets Manager
 - **Image scanning:** Trivy/Grype vulnerability scanning + SBOM generation
 
 ### Layer 05: Domain Frameworks
+
 FastAPI profiles implement API Governance controls:
+
 - **Authentication:** JWT/OIDC via `fastapi.security` (not session-based)
 - **Authorization:** Dependency injection + custom permission classes
 - **Rate Limiting:** `slowapi` decorator-based approach
@@ -68,7 +78,9 @@ FastAPI profiles implement API Governance controls:
 - **Versioning:** URL-based versioning (`/api/v1/`, `/api/v2/`)
 
 ### Layer 04: Cloud Governance (Conditional)
+
 If deployed in cloud infrastructure:
+
 - **HTTPS enforcement:** SSL/TLS termination at load balancer
 - **Environment config:** CloudFormation/Terraform for reproducibility
 - **Database encryption:** RDS/CloudSQL encryption at rest + TLS in transit
@@ -87,7 +99,7 @@ class InvoiceCreateRequest(BaseModel):
     amount: float = Field(gt=0, description="Invoice amount in cents")
     currency: str = Field(min_length=3, max_length=3)
     tenant_id: str
-    
+
     class Config:
         json_schema_extra = {
             "example": {
@@ -119,6 +131,7 @@ async def verify_token(credentials: HTTPAuthorizationCredentials = Depends(secur
 ```
 
 **Token must include:**
+
 - `exp` (expiration)
 - `sub` (subject/user ID)
 - `tenant_id` (tenant scope)
@@ -186,7 +199,7 @@ class Settings(BaseSettings):
     database_url: str = os.environ["DATABASE_URL"]
     jwt_public_key: str = os.environ["JWT_PUBLIC_KEY"]
     api_key: str = os.environ["API_KEY"]
-    
+
     class Config:
         env_file = ".env.production"  # Only for staging/local
 
@@ -229,6 +242,7 @@ async def log_requests(request: Request, call_next):
 ```
 
 **Logs must support:**
+
 - Correlation ID (request tracing)
 - Tenant ID (multi-tenant audit)
 - Request path (endpoint tracking)
@@ -244,12 +258,14 @@ This section maps the 8 mandatory controls from Layer 05 (API Governance) to Fas
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-1-authentication)
 
 **FastAPI Implementation Pattern:**
+
 - Use `fastapi.security.HTTPBearer` or `HTTPAuthorizationCredentials` for JWT
 - Validate token signature against IdP public keys (cached)
 - Enforce token expiry; refresh tokens rotated server-side
 - Reject sessions for API endpoints; use JWT only
 
 **Compliant Example:**
+
 ```python
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -260,8 +276,8 @@ async def verify_token(credentials: HTTPAuthorizationCredentials = Depends(secur
     token = credentials.credentials
     try:
         payload = jwt.decode(
-            token, 
-            settings.JWT_PUBLIC_KEY, 
+            token,
+            settings.JWT_PUBLIC_KEY,
             algorithms=["RS256"],
             audience="https://api.example.com",
             options={"verify_exp": True}
@@ -276,6 +292,7 @@ async def get_user(token: dict = Depends(verify_token)):
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ Session authentication for API
 @app.get("/api/v1/me")
@@ -289,12 +306,14 @@ async def get_user(request: Request):
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-2-authorization)
 
 **FastAPI Implementation Pattern:**
+
 - Define custom permission dependency injector functions
 - Enforce tenant scoping at query layer
 - Use FastAPI `Depends()` for permission composition
 - Deny by default; explicitly grant scopes
 
 **Compliant Example:**
+
 ```python
 async def check_invoice_ownership(
     invoice_id: int,
@@ -315,6 +334,7 @@ async def get_invoice(invoice: Invoice = Depends(check_invoice_ownership)):
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No object-level permission check
 @app.get("/api/v1/invoices/{invoice_id}")
@@ -332,12 +352,14 @@ async def get_invoice(
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-3-versioning)
 
 **FastAPI Implementation Pattern:**
+
 - Use URL-based versioning: `/api/v1/`, `/api/v2/`
 - Maintain backward compatibility for 12 months
 - Deprecate old versions with HTTP `Sunset` header
 - Document breaking changes in CHANGELOG
 
 **Compliant Example:**
+
 ```python
 from fastapi import APIRouter
 
@@ -363,6 +385,7 @@ app.include_router(router_v2)
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No versioning; breaking changes in place
 @app.get("/api/invoices")
@@ -376,23 +399,25 @@ async def list_invoices(session: AsyncSession = Depends(get_db)):
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-4-input-validation)
 
 **FastAPI Implementation Pattern:**
+
 - Use Pydantic models with strict type validation
 - Implement custom validators for business logic
 - Reject unknown fields: `model_config = ConfigDict(extra="forbid")`
 - Sanitize/validate before database queries
 
 **Compliant Example:**
+
 ```python
 from pydantic import BaseModel, Field, field_validator, ConfigDict
 
 class InvoiceCreate(BaseModel):
     model_config = ConfigDict(extra="forbid")  # Reject unknown fields
-    
+
     amount: float = Field(gt=0, le=999999.99, description="Amount in cents")
     currency: str = Field(min_length=3, max_length=3, pattern="^[A-Z]{3}$")
     description: str = Field(min_length=1, max_length=500)
     tenant_id: str = Field(min_length=1, max_length=255)
-    
+
     @field_validator("currency")
     @classmethod
     def validate_currency(cls, v):
@@ -415,6 +440,7 @@ async def create_invoice(
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No Pydantic validation; dict payload
 @app.post("/api/v1/invoices")
@@ -433,12 +459,14 @@ async def create_invoice(
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-5-rate-limiting)
 
 **FastAPI Implementation Pattern:**
+
 - Use `slowapi` library for decorator-based rate limiting
 - Enforce per-IP, per-user-tier limits
 - Return 429 status with `Retry-After` header
 - Log all rate limit hits for abuse detection
 
 **Compliant Example:**
+
 ```python
 from slowapi import Limiter
 from slowapi.util import get_remote_address
@@ -466,6 +494,7 @@ async def list_invoices(
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No rate limiting; open to DoS
 @app.get("/api/v1/invoices")
@@ -479,12 +508,14 @@ async def list_invoices(current_user: dict = Depends(verify_token)):
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-6-testing)
 
 **FastAPI Implementation Pattern:**
+
 - Unit tests ≥80% code coverage
 - Integration tests for all API endpoints
 - OpenAPI schema auto-generated and validated
 - Document all breaking changes in CHANGELOG.md
 
 **Compliant Example:**
+
 ```python
 # tests/test_invoices.py
 import pytest
@@ -519,7 +550,7 @@ def test_list_invoices_cross_tenant_access_denied(client, auth_token):
     other_invoice = Invoice(tenant_id="tenant-2")
     session.add(other_invoice)
     session.commit()
-    
+
     response = client.get(
         f"/api/v1/invoices/{other_invoice.id}",
         headers={"Authorization": f"Bearer {auth_token}"}
@@ -535,6 +566,7 @@ def test_openapi_schema_valid(client):
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No tests; no OpenAPI schema validation
 # No explicit tests
@@ -546,12 +578,14 @@ def test_openapi_schema_valid(client):
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-7-logging)
 
 **FastAPI Implementation Pattern:**
+
 - Structured JSON logging for all security events
 - Include correlation_id, user_id, tenant_id, action, result
 - Retain logs for ≥90 days
 - Real-time alerting on 5xx errors, auth failures
 
 **Compliant Example:**
+
 ```python
 import logging
 import json
@@ -563,10 +597,10 @@ logger = logging.getLogger("security")
 async def log_security_events(request: Request, call_next):
     import uuid
     correlation_id = str(uuid.uuid4())
-    
+
     # Log request
     response = await call_next(request)
-    
+
     log_entry = {
         "timestamp": datetime.utcnow().isoformat(),
         "correlation_id": correlation_id,
@@ -578,13 +612,14 @@ async def log_security_events(request: Request, call_next):
         "latency_ms": response.headers.get("X-Process-Time", 0),
         "result": "ALLOW" if response.status_code < 400 else "DENY",
     }
-    
+
     logger.info(json.dumps(log_entry))
     response.headers["X-Correlation-ID"] = correlation_id
     return response
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ No structured logging; text-only format
 logger.info(f"User {user_id} accessed {path}")
@@ -595,12 +630,14 @@ logger.info(f"User {user_id} accessed {path}")
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-8-zero-trust)
 
 **FastAPI Implementation Pattern:**
+
 - Enforce HTTPS only (SSL/TLS at load balancer or Uvicorn)
 - Implement CORS headers (whitelist only trusted origins)
 - Validate JWT `aud` (audience) claim
 - Optional: mTLS for service-to-service communication
 
 **Compliant Example:**
+
 ```python
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
@@ -633,6 +670,7 @@ async def verify_token(credentials: HTTPAuthorizationCredentials = Depends(secur
 ```
 
 **Non-Compliant Example:**
+
 ```python
 # ❌ CORS wide open; HTTP allowed
 app.add_middleware(
@@ -701,6 +739,7 @@ slowapi = "0.1.9"
 ### Vulnerability Scanning
 
 CI/CD pipeline runs:
+
 ```bash
 pip install bandit pip-audit
 bandit -r .
@@ -720,12 +759,14 @@ pip-audit --desc
 ### License Compliance
 
 Approved licenses:
+
 - MIT
 - Apache 2.0
 - BSD (2-Clause, 3-Clause)
 - ISC
 
 Forbidden licenses:
+
 - GPL 2.0 (without SaaS exemption)
 - AGPL (no SaaS deployment)
 
@@ -745,7 +786,7 @@ All requests logged in JSON:
   "tenant_id": "tenant-789",
   "method": "GET",
   "path": "/api/v1/invoices",
-  "query_params": {"limit": 10},
+  "query_params": { "limit": 10 },
   "status": 200,
   "latency_ms": 45,
   "action": "READ",
@@ -828,14 +869,17 @@ jobs:
 ### Deployment Risks
 
 **Breaking async changes:**
+
 - Risk: Async context lost between request/response handlers
 - Mitigation: Store correlation_id in ContextVar, use proper dependency injection
 
 **Database connection pool exhaustion:**
+
 - Risk: Async concurrency causes connection leak
 - Mitigation: Configure pool size correctly, use `sqlalchemy.pool.QueuePool`
 
 **Performance degradation with large responses:**
+
 - Risk: JSON serialization becomes bottleneck
 - Mitigation: Implement pagination, use jsonencode caching
 
@@ -860,16 +904,16 @@ jobs:
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | OWASP ASVS | NIST 800-53 | COBIT 2019 |
-|---|---|---|---|---|---|
-| Input Validation | A.8.9 | PW.7 | V5 | SI-10 | DSS05.04 |
-| Authentication | A.8.5 | PW.2 | V2 | IA-2 | DSS05.03 |
-| Tenant Isolation | A.8.21 | PW.1 | V1.2 | AC-3 | APO13.01 |
-| Logging | A.8.15 | RV.1 | V15 | AU-2 | MEA01 |
-| Dependency Governance | A.8.28 | PW.4 | V14 | SI-7 | BAI09 |
-| Authorization | A.8.35 | PW.3 | V4 | AC-2 | APO13.02 |
-| Rate Limiting | A.8.22 | PW.6 | V5 | SC-7 | DSS05.03 |
-| Zero Trust | A.8.23 | PW.7 | V1.1 | AC-4 | APO13.03 |
+| EATGF Control         | ISO 27001:2022 | NIST SSDF | OWASP ASVS | NIST 800-53 | COBIT 2019 |
+| --------------------- | -------------- | --------- | ---------- | ----------- | ---------- |
+| Input Validation      | A.8.9          | PW.7      | V5         | SI-10       | DSS05.04   |
+| Authentication        | A.8.5          | PW.2      | V2         | IA-2        | DSS05.03   |
+| Tenant Isolation      | A.8.21         | PW.1      | V1.2       | AC-3        | APO13.01   |
+| Logging               | A.8.15         | RV.1      | V15        | AU-2        | MEA01      |
+| Dependency Governance | A.8.28         | PW.4      | V14        | SI-7        | BAI09      |
+| Authorization         | A.8.35         | PW.3      | V4         | AC-2        | APO13.02   |
+| Rate Limiting         | A.8.22         | PW.6      | V5         | SC-7        | DSS05.03   |
+| Zero Trust            | A.8.23         | PW.7      | V1.1       | AC-4        | APO13.03   |
 
 ## Developer Checklist
 
@@ -899,26 +943,31 @@ Before production deployment:
 ### If Not Implemented
 
 **Injection vulnerabilities:**
+
 - Risk: SQL injection, NoSQL injection via unvalidated input
 - Impact: Data breach, RCE, compliance failure
 - Audit finding: OWASP ASVS V5 (Input Validation) violation
 
 **Cross-tenant exposure:**
+
 - Risk: Customer A queries Customer B data
 - Impact: GDPR/CCPA violations, contract breach
 - Audit finding: ISO 27001 A.8.21 violation
 
 **API abuse (DoS):**
+
 - Risk: Malicious users exhaust resources
 - Impact: Service outage, reputation damage
 - Audit finding: NIST 800-53 SC-7 violation
 
 **Certification audit failures:**
+
 - FastAPI without governance = non-compliant under EATGF
 - SOC2 Type II certification blocked
 - PCI-DSS development control failure
 
 **Non-conformance consequences:**
+
 - Audit findings escalate to board level
 - Customer SLAs violated
 - Financial penalties if data breach occurs
@@ -937,12 +986,12 @@ Before production deployment:
 
 ## Version Information
 
-| Field | Value |
-|---|---|
-| **Version** | 1.0 |
-| **Release Date** | 2026-02-14 |
-| **Change Type** | Major (First Release) |
-| **EATGF Baseline** | v1.0 (Phases 12a-b Complete) |
-| **Next Review** | Q2 2026 (FastAPI 1.0 release) |
-| **Author** | EATGF Governance Council |
-| **Status** | Ready for Enterprise Deployment |
+| Field              | Value                           |
+| ------------------ | ------------------------------- |
+| **Version**        | 1.0                             |
+| **Release Date**   | 2026-02-14                      |
+| **Change Type**    | Major (First Release)           |
+| **EATGF Baseline** | v1.0 (Phases 12a-b Complete)    |
+| **Next Review**    | Q2 2026 (FastAPI 1.0 release)   |
+| **Author**         | EATGF Governance Council        |
+| **Status**         | Ready for Enterprise Deployment |
