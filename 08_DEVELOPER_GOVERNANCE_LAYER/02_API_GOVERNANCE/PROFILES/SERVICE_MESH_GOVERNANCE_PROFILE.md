@@ -10,11 +10,11 @@ Service mesh platforms (Istio, Linkerd, Kuma) manage service-to-service communic
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER  
-**Governance Scope:** 02_API_GOVERNANCE / Implementation Profile  
-**Document Type:** Runtime Security Profile  
-**Applicable Platforms:** Istio, Linkerd, Kuma, AWS App Mesh  
-**Integration Points:** API Gateway governance, PKI/mTLS governance, observability governance  
+**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
+**Governance Scope:** 02_API_GOVERNANCE / Implementation Profile
+**Document Type:** Runtime Security Profile
+**Applicable Platforms:** Istio, Linkerd, Kuma, AWS App Mesh
+**Integration Points:** API Gateway governance, PKI/mTLS governance, observability governance
 **Organizational Profiles:** Enterprise, SaaS, Startup
 
 ---
@@ -791,15 +791,7 @@ Service Mesh deployments inherit the standard 5-level maturity model and organiz
 
 ## Control Mapping to External Frameworks
 
-| Service Mesh Control       | ISO 27001:2022     | NIST SSDF | NIST 800-53  | COBIT 2019 |
-| -------------------------- | ------------------ | --------- | ------------ | ---------- |
-| Mutual TLS Enforcement     | A.10.1.1           | PS3.2     | SC-7, SC-8   | DSS05.01   |
-| Authorization Policies     | A.9.4.3, A.9.2.5   | PO4.1     | AC-3, AC-6   | DSS05.02   |
-| Traffic Management         | A.12.3.1           | PO2.2     | SC-7, SC-5   | DSS04.08   |
-| Observability & Logging    | A.12.4.1, A.12.4.5 | PO3.2     | AU-2, AU-12  | MEA02.01   |
-| Sidecar Management         | A.14.2.5           | PO2.1     | SI-7, CM-9   | BAI03.06   |
-| Service Account Management | A.9.2.1, A.9.2.5   | PO4.1     | AC-2         | DSS05.02   |
-| Canary Deployment          | A.14.2.4           | PO1.3     | SI-10, SI-12 | BAI01.06   |
+**Framework mapping for Service Mesh controls is maintained in [API_CONTROL_MAPPING_APPENDIX.md](../API_CONTROL_MAPPING_APPENDIX.md). Do not duplicate mappings in architecture-specific profiles.**
 
 ---
 
@@ -846,11 +838,11 @@ Service Mesh deployments inherit the standard 5-level maturity model and organiz
 
 ## Version & Authority
 
-**Document Title:** Service Mesh Governance Profile  
-**Version:** 1.0  
-**Release Date:** 2026-02-14  
-**Change Type:** Major (First Release)  
-**EATGF Baseline:** Block 2 API Governance Module  
-**Authority:** API Governance Implementation Profile  
-**Next Review Date:** 2026-05-14  
+**Document Title:** Service Mesh Governance Profile
+**Version:** 1.0
+**Release Date:** 2026-02-14
+**Change Type:** Major (First Release)
+**EATGF Baseline:** Block 2 API Governance Module
+**Authority:** API Governance Implementation Profile
+**Next Review Date:** 2026-05-14
 **Compliance Status:** EATGF Signature Template Compliant ✅

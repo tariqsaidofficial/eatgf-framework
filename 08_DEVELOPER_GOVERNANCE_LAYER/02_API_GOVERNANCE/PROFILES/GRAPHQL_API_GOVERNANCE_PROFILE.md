@@ -476,13 +476,7 @@ GraphQL APIs inherit the standard 5-level maturity model and organizational prof
 
 ## Control Mapping
 
-| EATGF Control             | ISO 27001:2022 | NIST SSDF | OWASP GraphQL          | COBIT 2019 |
-| ------------------------- | -------------- | --------- | ---------------------- | ---------- |
-| **Field Authorization**   | A.8.2, A.8.5   | PW.4      | Query complexity abuse | DSS05      |
-| **Query Complexity**      | A.8.30         | RV.1      | Denial of Service      | DSS02      |
-| **Subscription Security** | A.8.2          | PW.1      | Broken authentication  | EDM03      |
-| **Introspection Control** | A.8.29         | PW.3      | Excessive data access  | BAI01      |
-| **Logging**               | A.8.15, A.8.16 | RV.2      | Inadequate logging     | MEA01      |
+**Framework mapping for GraphQL API controls is maintained in [API_CONTROL_MAPPING_APPENDIX.md](../API_CONTROL_MAPPING_APPENDIX.md). Do not duplicate mappings in architecture-specific profiles.**
 
 ## Developer Checklist
 

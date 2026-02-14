@@ -689,15 +689,7 @@ REST APIs inherit the standard 5-level maturity model and organizational profile
 
 ## Control Mapping
 
-| EATGF Control        | ISO 27001:2022 | NIST SSDF | OWASP API | COBIT 2019 |
-| -------------------- | -------------- | --------- | --------- | ---------- |
-| **Authentication**   | A.8.2          | PW.1      | API2      | EDM03      |
-| **Authorization**    | A.8.2, A.8.5   | PW.4      | API1      | DSS05      |
-| **Input Validation** | A.8.22         | PW.5      | API3      | BAI03      |
-| **Rate Limiting**    | A.8.30         | RV.1      | API4      | DSS02      |
-| **Logging**          | A.8.15, A.8.16 | RV.2      | API10     | MEA01      |
-| **Versioning**       | A.8.31         | PO.3      | API7      | BAI07      |
-| **OpenAPI Spec**     | A.8.29         | PW.3      | API9      | BAI01      |
+**Framework mapping for REST API controls is maintained in [API_CONTROL_MAPPING_APPENDIX.md](../API_CONTROL_MAPPING_APPENDIX.md). Do not duplicate mappings in architecture-specific profiles.**
 
 ## Developer Checklist
 

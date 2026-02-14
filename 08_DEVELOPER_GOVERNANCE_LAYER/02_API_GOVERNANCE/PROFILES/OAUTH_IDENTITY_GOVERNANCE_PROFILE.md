@@ -50,14 +50,14 @@ OAuth 2.0 and OpenID Connect provide standardized mechanisms for authentication 
 
 **Approved Providers Evaluation Matrix:**
 
-| Provider | OAuth 2.0 | OIDC | mTLS | Token Revocation | Audit Logs | SOC 2 | ISO 27001 | FedRAMP | Recommended For |
-|---|---|---|---|---|---|---|---|---|---|
-| Auth0 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | - | Enterprise, SaaS |
-| Keycloak (Self-hosted) | ✅ | ✅ | ✅ | ✅ | ✅ | Custom | Custom | Custom | All (On-premises) |
-| Azure AD / Entra | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Enterprise (Azure) |
-| AWS Cognito | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Enterprise (AWS) |
-| Okta | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Enterprise, SaaS |
-| Google Cloud Identity | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | - | Enterprise (GCP) |
+| Provider               | OAuth 2.0 | OIDC | mTLS | Token Revocation | Audit Logs | SOC 2  | ISO 27001 | FedRAMP | Recommended For    |
+| ---------------------- | --------- | ---- | ---- | ---------------- | ---------- | ------ | --------- | ------- | ------------------ |
+| Auth0                  | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | -       | Enterprise, SaaS   |
+| Keycloak (Self-hosted) | ✅        | ✅   | ✅   | ✅               | ✅         | Custom | Custom    | Custom  | All (On-premises)  |
+| Azure AD / Entra       | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | ✅      | Enterprise (Azure) |
+| AWS Cognito            | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | ✅      | Enterprise (AWS)   |
+| Okta                   | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | ✅      | Enterprise, SaaS   |
+| Google Cloud Identity  | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | -       | Enterprise (GCP)   |
 
 **Audit Evidence:**
 
@@ -1046,16 +1046,7 @@ OAuth 2.0 & Identity deployments inherit the standard 5-level maturity model and
 
 ## Control Mapping to External Frameworks
 
-| OAuth & Identity Control | ISO 27001:2022 | NIST SSDF | NIST 800-53 | OWASP | COBIT 2019 |
-|---|---|---|---|---|---|
-| Identity Provider Selection | A.8.1.1 | PO4.1 | CA-1, CA-2 | AUTHZ-01 | BAI02.01 |
-| Token Validation | A.9.4.2, A.9.4.3 | PO4.1 | AC-3, AC-6 | AUTHZ-02 | DSS05.02 |
-| Scope Management | A.9.2.5 | PO4.1 | AC-3 | AUTHZ-03 | DSS05.03 |
-| Token Refresh Lifecycle | A.9.4.4, A.12.2.1 | PO2.1 | AC-2, IA-4 | AUTHZ-04 | BAI03.05 |
-| Logout & Revocation | A.9.4.4 | PO2.1 | AC-2 | AUTHZ-05 | DSS02.02 |
-| MFA Integration | A.9.4.2 | PO4.2 | IA-2, IA-4 | AUTHZ-06 | DSS05.04 |
-| Client Credentials Grant | A.9.4.2, A.9.2.1 | PO4.1 | AC-2, AC-3 | AUTHZ-07 | DSS05.02 |
-| PKCE Enforcement | A.10.1.1 | PS3.2 | SI-7 | AUTHZ-08 | DSS05.01 |
+**Framework mapping for OAuth & Identity controls is maintained in [API_CONTROL_MAPPING_APPENDIX.md](../API_CONTROL_MAPPING_APPENDIX.md). Do not duplicate mappings in architecture-specific profiles.**
 
 ---
 
