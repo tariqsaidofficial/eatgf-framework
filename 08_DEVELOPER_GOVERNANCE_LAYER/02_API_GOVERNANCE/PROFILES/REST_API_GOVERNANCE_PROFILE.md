@@ -681,31 +681,11 @@ jobs:
           pytest api/ --cov=api --cov-fail-under=80
 ```
 
-## Severity Model
+## Severity & Maturity
 
-| Control                | Severity                | Organizational Profile          | Enforcement       |
-| ---------------------- | ----------------------- | ------------------------------- | ----------------- |
-| **Authentication**     | MANDATORY               | Enterprise, SaaS                | BLOCKS deployment |
-| **Authorization**      | MANDATORY               | Enterprise, SaaS                | BLOCKS deployment |
-| **Input Validation**   | MANDATORY               | Enterprise, SaaS                | BLOCKS deployment |
-| **Rate Limiting**      | MANDATORY (Public only) | Enterprise, SaaS                | BLOCKS deployment |
-| **Logging**            | MANDATORY               | Enterprise, SaaS                | BLOCKS deployment |
-| **Versioning**         | MANDATORY               | Enterprise, SaaS                | BLOCKS deployment |
-| **OpenAPI Spec**       | MANDATORY               | Enterprise, SaaS                | BLOCKS deployment |
-| **mTLS**               | RECOMMENDED             | Enterprise (service-to-service) | Warning logged    |
-| **Zero Trust Gateway** | OPTIONAL                | Enterprise only                 | Informational     |
+**Severity Model and Maturity Progression are defined in [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md) and apply uniformly across all architecture profiles.**
 
-## Maturity Progression
-
-REST API governance maturity evolves through 5 levels:
-
-| Level             | Authentication              | Authorization      | Versioning           | Logging              | Automation            |
-| ----------------- | --------------------------- | ------------------ | -------------------- | -------------------- | --------------------- |
-| **1: Ad Hoc**     | Basic token                 | Endpoint-level     | None                 | Console logs         | Manual testing        |
-| **2: Documented** | OAuth2                      | RBAC defined       | URI versioning       | Structured logs      | Pre-commit hooks      |
-| **3: Enforced**   | OAuth2 + mTLS               | RBAC + ABAC        | Semantic versioning  | Correlation IDs      | CI/CD gates           |
-| **4: Managed**    | OAuth2 + mTLS + Zero Trust  | Context-aware ABAC | Deprecation SLA      | Real-time alerting   | Automated remediation |
-| **5: Optimized**  | Passwordless + device trust | ML-based ABAC      | Automatic versioning | Predictive analytics | Self-healing APIs     |
+REST APIs inherit the standard 5-level maturity model and organizational profile severity escalation (Enterprise → SaaS → Startup → Developer).
 
 ## Control Mapping
 

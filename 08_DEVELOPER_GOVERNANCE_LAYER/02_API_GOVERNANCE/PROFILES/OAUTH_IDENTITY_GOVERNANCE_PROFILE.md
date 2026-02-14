@@ -1020,45 +1020,11 @@ async def token_endpoint_pkce(
 
 ---
 
-## Organizational Profile Escalation
+## Severity & Maturity
 
-### Enterprise (Mandatory Requirements: All 8)
+**Severity Model and Maturity Progression are defined in [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md) and apply uniformly across all architecture profiles.**
 
-**Implemented:** Full OAuth 2.0, OIDC, PKCE, MFA, mTLS, token introspection
-**Additional Requirements:**
-
-- Hardware security module (HSM) for private key storage
-- Multi-factor authentication mandatory for sensitive operations
-- Audit log retention: 2 years minimum
-- Identity federation with external providers
-- Custom claim support for domain-specific attributes
-
-### SaaS (Mandatory Requirements: 1-7, PKCE for public clients)
-
-**Implemented:** OAuth 2.0, OIDC, PKCE, scope management, token refresh, revocation, MFA
-**Additional Requirements:**
-
-- Multi-tenancy isolation (tenant-specific claim validation)
-- Token lifetime per SLA: 1 hour access, 30 days refresh
-- Scope consent UI customization per tenant
-
-### Startup (Mandatory Requirements: 1-6)
-
-**Implemented:** OAuth 2.0, OIDC, scope management, token refresh, revocation, PKCE
-**Additional Requirements:**
-
-- Cloud-provider managed OAuth (AWS Cognito, Azure AD, Google Cloud Identity)
-- Basic rate limiting on token endpoint
-
-### Developer (Mandatory Requirements: 1-3)
-
-**Implemented:** OAuth provider selection, token validation, scope management
-**Additional Requirements:**
-
-- Development-only identity provider (Auth0 free tier, Keycloak)
-- Basic token validation (signature verification minimum)
-
----
+OAuth 2.0 & Identity deployments inherit the standard 5-level maturity model and organizational profile severity escalation (Enterprise → SaaS → Startup → Developer).
 
 ## Developer Checklist
 

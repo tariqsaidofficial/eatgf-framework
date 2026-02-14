@@ -450,17 +450,11 @@ async function sendWebhook(subscriberId, event) {
 }
 ```
 
-## Severity Model
+## Severity & Maturity
 
-| Control                      | Severity    | Enforcement       |
-| ---------------------------- | ----------- | ----------------- |
-| **Signature Verification**   | MANDATORY   | BLOCKS deployment |
-| **Idempotency**              | MANDATORY   | BLOCKS deployment |
-| **Subscriber Authorization** | MANDATORY   | BLOCKS deployment |
-| **Event Schema**             | MANDATORY   | BLOCKS deployment |
-| **Logging**                  | MANDATORY   | BLOCKS deployment |
-| **Timeout Enforcement**      | MANDATORY   | BLOCKS deployment |
-| **Rate Limiting**            | RECOMMENDED | Warning logged    |
+**Severity Model and Maturity Progression are defined in [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md) and apply uniformly across all architecture profiles.**
+
+Webhook/Event-Driven systems inherit the standard 5-level maturity model and organizational profile severity escalation (Enterprise → SaaS → Startup → Developer).
 
 ## Developer Checklist
 
@@ -498,9 +492,9 @@ Before deploying webhook system:
 ## Official References
 
 - **Root Authority:** [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md)
-- **Webhook Security:** https://svix.com/docs/
-- **AWS SNS:** https://docs.aws.amazon.com/sns/
-- **CloudEvents:** https://cloudevents.io/ (event format standard)
+- **Webhook Security:** <https://svix.com/docs/>
+- **AWS SNS:** <https://docs.aws.amazon.com/sns/>
+- **CloudEvents:** <https://cloudevents.io/> (event format standard)
 
 ## Version Information
 

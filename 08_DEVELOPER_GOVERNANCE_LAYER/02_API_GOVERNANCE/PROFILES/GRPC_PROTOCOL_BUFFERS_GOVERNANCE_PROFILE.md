@@ -432,17 +432,11 @@ func loggingUnaryInterceptor(ctx context.Context, req interface{}, info *grpc.Un
 }
 ```
 
-## Severity Model
+## Severity & Maturity
 
-| Control                   | Severity    | Enforcement       |
-| ------------------------- | ----------- | ----------------- |
-| **mTLS**                  | MANDATORY   | BLOCKS deployment |
-| **Handler Authorization** | MANDATORY   | BLOCKS deployment |
-| **Schema Versioning**     | MANDATORY   | BLOCKS deployment |
-| **Streaming Security**    | MANDATORY   | BLOCKS deployment |
-| **Metadata Propagation**  | MANDATORY   | BLOCKS deployment |
-| **Service Mesh**          | RECOMMENDED | Warning logged    |
-| **Logging**               | MANDATORY   | BLOCKS deployment |
+**Severity Model and Maturity Progression are defined in [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md) and apply uniformly across all architecture profiles.**
+
+gRPC services inherit the standard 5-level maturity model and organizational profile severity escalation (Enterprise → SaaS → Startup → Developer).
 
 ## Developer Checklist
 
@@ -477,9 +471,9 @@ Before submitting gRPC service for deployment:
 ## Official References
 
 - **Root Authority:** [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md)
-- **gRPC Security:** https://grpc.io/docs/guides/auth/
-- **Protocol Buffers:** https://developers.google.com/protocol-buffers
-- **Istio Security:** https://istio.io/latest/docs/concepts/security/
+- **gRPC Security:** <https://grpc.io/docs/guides/auth/>
+- **Protocol Buffers:** <https://developers.google.com/protocol-buffers>
+- **Istio Security:** <https://istio.io/latest/docs/concepts/security/>
 
 ## Version Information
 

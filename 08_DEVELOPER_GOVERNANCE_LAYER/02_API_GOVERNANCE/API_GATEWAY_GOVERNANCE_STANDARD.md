@@ -665,48 +665,11 @@ spec:
 
 ---
 
-## Organizational Profile Escalation
+## Severity & Maturity
 
-### Enterprise (Mandatory Controls: 1-8)
+**Severity Model and Maturity Progression are defined in [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md) and apply uniformly across all gateway implementations.**
 
-**Implemented:** All mandatory controls + circuit breaking + traffic management
-**Additional Requirements:**
-
-- Multi-region gateway deployment
-- Active-active failover
-- Rate limiting per customer organization
-- Advanced ABAC with external policy engine
-- Real-time threat detection and automatic mitigation
-- Quarterly penetration testing of gateway policies
-
-### SaaS (Mandatory Controls: 1-7)
-
-**Implemented:** All mandatory controls except advanced traffic management
-**Additional Requirements:**
-
-- Multi-tenancy isolation enforcement
-- Per-tenant rate limiting
-- Per-tenant authentication method customization
-- Audit logging with tenant segregation
-- Monthly security policy review
-
-### Startup (Mandatory Controls: 1-5)
-
-**Implemented:** Request validation, authentication, authorization, rate limiting, logging
-**Additional Requirements:**
-
-- API-key based authentication (OAuth optional)
-- Basic rate limiting per API key
-- Weekly log analysis for security incidents
-
-### Developer (Mandatory Controls: 1-4)
-
-**Implemented:** Request validation, authentication, authorization, logging
-**Additional Requirements:**
-
-- Simplified gateway setup (cloud provider managed service)
-- JWT token validation only
-- Basic rate limiting
+API Gateways inherit the standard 5-level maturity model and organizational profile severity escalation (Enterprise → SaaS → Startup → Developer).
 
 ---
 

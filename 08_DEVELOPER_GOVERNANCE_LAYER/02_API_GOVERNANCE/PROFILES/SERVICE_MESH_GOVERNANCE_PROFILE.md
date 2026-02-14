@@ -764,44 +764,11 @@ spec:
 - Rollback decision log (reason, triggered at what traffic %, timestamp)
 - Success metric values during canary (latency, error rate, request count)
 
----
+## Severity & Maturity
 
-## Maturity Levels
+**Severity Model and Maturity Progression are defined in [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md) and apply uniformly across all architecture profiles.**
 
-### Level 1: Ad Hoc
-
-- Manual mTLS certificate management
-- No authorization policies (all traffic allowed)
-- No observability/telemetry
-
-### Level 2: Repeatable
-
-- Automated mTLS with 30-day rotation
-- Basic authorization policies (namespace-level default-deny)
-- Prometheus metrics export
-
-### Level 3: Defined
-
-- Automated mTLS with 24-hour rotation
-- Fine-grained authorization policies (per-service rules)
-- Distributed tracing enabled (10% sampling)
-- Access logging to Elasticsearch
-
-### Level 4: Managed
-
-- Automated mTLS with certificate lifecycle automation
-- Context-aware authorization (source, destination, time-based)
-- Distributed tracing (dynamic sampling based on anomaly detection)
-- Real-time policy validation and audit
-- Automated canary deployments with automated rollback
-
-### Level 5: Optimized
-
-- Zero-trust mTLS with hardware security module integration
-- AI-powered authorization (anomaly-based policy recommendations)
-- Tail sampling distributed tracing (capture anomalies automatically)
-- Self-healing deployments (automatic rollback + incident remediation)
-- Predictive policy enforcement (ML model predicts policy violations before they occur)
+Service Mesh deployments inherit the standard 5-level maturity model and organizational profile severity escalation (Enterprise → SaaS → Startup → Developer).
 
 ---
 

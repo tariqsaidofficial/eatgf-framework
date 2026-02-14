@@ -35,7 +35,6 @@ This profile operationalizes the [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_
 
 **Applies to:**
 
-
 - GraphQL public endpoints
 - Internal data graphs
 - Federation (Apollo Federation, Schema stitching)
@@ -70,7 +69,9 @@ This profile operationalizes the [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_
         friends {
           friends {
             friends {
-              profile { name }
+              profile {
+                name
+              }
             }
           }
         }
@@ -90,32 +91,35 @@ This profile operationalizes the [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_
 **Example (Apollo GraphQL with complexity analysis):**
 
 ```javascript
-const { graphqlHTTP } = require('express-graphql');
-const depthLimit = require('graphql-depth-limit');
-const { costAnalysis } = require('graphql-cost-analysis');
+const { graphqlHTTP } = require("express-graphql");
+const depthLimit = require("graphql-depth-limit");
+const { costAnalysis } = require("graphql-cost-analysis");
 
-app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  rootValue: resolvers,
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema: schema,
+    rootValue: resolvers,
 
-  // Query depth limit (max 10 levels)
-  validationRules: [depthLimit(10)],
+    // Query depth limit (max 10 levels)
+    validationRules: [depthLimit(10)],
 
-  // Query complexity scoring
-  customValidationRules: [
-    costAnalysis({
-      variables: req.body.variables,
-      complexity: {
-        User: { complexity: 2 },
-        friends: { complexity: 3 },
-        profile: { complexity: 1 },
-        posts: { args: { limit: 'complexity' } }
-      },
-      defaultComplexity: 1,
-      maximumComplexity: 500  // Max score per query
-    })
-  ]
-}));
+    // Query complexity scoring
+    customValidationRules: [
+      costAnalysis({
+        variables: req.body.variables,
+        complexity: {
+          User: { complexity: 2 },
+          friends: { complexity: 3 },
+          profile: { complexity: 1 },
+          posts: { args: { limit: "complexity" } },
+        },
+        defaultComplexity: 1,
+        maximumComplexity: 500, // Max score per query
+      }),
+    ],
+  }),
+);
 ```
 
 **Validated Example (Compliant):**
@@ -123,7 +127,8 @@ app.use('/graphql', graphqlHTTP({
 ```graphql
 {
   viewer {
-    friends(first: 10) {  # Limited
+    friends(first: 10) {
+      # Limited
       edges {
         node {
           id
@@ -141,24 +146,24 @@ app.use('/graphql', graphqlHTTP({
 
 ```graphql
 type User {
-  id: ID!                    # Public
-  name: String!              # Public
-  email: String!             # RESTRICTED: requires viewer to be self or admin
-  taxId: String!             # RESTRICTED: tax-officer role only
-  medicalHistory: [String]   # RESTRICTED: medical-staff role only
+  id: ID! # Public
+  name: String! # Public
+  email: String! # RESTRICTED: requires viewer to be self or admin
+  taxId: String! # RESTRICTED: tax-officer role only
+  medicalHistory: [String] # RESTRICTED: medical-staff role only
 }
 ```
 
 **Example (Apollo authorization middleware):**
 
 ```javascript
-const { mapSchema, getDirective, MapperKind } = require('@graphql-tools/utils');
-const { defaultFieldResolver } = require('graphql');
+const { mapSchema, getDirective, MapperKind } = require("@graphql-tools/utils");
+const { defaultFieldResolver } = require("graphql");
 
 function authDirectiveTransformer(schema) {
   return mapSchema(schema, {
     [MapperKind.OBJECT_FIELD]: (fieldConfig, fieldName, typeName) => {
-      const authDirective = getDirective(schema, fieldConfig, 'auth');
+      const authDirective = getDirective(schema, fieldConfig, "auth");
       if (authDirective) {
         const { requires } = authDirective;
         const originalResolve = fieldConfig.resolve || defaultFieldResolver;
@@ -172,7 +177,7 @@ function authDirectiveTransformer(schema) {
         };
       }
       return fieldConfig;
-    }
+    },
   });
 }
 ```
@@ -220,22 +225,22 @@ subscriptions: {
     subscribe: (parent, { userId }, context, info) => {
       // 1. Verify authentication
       if (!context.user) {
-        throw new Error('Authentication required');
+        throw new Error("Authentication required");
       }
 
       // 2. Verify user can access this userId
       if (context.user.id !== userId && !context.user.isAdmin) {
-        throw new Error('Unauthorized');
+        throw new Error("Unauthorized");
       }
 
       // 3. Rate limit subscriptions
       if (context.user.activeSubscriptions >= 10) {
-        throw new Error('Too many active subscriptions');
+        throw new Error("Too many active subscriptions");
       }
 
       // 4. Return subscription iterator
       return pubsub.asyncIterator([`USER_UPDATED_${userId}`]);
-    }
+    };
   }
 }
 ```
@@ -250,7 +255,9 @@ subscriptions: {
   __schema {
     types {
       name
-      fields { name }
+      fields {
+        name
+      }
     }
   }
 }
@@ -266,17 +273,23 @@ subscriptions: {
 **Example (Disable introspection):**
 
 ```javascript
-const { NoSchemaIntrospectionCustomRule } = require('graphql');
+const { NoSchemaIntrospectionCustomRule } = require("graphql");
 
-app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  validationRules: process.env.NODE_ENV === 'production' ?
-    [NoSchemaIntrospectionCustomRule] : [],
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema: schema,
+    validationRules:
+      process.env.NODE_ENV === "production"
+        ? [NoSchemaIntrospectionCustomRule]
+        : [],
 
-  // OR per-user basis
-  validationRules: context.user.isInternal ?
-    [] : [NoSchemaIntrospectionCustomRule]
-}));
+    // OR per-user basis
+    validationRules: context.user.isInternal
+      ? []
+      : [NoSchemaIntrospectionCustomRule],
+  }),
+);
 ```
 
 ### 5. Error Information Leakage (MANDATORY)
@@ -315,23 +328,26 @@ app.use('/graphql', graphqlHTTP({
 **Example:**
 
 ```javascript
-app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  customFormatErrorFn: (error, context) => {
-    if (process.env.NODE_ENV === 'production') {
-      // Log full error server-side
-      logger.error({
-        message: error.message,
-        stack: error.stack,
-        query: context.request.body
-      });
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema: schema,
+    customFormatErrorFn: (error, context) => {
+      if (process.env.NODE_ENV === "production") {
+        // Log full error server-side
+        logger.error({
+          message: error.message,
+          stack: error.stack,
+          query: context.request.body,
+        });
 
-      // Return generic message to client
-      return { message: 'Internal server error' };
-    }
-    return error;
-  }
-}));
+        // Return generic message to client
+        return { message: "Internal server error" };
+      }
+      return error;
+    },
+  }),
+);
 ```
 
 ### 6. Batch Query Protection (MANDATORY)
@@ -357,13 +373,13 @@ POST /graphql
 **Example:**
 
 ```javascript
-app.post('/graphql', (req, res, next) => {
+app.post("/graphql", (req, res, next) => {
   const queries = Array.isArray(req.body) ? req.body : [req.body];
 
   // 1. Limit batch size
   if (queries.length > 5) {
     return res.status(400).json({
-      error: 'Maximum 5 queries per batch request'
+      error: "Maximum 5 queries per batch request",
     });
   }
 
@@ -374,7 +390,7 @@ app.post('/graphql', (req, res, next) => {
   }
   if (totalComplexity > 1000) {
     return res.status(400).json({
-      error: 'Batch complexity exceeds limit'
+      error: "Batch complexity exceeds limit",
     });
   }
 
@@ -406,9 +422,9 @@ app.post('/graphql', (req, res, next) => {
 ```javascript
 const logGraphQLOperation = (req, res, next) => {
   const startTime = Date.now();
-  const correlationId = req.headers['x-correlation-id'] || uuid();
+  const correlationId = req.headers["x-correlation-id"] || uuid();
 
-  res.on('finish', () => {
+  res.on("finish", () => {
     const duration = Date.now() - startTime;
     const { query, variables, operationName } = req.body;
 
@@ -419,7 +435,7 @@ const logGraphQLOperation = (req, res, next) => {
       operation_name: operationName,
       query_complexity: calculateComplexity(query),
       execution_time_ms: duration,
-      status: res.statusCode < 400 ? 'success' : 'error'
+      status: res.statusCode < 400 ? "success" : "error",
     });
   });
 
@@ -452,38 +468,21 @@ extend type User {
 - Sub-graphs re-validate authorization per field
 - Sub-graphs never trust gateway context alone
 
-## Severity Model
+## Severity & Maturity
 
-| Control | Severity | Organizational Profile | Enforcement |
-|---------|----------|---|---|
-| **Query Complexity Analysis** | MANDATORY | Enterprise, SaaS | BLOCKS deployment |
-| **Field-Level Authorization** | MANDATORY | Enterprise, SaaS | BLOCKS deployment |
-| **Subscription Security** | MANDATORY | Enterprise, SaaS | BLOCKS deployment |
-| **Introspection Control** | MANDATORY | Enterprise, SaaS | BLOCKS deployment |
-| **Error Leakage Prevention** | MANDATORY | Enterprise, SaaS | BLOCKS deployment |
-| **Batch Query Protection** | MANDATORY | Enterprise, SaaS | BLOCKS deployment |
-| **Logging** | MANDATORY | Enterprise, SaaS | BLOCKS deployment |
-| **Federation Security** | RECOMMENDED | Enterprise (federation only) | Warning logged |
+**Severity Model and Maturity Progression are defined in [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md) and apply uniformly across all architecture profiles.**
 
-## Maturity Progression
-
-| Level | Query Limits | Authorization | Subscriptions | Introspection | Logging |
-|-------|---|---|---|---|---|
-| **1: Ad Hoc** | None | None | Not secured | Enabled | Console logs |
-| **2: Documented** | Depth limit | Per-resolver | Basic auth | Enabled restricted | Structured logs |
-| **3: Enforced** | Depth + complexity | Field-level + directive | Auth + rate limit | Disabled prod | Correlation IDs |
-| **4: Managed** | Dynamic scoringContext-aware | ABAC + federation | Subscription monitoring | API-key gated | Real-time alerting |
-| **5: Optimized** | ML-based predictions | ML-based ABAC | Zero Trust subscription | Schema versioning | Predictive analytics |
+GraphQL APIs inherit the standard 5-level maturity model and organizational profile severity escalation (Enterprise → SaaS → Startup → Developer).
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | OWASP GraphQL | COBIT 2019 |
-|---|---|---|---|---|
-| **Field Authorization** | A.8.2, A.8.5 | PW.4 | Query complexity abuse | DSS05 |
-| **Query Complexity** | A.8.30 | RV.1 | Denial of Service | DSS02 |
-| **Subscription Security** | A.8.2 | PW.1 | Broken authentication | EDM03 |
-| **Introspection Control** | A.8.29 | PW.3 | Excessive data access | BAI01 |
-| **Logging** | A.8.15, A.8.16 | RV.2 | Inadequate logging | MEA01 |
+| EATGF Control             | ISO 27001:2022 | NIST SSDF | OWASP GraphQL          | COBIT 2019 |
+| ------------------------- | -------------- | --------- | ---------------------- | ---------- |
+| **Field Authorization**   | A.8.2, A.8.5   | PW.4      | Query complexity abuse | DSS05      |
+| **Query Complexity**      | A.8.30         | RV.1      | Denial of Service      | DSS02      |
+| **Subscription Security** | A.8.2          | PW.1      | Broken authentication  | EDM03      |
+| **Introspection Control** | A.8.29         | PW.3      | Excessive data access  | BAI01      |
+| **Logging**               | A.8.15, A.8.16 | RV.2      | Inadequate logging     | MEA01      |
 
 ## Developer Checklist
 
@@ -536,10 +535,10 @@ Before submitting GraphQL API for deployment:
 
 ## Version Information
 
-| Element | Value |
-|---------|-------|
-| **Document Version** | 1.0 (Initial Release) |
-| **Issue Date** | 2024-Q1 |
-| **Profile Type** | GraphQL Architecture Implementation |
+| Element               | Value                                              |
+| --------------------- | -------------------------------------------------- |
+| **Document Version**  | 1.0 (Initial Release)                              |
+| **Issue Date**        | 2024-Q1                                            |
+| **Profile Type**      | GraphQL Architecture Implementation                |
 | **Relation to EATGF** | Implements Layer 08, Domain 02 for GraphQL systems |
-| **Next Review** | Q2 2024 |
+| **Next Review**       | Q2 2024                                            |
