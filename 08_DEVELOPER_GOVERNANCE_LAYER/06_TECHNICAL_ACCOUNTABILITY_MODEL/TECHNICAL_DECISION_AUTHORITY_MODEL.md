@@ -292,8 +292,17 @@ For significant technical decisions:
 - Michael Nygard, "Documenting Architecture Decisions"
 - Thoughtworks Technology Radar
 
-## Version History
+## Version Information
 
-| Version | Date | Change Type | Description |
-|---|---|---|---|
-| 1.0 | 2026-02-14 | Major | Initial technical decision authority model |
+- **Version:** 1.0
+- **Change Type:** Major (Initial Release)
+- **Date:** 2026-02-15
+- **Status:** Published
+- **Target Audience:** Engineering leadership, architects, decision makers
+- **Related Standards:** NIST SP 800-218, ISO 27001:2022, COBIT 2019
+
+---
+
+**Authorization:** Enterprise Architecture Board (EATGF Governance)
+**Last Reviewed:** February 15, 2026
+**Next Review:** August 15, 2026 (6-month cycle)
