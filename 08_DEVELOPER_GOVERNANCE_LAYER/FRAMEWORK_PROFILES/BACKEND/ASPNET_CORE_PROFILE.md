@@ -403,7 +403,7 @@ public class AuditLoggingMiddleware
 
 ### Control 1: Authentication
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-1-authentication)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **ASP.NET Core Implementation Pattern:**
 
@@ -465,7 +465,7 @@ public class AuthController : ControllerBase
 
 ### Control 2: Authorization
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-2-authorization)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **ASP.NET Core Implementation Pattern:**
 
@@ -540,7 +540,7 @@ public class TicketsController : ControllerBase
 
 ### Control 3: API Versioning
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-3-versioning)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **ASP.NET Core Implementation Pattern:**
 
@@ -601,7 +601,7 @@ public class TicketV1Dto { }
 
 ### Control 4: Rate Limiting
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-4-rate-limiting)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **ASP.NET Core Implementation Pattern:**
 
@@ -656,7 +656,7 @@ public class TicketsController : ControllerBase
 
 ### Control 5: Input Validation & Sanitization
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-5-input-validation)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **ASP.NET Core Implementation Pattern:**
 
@@ -742,7 +742,7 @@ public class TicketsController : ControllerBase
 
 ### Control 6: Response Security Headers
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-6-headers)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **ASP.NET Core Implementation Pattern:**
 
@@ -784,7 +784,7 @@ app.Use(async (context, next) =>
 
 ### Control 7: Exception Handling & Error Disclosure
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-7-errors)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **ASP.NET Core Implementation Pattern:**
 
@@ -851,7 +851,7 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 ### Control 8: CORS & Cross-Origin Requests
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-8-cors)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **ASP.NET Core Implementation Pattern:**
 

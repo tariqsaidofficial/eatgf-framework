@@ -209,7 +209,7 @@ This section maps the 8 mandatory controls from Layer 05 (API Governance) to Dja
 
 ### Control 1: Authentication
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-1-authentication)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Django Implementation Pattern:**
 
@@ -245,7 +245,7 @@ class LegacyView(APIView):
 
 ### Control 2: Authorization
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-2-authorization)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Django Implementation Pattern:**
 
@@ -278,7 +278,7 @@ class DocumentDetailView(RetrieveUpdateDestroyAPIView):
 
 ### Control 3: API Versioning
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-3-versioning)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Django Implementation Pattern:**
 
@@ -315,7 +315,7 @@ urlpatterns = [
 
 ### Control 4: Input Validation
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-4-input-validation)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Django Implementation Pattern:**
 
@@ -355,7 +355,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 ### Control 5: Rate Limiting
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-5-rate-limiting)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Django Implementation Pattern:**
 
@@ -399,7 +399,7 @@ REST_FRAMEWORK = {
 
 ### Control 6: Testing & Documentation
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-6-testing)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Django Implementation Pattern:**
 
@@ -446,7 +446,7 @@ class UsersAPITestCase(TestCase):
 
 ### Control 7: Logging & Observability
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-7-logging)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Django Implementation Pattern:**
 
@@ -496,7 +496,7 @@ logger.info(f"User {request.user} accessed {request.path}")
 
 ### Control 8: Zero Trust Networking
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-8-zero-trust)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Django Implementation Pattern:**
 

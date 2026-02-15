@@ -13,7 +13,7 @@
 **CONTROL AUTHORITY RELATIONSHIP:**
 
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
-- This profile **references** secure SDLC requirements from [01_SECURE_SDLC_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_STANDARD.md)
+- This profile **references** secure SDLC requirements from [01_SECURE_SDLC_GOVERNANCE_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_GOVERNANCE_STANDARD.md)
 - This profile **clarifies** mobile-specific DevSecOps patterns
 - This profile **does not** redefine any control from root governance documents
 - This profile **differs** from React/Next.js: mobile requires device-level security controls
@@ -92,24 +92,24 @@ Prevent MITM attacks by validating server certificate against pinned public key.
 
 ```typescript
 // ❌ PROHIBITED: Accept any valid SSL certificate
-const response = await fetch('https://api.example.com/invoices');
+const response = await fetch("https://api.example.com/invoices");
 
 // ✅ COMPLIANT: Pin certificate
-import { fetch as pinnedFetch } from 'react-native-pinch';
+import { fetch as pinnedFetch } from "react-native-pinch";
 
 const config = {
-  host: 'api.example.com',
-  cert: require('./certs/api-cert.pem') // Embedded certificate
+  host: "api.example.com",
+  cert: require("./certs/api-cert.pem"), // Embedded certificate
 };
 
 const response = await pinnedFetch(
-  'https://api.example.com/invoices',
+  "https://api.example.com/invoices",
   {
-    method: 'GET',
-    credentials: 'include',
+    method: "GET",
+    credentials: "include",
     // Verify cert against pinned value
   },
-  config
+  config,
 );
 ```
 
@@ -117,18 +117,16 @@ const response = await pinnedFetch(
 
 ```typescript
 // lib/certificate-pinning.ts
-import { Platform } from 'react-native';
-import { CertificatePinning } from 'react-native-certificate-pinning';
+import { Platform } from "react-native";
+import { CertificatePinning } from "react-native-certificate-pinning";
 
 // ✅ Pin public key hash (survives certificate rotation)
 const publicKeyHashes = {
-  'api.example.com': [
-    'sha256/4QfD+yj7Kpq6ELVIz4pzXfMpJDkqvvQ+VRNW2xv7Q2g=', // Primary
-    'sha256/6X5p8qJV2KpLcR7Z9bvQ+XvNpT1zV5qC4Z2qR1q2mP8='  // Backup
+  "api.example.com": [
+    "sha256/4QfD+yj7Kpq6ELVIz4pzXfMpJDkqvvQ+VRNW2xv7Q2g=", // Primary
+    "sha256/6X5p8qJV2KpLcR7Z9bvQ+XvNpT1zV5qC4Z2qR1q2mP8=", // Backup
   ],
-  'cdn.example.com': [
-    'sha256/Z5bQzW2kPw5sX9jY8oV6Z3U1T2V5qC4Z2qR1q2mP8Z='
-  ]
+  "cdn.example.com": ["sha256/Z5bQzW2kPw5sX9jY8oV6Z3U1T2V5qC4Z2qR1q2mP8Z="],
 };
 
 export async function setupCertificatePinning() {
@@ -137,19 +135,19 @@ export async function setupCertificatePinning() {
       CertificatePinning.setHosts({
         [domain]: {
           includeSubdomains: true,
-          pins: hashes
-        }
-      })
-    )
+          pins: hashes,
+        },
+      }),
+    ),
   );
 }
 
 // ✅ Validate in app initialization
 export function initializeApp() {
   setupCertificatePinning().catch((error) => {
-    console.error('Certificate pinning setup failed:', error);
+    console.error("Certificate pinning setup failed:", error);
     // Crash app if pinning cannot be established
-    throw new Error('Security initialization failed');
+    throw new Error("Security initialization failed");
   });
 }
 ```
@@ -169,32 +167,32 @@ Never store tokens in plain text. Use OS-provided secure storage.
 
 ```typescript
 // ❌ PROHIBITED: AsyncStorage (plain text)
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-await AsyncStorage.setItem('auth_token', token); // EXPOSED
+await AsyncStorage.setItem("auth_token", token); // EXPOSED
 
 // ❌ PROHIBITED: Redux persist
 store.dispatch(setToken(token)); // Persisted to storage
 
 // ✅ COMPLIANT: Keychain (iOS) / Keystore (Android)
-import * as SecureStore from 'expo-secure-store';
+import * as SecureStore from "expo-secure-store";
 
 export async function saveToken(token: string) {
   try {
-    await SecureStore.setItemAsync('auth_token', token, {
-      keychainAccessible: SecureStore.WHEN_UNLOCKED // iOS: require device unlock
+    await SecureStore.setItemAsync("auth_token", token, {
+      keychainAccessible: SecureStore.WHEN_UNLOCKED, // iOS: require device unlock
     });
   } catch (error) {
-    console.error('Failed to save token securely');
+    console.error("Failed to save token securely");
     throw error;
   }
 }
 
 export async function getToken(): Promise<string | null> {
   try {
-    return await SecureStore.getItemAsync('auth_token');
+    return await SecureStore.getItemAsync("auth_token");
   } catch (error) {
-    console.error('Failed to retrieve token');
+    console.error("Failed to retrieve token");
     return null;
   }
 }
@@ -240,26 +238,26 @@ Prevent app execution on compromised devices.
 
 ```typescript
 // ✅ COMPLIANT: Detect jailbreak/root
-import { Platform } from 'react-native';
-import { jailmonkey } from 'jailmonkey';
+import { Platform } from "react-native";
+import { jailmonkey } from "jailmonkey";
 
 export async function checkDeviceIntegrity(): Promise<boolean> {
   try {
-    if (Platform.OS === 'ios') {
+    if (Platform.OS === "ios") {
       const isJailbroken = await jailmonkey.isJailBrokenIOS(true);
 
       if (isJailbroken) {
         // ✅ Disable sensitive features
-        console.warn('Jailbroken device detected');
+        console.warn("Jailbroken device detected");
         return false;
       }
     }
 
-    if (Platform.OS === 'android') {
+    if (Platform.OS === "android") {
       const isRooted = await jailmonkey.isJailBrokenAndroid(true);
 
       if (isRooted) {
-        console.warn('Rooted device detected');
+        console.warn("Rooted device detected");
         return false;
       }
     }
@@ -267,7 +265,7 @@ export async function checkDeviceIntegrity(): Promise<boolean> {
     return true;
   } catch (error) {
     // ❌ If check fails, assume compromised
-    console.error('Device integrity check failed:', error);
+    console.error("Device integrity check failed:", error);
     return false;
   }
 }
@@ -279,9 +277,9 @@ export function useDeviceIntegrityCheck() {
       if (!isSecure) {
         // Show warning or crash app
         Alert.alert(
-          'Security Alert',
-          'This app cannot run on jailbroken/rooted devices',
-          [{ text: 'Exit', onPress: () => RNExitApp.exitApp() }]
+          "Security Alert",
+          "This app cannot run on jailbroken/rooted devices",
+          [{ text: "Exit", onPress: () => RNExitApp.exitApp() }],
         );
       }
     });
@@ -303,7 +301,7 @@ Support biometric (fingerprint, Face ID) with fallback to password.
 
 ```typescript
 // ✅ COMPLIANT: Biometric authentication with fallback
-import * as LocalAuthentication from 'expo-local-authentication';
+import * as LocalAuthentication from "expo-local-authentication";
 
 export async function authenticateBiometric(): Promise<boolean> {
   try {
@@ -311,7 +309,7 @@ export async function authenticateBiometric(): Promise<boolean> {
     const compatible = await LocalAuthentication.hasHardwareAsync();
 
     if (!compatible) {
-      console.log('Device does not support biometric');
+      console.log("Device does not support biometric");
       return false;
     }
 
@@ -319,20 +317,20 @@ export async function authenticateBiometric(): Promise<boolean> {
     const enrolled = await LocalAuthentication.isEnrolledAsync();
 
     if (!enrolled) {
-      console.log('No biometric enrolled');
+      console.log("No biometric enrolled");
       return false;
     }
 
     // ✅ Prompt for biometric (face ID or fingerprint)
     const result = await LocalAuthentication.authenticateAsync({
       disableDeviceFallback: false, // Allow device passcode as fallback
-      reason: 'Authenticate to access your invoices',
-      promptMessage: 'Use biometric or device passcode'
+      reason: "Authenticate to access your invoices",
+      promptMessage: "Use biometric or device passcode",
     });
 
     return result.success;
   } catch (error) {
-    console.error('Biometric authentication failed:', error);
+    console.error("Biometric authentication failed:", error);
     return false;
   }
 }
@@ -343,7 +341,7 @@ export function useProtectedOperation() {
     const authenticated = await authenticateBiometric();
 
     if (!authenticated) {
-      Alert.alert('Authentication Failed', 'Could not verify identity');
+      Alert.alert("Authentication Failed", "Could not verify identity");
       return;
     }
 
@@ -366,10 +364,10 @@ Centralize API configuration with security controls.
 
 ```typescript
 // lib/api-client.ts
-import axios, { AxiosInstance } from 'axios';
-import * as SecureStore from 'expo-secure-store';
-import { Platform } from 'react-native';
-import { CertificatePinning } from 'react-native-certificate-pinning';
+import axios, { AxiosInstance } from "axios";
+import * as SecureStore from "expo-secure-store";
+import { Platform } from "react-native";
+import { CertificatePinning } from "react-native-certificate-pinning";
 
 // ✅ Centralized API client
 export const createApiClient = async (): Promise<AxiosInstance> => {
@@ -377,22 +375,23 @@ export const createApiClient = async (): Promise<AxiosInstance> => {
   await setupCertificatePinning();
 
   const api = axios.create({
-    baseURL: Platform.OS === 'ios'
-      ? 'https://api-ios.example.com'
-      : 'https://api-android.example.com',
-    timeout: 5000
+    baseURL:
+      Platform.OS === "ios"
+        ? "https://api-ios.example.com"
+        : "https://api-android.example.com",
+    timeout: 5000,
   });
 
   // ✅ Request interceptor: Add auth token from secure storage
   api.interceptors.request.use(async (config) => {
-    const token = await SecureStore.getItemAsync('auth_token');
+    const token = await SecureStore.getItemAsync("auth_token");
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
 
-    config.headers['X-Correlation-ID'] = generateUUID();
-    config.headers['User-Agent'] = `MyApp/${APP_VERSION}`;
+    config.headers["X-Correlation-ID"] = generateUUID();
+    config.headers["User-Agent"] = `MyApp/${APP_VERSION}`;
 
     return config;
   });
@@ -403,12 +402,12 @@ export const createApiClient = async (): Promise<AxiosInstance> => {
     async (error) => {
       if (error.response?.status === 401) {
         // Token expired, clear storage and redirect to login
-        await SecureStore.deleteItemAsync('auth_token');
+        await SecureStore.deleteItemAsync("auth_token");
         // Trigger re-authentication
         return Promise.reject(error);
       }
       return Promise.reject(error);
-    }
+    },
   );
 
   return api;
@@ -477,7 +476,7 @@ Verify integrity of over-the-air updates.
 
 ```typescript
 // ✅ COMPLIANT: EAS Updates with signature verification
-import * as Updates from 'expo-updates';
+import * as Updates from "expo-updates";
 
 export async function initializeUpdates() {
   try {
@@ -486,7 +485,7 @@ export async function initializeUpdates() {
 
     if (update.isAvailable) {
       // ✅ Verify update before installing
-      console.log('Update available, installing...');
+      console.log("Update available, installing...");
 
       await Updates.fetchUpdateAsync();
       await Updates.reloadAsync();
@@ -494,14 +493,14 @@ export async function initializeUpdates() {
   } catch (error) {
     if (error instanceof Updates.UpdatesError) {
       // ✅ Handle update failures securely
-      console.error('Update failed:', error);
+      console.error("Update failed:", error);
       // Don't crash, continue with current version
     }
   }
 }
 
 // ✅ Alternative: CodePush with signature verification
-import CodePush from 'react-native-code-push';
+import CodePush from "react-native-code-push";
 
 const codePushOptions = {
   // ✅ Checksum verification mandatory
@@ -509,7 +508,7 @@ const codePushOptions = {
   // ✅ Install immediately only for critical fixes
   installMode: CodePush.InstallMode.ON_NEXT_RESTART,
   // ✅ Deployment key from secure config, not hardcoded
-  deploymentKey: process.env.CODEPUSH_KEY
+  deploymentKey: process.env.CODEPUSH_KEY,
 };
 
 export const App = CodePush(codePushOptions)(MainApp);
@@ -567,15 +566,15 @@ export function useAuth() {
     const restoreSession = async () => {
       try {
         // ✅ Retrieve token from secure storage
-        const token = await SecureStore.getItemAsync('auth_token');
+        const token = await SecureStore.getItemAsync("auth_token");
 
         if (token) {
           // ✅ Validate token with server
-          const response = await api.get('/auth/user');
+          const response = await api.get("/auth/user");
           setUser(response.data);
         }
       } catch (error) {
-        console.error('Session restore failed');
+        console.error("Session restore failed");
         // Token invalid, user must re-authenticate
       } finally {
         setIsLoading(false);
@@ -587,10 +586,10 @@ export function useAuth() {
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await api.post('/auth/login', { email, password });
+      const response = await api.post("/auth/login", { email, password });
 
       // ✅ Store token in secure storage
-      await SecureStore.setItemAsync('auth_token', response.data.token);
+      await SecureStore.setItemAsync("auth_token", response.data.token);
 
       setUser(response.data.user);
     } catch (error) {
@@ -602,7 +601,7 @@ export function useAuth() {
   };
 
   const logout = async () => {
-    await SecureStore.deleteItemAsync('auth_token');
+    await SecureStore.deleteItemAsync("auth_token");
     setUser(null);
   };
 
@@ -685,34 +684,30 @@ export function DeleteInvoiceButton({ invoiceId }) {
 export async function checkAppVersion() {
   const currentVersion = Constants.manifest.version;
 
-  const response = await api.get('/app/version-check', {
-    params: { version: currentVersion }
+  const response = await api.get("/app/version-check", {
+    params: { version: currentVersion },
   });
 
   const { status, minimumVersion, message } = response.data;
 
-  if (status === 'deprecated') {
+  if (status === "deprecated") {
+    Alert.alert("Update Available", message, [
+      {
+        text: "Update Now",
+        onPress: () => Linking.openURL("https://apps.apple.com/..."),
+      },
+    ]);
+  } else if (status === "critical") {
     Alert.alert(
-      'Update Available',
-      message,
+      "Critical Update Required",
+      "Your app version is no longer supported",
       [
         {
-          text: 'Update Now',
-          onPress: () => Linking.openURL('https://apps.apple.com/...')
-        }
-      ]
-    );
-  } else if (status === 'critical') {
-    Alert.alert(
-      'Critical Update Required',
-      'Your app version is no longer supported',
-      [
-        {
-          text: 'Update',
-          onPress: () => Linking.openURL('https://apps.apple.com/...'),
-          isPreferred: true
-        }
-      ]
+          text: "Update",
+          onPress: () => Linking.openURL("https://apps.apple.com/..."),
+          isPreferred: true,
+        },
+      ],
     );
   }
 }
@@ -782,28 +777,26 @@ export function InvoiceForm() {
 
 ```typescript
 export const api = axios.create({
-  baseURL: process.env.API_URL
+  baseURL: process.env.API_URL,
 });
 
 api.interceptors.response.use(
-  response => response,
-  async error => {
+  (response) => response,
+  async (error) => {
     if (error.response?.status === 429) {
       const retryAfter = parseInt(
-        error.response.headers['retry-after'] || '60'
+        error.response.headers["retry-after"] || "60",
       );
 
-      Alert.alert('Rate Limited', `Please try again in ${retryAfter}s`);
+      Alert.alert("Rate Limited", `Please try again in ${retryAfter}s`);
 
-      await new Promise(resolve =>
-        setTimeout(resolve, retryAfter * 1000)
-      );
+      await new Promise((resolve) => setTimeout(resolve, retryAfter * 1000));
 
       return api.request(error.config);
     }
 
     return Promise.reject(error);
-  }
+  },
 );
 ```
 
@@ -822,24 +815,24 @@ api.interceptors.response.use(
 ### Compliant Implementation
 
 ```typescript
-describe('Certificate Pinning', () => {
-  it('rejects requests to unpinned domains', async () => {
+describe("Certificate Pinning", () => {
+  it("rejects requests to unpinned domains", async () => {
     expect(async () => {
-      await api.get('https://untrusted.example.com/data');
-    }).rejects.toThrow('Certificate verification failed');
+      await api.get("https://untrusted.example.com/data");
+    }).rejects.toThrow("Certificate verification failed");
   });
 });
 
-describe('Secure Storage', () => {
-  it('stores token in secure storage', async () => {
-    await saveToken('test-token');
-    const token = await SecureStore.getItemAsync('auth_token');
-    expect(token).toBe('test-token');
+describe("Secure Storage", () => {
+  it("stores token in secure storage", async () => {
+    await saveToken("test-token");
+    const token = await SecureStore.getItemAsync("auth_token");
+    expect(token).toBe("test-token");
   });
 });
 
-describe('Jailbreak Detection', () => {
-  it('prevents app on jailbroken device', async () => {
+describe("Jailbreak Detection", () => {
+  it("prevents app on jailbroken device", async () => {
     const result = await checkDeviceIntegrity();
     expect(result).toBe(true); // Pass on non-jailbroken device
   });
@@ -869,20 +862,22 @@ Sentry.init({
     // ✅ Remove sensitive data
     if (event.request) {
       delete event.request.cookies;
-      delete event.request.headers['authorization'];
+      delete event.request.headers["authorization"];
     }
     return event;
-  }
+  },
 });
 
 export const logger = {
   error: (message: string, context?: any) => {
     console.error(message, context);
-    Sentry.captureException(new Error(message), { contexts: { extra: context } });
+    Sentry.captureException(new Error(message), {
+      contexts: { extra: context },
+    });
   },
   info: (message: string, context?: any) => {
     console.log(message, context);
-  }
+  },
 };
 ```
 
@@ -904,15 +899,15 @@ export const logger = {
 // ✅ Certificate pinning (covered in Principle 1)
 // ✅ HTTPS-only configuration
 const api = axios.create({
-  baseURL: 'https://api.example.com', // HTTPS only
+  baseURL: "https://api.example.com", // HTTPS only
   timeout: 5000,
-  withCredentials: true
+  withCredentials: true,
 });
 
 // ✅ No plain HTTP URLs
 // Build fails if HTTP URL detected
-if (API_URL.startsWith('http://') && !DEV_MODE) {
-  throw new Error('API URL must use HTTPS in production');
+if (API_URL.startsWith("http://") && !DEV_MODE) {
+  throw new Error("API URL must use HTTPS in production");
 }
 ```
 
@@ -943,9 +938,9 @@ export function useTenant(): string {
 }
 
 // ✅ All requests include tenant context
-api.interceptors.request.use(config => {
+api.interceptors.request.use((config) => {
   const tenantId = useTenant();
-  config.headers['X-Tenant-ID'] = tenantId;
+  config.headers["X-Tenant-ID"] = tenantId;
   return config;
 });
 ```
@@ -983,16 +978,16 @@ npm audit --audit-level=high || exit 1
 
 ## 14. Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 | COBIT 2019 |
-|---|---|---|---|---|
-| Authentication | A.8.2, A.8.3 | PW.2.1 | V2 | DSS05.02 |
-| Authorization | A.8.5, A.8.9 | PW.2.2 | V4 | DSS05.03 |
-| Versioning | A.8.28 | PW.4.2 | V14 | BAI09.02 |
-| Input Validation | A.8.22 | PW.8.1 | V5 | DSS05.04 |
-| Rate Limiting | A.8.22 | PW.8.2 | V11 | DSS01.05 |
-| Testing | A.8.28 | PW.9.1 | V14 | BAI03.07 |
-| Logging | A.8.15, A.8.23 | RV.1.1 | V15 | MEA01.02 |
-| Zero Trust | A.8.1, A.8.9 | PW.1.1 | V1 | DSS05.01 |
+| EATGF Control    | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 | COBIT 2019 |
+| ---------------- | -------------- | ------------- | -------------- | ---------- |
+| Authentication   | A.8.2, A.8.3   | PW.2.1        | V2             | DSS05.02   |
+| Authorization    | A.8.5, A.8.9   | PW.2.2        | V4             | DSS05.03   |
+| Versioning       | A.8.28         | PW.4.2        | V14            | BAI09.02   |
+| Input Validation | A.8.22         | PW.8.1        | V5             | DSS05.04   |
+| Rate Limiting    | A.8.22         | PW.8.2        | V11            | DSS01.05   |
+| Testing          | A.8.28         | PW.9.1        | V14            | BAI03.07   |
+| Logging          | A.8.15, A.8.23 | RV.1.1        | V15            | MEA01.02   |
+| Zero Trust       | A.8.1, A.8.9   | PW.1.1        | V1             | DSS05.01   |
 
 ---
 
@@ -1042,15 +1037,15 @@ npm audit --audit-level=high || exit 1
 
 ## 17. Version Information
 
-| Field | Value |
-|---|---|
-| **Document Version** | 1.0 |
-| **Change Type** | Major (Initial Release) |
-| **Issue Date** | February 15, 2026 |
-| **EATGF Baseline** | v1.0 (Block 2 Complete) |
-| **React Native Version** | 0.72+ |
-| **iOS Minimum** | 12.0+ |
-| **Android Minimum** | 5.0 (API 21)+ |
+| Field                    | Value                   |
+| ------------------------ | ----------------------- |
+| **Document Version**     | 1.0                     |
+| **Change Type**          | Major (Initial Release) |
+| **Issue Date**           | February 15, 2026       |
+| **EATGF Baseline**       | v1.0 (Block 2 Complete) |
+| **React Native Version** | 0.72+                   |
+| **iOS Minimum**          | 12.0+                   |
+| **Android Minimum**      | 5.0 (API 21)+           |
 
 ---
 

@@ -667,7 +667,7 @@ spec:
 
 ## Severity & Maturity
 
-**Severity Model and Maturity Progression are defined in [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md) and apply uniformly across all gateway implementations.**
+**Severity Model and Maturity Progression are defined in [API_GOVERNANCE_STANDARD.md](./API_GOVERNANCE_STANDARD.md) and apply uniformly across all gateway implementations.**
 
 API Gateways inherit the standard 5-level maturity model and organizational profile severity escalation (Enterprise → SaaS → Startup → Developer).
 

@@ -293,7 +293,7 @@ This section maps the 8 mandatory controls from Layer 05 (API Governance) to Spr
 
 ### Control 1: Authentication
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-1-authentication)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Spring Boot Implementation Pattern:**
 
@@ -354,7 +354,7 @@ public class SecurityConfig {
 
 ### Control 2: Authorization
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-2-authorization)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Spring Boot Implementation Pattern:**
 
@@ -414,7 +414,7 @@ public ResponseEntity<Invoice> getInvoice(@PathVariable Long id) {
 
 ### Control 3: API Versioning
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-3-versioning)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Spring Boot Implementation Pattern:**
 
@@ -458,7 +458,7 @@ public ResponseEntity<InvoiceResponseV2> getInvoices() {
 
 ### Control 4: Input Validation
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-4-input-validation)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Spring Boot Implementation Pattern:**
 
@@ -528,7 +528,7 @@ public ResponseEntity<Invoice> createInvoice(@RequestBody Map<String, Object> re
 
 ### Control 5: Rate Limiting
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-5-rate-limiting)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Spring Boot Implementation Pattern:**
 
@@ -598,7 +598,7 @@ public ResponseEntity<List<Invoice>> getInvoices(@AuthenticationPrincipal UserDe
 
 ### Control 6: Testing & Documentation
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-6-testing)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Spring Boot Implementation Pattern:**
 
@@ -665,7 +665,7 @@ public class InvoiceControllerTest {
 
 ### Control 7: Logging & Observability
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-7-logging)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Spring Boot Implementation Pattern:**
 
@@ -739,7 +739,7 @@ logger.info("User " + user + " accessed " + path);  // Plain text
 
 ### Control 8: Zero Trust Networking
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-8-zero-trust)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Spring Boot Implementation Pattern:**
 

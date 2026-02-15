@@ -255,7 +255,7 @@ This section maps the 8 mandatory controls from Layer 05 (API Governance) to Fas
 
 ### Control 1: Authentication
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-1-authentication)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **FastAPI Implementation Pattern:**
 
@@ -303,7 +303,7 @@ async def get_user(request: Request):
 
 ### Control 2: Authorization
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-2-authorization)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **FastAPI Implementation Pattern:**
 
@@ -349,7 +349,7 @@ async def get_invoice(
 
 ### Control 3: API Versioning
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-3-versioning)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **FastAPI Implementation Pattern:**
 
@@ -396,7 +396,7 @@ async def list_invoices(session: AsyncSession = Depends(get_db)):
 
 ### Control 4: Input Validation
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-4-input-validation)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **FastAPI Implementation Pattern:**
 
@@ -456,7 +456,7 @@ async def create_invoice(
 
 ### Control 5: Rate Limiting
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-5-rate-limiting)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **FastAPI Implementation Pattern:**
 
@@ -505,7 +505,7 @@ async def list_invoices(current_user: dict = Depends(verify_token)):
 
 ### Control 6: Testing & Documentation
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-6-testing)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **FastAPI Implementation Pattern:**
 
@@ -575,7 +575,7 @@ def test_openapi_schema_valid(client):
 
 ### Control 7: Logging & Observability
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-7-logging)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **FastAPI Implementation Pattern:**
 
@@ -627,7 +627,7 @@ logger.info(f"User {user_id} accessed {path}")
 
 ### Control 8: Zero Trust Networking
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-8-zero-trust)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **FastAPI Implementation Pattern:**
 

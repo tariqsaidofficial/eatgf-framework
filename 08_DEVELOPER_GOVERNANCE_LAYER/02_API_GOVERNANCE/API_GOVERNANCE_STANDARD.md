@@ -59,7 +59,7 @@ Integrated With:
 
 ## Technical Implementation
 
-### 1. Authentication (MANDATORY)
+### Control 1: Authentication
 
 Allowed mechanisms:
 
@@ -87,7 +87,7 @@ def verify_token(token: str = Depends(oauth2_scheme)):
 
 No API endpoint may bypass authentication in production.
 
-### 2. Authorization (MANDATORY)
+### Control 2: Authorization
 
 Authorization must be:
 
@@ -100,7 +100,7 @@ Authorization must be evaluated at:
 - Resource ownership level
 - Tenant boundary (for SaaS)
 
-### 3. Versioning (MANDATORY)
+### Control 3: Versioning
 
 Versioning strategies:
 
@@ -124,7 +124,7 @@ Deprecation: true
 Sunset: Tue, 31 Dec 2026 23:59:59 GMT
 ```
 
-### 4. Rate Limiting (MANDATORY for Public APIs)
+### Control 4: Rate Limiting
 
 Minimum controls:
 
@@ -144,7 +144,7 @@ server {
 }
 ```
 
-### 5. Input Validation (MANDATORY)
+### Control 5: Input Validation
 
 - Schema validation required
 - Reject unknown fields
@@ -160,7 +160,7 @@ class UserCreate(BaseModel):
     age: int
 ```
 
-### 6. Logging & Observability (MANDATORY)
+### Control 6: Logging and Observability
 
 APIs must log:
 
@@ -172,7 +172,7 @@ APIs must log:
 
 Structured JSON logging required.
 
-### 7. Webhook Security (MANDATORY if applicable)
+### Control 7: Webhook Security
 
 Webhooks must:
 
@@ -191,7 +191,7 @@ def verify_signature(payload, signature, secret):
     return hmac.compare_digest(expected, signature)
 ```
 
-### 8. API Documentation (MANDATORY)
+### Control 8: API Documentation
 
 Every API must publish:
 

@@ -314,7 +314,7 @@ This section maps the 8 mandatory controls from Layer 05 (API Governance) to Nod
 
 ### Control 1: Authentication
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-1-authentication)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Node.js Implementation Pattern:**
 
@@ -372,7 +372,7 @@ export class InvoiceController {
 
 ### Control 2: Authorization
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-2-authorization)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Node.js Implementation Pattern:**
 
@@ -427,7 +427,7 @@ async getInvoices(@Req() req: Request) {
 
 ### Control 3: API Versioning
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-3-versioning)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Node.js Implementation Pattern:**
 
@@ -467,7 +467,7 @@ app.get("/api/invoices", (req, res) => {
 
 ### Control 4: Input Validation
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-4-input-validation)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Node.js Implementation Pattern:**
 
@@ -516,7 +516,7 @@ async create(@Body() invoice: any) {
 
 ### Control 5: Rate Limiting
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-5-rate-limiting)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Node.js Implementation Pattern:**
 
@@ -574,7 +574,7 @@ async getInvoices(@Req() req: Request) {
 
 ### Control 6: Testing & Documentation
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-6-testing)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Node.js Implementation Pattern:**
 
@@ -636,7 +636,7 @@ describe("InvoiceController", () => {
 
 ### Control 7: Logging & Observability
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-7-logging)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Node.js Implementation Pattern:**
 
@@ -693,7 +693,7 @@ logger.info(`User ${req.user} accessed ${req.path}`); // Plain text
 
 ### Control 8: Zero Trust Networking
 
-**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-8-zero-trust)
+**Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 
 **Node.js Implementation Pattern:**
 

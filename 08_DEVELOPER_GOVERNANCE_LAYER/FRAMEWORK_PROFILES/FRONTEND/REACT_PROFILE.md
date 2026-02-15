@@ -13,7 +13,7 @@
 **CONTROL AUTHORITY RELATIONSHIP:**
 
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
-- This profile **references** secure SDLC requirements from [01_SECURE_SDLC_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_STANDARD.md)
+- This profile **references** secure SDLC requirements from [01_SECURE_SDLC_GOVERNANCE_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_GOVERNANCE_STANDARD.md)
 - This profile **clarifies** DevSecOps patterns from [03_DEVSECOPS_GOVERNANCE_STANDARD.md](../../03_DEVSECOPS_GOVERNANCE_STANDARD.md)
 - This profile **does not** redefine any control from root governance documents
 

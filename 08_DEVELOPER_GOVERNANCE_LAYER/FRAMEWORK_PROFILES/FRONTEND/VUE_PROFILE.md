@@ -13,7 +13,7 @@
 **CONTROL AUTHORITY RELATIONSHIP:**
 
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
-- This profile **references** secure SDLC requirements from [01_SECURE_SDLC_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_STANDARD.md)
+- This profile **references** secure SDLC requirements from [01_SECURE_SDLC_GOVERNANCE_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_GOVERNANCE_STANDARD.md)
 - This profile **clarifies** progressive framework patterns with Composition API and Pinia state management
 - This profile **does not** redefine any control from root governance documents
 
@@ -580,11 +580,11 @@ export const useTenant = () => {
 
 ## Official References
 
-- Vue.js Documentation: https://vuejs.org/guide/
-- Vue.js Security Best Practices: https://vuejs.org/guide/best-practices/security.html
-- OWASP Web Security: https://owasp.org/www-project-web-security-testing-guide/
-- Vue Composition API: https://vuejs.org/api/composition-api-setup.html
-- NIST SP 800-218: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf
+- Vue.js Documentation: <https://vuejs.org/guide/>
+- Vue.js Security Best Practices: <https://vuejs.org/guide/best-practices/security.html>
+- OWASP Web Security: <https://owasp.org/www-project-web-security-testing-guide/>
+- Vue Composition API: <https://vuejs.org/api/composition-api-setup.html>
+- NIST SP 800-218: <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf>
 
 ---
 
