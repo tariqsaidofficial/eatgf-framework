@@ -1,6 +1,5 @@
 # Kubernetes Governance Profile
-
-## Enterprise Container Orchestration Conformance Model (v1.0)
+## Enterprise Orchestration Conformance Model (v1.0)
 
 ---
 
