@@ -1,4 +1,5 @@
 # React Framework Governance Profile
+
 ## Enterprise Conformance Model (v1.0)
 
 ---
@@ -10,12 +11,14 @@
 **AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
+
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 - This profile **references** secure SDLC requirements from [01_SECURE_SDLC_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_STANDARD.md)
 - This profile **clarifies** DevSecOps patterns from [03_DEVSECOPS_GOVERNANCE_STANDARD.md](../../03_DEVSECOPS_GOVERNANCE_STANDARD.md)
 - This profile **does not** redefine any control from root governance documents
 
 **COMPLIANCE STATEMENT:** This profile enforces multi-layered client-side security for React applications. Non-conformance may result in:
+
 - XSS-based token theft
 - Cross-tenant data exposure
 - Credential compromise from supply chain attacks
@@ -38,6 +41,7 @@ This document defines governance conformance requirements for React-based fronte
 ## 2. Architectural Position
 
 **EATGF Layer Placement:**
+
 ```
 08_DEVELOPER_GOVERNANCE_LAYER
 ├── FRAMEWORK_PROFILES
@@ -47,6 +51,7 @@ This document defines governance conformance requirements for React-based fronte
 ```
 
 **React operates as:**
+
 - Browser-executed runtime
 - API consumer (stateless)
 - Token holder (ephemeral)
@@ -55,6 +60,7 @@ This document defines governance conformance requirements for React-based fronte
 - Attack surface boundary
 
 **React must conform to:**
+
 - **01_SECURE_SDLC:** Development lifecycle security
 - **02_API_GOVERNANCE:** API client contractual compliance
 - **03_DEVSECOPS:** Build pipeline, supply chain verification
@@ -101,6 +107,7 @@ function RenderInvoices() {
 Access tokens must **NEVER** be stored persistently on client.
 
 **Prohibited Storage:**
+
 ```typescript
 // ❌ localStorage
 localStorage.setItem("token", accessToken);
@@ -128,15 +135,14 @@ window.authToken = accessToken;
 // ✅ Frontend automatically includes cookie
 fetch("/api/users", {
   method: "GET",
-  credentials: "include" // sends HTTP-only cookies
+  credentials: "include", // sends HTTP-only cookies
 });
 
 // ✅ Short-lived access token + silent refresh
 fetch("/api/auth/refresh", {
   method: "POST",
-  credentials: "include"
-})
-.then(res => res.json())
+  credentials: "include",
+}).then((res) => res.json());
 // New token issued server-side in Set-Cookie header
 ```
 
@@ -189,13 +195,14 @@ const sanitized = DOMPurify.sanitize(userInput);
 const config = {
   ALLOWED_TAGS: ["b", "i", "em", "strong"],
   ALLOWED_ATTR: [],
-  KEEP_CONTENT: true
+  KEEP_CONTENT: true,
 };
 
 const sanitized = DOMPurify.sanitize(userInput, config);
 ```
 
 **Restriction:** dangerouslySetInnerHTML usage must be:
+
 1. Documented in code comments
 2. Justified by security team
 3. Sanitization enforced
@@ -210,16 +217,16 @@ Backend must enforce strict CSP headers. Frontend must align with CSP directives
 **Mandatory CSP Header:**
 
 ```http
-Content-Security-Policy: 
-  default-src 'self'; 
-  script-src 'self'; 
-  style-src 'self' https://fonts.googleapis.com; 
-  font-src 'self' https://fonts.gstatic.com; 
-  img-src 'self' data: https:; 
-  connect-src 'self' https://api.example.com; 
-  frame-ancestors 'none'; 
-  base-uri 'self'; 
-  form-action 'self'; 
+Content-Security-Policy:
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;
+  img-src 'self' data: https:;
+  connect-src 'self' https://api.example.com;
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
   upgrade-insecure-requests;
 ```
 
@@ -255,7 +262,7 @@ All HTTP requests must use a centralized, configured API client. No scattered fe
 function UserProfile() {
   useEffect(() => {
     fetch("https://api.example.com/user")
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(setUser);
   }, []);
 }
@@ -281,8 +288,8 @@ export const api: AxiosInstance = axios.create({
   timeout: 5000,
   headers: {
     "Content-Type": "application/json",
-    "Accept": "application/json"
-  }
+    Accept: "application/json",
+  },
 });
 
 // ✅ Request interceptor: Add correlation ID
@@ -302,7 +309,7 @@ api.interceptors.response.use(
       window.location.href = "/login";
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;
@@ -401,7 +408,7 @@ VITE_FEATURE_FLAGS_ENDPOINT=https://api.example.com/features
 const config = {
   apiUrl: import.meta.env.VITE_API_URL,
   environment: import.meta.env.VITE_ENVIRONMENT,
-  analyticsKey: import.meta.env.VITE_ANALYTICS_KEY
+  analyticsKey: import.meta.env.VITE_ANALYTICS_KEY,
 };
 
 // ✗ PROHIBITED: Direct env variable in component
@@ -424,6 +431,7 @@ echo "✓ No hardcoded secrets in build artifact"
 **Objective:** Establish and validate user identity in a zero-trust browser environment.
 
 ### Requirement
+
 - Frontend must not make authentication decisions
 - Server-side session validation mandatory on every request
 - Token refresh must be automatic and server-controlled
@@ -490,24 +498,26 @@ function useAuth() {
 // ❌ VIOLATION: Login stores token, assumes success
 fetch("/auth/login", {
   method: "POST",
-  body: JSON.stringify({ email, password })
+  body: JSON.stringify({ email, password }),
 })
-.then(res => res.json())
-.then(data => {
-  localStorage.setItem("token", data.token); // Storage violation
-  setIsAuthenticated(true); // Trusting client state
-});
+  .then((res) => res.json())
+  .then((data) => {
+    localStorage.setItem("token", data.token); // Storage violation
+    setIsAuthenticated(true); // Trusting client state
+  });
 ```
 
 ### MFA Support Pattern
 
 ```typescript
 export function useAuthFlow() {
-  const [step, setStep] = useState<"credentials" | "mfa" | "authenticated">("credentials");
+  const [step, setStep] = useState<"credentials" | "mfa" | "authenticated">(
+    "credentials",
+  );
 
   const submitCredentials = async (email: string, password: string) => {
     const response = await api.post("/auth/login", { email, password });
-    
+
     if (response.data.mfaRequired) {
       setStep("mfa"); // Move to MFA challenge
     } else {
@@ -531,6 +541,7 @@ export function useAuthFlow() {
 **Objective:** Verify user permissions for requested resources server-side. Frontend shows appropriate UI only.
 
 ### Requirement
+
 - All authorization decisions made server-side
 - Frontend must request permission from backend for operations
 - Role-based access control (RBAC) enforced server-side
@@ -647,6 +658,7 @@ export function InvoiceEditor({ invoiceId }: { invoiceId: string }) {
 **Objective:** Manage API contract versioning and compatibility with server.
 
 ### Requirement
+
 - API client must support versioned endpoints
 - Breaking changes require client update
 - Version mismatch must be detected and handled
@@ -661,22 +673,22 @@ const MINIMUM_SUPPORTED_VERSION = "v1";
 
 export const api = axios.create({
   baseURL: `${import.meta.env.VITE_API_URL}/${API_VERSION}`,
-  withCredentials: true
+  withCredentials: true,
 });
 
 // ✅ Response interceptor: Detect version mismatch
 api.interceptors.response.use(
   (response) => {
     const serverVersion = response.headers["x-api-version"];
-    
+
     if (serverVersion && serverVersion !== API_VERSION) {
       if (import.meta.env.DEV) {
         console.warn(
-          `⚠️ API version mismatch: client=${API_VERSION}, server=${serverVersion}`
+          `⚠️ API version mismatch: client=${API_VERSION}, server=${serverVersion}`,
         );
       }
     }
-    
+
     return response;
   },
   (error) => {
@@ -686,7 +698,7 @@ api.interceptors.response.use(
       window.location.reload();
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 // ✅ Development mode: Warn on deprecations
@@ -710,7 +722,7 @@ import { z } from "zod";
 const UserV1 = z.object({
   id: z.string(),
   email: z.string().email(),
-  createdAt: z.string().datetime()
+  createdAt: z.string().datetime(),
 });
 
 const UserV2 = z.object({
@@ -718,13 +730,13 @@ const UserV2 = z.object({
   email: z.string().email(),
   createdAt: z.string().datetime(),
   mfaEnabled: z.boolean(), // new in v2
-  lastLogin: z.string().datetime().nullable() // new in v2
+  lastLogin: z.string().datetime().nullable(), // new in v2
 });
 
 // ✅ Request handler with schema validation
 async function getUser(userId: string) {
   const response = await api.get(`/users/${userId}`);
-  
+
   // ✅ Validate response matches expected schema
   const validated = UserV2.parse(response.data);
   return validated;
@@ -749,6 +761,7 @@ console.log(user.mfaEnabled); // Undefined if server is older version
 **Objective:** Validate all user input before sending to API (UX only). ServerMust re-validate.
 
 ### Requirement
+
 - Client-side validation is UX only
 - Server must independently validate all input
 - Validation schema defined once, reused in schemas
@@ -849,6 +862,7 @@ function SubmitButton({ isFormValid }) {
 **Objective:** Prevent client from overwhelming API with requests (UX only). Server enforces hard limits.
 
 ### Requirement
+
 - Client-side throttling/debouncing for UX
 - Request queue management
 - Exponential backoff on failures
@@ -969,6 +983,7 @@ api.interceptors.response.use(
 **Objective:** Ensure code quality, security, and maintainability through automated testing.
 
 ### Requirement
+
 - Unit test coverage > 80%
 - Integration tests for API contract
 - Security-focused tests (XSS, CSRF, injection)
@@ -990,7 +1005,7 @@ describe("useAuth", () => {
       id: "user-123",
       email: "user@example.com",
       tenantId: "tenant-abc",
-      roles: ["user"]
+      roles: ["user"],
     };
 
     vi.mocked(api.get).mockResolvedValue({ data: mockUser });
@@ -1006,7 +1021,7 @@ describe("useAuth", () => {
 
   it("clears auth state on 401 response", async () => {
     vi.mocked(api.get).mockRejectedValue({
-      response: { status: 401 }
+      response: { status: 401 },
     });
 
     const { result } = renderHook(() => useAuth());
@@ -1020,9 +1035,9 @@ describe("useAuth", () => {
 // ✅ Security test: Verify no XSS from user input
 describe("Input Sanitization", () => {
   it("sanitizes HTML in user comments", () => {
-    const maliciousInput = '<img src=x onerror="alert(\'XSS\')" />';
+    const maliciousInput = "<img src=x onerror=\"alert('XSS')\" />";
     const sanitized = DOMPurify.sanitize(maliciousInput);
-    
+
     expect(sanitized).not.toContain("onerror");
   });
 
@@ -1038,14 +1053,14 @@ describe("Input Sanitization", () => {
 describe("API Client", () => {
   it("includes correlation ID on all requests", async () => {
     await api.get("/test");
-    
+
     const lastRequest = vi.mocked(api.get).mock.results[0];
     expect(lastRequest[1]?.headers?.["X-Correlation-ID"]).toBeDefined();
   });
 
   it("enforces HTTP-only cookie transport", async () => {
     await api.get("/user");
-    
+
     const config = vi.mocked(api.get).mock.calls[0][1];
     expect(config?.withCredentials).toBe(true);
   });
@@ -1072,20 +1087,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateInvoice'
+              $ref: "#/components/schemas/CreateInvoice"
       responses:
-        '201':
+        "201":
           description: Invoice created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Invoice'
-        '422':
+                $ref: "#/components/schemas/Invoice"
+        "422":
           description: Validation error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationError'
+                $ref: "#/components/schemas/ValidationError"
 
 components:
   schemas:
@@ -1129,6 +1144,7 @@ export const api = axios.create({
 **Objective:** Capture security events and errors for audit and debugging without exposing sensitive data.
 
 ### Requirement
+
 - Correlation ID on all API requests
 - Structured logging (JSON format)
 - No sensitive data in logs (tokens, passwords, PII)
@@ -1145,8 +1161,8 @@ import pino from "pino";
 const logger = pino({
   level: import.meta.env.DEV ? "debug" : "info",
   browser: {
-    asObject: true // Output JSON, not formatted strings
-  }
+    asObject: true, // Output JSON, not formatted strings
+  },
 });
 
 // ✅ Enrich logs with correlation ID
@@ -1154,7 +1170,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const createLogger = (component: string) => {
   const correlationId = sessionStorage.getItem("correlation-id") || uuidv4();
-  
+
   return {
     info: (message: string, data?: any) => {
       logger.info({
@@ -1162,7 +1178,7 @@ export const createLogger = (component: string) => {
         correlationId,
         component,
         message,
-        ...data
+        ...data,
       });
     },
     error: (message: string, error?: Error, context?: any) => {
@@ -1174,9 +1190,9 @@ export const createLogger = (component: string) => {
         errorName: error?.name,
         errorMessage: error?.message,
         errorStack: error?.stack,
-        ...context
+        ...context,
       });
-    }
+    },
   };
 };
 
@@ -1185,23 +1201,24 @@ function InvoiceList() {
   const logger = createLogger("InvoiceList");
 
   useEffect(() => {
-    api.get("/invoices")
+    api
+      .get("/invoices")
       .then((response) => {
         logger.info("Invoices loaded", {
-          count: response.data.length
+          count: response.data.length,
         });
       })
       .catch((error) => {
         logger.error("Failed to load invoices", error, {
           component: "InvoiceList",
-          action: "fetch_invoices"
+          action: "fetch_invoices",
         });
         // ✅ Send to error tracking service
         sentry.captureException(error, {
           tags: {
             component: "InvoiceList",
-            action: "fetch_invoices"
-          }
+            action: "fetch_invoices",
+          },
         });
       });
   }, []);
@@ -1210,11 +1227,11 @@ function InvoiceList() {
 // ✅ Redact sensitive data from logs
 function sanitizeForLogging(data: any): any {
   const redacted = JSON.parse(JSON.stringify(data));
-  
+
   const sensitiveKeys = ["token", "password", "secret", "apiKey", "creditCard"];
   const redactRecursive = (obj: any) => {
-    Object.keys(obj).forEach(key => {
-      if (sensitiveKeys.some(k => key.toLowerCase().includes(k))) {
+    Object.keys(obj).forEach((key) => {
+      if (sensitiveKeys.some((k) => key.toLowerCase().includes(k))) {
         obj[key] = "[REDACTED]";
       } else if (typeof obj[key] === "object") {
         redactRecursive(obj[key]);
@@ -1229,11 +1246,11 @@ function sanitizeForLogging(data: any): any {
 // ✅ Log API calls with sanitization
 api.interceptors.request.use((config) => {
   const sanitizedData = sanitizeForLogging(config.data);
-  
+
   createLogger("api").info("API Request", {
     method: config.method?.toUpperCase(),
     url: config.url,
-    data: sanitizedData
+    data: sanitizedData,
   });
 
   return config;
@@ -1254,7 +1271,7 @@ export function initErrorTracking() {
         delete event.request.headers["authorization"];
       }
       return event;
-    }
+    },
   });
 }
 ```
@@ -1266,7 +1283,7 @@ export function initErrorTracking() {
 logger.info("User logged in", {
   email: user.email,
   password: user.password, // EXPOSED
-  token: accessToken // EXPOSED
+  token: accessToken, // EXPOSED
 });
 
 // ❌ VIOLATION: No correlation ID
@@ -1283,6 +1300,7 @@ console.log("Debugging info:", sensitiveData);
 **Objective:** Assume network is untrusted. Enforce encryption and origin verification.
 
 ### Requirement
+
 - HTTPS only (no HTTP fallback)
 - Secure Cookie flags (HttpOnly, Secure, SameSite)
 - CORS policy alignment with backend
@@ -1303,7 +1321,7 @@ export default defineConfig({
     // Development server must use HTTPS
     https: true,
     // Intercept origin validation
-    middlewareMode: true
+    middlewareMode: true,
   },
 
   // Production build excludes HTTP references
@@ -1313,10 +1331,10 @@ export default defineConfig({
         // Ensure all imports use HTTPS
         assetFileNames: (assetInfo) => {
           return assetInfo.name;
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 });
 
 // ✅ API client: HTTPS enforcement
@@ -1325,7 +1343,7 @@ export const api = axios.create({
   // Verify HTTPS
   httpAgent: new http.Agent({ protocol: "https:" }),
   httpsAgent: new https.Agent(),
-  withCredentials: true // Sends HTTP-only cookies
+  withCredentials: true, // Sends HTTP-only cookies
 });
 
 // ✅ Validate secure cookies from server
@@ -1358,12 +1376,12 @@ async function fetchUserData() {
 }
 
 // ✅ Subresource integrity for external libraries
-// HTML: <script src="https://cdn.example.com/lib.js" 
+// HTML: <script src="https://cdn.example.com/lib.js"
 //        integrity="sha384-abc123..." />
 
 // ✅ CSP headers (enforced by server)
-// Content-Security-Policy: 
-//   default-src 'self'; 
+// Content-Security-Policy:
+//   default-src 'self';
 //   connect-src 'self' https://api.example.com;
 //   script-src 'self' https://cdn.example.com;
 ```
@@ -1373,16 +1391,16 @@ async function fetchUserData() {
 ```typescript
 // ❌ VIOLATION: HTTP fallback
 const api = axios.create({
-  baseURL: "http://api.example.com" // No HTTPS
+  baseURL: "http://api.example.com", // No HTTPS
 });
 
 // ❌ VIOLATION: Cookies without flags
-// Set-Cookie: token=abc123; Path=/ 
+// Set-Cookie: token=abc123; Path=/
 // Missing: Secure, HttpOnly, SameSite
 
 // ❌ VIOLATION: Cross-origin without credentials control
 fetch("https://another-domain.com/api/data", {
-  credentials: "include" // Sends cookies to different origin
+  credentials: "include", // Sends cookies to different origin
 });
 
 // ❌ VIOLATION: Hardcoded CDN without integrity
@@ -1397,6 +1415,7 @@ fetch("https://another-domain.com/api/data", {
 **Objective:** Ensure tenant isolation at client-side (UX only). Server enforces boundary.
 
 ### Requirement
+
 - Tenant ID from authenticated server response only
 - UI prevents tenant switching without re-authentication
 - Requests include tenant context (for logging)
@@ -1428,9 +1447,9 @@ export function TenantProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <TenantCtx.Provider value={{ 
+    <TenantCtx.Provider value={{
       tenantId: user.tenantId, // from server only
-      tenantName: user.tenantName 
+      tenantName: user.tenantName
     }}>
       {children}
     </TenantCtx.Provider>
@@ -1446,11 +1465,11 @@ export function useTenant() {
 // ✅ Usage: Tenant ID in requests
 async function fetchInvoices() {
   const { tenantId } = useTenant();
-  
+
   const response = await api.get("/invoices", {
     params: { tenantId } // Server validates tenantId matches request user
   });
-  
+
   return response.data;
 }
 
@@ -1501,6 +1520,7 @@ const switchTenant = (newTenantId) => {
 **Objective:** Maintain integrity of dependencies from ecosystem.
 
 ### Requirement
+
 - Lockfile committed and verified
 - Audit for known vulnerabilities automated
 - License compliance tracking
@@ -1615,16 +1635,16 @@ jobs:
 
 **Explicit alignment with governance frameworks:**
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 | COBIT 2019 |
-|---|---|---|---|---|
-| Authentication (Control 1) | A.8.2, A.8.3 | PW.2.1 | V2 (Authentication) | DSS05.02 |
-| Authorization (Control 2) | A.8.5, A.8.9 | PW.2.2 | V4 (Access Control) | DSS05.03 |
-| Versioning (Control 3) | A.8.28 | PW.4.2 | V14 (SCM) | BAI09.02 |
-| Input Validation (Control 4) | A.8.22, A.8.28 | PW.8.1 | V5 (XSS, Injection) | DSS05.04 |
-| Rate Limiting (Control 5) | A.8.22 | PW.8.2 | V11 (API) | DSS01.05 |
-| Testing & Documentation (Control 6) | A.8.28 | PW.9.1 | V14 (Automation) | BAI03.07 |
-| Logging & Observability (Control 7) | A.8.15, A.8.23 | RV.1.1 | V15 (Audit) | MEA01.02 |
-| Zero Trust Networking (Control 8) | A.8.1, A.8.9 | PW.1.1 | V1 (HTTPS) | DSS05.01 |
+| EATGF Control                       | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0      | COBIT 2019 |
+| ----------------------------------- | -------------- | ------------- | ------------------- | ---------- |
+| Authentication (Control 1)          | A.8.2, A.8.3   | PW.2.1        | V2 (Authentication) | DSS05.02   |
+| Authorization (Control 2)           | A.8.5, A.8.9   | PW.2.2        | V4 (Access Control) | DSS05.03   |
+| Versioning (Control 3)              | A.8.28         | PW.4.2        | V14 (SCM)           | BAI09.02   |
+| Input Validation (Control 4)        | A.8.22, A.8.28 | PW.8.1        | V5 (XSS, Injection) | DSS05.04   |
+| Rate Limiting (Control 5)           | A.8.22         | PW.8.2        | V11 (API)           | DSS01.05   |
+| Testing & Documentation (Control 6) | A.8.28         | PW.9.1        | V14 (Automation)    | BAI03.07   |
+| Logging & Observability (Control 7) | A.8.15, A.8.23 | RV.1.1        | V15 (Audit)         | MEA01.02   |
+| Zero Trust Networking (Control 8)   | A.8.1, A.8.9   | PW.1.1        | V1 (HTTPS)          | DSS05.01   |
 
 ---
 
@@ -1641,7 +1661,7 @@ Before deploying React application to production:
 - [ ] **Logging:** Correlation ID on all API requests, structured logging enabled, sensitive data redacted
 - [ ] **Zero Trust:** HTTPS only, secure cookies enforced (HttpOnly, Secure, SameSite), CORS validated
 - [ ] **Dependency Audit:** `npm audit --audit-level=high` passes, lockfile committed
-- [ ] **Secrets:** No hardcoded tokens/passwords, env vars prefixed (VITE_/REACT_APP_)
+- [ ] **Secrets:** No hardcoded tokens/passwords, env vars prefixed (VITE*/REACT_APP*)
 - [ ] **Sanitization:** DOMPurify used for user-generated HTML, dangerouslySetInnerHTML justified
 - [ ] **CSP:** Content-Security-Policy header enforced server-side, inline scripts removed
 - [ ] **Build:** Source maps disabled (`GENERATE_SOURCEMAP=false`), minification enabled
@@ -1679,16 +1699,16 @@ Before deploying React application to production:
 
 ## 17. Implementation Risks
 
-| Risk | Severity | Mitigation |
-|---|---|---|
-| Tokens leaked from localStorage | CRITICAL | Use HTTP-only secure cookies only |
-| XSS bypasses via dangerouslySetInnerHTML | CRITICAL | Mandatory DOMPurify + code review |
-| Trusting client-side authorization | CRITICAL | Server re-validates every request |
-| Missing dependency audit | HIGH | Automated npm audit in CI/CD |
-| Hardcoded secrets in build artifact | HIGH | Environment variable verification script |
-| No correlation tracking | MEDIUM | Automatic correlation ID injection |
-| Expired token sent to API | MEDIUM | Silent refresh with token rotation |
-| CSP bypassed via inline scripts | MEDIUM | Build tooling forbids inline injection |
+| Risk                                     | Severity | Mitigation                               |
+| ---------------------------------------- | -------- | ---------------------------------------- |
+| Tokens leaked from localStorage          | CRITICAL | Use HTTP-only secure cookies only        |
+| XSS bypasses via dangerouslySetInnerHTML | CRITICAL | Mandatory DOMPurify + code review        |
+| Trusting client-side authorization       | CRITICAL | Server re-validates every request        |
+| Missing dependency audit                 | HIGH     | Automated npm audit in CI/CD             |
+| Hardcoded secrets in build artifact      | HIGH     | Environment variable verification script |
+| No correlation tracking                  | MEDIUM   | Automatic correlation ID injection       |
+| Expired token sent to API                | MEDIUM   | Silent refresh with token rotation       |
+| CSP bypassed via inline scripts          | MEDIUM   | Build tooling forbids inline injection   |
 
 ---
 
@@ -1711,25 +1731,25 @@ Before deploying React application to production:
 
 **Libraries & Standards:**
 
-- Zod: TypeScript-first schema validation (https://zod.dev)
-- DOMPurify: XSS sanitization (https://github.com/cure53/DOMPurify)
-- Pino: Structured logging (https://getpino.io)
-- TanStack React Query: Async state management (https://tanstack.com/query)
+- Zod: TypeScript-first schema validation (<https://zod.dev>)
+- DOMPurify: XSS sanitization (<https://github.com/cure53/DOMPurify>)
+- Pino: Structured logging (<https://getpino.io>)
+- TanStack React Query: Async state management (<https://tanstack.com/query>)
 
 ---
 
 ## 19. Version Information
 
-| Field | Value |
-|---|---|
-| **Document Version** | 1.0 |
-| **Change Type** | Major (Initial Release) |
-| **Issue Date** | February 15, 2026 |
-| **EATGF Baseline** | v1.0 (Foundation + Block 2 Complete) |
-| **React Version** | 18.2+ |
-| **Build Tool** | Vite 5.0+ or Create React App 5.0+ |
-| **Node.js** | 18.0+ (LTS recommended) |
-| **Target Audience** | Frontend engineers, security architects, DevSecOps teams |
+| Field                | Value                                                    |
+| -------------------- | -------------------------------------------------------- |
+| **Document Version** | 1.0                                                      |
+| **Change Type**      | Major (Initial Release)                                  |
+| **Issue Date**       | February 15, 2026                                        |
+| **EATGF Baseline**   | v1.0 (Foundation + Block 2 Complete)                     |
+| **React Version**    | 18.2+                                                    |
+| **Build Tool**       | Vite 5.0+ or Create React App 5.0+                       |
+| **Node.js**          | 18.0+ (LTS recommended)                                  |
+| **Target Audience**  | Frontend engineers, security architects, DevSecOps teams |
 
 **Compliance Statement:** This profile is 100% conformant to EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md and enforces all governance principles at Layer 08 level.
 
