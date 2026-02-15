@@ -1204,11 +1204,11 @@ export const getServerSideProps = async (context) => {
 
 ## Official References
 
-- Next.js Documentation: https://nextjs.org/docs
-- Next.js Security & Performance: https://nextjs.org/docs/advanced-features/security-headers
-- OWASP Server-Side Security: https://owasp.org/www-community/attacks/
-- Vercel Security: https://vercel.com/docs/security
-- NIST SP 800-218: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf
+- Next.js Documentation: <https://nextjs.org/docs>
+- Next.js Security & Performance: <https://nextjs.org/docs/advanced-features/security-headers>
+- OWASP Server-Side Security: <https://owasp.org/www-community/attacks/>
+- Vercel Security: <https://vercel.com/docs/security>
+- NIST SP 800-218: <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf>
 
 ---
 
