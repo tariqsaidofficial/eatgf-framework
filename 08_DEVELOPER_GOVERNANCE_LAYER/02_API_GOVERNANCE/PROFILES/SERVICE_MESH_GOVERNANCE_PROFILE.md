@@ -903,6 +903,16 @@ Service Mesh deployments inherit the standard 5-level maturity model and organiz
 
 ---
 
+## Official References
+
+- Istio Documentation: `https://istio.io/latest/docs/`
+- Linkerd Documentation: `https://linkerd.io/2/overview/`
+- NIST SP 800-218 - Secure Software Development Framework
+- OWASP - Zero Trust Architecture: `https://owasp.org/www-community/zero_trust_networking`
+- Flagger Canary Analysis: `https://flagger.app/`
+
+---
+
 ## References
 
 - Istio Documentation: `https://istio.io/latest/docs/`

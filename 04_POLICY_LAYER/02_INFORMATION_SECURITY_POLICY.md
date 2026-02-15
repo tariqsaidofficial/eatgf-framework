@@ -1,14 +1,14 @@
 # 02_INFORMATION_SECURITY_POLICY
 
-| Field | Value |
-|-------|-------|
-| Document Type | Policy |
-| Version | 2.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-14 |
-| Authority | Chief Information Security Officer |
-| EATGF Layer | 04_POLICY_LAYER |
-| MCM Reference | EATGF-APO-SEC-01, EATGF-DSS-SEC-01, EATGF-DSS-ENC-01, EATGF-DSS-VULN-01 |
+| Field          | Value                                                                   |
+| -------------- | ----------------------------------------------------------------------- |
+| Document Type  | Policy                                                                  |
+| Version        | 2.0                                                                     |
+| Classification | Controlled                                                              |
+| Effective Date | 2026-02-14                                                              |
+| Authority      | Chief Information Security Officer                                      |
+| EATGF Layer    | 04_POLICY_LAYER                                                         |
+| MCM Reference  | EATGF-APO-SEC-01, EATGF-DSS-SEC-01, EATGF-DSS-ENC-01, EATGF-DSS-VULN-01 |
 
 ---
 
@@ -38,12 +38,12 @@ This policy operates within **04_POLICY_LAYER** as the primary security governan
 
 All information assets classified according to:
 
-| Classification | Definition | Protection Level |
-|---|---|---|
-| **Public** | Information approved for public disclosure | Basic protection |
-| **Internal** | Information intended for internal use only | Standard protection |
-| **Confidential** | Sensitive business or personal information | Enhanced protection |
-| **Restricted** | Highly sensitive (trade secrets, personal data) | Maximum protection |
+| Classification   | Definition                                      | Protection Level    |
+| ---------------- | ----------------------------------------------- | ------------------- |
+| **Public**       | Information approved for public disclosure      | Basic protection    |
+| **Internal**     | Information intended for internal use only      | Standard protection |
+| **Confidential** | Sensitive business or personal information      | Enhanced protection |
+| **Restricted**   | Highly sensitive (trade secrets, personal data) | Maximum protection  |
 
 Classification determines encryption, access control, retention, and disposal requirements.
 
@@ -91,20 +91,22 @@ Classification determines encryption, access control, retention, and disposal re
 
 ### Incident Management
 
+**⚠️ NOTE ON SLA CONTEXT:** The timelines below refer to INCIDENT ESCALATION and NOTIFICATION, which is different from VULNERABILITY REMEDIATION SLA defined in [VULNERABILITY_REMEDIATION_TERMINOLOGY.md](../../../VULNERABILITY_REMEDIATION_TERMINOLOGY.md). CVE patching follows a separate 24-hour end-to-end SLA.
+
 **Breach Notification Requirement:**
 
-- Critical incidents reported to CISO within 1 hour
+- Critical incidents reported to CISO within 1 hour (escalation timeline)
 - Regulatory authorities notified within 72 hours per GDPR (or applicable regulation)
 - Affected data subjects notified per regulatory requirements
 
 **Incident Severity Classification:**
 
-| Level | Criteria | Timeline | Escalation |
-|-------|----------|----------|-----------|
-| **Level 1 (Critical)** | Major data breach, extended outage, external attack | 1 hour | CISO, CEO, Board |
-| **Level 2 (High)** | Significant security event, partial outage \| 4 hours | CISO, CFO, Legal |
-| **Level 3 (Medium)** | Authentication failure, failed security scan | 24 hours | Security team |
-| **Level 4 (Low)** | Informational issue, policy deviation | 5 days | Domain team |
+| Level                  | Criteria                                              | Timeline         | Escalation       |
+| ---------------------- | ----------------------------------------------------- | ---------------- | ---------------- |
+| **Level 1 (Critical)** | Major data breach, extended outage, external attack   | 1 hour           | CISO, CEO, Board |
+| **Level 2 (High)**     | Significant security event, partial outage \| 4 hours | CISO, CFO, Legal |
+| **Level 3 (Medium)**   | Authentication failure, failed security scan          | 24 hours         | Security team    |
+| **Level 4 (Low)**      | Informational issue, policy deviation                 | 5 days           | Domain team      |
 
 **Root Cause Analysis (RCA):**
 
@@ -150,14 +152,15 @@ Classification determines encryption, access control, retention, and disposal re
 - Automated scanning of all internet-facing systems minimum weekly
 - Internal network scanning minimum monthly
 - Vulnerability scan results reviewed by security team within 5 days
-- Critical and High vulnerabilities remediated within 30 days
+- Critical vulnerabilities remediated within 24 hours end-to-end (per VULNERABILITY_REMEDIATION_TERMINOLOGY.md)
 
 **Patch Management:**
 
-- Critical patches applied within 5 days
-- High patches applied within 15 days
+- Critical patches validated and deployed within 4 hours
+- High patches applied within 7 days
 - Standard patches applied within 30 days
 - Emergency out-of-cycle patching for zero-day exploits
+- Reference: [VULNERABILITY_REMEDIATION_TERMINOLOGY.md](../../../VULNERABILITY_REMEDIATION_TERMINOLOGY.md)
 
 ## Control Mapping
 
@@ -212,7 +215,7 @@ Before deploying information security policy:
 - [ ] Incident classification levels defined and communicated
 - [ ] Incident response procedures including 1-hour notification requirement established
 - [ ] Vulnerability scanning schedule documented (weekly external, monthly internal)
-- [ ] Patch management SLAs established (5 days critical, 15 days high, 30 days standard)
+- [ ] Patch management SLAs established (4 hours critical, 7 days high, 30 days standard)
 - [ ] Vulnerability remediation tracking system operational
 - [ ] All employees completed information security training
 - [ ] Third-party contractual requirements documented (NDA, DPA, insurance, audit rights)

@@ -1,4 +1,5 @@
 # Svelte Framework Governance Profile
+
 ## Enterprise Conformance Model (v1.0)
 
 ---
@@ -10,6 +11,7 @@
 **AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
+
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 - This profile **references** secure SDLC requirements
 - This profile **clarifies** Svelte 4+ stores, reactive assignment security, and build-time compilation
@@ -30,6 +32,7 @@ This document defines governance conformance requirements for Svelte application
 ## 2. Architectural Position
 
 **EATGF Layer Placement:**
+
 ```
 08_DEVELOPER_GOVERNANCE_LAYER
 ├── FRAMEWORK_PROFILES
@@ -41,6 +44,7 @@ This document defines governance conformance requirements for Svelte application
 ```
 
 **Svelte operates as:**
+
 - Compiler-first framework (code elimination at build time)
 - Reactive stores (Svelte store contract)
 - Two-way binding with reactive assignments
@@ -84,17 +88,17 @@ api.interceptors.request.use((config) => {
 
 ```typescript
 // ❌ PROHIBITED: Token in writable store (persisted)
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
 
-export const token = writable(localStorage.getItem('token'));
+export const token = writable(localStorage.getItem("token"));
 
 // ✅ COMPLIANT: Read-only computed store from auth service
-import { derived, readonly } from 'svelte/store';
+import { derived, readonly } from "svelte/store";
 
 function createAuthStore() {
-  const { subscribe } = derived(authService.user$, $user => ({
+  const { subscribe } = derived(authService.user$, ($user) => ({
     user: $user,
-    isAuthenticated: !!$user
+    isAuthenticated: !!$user,
   }));
 
   return { subscribe: readonly(subscribe) };
@@ -116,7 +120,7 @@ export const auth = createAuthStore();
 <input value={privatePassword} on:change={updatePassword} />
 <script>
   let privatePassword = '';
-  
+
   function updatePassword(e) {
     // ✅ Explicit validation before state update
     if (isValidPassword(e.target.value)) {
@@ -135,7 +139,7 @@ let isLoading = false;
 
 $: if (userId) {
   isLoading = true;
-  api.get(`/users/${userId}/invoices`).then(res => {
+  api.get(`/users/${userId}/invoices`).then((res) => {
     invoices = res.data;
     isLoading = false; // May race with another userId change
   });
@@ -148,13 +152,14 @@ $: {
   if (userId) {
     // Abort previous request
     currentRequestAbort?.abort();
-    
+
     currentRequestAbort = new AbortController();
 
-    api.get(`/users/${userId}/invoices`, {
-      signal: currentRequestAbort.signal
-    })
-      .then(res => {
+    api
+      .get(`/users/${userId}/invoices`, {
+        signal: currentRequestAbort.signal,
+      })
+      .then((res) => {
         if (!currentRequestAbort.signal.aborted) {
           invoices = res.data;
         }
@@ -195,9 +200,9 @@ $: {
 export default {
   build: {
     sourcemap: false,
-    minify: 'terser',
-    cssCodeSplit: true
-  }
+    minify: "terser",
+    cssCodeSplit: true,
+  },
 };
 ```
 
@@ -296,8 +301,8 @@ export const auth = createAuthStore();
 ```typescript
 export async function canAccess(action: string): Promise<boolean> {
   try {
-    const response = await api.get('/auth/authorize', {
-      params: { action }
+    const response = await api.get("/auth/authorize", {
+      params: { action },
     });
     return response.data.authorized;
   } catch {
@@ -318,16 +323,16 @@ All 6 remaining controls implemented with Svelte stores, reactive statements, an
 
 ## 7. Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
-|---|---|---|---|
-| Authentication | A.8.2, A.8.3 | PW.2.1 | V2 |
-| Authorization | A.8.5, A.8.9 | PW.2.2 | V4 |
-| Versioning | A.8.28 | PW.4.2 | V14 |
-| Input Validation | A.8.22 | PW.8.1 | V5 |
-| Rate Limiting | A.8.22 | PW.8.2 | V11 |
-| Testing | A.8.28 | PW.9.1 | V14 |
-| Logging | A.8.15 | RV.1.1 | V15 |
-| Zero Trust | A.8.1 | PW.1.1 | V1 |
+| EATGF Control    | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
+| ---------------- | -------------- | ------------- | -------------- |
+| Authentication   | A.8.2, A.8.3   | PW.2.1        | V2             |
+| Authorization    | A.8.5, A.8.9   | PW.2.2        | V4             |
+| Versioning       | A.8.28         | PW.4.2        | V14            |
+| Input Validation | A.8.22         | PW.8.1        | V5             |
+| Rate Limiting    | A.8.22         | PW.8.2        | V11            |
+| Testing          | A.8.28         | PW.9.1        | V14            |
+| Logging          | A.8.15         | RV.1.1        | V15            |
+| Zero Trust       | A.8.1          | PW.1.1        | V1             |
 
 ---
 
@@ -347,13 +352,23 @@ All 6 remaining controls implemented with Svelte stores, reactive statements, an
 
 ---
 
-## 9. Version Information
+## Official References
 
-| Field | Value |
-|---|---|
-| **Document Version** | 1.0 |
-| **Svelte Version** | 3.59+ / 4.0+ |
-| **Node.js** | 18+ |
+- Svelte Documentation: `https://svelte.dev/docs`
+- Svelte Security Best Practices: `https://svelte.dev/docs/security`
+- OWASP Web Application Security: `https://owasp.org/www-project-web-security-testing-guide/`
+- NIST SP 800-218 - Secure Software Development Framework
+- MDN Web Security: `https://developer.mozilla.org/en-US/docs/Web/Security`
+
+---
+
+## Version Information
+
+| Field                | Value        |
+| -------------------- | ------------ |
+| **Document Version** | 1.0          |
+| **Svelte Version**   | 3.59+ / 4.0+ |
+| **Node.js**          | 18+          |
 
 ---
 

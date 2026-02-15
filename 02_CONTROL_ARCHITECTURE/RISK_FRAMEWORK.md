@@ -1,15 +1,15 @@
 # RISK_FRAMEWORK
 
-| Field | Value |
-|-------|-------|
-| Document Type | Framework |
-| Version | 2.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-14 |
-| Authority | Enterprise Architecture and Governance Office |
-| EATGF Layer | 02_CONTROL_ARCHITECTURE |
-| MCM Reference | EATGF-EDM-RISK-01, EATGF-APO-RISK-01, EATGF-AI-RISK-01 |
-| Standards | ISO 31000:2018, ISO 27005:2022, COBIT 2019 |
+| Field          | Value                                                  |
+| -------------- | ------------------------------------------------------ |
+| Document Type  | Framework                                              |
+| Version        | 2.0                                                    |
+| Classification | Controlled                                             |
+| Effective Date | 2026-02-14                                             |
+| Authority      | Enterprise Architecture and Governance Office          |
+| EATGF Layer    | 02_CONTROL_ARCHITECTURE                                |
+| MCM Reference  | EATGF-EDM-RISK-01, EATGF-APO-RISK-01, EATGF-AI-RISK-01 |
+| Standards      | ISO 31000:2018, ISO 27005:2022, COBIT 2019             |
 
 ---
 
@@ -62,15 +62,15 @@ Quarterly Risk Reviews:
 
 For each identified risk, assess:
 
-| Assessment Category | Scoring Scale |
-|---|---|
-| **Probability** | 1 (Rare - <5% annually) to 5 (Very Likely - >80% annually) |
-| **Impact** | 1 (Minimal - <$10K impact) to 5 (Critical - >$1M impact or regulatory violation) |
-| **Risk Score** | Probability x Impact (range 1-25) |
-| **Current Controls** | EATGF controls mapped to risk mitigation |
-| **Control Effectiveness** | Assessment of current control adequacy (0-100%) |
-| **Residual Risk** | Risk score after current controls applied |
-| **Gap Analysis** | Required additional controls identified |
+| Assessment Category       | Scoring Scale                                                                    |
+| ------------------------- | -------------------------------------------------------------------------------- |
+| **Probability**           | 1 (Rare - <5% annually) to 5 (Very Likely - >80% annually)                       |
+| **Impact**                | 1 (Minimal - <$10K impact) to 5 (Critical - >$1M impact or regulatory violation) |
+| **Risk Score**            | Probability x Impact (range 1-25)                                                |
+| **Current Controls**      | EATGF controls mapped to risk mitigation                                         |
+| **Control Effectiveness** | Assessment of current control adequacy (0-100%)                                  |
+| **Residual Risk**         | Risk score after current controls applied                                        |
+| **Gap Analysis**          | Required additional controls identified                                          |
 
 **Step 3: Risk Prioritization**
 
@@ -175,7 +175,7 @@ Mitigation Plan:
 Monitoring KPIs:
 - Percentage of systems with EDR deployed (Target: 100% by Q2 2026)
 - Security training completion rate (Target: 100% by Q1 2026)
-- Critical vulnerabilities remediated within 5 days (Target: 95%)
+- Critical vulnerabilities remediated within 24 hours end-to-end (Target: 95%, per VULNERABILITY_REMEDIATION_TERMINOLOGY.md)
 - Privileged account usage logged and monitored (Target: 100%)
 
 Escalation: If actual breach detected, escalate to CEO immediately; notify Board within 4 hours
@@ -286,13 +286,13 @@ Escalation: If Disparate Impact Ratio falls below 0.80, pause model deployment i
 
 **Escalation Triggers:**
 
-| Risk Level | Escalation Trigger | Alert Recipient | Response Timeline |
-|---|---|---|---|
-| **Red (Critical)** | Probability or Impact increases by 1+ level | CISO, CRO, CFO, CEO | Immediate (1 hour maximum) |
-| **Orange (High)** | Risk could escalate to critical without mitigation | Chief Risk Officer | 4 hours |
-| **Yellow (Medium)** | Mitigation plan not on track; timeline slipping | Risk Owner, Department Head | 1 business day |
-| **Green (Low)** | Standard monitoring; no immediate action | Process Owner | 1 week |
-| **Blue (Minimal)** | Routine tracking | Process Owner | Monthly review |
+| Risk Level          | Escalation Trigger                                 | Alert Recipient             | Response Timeline          |
+| ------------------- | -------------------------------------------------- | --------------------------- | -------------------------- |
+| **Red (Critical)**  | Probability or Impact increases by 1+ level        | CISO, CRO, CFO, CEO         | Immediate (1 hour maximum) |
+| **Orange (High)**   | Risk could escalate to critical without mitigation | Chief Risk Officer          | 4 hours                    |
+| **Yellow (Medium)** | Mitigation plan not on track; timeline slipping    | Risk Owner, Department Head | 1 business day             |
+| **Green (Low)**     | Standard monitoring; no immediate action           | Process Owner               | 1 week                     |
+| **Blue (Minimal)**  | Routine tracking                                   | Process Owner               | Monthly review             |
 
 **Escalation Chain:**
 
@@ -402,16 +402,16 @@ Expiration: [Risk acceptance expires and requires renewal]
 
 **Standard Risk KPIs:**
 
-| KPI | Current Value | Target | Status | Trend |
-|---|---|---|---|---|
-| Red risks (Critical) | 2 | 0 | Off track | ↑ Increasing |
-| Orange risks (High) | 8 | <5 | Below target | → Stable |
-| Risk mitigation completion rate | 85% | 95% | Improvement needed | ↑ Improving |
-| Controls operating effectively | 92% | 95% | Near target | ↑ Improving |
-| Unplanned outages (annual) | 3 | <1 | Off track | → Stable |
-| Security incidents (annual) | 2 | <1 | Near target | ↓ Decreasing |
-| Compliance violations | 0 | 0 | On track | → Stable |
-| Overdue risk reviews | 5% | 0% | Improvement needed | ↓ Decreasing |
+| KPI                             | Current Value | Target | Status             | Trend        |
+| ------------------------------- | ------------- | ------ | ------------------ | ------------ |
+| Red risks (Critical)            | 2             | 0      | Off track          | ↑ Increasing |
+| Orange risks (High)             | 8             | <5     | Below target       | → Stable     |
+| Risk mitigation completion rate | 85%           | 95%    | Improvement needed | ↑ Improving  |
+| Controls operating effectively  | 92%           | 95%    | Near target        | ↑ Improving  |
+| Unplanned outages (annual)      | 3             | <1     | Off track          | → Stable     |
+| Security incidents (annual)     | 2             | <1     | Near target        | ↓ Decreasing |
+| Compliance violations           | 0             | 0      | On track           | → Stable     |
+| Overdue risk reviews            | 5%            | 0%     | Improvement needed | ↓ Decreasing |
 
 ## Control Mapping
 
@@ -516,13 +516,13 @@ Before implementing risk framework:
 
 **For each identified risk:**
 
-| Category | Assessment |
-|----------|-----------|
-| **Probability** | 1 (Rare) to 5 (Very Likely) |
-| **Impact** | 1 (Minimal) to 5 (Critical) |
-| **Risk Score** | Probability x Impact (1-25) |
+| Category             | Assessment                             |
+| -------------------- | -------------------------------------- |
+| **Probability**      | 1 (Rare) to 5 (Very Likely)            |
+| **Impact**           | 1 (Minimal) to 5 (Critical)            |
+| **Risk Score**       | Probability x Impact (1-25)            |
 | **Current Controls** | Existing EATGF controls mapped to risk |
-| **Gap** | Required control gaps identified |
+| **Gap**              | Required control gaps identified       |
 
 ### Step 3: Risk Prioritization
 
@@ -705,12 +705,12 @@ Monitoring:
 
 ### Escalation Triggers
 
-| Risk Level | Escalation Trigger | Owner | Timeline |
-|-----------|------------------|-------|----------|
-| **Red** | Probability or Impact increases by 1+ level | CISO/CFO | Immediate (1 hour) |
-| **Orange** | Without mitigation, could become critical | CRO | 1 business day |
-| **Yellow** | Mitigation not on track | Risk Owner | Weekly |
-| **Green** | Standard monitoring | Process Owner | Monthly |
+| Risk Level | Escalation Trigger                          | Owner         | Timeline           |
+| ---------- | ------------------------------------------- | ------------- | ------------------ |
+| **Red**    | Probability or Impact increases by 1+ level | CISO/CFO      | Immediate (1 hour) |
+| **Orange** | Without mitigation, could become critical   | CRO           | 1 business day     |
+| **Yellow** | Mitigation not on track                     | Risk Owner    | Weekly             |
+| **Green**  | Standard monitoring                         | Process Owner | Monthly            |
 
 ### Escalation Chain
 
@@ -796,14 +796,14 @@ Review Schedule: [Quarterly/Annually]
 
 **Standard KPIs:**
 
-| KPI | Current | Target | Status |
-|-----|---------|--------|--------|
-| Red risks (Critical) | 2 | 0 | Off track |
-| Orange risks (High) | 8 | <5 | Below target |
-| Risk mitigation on-time | 85% | 95% | Improvement needed |
-| Unplanned outages | 3/year | <1/year | On track |
-| Security incidents | 2/year | <1/year | On track |
-| Compliance violations | 0 | 0 | On track |
+| KPI                     | Current | Target  | Status             |
+| ----------------------- | ------- | ------- | ------------------ |
+| Red risks (Critical)    | 2       | 0       | Off track          |
+| Orange risks (High)     | 8       | <5      | Below target       |
+| Risk mitigation on-time | 85%     | 95%     | Improvement needed |
+| Unplanned outages       | 3/year  | <1/year | On track           |
+| Security incidents      | 2/year  | <1/year | On track           |
+| Compliance violations   | 0       | 0       | On track           |
 
 ---
 
@@ -818,17 +818,17 @@ Review Schedule: [Quarterly/Annually]
 
 **Document Control**
 
-| Version | Date | Author | Change Description |
-|---------|------|--------|-------------------|
-| 1.0 | 2026-02-01 | Governance Office | Initial risk framework |
-| 2.0 | 2026-02-14 | Enterprise Architecture & Governance Office | Adopted EATGF-xxx control taxonomy; added AI and API control-risk mappings; added EATGF header; removed placeholder content; corrected tone to institutional register |
+| Version | Date       | Author                                      | Change Description                                                                                                                                                    |
+| ------- | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | 2026-02-01 | Governance Office                           | Initial risk framework                                                                                                                                                |
+| 2.0     | 2026-02-14 | Enterprise Architecture & Governance Office | Adopted EATGF-xxx control taxonomy; added AI and API control-risk mappings; added EATGF header; removed placeholder content; corrected tone to institutional register |
 
 **Authority Sign-Off**
 
-| Role | Name | Date | Signature |
-|------|------|------|-----------|
-| Chief Risk Officer | | | |
-| Chief Governance Officer | | | |
+| Role                     | Name | Date | Signature |
+| ------------------------ | ---- | ---- | --------- |
+| Chief Risk Officer       |      |      |           |
+| Chief Governance Officer |      |      |           |
 
 ---
 

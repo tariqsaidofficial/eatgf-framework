@@ -564,6 +564,22 @@ Before deploying webhook system:
 - **Operations:** Webhook delivery monitoring; dashboard support
 - **Support:** Customer debugging via webhook inspection
 
+---
+
+## Control Mapping
+
+| EATGF Control                  | ISO 27001:2022   | NIST SSDF | OWASP    | COBIT |
+| ------------------------------ | ---------------- | --------- | -------- | ----- |
+| Webhook Signature Verification | A.9.2.5, A.9.4.3 | PW.4.1    | A02:2021 | DSS05 |
+| Subscriber Authentication      | A.8.1, A.8.2     | PW.4.3    | ASVS V1  | APO13 |
+| Event Idempotency              | A.8.22           | PO5.1     | -        | BAI03 |
+| Delivery Retry Logic           | A.8.22, A.12.4.1 | RV.2      | A08:2021 | DSS07 |
+| Audit Logging                  | A.12.4.1         | PO5.2     | N/A      | DSS01 |
+| Rate Limiting                  | A.9.4.4          | PW.3.2    | ASVS V4  | DSS01 |
+| Event Encryption               | A.9.4.2          | PO3.1     | A02:2021 | DSS05 |
+
+---
+
 ## Official References
 
 - **Root Authority:** [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md)

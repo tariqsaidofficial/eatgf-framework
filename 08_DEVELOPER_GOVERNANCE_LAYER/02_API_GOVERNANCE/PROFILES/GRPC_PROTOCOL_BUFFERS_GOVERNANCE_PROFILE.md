@@ -543,6 +543,21 @@ Before submitting gRPC service for deployment:
 - **DevOps:** Service mesh configuration and certificate management
 - **Security:** Monitor unauthorized service-to-service calls
 
+---
+
+## Control Mapping
+
+| EATGF Control | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
+|---|---|---|---|---|
+| gRPC mTLS Enforcement | A.9.2.1, A.9.4.2 | PW.4.1 | ASVS V9 | DSS05 |
+| Protocol Buffer Versioning | A.8.22 | PW.8.1 | - | BAI03 |
+| Service Authorization | A.8.1, A.8.2 | PW.4.3 | ASVS V1 | APO13 |
+| Bidirectional Stream Security | A.9.4.3 | PW.4.1 | ASVS V9 | DSS05 |
+| Schema Validation | A.14.2.1 | PO5.2 | ASPM | BAI06 |
+| Deployment Gating | A.14.2.1 | RV.1 | A00:2021 | DSS01 |
+
+---
+
 ## Official References
 
 - **Root Authority:** [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md)

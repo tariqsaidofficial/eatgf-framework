@@ -1159,6 +1159,18 @@ OAuth 2.0 & Identity deployments inherit the standard 5-level maturity model and
 
 ---
 
+## Official References
+
+- OAuth 2.0 Authorization Framework - RFC 6749: `https://tools.ietf.org/html/rfc6749`
+- OpenID Connect Core 1.0: `https://openid.net/specs/openid-connect-core-1_0.html`
+- Proof Key for Code Exchange (PKCE) - RFC 7636: `https://tools.ietf.org/html/rfc7636`
+- OAuth 2.0 Token Revocation - RFC 7009: `https://tools.ietf.org/html/rfc7009`
+- NIST SP 800-63B - Authentication and Lifecycle Management
+- Auth0 - OAuth 2.0 & OIDC Implementation Guide: `https://auth0.com/docs/`
+- OWASP - OAuth 2.0 Security: `https://cheatsheetseries.owasp.org/cheatsheets/OAuth_2_0_Cheat_Sheet.html`
+
+---
+
 ## References
 
 - OAuth 2.0 Authorization Framework - RFC 6749: `https://tools.ietf.org/html/rfc6749`

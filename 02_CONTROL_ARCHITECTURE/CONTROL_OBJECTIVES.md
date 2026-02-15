@@ -350,7 +350,7 @@ Each control entry follows this structure:
 **Control Requirements:**
 
 - Conduct monthly vulnerability scans across all production systems
-- Define remediation SLAs by vulnerability severity (Critical: 72 hrs, High: 7 days, Medium: 30 days, Low: 90 days)
+- Define remediation SLAs by vulnerability severity (per VULNERABILITY_REMEDIATION_TERMINOLOGY.md: Critical: 24 hours end-to-end, High: 1 week, Medium: 1 month, Low: 3 months)
 - Track remediation to completion
 - Report vulnerability metrics to Governance Council quarterly
 

@@ -11,6 +11,54 @@
 
 ---
 
+## Authority Notice
+
+**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 01_SECURE_SDLC  
+**Governance Scope:** Implementation Standard  
+**Control Authority:** Defines controls for Python development lifecycle
+
+---
+
+## Governance Principles
+
+- **Single Source of Truth:** Python security requirements defined in SECURE_SDLC_GOVERNANCE_STANDARD.md
+- **Developer-Operational Alignment:** Developers implement controls, operations audit compliance
+- **Security-by-Design:** All Python projects must accept security review before code merge
+- **Audit Traceability:** GitHub Actions logs all SAST/DAST/dependency scan results
+- **Control-Centric Architecture:** Each Python application must satisfy 8 control families
+
+---
+
+## Control Mapping
+
+| EATGF Context | ISO 27001:2022 | NIST SSDF v1.1 | OWASP | COBIT 2019 |
+|---|---|---|---|---|
+| Python Secure Coding | A.14.1, A.14.2 | PO3.1, PO3.2 | Top 10 | BAI01 |
+| Dependency Management | A.8.8 | PO3.3 | A06:2021 | BAI02 |
+| SAST/Linting | A.12.6.1 | PO5.2 | ASPM | BAI04 |
+| Secrets Management | A.8.23 | PS2.3 | A02:2021 | DSS05 |
+| CI/CD Pipeline | A.14.2.1 | PO5.1 | A09:2021 | BAI01 |
+| Vulnerability Response | A.8.16 | RV.1 | A06:2021 | DSS07 |
+| Supply Chain | A.8.28 | S1.2 | A08:2021 | BAI03 |
+| Code Review | A.14.2.5 | PW5.1 | N/A | BAI06 |
+
+---
+
+## Developer Checklist
+
+- [ ] All Python code commits must pass Black formatter check (line-length=100)
+- [ ] Security linting enabled (bandit, semgrep) - zero HIGH/CRITICAL findings before merge
+- [ ] Dependency scanning (safety, pip-audit) - no known vulnerabilities
+- [ ] SAST enabled in CI/CD (SonarQube minimum) - coverage >80%
+- [ ] Secrets detection active (detect-secrets, git-secrets) - no credentials committed
+- [ ] Type checking (mypy strict mode) on all public APIs
+- [ ] Unit tests >70% coverage with security test cases
+- [ ] Code review completed by peer + security team for P1/P2 features
+- [ ] OWASP Top 10 checklist completed before production deployment
+- [ ] Changelog updated with security-relevant modifications
+
+---
+
 ## Purpose
 
 This profile operationalizes Secure SDLC requirements specifically for **Python** development environments and web frameworks.
@@ -748,6 +796,40 @@ For Python projects, confirm:
 - [ ] Secrets managed via vault or secure env vars
 - [ ] Rate limiting configured on public endpoints
 - [ ] Debug mode disabled in production
+
+---
+
+## Official References
+
+**Python Official Documentation:**
+- Python Security Documentation: https://docs.python.org/3/library/security_warnings.html
+- Virtual Environments: https://docs.python.org/3/tutorial/venv.html
+
+**Framework-Specific Security Guides:**
+- Django Security: https://docs.djangoproject.com/en/stable/topics/security/
+- FastAPI Security: https://fastapi.tiangolo.com/tutorial/security/
+- Flask Best Practices: https://flask.palletsprojects.com/en/latest/security/
+
+**Dependency Management:**
+- pip-audit: https://github.com/pypa/pip-audit
+- Safety: https://safetycli.com/
+- Poetry Lock Files: https://python-poetry.org/docs/dependency-specification/
+
+**SAST & Linting Tools:**
+- Bandit (Security Linting): https://bandit.readthedocs.io/
+- Semgrep (SAST): https://semgrep.dev/
+- Black (Code Formatting): https://github.com/psf/black
+
+**Secrets Management:**
+- Python-dotenv: https://github.com/theskumar/python-dotenv
+- Hashicorp Vault: https://www.vaultproject.io/docs/auth/jwt
+- AWS Secrets Manager: https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
+
+**Authoritative Standards:**
+- OWASP Top 10 (A02:2021 Cryptographic Failures): https://owasp.org/Top10/
+- OWASP ASVS (Application Security Verification Standard): https://owasp.org/www-project-application-security-verification-standard/
+- NIST SP 800-53 (Security Controls): https://csrc.nist.gov/publications/detail/sp/800-53/rev-5
+- ISO 27001:2022 Compliance: https://www.iso.org/standard/27001
 
 ---
 

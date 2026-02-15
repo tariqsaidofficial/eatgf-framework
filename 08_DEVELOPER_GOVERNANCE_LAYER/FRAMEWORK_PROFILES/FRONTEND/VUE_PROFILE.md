@@ -1,4 +1,5 @@
 # Vue.js Framework Governance Profile
+
 ## Enterprise Conformance Model (v1.0)
 
 ---
@@ -10,6 +11,7 @@
 **AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
+
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 - This profile **references** secure SDLC requirements from [01_SECURE_SDLC_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_STANDARD.md)
 - This profile **clarifies** progressive framework patterns with Composition API and Pinia state management
@@ -32,6 +34,7 @@ This document defines governance conformance requirements for Vue.js application
 ## 2. Architectural Position
 
 **EATGF Layer Placement:**
+
 ```
 08_DEVELOPER_GOVERNANCE_LAYER
 ├── FRAMEWORK_PROFILES
@@ -43,6 +46,7 @@ This document defines governance conformance requirements for Vue.js application
 ```
 
 **Vue.js operates as:**
+
 - Progressive JavaScript framework
 - Reactive data binding engine
 - Component-scoped state management
@@ -92,11 +96,11 @@ import { defineStore } from 'pinia';
 export const useAuthStore = defineStore('auth', () => {
   // ✅ Token in Pinia, not persisted
   const user = ref<User | null>(null);
-  
+
   const setUser = (newUser: User) => {
     user.value = newUser;
   };
-  
+
   return { user: readonly(user), setUser };
 });
 ```
@@ -120,7 +124,7 @@ export const useAuthStore = defineStore('auth', () => {
 </template>
 
 <script setup>
-import DOMPurify from 'dompurify';
+import DOMPurify from "dompurify";
 const sanitized = computed(() => DOMPurify.sanitize(userComment.value));
 </script>
 ```
@@ -129,8 +133,8 @@ const sanitized = computed(() => DOMPurify.sanitize(userComment.value));
 
 ```typescript
 // ✅ COMPLIANT: Extract logic into composables with security context
-import { ref } from 'vue';
-import { useAuthStore } from '@/stores/auth';
+import { ref } from "vue";
+import { useAuthStore } from "@/stores/auth";
 
 export function useInvoices() {
   const authStore = useAuthStore();
@@ -140,10 +144,10 @@ export function useInvoices() {
   const fetchInvoices = async () => {
     try {
       // ✅ Use authenticated context from store
-      const response = await api.get('/invoices', {
+      const response = await api.get("/invoices", {
         headers: {
-          'Authorization': `Bearer ${authStore.token}`
-        }
+          Authorization: `Bearer ${authStore.token}`,
+        },
       });
       invoices.value = response.data;
     } catch (e) {
@@ -159,25 +163,25 @@ export function useInvoices() {
 
 ```typescript
 // ✅ COMPLIANT: Router guards enforce auth
-import { createRouter, createWebHistory } from 'vue-router';
-import { useAuthStore } from '@/stores/auth';
+import { createRouter, createWebHistory } from "vue-router";
+import { useAuthStore } from "@/stores/auth";
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/dashboard',
+      path: "/dashboard",
       component: Dashboard,
-      meta: { requiresAuth: true }
-    }
-  ]
+      meta: { requiresAuth: true },
+    },
+  ],
 });
 
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
-  
+
   if (to.meta.requiresAuth && !authStore.user) {
-    next('/login');
+    next("/login");
   } else {
     next();
   }
@@ -246,13 +250,13 @@ export default defineConfig({
 ### Compliant Implementation
 
 ```typescript
-export const useAuth = defineStore('auth', () => {
+export const useAuth = defineStore("auth", () => {
   const user = ref(null);
   const isLoading = ref(true);
 
   const fetchUser = async () => {
     try {
-      const response = await api.get('/auth/user');
+      const response = await api.get("/auth/user");
       user.value = response.data;
     } catch {
       user.value = null;
@@ -262,13 +266,13 @@ export const useAuth = defineStore('auth', () => {
   };
 
   const login = async (email: string, password: string) => {
-    await api.post('/auth/login', { email, password });
+    await api.post("/auth/login", { email, password });
     // ✅ Server sets HTTP-only cookie
     await fetchUser();
   };
 
   const logout = async () => {
-    await api.post('/auth/logout');
+    await api.post("/auth/logout");
     user.value = null;
   };
 
@@ -328,15 +332,15 @@ const { canAccess: canDelete } = useCanDeleteInvoice(invoiceId);
 ### Compliant Implementation
 
 ```typescript
-const API_VERSION = 'v2';
+const API_VERSION = "v2";
 
 export const api = axios.create({
   baseURL: `${import.meta.env.VITE_API_URL}/${API_VERSION}`,
-  withCredentials: true
+  withCredentials: true,
 });
 
 api.interceptors.response.use((response) => {
-  const version = response.headers['x-api-version'];
+  const version = response.headers["x-api-version"];
   if (version && version !== API_VERSION) {
     console.warn(`Version mismatch: expected ${API_VERSION}, got ${version}`);
   }
@@ -353,15 +357,19 @@ api.interceptors.response.use((response) => {
 ### Compliant Implementation
 
 ```typescript
-import { z } from 'zod';
+import { z } from "zod";
 
 const InvoiceSchema = z.object({
   amount: z.number().positive(),
-  currency: z.enum(['USD', 'EUR']),
-  items: z.array(z.object({
-    description: z.string().min(1),
-    quantity: z.number().min(1).int()
-  })).min(1)
+  currency: z.enum(["USD", "EUR"]),
+  items: z
+    .array(
+      z.object({
+        description: z.string().min(1),
+        quantity: z.number().min(1).int(),
+      }),
+    )
+    .min(1),
 });
 
 export const useInvoiceForm = () => {
@@ -371,7 +379,7 @@ export const useInvoiceForm = () => {
   const submit = async () => {
     try {
       const validated = InvoiceSchema.parse(form);
-      await api.post('/invoices', validated);
+      await api.post("/invoices", validated);
     } catch (error) {
       if (error instanceof z.ZodError) {
         Object.assign(errors, error.flatten().fieldErrors);
@@ -397,18 +405,16 @@ api.interceptors.response.use(
   async (error) => {
     if (error.response?.status === 429) {
       const retryAfter = parseInt(
-        error.response.headers['retry-after'] || '60'
+        error.response.headers["retry-after"] || "60",
       );
 
-      await new Promise(resolve => 
-        setTimeout(resolve, retryAfter * 1000)
-      );
+      await new Promise((resolve) => setTimeout(resolve, retryAfter * 1000));
 
       return api.request(error.config);
     }
 
     return Promise.reject(error);
-  }
+  },
 );
 ```
 
@@ -421,26 +427,26 @@ api.interceptors.response.use(
 ### Compliant Implementation
 
 ```typescript
-import { describe, it, expect, vi } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { useAuth } from '@/stores/auth';
+import { describe, it, expect, vi } from "vitest";
+import { mount } from "@vue/test-utils";
+import { useAuth } from "@/stores/auth";
 
-describe('Authentication', () => {
-  it('fetches user on component mount', async () => {
+describe("Authentication", () => {
+  it("fetches user on component mount", async () => {
     const wrapper = mount(Dashboard);
-    
+
     await wrapper.vm.$nextTick();
-    
-    expect(wrapper.find('.user-name').exists()).toBe(true);
+
+    expect(wrapper.find(".user-name").exists()).toBe(true);
   });
 
-  it('redirects to login on 401', async () => {
-    vi.mock('@/api', () => ({
+  it("redirects to login on 401", async () => {
+    vi.mock("@/api", () => ({
       api: {
         get: vi.fn().mockRejectedValue({
-          response: { status: 401 }
-        })
-      }
+          response: { status: 401 },
+        }),
+      },
     }));
 
     const authStore = useAuth();
@@ -458,21 +464,24 @@ describe('Authentication', () => {
 ### Compliant Implementation
 
 ```typescript
-import { ref, watch } from 'vue';
+import { ref, watch } from "vue";
 
 export const useLogger = (component: string) => {
   const correlationId = ref(crypto.randomUUID());
 
   return {
     info: (message: string, data?: any) => {
-      console.log(`[${component}] ${message}`, { correlationId: correlationId.value, ...data });
+      console.log(`[${component}] ${message}`, {
+        correlationId: correlationId.value,
+        ...data,
+      });
     },
     error: (message: string, error?: Error) => {
-      console.error(`[${component}] ${message}`, { 
-        correlationId: correlationId.value, 
-        error: error?.message 
+      console.error(`[${component}] ${message}`, {
+        correlationId: correlationId.value,
+        error: error?.message,
       });
-    }
+    },
   };
 };
 ```
@@ -489,14 +498,14 @@ export const useLogger = (component: string) => {
 // ✅ Vite config enforcement
 export default defineConfig({
   server: {
-    https: true // Development server uses HTTPS
-  }
+    https: true, // Development server uses HTTPS
+  },
 });
 
 // ✅ API client enforces HTTPS
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
-  withCredentials: true // Send HTTP-only cookies
+  withCredentials: true, // Send HTTP-only cookies
 });
 ```
 
@@ -511,7 +520,7 @@ const api = axios.create({
 ```typescript
 export const useTenant = () => {
   const authStore = useAuthStore();
-  
+
   const tenantId = computed(() => {
     return authStore.user?.tenantId ?? null;
   });
@@ -538,16 +547,16 @@ export const useTenant = () => {
 
 ## 14. Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
-|---|---|---|---|
-| Authentication | A.8.2, A.8.3 | PW.2.1 | V2 |
-| Authorization | A.8.5, A.8.9 | PW.2.2 | V4 |
-| Versioning | A.8.28 | PW.4.2 | V14 |
-| Input Validation | A.8.22 | PW.8.1 | V5 |
-| Rate Limiting | A.8.22 | PW.8.2 | V11 |
-| Testing | A.8.28 | PW.9.1 | V14 |
-| Logging | A.8.15 | RV.1.1 | V15 |
-| Zero Trust | A.8.1 | PW.1.1 | V1 |
+| EATGF Control    | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
+| ---------------- | -------------- | ------------- | -------------- |
+| Authentication   | A.8.2, A.8.3   | PW.2.1        | V2             |
+| Authorization    | A.8.5, A.8.9   | PW.2.2        | V4             |
+| Versioning       | A.8.28         | PW.4.2        | V14            |
+| Input Validation | A.8.22         | PW.8.1        | V5             |
+| Rate Limiting    | A.8.22         | PW.8.2        | V11            |
+| Testing          | A.8.28         | PW.9.1        | V14            |
+| Logging          | A.8.15         | RV.1.1        | V15            |
+| Zero Trust       | A.8.1          | PW.1.1        | V1             |
 
 ---
 
@@ -559,7 +568,7 @@ export const useTenant = () => {
 - [ ] Template uses text interpolation (auto-escaped), not v-html
 - [ ] Composition API for logic reuse with explicit security context
 - [ ] API client centralized with correlation IDs
-- [ ] Environment variables prefixed (VITE_)
+- [ ] Environment variables prefixed (VITE\_)
 - [ ] Watch/computed guards audit-complete and explicit
 - [ ] npm audit passes
 - [ ] Build disables source maps
@@ -569,16 +578,26 @@ export const useTenant = () => {
 
 ---
 
+## Official References
+
+- Vue.js Documentation: https://vuejs.org/guide/
+- Vue.js Security Best Practices: https://vuejs.org/guide/best-practices/security.html
+- OWASP Web Security: https://owasp.org/www-project-web-security-testing-guide/
+- Vue Composition API: https://vuejs.org/api/composition-api-setup.html
+- NIST SP 800-218: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf
+
+---
+
 ## 16. Version Information
 
-| Field | Value |
-|---|---|
-| **Document Version** | 1.0 |
-| **Change Type** | Major (Initial Release) |
-| **Issue Date** | February 15, 2026 |
-| **Vue Version** | 3.3+ |
-| **Pinia Version** | 2.1+ |
-| **Node.js** | 18+ |
+| Field                | Value                   |
+| -------------------- | ----------------------- |
+| **Document Version** | 1.0                     |
+| **Change Type**      | Major (Initial Release) |
+| **Issue Date**       | February 15, 2026       |
+| **Vue Version**      | 3.3+                    |
+| **Pinia Version**    | 2.1+                    |
+| **Node.js**          | 18+                     |
 
 ---
 

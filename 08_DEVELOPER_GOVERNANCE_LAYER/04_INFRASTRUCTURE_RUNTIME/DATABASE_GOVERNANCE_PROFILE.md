@@ -1,23 +1,19 @@
 # Database Governance Profile
 
-**Enterprise Data Protection & Isolation Conformance Model v1.0**
-
----
+> **Authority Notice:** This profile implements EATGF controls for relational and non-relational database systems. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW databases satisfy Infrastructure Runtime (Layer 04), Data Protection, and Multi-Tenancy Isolation requirements.
 
 ## Purpose
 
 Defines mandatory governance controls for relational and non-relational databases supporting web applications, SaaS systems, and multi-tenant platforms to ensure confidentiality, integrity, availability, and regulatory compliance.
 
----
-
 ## Architectural Position
 
-- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-- **Sub-Layer:** Infrastructure Runtime Governance
+- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 04_INFRASTRUCTURE_RUNTIME (Primary) + Layer 05 (Domain Frameworks - Data Governance)
 - **Governance Scope:** Data Storage, Access Control, Encryption, Multi-Tenancy Isolation
-- **Control Authority:** Mandatory for SaaS / Enterprise / Sensitive Data Systems
+- **Control Authority:** Implements controls from MASTER_CONTROL_MATRIX for data protection and access control
 
 **Applies to:**
+
 - PostgreSQL
 - MySQL
 - MongoDB
@@ -28,20 +24,25 @@ Defines mandatory governance controls for relational and non-relational database
 ## Governance Principles
 
 ### 1. Least Privilege Access
+
 - Application service accounts must have only required CRUD permissions
 - No shared superuser accounts
 
 ### 2. Encryption by Default
+
 - Encryption in transit (TLS 1.2+) mandatory
 - Encryption at rest mandatory for production systems
 
 ### 3. Multi-Tenant Isolation
+
 - Tenant isolation must be enforced at schema, row, or database level
 
 ### 4. Data Integrity Protection
+
 - Constraints, foreign keys, and transaction enforcement required
 
 ### 5. Auditability
+
 - Database access and privilege escalation must be logged centrally
 
 ---
@@ -99,6 +100,7 @@ pg_dump -U backup_user -F c billing > billing_backup.dump
 ```
 
 **Mandatory:**
+
 - Daily automated backups
 - Offsite replication
 - Restore testing quarterly
@@ -108,11 +110,13 @@ pg_dump -U backup_user -F c billing > billing_backup.dump
 Database credentials must not exist in code or Git.
 
 **Use:**
+
 - Vault dynamic secrets
 - AWS Secrets Manager
 - Azure Key Vault
 
 Example (Vault dynamic DB credentials):
+
 ```bash
 vault read database/creds/billing-role
 ```
@@ -120,12 +124,14 @@ vault read database/creds/billing-role
 ### Monitoring & Logging
 
 Enable:
+
 - Failed login logging
 - Privilege escalation logging
 - DDL statement logging
 - Slow query monitoring
 
 PostgreSQL example:
+
 ```
 log_connections = on
 log_disconnections = on
@@ -144,39 +150,39 @@ log_min_duration_statement = 500
 
 ## Severity Model
 
-| Control | Severity |
-|---------|----------|
-| No TLS encryption | MANDATORY |
-| Superuser app account | MANDATORY |
-| No tenant isolation | MANDATORY |
-| No backups | MANDATORY |
-| No encryption at rest | MANDATORY |
-| No query logging | RECOMMENDED |
+| Control               | Severity    |
+| --------------------- | ----------- |
+| No TLS encryption     | MANDATORY   |
+| Superuser app account | MANDATORY   |
+| No tenant isolation   | MANDATORY   |
+| No backups            | MANDATORY   |
+| No encryption at rest | MANDATORY   |
+| No query logging      | RECOMMENDED |
 | No connection pooling | RECOMMENDED |
 
 ---
 
 ## Maturity Model
 
-| Level | Database Governance State |
-|-------|--------------------------|
-| 1 | Single DB, manual backups |
-| 2 | Role-based access |
-| 3 | Row-level security |
-| 4 | Encrypted, monitored, HA |
-| 5 | Automated compliance validation |
+| Level | Database Governance State       |
+| ----- | ------------------------------- |
+| 1     | Single DB, manual backups       |
+| 2     | Role-based access               |
+| 3     | Row-level security              |
+| 4     | Encrypted, monitored, HA        |
+| 5     | Automated compliance validation |
 
 ---
 
 ## Control Mapping
 
-| Control | ISO 27001:2022 | NIST SSDF | OWASP | NIST 800-53 | COBIT |
-|---------|---|---|---|---|---|
-| Access control | A.8.2 | PW.4 | ASVS V4 | AC-6 | APO13 |
-| Encryption | A.8.24 | PS.1 | ASVS V9 | SC-13 | DSS05 |
-| Backup & recovery | A.8.13 | RV.1 | - | CP-9 | DSS04 |
-| Logging & monitoring | A.8.15 | RV.1 | - | AU-2 | MEA01 |
-| Data integrity | A.8.9 | PW.8 | ASVS V1 | CM-6 | DSS05 |
+| Control              | ISO 27001:2022 | NIST SSDF | OWASP   | NIST 800-53 | COBIT |
+| -------------------- | -------------- | --------- | ------- | ----------- | ----- |
+| Access control       | A.8.2          | PW.4      | ASVS V4 | AC-6        | APO13 |
+| Encryption           | A.8.24         | PS.1      | ASVS V9 | SC-13       | DSS05 |
+| Backup & recovery    | A.8.13         | RV.1      | -       | CP-9        | DSS04 |
+| Logging & monitoring | A.8.15         | RV.1      | -       | AU-2        | MEA01 |
+| Data integrity       | A.8.9          | PW.8      | ASVS V1 | CM-6        | DSS05 |
 
 ---
 
@@ -259,6 +265,7 @@ log_min_duration_statement = 500
 **Database Governance Layer is now CLOSED.**
 
 Backend Infrastructure Layer completion status:
+
 - ✅ Docker Governance Profile (complete)
 - ✅ Kubernetes Governance Profile (complete)
 - ✅ Database Governance Profile (complete)

@@ -1030,6 +1030,16 @@ npm audit --audit-level=high || exit 1
 
 ---
 
+## Official References
+
+- React Native Documentation: `https://reactnative.dev/docs/`
+- OWASP Mobile Security: `https://owasp.org/www-project-mobile-top-10/`
+- NIST Mobile App Security: `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-163r1.pdf`
+- iOS Security Guide: `https://developer.apple.com/security/`
+- Android Security & Privacy: `https://developer.android.com/security`
+
+---
+
 ## 17. Version Information
 
 | Field | Value |

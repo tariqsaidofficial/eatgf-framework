@@ -1,14 +1,14 @@
 # GOVERNANCE_CHARTER_FORMAL_v2
 
-| Field | Value |
-|-------|-------|
-| Document Type | Board-Level Policy |
-| Version | 2.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-14 |
-| Authority | Board of Directors & Executive Steering Committee |
-| EATGF Layer | 04_POLICY_LAYER |
-| Approval Required | Board, CEO, CGO, CISO |
+| Field             | Value                                             |
+| ----------------- | ------------------------------------------------- |
+| Document Type     | Board-Level Policy                                |
+| Version           | 2.0                                               |
+| Classification    | Controlled                                        |
+| Effective Date    | 2026-02-14                                        |
+| Authority         | Board of Directors & Executive Steering Committee |
+| EATGF Layer       | 04_POLICY_LAYER                                   |
+| Approval Required | Board, CEO, CGO, CISO                             |
 
 ---
 
@@ -117,45 +117,45 @@ Governance organized around **5 COBIT 2019 domains** (33 processes) plus domain 
 
 **EDM Domain - Evaluate, Direct, Monitor (Strategic Governance):**
 
-- *EATGF-EDM-RISK-01* – Risk appetite definition; annual board review; quarterly monitoring
-- *EATGF-EDM-GOV-01* – Governance model charter; three-tier authority structure; RACI definition
-- *EATGF-EDM-BEN-01* – Technology investment ROI monitoring; quarterly performance tracking
+- _EATGF-EDM-RISK-01_ – Risk appetite definition; annual board review; quarterly monitoring
+- _EATGF-EDM-GOV-01_ – Governance model charter; three-tier authority structure; RACI definition
+- _EATGF-EDM-BEN-01_ – Technology investment ROI monitoring; quarterly performance tracking
 
 **APO Domain - Align, Plan, Organize (Strategic Planning):**
 
-- *EATGF-APO-ARCH-01* – Enterprise architecture standards; technology standards maintenance; annual review
-- *EATGF-APO-RISK-01* – IT risk register management; quarterly risk assessment; risk reporting
-- *EATGF-APO-SEC-01* – ISMS implementation per ISO 27001:2022; annual assessment
-- *EATGF-APO-AI-01* – AIMS implementation per ISO 42001:2023 (if AI systems used)
+- _EATGF-APO-ARCH-01_ – Enterprise architecture standards; technology standards maintenance; annual review
+- _EATGF-APO-RISK-01_ – IT risk register management; quarterly risk assessment; risk reporting
+- _EATGF-APO-SEC-01_ – ISMS implementation per ISO 27001:2022; annual assessment
+- _EATGF-APO-AI-01_ – AIMS implementation per ISO 42001:2023 (if AI systems used)
 
 **BAI Domain - Build, Acquire, Implement (Change Management):**
 
-- *EATGF-BAI-CHG-01* – Change management procedure; monthly change reviews; 95% on-time deployment
-- *EATGF-BAI-CONF-01* – Configuration baseline maintenance; continuous monitoring; quarterly reviews
-- *EATGF-BAI-TEST-01* – QA and testing procedures; pre-deployment validation; per-release verification
+- _EATGF-BAI-CHG-01_ – Change management procedure; monthly change reviews; 95% on-time deployment
+- _EATGF-BAI-CONF-01_ – Configuration baseline maintenance; continuous monitoring; quarterly reviews
+- _EATGF-BAI-TEST-01_ – QA and testing procedures; pre-deployment validation; per-release verification
 
 **DSS Domain - Deliver, Service, Support (Operations Security):**
 
-- *EATGF-DSS-SEC-01* – Identity and access control; RBAC enforcement; quarterly access reviews
-- *EATGF-DSS-ENC-01* – Data encryption standards; AES-256 at rest, TLS 1.2+ in transit
-- *EATGF-DSS-VULN-01* – Vulnerability management and patch deployment; 24-hour critical window
-- *EATGF-DSS-INC-01* – Incident response procedures; 1-hour critical breach notification requirement
+- _EATGF-DSS-SEC-01_ – Identity and access control; RBAC enforcement; quarterly access reviews
+- _EATGF-DSS-ENC-01_ – Data encryption standards; AES-256 at rest, TLS 1.2+ in transit
+- _EATGF-DSS-VULN-01_ – Vulnerability management and patch deployment; 24-hour critical window
+- _EATGF-DSS-INC-01_ – Incident response procedures; 1-hour critical breach notification requirement
 
 **MEA Domain - Monitor, Evaluate, Assess (Audit & Performance):**
 
-- *EATGF-MEA-AUD-01* – Internal audit program; annual full audit cycle; quarterly rolling assessments
-- *EATGF-MEA-PERF-01* – Governance KPI tracking; quarterly executive dashboard; board reporting
-- *EATGF-MEA-MAT-01* – Maturity assessment; Level 1-5 scale; annual assessment methodology
+- _EATGF-MEA-AUD-01_ – Internal audit program; annual full audit cycle; quarterly rolling assessments
+- _EATGF-MEA-PERF-01_ – Governance KPI tracking; quarterly executive dashboard; board reporting
+- _EATGF-MEA-MAT-01_ – Maturity assessment; Level 1-5 scale; annual assessment methodology
 
 **AI Domain - Artificial Intelligence (if Applicable):**
 
-- *EATGF-AI-LC-01* – AI system lifecycle governance; per-release validation
-- *EATGF-AI-RISK-01* – AI bias and fairness testing; model performance monitoring; per-update assessment
+- _EATGF-AI-LC-01_ – AI system lifecycle governance; per-release validation
+- _EATGF-AI-RISK-01_ – AI bias and fairness testing; model performance monitoring; per-update assessment
 
 **API Domain - Application Programming Interface:**
 
-- *EATGF-API-SEC-01* – API authentication and security; OWASP Top 10 alignment; quarterly review
-- *EATGF-API-LC-01* – API lifecycle and versioning; per-release procedures
+- _EATGF-API-SEC-01_ – API authentication and security; OWASP Top 10 alignment; quarterly review
+- _EATGF-API-LC-01_ – API lifecycle and versioning; per-release procedures
 
 ### Risk Appetite Statement
 
@@ -170,15 +170,15 @@ Organization accepts moderate IT risk in pursuit of digital transformation while
 
 **Risk Appetite by Category:**
 
-| Category | Appetite | Tolerance Threshold | Annual Budget |
-|---|---|---|---|
-| **Data Security** | Minimal | < 1 security incident/quarter | Funded |
-| **Cyber Risk** | Minimal | Incident severity ≤ Medium | Incident response certified |
-| **Compliance** | Minimal | Zero violations | Audit-ready |
-| **AI/ML Risk** | Moderate | Bias disparity < 2% | Model governance certified |
-| **Infrastructure** | Moderate | 99.5% uptime SLA | Disaster recovery tested |
-| **Cloud Risk** | Moderate | Data residency compliant | Third-party audit required |
-| **Vendor Risk** | Moderate | < 10% supplier failures | Vendor SLA enforced |
+| Category           | Appetite | Tolerance Threshold           | Annual Budget               |
+| ------------------ | -------- | ----------------------------- | --------------------------- |
+| **Data Security**  | Minimal  | < 1 security incident/quarter | Funded                      |
+| **Cyber Risk**     | Minimal  | Incident severity ≤ Medium    | Incident response certified |
+| **Compliance**     | Minimal  | Zero violations               | Audit-ready                 |
+| **AI/ML Risk**     | Moderate | Bias disparity < 2%           | Model governance certified  |
+| **Infrastructure** | Moderate | 99.5% uptime SLA              | Disaster recovery tested    |
+| **Cloud Risk**     | Moderate | Data residency compliant      | Third-party audit required  |
+| **Vendor Risk**    | Moderate | < 10% supplier failures       | Vendor SLA enforced         |
 
 **Risk Appetite Governance:**
 
@@ -212,11 +212,11 @@ Organization accepts moderate IT risk in pursuit of digital transformation while
 
 **Mandatory Compliance Tiers:**
 
-| Tier | Category | Enforcement | Examples |
-|---|---|---|---|
-| **Tier 1 - Non-Negotiable** | 100% enforcement | Risk Appetite, Change Management, Access Control, Incident Response, Internal Audit |
+| Tier                            | Category         | Enforcement                                                                                      | Examples |
+| ------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------ | -------- |
+| **Tier 1 - Non-Negotiable**     | 100% enforcement | Risk Appetite, Change Management, Access Control, Incident Response, Internal Audit              |
 | **Tier 2 - Strong Requirement** | 95%+ enforcement | Architecture Standards, Risk Register, Data Encryption, Patch Management, Performance Monitoring |
-| **Tier 3 - Target State** | 90%+ enforcement | Configuration Control, QA/Testing, AI Governance, SoA Maintenance |
+| **Tier 3 - Target State**       | 90%+ enforcement | Configuration Control, QA/Testing, AI Governance, SoA Maintenance                                |
 
 **Non-Compliance Escalation:**
 
@@ -246,23 +246,23 @@ Organization accepts moderate IT risk in pursuit of digital transformation while
 
 **Strategic Decisions (Annual/Major):**
 
-| Decision | Board | CEO/ESC | CIO | CISO | Governance Council |
-|---|---|---|---|---|---|
-| Governance charter approval | **R** | **C** | C | C | I |
-| Risk appetite approval | **R** | **A** | C | C | I |
-| Major investments >$10M | **R** | **A** | **C** | C | I |
-| New standards adoption | **I** | **A** | **C** | **C** | I |
-| Breach disclosure strategy | **I** | **A** | **C** | **R** | C |
+| Decision                    | Board | CEO/ESC | CIO   | CISO  | Governance Council |
+| --------------------------- | ----- | ------- | ----- | ----- | ------------------ |
+| Governance charter approval | **R** | **C**   | C     | C     | I                  |
+| Risk appetite approval      | **R** | **A**   | C     | C     | I                  |
+| Major investments >$10M     | **R** | **A**   | **C** | C     | I                  |
+| New standards adoption      | **I** | **A**   | **C** | **C** | I                  |
+| Breach disclosure strategy  | **I** | **A**   | **C** | **R** | C                  |
 
 **Operational Decisions (Monthly/Routine):**
 
-| Decision | ESC | CIO | CISO | Engineering Lead | Risk Officer |
-|---|---|---|---|---|---|
-| Major system changes | **A** | **R** | **C** | **C** | I |
-| Control exceptions | **A** | C | **R** | I | **C** |
-| Patch deployment | C | **R** | **A** | **C** | I |
-| Access approval | I | C | **R** | C | I |
-| Incident response | I | **C** | **R** | **C** | **A** |
+| Decision             | ESC   | CIO   | CISO  | Engineering Lead | Risk Officer |
+| -------------------- | ----- | ----- | ----- | ---------------- | ------------ |
+| Major system changes | **A** | **R** | **C** | **C**            | I            |
+| Control exceptions   | **A** | C     | **R** | I                | **C**        |
+| Patch deployment     | C     | **R** | **A** | **C**            | I            |
+| Access approval      | I     | C     | **R** | C                | I            |
+| Incident response    | I     | **C** | **R** | **C**            | **A**        |
 
 **Legend:** R=Responsible | A=Accountable | C=Consulted | I=Informed
 
@@ -270,22 +270,22 @@ Organization accepts moderate IT risk in pursuit of digital transformation while
 
 **Strategic KPIs (Board-Level, Quarterly):**
 
-| KPI | Target | Measurement | Owner | Reporting |
-|---|---|---|---|---|
-| Control Implementation Rate | 95%+ | #Implemented / Total | CISO | Quarterly to Board |
-| Compliance Score | 90%+ | MCM control effectiveness % | Compliance Officer | Quarterly |
-| Strategic Alignment | 100% | vs. Board risk appetite | CIO | Annual |
-| Board Oversight | 100% | Approved audit checklist items completed | CEO | Annual |
+| KPI                         | Target | Measurement                              | Owner              | Reporting          |
+| --------------------------- | ------ | ---------------------------------------- | ------------------ | ------------------ |
+| Control Implementation Rate | 95%+   | #Implemented / Total                     | CISO               | Quarterly to Board |
+| Compliance Score            | 90%+   | MCM control effectiveness %              | Compliance Officer | Quarterly          |
+| Strategic Alignment         | 100%   | vs. Board risk appetite                  | CIO                | Annual             |
+| Board Oversight             | 100%   | Approved audit checklist items completed | CEO                | Annual             |
 
 **Tactical KPIs (Executive-Level, Monthly):**
 
-| KPI | Target | Owner | Review Frequency |
-|---|---|---|---|
-| Patch Timeliness | 95% (Critical 24h, High 7d) | CISO | Monthly |
-| Access Review Completion | 100% of schedules | IAM Lead | Quarterly |
-| Incident Response Time | <1 hour critical notification | Security Lead | Per incident |
-| Change Success Rate | 98% without rollback | Engineering Lead | Monthly |
-| Training Completion | 100% employee acknowledgment | HR Lead | Quarterly |
+| KPI                      | Target                        | Owner            | Review Frequency |
+| ------------------------ | ----------------------------- | ---------------- | ---------------- |
+| Patch Timeliness         | 95% (Critical 24h, High 7d)   | CISO             | Monthly          |
+| Access Review Completion | 100% of schedules             | IAM Lead         | Quarterly        |
+| Incident Response Time   | <1 hour critical notification | Security Lead    | Per incident     |
+| Change Success Rate      | 98% without rollback          | Engineering Lead | Monthly          |
+| Training Completion      | 100% employee acknowledgment  | HR Lead          | Quarterly        |
 
 ## Control Mapping
 
@@ -457,13 +457,13 @@ EATGF is structured in five formal layers (per Basel 3 governance model):
 
 The **Board of Directors** retains ultimate accountability for:
 
-| Responsibility | Frequency | Owner |
-|---|---|---|
-| Approve governance charter and framework | Annual | Board Chair |
-| Review IT/AI risk appetite | Annual | Board Risk Committee |
-| Approve major system investments (>$X) | Per case | Finance Committee |
-| Receive governance performance reports | Quarterly | CEO |
-| Approve executive accountability KPIs | Annual | Compensation Committee |
+| Responsibility                           | Frequency | Owner                  |
+| ---------------------------------------- | --------- | ---------------------- |
+| Approve governance charter and framework | Annual    | Board Chair            |
+| Review IT/AI risk appetite               | Annual    | Board Risk Committee   |
+| Approve major system investments (>$X)   | Per case  | Finance Committee      |
+| Receive governance performance reports   | Quarterly | CEO                    |
+| Approve executive accountability KPIs    | Annual    | Compensation Committee |
 
 ### 2.2 Executive Leadership Structure
 
@@ -530,71 +530,71 @@ EATGF is structured around **5 COBIT 2019 domains** (33 COBIT processes) + AI/AP
 
 **Strategic governance responsibility**
 
-| EATGF Control | COBIT Ref | Responsibility | Frequency |
-|---|---|---|---|
-| Risk Appetite Definition | EATGF-EDM-RISK-01 | Define IT/AI risk tolerance | Annual |
-| Benefits Monitoring | EATGF-EDM-BEN-01 | Monitor technology ROI | Quarterly |
-| Governance Model | EATGF-EDM-GOV-01 | Maintain governance structure | Annual |
+| EATGF Control            | COBIT Ref         | Responsibility                | Frequency |
+| ------------------------ | ----------------- | ----------------------------- | --------- |
+| Risk Appetite Definition | EATGF-EDM-RISK-01 | Define IT/AI risk tolerance   | Annual    |
+| Benefits Monitoring      | EATGF-EDM-BEN-01  | Monitor technology ROI        | Quarterly |
+| Governance Model         | EATGF-EDM-GOV-01  | Maintain governance structure | Annual    |
 
 ### 3.2 APO Domain - Align, Plan, Organize
 
 **Strategic planning and security governance**
 
-| EATGF Control | COBIT Ref | Responsibility | Frequency |
-|---|---|---|---|
-| Enterprise Architecture | EATGF-APO-ARCH-01 | Maintain technology standards | Annual |
-| Risk Register Management | EATGF-APO-RISK-01 | Track IT/AI risks | Quarterly |
-| ISMS Implementation | EATGF-APO-SEC-01 | Maintain ISO 27001 compliance | Annual |
-| AIMS Implementation | EATGF-APO-AI-01 | Maintain ISO 42001 compliance | Per release |
+| EATGF Control            | COBIT Ref         | Responsibility                | Frequency   |
+| ------------------------ | ----------------- | ----------------------------- | ----------- |
+| Enterprise Architecture  | EATGF-APO-ARCH-01 | Maintain technology standards | Annual      |
+| Risk Register Management | EATGF-APO-RISK-01 | Track IT/AI risks             | Quarterly   |
+| ISMS Implementation      | EATGF-APO-SEC-01  | Maintain ISO 27001 compliance | Annual      |
+| AIMS Implementation      | EATGF-APO-AI-01   | Maintain ISO 42001 compliance | Per release |
 
 ### 3.3 BAI Domain - Build, Acquire, Implement
 
 **Development and change management**
 
-| EATGF Control | COBIT Ref | Responsibility | Frequency |
-|---|---|---|---|
-| Change Management | EATGF-BAI-CHG-01 | Control system changes | Monthly |
-| Configuration Control | EATGF-BAI-CONF-01 | Maintain configuration baseline | Continuous |
-| QA & Testing | EATGF-BAI-TEST-01 | Validate changes before deployment | Per release |
+| EATGF Control         | COBIT Ref         | Responsibility                     | Frequency   |
+| --------------------- | ----------------- | ---------------------------------- | ----------- |
+| Change Management     | EATGF-BAI-CHG-01  | Control system changes             | Monthly     |
+| Configuration Control | EATGF-BAI-CONF-01 | Maintain configuration baseline    | Continuous  |
+| QA & Testing          | EATGF-BAI-TEST-01 | Validate changes before deployment | Per release |
 
 ### 3.4 DSS Domain - Deliver, Service, Support
 
 **Operational security and incident management**
 
-| EATGF Control | COBIT Ref | Responsibility | Frequency |
-|---|---|---|---|
-| Identity & Access Management | EATGF-DSS-SEC-01 | Manage user access | Quarterly |
-| Data Encryption | EATGF-DSS-ENC-01 | Protect sensitive data | Quarterly |
-| Vulnerability Management | EATGF-DSS-VULN-01 | Patch systems | Monthly |
-| Incident Response | EATGF-DSS-INC-01 | Manage security incidents | Per incident |
+| EATGF Control                | COBIT Ref         | Responsibility            | Frequency    |
+| ---------------------------- | ----------------- | ------------------------- | ------------ |
+| Identity & Access Management | EATGF-DSS-SEC-01  | Manage user access        | Quarterly    |
+| Data Encryption              | EATGF-DSS-ENC-01  | Protect sensitive data    | Quarterly    |
+| Vulnerability Management     | EATGF-DSS-VULN-01 | Patch systems             | Monthly      |
+| Incident Response            | EATGF-DSS-INC-01  | Manage security incidents | Per incident |
 
 ### 3.5 MEA Domain - Monitor, Evaluate, Assess
 
 **Monitoring, audit, and assessment**
 
-| EATGF Control | COBIT Ref | Responsibility | Frequency |
-|---|---|---|---|
-| Internal Audit | EATGF-MEA-AUD-01 | Conduct audit program | Annual |
-| Performance Monitoring | EATGF-MEA-PERF-01 | Track governance KPIs | Quarterly |
-| Maturity Assessment | EATGF-MEA-MAT-01 | Assess governance maturity | Annual |
+| EATGF Control          | COBIT Ref         | Responsibility             | Frequency |
+| ---------------------- | ----------------- | -------------------------- | --------- |
+| Internal Audit         | EATGF-MEA-AUD-01  | Conduct audit program      | Annual    |
+| Performance Monitoring | EATGF-MEA-PERF-01 | Track governance KPIs      | Quarterly |
+| Maturity Assessment    | EATGF-MEA-MAT-01  | Assess governance maturity | Annual    |
 
 ### 3.6 AI Extension (If Applicable)
 
 **Specialized AI/ML governance**
 
-| EATGF Control | ISO 42001 | Responsibility | Frequency |
-|---|---|---|---|
-| AI Lifecycle | EATGF-AI-LC-01 | Manage AI system lifecycle | Per release |
-| AI Risk & Bias | EATGF-AI-RISK-01 | Test bias and fairness | Per update |
+| EATGF Control  | ISO 42001        | Responsibility             | Frequency   |
+| -------------- | ---------------- | -------------------------- | ----------- |
+| AI Lifecycle   | EATGF-AI-LC-01   | Manage AI system lifecycle | Per release |
+| AI Risk & Bias | EATGF-AI-RISK-01 | Test bias and fairness     | Per update  |
 
 ### 3.7 API Extension (Always Applicable)
 
 **API security and lifecycle**
 
-| EATGF Control | OWASP Ref | Responsibility | Frequency |
-|---|---|---|---|
-| API Authentication | EATGF-API-SEC-01 | Enforce API security | Quarterly |
-| API Lifecycle | EATGF-API-LC-01 | Manage API versioning | Per release |
+| EATGF Control      | OWASP Ref        | Responsibility        | Frequency   |
+| ------------------ | ---------------- | --------------------- | ----------- |
+| API Authentication | EATGF-API-SEC-01 | Enforce API security  | Quarterly   |
+| API Lifecycle      | EATGF-API-LC-01  | Manage API versioning | Per release |
 
 ---
 
@@ -611,15 +611,15 @@ EATGF is structured around **5 COBIT 2019 domains** (33 COBIT processes) + AI/AP
 
 ### 4.2 Risk Appetite by Category
 
-| Risk Category | Appetite | Max Tolerance | Annual Budget |
-|---|---|---|---|
-| **Information Security** | Minimal | <1 security incident/quarter | $X |
-| **Cyber Risk** | Minimal | Severity ≤ Medium | Incident response certified |
-| **Compliance** | Minimal | Zero violations | Audit-ready |
-| **AI/ML Risk** | Moderate | Bias: <2% disparity | Model governance certified |
-| **Infrastructure Risk** | Moderate | Uptime 99.5% SLA | Disaster recovery tested |
-| **Cloud Risk** | Moderate | Data residency compliant | Third-party audit required |
-| **Vendor Risk** | Moderate | < 10% supplier failures | Vendor SLA enforced |
+| Risk Category            | Appetite | Max Tolerance                | Annual Budget               |
+| ------------------------ | -------- | ---------------------------- | --------------------------- |
+| **Information Security** | Minimal  | <1 security incident/quarter | $X                          |
+| **Cyber Risk**           | Minimal  | Severity ≤ Medium            | Incident response certified |
+| **Compliance**           | Minimal  | Zero violations              | Audit-ready                 |
+| **AI/ML Risk**           | Moderate | Bias: <2% disparity          | Model governance certified  |
+| **Infrastructure Risk**  | Moderate | Uptime 99.5% SLA             | Disaster recovery tested    |
+| **Cloud Risk**           | Moderate | Data residency compliant     | Third-party audit required  |
+| **Vendor Risk**          | Moderate | < 10% supplier failures      | Vendor SLA enforced         |
 
 ### 4.3 Risk Appetite Governance
 
@@ -638,20 +638,20 @@ EATGF selects controls from the following international standards:
 
 ### 5.1 Primary Standards
 
-| Standard | Scope | Applicability |
-|---|---|---|
-| **COBIT 2019** | Governance framework | All organizations |
-| **ISO 27001:2022** | Information Security | SaaS / Enterprise |
+| Standard           | Scope                 | Applicability      |
+| ------------------ | --------------------- | ------------------ |
+| **COBIT 2019**     | Governance framework  | All organizations  |
+| **ISO 27001:2022** | Information Security  | SaaS / Enterprise  |
 | **ISO 42001:2023** | AI Management Systems | If AI systems used |
 
 ### 5.2 Secondary Standards
 
-| Standard | Scope | Applicability |
-|---|---|---|
-| **NIST AI RMF** | AI risk management | If AI systems used |
-| **OWASP 2023** | API security | All organizations using APIs |
-| **NIST SP 800-53** | Security controls | If US Gov't relevant |
-| **SOC 2 Type II** | Service organization controls | If providing services |
+| Standard           | Scope                         | Applicability                |
+| ------------------ | ----------------------------- | ---------------------------- |
+| **NIST AI RMF**    | AI risk management            | If AI systems used           |
+| **OWASP 2023**     | API security                  | All organizations using APIs |
+| **NIST SP 800-53** | Security controls             | If US Gov't relevant         |
+| **SOC 2 Type II**  | Service organization controls | If providing services        |
 
 ### 5.3 Control Selection Process
 
@@ -686,7 +686,7 @@ EATGF selects controls from the following international standards:
 
 - Configuration Control (EATGF-BAI-CONF-01)
 - Testing & QA (EATGF-BAI-TEST-01)
-- AI Governance (EATGF-AI-* controls)
+- AI Governance (EATGF-AI-\* controls)
 - SoA Maintenance (Layer 4)
 
 ### 6.2 Non-Compliance Escalation
@@ -734,23 +734,23 @@ Compensating controls must be:
 
 ### 8.1 Strategic Decisions (Annual/Major)
 
-| Decision | Board | CEO/ESC | CIO | CISO | Governance Council |
-|---|---|---|---|---|---|
-| Approve governance charter | **R** | **C** | C | C | I |
-| Approve risk appetite | **R** | **A** | C | C | I |
-| Approve major investments (>$10M) | **R** | **A** | **C** | C | I |
-| Approve new standards adoption | **I** | **A** | **C** | **C** | I |
-| Approve security incident breach disclosure | **I** | **A** | **C** | **R** | C |
+| Decision                                    | Board | CEO/ESC | CIO   | CISO  | Governance Council |
+| ------------------------------------------- | ----- | ------- | ----- | ----- | ------------------ |
+| Approve governance charter                  | **R** | **C**   | C     | C     | I                  |
+| Approve risk appetite                       | **R** | **A**   | C     | C     | I                  |
+| Approve major investments (>$10M)           | **R** | **A**   | **C** | C     | I                  |
+| Approve new standards adoption              | **I** | **A**   | **C** | **C** | I                  |
+| Approve security incident breach disclosure | **I** | **A**   | **C** | **R** | C                  |
 
 ### 8.2 Operational Decisions (Monthly/Routine)
 
-| Decision | ESC | CIO | CISO | Engineering Lead | Risk Officer |
-|---|---|---|---|---|---|
-| Approve major system changes | **A** | **R** | **C** | **C** | I |
-| Approve control exceptions (tactical) | **A** | **C** | **R** | I | **C** |
-| Approve patch deployment schedule | C | **R** | **A** | **C** | I |
-| Approve access request | I | C | **R** | C | I |
-| Approve incident response actions | I | **C** | **R** | **C** | **A** |
+| Decision                              | ESC   | CIO   | CISO  | Engineering Lead | Risk Officer |
+| ------------------------------------- | ----- | ----- | ----- | ---------------- | ------------ |
+| Approve major system changes          | **A** | **R** | **C** | **C**            | I            |
+| Approve control exceptions (tactical) | **A** | **C** | **R** | I                | **C**        |
+| Approve patch deployment schedule     | C     | **R** | **A** | **C**            | I            |
+| Approve access request                | I     | C     | **R** | C                | I            |
+| Approve incident response actions     | I     | **C** | **R** | **C**            | **A**        |
 
 **Legend:** R=Responsible, A=Accountable, C=Consulted, I=Informed
 
@@ -760,22 +760,22 @@ Compensating controls must be:
 
 ### 9.1 Strategic KPIs (Board-Level)
 
-| KPI | Target | Measurement | Owner | Frequency |
-|---|---|---|---|---|
-| **Control Implementation Rate** | 95%+ | # Implemented / Total | CISO | Quarterly |
-| **Compliance Score** | 90%+ | MCM control effectiveness | Compliance Officer | Quarterly |
-| **Strategic Alignment** | 100% | vs. Board risk appetite | CIO | Annual |
-| **Board Oversight Score** | 100% | Approved audit checklists | CEO | Annual |
+| KPI                             | Target | Measurement               | Owner              | Frequency |
+| ------------------------------- | ------ | ------------------------- | ------------------ | --------- |
+| **Control Implementation Rate** | 95%+   | # Implemented / Total     | CISO               | Quarterly |
+| **Compliance Score**            | 90%+   | MCM control effectiveness | Compliance Officer | Quarterly |
+| **Strategic Alignment**         | 100%   | vs. Board risk appetite   | CIO                | Annual    |
+| **Board Oversight Score**       | 100%   | Approved audit checklists | CEO                | Annual    |
 
 ### 9.2 Tactical KPIs (Executive-Level)
 
-| KPI | Target | Measurement | Owner | Frequency |
-|---|---|---|---|---|
-| **Patch Timely Rate** | 95% | Critical in 24h, High in 7d | CISO | Monthly |
-| **Access Review Completion** | 100% | Reviews on schedule | IAM Lead | Quarterly |
-| **Incident Response Time** | <1 hour | Critical incident notification | Security Lead | Per incident |
-| **Change Success Rate** | 98% | Changes without rollback | Engineering Lead | Monthly |
-| **Security Training Completion** | 100% | Employee acknowledgment | HR Lead | Quarterly |
+| KPI                              | Target  | Measurement                    | Owner            | Frequency    |
+| -------------------------------- | ------- | ------------------------------ | ---------------- | ------------ |
+| **Patch Timely Rate**            | 95%     | Critical in 24h, High in 7d    | CISO             | Monthly      |
+| **Access Review Completion**     | 100%    | Reviews on schedule            | IAM Lead         | Quarterly    |
+| **Incident Response Time**       | <1 hour | Critical incident notification | Security Lead    | Per incident |
+| **Change Success Rate**          | 98%     | Changes without rollback       | Engineering Lead | Monthly      |
+| **Security Training Completion** | 100%    | Employee acknowledgment        | HR Lead          | Quarterly    |
 
 ### 9.3 Operational KPIs (Control-Level)
 
@@ -787,12 +787,12 @@ Per control-level metrics defined in MCM (Section 📋)
 
 ### 10.1 Governance Charter Maintenance
 
-| Activity | Frequency | Owner | Trigger |
-|---|---|---|---|
-| **Routine Review** | Annual (Aug) | CISO | Calendar |
-| **Formal Assessment** | Bi-annual (Feb/Aug) | Governance Council | Calendar |
-| **Emergency Update** | As needed | CEO | Major risk change, breach, audit finding |
-| **Audit Incorporation** | Post-audit | Compliance Officer | Audit completion |
+| Activity                | Frequency           | Owner              | Trigger                                  |
+| ----------------------- | ------------------- | ------------------ | ---------------------------------------- |
+| **Routine Review**      | Annual (Aug)        | CISO               | Calendar                                 |
+| **Formal Assessment**   | Bi-annual (Feb/Aug) | Governance Council | Calendar                                 |
+| **Emergency Update**    | As needed           | CEO                | Major risk change, breach, audit finding |
+| **Audit Incorporation** | Post-audit          | Compliance Officer | Audit completion                         |
 
 ### 10.2 Framework Evolution (Roadmap)
 
@@ -835,26 +835,27 @@ CEO/Board Notification (if relevant)
 
 ### 11.2 Escalation Triggers
 
-| Trigger | Escalation Level | Notification Time | Board Escalation |
-|---|---|---|---|
-| Data breach (PII) | CRITICAL | 15 min | Yes (1 hour) |
-| 4+ hour outage | HIGH | 30 min | If >8 hours |
-| Security incident | HIGH | 1 hour | If CRITICAL |
-| Audit finding (Major) | MEDIUM | Same day | Next meeting |
-| Control exception (tactical) | LOW | 2 business days | No |
+| Trigger                      | Escalation Level | Notification Time | Board Escalation         |
+| ---------------------------- | ---------------- | ----------------- | ------------------------ |
+| Data breach (PII)            | CRITICAL         | 15 min            | Yes (1 hour)             |
+| CVE critical (CVSS 9+)       | CRITICAL         | 15 min            | Yes (4 hours deployment) |
+| 4+ hour outage               | HIGH             | 30 min            | If >8 hours              |
+| Security incident            | HIGH             | 1 hour            | If CRITICAL              |
+| Audit finding (Major)        | MEDIUM           | Same day          | Next meeting             |
+| Control exception (tactical) | LOW              | 2 business days   | No                       |
 
 ---
 
 ## 12. Governance Contact Directory
 
-| Role | Name | Email | Phone |
-|---|---|---|---|
-| Chief Governance Officer | ___________ | __________ | __________ |
-| Chief Information Security Officer | ___________ | __________ | __________ |
-| Chief Information Officer | ___________ | __________ | __________ |
-| Risk Officer | ___________ | __________ | __________ |
-| Compliance Officer | ___________ | __________ | __________ |
-| Governance Council Chair | ___________ | __________ | __________ |
+| Role                               | Name           | Email        | Phone        |
+| ---------------------------------- | -------------- | ------------ | ------------ |
+| Chief Governance Officer           | ****\_\_\_**** | ****\_\_**** | ****\_\_**** |
+| Chief Information Security Officer | ****\_\_\_**** | ****\_\_**** | ****\_\_**** |
+| Chief Information Officer          | ****\_\_\_**** | ****\_\_**** | ****\_\_**** |
+| Risk Officer                       | ****\_\_\_**** | ****\_\_**** | ****\_\_**** |
+| Compliance Officer                 | ****\_\_\_**** | ****\_\_**** | ****\_\_**** |
+| Governance Council Chair           | ****\_\_\_**** | ****\_\_**** | ****\_\_**** |
 
 **Emergency Escalation:**
 governance-escalation@[organization].com
@@ -887,12 +888,12 @@ governance-escalation@[organization].com
 
 This Governance Charter is approved and authorized by:
 
-| Title | Name | Signature | Date |
-|---|---|---|---|
-| **Chair, Board of Directors** | _____________ | _____________ | **/**/__ |
-| **Chief Executive Officer** | _____________ | _____________ | **/**/__ |
-| **Chief Governance Officer** | _____________ | _____________ | **/**/__ |
-| **Chief Information Security Officer** | _____________ | _____________ | **/**/__ |
+| Title                                  | Name           | Signature      | Date       |
+| -------------------------------------- | -------------- | -------------- | ---------- |
+| **Chair, Board of Directors**          | ******\_****** | ******\_****** | **/**/\_\_ |
+| **Chief Executive Officer**            | ******\_****** | ******\_****** | **/**/\_\_ |
+| **Chief Governance Officer**           | ******\_****** | ******\_****** | **/**/\_\_ |
+| **Chief Information Security Officer** | ******\_****** | ******\_****** | **/**/\_\_ |
 
 **Effective Date:** February 13, 2026
 **Next Review Date:** August 13, 2026

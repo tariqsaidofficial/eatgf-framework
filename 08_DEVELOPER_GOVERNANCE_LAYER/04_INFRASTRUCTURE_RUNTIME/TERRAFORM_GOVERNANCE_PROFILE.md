@@ -1,10 +1,12 @@
 # Terraform Governance Profile
 
+> **Authority Notice:** This profile implements EATGF controls for Infrastructure-as-Code (IaC) using Terraform. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW Terraform codifies Secure SDLC (Layer 01), DevSecOps (Layer 03), and Infrastructure Runtime (Layer 04) requirements.
+
 ## Architectural Position
 
-- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-- **Governance Scope:** Implementation Standard
-- **Control Authority:** Implements controls from API_GOVERNANCE_STANDARD
+- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 04_INFRASTRUCTURE_RUNTIME (Primary) + Layer 01 (Secure SDLC) + Layer 03 (DevSecOps)
+- **Governance Scope:** Implementation Standard for Infrastructure-as-Code
+- **Control Authority:** Implements controls from MASTER_CONTROL_MATRIX via Secure SDLC, DevSecOps, and Cloud Governance standards
 
 ---
 
@@ -262,11 +264,11 @@ func TestTerraformExample(t *testing.T) {
 
 ## Official References
 
-- Terraform Official Docs: https://www.terraform.io/docs/
+- Terraform Official Docs: <https://www.terraform.io/docs/>
 - NIST SP 800-218: Secure Software Development Framework
-- HashiCorp Sentinel: https://www.terraform.io/cloud-docs/policy-enforcement/sentinel/
-- Terratest: https://terratest.gruntwork.io/
-- AWS Secrets Manager: https://docs.aws.amazon.com/secretsmanager/
+- HashiCorp Sentinel: <https://www.terraform.io/cloud-docs/policy-enforcement/sentinel/>
+- Terratest: <https://terratest.gruntwork.io/>
+- AWS Secrets Manager: <https://docs.aws.amazon.com/secretsmanager/>
 
 ---
 

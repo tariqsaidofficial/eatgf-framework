@@ -1,4 +1,5 @@
 # Angular Framework Governance Profile
+
 ## Enterprise Conformance Model (v1.0)
 
 ---
@@ -10,12 +11,14 @@
 **AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
+
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 - This profile **references** secure SDLC requirements
 - This profile **clarifies** dependency injection, RxJS services, and guard patterns
 - This profile **does not** redefine any control from root governance documents
 
 **COMPLIANCE STATEMENT:** This profile enforces security across Angular 15+ applications. Non-conformance impacts:
+
 - Dependency injection attack surface
 - Observable/subscription memory leaks
 - Guard chain bypass
@@ -34,6 +37,7 @@ This document defines governance conformance requirements for Angular applicatio
 ## 2. Architectural Position
 
 **EATGF Layer Placement:**
+
 ```
 08_DEVELOPER_GOVERNANCE_LAYER
 ├── FRAMEWORK_PROFILES
@@ -44,6 +48,7 @@ This document defines governance conformance requirements for Angular applicatio
 ```
 
 **Angular operates as:**
+
 - Opinionated framework with dependency injection
 - Service-based architecture
 - RxJS-driven reactivity
@@ -60,8 +65,8 @@ This document defines governance conformance requirements for Angular applicatio
 
 ```typescript
 // ❌ PROHIBITED: Multiple fetch calls without interceptor
-this.http.get('/api/invoices');
-this.http.get('/api/users'); // No auth injection
+this.http.get("/api/invoices");
+this.http.get("/api/users"); // No auth injection
 
 // ✅ COMPLIANT: Single interceptor chain
 @Injectable()
@@ -70,13 +75,13 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(
     req: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     // ✅ Add correlationId to all requests
     const correlatedReq = req.clone({
       setHeaders: {
-        'X-Correlation-ID': crypto.randomUUID()
-      }
+        "X-Correlation-ID": crypto.randomUUID(),
+      },
     });
 
     return next.handle(correlatedReq).pipe(
@@ -86,7 +91,7 @@ export class AuthInterceptor implements HttpInterceptor {
           this.auth.logout();
         }
         return throwError(() => error);
-      })
+      }),
     );
   }
 }
@@ -96,9 +101,9 @@ providers: [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
-    multi: true
-  }
-]
+    multi: true,
+  },
+];
 ```
 
 ### Principle 2: Route Guard Enforcement (MANDATORY)
@@ -106,22 +111,25 @@ providers: [
 ```typescript
 // ✅ COMPLIANT: Auth guard on protected routes
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
   ): Observable<boolean> {
     return this.auth.user$.pipe(
-      map(user => !!user),
-      tap(isAuthenticated => {
+      map((user) => !!user),
+      tap((isAuthenticated) => {
         if (!isAuthenticated) {
-          this.router.navigate(['/login']);
+          this.router.navigate(["/login"]);
         }
-      })
+      }),
     );
   }
 }
@@ -129,11 +137,11 @@ export class AuthGuard implements CanActivate {
 // routing.module.ts
 routes: [
   {
-    path: 'dashboard',
+    path: "dashboard",
     component: DashboardComponent,
-    canActivate: [AuthGuard]
-  }
-]
+    canActivate: [AuthGuard],
+  },
+];
 ```
 
 ### Principle 3: Service Injection Architecture (MANDATORY)
@@ -141,7 +149,7 @@ routes: [
 ```typescript
 // ✅ COMPLIANT: Centralized auth service
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthService {
   private userSubject$ = new BehaviorSubject<User | null>(null);
@@ -152,18 +160,16 @@ export class AuthService {
   }
 
   private initializeUser(): void {
-    this.http.get<User>('/auth/user')
-      .subscribe(
-        user => this.userSubject$.next(user),
-        error => this.userSubject$.next(null)
-      );
+    this.http.get<User>("/auth/user").subscribe(
+      (user) => this.userSubject$.next(user),
+      (error) => this.userSubject$.next(null),
+    );
   }
 
   login(email: string, password: string): Observable<User> {
-    return this.http.post<User>('/auth/login', { email, password })
-      .pipe(
-        tap(user => this.userSubject$.next(user))
-      );
+    return this.http
+      .post<User>("/auth/login", { email, password })
+      .pipe(tap((user) => this.userSubject$.next(user)));
   }
 }
 ```
@@ -177,7 +183,7 @@ export class InvoiceComponent {
 
   constructor(private api: ApiService) {
     this.api.getInvoices().subscribe(
-      invoices => this.invoices = invoices
+      (invoices) => (this.invoices = invoices),
       // No unsubscribe → memory leak
     );
   }
@@ -193,7 +199,7 @@ export class InvoiceComponent {
   ngOnInit() {
     this.invoices$
       .pipe(takeUntil(this.destroy$))
-      .subscribe(invoices => console.log(invoices));
+      .subscribe((invoices) => console.log(invoices));
   }
 
   ngOnDestroy() {
@@ -222,9 +228,9 @@ export class InvoiceComponent {
 providers: [
   {
     provide: AuthService,
-    useClass: AuthService
-  }
-]
+    useClass: AuthService,
+  },
+];
 ```
 
 ### Principle 6: Template Security (MANDATORY)
@@ -253,7 +259,7 @@ getSafeHtml(html: string) {
 ```typescript
 // ✅ COMPLIANT: Store tokens in memory, not localStorage
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class TokenService {
   private token: string | null = null;
@@ -292,7 +298,7 @@ ng build --configuration production \
 ### Compliant Implementation
 
 ```typescript
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class AuthService {
   private userSubject$ = new BehaviorSubject<User | null>(null);
   public user$ = this.userSubject$.asObservable();
@@ -302,24 +308,22 @@ export class AuthService {
   }
 
   private restoreSession(): void {
-    this.http.get<User>('/auth/user')
-      .subscribe(
-        user => this.userSubject$.next(user),
-        () => this.userSubject$.next(null)
-      );
+    this.http.get<User>("/auth/user").subscribe(
+      (user) => this.userSubject$.next(user),
+      () => this.userSubject$.next(null),
+    );
   }
 
   login(email: string, password: string): Observable<User> {
-    return this.http.post<User>('/auth/login', { email, password })
-      .pipe(
-        tap(user => this.userSubject$.next(user))
-      );
+    return this.http
+      .post<User>("/auth/login", { email, password })
+      .pipe(tap((user) => this.userSubject$.next(user)));
   }
 
   logout(): void {
-    this.http.post('/auth/logout', {}).subscribe(
-      () => this.userSubject$.next(null)
-    );
+    this.http
+      .post("/auth/logout", {})
+      .subscribe(() => this.userSubject$.next(null));
   }
 }
 ```
@@ -333,38 +337,40 @@ export class AuthService {
 ### Compliant Implementation
 
 ```typescript
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class PermissionGuard implements CanActivate {
   constructor(
     private auth: AuthService,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    const requiredAction = route.data['action'];
+    const requiredAction = route.data["action"];
 
-    return this.http.get<{ authorized: boolean }>('/auth/authorize', {
-      params: { action: requiredAction }
-    }).pipe(
-      map(res => res.authorized),
-      tap(authorized => {
-        if (!authorized) {
-          this.router.navigate(['/forbidden']);
-        }
+    return this.http
+      .get<{ authorized: boolean }>("/auth/authorize", {
+        params: { action: requiredAction },
       })
-    );
+      .pipe(
+        map((res) => res.authorized),
+        tap((authorized) => {
+          if (!authorized) {
+            this.router.navigate(["/forbidden"]);
+          }
+        }),
+      );
   }
 }
 
 routes: [
   {
-    path: 'invoices/:id/delete',
+    path: "invoices/:id/delete",
     component: DeleteComponent,
     canActivate: [PermissionGuard],
-    data: { action: 'delete_invoice' }
-  }
-]
+    data: { action: "delete_invoice" },
+  },
+];
 ```
 
 ---
@@ -378,25 +384,27 @@ routes: [
 ```typescript
 @Injectable()
 export class VersionInterceptor implements HttpInterceptor {
-  private API_VERSION = 'v2';
+  private API_VERSION = "v2";
 
   intercept(
     req: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     const versionedReq = req.clone({
-      url: req.url.replace('/api/', `/api/${this.API_VERSION}/`)
+      url: req.url.replace("/api/", `/api/${this.API_VERSION}/`),
     });
 
     return next.handle(versionedReq).pipe(
-      tap(event => {
+      tap((event) => {
         if (event instanceof HttpResponse) {
-          const version = event.headers.get('x-api-version');
+          const version = event.headers.get("x-api-version");
           if (version && version !== this.API_VERSION) {
-            console.warn(`Version mismatch: expected ${this.API_VERSION}, got ${version}`);
+            console.warn(
+              `Version mismatch: expected ${this.API_VERSION}, got ${version}`,
+            );
           }
         }
-      })
+      }),
     );
   }
 }
@@ -411,18 +419,18 @@ export class VersionInterceptor implements HttpInterceptor {
 ### Compliant Implementation
 
 ```typescript
-import { z } from 'zod';
+import { z } from "zod";
 
 const InvoiceSchema = z.object({
   amount: z.number().positive(),
-  currency: z.enum(['USD', 'EUR'])
+  currency: z.enum(["USD", "EUR"]),
 });
 
 @Component({})
 export class InvoiceFormComponent {
   form = this.fb.group({
-    amount: ['', [Validators.required, Validators.min(0)]],
-    currency: ['USD', Validators.required]
+    amount: ["", [Validators.required, Validators.min(0)]],
+    currency: ["USD", Validators.required],
   });
 
   onSubmit() {
@@ -436,7 +444,10 @@ export class InvoiceFormComponent {
     }
   }
 
-  constructor(private fb: FormBuilder, private api: ApiService) {}
+  constructor(
+    private fb: FormBuilder,
+    private api: ApiService,
+  ) {}
 }
 ```
 
@@ -453,22 +464,20 @@ export class InvoiceFormComponent {
 export class RateLimitInterceptor implements HttpInterceptor {
   intercept(
     req: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 429) {
-          const retryAfter = parseInt(
-            error.headers.get('retry-after') || '60'
-          );
+          const retryAfter = parseInt(error.headers.get("retry-after") || "60");
 
           return timer(retryAfter * 1000).pipe(
-            switchMap(() => next.handle(req))
+            switchMap(() => next.handle(req)),
           );
         }
 
         return throwError(() => error);
-      })
+      }),
     );
   }
 }
@@ -483,27 +492,27 @@ export class RateLimitInterceptor implements HttpInterceptor {
 ### Compliant Implementation
 
 ```typescript
-describe('AuthService', () => {
+describe("AuthService", () => {
   let service: AuthService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [AuthService]
+      providers: [AuthService],
     });
 
     service = TestBed.inject(AuthService);
     httpMock = TestBed.inject(HttpTestingController);
   });
 
-  it('should fetch user on init', () => {
-    service.user$.subscribe(user => {
-      expect(user).toEqual({ id: 'user-123' });
+  it("should fetch user on init", () => {
+    service.user$.subscribe((user) => {
+      expect(user).toEqual({ id: "user-123" });
     });
 
-    const req = httpMock.expectOne('/auth/user');
-    req.flush({ id: 'user-123' });
+    const req = httpMock.expectOne("/auth/user");
+    req.flush({ id: "user-123" });
   });
 });
 ```
@@ -521,22 +530,24 @@ describe('AuthService', () => {
 export class LoggingInterceptor implements HttpInterceptor {
   intercept(
     req: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     const correlationId = crypto.randomUUID();
 
     const loggedReq = req.clone({
       setHeaders: {
-        'X-Correlation-ID': correlationId
-      }
+        "X-Correlation-ID": correlationId,
+      },
     });
 
     return next.handle(loggedReq).pipe(
-      tap(event => {
+      tap((event) => {
         if (event instanceof HttpResponse) {
-          console.log(`[${correlationId}] ${req.method} ${req.url} → ${event.status}`);
+          console.log(
+            `[${correlationId}] ${req.method} ${req.url} → ${event.status}`,
+          );
         }
-      })
+      }),
     );
   }
 }
@@ -577,13 +588,13 @@ export const environment = {
 ### Compliant Implementation
 
 ```typescript
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class TenantService {
   private tenantSubject$ = new BehaviorSubject<string | null>(null);
   public tenant$ = this.tenantSubject$.asObservable();
 
   constructor(private auth: AuthService) {
-    this.auth.user$.subscribe(user => {
+    this.auth.user$.subscribe((user) => {
       this.tenantSubject$.next(user?.tenantId ?? null);
     });
   }
@@ -609,16 +620,16 @@ ng build --configuration production
 
 ## 14. Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
-|---|---|---|---|
-| Authentication | A.8.2, A.8.3 | PW.2.1 | V2 |
-| Authorization | A.8.5, A.8.9 | PW.2.2 | V4 |
-| Versioning | A.8.28 | PW.4.2 | V14 |
-| Input Validation | A.8.22 | PW.8.1 | V5 |
-| Rate Limiting | A.8.22 | PW.8.2 | V11 |
-| Testing | A.8.28 | PW.9.1 | V14 |
-| Logging | A.8.15 | RV.1.1 | V15 |
-| Zero Trust | A.8.1 | PW.1.1 | V1 |
+| EATGF Control    | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
+| ---------------- | -------------- | ------------- | -------------- |
+| Authentication   | A.8.2, A.8.3   | PW.2.1        | V2             |
+| Authorization    | A.8.5, A.8.9   | PW.2.2        | V4             |
+| Versioning       | A.8.28         | PW.4.2        | V14            |
+| Input Validation | A.8.22         | PW.8.1        | V5             |
+| Rate Limiting    | A.8.22         | PW.8.2        | V11            |
+| Testing          | A.8.28         | PW.9.1        | V14            |
+| Logging          | A.8.15         | RV.1.1        | V15            |
+| Zero Trust       | A.8.1          | PW.1.1        | V1             |
 
 ---
 
@@ -638,15 +649,25 @@ ng build --configuration production
 
 ---
 
+## Official References
+
+- Angular Documentation: `https://angular.io/docs`
+- Angular Security Guide: `https://angular.io/guide/security`
+- OWASP Angular Security: `https://owasp.org/www-community/attacks/Angular_Security`
+- NIST SP 800-218: `https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf`
+- MDN Web Security: `https://developer.mozilla.org/en-US/docs/Web/Security`
+
+---
+
 ## 16. Version Information
 
-| Field | Value |
-|---|---|
-| **Document Version** | 1.0 |
-| **Change Type** | Major |
-| **Issue Date** | February 15, 2026 |
-| **Angular Version** | 15+ |
-| **Node.js** | 18+ |
+| Field                | Value             |
+| -------------------- | ----------------- |
+| **Document Version** | 1.0               |
+| **Change Type**      | Major             |
+| **Issue Date**       | February 15, 2026 |
+| **Angular Version**  | 15+               |
+| **Node.js**          | 18+               |
 
 ---
 

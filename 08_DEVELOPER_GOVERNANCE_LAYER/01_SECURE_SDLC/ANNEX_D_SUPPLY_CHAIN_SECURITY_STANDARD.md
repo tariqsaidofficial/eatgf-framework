@@ -50,13 +50,14 @@ Fail if HIGH vulnerabilities unresolved.
 
 ## Control Mapping
 
-| Framework   | Mapping                          |
-| ----------- | -------------------------------- |
-| ISO 27001   | A.5.19 Supplier relationships    |
-| NIST SSDF   | PS.3 Manage third-party software |
-| OWASP       | Dependency management            |
-| COBIT       | APO10 Manage Suppliers           |
-| NIST 800-53 | SA-12 Supply Chain Protection    |
+| Framework   | Mapping                                             |
+| ----------- | --------------------------------------------------- |
+| ISO 27001   | **A.8.28** Supply chain management (PRIMARY)       |
+| ISO 27001   | A.5.19 Supplier relationships                     |
+| NIST SSDF   | PS.3 Manage third-party software                   |
+| OWASP       | Dependency management                              |
+| COBIT       | APO10 Manage Suppliers                             |
+| NIST 800-53 | SA-12 Supply Chain Protection                     |
 
 ## Developer Checklist
 

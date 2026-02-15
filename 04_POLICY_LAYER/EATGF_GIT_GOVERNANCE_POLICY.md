@@ -180,7 +180,8 @@ Mandatory security configurations:
 **Dependency Vulnerability Alerts:**
 
 - Dependabot enabled for all repositories
-- Security vulnerabilities addressed within SLA: Critical (24 hours), High (7 days), Medium (30 days)
+- Security vulnerabilities addressed within SLA: Critical (4 hours deployment + 24 hours verification), High (7 days), Medium (30 days)
+- Reference: VULNERABILITY_REMEDIATION_TERMINOLOGY.md (authoritative source)
 
 **Code Scanning (Optional but Recommended):**
 

@@ -1,10 +1,12 @@
 # Docker Governance Profile
 
+> **Authority Notice:** This profile implements EATGF controls for Container building, scanning, signing, and supply chain integrity. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW Docker/OCI containers satisfy DevSecOps (Layer 03), Infrastructure Runtime (Layer 04), and Supply Chain Security requirements.
+
 ## Architectural Position
 
-- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-- **Governance Scope:** Implementation Standard
-- **Control Authority:** Implements controls from API_GOVERNANCE_STANDARD
+- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 04_INFRASTRUCTURE_RUNTIME (Primary) + Layer 03 (DevSecOps) + Layer 01 (Secure SDLC)
+- **Governance Scope:** Implementation Standard for Container Supply Chain Security
+- **Control Authority:** Implements controls from MASTER_CONTROL_MATRIX via Secure SDLC, DevSecOps, and Supply Chain Governance standards
 
 ---
 

@@ -1,5 +1,18 @@
 # Cloud Runtime Governance Profile
 
+**Version:** 1.0  
+**Status:** Active  
+**Last Updated:** 2026-02-15
+
+## Authority Notice
+
+**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 04_INFRASTRUCTURE_RUNTIME  
+**Governance Scope:** Implementation Standard  
+**Control Authority:** Implements controls for cloud-native deployment governance  
+**Authority Type:** DRI (Designated Responsible Individual) - Infrastructure Leadership
+
+---
+
 ## Architectural Position
 
 - **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER

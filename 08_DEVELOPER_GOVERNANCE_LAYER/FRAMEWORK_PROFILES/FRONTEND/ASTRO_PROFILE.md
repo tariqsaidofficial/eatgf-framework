@@ -1,4 +1,5 @@
 # Astro Framework Governance Profile
+
 ## Enterprise Conformance Model (v1.0)
 
 ---
@@ -10,6 +11,7 @@
 **AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
+
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 - This profile **references** Next.js profile patterns for SSR/API routes
 - This profile **clarifies** island architecture, server components, and static/dynamic rendering
@@ -34,6 +36,7 @@ This document defines governance conformance requirements for Astro applications
 ## 2. Architectural Position
 
 **EATGF Layer Placement:**
+
 ```
 08_DEVELOPER_GOVERNANCE_LAYER
 ├── FRAMEWORK_PROFILES
@@ -43,6 +46,7 @@ This document defines governance conformance requirements for Astro applications
 ```
 
 **Astro operates as:**
+
 - Static site generator with dynamic capabilities
 - Island architecture (opt-in JavaScript)
 - Server components executed at build/request time
@@ -85,7 +89,7 @@ const user = await getUser(Astro.request); // Server-side auth
 <html>
   <body>
     <header>{user.name}</header>
-    
+
     <!-- ✅ COMPLIANT: Island receives only public data -->
     <UserWidget client:load user={user.email} />
   </body>
@@ -106,11 +110,11 @@ export default function UserWidget({ user }: Props) {
 
 ```typescript
 // ✅ COMPLIANT: API route with auth check
-import type { APIRoute } from 'astro';
+import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async (context) => {
   // ✅ Verify authentication
-  const user = await verifyAuth(context.request.headers.get('cookie'));
+  const user = await verifyAuth(context.request.headers.get("cookie"));
 
   if (!user) {
     return new Response(null, { status: 401 });
@@ -120,7 +124,7 @@ export const GET: APIRoute = async (context) => {
   const invoices = await getInvoices(user.id, user.tenantId);
 
   return new Response(JSON.stringify(invoices), {
-    headers: { 'Content-Type': 'application/json' }
+    headers: { "Content-Type": "application/json" },
   });
 };
 ```
@@ -129,13 +133,13 @@ export const GET: APIRoute = async (context) => {
 
 ```typescript
 // ✅ COMPLIANT: Middleware enforces auth
-import { defineMiddleware } from 'astro:middleware';
+import { defineMiddleware } from "astro:middleware";
 
 export const onRequest = defineMiddleware(async (context, next) => {
   // ✅ Check auth before route handler
-  const user = await verifyAuth(context.request.headers.get('cookie'));
+  const user = await verifyAuth(context.request.headers.get("cookie"));
 
-  if (!user && context.request.url.includes('/admin')) {
+  if (!user && context.request.url.includes("/admin")) {
     return new Response(null, { status: 401 });
   }
 
@@ -191,7 +195,7 @@ import { validateInput } from '@/lib/validation';
 // ✅ Form submission: Server-side validation
 if (Astro.request.method === 'POST') {
   const formData = await Astro.request.formData();
-  
+
   try {
     const validated = validateInput(formData);
     const invoice = await createInvoice(validated);
@@ -221,7 +225,7 @@ const sensitiveData = await getSensitiveData(user.id);
   <body>
     <!-- ✅ Safe: No secrets passed to island -->
     <Dashboard client:load userName={user.name} />
-    
+
     <!-- ❌ UNSAFE: Sensitive data leaked to client -->
     <!-- <Dashboard client:load secret={sensitiveData.key} /> -->
   </body>
@@ -276,7 +280,7 @@ if (!user) {
 export const POST: APIRoute = async (context) => {
   const user = context.locals.user;
 
-  if (!user?.roles?.includes('admin')) {
+  if (!user?.roles?.includes("admin")) {
     return new Response(null, { status: 403 });
   }
 
@@ -292,6 +296,7 @@ export const POST: APIRoute = async (context) => {
 (API versioning, input validation, rate limiting, testing, logging, zero trust networking)
 
 All implemented with Astro-specific patterns:
+
 - API routes handle HTTP methods
 - Middleware for cross-cutting concerns
 - Form POST for server-side submission
@@ -301,16 +306,16 @@ All implemented with Astro-specific patterns:
 
 ## 7. Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
-|---|---|---|---|
-| Authentication | A.8.2, A.8.3 | PW.2.1 | V2 |
-| Authorization | A.8.5, A.8.9 | PW.2.2 | V4 |
-| Versioning | A.8.28 | PW.4.2 | V14 |
-| Input Validation | A.8.22 | PW.8.1 | V5 |
-| Rate Limiting | A.8.22 | PW.8.2 | V11 |
-| Testing | A.8.28 | PW.9.1 | V14 |
-| Logging | A.8.15 | RV.1.1 | V15 |
-| Zero Trust | A.8.1 | PW.1.1 | V1 |
+| EATGF Control    | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
+| ---------------- | -------------- | ------------- | -------------- |
+| Authentication   | A.8.2, A.8.3   | PW.2.1        | V2             |
+| Authorization    | A.8.5, A.8.9   | PW.2.2        | V4             |
+| Versioning       | A.8.28         | PW.4.2        | V14            |
+| Input Validation | A.8.22         | PW.8.1        | V5             |
+| Rate Limiting    | A.8.22         | PW.8.2        | V11            |
+| Testing          | A.8.28         | PW.9.1        | V14            |
+| Logging          | A.8.15         | RV.1.1        | V15            |
+| Zero Trust       | A.8.1          | PW.1.1        | V1             |
 
 ---
 
@@ -320,7 +325,7 @@ All implemented with Astro-specific patterns:
 - [ ] Islands receive only non-sensitive props
 - [ ] Middleware enforces authentication
 - [ ] API routes validate input and authorize
-- [ ] Environment variables properly prefixed (PUBLIC_)
+- [ ] Environment variables properly prefixed (PUBLIC\_)
 - [ ] Form submissions POST to server endpoints
 - [ ] Pre-rendered pages do not contain sensitive data
 - [ ] HTTP-only cookies used for tokens
@@ -331,13 +336,23 @@ All implemented with Astro-specific patterns:
 
 ---
 
+## Official References
+
+- Astro Documentation: https://docs.astro.build/
+- Astro Island Architecture: https://docs.astro.build/en/concepts/islands/
+- OWASP Security Best Practices: https://owasp.org/www-project-web-security-testing-guide/
+- MDN Web Security: https://developer.mozilla.org/en-US/docs/Web/Security
+- NIST SP 800-53: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf
+
+---
+
 ## 9. Version Information
 
-| Field | Value |
-|---|---|
-| **Document Version** | 1.0 |
-| **Astro Version** | 3.0+ |
-| **Node.js** | 18+ |
+| Field                | Value |
+| -------------------- | ----- |
+| **Document Version** | 1.0   |
+| **Astro Version**    | 3.0+  |
+| **Node.js**          | 18+   |
 
 ---
 

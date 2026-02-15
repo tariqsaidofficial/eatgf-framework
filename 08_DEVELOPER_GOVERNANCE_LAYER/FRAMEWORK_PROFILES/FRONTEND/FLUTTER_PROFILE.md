@@ -1,4 +1,5 @@
 # Flutter Framework Governance Profile
+
 ## Enterprise Conformance Model (v1.0)
 
 ---
@@ -10,6 +11,7 @@
 **AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
+
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 - This profile **references** mobile-specific security requirements
 - This profile **clarifies** Dart-specific patterns, BLoC architecture, secure storage
@@ -34,6 +36,7 @@ This document defines governance conformance requirements for Flutter applicatio
 ## 2. Architectural Position
 
 **EATGF Layer Placement:**
+
 ```
 08_DEVELOPER_GOVERNANCE_LAYER
 ├── FRAMEWORK_PROFILES
@@ -43,6 +46,7 @@ This document defines governance conformance requirements for Flutter applicatio
 ```
 
 **Flutter operates as:**
+
 - Dart application runtime
 - Platform channels for native integration (iOS/Android)
 - BLoC/Riverpod state management
@@ -190,7 +194,7 @@ Future<void> _nativeEntryPoint() async {
 // Biometric verification
 Future<bool> _checkBiometrics() async {
   final localAuth = LocalAuthentication();
-  
+
   try {
     final isDeviceSupported = await localAuth.canCheckBiometrics;
     final canCheckDeviceAuth = await localAuth.deviceSupportsBiometric;
@@ -522,7 +526,7 @@ void main() {
     await tester.pumpWidget(MyApp());
 
     expect(find.byType(ElevatedButton), findsOneWidget);
-    
+
     final button = find.byType(ElevatedButton).evaluate().first.widget;
     expect((button as ElevatedButton).onPressed, isNull); // disabled
   });
@@ -532,9 +536,9 @@ void main() {
     when(storage.read('auth_token')).thenAnswer((_) async => 'test-token');
 
     final client = AuthenticatedHttpClient(MockHttpClient(), storage);
-    
+
     await client.send(http.Request('GET', Uri.parse('https://api.example.com')));
-    
+
     verify(storage.read('auth_token')).called(1);
   });
 }
@@ -579,7 +583,7 @@ class LoggingHttpClient extends http.BaseClient {
 ```dart
 // ✅ Force HTTPS in production
 final Uri baseUrl = Uri.parse(
-  kReleaseMode 
+  kReleaseMode
     ? 'https://api.example.com'
     : 'https://staging-api.example.com'
 );
@@ -624,16 +628,16 @@ dart run build_runner build
 
 ## 14. Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
-|---|---|---|---|
-| Authentication | A.8.2, A.8.3 | PW.2.1 | V2 |
-| Authorization | A.8.5, A.8.9 | PW.2.2 | V4 |
-| Versioning | A.8.28 | PW.4.2 | V14 |
-| Input Validation | A.8.22 | PW.8.1 | V5 |
-| Rate Limiting | A.8.22 | PW.8.2 | V11 |
-| Testing | A.8.28 | PW.9.1 | V14 |
-| Logging | A.8.15 | RV.1.1 | V15 |
-| Zero Trust | A.8.1 | PW.1.1 | V1 |
+| EATGF Control    | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 |
+| ---------------- | -------------- | ------------- | -------------- |
+| Authentication   | A.8.2, A.8.3   | PW.2.1        | V2             |
+| Authorization    | A.8.5, A.8.9   | PW.2.2        | V4             |
+| Versioning       | A.8.28         | PW.4.2        | V14            |
+| Input Validation | A.8.22         | PW.8.1        | V5             |
+| Rate Limiting    | A.8.22         | PW.8.2        | V11            |
+| Testing          | A.8.28         | PW.9.1        | V14            |
+| Logging          | A.8.15         | RV.1.1        | V15            |
+| Zero Trust       | A.8.1          | PW.1.1        | V1             |
 
 ---
 
@@ -654,15 +658,25 @@ dart run build_runner build
 
 ---
 
+## Official References
+
+- Flutter Documentation: https://flutter.dev/docs
+- Flutter Security Best Practices: https://flutter.dev/docs/testing/integration-tests
+- OWASP Mobile Security: https://owasp.org/www-project-mobile-top-10/
+- Dart HTTP Security: https://pub.dev/packages/http
+- Android & iOS Security: https://developer.apple.com/security/ and https://developer.android.com/security
+
+---
+
 ## 16. Version Information
 
-| Field | Value |
-|---|---|
-| **Document Version** | 1.0 |
-| **Flutter Version** | 3.0+ |
-| **Dart Version** | 2.18+ |
-| **Min iOS** | 11.0+ |
-| **Min Android** | 5.0 (API 21)+ |
+| Field                | Value         |
+| -------------------- | ------------- |
+| **Document Version** | 1.0           |
+| **Flutter Version**  | 3.0+          |
+| **Dart Version**     | 2.18+         |
+| **Min iOS**          | 11.0+         |
+| **Min Android**      | 5.0 (API 21)+ |
 
 ---
 
