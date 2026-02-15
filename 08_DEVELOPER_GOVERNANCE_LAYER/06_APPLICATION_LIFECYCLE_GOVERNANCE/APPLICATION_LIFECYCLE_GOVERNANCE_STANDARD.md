@@ -1,9 +1,9 @@
 # Application Lifecycle Governance Standard
 
-**Version:** 2.0-COMPREHENSIVE  
-**Status:** Active  
-**Authority:** EATGF Layer 08 (Developer Governance) - Domain 06  
-**Effective Date:** 2026-02-15  
+**Version:** 2.0-COMPREHENSIVE
+**Status:** Active
+**Authority:** EATGF Layer 08 (Developer Governance) - Domain 06
+**Effective Date:** 2026-02-15
 **Classification:** Internal - Governance & Operations
 
 ---
@@ -13,6 +13,7 @@
 **EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / Domain 06_APPLICATION_LIFECYCLE_GOVERNANCE
 
 **Document Authority:** Implements BAI and DSS domain controls related to application release, change management, and incident response:
+
 - EATGF-BAI-REL-01: Release Management & Change Approval
 - EATGF-DSS-INC-01: Incident Response & Rollback Procedures
 - EATGF-DSS-EOL-01: Application End-of-Life Governance
@@ -68,22 +69,23 @@ Tier 3: Major Release (Features, architecture changes)
 
 ### Release Gates (Non-Waivable)
 
-| Gate | Stage | Check | Owner | Failure Action |
-|------|-------|-------|-------|-----------------|
-| **Code Quality** | Build | SonarQube score >80% | Dev Lead | BLOCK |
-| **Security Scan** | Build | SAST/DAST pass; no critical vulns | Security | BLOCK |
-| **Test Coverage** | Build | >80% code coverage | QA | BLOCK |
-| **Staging Deploy** | Test | App health checks pass (5min) | DevOps | BLOCK |
-| **Smoke Tests** | Test | Core workflows validated | QA | BLOCK |
-| **Performance** | Test | p99 latency <200ms; no regression | Ops | BLOCK |
-| **Approval** | Deploy | CAB signed off | Release Manager | BLOCK |
-| **Backup** | Deploy | Pre-production backup completed | DevOps | BLOCK |
+| Gate               | Stage  | Check                             | Owner           | Failure Action |
+| ------------------ | ------ | --------------------------------- | --------------- | -------------- |
+| **Code Quality**   | Build  | SonarQube score >80%              | Dev Lead        | BLOCK          |
+| **Security Scan**  | Build  | SAST/DAST pass; no critical vulns | Security        | BLOCK          |
+| **Test Coverage**  | Build  | >80% code coverage                | QA              | BLOCK          |
+| **Staging Deploy** | Test   | App health checks pass (5min)     | DevOps          | BLOCK          |
+| **Smoke Tests**    | Test   | Core workflows validated          | QA              | BLOCK          |
+| **Performance**    | Test   | p99 latency <200ms; no regression | Ops             | BLOCK          |
+| **Approval**       | Deploy | CAB signed off                    | Release Manager | BLOCK          |
+| **Backup**         | Deploy | Pre-production backup completed   | DevOps          | BLOCK          |
 
 **Zero Waivers Policy:** No gates can be bypassed except by emergency executive authorization (logged immediately).
 
 ### Change Approval Board (CAB) Process
 
 **Quarterly Membership:**
+
 - Product Manager (chairs)
 - Tech Lead / Architect
 - Security Officer
@@ -93,6 +95,7 @@ Tier 3: Major Release (Features, architecture changes)
 **Meeting Cadence:** Weekly (30min)
 
 **Agenda:**
+
 1. Proposed releases (5 min review)
 2. Roll-out schedule (staging → production)
 3. Rollback procedures (documented & tested)
@@ -100,6 +103,7 @@ Tier 3: Major Release (Features, architecture changes)
 5. Post-deployment support plan
 
 **Documentation Requirements:**
+
 - Release notes (features, bugfixes, security updates)
 - Known issues (bugs still present, planned for future release)
 - Rollback procedure (steps, estimated time, validation tests)
@@ -108,6 +112,7 @@ Tier 3: Major Release (Features, architecture changes)
 ### Deployment Process
 
 **Pre-Deployment (Staging):**
+
 ```
 1. Deploy to staging environment (identical prod config)
 2. Run full regression test suite (automated)
@@ -120,6 +125,7 @@ Tier 3: Major Release (Features, architecture changes)
 ```
 
 **Deployment (Production):**
+
 ```
 1. Blue-green deployment (new version in parallel)
 2. Health checks passing (5 min timeout; rollback if fail)
@@ -130,6 +136,7 @@ Tier 3: Major Release (Features, architecture changes)
 ```
 
 **Post-Deployment (48 hours):**
+
 ```
 1. Monitor metrics (error rates, latency, CPU, memory)
 2. Alert on any anomalies (auto-rollback if >5% error spike)
@@ -161,12 +168,12 @@ Organization responds to production incidents with defined escalation, communica
 
 **Severity Levels:**
 
-| Level | Downtime | Impact | Response Time | Example |
-|-------|----------|--------|----------------|---------| 
-| **Critical** | >30 min | All users/features affected | <15 min | Data loss, auth broken, API down |
-| **High** | 5-30 min | Major feature/region down | <1 hour | Payment processing failed, SaaS region down |
-| **Medium** | <5 min | Small feature or user subset affected | <4 hours | Report page slow, single region latency spike |
-| **Low** | No downtime | Performance degradation, warnings | <24 hours | Disk space warning, deprecated API usage |
+| Level        | Downtime    | Impact                                | Response Time | Example                                       |
+| ------------ | ----------- | ------------------------------------- | ------------- | --------------------------------------------- |
+| **Critical** | >30 min     | All users/features affected           | <15 min       | Data loss, auth broken, API down              |
+| **High**     | 5-30 min    | Major feature/region down             | <1 hour       | Payment processing failed, SaaS region down   |
+| **Medium**   | <5 min      | Small feature or user subset affected | <4 hours      | Report page slow, single region latency spike |
+| **Low**      | No downtime | Performance degradation, warnings     | <24 hours     | Disk space warning, deprecated API usage      |
 
 ### Incident Response Runbook
 
@@ -269,6 +276,7 @@ After Rollback:
 ```
 
 **Quarterly Rollback Test:**
+
 - Schedule: First Wednesday of quarter (Jan 4, Apr 3, Jul 2, Oct 1)
 - Procedure: Execute full rollback in production (within maintenance window)
 - Validation: All health checks pass; no customer impact
@@ -284,6 +292,7 @@ After Rollback:
    - What prevented earlier detection? (monitoring gaps)
 
 2. **5 Whys Analysis**
+
    ```
    Issue: Payment API timeout
    Why 1: Database connection pool exhausted
@@ -291,7 +300,7 @@ After Rollback:
    Why 3: Code review missed query optimization
    Why 4: Load test only used 100 concurrent users
    Why 5: Capacity planning used old traffic metrics
-   
+
    Root Cause: Load test insufficient; using stale metrics
    ```
 
@@ -331,12 +340,14 @@ Organization manages application sunset with defined decommissioning procedures,
 ### End-of-Life Timeline
 
 **Phase 1: Announcement (Months 1-2)**
+
 - Executive decision to sunset application
 - End-of-Support (EOS) date announced: 90-day minimum notice
 - Migration path documented (alternative service or data export)
 - Support plan: what happens during EOL window
 
 Example announcement:
+
 ```
 "Application X reaches End-of-Support on June 30, 2026.
 
@@ -349,6 +360,7 @@ Migration: Export your data via [Settings > Export] or contact support@company.c
 ```
 
 **Phase 2: Maintenance Mode (Month 2-3)**
+
 - No new features developed
 - Critical security patches only
 - All new usage redirected to replacement service
@@ -356,6 +368,7 @@ Migration: Export your data via [Settings > Export] or contact support@company.c
 - Migration tools provided or manual export documented
 
 **Phase 3: Final Support (Final 30 days)**
+
 - Reminder emails to all active users (weekly)
 - Support team on standby (escalation only)
 - Technical blog post: "Migrating from Application X"
@@ -366,18 +379,21 @@ Migration: Export your data via [Settings > Export] or contact support@company.c
 ### Decommissioning Checklist
 
 **72 Hours Before Shutdown:**
+
 - [ ] Final backup of application database
 - [ ] Data retention verification (what stays, what deletes)
 - [ ] Customer support contact confirmation (who handles questions)
 - [ ] Monitoring alerts disabled (prevent false positives)
 
 **24 Hours Before Shutdown:**
+
 - [ ] Final reminder emails sent to all users
 - [ ] Read-only mode activated (no new data accepted)
 - [ ] Redirect page prepared (link to replacement service)
 - [ ] On-call team briefed (escalation route)
 
 **Shutdown Hour (T-0:00 to T+1:00):**
+
 ```
 T-0:30:  Final application health check OK
 T-0:15:  Load balancer drains connections (graceful shutdown)
@@ -391,6 +407,7 @@ T+1:00:  Webhook notifications sent (customer integrations informed)
 ```
 
 **After Shutdown:**
+
 - [ ] Incident report closed (if any issues encountered)
 - [ ] Post-mortem: lessons learned documented
 - [ ] Customer feedback collected (migration smooth? issues?)
@@ -399,13 +416,13 @@ T+1:00:  Webhook notifications sent (customer integrations informed)
 
 ### Data Retention Policy
 
-| Data Category | Retention Period | Storage Destination | Deletion Authority |
-|---|---|---|---|
-| **Customer Data** | 30 days after EOL | Encrypted archive (S3 Glacier) | Customer request or 1-year max |
-| **Audit Logs** | 12 months | Archive (cold storage) | Compliance requirement |
-| **Application Code** | Indefinite | Git repository (archived branch) | Engineering decision |
-| **Performance Data** | 90 days | Monitoring system (time-series db) | Metrics retention policy |
-| **Configuration** | 12 months | Backup (encrypted) | Disaster recovery requirement |
+| Data Category        | Retention Period  | Storage Destination                | Deletion Authority             |
+| -------------------- | ----------------- | ---------------------------------- | ------------------------------ |
+| **Customer Data**    | 30 days after EOL | Encrypted archive (S3 Glacier)     | Customer request or 1-year max |
+| **Audit Logs**       | 12 months         | Archive (cold storage)             | Compliance requirement         |
+| **Application Code** | Indefinite        | Git repository (archived branch)   | Engineering decision           |
+| **Performance Data** | 90 days           | Monitoring system (time-series db) | Metrics retention policy       |
+| **Configuration**    | 12 months         | Backup (encrypted)                 | Disaster recovery requirement  |
 
 ### Evidence Checklist
 
@@ -431,28 +448,30 @@ Organization maintains production system health through continuous monitoring, a
 
 **Core Metrics (Real-time Dashboard):**
 
-| Metric | Type | Target | Alert Threshold | Owner |
-|--------|------|--------|------------------|-------|
-| **API Latency (p99)** | Performance | <200ms | >500ms | Ops |
-| **Error Rate** | Reliability | <0.1% | >1% | Ops |
-| **Uptime** | Availability | 99.95% | <99.9% (ongoing month) | Ops |
-| **Database Response Time** | Performance | <20ms | >100ms | DBA |
-| **CPU Utilization** | Capacity | <70% | >80% | Ops |
-| **Memory Utilization** | Capacity | <80% | >90% | Ops |
-| **Disk Space** | Capacity | <80% | >90% | Ops |
-| **Active Connections** | Capacity | <80% pool | >95% pool | DBA |
+| Metric                     | Type         | Target    | Alert Threshold        | Owner |
+| -------------------------- | ------------ | --------- | ---------------------- | ----- |
+| **API Latency (p99)**      | Performance  | <200ms    | >500ms                 | Ops   |
+| **Error Rate**             | Reliability  | <0.1%     | >1%                    | Ops   |
+| **Uptime**                 | Availability | 99.95%    | <99.9% (ongoing month) | Ops   |
+| **Database Response Time** | Performance  | <20ms     | >100ms                 | DBA   |
+| **CPU Utilization**        | Capacity     | <70%      | >80%                   | Ops   |
+| **Memory Utilization**     | Capacity     | <80%      | >90%                   | Ops   |
+| **Disk Space**             | Capacity     | <80%      | >90%                   | Ops   |
+| **Active Connections**     | Capacity     | <80% pool | >95% pool              | DBA   |
 
 **Dashboard Tools:** Datadog, New Relic, or Grafana (updated every 60 seconds)
 
 ### On-Call Rotation
 
 **Coverage Requirements:**
+
 - 24/7 on-call rotation (1 primary, 1 secondary)
 - On-call weeks: 1 per 4-week rotation (e.g., Jan 1-7, Jan 29-Feb 4)
 - Response time: <15 min for critical, <1 hour for high
 - Acknowledgement required within 5 min or escalation triggered
 
 **On-Call Responsibilities:**
+
 1. Receive PagerDuty alert (sms + phone call)
 2. Acknowledge within 5 min (confirm receipt)
 3. Assess incident severity (critical/high/medium/low)
@@ -464,6 +483,7 @@ Organization maintains production system health through continuous monitoring, a
 Runbook locations: `/docs/operations/runbooks/`
 
 **Required Runbooks:**
+
 - Database failover (cross-AZ switchover)
 - Cache invalidation (Redis flush procedure)
 - DNS update (pointing to backup service)
@@ -472,6 +492,7 @@ Runbook locations: `/docs/operations/runbooks/`
 - Secrets rotation (API keys, passwords)
 
 **Runbook Template:**
+
 ```
 # Runbook: [Title]
 
@@ -496,6 +517,7 @@ If something goes wrong:
 ### Change Log & Audit Trail
 
 **All changes logged in:**
+
 - Git (application code)
 - Infrastructure-as-Code repo (Terraform / CloudFormation)
 - Configuration management (Ansible, Chef)
@@ -503,6 +525,7 @@ If something goes wrong:
 - Monitoring tools (alert threshold changes)
 
 **Searchable audit trail:**
+
 - Query: "who changed X?" → Git blamed; author identified
 - Query: "when was X changed?" → Commit timestamp
 - Query: "why was X changed?" → Commit message / ticket link
@@ -523,28 +546,31 @@ If something goes wrong:
 
 ## Compliance Alignment
 
-| EATGF Control | ISO 27001:2022 | NIST 800-53 | COBIT 2019 |
-|---|---|---|---|
-| BAI-REL-01 | 8.34, 5.37 | CM-3, SA-10 | BAI03 |
-| DSS-INC-01 | 7.3, A.16 | IR-4, CP-2 | DSS02, MEA01 |
-| DSS-EOL-01 | 8.26, 5.36 | CM-2, CP-4 | DSS03 |
-| DSS-OPS-01 | 9.1, 9.2 | AU-6, SI-4 | DSS01, MEA01 |
+| EATGF Control | ISO 27001:2022 | NIST 800-53 | COBIT 2019   |
+| ------------- | -------------- | ----------- | ------------ |
+| BAI-REL-01    | 8.34, 5.37     | CM-3, SA-10 | BAI03        |
+| DSS-INC-01    | 7.3, A.16      | IR-4, CP-2  | DSS02, MEA01 |
+| DSS-EOL-01    | 8.26, 5.36     | CM-2, CP-4  | DSS03        |
+| DSS-OPS-01    | 9.1, 9.2       | AU-6, SI-4  | DSS01, MEA01 |
 
 ### Governance Implications
 
 **Risk if Not Implemented:**
+
 - Uncontrolled changes; production outages from untested code
 - No incident diagnosis capability; slow mean-time-to-recovery
 - Orphaned applications; security risks from unsupported software
 - Operational blindness; no monitoring of system health
 
 **Operational Impact:**
+
 - Faster releases with confidence (gates prevent failures)
 - Rapid incident response (documented procedures, practiced quarterly)
 - Technical debt decreases (EOL process forces cleanup)
 - Team autonomy increases (clear authority model, runbooks)
 
 **Audit Consequences:**
+
 - SOC 2 Type II: Requires change control, incident response procedures, monitoring
 - ISO 27001: Change management, incident response, asset retirement required
 - PCI-DSS: Change approval, audit logging, incident documentation required
@@ -553,14 +579,14 @@ If something goes wrong:
 
 ## Version & Authority
 
-| Field | Value |
-|-------|-------|
-| **Version** | 2.0-COMPREHENSIVE |
-| **Date Issued** | 2026-02-15 |
-| **Change Type** | Major (placeholder → comprehensive) |
+| Field           | Value                                                                  |
+| --------------- | ---------------------------------------------------------------------- |
+| **Version**     | 2.0-COMPREHENSIVE                                                      |
+| **Date Issued** | 2026-02-15                                                             |
+| **Change Type** | Major (placeholder → comprehensive)                                    |
 | **Related MCM** | EATGF-BAI-REL-01, EATGF-DSS-INC-01, EATGF-DSS-EOL-01, EATGF-DSS-OPS-01 |
-| **Next Review** | 2026-08-15 |
+| **Next Review** | 2026-08-15                                                             |
 
-**Classification:** Internal - Governance  
-**Authority:** EATGF Layer 08, Domain 06  
+**Classification:** Internal - Governance
+**Authority:** EATGF Layer 08, Domain 06
 **Distribution:** Release Managers, DevOps, SREs, On-Call Team, Product Leads

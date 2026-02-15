@@ -1,6 +1,6 @@
 # Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
-**Global Reference Governance Architecture & Knowledge Centre**  
+**Global Reference Governance Architecture & Knowledge Centre**
 **Version 1.0 – Foundation Edition**
 
 ---
@@ -73,7 +73,8 @@ EATGF is built on seven core architectural principles:
 
 EATGF is organized into eight authoritative layers, each serving a distinct governance function:
 
-### **[00_FOUNDATION](00_FOUNDATION/README.md)**  
+### **[00_FOUNDATION](00_FOUNDATION/README.md)**
+
 Authority, naming conventions, and control inventory
 
 - **OFFICIAL_DESIGNATION.md** – Framework identity and naming standards
@@ -83,19 +84,23 @@ Authority, naming conventions, and control inventory
 
 ---
 
-### **[01_MANAGEMENT_SYSTEMS](01_MANAGEMENT_SYSTEMS/README.md)**  
+### **[01_MANAGEMENT_SYSTEMS](01_MANAGEMENT_SYSTEMS/README.md)**
+
 ISO-aligned formal management systems
 
 **ISMS (ISO 27001:2022)**
+
 - **ISMS_MANUAL_v1.0.md** – Complete ISMS implementation (clauses 4–10)
 - **01_STATEMENT_OF_APPLICABILITY_TEMPLATE.md** – SoA framework for audits
 
 **AIMS (ISO 42001:2023)**
+
 - **AIMS_MANUAL_v1.0.md** – Complete AIMS implementation (clauses 4–10, AI lifecycle)
 
 ---
 
-### **[02_CONTROL_ARCHITECTURE](02_CONTROL_ARCHITECTURE/README.md)**  
+### **[02_CONTROL_ARCHITECTURE](02_CONTROL_ARCHITECTURE/README.md)**
+
 Controls, mappings, and risk framework
 
 - **CONTROL_OBJECTIVES.md** – Control objectives and effectiveness criteria
@@ -105,31 +110,42 @@ Controls, mappings, and risk framework
 
 ---
 
-### **[03_GOVERNANCE_MODELS](03_GOVERNANCE_MODELS/README.md)**  
+### **[03_GOVERNANCE_MODELS](03_GOVERNANCE_MODELS/README.md)**
+
 Maturity, performance, and team-sizing models
 
 **Maturity Model**
+
 - **MATURITY_ASSESSMENT.md** – Capability level definitions (CMM-style)
 
 **Performance Model**
+
 - **PERFORMANCE_MODEL.md** – KPI framework and measurement approach
 
 **Team Sizing**
+
 - **GOVERNANCE_BY_TEAM_SIZE.md** – Governance adaptation for organizations of all sizes
 
 ---
 
-### **[04_POLICY_LAYER](04_POLICY_LAYER/README.md)**  
+### **[04_POLICY_LAYER](04_POLICY_LAYER/README.md)**
+
 Formal governance policies and charters
 
 - **GOVERNANCE_CHARTER_FORMAL_v2.md** – Formal charter (authoritative governance document)
 - **01_GOVERNANCE_CHARTER.md** – Charter components and governance structure
 - **02_INFORMATION_SECURITY_POLICY.md** – Security policy implementation
 - **03_DATA_GOVERNANCE_POLICY.md** – Data and privacy governance policy
+- **04_INCIDENT_RESPONSE_POLICY.md** – Incident response procedures and SLAs
+- **05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY.md** – BC/DR architecture and testing
+- **06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY.md** – Vendor assessment and compliance
+- **07_DATA_PRIVACY_AND_PROTECTION_POLICY.md** – GDPR and personal data protection
+- **08_ACCEPTABLE_USE_POLICY.md** – System usage governance and discipline
 
 ---
 
-### **[05_DOMAIN_FRAMEWORKS](05_DOMAIN_FRAMEWORKS/README.md)**  
+### **[05_DOMAIN_FRAMEWORKS](05_DOMAIN_FRAMEWORKS/README.md)**
+
 Domain-specific governance extensions
 
 - **AI_GOVERNANCE_FRAMEWORK.md** – AI/ML governance and compliance
@@ -137,7 +153,8 @@ Domain-specific governance extensions
 
 ---
 
-### **[06_AUDIT_AND_ASSURANCE](06_AUDIT_AND_ASSURANCE/README.md)**  
+### **[06_AUDIT_AND_ASSURANCE](06_AUDIT_AND_ASSURANCE/README.md)**
+
 Audit methodology and assurance framework
 
 - **INTERNAL_AUDIT_PROCEDURE_v1.0.md** – ISO 19011:2018 audit methodology
@@ -145,10 +162,15 @@ Audit methodology and assurance framework
   - Quarterly sampling audits
   - Thematic audits
   - Auditor independence and qualifications
+- **AUDIT_SCHEDULE_STANDARD.md** – 5-quarter audit cycle and control frequency matrix
+- **CORRECTIVE_ACTION_REGISTER_STANDARD.md** – Finding documentation and remediation tracking
+- **CERTIFICATION_READINESS_CHECKLIST_STANDARD.md** – Pre-audit control readiness validation
+- **EVIDENCE_GOVERNANCE_STANDARD.md** – Evidence storage, retention, access, and disposal
 
 ---
 
-### **[07_REFERENCE_AND_EVOLUTION](07_REFERENCE_AND_EVOLUTION/README.md)**  
+### **[07_REFERENCE_AND_EVOLUTION](07_REFERENCE_AND_EVOLUTION/README.md)**
+
 Implementation history, evolution records, and historical artifacts
 
 Framework development history, strategic decisions from governance architecture evolution, and historical implementation materials. **Reference-only layer:** Not part of the authoritative governance framework; provided for context and governance methodology understanding.
@@ -159,16 +181,16 @@ Framework development history, strategic decisions from governance architecture 
 
 EATGF structurally aligns with leading international governance frameworks:
 
-| Standard | Scope | EATGF Alignment |
-|----------|-------|-----------------|
-| **COBIT 2019** | IT investment & risk management | Control mapping (7 domains, 35 controls) |
-| **ISO/IEC 27001:2022** | Information security management | ISMS manual + Annex A controls + SoA template |
-| **ISO/IEC 42001:2023** | AI governance & risk management | AIMS manual + 7-area AI lifecycle framework |
-| **ISO 19011:2018** | Audit methodology | Internal audit procedure design |
-| **ISO 31000** | Risk management framework | Risk assessment methodology + definitions |
-| **NIST AI Risk Management Framework** | AI governance | Control alignment + lifecycle integration |
-| **NIST SP 800-53** | Information security controls | Cross-reference mapping to COBIT/ISO |
-| **OWASP API Security Top 10** | API security governance | Domain framework alignment |
+| Standard                              | Scope                           | EATGF Alignment                               |
+| ------------------------------------- | ------------------------------- | --------------------------------------------- |
+| **COBIT 2019**                        | IT investment & risk management | Control mapping (7 domains, 35 controls)      |
+| **ISO/IEC 27001:2022**                | Information security management | ISMS manual + Annex A controls + SoA template |
+| **ISO/IEC 42001:2023**                | AI governance & risk management | AIMS manual + 7-area AI lifecycle framework   |
+| **ISO 19011:2018**                    | Audit methodology               | Internal audit procedure design               |
+| **ISO 31000**                         | Risk management framework       | Risk assessment methodology + definitions     |
+| **NIST AI Risk Management Framework** | AI governance                   | Control alignment + lifecycle integration     |
+| **NIST SP 800-53**                    | Information security controls   | Cross-reference mapping to COBIT/ISO          |
+| **OWASP API Security Top 10**         | API security governance         | Domain framework alignment                    |
 
 **Important Note:** EATGF respects the intellectual property rights of all referenced standards. The framework does not reproduce proprietary standard content and does not claim certification equivalence.
 
@@ -179,6 +201,7 @@ EATGF structurally aligns with leading international governance frameworks:
 EATGF is designed for organizations of varying sizes and maturity levels:
 
 **Foundational Support:**
+
 - Startups (essential governance foundation)
 - SaaS organizations (security & compliance baseline)
 - Medium-sized enterprises (scalable governance)
@@ -246,15 +269,15 @@ Source: https://github.com/tariqsaidofficial/eatgf-framework
 
 ## 9. Repository Status
 
-| Element | Status |
-|---------|--------|
-| **Repository Type** | Public – Reference Architecture & Knowledge Centre |
-| **Framework Status** | Baseline v1.0-Foundation released |
-| **Edition Type** | Foundation – Governance Architecture (non-operational) |
-| **Operational Status** | Reference-only; no deployment automation included |
-| **Version Control** | Git with immutable baseline tags |
-| **Documentation Language** | English (UK) |
-| **Last Updated** | 13 February 2026 |
+| Element                    | Status                                                     |
+| -------------------------- | ---------------------------------------------------------- |
+| **Repository Type**        | Public – Reference Architecture & Knowledge Centre         |
+| **Framework Status**       | v1.0 Foundation + v1.1 Policy/Assurance Layer Enhancements |
+| **Edition Type**           | Foundation – Governance Architecture (non-operational)     |
+| **Operational Status**     | Reference-only; no deployment automation included          |
+| **Version Control**        | Git with immutable baseline tags                           |
+| **Documentation Language** | English (UK)                                               |
+| **Last Updated**           | 16 February 2026                                           |
 
 ---
 
@@ -272,6 +295,6 @@ Source: https://github.com/tariqsaidofficial/eatgf-framework
 
 ---
 
-**EATGF – Governance Architecture & Knowledge Centre**  
-**Version 1.0 – Foundation Baseline**  
+**EATGF – Governance Architecture & Knowledge Centre**
+**Version 1.0 – Foundation Baseline**
 **Authoritative Reference Edition**

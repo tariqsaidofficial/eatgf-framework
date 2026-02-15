@@ -3,9 +3,9 @@
 | Field | Value |
 |-------|-------|
 | Document Type | Layer Navigation & Overview |
-| Version | 2.0 |
+| Version | 2.1 |
 | Classification | Controlled |
-| Effective Date | 2026-02-14 |
+| Effective Date | 2026-02-16 |
 | Authority | Governance Office and CISO |
 | EATGF Layer | 04_POLICY_LAYER |
 
@@ -86,6 +86,81 @@ Formal data governance policy establishing:
 - Data lineage and metadata management
 - Data breach notification procedures
 
+### Incident Response Policy
+
+Document: 04_INCIDENT_RESPONSE_POLICY.md
+
+Formal incident response policy establishing:
+- Incident severity classification (P1-P4 with escalating SLAs)
+- 6-phase incident response lifecycle (Detection → Analysis → Containment → Eradication → Recovery → Post-Incident Review)
+- Incident response team structure and roles (CISO, SOC Manager, Responders, Forensics, Communications, Legal)
+- Evidence chain-of-custody and forensic preservation requirements
+- Timely regulatory notification procedures (GDPR 72-hour authority notification)
+- Post-incident review procedures for continuous improvement
+- Annual incident response tabletop testing and exercises
+- Vendor and third-party incident communication protocols
+
+### Business Continuity and Disaster Recovery Policy
+
+Document: 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY.md
+
+Formal BC/DR policy establishing:
+- Business criticality classification with RTO/RPO targets (Critical ≤4h/≤1h; High ≤8h/≤1h; Medium ≤24h/≤4h; Low ≤72h/≤24h)
+- Tier 1-4 recovery architectures (Tier 1 active-active replication; Tier 2 warm standby; Tier 3-4 regular backups)
+- Backup strategy with retention tiers (continuous rolling, daily 30-90 days, weekly 12 months, monthly archives 5 years)
+- Disaster recovery plan with 5-phase execution (Notification → Assessment → Activation → Recovery → Restoration)
+- Quarterly testing program (Q1 full recovery test; Q2 tabletop exercise; Q3 backup restoration; Q4 replication validation)
+- Crisis command structure with defined roles and escalation procedures
+- Recovery procedures for critical systems and data
+- Third-party recovery coordination requirements
+
+### Vendor and Third-Party Risk Management Policy
+
+Document: 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY.md
+
+Formal vendor risk management policy establishing:
+- Vendor classification framework (Critical/High/Medium/Low with differentiated assessment depth)
+- Pre-selection assessment procedure including financial stability, regulatory compliance, and security questionnaire
+- Contract security clauses requiring data protection, incident notification (24-hour), audit rights, and certifications (SOC2/ISO27001)
+- Data Processing Agreements with Standard Contractual Clauses for GDPR compliance
+- Vendor compliance monitoring cadence by tier (monthly/quarterly/annual)
+- Non-compliance remediation process with severity-based timelines
+- Third-party incident response and notification requirements
+- Exit management procedures with data return and deletion verification
+- Subcontractor and supply chain management requirements
+
+### Data Privacy and Protection Policy
+
+Document: 07_DATA_PRIVACY_AND_PROTECTION_POLICY.md
+
+Formal data privacy policy establishing:
+- Personal data classification (Public/Internal/Personal Data/Sensitive Personal Data/Restricted)
+- Data Processing Register documentation for all data processing
+- Legal basis for processing (Consent, Contract, Legal Obligation, Vital Interests, Public Task, Legitimate Interest)
+- Data subject rights procedures with 30-day response SLAs (access, rectification, erasure, restriction, portability, objection)
+- Retention schedule by data category (customer 3 years; transactions 7 years; marketing 2 years; employees 3 years; logs 90 days)
+- Automated deletion enforcement and verification
+- Privacy-by-design principles (data minimization, pseudonymization, encryption AES-256)
+- International data transfer procedures with Standard Contractual Clauses
+- Breach notification procedures (72-hour GDPR Article 33 authority notification; immediate Article 34 high-risk notification)
+- Privacy Impact Assessment requirements for new processing
+- Consent management and audit trail requirements
+
+### Acceptable Use Policy
+
+Document: 08_ACCEPTABLE_USE_POLICY.md
+
+Formal acceptable use policy establishing:
+- Acceptable use principles (systems for authorized business purposes; credential protection; incident reporting)
+- Prohibited use categories (illegal activity; unauthorized access; IP violation; data theft; harmful content; resource abuse; personal business)
+- Monitoring scope and technology inventory (email, web, application usage, file transfers, EDR, DLP, SIEM, behavioral analytics)
+- Investigation procedures with evidence preservation and fact-finding
+- Disciplinary framework with severity escalation (minor through severe with progressive consequences)
+- Appeal process with independent review (10-day window)
+- Special violation handling (criminal referral; data breach investigation; civil litigation for IP theft)
+- Third-party and contractor acceptable use requirements
+- Annual policy acknowledgment and training requirements
+
 ### Policy Integration
 
 Layer Relationships:
@@ -121,12 +196,17 @@ Before governance operations:
 
 - [ ] GOVERNANCE_CHARTER_FORMAL_v2.md reviewed and understood
 - [ ] Governance structure and decision rights documented
-- [ ] All governance policies reviewed for applicability
-- [ ] Security policy requirements understood by teams
-- [ ] Data governance procedures established
-- [ ] Policy compliance monitoring procedures defined
-- [ ] Violation escalation procedures documented
-- [ ] Training and awareness program established
+- [ ] 01_GOVERNANCE_CHARTER.md implementation completed
+- [ ] 02_INFORMATION_SECURITY_POLICY.md requirements integrated into security program
+- [ ] 03_DATA_GOVERNANCE_POLICY.md data stewardship procedures established
+- [ ] 04_INCIDENT_RESPONSE_POLICY.md incident team structure and procedures operational
+- [ ] 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY.md RTO/RPO targets and recovery tiers configured
+- [ ] 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY.md vendor assessment and monitoring program established
+- [ ] 07_DATA_PRIVACY_AND_PROTECTION_POLICY.md privacy procedures and GDPR compliance controls implemented
+- [ ] 08_ACCEPTABLE_USE_POLICY.md monitoring and discipline procedures in place
+- [ ] All policies communicated and training program established
+- [ ] Policy compliance monitoring and escalation procedures defined
+- [ ] Annual policy review and effectiveness assessment scheduled
 
 ## Governance Implications
 
