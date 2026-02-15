@@ -26,11 +26,13 @@ This profile applies to:
 ## Architectural Position
 
 **EATGF Layer:**
+
 - Primary: `08_DEVELOPER_GOVERNANCE_LAYER` → `FRAMEWORK_PROFILES` → `BACKEND`
 - References: Layer 01 (Secure SDLC), Layer 05 (API Governance), Layer 03 (DevSecOps)
 
 **Scope:**
 Spring Boot functions as:
+
 - HTTP request-response handler (Spring Web/WebFlux)
 - Spring Security authentication/authorization layer
 - Spring Data entity-to-database mapping layer
@@ -38,6 +40,7 @@ Spring Boot functions as:
 - Health check / observability endpoint (Actuator)
 
 **Spring Boot Classification:**
+
 - Enterprise framework with bean management
 - Annotation-driven configuration
 - Built-in production readiness features
@@ -45,6 +48,7 @@ Spring Boot functions as:
 - Application security boundary
 
 **Conformance Obligations:**
+
 - ✅ 01_SECURE_SDLC standards
 - ✅ 02_API_GOVERNANCE standards (REST-specific controls)
 - ✅ 03_DEVSECOPS standards
@@ -53,21 +57,27 @@ Spring Boot functions as:
 ## Relationship to EATGF Layers
 
 ### Layer 01: Secure SDLC
+
 Spring Boot profiles enforce:
+
 - **Dependency scanning:** `mvn dependency:check` + OWASP plugins in CI/CD
 - **SAST rules:** SonarQube + Checkstyle for Java security patterns
 - **Code review workflow:** PR-based with security checklist
 - **Test coverage requirement:** Minimum 80% unit + integration test coverage via JaCoCo
 
 ### Layer 03: DevSecOps Governance
+
 Spring Boot profiles reference:
+
 - **Container security:** Docker multi-stage builds, non-root user, JVM security flags
 - **CI/CD pipeline gates:** Pre-merge, pre-release, pre-production stages
 - **Secrets management:** Spring Cloud Config + HashiCorp Vault integration
 - **Image scanning:** Trivy vulnerability scanning + SBOM generation
 
 ### Layer 05: Domain Frameworks
+
 Spring Boot profiles implement API Governance controls:
+
 - **Authentication:** Spring Security + JWT | OIDC via OAuth2 resource server
 - **Authorization:** `@PreAuthorize` + `@Secured` annotations + role-based access control
 - **Rate Limiting:** Spring Cloud Gateway rate limiting or custom Bucket4j integration
@@ -75,7 +85,9 @@ Spring Boot profiles implement API Governance controls:
 - **Versioning:** URL-based versioning (`/api/v1/`, `/api/v2/`)
 
 ### Layer 04: Cloud Governance (Conditional)
+
 If deployed in cloud infrastructure:
+
 - **HTTPS enforcement:** Spring Security configuration + server.ssl properties
 - **Environment config:** Spring Cloud Config + Spring Boot Actuator configuration endpoints
 - **Database encryption:** JDBC URL with SSL + Spring Data encryption at rest
@@ -101,7 +113,7 @@ public class SecurityConfig {
                 .antMatchers("/api/v1/**").authenticated()
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        
+
         return http.build();
     }
 
@@ -121,10 +133,10 @@ Session-based authentication is prohibited for API services.
 ```java
 @Component
 public class JwtTokenProvider {
-    
+
     private static final String JWT_ALGORITHM = "RS256";
     private static final long JWT_EXPIRATION = 3600000;  // 1 hour
-    
+
     public String generateToken(UserDetails user) {
         return Jwts.builder()
             .setSubject(user.getUsername())
@@ -150,6 +162,7 @@ public class JwtTokenProvider {
 ```
 
 **Token must include:**
+
 - `sub` (subject/user ID)
 - `tenant_id` (tenant scope)
 - `aud` (audience: API identifier)
@@ -185,17 +198,17 @@ public class InvoiceController {
 @Repository
 public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
     List<Invoice> findByTenantId(String tenantId);
-    
+
     @Query("SELECT i FROM Invoice i WHERE i.tenantId = ?1")
     Page<Invoice> findByTenantIdWithPagination(String tenantId, Pageable pageable);
 }
 
 @Service
 public class InvoiceService {
-    
+
     @Autowired
     private InvoiceRepository repository;
-    
+
     public List<Invoice> findByTenant(String tenantId) {
         // Filter enforced at repository layer
         return repository.findByTenantId(tenantId);
@@ -238,9 +251,9 @@ import org.slf4j.LoggerFactory;
 
 @Component
 public class SecurityAuditLogging {
-    
+
     private static final Logger logger = LoggerFactory.getLogger("security.audit");
-    
+
     public void logAuthenticationEvent(String userId, String tenantId, boolean success) {
         logger.info(
             "event=authentication user_id={} tenant_id={} result={} timestamp={}",
@@ -259,7 +272,7 @@ Configuration in `logback-spring.xml`:
             <customFields>{"service":"api","environment":"production"}</customFields>
         </encoder>
     </appender>
-    
+
     <root level="INFO">
         <appender-ref ref="json" />
     </root>
@@ -267,6 +280,7 @@ Configuration in `logback-spring.xml`:
 ```
 
 **Logs must include:**
+
 - correlation_id (request tracing)
 - tenant_id (multi-tenant audit)
 - endpoint (API path)
@@ -282,12 +296,14 @@ This section maps the 8 mandatory controls from Layer 05 (API Governance) to Spr
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-1-authentication)
 
 **Spring Boot Implementation Pattern:**
+
 - Spring Security + `JwtAuthenticationProvider`
 - Token validation via `JwtTokenProvider.validateToken()`
 - Enforce token expiry via `exp` claim validation
 - Reject sessions; use stateless JWT only
 
 **Compliant Example:**
+
 ```java
 @Configuration
 @EnableWebSecurity
@@ -306,7 +322,7 @@ public class SecurityConfig {
             .oauth2ResourceServer()
                 .jwt()
                 .decoder(jwtDecoder());
-        
+
         return http.build();
     }
 
@@ -318,6 +334,7 @@ public class SecurityConfig {
 ```
 
 **Non-Compliant Example:**
+
 ```java
 // ❌ Session authentication for API
 @Configuration
@@ -340,12 +357,14 @@ public class SecurityConfig {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-2-authorization)
 
 **Spring Boot Implementation Pattern:**
+
 - `@PreAuthorize` annotations with SpEL expressions
 - Tenant-aware permission checks
 - Custom `PermissionEvaluator` for object-level authorization
 - Deny by default via `authorizeRequests()`
 
 **Compliant Example:**
+
 ```java
 @Component
 public class SecurityPermissionEvaluator implements PermissionEvaluator {
@@ -382,6 +401,7 @@ public class InvoiceController {
 ```
 
 **Non-Compliant Example:**
+
 ```java
 // ❌ No object-level permission check
 @GetMapping("/{id}")
@@ -397,12 +417,14 @@ public ResponseEntity<Invoice> getInvoice(@PathVariable Long id) {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-3-versioning)
 
 **Spring Boot Implementation Pattern:**
+
 - URL-based versioning: `/api/v1/`, `/api/v2/`
 - Maintain backward compatibility for 12 months
 - Deprecation headers via Spring HTTP status
 - Document in CHANGELOG.md
 
 **Compliant Example:**
+
 ```java
 @RestController
 public class VersionedInvoiceController {
@@ -424,6 +446,7 @@ public class VersionedInvoiceController {
 ```
 
 **Non-Compliant Example:**
+
 ```java
 // ❌ No versioning; breaking changes in production
 @GetMapping("/api/invoices")
@@ -438,16 +461,18 @@ public ResponseEntity<InvoiceResponseV2> getInvoices() {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-4-input-validation)
 
 **Spring Boot Implementation Pattern:**
+
 - Jakarta Validation (formerly javax.validation) annotations
 - Custom validators for business logic
 - Exception handlers for validation errors
 - Sanitization before database operations
 
 **Compliant Example:**
+
 ```java
 @Data
 public class InvoiceRequest {
-    
+
     @NotNull(message = "Amount is required")
     @DecimalMin(value = "0.01", message = "Amount must be positive")
     @DecimalMax(value = "999999.99", message = "Amount exceeds limit")
@@ -490,6 +515,7 @@ public class InvoiceController {
 ```
 
 **Non-Compliant Example:**
+
 ```java
 // ❌ No validation; raw request body
 @PostMapping
@@ -505,12 +531,14 @@ public ResponseEntity<Invoice> createInvoice(@RequestBody Map<String, Object> re
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-5-rate-limiting)
 
 **Spring Boot Implementation Pattern:**
+
 - Spring Cloud Gateway rate limiting (preferred for microservices)
 - Bucket4j library for custom rate limiting
 - Per-IP and per-user-tier enforcement
 - Return 429 with `Retry-After` header
 
 **Compliant Example:**
+
 ```java
 @Component
 public class RateLimitingFilter implements Filter {
@@ -519,13 +547,13 @@ public class RateLimitingFilter implements Filter {
     private RateLimiterRegistry rateLimiterRegistry;
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, 
+    public void doFilter(ServletRequest request, ServletResponse response,
                         FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         String clientId = getClientId(httpRequest);
-        
+
         RateLimiter rateLimiter = rateLimiterRegistry.rateLimiter(clientId);
-        
+
         if (rateLimiter.acquirePermission()) {
             chain.doFilter(request, response);
         } else {
@@ -543,7 +571,7 @@ public class RateLimitingFilter implements Filter {
 // Configuration
 @Configuration
 public class RateLimitingConfig {
-    
+
     @Bean
     public RateLimiterRegistry rateLimiterRegistry() {
         RateLimiterConfig config = RateLimiterConfig.custom()
@@ -551,13 +579,14 @@ public class RateLimitingConfig {
             .limitForPeriod(100)
             .timeoutDuration(Duration.ofSeconds(2))
             .build();
-        
+
         return RateLimiterRegistry.of(config);
     }
 }
 ```
 
 **Non-Compliant Example:**
+
 ```java
 // ❌ No rate limiting; open to DoS
 @GetMapping("/api/v1/invoices")
@@ -572,12 +601,14 @@ public ResponseEntity<List<Invoice>> getInvoices(@AuthenticationPrincipal UserDe
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-6-testing)
 
 **Spring Boot Implementation Pattern:**
+
 - Unit tests ≥80% coverage via JaCoCo
 - Integration tests with `@SpringBootTest`
 - OpenAPI schema auto-generated via SpringDoc
 - Document breaking changes in CHANGELOG.md
 
 **Compliant Example:**
+
 ```java
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -592,7 +623,7 @@ public class InvoiceControllerTest {
     @Test
     public void testGetInvoiceFilteredByTenant() throws Exception {
         String jwt = generateTestJwt("user-1", "tenant-1");
-        
+
         mockMvc.perform(get("/api/v1/invoices")
             .header("Authorization", "Bearer " + jwt))
             .andExpect(status().isOk())
@@ -602,7 +633,7 @@ public class InvoiceControllerTest {
     @Test
     public void testCrossTenantAccessDenied() throws Exception {
         String jwt = generateTestJwt("user-1", "tenant-1");
-        
+
         mockMvc.perform(get("/api/v1/invoices/999")
             .header("Authorization", "Bearer " + jwt))
             .andExpect(status().isForbidden());
@@ -625,6 +656,7 @@ public class InvoiceControllerTest {
 ```
 
 **Non-Compliant Example:**
+
 ```java
 // ❌ No tests; no OpenAPI schema
 // No test files present
@@ -636,12 +668,14 @@ public class InvoiceControllerTest {
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-7-logging)
 
 **Spring Boot Implementation Pattern:**
+
 - Structured JSON logging via Logstash encoder
 - Spring MVC interceptors for request/response logging
 - MDC (Mapped Diagnostic Context) for correlation IDs
 - Spring Boot Actuator for health + metrics
 
 **Compliant Example:**
+
 ```java
 @Component
 public class RequestLoggingInterceptor implements HandlerInterceptor {
@@ -649,7 +683,7 @@ public class RequestLoggingInterceptor implements HandlerInterceptor {
     private static final Logger logger = LoggerFactory.getLogger("security.audit");
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, 
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                             Object handler) throws Exception {
         String correlationId = UUID.randomUUID().toString();
         MDC.put("correlation_id", correlationId);
@@ -661,7 +695,7 @@ public class RequestLoggingInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
                                Object handler, Exception ex) throws Exception {
         long latency = System.currentTimeMillis() - (long) request.getAttribute("startTime");
-        
+
         logger.info(
             "method={} path={} status={} latency_ms={} tenant_id={}",
             request.getMethod(),
@@ -670,7 +704,7 @@ public class RequestLoggingInterceptor implements HandlerInterceptor {
             latency,
             request.getAttribute("tenantId")
         );
-        
+
         MDC.remove("correlation_id");
     }
 }
@@ -697,6 +731,7 @@ spring:
 ```
 
 **Non-Compliant Example:**
+
 ```java
 // ❌ No structured logging
 logger.info("User " + user + " accessed " + path);  // Plain text
@@ -707,12 +742,14 @@ logger.info("User " + user + " accessed " + path);  // Plain text
 **Root Standard:** [API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md#control-8-zero-trust)
 
 **Spring Boot Implementation Pattern:**
+
 - HTTPS/TLS enforcement via `server.ssl` configuration
 - CORS restriction via Spring Security
 - JWT audience validation
 - Optional: mTLS for inter-service communication
 
 **Compliant Example:**
+
 ```yaml
 # application-production.yml
 server:
@@ -744,7 +781,7 @@ public class SecurityConfig {
             .and()
             .oauth2ResourceServer().jwt()
                 .jwtAuthenticationConverter(jwtAuthenticationConverter());
-        
+
         return http.build();
     }
 
@@ -760,6 +797,7 @@ public class SecurityConfig {
 ```
 
 **Non-Compliant Example:**
+
 ```yaml
 # ❌ No HTTPS; HTTP allowed
 server:
@@ -770,7 +808,7 @@ server:
 spring:
   web:
     cors:
-      allowed-origins: "*"  # Dangerous
+      allowed-origins: "*" # Dangerous
 ```
 
 ## Multi-Tenancy Controls
@@ -784,7 +822,7 @@ spring:
 ```java
 @Component
 public class TenantContextHolder {
-    
+
     private static final ThreadLocal<String> tenantContext = new ThreadLocal<>();
 
     public static void setTenant(String tenantId) {
@@ -802,7 +840,7 @@ public class TenantContextHolder {
 
 @Component
 public class TenantInterceptor implements HandlerInterceptor {
-    
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                             Object handler) throws Exception {
@@ -870,6 +908,7 @@ Spring Boot applications declare dependencies via Maven `pom.xml` or Gradle `bui
 ### Vulnerability Scanning
 
 CI/CD runs:
+
 ```bash
 mvn org.owasp:dependency-check-maven:check
 mvn clean verify  # Includes dependency resolution
@@ -888,12 +927,14 @@ mvn clean verify  # Includes dependency resolution
 ### License Compliance
 
 Approved licenses:
+
 - MIT
 - Apache 2.0
 - BSD (2-Clause, 3-Clause)
 - ISC
 
 Forbidden licenses:
+
 - GPL 2.0 / AGPL
 
 SBOM via `mvn cyclonedx:makeBom`
@@ -952,8 +993,8 @@ jobs:
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
-          java-version: '21'
-          distribution: 'temurin'
+          java-version: "21"
+          distribution: "temurin"
 
       - name: Dependency Check (OWASP)
         run: mvn org.owasp:dependency-check-maven:check
@@ -992,14 +1033,17 @@ jobs:
 ### Deployment Risks
 
 **Spring Security misconfiguration:**
+
 - Risk: Authentication bypass if bean not properly wired
 - Mitigation: Use `@EnableWebSecurity` + explicit `SecurityFilterChain` bean
 
 **N+1 query problem:**
+
 - Risk: Lazy loading causes database query explosion
 - Mitigation: Use `@Transactional(readOnly=true)` + `@EntityGraph` for eager loading
 
 **Connection pool exhaustion:**
+
 - Risk: JDBC connections exhausted under load
 - Mitigation: Configure HikariCP pool size correctly (max-pool-size ≤ 20 per instance)
 
@@ -1024,16 +1068,16 @@ jobs:
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | OWASP ASVS | NIST 800-53 | COBIT 2019 |
-|---|---|---|---|---|---|
-| Spring Security Config | A.8.9 | PW.8 | V14 | SC-8 | DSS05.04 |
-| Authentication (JWT) | A.8.5 | PW.2 | V2 | IA-2 | DSS05.03 |
-| Tenant Isolation | A.8.21 | PW.1 | V1.2 | AC-3 | APO13.01 |
-| Authorization (@PreAuthorize) | A.8.35 | PW.3 | V4 | AC-2 | APO13.02 |
-| Dependency Governance | A.8.28 | PW.4 | V14 | SI-7 | BAI09 |
-| Logging & Auditing | A.8.15 | RV.1 | V15 | AU-2 | MEA01 |
-| Rate Limiting | A.8.22 | PW.6 | V5 | SC-7 | DSS05.03 |
-| Zero Trust (HTTPS/CORS) | A.8.23 | PW.7 | V1.1 | AC-4 | APO13.03 |
+| EATGF Control                 | ISO 27001:2022 | NIST SSDF | OWASP ASVS | NIST 800-53 | COBIT 2019 |
+| ----------------------------- | -------------- | --------- | ---------- | ----------- | ---------- |
+| Spring Security Config        | A.8.9          | PW.8      | V14        | SC-8        | DSS05.04   |
+| Authentication (JWT)          | A.8.5          | PW.2      | V2         | IA-2        | DSS05.03   |
+| Tenant Isolation              | A.8.21         | PW.1      | V1.2       | AC-3        | APO13.01   |
+| Authorization (@PreAuthorize) | A.8.35         | PW.3      | V4         | AC-2        | APO13.02   |
+| Dependency Governance         | A.8.28         | PW.4      | V14        | SI-7        | BAI09      |
+| Logging & Auditing            | A.8.15         | RV.1      | V15        | AU-2        | MEA01      |
+| Rate Limiting                 | A.8.22         | PW.6      | V5         | SC-7        | DSS05.03   |
+| Zero Trust (HTTPS/CORS)       | A.8.23         | PW.7      | V1.1       | AC-4        | APO13.03   |
 
 ## Developer Checklist
 
@@ -1063,31 +1107,37 @@ Before production deployment:
 ### If Not Implemented
 
 **Authentication bypass:**
+
 - Risk: Session cookies or weak JWT validation
 - Impact: Account compromise, unauthorized access
 - Audit finding: NIST 800-53 IA-2 violation
 
 **SQL injection / N+1 queries:**
+
 - Risk: Unvalidated input in JPA queries, lazy loading explosion
 - Impact: Data breach, performance degradation
 - Audit finding: OWASP ASVS V5 violation
 
 **Cross-tenant data access:**
+
 - Risk: Query without tenant filtering
 - Impact: GDPR violations, contract breach
 - Audit finding: ISO 27001 A.8.21 violation
 
 **Supply chain compromise:**
+
 - Risk: Known CVE in transitive Spring dependency
 - Impact: RCE, data breach
 - Audit finding: NIST SSDF PW.4 violation
 
 **Audit trail loss:**
+
 - Risk: Logs not retained or searchable
 - Impact: Forensics failure, compliance violation
 - Audit finding: SOC2 Type II failure
 
 **Non-conformance consequences:**
+
 - Audit findings escalate to board level
 - Customer SLAs violated
 - Financial penalties if breach occurs
@@ -1107,13 +1157,13 @@ Before production deployment:
 
 ## Version Information
 
-| Field | Value |
-|---|---|
-| **Version** | 1.0 |
-| **Release Date** | 2026-02-15 |
-| **Change Type** | Major (First Release) |
-| **EATGF Baseline** | v1.0 (Phases 12a-b Complete) |
-| **Next Review** | Q2 2026 (Spring Boot 3.3 LTS release) |
-| **Author** | EATGF Governance Council |
-| **Status** | Ready for Enterprise Deployment |
-| **Applies To** | Spring Boot 3.2+ LTS, Java 21 LTS, Spring Security 6.x |
+| Field              | Value                                                  |
+| ------------------ | ------------------------------------------------------ |
+| **Version**        | 1.0                                                    |
+| **Release Date**   | 2026-02-15                                             |
+| **Change Type**    | Major (First Release)                                  |
+| **EATGF Baseline** | v1.0 (Phases 12a-b Complete)                           |
+| **Next Review**    | Q2 2026 (Spring Boot 3.3 LTS release)                  |
+| **Author**         | EATGF Governance Council                               |
+| **Status**         | Ready for Enterprise Deployment                        |
+| **Applies To**     | Spring Boot 3.2+ LTS, Java 21 LTS, Spring Security 6.x |
