@@ -1,102 +1,60 @@
 # Internal Audit Procedure v1.0
 
-**Enterprise AI-Aligned Technical Governance Framework (EATGF)**
+Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
-Aligned with ISO/IEC 27001:2022 – Clause 9.2  
-Aligned with ISO/IEC 42001:2023 – Clause 9  
-Guided by ISO 19011:2018
-
----
-
-**Document Type:** Internal Audit Procedure  
-**Authority:** Audit Committee (Board Level)  
-**Control Reference:** EATGF-MEA-AUD-01  
-**Control Authority:** MASTER_CONTROL_MATRIX.md (MCM v1.0)
-
----
-
-## 1. Purpose
-
-This procedure defines the internal audit framework for:
-
-- Information Security Management System (ISMS)
-- Artificial Intelligence Management System (AIMS)
-- Master Control Matrix (MCM) governance controls
-
-It ensures:
-
-- Conformity to ISO/IEC 27001
-- Conformity to ISO/IEC 42001
-- Effectiveness of governance controls
-- Continuous improvement
+| Field          | Value                         |
+| -------------- | ----------------------------- |
+| Document Type  | Internal Audit Procedure      |
+| Version        | 1.1                           |
+| Classification | Controlled                    |
+| Effective Date | 2026-02-15                    |
+| Authority      | Audit Committee (Board Level) |
+| EATGF Layer    | 06_AUDIT_AND_ASSURANCE        |
+| MCM Reference  | EATGF-MEA-AUD-01              |
 
 ---
 
-## 2. Scope
+## Purpose
 
-**Covers:**
+This procedure defines the internal audit framework for validating conformity to the EATGF governance framework and the effectiveness of all 35 controls defined in the Master Control Matrix (MCM). It ensures:
 
-- All 35 controls in MASTER_CONTROL_MATRIX.md
-- ISMS clauses 4–10
-- AIMS clauses 4–10
-- AI lifecycle governance
-- Cloud / DevSecOps / Privacy / BCP controls
-
-**Applies to:**
-
-- All business units
-- All technology environments
-- All AI systems in scope
+- Compliance with ISO/IEC 27001:2022 Clause 9.2 (Internal Audit)
+- Compliance with ISO/IEC 42001:2023 Clause 9 (Performance Evaluation)
+- Continuous effectiveness monitoring of governance controls
+- Evidence collection for certification bodies (ISO, SOC 2, etc.)
+- Audit defensibility of control implementation
 
 ---
 
-## 3. Audit Governance Structure
+## Architectural Position
 
-### 3.1 Authority
+This document operates within **06_AUDIT_AND_ASSURANCE** as the implementation procedure for control EATGF-MEA-AUD-01.
 
-Audit authority derives from: **EATGF-MEA-AUD-01**
+- **EATGF Layer Placement:** 06_AUDIT_AND_ASSURANCE
+- **Governance Scope:** Audit Methodology (Implementation Standard)
+- **Control Authority Relationship:** Implements control EATGF-MEA-AUD-01 as defined in the MCM
 
-Oversight by:
+**Upstream dependency:** Master Control Matrix (Layer 00) defines control EATGF-MEA-AUD-01 with audit scope, frequency, and evidence requirements.
+**Downstream usage:** Internal audit is conducted by dedicated audit function or external consultants per procedure herein.
+**Cross-layer reference:** All Layer 01-08 documents are subject to internal audit verification that their implementations conform to MCM controls.
 
-- Audit Committee (Board Level)
-- Executive Steering Committee
+## Governance Principles
 
-### 3.2 Auditor Independence Model
-
-Auditors must:
-
-- Not audit their own work
-- Not report to operational control owners
-- Be independent of reviewed domain
-
-**Permitted models by organization size:**
-
-| Organization Size | Audit Model |
-|-------------------|-------------|
-| Startup | External consultant |
-| SaaS | Internal cross-functional team |
-| Enterprise | Dedicated internal audit function |
+1. **Audit Traceability** -- All audits scope directly from the MCM's 35 controls. No alternative audit scope is authorized.
+2. **Audit Independence** -- Internal auditors must not audit their own work. Organizational structure prevents audit-function personnel from managing operational controls they would audit.
+3. **Evidence-Based Audit** -- Audit findings are substantiated by documented evidence, control test results, and observable practices. Subjective "observations" are not acceptable audit findings.
+4. **Control-Domain Integrity** -- Audits verify both the existence of controls and their effectiveness within their COBIT domain context.
+5. **Continuous Assurance** -- Audit is not a point-in-time assessment. Organizations maintain ongoing control monitoring with periodic deep audits.
 
 ---
 
-## 4. Audit Types
+## Aligned Standards
 
-### 4.1 Management System Audit
+Aligned with ISO/IEC 27001:2022 – Clause 9.2 (Internal Audit)
+Aligned with ISO/IEC 42001:2023 – Clause 9 (Performance Evaluation)
+Guided by ISO 19011:2018 (Guidelines for auditing management systems)
 
-**Frequency:** Annual
-
-**Covers:**
-
-- ISMS full lifecycle
-- AIMS full lifecycle
-- Risk treatment effectiveness
-- Policy adherence
-
-### 4.2 Control-Based Audit
-
-**Frequency:** Quarterly sampling
-
-**Covers:**
+---
 
 - Selected MCM controls
 - Evidence validation
@@ -185,12 +143,12 @@ Where applicable:
 
 ## 7. Audit Findings Classification
 
-| Severity | Definition |
-|----------|-----------|
-| **Critical** | Control failure causing material risk |
-| **Major** | Control partially implemented or ineffective |
-| **Minor** | Isolated deviation |
-| **Observation** | Improvement opportunity |
+| Severity        | Definition                                   |
+| --------------- | -------------------------------------------- |
+| **Critical**    | Control failure causing material risk        |
+| **Major**       | Control partially implemented or ineffective |
+| **Minor**       | Isolated deviation                           |
+| **Observation** | Improvement opportunity                      |
 
 **Each finding must include:**
 
@@ -241,17 +199,17 @@ Closure verification required before status marked resolved.
 
 ## 10. Audit Frequency Matrix
 
-| Domain | Minimum Frequency |
-|--------|-------------------|
-| EDM | Annual |
-| APO | Annual |
-| BAI | Quarterly sampling |
-| DSS | Quarterly |
-| MEA | Annual |
-| AI Controls | Per model release + Annual |
-| Cloud Controls | Annual |
-| DevSecOps | Quarterly |
-| BCP | Annual test review |
+| Domain         | Minimum Frequency          |
+| -------------- | -------------------------- |
+| EDM            | Annual                     |
+| APO            | Annual                     |
+| BAI            | Quarterly sampling         |
+| DSS            | Quarterly                  |
+| MEA            | Annual                     |
+| AI Controls    | Per model release + Annual |
+| Cloud Controls | Annual                     |
+| DevSecOps      | Quarterly                  |
+| BCP            | Annual test review         |
 
 ---
 
@@ -288,15 +246,62 @@ MCM remains control authority.
 
 ---
 
+## Control Mapping
+
+| EATGF Context              | ISO 27001:2022                      | NIST SSDF                                   | OWASP                | COBIT                                              |
+| -------------------------- | ----------------------------------- | ------------------------------------------- | -------------------- | -------------------------------------------------- |
+| Internal Audit Framework   | Clause 9.2 (Internal Audit)         | RV.1 (Identify and Confirm Vulnerabilities) | SAMM Verification    | MEA02 (Monitor, Evaluate, Assess Internal Control) |
+| Audit Scope Determination  | Clause 6.1.2 (Risk assessment)      | PO.1 (Define Security Requirements)         | SAMM Governance      | APO13 (Manage Security and Privacy)                |
+| Audit Evidence Collection  | Clause 8.1 (General competence)     | PW.1 (Design Software)                      | Testing Requirements | MEA01 (Monitor, Evaluate, Assess Performance)      |
+| Corrective Action Tracking | Clause 10.2 (Continual improvement) | RV.2 (Analyze Maturity)                     | Risk Remediation     | MEA02 (Assess Control Effectiveness)               |
+
+---
+
+## Developer Checklist
+
+- [ ] Schedule annual management system audit (ISMS + AIMS)
+- [ ] Plan quarterly sampling audits of highest-risk controls (BAI, DSS, DevSecOps domains)
+- [ ] Assign independent auditors (external or internal auditor function, not operational staff)
+- [ ] Define audit evidence requirements for each control before audit begins
+- [ ] Document all audit findings with specific evidence (not subjective observations)
+- [ ] Log all findings in Corrective Action Register with owner assignment and deadline
+- [ ] Verify corrective actions are implemented and evidence collected
+- [ ] Report audit results to Audit Committee quarterly
+- [ ] Maintain audit records for minimum 7 years per compliance requirements
+
+---
+
+## Governance Implications
+
+**Risk if not implemented:** Without formal internal audit, control effectiveness is unverified. Compliance claims lack evidence. External auditors will cite lack of internal audit process as a finding.
+
+**Operational impact:** Internal audit is cost-intensive (staffing or external consultants). However, absence of audit results in failed certifications, delayed sales cycles, and reputational damage.
+
+**Audit consequences:** Absence of internal audit is a non-conformity finding under ISO 27001 Clause 9.2 and ISO 42001 Clause 9. External certification bodies will refuse to certify without internal audit evidence.
+
+**Cross-team dependencies:** Internal audit requires access to all operational teams, infrastructure, source code, and change records. Audit function must be independent of operational control owners (no conflicts of interest).
+
+---
+
+## Official References
+
+- ISO/IEC 27001:2022 -- Information security management system (Clause 9.2: Internal Audit)
+- ISO/IEC 42001:2023 -- Artificial intelligence management system (Clause 9: Performance Evaluation)
+- ISO 19011:2018 -- Guidelines for auditing management systems
+- COBIT 2019 -- MEA domain (Monitor, Evaluate, Assess)
+
+---
+
 ## Document Control
 
-| Field | Value |
-|-------|-------|
-| **Version** | 1.0 |
-| **Status** | Draft – Pending Governance Approval |
-| **Last Updated** | February 13, 2026 |
-| **Next Review** | Formal Review & Approval Cycle |
-| **Owner** | Chief Audit Officer / Internal Audit Function |
-| **Approver** | Audit Committee (Board Level) |
-| **Related Procedures** | EATGF-MEA-AUD-01 (MCM) |
-| **Framework References** | ISO 19011:2018, ISO 27001:2022, ISO 42001:2023 |
+| Field                    | Value                                           |
+| ------------------------ | ----------------------------------------------- |
+| **Version**              | 1.1                                             |
+| **Change Type**          | Structural Conformance (Template Applied)       |
+| **Status**               | Conformant to EATGF Document Signature Template |
+| **Last Updated**         | February 15, 2026                               |
+| **Next Review**          | August 2026 or upon material changes to MCM     |
+| **Owner**                | Chief Audit Officer / Internal Audit Function   |
+| **Approver**             | Audit Committee (Board Level)                   |
+| **Related Procedures**   | EATGF-MEA-AUD-01 (MCM)                          |
+| **Framework References** | ISO 19011:2018, ISO 27001:2022, ISO 42001:2023  |

@@ -2,14 +2,37 @@
 
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
-| Field | Value |
-|-------|-------|
-| Document Type | Guide |
-| Version | 2.0 |
-| Classification | Internal |
-| Effective Date | 2026-02-14 |
-| Authority | Enterprise Architecture & Governance Office |
-| MCM Reference | All EATGF Controls (Edition-specific applicability) |
+| Field          | Value                                               |
+| -------------- | --------------------------------------------------- |
+| Document Type  | Guide                                               |
+| Version        | 2.1                                                 |
+| Classification | Internal                                            |
+| Effective Date | 2026-02-15                                          |
+| Authority      | Enterprise Architecture & Governance Office         |
+| EATGF Layer    | 03_GOVERNANCE_MODELS                                |
+| MCM Reference  | All EATGF Controls (Edition-specific applicability) |
+
+---
+
+## Architectural Position
+
+This document operates within **03_GOVERNANCE_MODELS** as the edition-based governance implementation guide.
+
+- **EATGF Layer Placement:** 03_GOVERNANCE_MODELS
+- **Governance Scope:** Implementation Standard
+- **Control Authority Relationship:** Interprets controls defined in the MCM and maps them to organization size-appropriate implementation levels
+
+**Upstream dependency:** Master Control Matrix (Layer 00) defines control applicability fields (Startup/SaaS/Enterprise). Governance Charter (Layer 04) establishes organizational authority.
+**Downstream usage:** Layer 08 (Developer Governance Layer) framework profiles reference edition-based applicability. Audit procedures (Layer 06) scope audit depth based on edition tier.
+**Cross-layer reference:** Control Objectives (Layer 02) and Policy Layer (Layer 04) policies are implemented at the depth specified by the applicable edition in this guide.
+
+## Governance Principles
+
+1. **Scalable Implementation** -- Governance must scale with organizational maturity; over-governance at startup stage creates friction, under-governance at enterprise stage creates risk
+2. **Control-Centric Architecture** -- All edition tiers reference MCM control identifiers; no governance recommendation exists outside the MCM control taxonomy
+3. **Audit Traceability** -- Each edition tier specifies evidence expectations appropriate to organizational capability
+4. **Developer-Operational Alignment** -- Implementation guidance is practical, time-bounded, and tool-specific for each edition
+5. **Single Source of Truth** -- Edition definitions derive exclusively from MCM applicability fields
 
 ---
 
@@ -22,6 +45,7 @@
 ### Core Governance Requirements (Startup)
 
 **Essential:**
+
 1. Basic information security controls
 2. Data backup and disaster recovery
 3. Access control (passwords + basics)
@@ -29,6 +53,7 @@
 5. Documentation of key processes
 
 **Nice to have:**
+
 - Formal policies (informal guidelines okay)
 - Compliance certifications (focus on practice)
 - AI governance (only if building AI)
@@ -37,14 +62,14 @@
 
 ### Startup Control Implementation
 
-| Control | Requirement | Implementation | Time |
-|---------|------------|-----------------|------|
-| **EATGF-DSS-SEC-01** (Access) | Passwords and strong auth | 1Password or similar | 1 week |
-| **EATGF-DSS-ENC-01** (Encryption) | Encrypt sensitive data | Use default TLS/encryption | Already done |
-| **EATGF-DSS-VULN-01** (Vulnerabilities) | Keep systems patched | Auto-updates enabled | Ongoing |
-| **EATGF-APO-ARCH-01** (Architecture) | Document system design | 1-page architecture diagram | 1 day |
-| **EATGF-APO-RISK-01** (Risk Register) | Know top 5 risks | Spreadsheet with actions | 1 day |
-| **EATGF-MEA-PERF-01** (KPIs) | Track what matters | System uptime and customer issues | 1 day |
+| Control                                 | Requirement               | Implementation                    | Time         |
+| --------------------------------------- | ------------------------- | --------------------------------- | ------------ |
+| **EATGF-DSS-SEC-01** (Access)           | Passwords and strong auth | 1Password or similar              | 1 week       |
+| **EATGF-DSS-ENC-01** (Encryption)       | Encrypt sensitive data    | Use default TLS/encryption        | Already done |
+| **EATGF-DSS-VULN-01** (Vulnerabilities) | Keep systems patched      | Auto-updates enabled              | Ongoing      |
+| **EATGF-APO-ARCH-01** (Architecture)    | Document system design    | 1-page architecture diagram       | 1 day        |
+| **EATGF-APO-RISK-01** (Risk Register)   | Know top 5 risks          | Spreadsheet with actions          | 1 day        |
+| **EATGF-MEA-PERF-01** (KPIs)            | Track what matters        | System uptime and customer issues | 1 day        |
 
 **Total Setup Time:** ~2 weeks for full startup pack
 
@@ -75,11 +100,11 @@
 
 ### Startup Team Responsibilities
 
-| Role | Who | Hours/Week |
-|------|-----|-----------|
-| Security lead | 1 founder/dev | 4 hours |
-| Data steward | 1 person | 2 hours |
-| Risk awareness | Everyone | 15 min/month |
+| Role           | Who           | Hours/Week   |
+| -------------- | ------------- | ------------ |
+| Security lead  | 1 founder/dev | 4 hours      |
+| Data steward   | 1 person      | 2 hours      |
+| Risk awareness | Everyone      | 15 min/month |
 
 **Total governance effort:** ~6-8 hours/week across small team
 
@@ -100,12 +125,14 @@
 ### Startup Compliance Reality
 
 **What investors/customers actually care about:**
+
 - Data is encrypted and backed up
 - Access is logged and controlled
 - You have a security incident plan
 - You can demonstrate SOC 2 Type I basics
 
 **Avoid:**
+
 - Lengthy policies without implementation value
 - Formal governance committees at startup scale
 - Heavy compliance tooling (spreadsheets are sufficient)
@@ -122,6 +149,7 @@
 ### SaaS Governance Requirements
 
 **Essential:**
+
 1. Formal policies with acknowledgment
 2. Access control with quarterly reviews
 3. Vulnerability management process
@@ -132,6 +160,7 @@
 8. API security standards (if SaaS APIs)
 
 **Supporting:**
+
 - Governance council (monthly meetings)
 - Risk register (quarterly updates)
 - Compliance tracking (monthly status)
@@ -141,22 +170,22 @@
 
 ### SaaS Control Implementation
 
-| Domain | Control | Implementation |
-|--------|---------|-----------------|
-| **Architecture** | EATGF-APO-ARCH-01 | System architecture documented |
-| | EATGF-BAI-CHG-01 | Integration architecture and change control |
-| | EATGF-BAI-CONF-01 | Technology platform standards |
-| **Security** | EATGF-DSS-SEC-01 | IAM system (Okta/Auth0) |
-| | EATGF-DSS-ENC-01 | Full encryption at rest and in transit |
-| | EATGF-DSS-VULN-01 | Monthly vulnerability scanning |
-| **AI** | EATGF-AI-LC-01 | AI system intake and governance |
-| | EATGF-AI-RISK-01 | Fairness/bias assessment |
-| **API** | EATGF-API-LC-01 | API design standards and OpenAPI |
-| | EATGF-API-SEC-01 | OAuth 2.0 authentication |
-| **Risk** | EATGF-APO-RISK-01 | Annual risk assessment |
-| | EATGF-MEA-PERF-01 | Monthly risk dashboard |
-| **Performance** | EATGF-MEA-PERF-01 | Monthly KPI reporting |
-| | EATGF-MEA-MAT-01 | Annual maturity assessment |
+| Domain           | Control           | Implementation                              |
+| ---------------- | ----------------- | ------------------------------------------- |
+| **Architecture** | EATGF-APO-ARCH-01 | System architecture documented              |
+|                  | EATGF-BAI-CHG-01  | Integration architecture and change control |
+|                  | EATGF-BAI-CONF-01 | Technology platform standards               |
+| **Security**     | EATGF-DSS-SEC-01  | IAM system (Okta/Auth0)                     |
+|                  | EATGF-DSS-ENC-01  | Full encryption at rest and in transit      |
+|                  | EATGF-DSS-VULN-01 | Monthly vulnerability scanning              |
+| **AI**           | EATGF-AI-LC-01    | AI system intake and governance             |
+|                  | EATGF-AI-RISK-01  | Fairness/bias assessment                    |
+| **API**          | EATGF-API-LC-01   | API design standards and OpenAPI            |
+|                  | EATGF-API-SEC-01  | OAuth 2.0 authentication                    |
+| **Risk**         | EATGF-APO-RISK-01 | Annual risk assessment                      |
+|                  | EATGF-MEA-PERF-01 | Monthly risk dashboard                      |
+| **Performance**  | EATGF-MEA-PERF-01 | Monthly KPI reporting                       |
+|                  | EATGF-MEA-MAT-01  | Annual maturity assessment                  |
 
 ---
 
@@ -178,6 +207,7 @@ CEO/Founder
 ```
 
 **Governance Council (Monthly):**
+
 - CTO (chair)
 - Security Officer
 - Product Lead
@@ -189,6 +219,7 @@ CEO/Founder
 ### SaaS Policies (Comprehensive Set)
 
 **Create formal policies:**
+
 1. Information Security Policy (2 pages)
 2. Data Governance Policy (2 pages)
 3. Access Control Policy (2 pages)
@@ -199,6 +230,7 @@ CEO/Founder
 8. Incident Response Plan (3 pages)
 
 **Communication:**
+
 - Email announcement to all staff
 - Training session (30 min monthly)
 - Printed copy in office
@@ -209,6 +241,7 @@ CEO/Founder
 ### SaaS Control Testing
 
 **Quarterly Control Testing:**
+
 - Sample testing of 5-10 key controls
 - Document results in evidence template
 - Remediate any gaps within 30 days
@@ -216,38 +249,38 @@ CEO/Founder
 
 **Example Test Schedule:**
 
-| Quarter | Controls Tested |
-|---------|-----------------|
-| Q1 | Access control, Data encryption |
-| Q2 | Vulnerability management, Backups |
-| Q3 | Incident response, API security |
-| Q4 | Maturity assessment, Risk review |
+| Quarter | Controls Tested                   |
+| ------- | --------------------------------- |
+| Q1      | Access control, Data encryption   |
+| Q2      | Vulnerability management, Backups |
+| Q3      | Incident response, API security   |
+| Q4      | Maturity assessment, Risk review  |
 
 ---
 
 ### SaaS Reporting Cadence
 
-| Report | Frequency | Owner |
-|--------|-----------|-------|
-| Risk dashboard | Monthly | Security/Risk officer |
-| KPI metrics | Monthly | Governance lead |
-| Compliance status | Monthly | Compliance officer |
-| Incident summary | Monthly | Security |
-| Governance council notes | Monthly | CTO |
-| Audit readiness | Quarterly | Compliance officer |
-| Risk assessment | Annual | Governance council |
-| Maturity assessment | Annual | External assessor |
+| Report                   | Frequency | Owner                 |
+| ------------------------ | --------- | --------------------- |
+| Risk dashboard           | Monthly   | Security/Risk officer |
+| KPI metrics              | Monthly   | Governance lead       |
+| Compliance status        | Monthly   | Compliance officer    |
+| Incident summary         | Monthly   | Security              |
+| Governance council notes | Monthly   | CTO                   |
+| Audit readiness          | Quarterly | Compliance officer    |
+| Risk assessment          | Annual    | Governance council    |
+| Maturity assessment      | Annual    | External assessor     |
 
 ---
 
 ### SaaS Governance Effort
 
-| Role | Hours/Week |
-|------|-----------|
-| CTO (governance oversight) | 4-6 hours |
-| Security Officer | 10-15 hours |
-| Compliance Officer (part-time) | 8-10 hours |
-| Team acknowledgments/training | 1 hour each |
+| Role                           | Hours/Week  |
+| ------------------------------ | ----------- |
+| CTO (governance oversight)     | 4-6 hours   |
+| Security Officer               | 10-15 hours |
+| Compliance Officer (part-time) | 8-10 hours  |
+| Team acknowledgments/training  | 1 hour each |
 
 **Total:** 25-35 hours/week governance team
 
@@ -256,6 +289,7 @@ CEO/Founder
 ### SaaS Customers Expectations
 
 **What typical SaaS customers ask for:**
+
 - SOC 2 Type II certification (annual external audit)
 - Data location options (US/EU)
 - Encryption transparency (we have it)
@@ -275,6 +309,7 @@ CEO/Founder
 ### Enterprise Governance Requirements
 
 **All SaaS requirements, plus:**
+
 1. Executive governance committee
 2. CISO role (dedicated person)
 3. Chief Compliance Officer or equivalent
@@ -333,6 +368,7 @@ Board / Executive Committee
 ### Enterprise Control Implementation
 
 **Full implementation of ALL controls:**
+
 - Architecture controls (3 controls)
 - Security controls (3 controls - mature level)
 - AI governance controls (full framework)
@@ -344,18 +380,18 @@ Board / Executive Committee
 
 ### Enterprise Governance Tools
 
-| Function | Tool Category | Example |
-|----------|--------------|---------|
-| Policy Mgmt | Document Management | SharePoint + workflow |
-| Risk Mgmt | Specialized platform | AuditBoard / LogicGate |
-| Compliance | Continuous monitoring | Domo / Tableau |
-| Security monitoring | SIEM + EDR | Splunk + CrowdStrike |
-| Identity Mgmt | Enterprise IAM | Okta Enterprise |
-| API Management | Platform | Apigee / Kong |
-| Audit | Audit platform | AuditBoard / Workiva |
-| Data Governance | Data catalog | Collibra / Alation |
-| Vulnerability Mgmt | Platform | Qualys / Tenable |
-| Incident Response | SOAR | ServiceNow / Demisto |
+| Function            | Tool Category         | Example                |
+| ------------------- | --------------------- | ---------------------- |
+| Policy Mgmt         | Document Management   | SharePoint + workflow  |
+| Risk Mgmt           | Specialized platform  | AuditBoard / LogicGate |
+| Compliance          | Continuous monitoring | Domo / Tableau         |
+| Security monitoring | SIEM + EDR            | Splunk + CrowdStrike   |
+| Identity Mgmt       | Enterprise IAM        | Okta Enterprise        |
+| API Management      | Platform              | Apigee / Kong          |
+| Audit               | Audit platform        | AuditBoard / Workiva   |
+| Data Governance     | Data catalog          | Collibra / Alation     |
+| Vulnerability Mgmt  | Platform              | Qualys / Tenable       |
+| Incident Response   | SOAR                  | ServiceNow / Demisto   |
 
 **Annual spend:** $2-5M depending on organization size
 
@@ -365,15 +401,15 @@ Board / Executive Committee
 
 **Typical compliance requirements:**
 
-| Standard | Requirement | Frequency |
-|----------|------------|-----------|
-| **SOC 2 Type II** | Security & operational controls | Annual audit |
-| **ISO 27001** | Information security mgmt | Annual/bi-annual audit |
-| **GDPR** | Data privacy for EU customers | Ongoing + DPA review |
-| **HIPAA** | Healthcare data (if applicable) | Annual audit |
-| **PCI-DSS** | Payment card data (if applicable) | Annual audit |
-| **FedRAMP** | US federal sales (if applicable) | Annual assessment |
-| **Industry-specific** | Financial/healthcare/etc. | Varies |
+| Standard              | Requirement                       | Frequency              |
+| --------------------- | --------------------------------- | ---------------------- |
+| **SOC 2 Type II**     | Security & operational controls   | Annual audit           |
+| **ISO 27001**         | Information security mgmt         | Annual/bi-annual audit |
+| **GDPR**              | Data privacy for EU customers     | Ongoing + DPA review   |
+| **HIPAA**             | Healthcare data (if applicable)   | Annual audit           |
+| **PCI-DSS**           | Payment card data (if applicable) | Annual audit           |
+| **FedRAMP**           | US federal sales (if applicable)  | Annual assessment      |
+| **Industry-specific** | Financial/healthcare/etc.         | Varies                 |
 
 ---
 
@@ -403,14 +439,14 @@ Board / Executive Committee
 
 ### Enterprise Governance Effort
 
-| Role | Team Size | Hours/Week |
-|------|-----------|-----------|
-| CISO | 1 | 50-60 |
-| Security team | 5-10 | 200+ |
-| Compliance officer | 1-2 | 40-50 |
-| Audit team | 2-3 | 80-120 |
-| Risk team | 1-2 | 40-80 |
-| Governance administration | 1-2 | 40-60 |
+| Role                      | Team Size | Hours/Week |
+| ------------------------- | --------- | ---------- |
+| CISO                      | 1         | 50-60      |
+| Security team             | 5-10      | 200+       |
+| Compliance officer        | 1-2       | 40-50      |
+| Audit team                | 2-3       | 80-120     |
+| Risk team                 | 1-2       | 40-80      |
+| Governance administration | 1-2       | 40-60      |
 
 **Total:** 500-800+ hours/week (8-12 FTEs)
 
@@ -435,18 +471,18 @@ Overall: 4.4 (Managed - Excellent practices)
 
 ## Comparing the Three Editions
 
-| Factor | Startup | SaaS | Enterprise |
-|--------|---------|------|-----------|
-| **Team size** | 1-10 | 10-50 | 50+ |
-| **Governance effort** | 1-2 FTE | 2-3 FTE | 8-12 FTE |
-| **Annual cost** | $50K | $200K | $2-5M |
-| **Policies** | 3 short | 7-8 formal | 15+ detailed |
-| **Risk reviews** | Annual | Quarterly | Monthly |
-| **Maturity target** | 2 (Dev) | 3-4 (Def/Mgmt) | 4-5 (Mgmt/Opt) |
-| **Compliance certs** | None required | SOC 2 Type II | Multiple |
-| **Board oversight** | Informal | CTO + board member | Audit committee |
-| **Tools** | Spreadsheets | 3-5 tools | 10+ tools |
-| **Internal audit** | No | Maybe | Yes (dedicated) |
+| Factor                | Startup       | SaaS               | Enterprise      |
+| --------------------- | ------------- | ------------------ | --------------- |
+| **Team size**         | 1-10          | 10-50              | 50+             |
+| **Governance effort** | 1-2 FTE       | 2-3 FTE            | 8-12 FTE        |
+| **Annual cost**       | $50K          | $200K              | $2-5M           |
+| **Policies**          | 3 short       | 7-8 formal         | 15+ detailed    |
+| **Risk reviews**      | Annual        | Quarterly          | Monthly         |
+| **Maturity target**   | 2 (Dev)       | 3-4 (Def/Mgmt)     | 4-5 (Mgmt/Opt)  |
+| **Compliance certs**  | None required | SOC 2 Type II      | Multiple        |
+| **Board oversight**   | Informal      | CTO + board member | Audit committee |
+| **Tools**             | Spreadsheets  | 3-5 tools          | 10+ tools       |
+| **Internal audit**    | No            | Maybe              | Yes (dedicated) |
 
 ---
 
@@ -457,6 +493,7 @@ Overall: 4.4 (Managed - Excellent practices)
 **Trigger:** Reaching 8-10 people
 
 **Key changes needed:**
+
 1. Hire dedicated security person
 2. Formalize policies
 3. Implement IAM system (Okta/Auth0)
@@ -473,6 +510,7 @@ Overall: 4.4 (Managed - Excellent practices)
 **Trigger:** Reaching 40+ people or $10M+ revenue
 
 **Key changes needed:**
+
 1. Hire CISO (executive-level)
 2. Hire Compliance officer
 3. Implement compliance tools
@@ -486,9 +524,54 @@ Overall: 4.4 (Managed - Excellent practices)
 
 **Document Control**
 
-| Version | Date | Author | Change Description |
-|---------|------|--------|-------------------|
-| 1.0 | 2026-02-01 | Governance Office | Initial edition guide |
-| 2.0 | 2026-02-14 | Enterprise Architecture & Governance Office | Adopted EATGF-xxx control taxonomy; corrected tone; added EATGF header; removed placeholder content |
+| Version | Date       | Author                                      | Change Description                                                                                  |
+| ------- | ---------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| 1.0     | 2026-02-01 | Governance Office                           | Initial edition guide                                                                               |
+| 2.0     | 2026-02-14 | Enterprise Architecture & Governance Office | Adopted EATGF-xxx control taxonomy; corrected tone; added EATGF header; removed placeholder content |
+| 2.1     | 2026-02-15 | Enterprise Architecture & Governance Office | EATGF Document Signature Template conformance applied                                               |
 
 **Next Review:** August 2026
+
+---
+
+## Control Mapping
+
+| EATGF Context                       | ISO 27001:2022                                | NIST SSDF                                            | OWASP                                | COBIT                                              |
+| ----------------------------------- | --------------------------------------------- | ---------------------------------------------------- | ------------------------------------ | -------------------------------------------------- |
+| Edition-based control applicability | Clause 4.3 (Determining scope of ISMS)        | PO.1 (Define Security Requirements)                  | SAMM Governance (Strategy & Metrics) | EDM01 (Ensure Governance Framework Setting)        |
+| Startup tier implementation         | Clause 6.1.2 (Risk assessment - proportional) | PW.1 (Design Software to Meet Security Requirements) | SAMM Implementation                  | APO01 (Manage the IT Management Framework)         |
+| SaaS tier compliance scaling        | Clause 9.1 (Monitoring and measurement)       | PW.4 (Verify Software Release Integrity)             | SAMM Verification                    | MEA01 (Monitor, Evaluate, Assess Performance)      |
+| Enterprise tier governance maturity | Clause 10.2 (Continual improvement)           | RV.3 (Analyze Vulnerabilities)                       | SAMM Operations                      | MEA02 (Monitor, Evaluate, Assess Internal Control) |
+
+---
+
+## Developer Checklist
+
+- [ ] Identify organization edition tier (Startup / SaaS / Enterprise) based on team size and revenue thresholds
+- [ ] Map applicable MCM controls to the identified edition tier
+- [ ] Implement controls at the depth specified for the applicable tier
+- [ ] Establish governance cadence (review frequency) per edition requirements
+- [ ] Assign control ownership roles as defined per edition
+- [ ] Document evidence collection approach proportional to tier requirements
+- [ ] Plan edition transition triggers and timeline when approaching tier boundary
+
+---
+
+## Governance Implications
+
+**Risk if not implemented:** Organizations apply governance uniformly regardless of size, resulting in either paralysis (over-governance for startups) or exposure (under-governance for enterprises). Without edition-based guidance, MCM controls are not practically implementable.
+
+**Operational impact:** Edition selection determines staffing requirements (1-2 FTE for Startup vs 8-12 FTE for Enterprise), tool investment, compliance certification targets, and Board reporting obligations.
+
+**Audit consequences:** External auditors assess control implementation proportionality against organizational context. Absence of documented edition selection creates ambiguity in audit scoping under ISO 27001 Clause 4.3.
+
+**Cross-team dependencies:** Edition transitions (Startup to SaaS, SaaS to Enterprise) require coordination across engineering, security, compliance, and executive leadership. Transition triggers must be monitored.
+
+---
+
+## Official References
+
+- ISO/IEC 27001:2022 -- Information security management system (Clause 4.3: Scope determination)
+- COBIT 2019 -- Governance System Design Factors (Organization Size as design factor)
+- NIST Cybersecurity Framework 2.0 -- Tiered implementation profiles
+- OWASP SAMM 2.0 -- Maturity-driven security program assessment

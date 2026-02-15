@@ -1,4 +1,14 @@
-# 01_GOVERNANCE_CHARTER
+# 01_GOVERNANCE_CHARTER -- DEPRECATED
+
+**NOTICE: This document has been superseded by [GOVERNANCE_CHARTER_FORMAL_v2.md](./GOVERNANCE_CHARTER_FORMAL_v2.md)**
+
+**Please use GOVERNANCE_CHARTER_FORMAL_v2.md as the authoritative governance charter.**
+
+This document is retained for reference and historical completeness only and is no longer maintained.
+
+---
+
+# DEPRECATED: 01_GOVERNANCE_CHARTER
 
 | Field          | Value                                           |
 | -------------- | ----------------------------------------------- |

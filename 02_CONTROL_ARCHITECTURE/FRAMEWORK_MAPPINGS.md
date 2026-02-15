@@ -1,4 +1,14 @@
-# FRAMEWORK_MAPPINGS
+# FRAMEWORK_MAPPINGS -- DEPRECATED
+
+**NOTICE: This document has been superseded by [FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md](./FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md)**
+
+**Please use FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md as the authoritative control mappings reference.**
+
+This document is retained for reference and historical completeness only and is no longer maintained.
+
+---
+
+## DEPRECATED: Framework Mappings (Legacy)
 
 | Field          | Value                                         |
 | -------------- | --------------------------------------------- |

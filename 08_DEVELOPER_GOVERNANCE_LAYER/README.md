@@ -73,7 +73,7 @@ CI/CD security, secrets management, and supply chain controls.
 - SUPPLY_CHAIN_SECURITY_STANDARD.md
 - SBOM_GOVERNANCE_STANDARD.md
 
-### 04_SAAS_AND_CLOUD_GOVERNANCE
+### 05_SAAS_AND_CLOUD_GOVERNANCE
 
 Multi-tenancy, cloud resource control, and compliance architecture.
 
@@ -83,7 +83,7 @@ Multi-tenancy, cloud resource control, and compliance architecture.
 - CLOUD_COST_CONTROL_STANDARD.md
 - DATA_RESIDENCY_AND_COMPLIANCE_STANDARD.md
 
-### 05_APPLICATION_LIFECYCLE_GOVERNANCE
+### 06_APPLICATION_LIFECYCLE_GOVERNANCE
 
 Release management, change control, and incident response.
 
@@ -92,7 +92,7 @@ Release management, change control, and incident response.
 - ROLLBACK_AND_INCIDENT_RESPONSE_STANDARD.md
 - END_OF_LIFE_GOVERNANCE_STANDARD.md
 
-### 06_TECHNICAL_ACCOUNTABILITY_MODEL
+### 07_TECHNICAL_ACCOUNTABILITY_MODEL
 
 Engineering decision authority, RACI, and exception handling.
 

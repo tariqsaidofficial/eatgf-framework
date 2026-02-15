@@ -5,13 +5,13 @@
 **Version:** 1.0
 **Issue Date:** 2026-02-14
 **Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Subdomain:** 06_TECHNICAL_ACCOUNTABILITY_MODEL
+**Subdomain:** 07_TECHNICAL_ACCOUNTABILITY_MODEL
 **Governance Scope:** Exception Process
 **Control Authority Relationship:** Implements controls
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / 06_TECHNICAL_ACCOUNTABILITY_MODEL
+**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / 07_TECHNICAL_ACCOUNTABILITY_MODEL
 
 **Governance Scope:** Security exception request, approval, tracking, and remediation process.
 

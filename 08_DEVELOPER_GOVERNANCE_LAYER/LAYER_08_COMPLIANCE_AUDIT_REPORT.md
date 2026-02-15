@@ -269,7 +269,7 @@ This audit validates Layer 08 documents against:
 **Missing Blocks (Out of Audit Scope):**
 
 - 03_DEVSECOPS_GOVERNANCE (Not yet deployed)
-- 05_APPLICATION_LIFECYCLE_GOVERNANCE (Not yet deployed)
+- 06_APPLICATION_LIFECYCLE_GOVERNANCE (Not yet deployed)
 
 ### Production Readiness Verdict
 

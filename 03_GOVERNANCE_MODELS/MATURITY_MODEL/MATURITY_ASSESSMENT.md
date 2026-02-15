@@ -5,12 +5,35 @@
 | Field                | Value                                       |
 | -------------------- | ------------------------------------------- |
 | Document Type        | Assessment Framework                        |
-| Version              | 1.1                                         |
+| Version              | 1.2                                         |
 | Classification       | Internal                                    |
-| Effective Date       | 2026-02-14                                  |
+| Effective Date       | 2026-02-15                                  |
 | Assessment Frequency | Annual                                      |
 | Authority            | Enterprise Architecture & Governance Office |
+| EATGF Layer          | 03_GOVERNANCE_MODELS                        |
 | MCM Reference        | EATGF-MEA-MAT-01                            |
+
+---
+
+## Architectural Position
+
+This document operates within **03_GOVERNANCE_MODELS/MATURITY_MODEL** as the governance maturity assessment framework.
+
+- **EATGF Layer Placement:** 03_GOVERNANCE_MODELS
+- **Governance Scope:** Assessment Framework
+- **Control Authority Relationship:** Implements control EATGF-MEA-MAT-01 as defined in the MCM
+
+**Upstream dependency:** Master Control Matrix (Layer 00) defines EATGF-MEA-MAT-01. Performance Model (peer document) provides KPI targets that feed maturity scoring.
+**Downstream usage:** Audit procedures (Layer 06) reference maturity assessments as evidence. Governance by Team Size (peer document) uses maturity targets to define edition-appropriate implementation depth.
+**Cross-layer reference:** Control Objectives (Layer 02) specify the control requirements that maturity levels measure.
+
+## Governance Principles
+
+1. **Audit Traceability** -- Maturity scores are evidence-backed and auditable; subjective scoring is not acceptable
+2. **Versioned Governance** -- Assessment results are versioned and dated; historical progression is retained
+3. **Control-Centric Architecture** -- Maturity dimensions map directly to MCM control domains (EDM, APO, BAI, DSS, MEA)
+4. **Single Source of Truth** -- Maturity level definitions are standardized in this document; no alternative maturity scales are authorized
+5. **Developer-Operational Alignment** -- Assessment criteria include technology-specific controls (CI/CD, SAST/DAST, infrastructure) alongside governance controls
 
 ---
 
@@ -404,6 +427,57 @@ Progress on Last Year's Goals:
 [See separate assessment_form.xlsx for interactive questionnaire]
 
 ---
+
+## Control Mapping
+
+| EATGF Context                   | ISO 27001:2022                          | NIST SSDF                                   | OWASP             | COBIT                                              |
+| ------------------------------- | --------------------------------------- | ------------------------------------------- | ----------------- | -------------------------------------------------- |
+| Maturity Assessment Model       | Clause 9.1 (Monitoring and measurement) | RV.1 (Identify and Confirm Vulnerabilities) | SAMM Metrics      | MEA01 (Monitor, Evaluate, Assess Performance)      |
+| Continuous Improvement Tracking | Clause 10.2 (Continual improvement)     | RV.2 (Analyze Maturity)                     | SAMM Optimization | MEA02 (Monitor, Evaluate, Assess Internal Control) |
+| Domain-Based Assessment         | Clause 6.1.2 (Risk assessment)          | PO.1 (Define Security Requirements)         | SAMM Governance   | EDM01 (Ensure Governance Framework Setting)        |
+
+---
+
+## Developer Checklist
+
+- [ ] Define maturity baseline for your organization (assess current state before planning improvements)
+- [ ] Assign maturity assessment ownership to Governance Council or CISO
+- [ ] Conduct baseline assessment annual minimum (or per major control changes)
+- [ ] Document assessment results with evidence (audit findings, control test results)
+- [ ] Create improvement roadmap tied to maturity level targets
+- [ ] Track progress quarterly at department level, semi-annually at executive level
+- [ ] Validate external auditor acceptance of maturity level claims
+- [ ] Link maturity improvements to resource planning and headcount decisions
+
+---
+
+## Governance Implications
+
+**Risk if not implemented:** Without formal maturity assessment, organizations are unaware of governance capability gaps. Controls may be implemented inconsistently across departments. Audit findings become reactive rather than predictive.
+
+**Operational impact:** Maturity measurement drives resource allocation, tool investment, and hiring decisions. Organizations at Level 2 require different staffing and processes than Level 4+ organizations. Scaling governance without measurement results in chaos or over-investment.
+
+**Audit consequences:** External auditors expect documented evidence of continuous governance improvement. Absence of a maturity assessment framework results in findings under ISO 27001 Clause 10.2 (continual improvement) and Clause 9.1 (monitoring and measurement).
+
+**Cross-team dependencies:** Maturity assessment requires participation from IT, Security, Compliance, and Engineering leadership. Results drive decisions affecting all teams.
+
+---
+
+## Official References
+
+- ISO/IEC 27001:2022 -- Clause 9.1 (Monitoring and measurement), Clause 10.2 (Continual improvement)
+- COBIT 2019 -- MEA domain (Monitor, Evaluate, Assess)
+- CMMI -- Capability Maturity Model Integration (reference model for maturity frameworks)
+- NIST Cybersecurity Framework 2.0 -- Implementation Tiers concept
+
+---
+
+## Document Control
+
+| Version | Date       | Author                                      | Change Description                                    |
+| ------- | ---------- | ------------------------------------------- | ----------------------------------------------------- |
+| 1.1     | 2026-02-14 | Governance Office                           | Added MCM reference EATGF-MEA-MAT-01                  |
+| 1.2     | 2026-02-15 | Enterprise Architecture & Governance Office | EATGF Document Signature Template conformance applied |
 
 **Next Assessment:** Q1 2027
 **Questions:** Directed to the Governance Council via internal channels.

@@ -5,13 +5,13 @@
 **Version:** 1.0
 **Issue Date:** 2026-02-14
 **Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Subdomain:** 06_TECHNICAL_ACCOUNTABILITY_MODEL
+**Subdomain:** 07_TECHNICAL_ACCOUNTABILITY_MODEL
 **Governance Scope:** Decision Framework
 **Control Authority Relationship:** Implements controls
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / 06_TECHNICAL_ACCOUNTABILITY_MODEL
+**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / 07_TECHNICAL_ACCOUNTABILITY_MODEL
 
 **Governance Scope:** Technical decision-making authority, escalation, and Architecture Decision Records (ADRs).
 
@@ -38,12 +38,12 @@ Defines authority levels for technical decisions, decision-making processes, and
 
 **Decision Levels:**
 
-| Level | Impact Scope | Authority | Documentation | Examples |
-|---|---|---|---|---|
-| **Level 1: Team** | Single team, reversible | Tech Lead | Optional ADR | Library choice, code structure |
-| **Level 2: Domain** | Multiple teams, costly to reverse | Engineering Manager + Architect | Mandatory ADR | Service architecture, data model |
-| **Level 3: Platform** | Organization-wide, hard to reverse | Architecture Board | Mandatory ADR + Review | Cloud provider, programming language |
-| **Level 4: Strategic** | Company-wide, irreversible | CTO / VP Engineering | Mandatory ADR + Board | Build vs. buy, technology platform |
+| Level                  | Impact Scope                       | Authority                       | Documentation          | Examples                             |
+| ---------------------- | ---------------------------------- | ------------------------------- | ---------------------- | ------------------------------------ |
+| **Level 1: Team**      | Single team, reversible            | Tech Lead                       | Optional ADR           | Library choice, code structure       |
+| **Level 2: Domain**    | Multiple teams, costly to reverse  | Engineering Manager + Architect | Mandatory ADR          | Service architecture, data model     |
+| **Level 3: Platform**  | Organization-wide, hard to reverse | Architecture Board              | Mandatory ADR + Review | Cloud provider, programming language |
+| **Level 4: Strategic** | Company-wide, irreversible         | CTO / VP Engineering            | Mandatory ADR + Board  | Build vs. buy, technology platform   |
 
 ## Decision-Making Process
 
@@ -166,6 +166,7 @@ Defines authority levels for technical decisions, decision-making processes, and
 ## Context
 
 We need to select a relational database for our new SaaS application. Requirements:
+
 - ACID compliance
 - JSON support
 - Horizontal scalability
@@ -178,12 +179,14 @@ We will use PostgreSQL 15+ as our primary database.
 ## Consequences
 
 **Positive:**
+
 - Robust ACID guarantees
 - Excellent JSON/JSONB support
 - Strong community and ecosystem
 - Cloud provider managed options (RDS, Cloud SQL, Azure Database)
 
 **Negative:**
+
 - More complex to scale horizontally than NoSQL
 - Requires careful query optimization for performance
 - Steeper learning curve than MySQL
@@ -191,14 +194,17 @@ We will use PostgreSQL 15+ as our primary database.
 ## Alternatives Considered
 
 **MySQL:**
+
 - Pros: Simpler, faster for read-heavy workloads
 - Cons: Weaker JSON support, less advanced features
 
 **Amazon Aurora:**
+
 - Pros: AWS-native, auto-scaling
 - Cons: Vendor lock-in, higher cost
 
 **MongoDB:**
+
 - Pros: Flexible schema, horizontal scaling
 - Cons: No ACID for multi-document transactions (at decision time)
 
@@ -229,11 +235,11 @@ We will use PostgreSQL 15+ as our primary database.
 
 **Escalation Paths:**
 
-| Current Authority | Escalate To | Reason |
-|---|---|---|
-| Tech Lead | Engineering Manager | Cross-team impact, high cost |
-| Engineering Manager | Architecture Board | Platform-level decision |
-| Architecture Board | CTO / VP Engineering | Strategic decision, high cost |
+| Current Authority   | Escalate To          | Reason                        |
+| ------------------- | -------------------- | ----------------------------- |
+| Tech Lead           | Engineering Manager  | Cross-team impact, high cost  |
+| Engineering Manager | Architecture Board   | Platform-level decision       |
+| Architecture Board  | CTO / VP Engineering | Strategic decision, high cost |
 
 ## Decision Review and Revision
 
@@ -269,10 +275,10 @@ We will use PostgreSQL 15+ as our primary database.
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
-|---|---|---|---|---|
-| Decision Authority | A.5.24 | PO.1 | - | APO01 |
-| Decision Documentation | A.5.37 | PO.3 | - | MEA01 |
+| EATGF Context          | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
+| ---------------------- | -------------- | --------- | ----- | ----- |
+| Decision Authority     | A.5.24         | PO.1      | -     | APO01 |
+| Decision Documentation | A.5.37         | PO.3      | -     | MEA01 |
 
 ## Developer Checklist
 

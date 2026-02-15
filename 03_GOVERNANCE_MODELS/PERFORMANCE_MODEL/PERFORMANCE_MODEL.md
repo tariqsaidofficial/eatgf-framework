@@ -5,11 +5,34 @@
 | Field          | Value                                       |
 | -------------- | ------------------------------------------- |
 | Document Type  | Framework                                   |
-| Version        | 1.1                                         |
+| Version        | 1.2                                         |
 | Classification | Internal                                    |
-| Effective Date | 2026-02-14                                  |
+| Effective Date | 2026-02-15                                  |
 | Authority      | Enterprise Architecture & Governance Office |
+| EATGF Layer    | 03_GOVERNANCE_MODELS                        |
 | MCM Reference  | EATGF-MEA-PERF-01                           |
+
+---
+
+## Architectural Position
+
+This document operates within **03_GOVERNANCE_MODELS/PERFORMANCE_MODEL** as the governance performance measurement framework.
+
+- **EATGF Layer Placement:** 03_GOVERNANCE_MODELS
+- **Governance Scope:** Assessment Framework (Performance Measurement)
+- **Control Authority Relationship:** Implements control EATGF-MEA-PERF-01 as defined in the MCM
+
+**Upstream dependency:** Master Control Matrix (Layer 00) defines EATGF-MEA-PERF-01. Governance by Team Size (peer document) defines edition-appropriate targets.
+**Downstream usage:** Governance reporting (Layer 04) uses KPIs defined here. Board reporting aggregates performance KPIs.
+**Cross-layer reference:** All Layer 08 implementations must support measurement of compliance with corresponding performance KPIs.
+
+## Governance Principles
+
+1. **Measurement-Driven Governance** -- Governance effectiveness is evidenced through quantified KPIs, not subjective assessments
+2. **Audit Traceability** -- All KPI targets are traceable to specific MCM controls and policy requirements
+3. **Versioned Governance** -- Performance target baselines are versioned. Changes to targets require formal change approval
+4. **Developer-Operational Alignment** -- Technical KPIs (deployment frequency, MTTR, change failure rate) align with operational KPIs (compliance, risk remediation time)
+5. **Single Source of Truth** -- All organizational KPIs derive from this framework; no alternative performance measurement systems are authorized
 
 ---
 
@@ -37,7 +60,7 @@ Strategic KPIs (Board Level)
 
 **Target:** 100% (Critical controls) / 95% (Standard controls)
 
-**Frequency:** Monthly  
+**Frequency:** Monthly
 **Owner:** Compliance Officer
 
 **Calculation:**
@@ -68,7 +91,7 @@ Score: (190 + 8×0.5) / 200 = 96%
 
 **Target:** 100% for critical/high risks, 80% for medium
 
-**Frequency:** Quarterly  
+**Frequency:** Quarterly
 **Owner:** Chief Risk Officer
 
 **Dashboard Segment:**
@@ -99,6 +122,7 @@ Orange Risks (High): 8 total
 **Frequency:** Annual
 
 **Components:**
+
 | Domain | Weight | Current | Target |
 |--------|--------|---------|--------|
 | EDM | 20% | 2.8 | 4.0 |
@@ -126,6 +150,7 @@ Orange Risks (High): 8 total
 - User feedback
 
 **Results:**
+
 | Control Domain | Sample Size | Effective | % |
 |----------------|-----------|-----------|------|
 | Architecture | 5 | 5 | 100% |
@@ -203,6 +228,7 @@ Current Status (March):
 **Frequency:** Quarterly
 
 **Tracking:**
+
 | Policy | Applicable Users | Acknowledged | % |
 |--------|----------------|-------------|-----|
 | Security | 500 | 487 | 97% |
@@ -449,6 +475,51 @@ Next Actions:
 | Department review | Monthly     | Dept heads     | 1 hour   |
 | Leadership review | Quarterly   | Executive team | 2 hours  |
 | Board review      | Semi-annual | Board/CEO      | 2 hours  |
+
+---
+
+## Control Mapping
+
+| EATGF Context | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
+|---|---|---|---|---|
+| Governance KPI Definition | Clause 9.1 (Monitoring and measurement) | PW.4 (Verify Software Release Integrity) | SAMM Metrics | MEA01 (Monitor, Evaluate, Assess Performance) |
+| Performance Monitoring | Clause 8.4 (Risk treatment evaluation) | RV.2 (Analyze Vulnerabilities) | Metrics & Measurement | MEA02 (Monitor, Evaluate, Assess Internal Control) |
+| Target Setting | Clause 6.1.3 (Information security risk treatment) | PO.1 (Define Security Requirements) | Requirements Definition | APO12 (Manage Risk) |
+| Board-Level Reporting | Clause 9.2 (Internal audit) | RV.3 (Analyze Maturity) | Risk Assessment | MEA02 (Monitor Governance) |
+
+---
+
+## Developer Checklist
+
+- [ ] Define baseline KPIs for your governance maturity level (Startup/SaaS/Enterprise)
+- [ ] Establish data collection mechanism for each KPI (automated preferred)
+- [ ] Set target values aligned to organizational strategy and risk appetite
+- [ ] Assign KPI ownership to specific roles (owners are accountable for results)
+- [ ] Review KPIs monthly at operational level, quarterly at leadership level
+- [ ] Escalate KPIs trending off-target within 2 weeks (trigger corrective action)
+- [ ] Validate KPI definitions against MCM control requirements
+- [ ] Report aggregate KPI trends to Board semi-annually
+
+---
+
+## Governance Implications
+
+**Risk if not implemented:** Without performance measurement, governance effectiveness is unmeasurable. Control owners lack accountability. Compliance claims are unsubstantiated.
+
+**Operational impact:** KPI targets drive resource allocation, improvement priorities, and hiring decisions. Organization-wide performance visibility enables rapid response to governance gaps.
+
+**Audit consequences:** External auditors require documented evidence of governance performance monitoring. Absence of KPI framework results in findings under ISO 27001 Clause 9.1 and Clause 8.4.
+
+**Cross-team dependencies:** KPI monitoring requires IT operations data (change frequency, MTTR), Security data (vulnerability remediation time), Compliance data (control test results), and Engineering data (deployment velocity, test coverage).
+
+---
+
+## Official References
+
+- ISO/IEC 27001:2022 -- Clause 9.1 (Monitoring and measurement), Clause 8.4 (Risk treatment evaluation)
+- COBIT 2019 -- MEA domain (Monitor, Evaluate, Assess)
+- NIST Cybersecurity Framework 2.0 -- Implementation Tiers and performance measurement
+- DORA Metrics (Deployment Frequency, Lead Time, Change Failure Rate, MTTR)
 
 ---
 
