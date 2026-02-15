@@ -1521,8 +1521,9 @@ The MCM itself serves as the master control definition authority. All external f
 
 **Primary Mapping Documents:**
 
-- [CONTROL_MAPPING_APPENDIX.md](./CONTROL_MAPPING_APPENDIX.md) -- Detailed control-by-control mappings
-- [FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md](./FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md) -- Bidirectional mappings across all standards
+- [FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md](../02_CONTROL_ARCHITECTURE/FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md) -- Master bidirectional mappings across ISO 27001:2022 / NIST / OWASP / COBIT
+- [API Governance Mappings](../08_DEVELOPER_GOVERNANCE_LAYER/02_API_GOVERNANCE/API_CONTROL_MAPPING_APPENDIX.md) -- API-specific control alignments (Layer 02)
+- [Secure SDLC Mappings](../08_DEVELOPER_GOVERNANCE_LAYER/01_SECURE_SDLC/CONTROL_MAPPING_APPENDIX.md) -- Secure development lifecycle alignments (Layer 01)
 
 **Standards and Frameworks Referenced:**
 
