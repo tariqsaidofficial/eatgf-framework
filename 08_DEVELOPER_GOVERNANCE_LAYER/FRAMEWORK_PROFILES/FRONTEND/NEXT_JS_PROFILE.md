@@ -1,4 +1,5 @@
 # Next.js Framework Governance Profile
+
 ## Enterprise Conformance Model (v1.0)
 
 ---
@@ -10,6 +11,7 @@
 **AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
+
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 - This profile **references** secure SDLC requirements from [01_SECURE_SDLC_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_STANDARD.md)
 - This profile **clarifies** DevSecOps patterns from [03_DEVSECOPS_GOVERNANCE_STANDARD.md](../../03_DEVSECOPS_GOVERNANCE_STANDARD.md)
@@ -17,6 +19,7 @@
 - This profile **supersedes** React profile for SSR applications
 
 **COMPLIANCE STATEMENT:** This profile enforces unified security across server-rendered and client-side React. Non-conformance compromises:
+
 - Server-side session management
 - XSS/CSRF attack surface
 - Hydration security boundary
@@ -40,6 +43,7 @@ This document defines governance conformance requirements for Next.js applicatio
 ## 2. Architectural Position
 
 **EATGF Layer Placement:**
+
 ```
 08_DEVELOPER_GOVERNANCE_LAYER
 ├── FRAMEWORK_PROFILES
@@ -52,12 +56,14 @@ This document defines governance conformance requirements for Next.js applicatio
 ```
 
 **Next.js operates as:**
+
 - **Server-side:** API routes, server components, middleware (backend-like auth)
 - **Client-side:** React components in browser (frontend-like XSS risks)
 - **Hybrid:** Page rendering at build-time, request-time, runtime
 - **Edge:** Cloudflare Workers, Vercel Edge Functions (request interception)
 
 **Next.js must conform to:**
+
 - **02_API_GOVERNANCE:** API route security (server-side)
 - **01_SECURE_SDLC:** Full-stack development lifecycle
 - **05_DOMAIN_FRAMEWORKS:** Framework-specific build pipeline
@@ -93,7 +99,7 @@ function Page({ dbSecret }) {
 export const getServerSideProps = async (context) => {
   const dbSecret = process.env.DATABASE_PASSWORD;
   const data = await fetchFromDB(dbSecret); // Use secret server-side
-  
+
   return {
     props: {
       publicData: data // Send only sanitized public data
@@ -103,6 +109,7 @@ export const getServerSideProps = async (context) => {
 ```
 
 **Enforcement:**
+
 - `process.env.SECRET_*` never passed to `props`
 - `process.env.NEXT_PUBLIC_*` exclusively for client-accessible config
 - Server components use secrets directly
@@ -139,6 +146,7 @@ export const getServerSideProps = async () => {
 ```
 
 **Enforcement:**
+
 - No `useEffect` for critical rendering (decoration only)
 - SSR output validation required
 - Mismatch detection enabled (`suppressHydrationWarning` audited)
@@ -151,26 +159,26 @@ API routes in `/pages/api/` behave like backend endpoints. Same authentication c
 
 ```typescript
 // ✅ COMPLIANT: Authenticate API route via middleware
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { verifyAuth } from '@/lib/auth';
+import type { NextApiRequest, NextApiResponse } from "next";
+import { verifyAuth } from "@/lib/auth";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   // ✅ MANDATORY: Verify authentication on every request
   const user = await verifyAuth(req.cookies.token);
-  
+
   if (!user) {
-    return res.status(401).json({ error: 'Unauthorized' });
+    return res.status(401).json({ error: "Unauthorized" });
   }
 
-  if (req.method === 'GET') {
+  if (req.method === "GET") {
     const invoices = await fetchUserInvoices(user.id, user.tenantId);
     return res.json(invoices);
   }
 
-  if (req.method === 'POST') {
+  if (req.method === "POST") {
     const validated = InvoiceSchema.parse(req.body);
     const invoice = await createInvoice(validated, user.tenantId);
     return res.status(201).json(invoice);
@@ -181,6 +189,7 @@ export default async function handler(
 ```
 
 **Enforcement:**
+
 - Middleware pattern enforces auth on all routes
 - No public API routes without explicit `POST /api/public/*` marker
 - Rate limiting applied at route level
@@ -201,9 +210,9 @@ import { db } from '@/lib/db';
 export async function deleteInvoice(invoiceId: string, userId: string) {
   // ✅ Only called from server, never from client
   // ✅ User ID from authenticated session, not client
-  
+
   const invoice = await db.invoices.findUnique({ where: { id: invoiceId } });
-  
+
   if (invoice.userId !== userId) {
     throw new Error('Unauthorized');
   }
@@ -226,6 +235,7 @@ export function InvoiceCard({ invoice, userId }) {
 ```
 
 **Enforcement:**
+
 - 'use server' functions never exposed in client bundle
 - Credentials/secrets accessible in server components only
 - Client → server function calls properly typed via React 19+
@@ -261,6 +271,7 @@ export default async function handler(req, res) {
 ```
 
 **Enforcement:**
+
 - Prefixes must be explicit: `NEXT_PUBLIC_*` (client), `[A-Z_]*` (server)
 - Build fails if server var used in client code
 - `.env.local` in `.gitignore` mandatory
@@ -273,40 +284,40 @@ Next.js middleware intercepts all requests. Perfect for auth checks.
 
 ```typescript
 // middleware.ts (at project root)
-import { NextRequest, NextResponse } from 'next/server';
-import { verifyAuth } from '@/lib/auth';
+import { NextRequest, NextResponse } from "next/server";
+import { verifyAuth } from "@/lib/auth";
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // ✅ Public routes (no auth required)
-  if (pathname === '/login' || pathname === '/signup') {
+  if (pathname === "/login" || pathname === "/signup") {
     return NextResponse.next();
   }
 
   // ✅ Protected routes (require auth)
-  if (pathname.startsWith('/dashboard')) {
-    const token = request.cookies.get('auth_token')?.value;
+  if (pathname.startsWith("/dashboard")) {
+    const token = request.cookies.get("auth_token")?.value;
 
     if (!token) {
-      return NextResponse.redirect(new URL('/login', request.url));
+      return NextResponse.redirect(new URL("/login", request.url));
     }
 
     try {
       const user = await verifyAuth(token);
-      
+
       // ✅ Add user to request headers (forwarded to page)
       const requestHeaders = new Headers(request.headers);
-      requestHeaders.set('x-user-id', user.id);
-      requestHeaders.set('x-tenant-id', user.tenantId);
+      requestHeaders.set("x-user-id", user.id);
+      requestHeaders.set("x-tenant-id", user.tenantId);
 
       return NextResponse.next({
         request: {
-          headers: requestHeaders
-        }
+          headers: requestHeaders,
+        },
       });
     } catch (error) {
-      return NextResponse.redirect(new URL('/login', request.url));
+      return NextResponse.redirect(new URL("/login", request.url));
     }
   }
 
@@ -314,11 +325,12 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|favicon.ico).*)'] // Apply to all routes
+  matcher: ["/((?!_next/static|favicon.ico).*)"], // Apply to all routes
 };
 ```
 
 **Enforcement:**
+
 - Middleware runs on every request (before pages/API)
 - Session validation required
 - Redirect to login on auth failure
@@ -349,7 +361,7 @@ import DOMPurify from 'isomorphic-dompurify';
 
 export const getServerSideProps = async () => {
   const userComment = await fetchComment();
-  
+
   // ✅ Sanitize on server before rendering
   const sanitized = DOMPurify.sanitize(userComment, {
     ALLOWED_TAGS: ['b', 'i', 'em'],
@@ -418,6 +430,7 @@ module.exports = nextConfig;
 **Objective:** Validate user identity at server level with SSR hydration security.
 
 ### Requirement
+
 - Session validation on every server render
 - Middleware intercepts unauthenticated requests
 - Token refresh server-side only
@@ -477,7 +490,7 @@ export default function Dashboard({ user }) {
 ```typescript
 // pages/api/auth/login.ts
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
+  if (req.method !== "POST") {
     return res.status(405).end();
   }
 
@@ -485,23 +498,23 @@ export default async function handler(req, res) {
 
   // ✅ Validate credentials
   const user = await validateCredentials(email, password);
-  
+
   if (!user) {
-    return res.status(401).json({ error: 'Invalid credentials' });
+    return res.status(401).json({ error: "Invalid credentials" });
   }
 
   // ✅ Check MFA requirement
   if (user.mfaEnabled) {
     // Generate temporary token (short-lived, single-use)
     const mfaToken = jwt.sign(
-      { sub: user.id, type: 'mfa' },
+      { sub: user.id, type: "mfa" },
       process.env.JWT_SECRET,
-      { expiresIn: '5m' }
+      { expiresIn: "5m" },
     );
 
     return res.status(200).json({
       mfaRequired: true,
-      mfaToken
+      mfaToken,
     });
   }
 
@@ -509,11 +522,12 @@ export default async function handler(req, res) {
   const authToken = jwt.sign(
     { sub: user.id, tenant_id: user.tenantId },
     process.env.JWT_SECRET,
-    { expiresIn: '1h' }
+    { expiresIn: "1h" },
   );
 
-  res.setHeader('Set-Cookie', 
-    `auth_token=${authToken}; HttpOnly; Secure; SameSite=Strict; Path=/`
+  res.setHeader(
+    "Set-Cookie",
+    `auth_token=${authToken}; HttpOnly; Secure; SameSite=Strict; Path=/`,
   );
 
   return res.json({ success: true });
@@ -527,6 +541,7 @@ export default async function handler(req, res) {
 **Objective:** Server-side authorization checks with row-level security.
 
 ### Requirement
+
 - Tenant context obtained from authenticated session
 - Row-level security filters in database queries
 - No authorization delegation to client
@@ -535,7 +550,7 @@ export default async function handler(req, res) {
 
 ```typescript
 // lib/db.ts (Prisma example)
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -544,8 +559,8 @@ export async function getInvoices(userId: string, tenantId: string) {
   return prisma.invoices.findMany({
     where: {
       userId,
-      tenantId // ← SERVER enforces tenant boundary
-    }
+      tenantId, // ← SERVER enforces tenant boundary
+    },
   });
 }
 
@@ -566,7 +581,7 @@ export const getServerSideProps = async (context) => {
   const user = await verifyAuth(); // Server-side auth
   const invoices = await getInvoices(
     user.sub,
-    user.tenant_id // Never from URL/client
+    user.tenant_id, // Never from URL/client
   );
 
   return { props: { invoices } };
@@ -580,6 +595,7 @@ export const getServerSideProps = async (context) => {
 **Objective:** API route versioning for backward compatibility.
 
 ### Requirement
+
 - Versioned API endpoints (`/api/v1/`, `/api/v2/`)
 - Client detects version mismatch
 - Graceful deprecation handling
@@ -592,9 +608,9 @@ export default async function handler(req, res) {
   const user = await verifyAuth();
 
   // ✅ Version header in response
-  res.setHeader('X-API-Version', 'v1');
-  res.setHeader('Deprecation', 'true');
-  res.setHeader('Sunset', 'Fri, 01 Dec 2026 23:59:59 GMT');
+  res.setHeader("X-API-Version", "v1");
+  res.setHeader("Deprecation", "true");
+  res.setHeader("Sunset", "Fri, 01 Dec 2026 23:59:59 GMT");
 
   // Handle v1 logic
   const invoices = await getInvoices(user.sub, user.tenant_id);
@@ -605,31 +621,31 @@ export default async function handler(req, res) {
 export default async function handler(req, res) {
   const user = await verifyAuth();
 
-  res.setHeader('X-API-Version', 'v2');
+  res.setHeader("X-API-Version", "v2");
 
   // New v2 response format
   const invoices = await getInvoices(user.sub, user.tenant_id);
   res.json({
     data: invoices,
-    meta: { total: invoices.length }
+    meta: { total: invoices.length },
   });
 }
 
 // lib/api-routes.ts (client-side)
-const API_VERSION = 'v2';
+const API_VERSION = "v2";
 
 export const api = {
   async getInvoices(token) {
     const response = await fetch(`/api/${API_VERSION}/invoices`, {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}` },
     });
 
-    if (response.headers.get('Deprecation') === 'true') {
-      console.warn('API version deprecated');
+    if (response.headers.get("Deprecation") === "true") {
+      console.warn("API version deprecated");
     }
 
     return response.json();
-  }
+  },
 };
 ```
 
@@ -640,6 +656,7 @@ export const api = {
 **Objective:** Validate at both server (API routes) and client layers.
 
 ### Requirement
+
 - Server-side validation mandatory on all API routes
 - Client-side validation for UX
 - Schema coercion and sanitization
@@ -720,6 +737,7 @@ export function InvoiceForm() {
 **Objective:** Protect API routes from abuse.
 
 ### Requirement
+
 - Rate limit middleware on API routes
 - Client-side debouncing for UX
 - Proper 429 response handling
@@ -728,21 +746,21 @@ export function InvoiceForm() {
 
 ```typescript
 // middleware.ts
-import { rateLimit } from '@/lib/rate-limit';
+import { rateLimit } from "@/lib/rate-limit";
 
 const limiter = rateLimit({
-  interval: '1m',
-  uniqueTokenPerInterval: 500
+  interval: "1m",
+  uniqueTokenPerInterval: 500,
 });
 
 export async function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith('/api/')) {
+  if (request.nextUrl.pathname.startsWith("/api/")) {
     try {
       await limiter.check(request, 100); // 100 requests per minute
     } catch (error) {
-      return new NextResponse('Too many requests', {
+      return new NextResponse("Too many requests", {
         status: 429,
-        headers: { 'Retry-After': '60' }
+        headers: { "Retry-After": "60" },
       });
     }
   }
@@ -754,24 +772,24 @@ export async function middleware(request: NextRequest) {
 export function rateLimit(config) {
   return {
     async check(request, limit) {
-      const ip = request.ip || 'unknown';
+      const ip = request.ip || "unknown";
       const key = `${ip}:${request.nextUrl.pathname}`;
-      
+
       const count = await redis.incr(key);
-      
+
       if (count === 1) {
         await redis.expire(key, 60);
       }
 
       if (count > limit) {
-        throw new Error('Rate limit exceeded');
+        throw new Error("Rate limit exceeded");
       }
-    }
+    },
   };
 }
 
 // Client-side debouncing
-import { debounce } from 'lodash-es';
+import { debounce } from "lodash-es";
 
 export const debouncedFetch = debounce(async (query) => {
   const response = await fetch(`/api/search?q=${query}`);
@@ -786,6 +804,7 @@ export const debouncedFetch = debounce(async (query) => {
 **Objective:** Ensure API routes and SSR pages have adequate test coverage.
 
 ### Requirement
+
 - Unit tests > 80% coverage
 - Integration tests for API routes
 - E2E tests for auth flows
@@ -878,6 +897,7 @@ describe('getServerSideProps', () => {
 **Objective:** Capture API route execution and errors with correlation IDs.
 
 ### Requirement
+
 - Structured logging on API routes
 - Correlation ID propagation SS R → API
 - Error tracking with context
@@ -886,13 +906,16 @@ describe('getServerSideProps', () => {
 
 ```typescript
 // lib/logger.ts
-import pino from 'pino';
+import pino from "pino";
 
 const logger = pino({
-  level: process.env.LOG_LEVEL || 'info',
-  transport: process.env.NODE_ENV === 'production' ? undefined : {
-    target: 'pino-pretty'
-  }
+  level: process.env.LOG_LEVEL || "info",
+  transport:
+    process.env.NODE_ENV === "production"
+      ? undefined
+      : {
+          target: "pino-pretty",
+        },
 });
 
 export function createLogger(component: string, correlationId?: string) {
@@ -901,41 +924,45 @@ export function createLogger(component: string, correlationId?: string) {
 
 // middleware.ts
 export async function middleware(request: NextRequest) {
-  const correlationId = request.headers.get('x-correlation-id') || crypto.randomUUID();
+  const correlationId =
+    request.headers.get("x-correlation-id") || crypto.randomUUID();
 
   const requestHeaders = new Headers(request.headers);
-  requestHeaders.set('x-correlation-id', correlationId);
+  requestHeaders.set("x-correlation-id", correlationId);
 
   return NextResponse.next({
-    request: { headers: requestHeaders }
+    request: { headers: requestHeaders },
   });
 }
 
 // pages/api/invoices.ts
-import { headers } from 'next/headers';
-import { createLogger } from '@/lib/logger';
+import { headers } from "next/headers";
+import { createLogger } from "@/lib/logger";
 
 export default async function handler(req, res) {
   const headersList = await headers();
-  const correlationId = headersList.get('x-correlation-id');
-  const logger = createLogger('api/invoices', correlationId);
+  const correlationId = headersList.get("x-correlation-id");
+  const logger = createLogger("api/invoices", correlationId);
 
   try {
-    logger.info({ method: req.method, path: req.url }, 'API request');
+    logger.info({ method: req.method, path: req.url }, "API request");
 
     const user = await verifyAuth();
 
     if (!user) {
-      logger.warn({ correlationId }, 'Unauthorized request');
+      logger.warn({ correlationId }, "Unauthorized request");
       return res.status(401).end();
     }
 
     const invoices = await getInvoices(user.sub, user.tenant_id);
-    logger.info({ count: invoices.length }, 'Invoices retrieved');
+    logger.info({ count: invoices.length }, "Invoices retrieved");
 
     res.json(invoices);
   } catch (error) {
-    logger.error({ error: error instanceof Error ? error.message : error }, 'API error');
+    logger.error(
+      { error: error instanceof Error ? error.message : error },
+      "API error",
+    );
     res.status(500).end();
   }
 }
@@ -948,6 +975,7 @@ export default async function handler(req, res) {
 **Objective:** Enforce HTTPS, secure cookies, and CSP across full-stack app.
 
 ### Requirement
+
 - HTTPS only (HTTP redirect)
 - Secure cookie flags enforced
 - CSP headers for both SSR and client
@@ -1021,7 +1049,7 @@ export default async function handler(req, res) {
   const token = jwt.sign({ ... }, process.env.JWT_SECRET);
 
   // ✅ MANDATORY flags: HttpOnly, Secure, SameSite
-  res.setHeader('Set-Cookie', 
+  res.setHeader('Set-Cookie',
     `auth_token=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=3600`
   );
 
@@ -1036,6 +1064,7 @@ export default async function handler(req, res) {
 **Objective:** Enforce tenant isolation at both server (API) and client levels.
 
 ### Requirement
+
 - Tenant ID from authenticated session only
 - All queries filtered by tenant
 - No tenant ID derivable from URL
@@ -1044,18 +1073,18 @@ export default async function handler(req, res) {
 
 ```typescript
 // middleware.ts
-import { verifyAuth } from '@/lib/auth';
+import { verifyAuth } from "@/lib/auth";
 
 export async function middleware(request: NextRequest) {
   const user = await verifyAuth();
 
   if (user) {
     const requestHeaders = new Headers(request.headers);
-    requestHeaders.set('x-tenant-id', user.tenant_id);
-    requestHeaders.set('x-user-id', user.sub);
+    requestHeaders.set("x-tenant-id", user.tenant_id);
+    requestHeaders.set("x-user-id", user.sub);
 
     return NextResponse.next({
-      request: { headers: requestHeaders }
+      request: { headers: requestHeaders },
     });
   }
 
@@ -1063,19 +1092,19 @@ export async function middleware(request: NextRequest) {
 }
 
 // pages/api/invoices.ts
-import { headers } from 'next/headers';
+import { headers } from "next/headers";
 
 export default async function handler(req, res) {
   const headersList = await headers();
-  const tenantId = headersList.get('x-tenant-id');
-  const userId = headersList.get('x-user-id');
+  const tenantId = headersList.get("x-tenant-id");
+  const userId = headersList.get("x-user-id");
 
   // ✅ Query enforces tenant boundary
   const invoices = await prisma.invoices.findMany({
     where: {
       tenantId, // ← SERVER enforces
-      userId
-    }
+      userId,
+    },
   });
 
   res.json(invoices);
@@ -1088,15 +1117,15 @@ export const getServerSideProps = async (context) => {
   const invoices = await prisma.invoices.findMany({
     where: {
       tenantId: user.tenant_id, // ← Never from URL
-      userId: user.sub
-    }
+      userId: user.sub,
+    },
   });
 
   return {
     props: {
       invoices,
-      tenantId: user.tenant_id
-    }
+      tenantId: user.tenant_id,
+    },
   };
 };
 ```
@@ -1108,6 +1137,7 @@ export const getServerSideProps = async (context) => {
 **Objective:** Same as React with SSR-specific checks.
 
 ### Requirement
+
 - npm audit passes (high/critical)
 - All dependencies pinned
 - Build-time verification
@@ -1139,16 +1169,16 @@ export const getServerSideProps = async (context) => {
 
 ## 14. Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 | COBIT 2019 |
-|---|---|---|---|---|
-| Authentication | A.8.2, A.8.3 | PW.2.1 | V2 | DSS05.02 |
-| Authorization | A.8.5, A.8.9 | PW.2.2 | V4 | DSS05.03 |
-| Versioning | A.8.28 | PW.4.2 | V14 | BAI09.02 |
-| Input Validation | A.8.22, A.8.28 | PW.8.1 | V5 | DSS05.04 |
-| Rate Limiting | A.8.22 | PW.8.2 | V11 | DSS01.05 |
-| Testing | A.8.28 | PW.9.1 | V14 | BAI03.07 |
-| Logging | A.8.15, A.8.23 | RV.1.1 | V15 | MEA01.02 |
-| Zero Trust | A.8.1, A.8.9 | PW.1.1 | V1 | DSS05.01 |
+| EATGF Control    | ISO 27001:2022 | NIST SSDF 1.1 | OWASP ASVS 5.0 | COBIT 2019 |
+| ---------------- | -------------- | ------------- | -------------- | ---------- |
+| Authentication   | A.8.2, A.8.3   | PW.2.1        | V2             | DSS05.02   |
+| Authorization    | A.8.5, A.8.9   | PW.2.2        | V4             | DSS05.03   |
+| Versioning       | A.8.28         | PW.4.2        | V14            | BAI09.02   |
+| Input Validation | A.8.22, A.8.28 | PW.8.1        | V5             | DSS05.04   |
+| Rate Limiting    | A.8.22         | PW.8.2        | V11            | DSS01.05   |
+| Testing          | A.8.28         | PW.9.1        | V14            | BAI03.07   |
+| Logging          | A.8.15, A.8.23 | RV.1.1        | V15            | MEA01.02   |
+| Zero Trust       | A.8.1, A.8.9   | PW.1.1        | V1             | DSS05.01   |
 
 ---
 
@@ -1160,7 +1190,7 @@ export const getServerSideProps = async (context) => {
 - [ ] Hydration deterministic (no random rendering)
 - [ ] Server components use 'use server' for sensitive operations
 - [ ] Cookies set with HttpOnly, Secure, SameSite flags
-- [ ] Environment variables properly prefixed (NEXT_PUBLIC_* for client)
+- [ ] Environment variables properly prefixed (NEXT*PUBLIC*\* for client)
 - [ ] XSS prevention: user input sanitized before dangerouslySetInnerHTML
 - [ ] CSP headers configured in next.config.ts
 - [ ] Rate limiting middleware protecting API routes
@@ -1175,6 +1205,7 @@ export const getServerSideProps = async (context) => {
 ## 16. Governance Implications
 
 **Risk if not implemented:**
+
 - XSS via server-rendered content
 - Token leakage to client bundle
 - Hydration mismatch exploited for injection
@@ -1187,15 +1218,15 @@ export const getServerSideProps = async (context) => {
 
 ## 17. Version Information
 
-| Field | Value |
-|---|---|
-| **Document Version** | 1.0 |
-| **Change Type** | Major (Initial Release) |
-| **Issue Date** | February 15, 2026 |
-| **EATGF Baseline** | v1.0 (Block 2 Complete) |
-| **Next.js Version** | 14.0+ |
-| **React Version** | 18.2+ |
-| **Node.js** | 18.0+ (LTS) |
+| Field                | Value                   |
+| -------------------- | ----------------------- |
+| **Document Version** | 1.0                     |
+| **Change Type**      | Major (Initial Release) |
+| **Issue Date**       | February 15, 2026       |
+| **EATGF Baseline**   | v1.0 (Block 2 Complete) |
+| **Next.js Version**  | 14.0+                   |
+| **React Version**    | 18.2+                   |
+| **Node.js**          | 18.0+ (LTS)             |
 
 ---
 

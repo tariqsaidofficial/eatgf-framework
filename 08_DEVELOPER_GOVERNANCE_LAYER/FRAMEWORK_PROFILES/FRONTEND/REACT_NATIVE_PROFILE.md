@@ -1,4 +1,5 @@
 # React Native Framework Governance Profile
+
 ## Enterprise Conformance Model (v1.0)
 
 ---
@@ -10,6 +11,7 @@
 **AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
+
 - This profile **implements** governance controls defined in [02_API_GOVERNANCE_STANDARD.md](../../02_API_GOVERNANCE/API_GOVERNANCE_STANDARD.md)
 - This profile **references** secure SDLC requirements from [01_SECURE_SDLC_STANDARD.md](../../01_SECURE_SDLC/SECURE_SDLC_STANDARD.md)
 - This profile **clarifies** mobile-specific DevSecOps patterns
@@ -17,6 +19,7 @@
 - This profile **differs** from React/Next.js: mobile requires device-level security controls
 
 **COMPLIANCE STATEMENT:** This profile enforces security across iOS and Android mobile applications. Non-conformance impacts:
+
 - Credential theft from device storage
 - Man-in-the-middle (MITM) attacks via certificate pinning bypass
 - Jailbroken/rooted device exploitation
@@ -24,6 +27,7 @@
 - Biometric authentication spoofing
 
 React Native operates as **Mobile Client** with:
+
 - Device OS integration (iOS/Android)
 - Local credential storage (Keychain/Keystore)
 - Network certificate verification
@@ -44,6 +48,7 @@ This document defines governance conformance requirements for React Native appli
 ## 2. Architectural Position
 
 **EATGF Layer Placement:**
+
 ```
 08_DEVELOPER_GOVERNANCE_LAYER
 ├── FRAMEWORK_PROFILES
@@ -56,6 +61,7 @@ This document defines governance conformance requirements for React Native appli
 ```
 
 **React Native operates as:**
+
 - **Sandboxed application** (iOS App Sandbox, Android SELinux)
 - **OS credential consumer** (Keychain, Keystore, Biometric APIs)
 - **Network client** with certificate pinning
@@ -63,6 +69,7 @@ This document defines governance conformance requirements for React Native appli
 - **OTA update consumer** (CodePush, EAS Updates, native app stores)
 
 **React Native must conform to:**
+
 - **02_API_GOVERNANCE:** API client security (network layer)
 - **01_SECURE_SDLC:** Mobile development lifecycle
 - **Mobile-Specific Controls:**
@@ -148,6 +155,7 @@ export function initializeApp() {
 ```
 
 **Enforcement:**
+
 - Pin both leaf and intermediate certificates
 - Include backup keys for rotation
 - Update pinned certificates in each app release
@@ -198,7 +206,7 @@ export function useAuthRestoration() {
   useEffect(() => {
     const restoreToken = async () => {
       const token = await getToken();
-      
+
       if (token) {
         // ✅ Validate with server before using
         const isValid = await validateToken(token);
@@ -206,7 +214,7 @@ export function useAuthRestoration() {
           await deleteToken();
         }
       }
-      
+
       setIsReady(true);
     };
 
@@ -218,6 +226,7 @@ export function useAuthRestoration() {
 ```
 
 **Enforcement:**
+
 - No AsyncStorage for tokens
 - SecureStore (Expo), react-native-keychain, or platform-specific
 - Require device unlock (iOS: WHEN_UNLOCKED_THIS_DEVICE_ONLY)
@@ -238,7 +247,7 @@ export async function checkDeviceIntegrity(): Promise<boolean> {
   try {
     if (Platform.OS === 'ios') {
       const isJailbroken = await jailmonkey.isJailBrokenIOS(true);
-      
+
       if (isJailbroken) {
         // ✅ Disable sensitive features
         console.warn('Jailbroken device detected');
@@ -248,7 +257,7 @@ export async function checkDeviceIntegrity(): Promise<boolean> {
 
     if (Platform.OS === 'android') {
       const isRooted = await jailmonkey.isJailBrokenAndroid(true);
-      
+
       if (isRooted) {
         console.warn('Rooted device detected');
         return false;
@@ -281,6 +290,7 @@ export function useDeviceIntegrityCheck() {
 ```
 
 **Risk Levels:**
+
 - **CRITICAL:** Root shell detected
 - **HIGH:** Malicious package managers detected (Cydia, Xposed)
 - **MEDIUM:** Debugging tools detected (Frida, debuggers)
@@ -299,7 +309,7 @@ export async function authenticateBiometric(): Promise<boolean> {
   try {
     // ✅ Check if device supports biometric
     const compatible = await LocalAuthentication.hasHardwareAsync();
-    
+
     if (!compatible) {
       console.log('Device does not support biometric');
       return false;
@@ -307,7 +317,7 @@ export async function authenticateBiometric(): Promise<boolean> {
 
     // ✅ Check if biometric is enrolled
     const enrolled = await LocalAuthentication.isEnrolledAsync();
-    
+
     if (!enrolled) {
       console.log('No biometric enrolled');
       return false;
@@ -331,7 +341,7 @@ export async function authenticateBiometric(): Promise<boolean> {
 export function useProtectedOperation() {
   const performSensitiveAction = async (action: () => Promise<void>) => {
     const authenticated = await authenticateBiometric();
-    
+
     if (!authenticated) {
       Alert.alert('Authentication Failed', 'Could not verify identity');
       return;
@@ -367,8 +377,8 @@ export const createApiClient = async (): Promise<AxiosInstance> => {
   await setupCertificatePinning();
 
   const api = axios.create({
-    baseURL: Platform.OS === 'ios' 
-      ? 'https://api-ios.example.com' 
+    baseURL: Platform.OS === 'ios'
+      ? 'https://api-ios.example.com'
       : 'https://api-android.example.com',
     timeout: 5000
   });
@@ -376,7 +386,7 @@ export const createApiClient = async (): Promise<AxiosInstance> => {
   // ✅ Request interceptor: Add auth token from secure storage
   api.interceptors.request.use(async (config) => {
     const token = await SecureStore.getItemAsync('auth_token');
-    
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -419,7 +429,7 @@ import * as Permissions from 'expo-permissions';
 
 export async function requestCameraPermission() {
   const { status } = await Permissions.askAsync(Permissions.CAMERA);
-  
+
   if (status !== 'granted') {
     Alert.alert('Permission Required', 'Camera access is required');
     return false;
@@ -477,7 +487,7 @@ export async function initializeUpdates() {
     if (update.isAvailable) {
       // ✅ Verify update before installing
       console.log('Update available, installing...');
-      
+
       await Updates.fetchUpdateAsync();
       await Updates.reloadAsync();
     }
@@ -539,6 +549,7 @@ jarsigner -verify -verbose -certs app-release.apk
 **Objective:** Establish mobile user identity with secure token handling.
 
 ### Requirement
+
 - Biometric optional, password mandatory as fallback
 - Tokens stored in Keychain/Keystore only
 - Session validation on app launch
@@ -606,6 +617,7 @@ export function useAuth() {
 **Objective:** Authorize actions based on server-validated permissions.
 
 ### Requirement
+
 - Backend re-validates authorization
 - Frontend shows/hides UI based on permissions
 - No client-side permission spoofing
@@ -662,6 +674,7 @@ export function DeleteInvoiceButton({ invoiceId }) {
 **Objective:** Manage app versioning and API compatibility.
 
 ### Requirement
+
 - App version checked on launch
 - Deprecation warnings displayed
 - Force upgrade on critical versions
@@ -671,7 +684,7 @@ export function DeleteInvoiceButton({ invoiceId }) {
 ```typescript
 export async function checkAppVersion() {
   const currentVersion = Constants.manifest.version;
-  
+
   const response = await api.get('/app/version-check', {
     params: { version: currentVersion }
   });
@@ -712,6 +725,7 @@ export async function checkAppVersion() {
 **Objective:** Validate all user input before sending to API.
 
 ### Requirement
+
 - Client-side validation for UX
 - Server-side validation mandatory
 - Schema coercion and sanitization
@@ -759,6 +773,7 @@ export function InvoiceForm() {
 **Objective:** Prevent client from overwhelming API.
 
 ### Requirement
+
 - Exponential backoff on failures
 - 429 response handling
 - User feedback on rate limits
@@ -780,7 +795,7 @@ api.interceptors.response.use(
 
       Alert.alert('Rate Limited', `Please try again in ${retryAfter}s`);
 
-      await new Promise(resolve => 
+      await new Promise(resolve =>
         setTimeout(resolve, retryAfter * 1000)
       );
 
@@ -799,6 +814,7 @@ api.interceptors.response.use(
 **Objective:** Ensure app quality and security.
 
 ### Requirement
+
 - Unit test coverage > 80%
 - E2E tests for auth flows
 - Security tests for certificate pinning
@@ -837,6 +853,7 @@ describe('Jailbreak Detection', () => {
 **Objective:** Capture errors and security events without exposing sensitive data.
 
 ### Requirement
+
 - Structured logging with correlation IDs
 - No sensitive data in logs
 - Error tracking integrated
@@ -876,6 +893,7 @@ export const logger = {
 **Objective:** Enforce network security and certificate verification.
 
 ### Requirement
+
 - HTTPS only (no HTTP)
 - Certificate pinning enforced
 - Secure cookie transport
@@ -905,6 +923,7 @@ if (API_URL.startsWith('http://') && !DEV_MODE) {
 **Objective:** Enforce tenant isolation (if applicable).
 
 ### Requirement
+
 - Tenant ID from server only
 - No URL-based tenant switching
 - Session includes tenant context
@@ -938,6 +957,7 @@ api.interceptors.request.use(config => {
 **Objective:** Manage dependency security.
 
 ### Requirement
+
 - npm audit passes
 - Dependencies pinned
 - CI/CD verification
@@ -999,6 +1019,7 @@ npm audit --audit-level=high || exit 1
 ## 16. Governance Implications
 
 **Risk if not implemented:**
+
 - Token theft via secure storage bypass
 - MITM attacks via certificate pinning bypass
 - Jailbroken app execution and data theft
