@@ -779,7 +779,7 @@ Compensating controls must be:
 
 ### 9.3 Operational KPIs (Control-Level)
 
-Per control-level metrics defined in MCM (Section 📋)
+Per control-level metrics defined in MCM (Section )
 
 ---
 

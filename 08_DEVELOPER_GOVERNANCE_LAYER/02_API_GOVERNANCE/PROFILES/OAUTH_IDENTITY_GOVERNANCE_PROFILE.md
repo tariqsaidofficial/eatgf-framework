@@ -129,12 +129,12 @@ This section demonstrates how OAuth 2.0/OIDC identity profiles implement each ma
 
 | Provider               | OAuth 2.0 | OIDC | mTLS | Token Revocation | Audit Logs | SOC 2  | ISO 27001 | FedRAMP | Recommended For    |
 | ---------------------- | --------- | ---- | ---- | ---------------- | ---------- | ------ | --------- | ------- | ------------------ |
-| Auth0                  | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | -       | Enterprise, SaaS   |
-| Keycloak (Self-hosted) | ✅        | ✅   | ✅   | ✅               | ✅         | Custom | Custom    | Custom  | All (On-premises)  |
-| Azure AD / Entra       | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | ✅      | Enterprise (Azure) |
-| AWS Cognito            | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | ✅      | Enterprise (AWS)   |
-| Okta                   | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | ✅      | Enterprise, SaaS   |
-| Google Cloud Identity  | ✅        | ✅   | ✅   | ✅               | ✅         | ✅     | ✅        | -       | Enterprise (GCP)   |
+| Auth0                  |         |    |    |                |          |      |         | -       | Enterprise, SaaS   |
+| Keycloak (Self-hosted) |         |    |    |                |          | Custom | Custom    | Custom  | All (On-premises)  |
+| Azure AD / Entra       |         |    |    |                |          |      |         |       | Enterprise (Azure) |
+| AWS Cognito            |         |    |    |                |          |      |         |       | Enterprise (AWS)   |
+| Okta                   |         |    |    |                |          |      |         |       | Enterprise, SaaS   |
+| Google Cloud Identity  |         |    |    |                |          |      |         | -       | Enterprise (GCP)   |
 
 **Audit Evidence:**
 
@@ -1192,4 +1192,4 @@ OAuth 2.0 & Identity deployments inherit the standard 5-level maturity model and
 **EATGF Baseline:** Block 2 API Governance Module
 **Authority:** API Governance Implementation Profile
 **Next Review Date:** 2026-05-14
-**Compliance Status:** EATGF Signature Template Compliant ✅
+**Compliance Status:** EATGF Signature Template Compliant 

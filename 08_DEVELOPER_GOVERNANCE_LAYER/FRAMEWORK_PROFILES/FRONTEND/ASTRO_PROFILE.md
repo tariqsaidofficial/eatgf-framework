@@ -62,12 +62,12 @@ This document defines governance conformance requirements for Astro applications
 ### Principle 1: Build-Time vs Runtime Security (MANDATORY)
 
 ```astro
-<!-- ❌ PROHIBITED: Secret in template (rendered to static HTML) -->
+<!--  PROHIBITED: Secret in template (rendered to static HTML) -->
 <script>
   const dbPassword = import.meta.env.SECRET_DB_PASSWORD;
 </script>
 
-<!-- ✅ COMPLIANT: Access secret only in server file -->
+<!--  COMPLIANT: Access secret only in server file -->
 ---
 // src/pages/api/data.astro
 const dbPassword = import.meta.env.SECRET_DB_PASSWORD;
@@ -90,7 +90,7 @@ const user = await getUser(Astro.request); // Server-side auth
   <body>
     <header>{user.name}</header>
 
-    <!-- ✅ COMPLIANT: Island receives only public data -->
+    <!--  COMPLIANT: Island receives only public data -->
     <UserWidget client:load user={user.email} />
   </body>
 </html>
@@ -101,7 +101,7 @@ interface Props {
 }
 
 export default function UserWidget({ user }: Props) {
-  // ✅ Island cannot access server secrets
+  //  Island cannot access server secrets
   return <div>Hello {user}</div>;
 }
 ```
@@ -109,18 +109,18 @@ export default function UserWidget({ user }: Props) {
 ### Principle 3: API Route Authentication (MANDATORY)
 
 ```typescript
-// ✅ COMPLIANT: API route with auth check
+//  COMPLIANT: API route with auth check
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async (context) => {
-  // ✅ Verify authentication
+  //  Verify authentication
   const user = await verifyAuth(context.request.headers.get("cookie"));
 
   if (!user) {
     return new Response(null, { status: 401 });
   }
 
-  // ✅ Server-side database access
+  //  Server-side database access
   const invoices = await getInvoices(user.id, user.tenantId);
 
   return new Response(JSON.stringify(invoices), {
@@ -132,11 +132,11 @@ export const GET: APIRoute = async (context) => {
 ### Principle 4: Middleware Authentication (MANDATORY)
 
 ```typescript
-// ✅ COMPLIANT: Middleware enforces auth
+//  COMPLIANT: Middleware enforces auth
 import { defineMiddleware } from "astro:middleware";
 
 export const onRequest = defineMiddleware(async (context, next) => {
-  // ✅ Check auth before route handler
+  //  Check auth before route handler
   const user = await verifyAuth(context.request.headers.get("cookie"));
 
   if (!user && context.request.url.includes("/admin")) {
@@ -153,14 +153,14 @@ export const onRequest = defineMiddleware(async (context, next) => {
 ### Principle 5: Environment Variable Isolation (MANDATORY)
 
 ```diff
-# ✅ .env.local (NEVER commit)
+#  .env.local (NEVER commit)
 SECRET_DB_PASSWORD=super-secret
 PUBLIC_API_URL=https://api.example.com
 
-# ✅ Code: Use PUBLIC_ prefix for client
+#  Code: Use PUBLIC_ prefix for client
 const apiUrl = import.meta.env.PUBLIC_API_URL;
 
-# ✅ Server file: Access any variable
+#  Server file: Access any variable
 const dbPassword = import.meta.env.SECRET_DB_PASSWORD;
 ```
 
@@ -168,9 +168,9 @@ const dbPassword = import.meta.env.SECRET_DB_PASSWORD;
 
 ```astro
 ---
-// ✅ COMPLIANT: Pre-render with auth context
+//  COMPLIANT: Pre-render with auth context
 export async function getStaticPaths() {
-  // ✅ Server-side: Fetch all user data
+  //  Server-side: Fetch all user data
   const users = await getAllUsers();
 
   return users.map(user => ({
@@ -192,7 +192,7 @@ const { userName } = Astro.props;
 // src/pages/invoices.astro
 import { validateInput } from '@/lib/validation';
 
-// ✅ Form submission: Server-side validation
+//  Form submission: Server-side validation
 if (Astro.request.method === 'POST') {
   const formData = await Astro.request.formData();
 
@@ -216,17 +216,17 @@ if (Astro.request.method === 'POST') {
 
 ```astro
 ---
-// ✅ COMPLIANT: Don't hydrate with sensitive data
+//  COMPLIANT: Don't hydrate with sensitive data
 const user = await getUser(context);
 const sensitiveData = await getSensitiveData(user.id);
 ---
 
 <html>
   <body>
-    <!-- ✅ Safe: No secrets passed to island -->
+    <!--  Safe: No secrets passed to island -->
     <Dashboard client:load userName={user.name} />
 
-    <!-- ❌ UNSAFE: Sensitive data leaked to client -->
+    <!--  UNSAFE: Sensitive data leaked to client -->
     <!-- <Dashboard client:load secret={sensitiveData.key} /> -->
   </body>
 </html>

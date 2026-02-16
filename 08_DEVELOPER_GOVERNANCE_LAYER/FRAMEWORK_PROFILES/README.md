@@ -54,18 +54,18 @@ Framework Profiles reference and implement controls defined in:
 
 Each Framework Profile must include:
 
-1. ✅ Title & Authority Notice
-2. ✅ Purpose & Architectural Position
-3. ✅ Relationship to EATGF Layers
-4. ✅ Governance Conformance (8 controls × implementation)
-5. ✅ Multi-Tenancy Controls (if applicable)
-6. ✅ Dependency & Supply Chain Governance
-7. ✅ Logging & Observability Standards
-8. ✅ CI/CD Integration Gates
-9. ✅ Implementation Risk Notes
-10. ✅ Framework-Specific Best Practices
-11. ✅ Developer Checklist
-12. ✅ Version Information
+1.  Title & Authority Notice
+2.  Purpose & Architectural Position
+3.  Relationship to EATGF Layers
+4.  Governance Conformance (8 controls × implementation)
+5.  Multi-Tenancy Controls (if applicable)
+6.  Dependency & Supply Chain Governance
+7.  Logging & Observability Standards
+8.  CI/CD Integration Gates
+9.  Implementation Risk Notes
+10.  Framework-Specific Best Practices
+11.  Developer Checklist
+12.  Version Information
 
 ## Control Implementation Examples
 

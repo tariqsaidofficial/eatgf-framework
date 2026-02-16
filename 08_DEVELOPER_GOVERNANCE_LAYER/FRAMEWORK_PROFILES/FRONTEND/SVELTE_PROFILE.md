@@ -60,7 +60,7 @@ This document defines governance conformance requirements for Svelte application
 ### Principle 1: Centralized API Client (MANDATORY)
 
 ```typescript
-// ❌ PROHIBITED: Direct requests in components
+//  PROHIBITED: Direct requests in components
 <script>
   onMount(async () => {
     const response = await fetch('https://api.example.com/invoices');
@@ -68,7 +68,7 @@ This document defines governance conformance requirements for Svelte application
   });
 </script>
 
-// ✅ COMPLIANT: Centralized client
+//  COMPLIANT: Centralized client
 // lib/api.ts
 import axios from 'axios';
 
@@ -87,12 +87,12 @@ api.interceptors.request.use((config) => {
 ### Principle 2: Secure Stores (MANDATORY)
 
 ```typescript
-// ❌ PROHIBITED: Token in writable store (persisted)
+//  PROHIBITED: Token in writable store (persisted)
 import { writable } from "svelte/store";
 
 export const token = writable(localStorage.getItem("token"));
 
-// ✅ COMPLIANT: Read-only computed store from auth service
+//  COMPLIANT: Read-only computed store from auth service
 import { derived, readonly } from "svelte/store";
 
 function createAuthStore() {
@@ -110,19 +110,19 @@ export const auth = createAuthStore();
 ### Principle 3: Two-Way Binding Security (MANDATORY)
 
 ```svelte
-<!-- ❌ PROHIBITED: Direct two-way binding on sensitive data -->
+<!--  PROHIBITED: Direct two-way binding on sensitive data -->
 <input bind:value={password} />
 <script>
   let password; // Accessible everywhere
 </script>
 
-<!-- ✅ COMPLIANT: Explicit one-way binding -->
+<!--  COMPLIANT: Explicit one-way binding -->
 <input value={privatePassword} on:change={updatePassword} />
 <script>
   let privatePassword = '';
 
   function updatePassword(e) {
-    // ✅ Explicit validation before state update
+    //  Explicit validation before state update
     if (isValidPassword(e.target.value)) {
       privatePassword = e.target.value;
     }
@@ -133,7 +133,7 @@ export const auth = createAuthStore();
 ### Principle 4: Reactive Assignment Races (MANDATORY)
 
 ```typescript
-// ❌ RISKY: Concurrent reactive assignments
+//  RISKY: Concurrent reactive assignments
 let invoices;
 let isLoading = false;
 
@@ -145,7 +145,7 @@ $: if (userId) {
   });
 }
 
-// ✅ COMPLIANT: Abort previous requests
+//  COMPLIANT: Abort previous requests
 let currentRequestAbort: AbortController | null = null;
 
 $: {
@@ -171,7 +171,7 @@ $: {
 ### Principle 5: Context Scope Security (MANDATORY)
 
 ```svelte
-<!-- ✅ COMPLIANT: Use context for tenant/auth, not props drilling -->
+<!--  COMPLIANT: Use context for tenant/auth, not props drilling -->
 <script context="module">
   import { setContext, getContext } from 'svelte';
 
@@ -187,7 +187,7 @@ $: {
 <script>
   import { getAuthContext } from '../lib/auth-context';
 
-  const auth = getAuthContext(); // ✅ Server-provided, read-only
+  const auth = getAuthContext(); //  Server-provided, read-only
 </script>
 
 <p>User: {auth.email}</p>
@@ -196,7 +196,7 @@ $: {
 ### Principle 6: Compiler Security (MANDATORY)
 
 ```javascript
-// ✅ vite.config.ts: Build security
+//  vite.config.ts: Build security
 export default {
   build: {
     sourcemap: false,
@@ -209,13 +209,13 @@ export default {
 ### Principle 7: XSS Prevention (MANDATORY)
 
 ```svelte
-<!-- ❌ PROHIBITED: Unescaped HTML -->
+<!--  PROHIBITED: Unescaped HTML -->
 <div>{@html userComment}</div>
 
-<!-- ✅ COMPLIANT: Text interpolation (auto-escaped) -->
+<!--  COMPLIANT: Text interpolation (auto-escaped) -->
 <div>{userComment}</div>
 
-<!-- ✅ COMPLIANT: Sanitized if HTML needed -->
+<!--  COMPLIANT: Sanitized if HTML needed -->
 <div>
   {@html DOMPurify.sanitize(userComment)}
 </div>
@@ -229,14 +229,14 @@ export default {
 
   let unsub;
 
-  // ✅ Unsubscribe on unmount
+  //  Unsubscribe on unmount
   onMount(() => {
     unsub = api.watchInvoices(invoiceId).subscribe(data => {
       invoices = data;
     });
   });
 
-  // ✅ MANDATORY cleanup
+  //  MANDATORY cleanup
   onDestroy(() => {
     unsub?.unsubscribe();
   });
@@ -277,7 +277,7 @@ function createAuthStore() {
     user = null;
   };
 
-  // ✅ Only expose read-only derived store
+  //  Only expose read-only derived store
   const { subscribe } = derived([]) => user);
 
   return {

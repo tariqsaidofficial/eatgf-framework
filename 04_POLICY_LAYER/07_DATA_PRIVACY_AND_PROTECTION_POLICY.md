@@ -9,7 +9,7 @@
 | Effective Date | 2026-02-16                                                   |
 | Authority      | Chief Privacy Officer and Chief Information Security Officer |
 | EATGF Layer    | 04_POLICY_LAYER                                              |
-| MCM Reference  | EATGF-APO-PRI-01, EATGF-APO-PRI-02, EATGF-DSS-PRI-01         |
+| MCM Reference  | EATGF-DATA-PRIV-01, EATGF-DATA-RET-01, EATGF-DATA-MIN-01     |
 
 ---
 

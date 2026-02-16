@@ -1,14 +1,14 @@
 # CI/CD Security Architecture Standard
 
-| Field | Value |
-|-------|-------|
-| Document Type | Implementation Standard |
-| Version | 1.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-16 |
-| Authority | Chief Security Officer and Platform Engineering Lead |
-| EATGF Layer | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
-| MCM Reference | EATGF-PW-CD-01, EATGF-RV-CD-01 |
+| Field          | Value                                                   |
+| -------------- | ------------------------------------------------------- |
+| Document Type  | Implementation Standard                                 |
+| Version        | 1.0                                                     |
+| Classification | Controlled                                              |
+| Effective Date | 2026-02-16                                              |
+| Authority      | Chief Security Officer and Platform Engineering Lead    |
+| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| MCM Reference  | EATGF-DEV-CI-01                                         |
 
 ---
 
@@ -41,6 +41,7 @@ This standard defines security architecture requirements for all CI/CD pipelines
 **Five-Layer Security Model:**
 
 **Layer 1: Source Control Security**
+
 - Code repository authentication via public key infrastructure or SSO
 - Commit signing required (GPG or similar); unsigned commits blocked
 - Branch protection rules: code review + CI pass required before merge
@@ -49,6 +50,7 @@ This standard defines security architecture requirements for all CI/CD pipelines
 - Example platforms: GitHub, GitLab, Gitea
 
 **Layer 2: Build Isolation and Sandboxing**
+
 - Build execution in containerized environment; no shared compute
 - Build containers based on hardened base images; weekly vulnerability scanning
 - Network isolation: build environment cannot access production credentials
@@ -57,6 +59,7 @@ This standard defines security architecture requirements for all CI/CD pipelines
 - Example platforms: GitHub Actions, GitLab CI, CircleCI, Jenkins with container agents
 
 **Layer 3: Artifact Signing and Provenance**
+
 - All build artifacts cryptographically signed with hardware security module (HSM) key
 - Signature includes: build environment fingerprint, builder identity, timestamp, artifact hash
 - Artifact provenance recorded in Software Bill of Materials (SBOM) format
@@ -65,6 +68,7 @@ This standard defines security architecture requirements for all CI/CD pipelines
 - Example standards: Sigstore, in-toto, SLSA framework
 
 **Layer 4: Deployment Security**
+
 - Deployment credentials stored in hardware-backed vault (AWS Secrets Manager, HashiCorp Vault, Azure Key Vault)
 - Deployment credentials rotated on every successful deployment (one-time-use tokens)
 - Deployment approval: critical/production deployments require manual approval from authorized deployer
@@ -73,6 +77,7 @@ This standard defines security architecture requirements for all CI/CD pipelines
 - Example platforms: ArgoCD, Spinnaker, AWS CodeDeploy
 
 **Layer 5: Monitoring and Response**
+
 - Pipeline execution monitoring: real-time alerts for failed builds, unsigned artifacts, unapproved deployments
 - SIEM integration: pipeline events streamed to security information and event management system
 - Incident response: failed deployment security checks trigger automatic rollback and security team notification
@@ -82,22 +87,24 @@ This standard defines security architecture requirements for all CI/CD pipelines
 
 **Required Security Capabilities:**
 
-| Capability | Requirement | Verification |
-|------------|-------------|----------------|
-| Secret Management | Secrets never logged or exposed in build logs | Log file audit sampling |
-| Build Isolation | Each build in separate ephemeral environment | Platform documentation + test |
-| Audit Logging | All pipeline actions logged with identity | Log retention verification |
-| Access Control | Role-based access to pipeline configuration | Access control audit |
-| Artifact Repository | Credentials-based access control; repository scan for vulnerabilities | Repository audit |
-| Deployment Approval | Manual approval gate for critical environments | Configuration review |
+| Capability          | Requirement                                                           | Verification                  |
+| ------------------- | --------------------------------------------------------------------- | ----------------------------- |
+| Secret Management   | Secrets never logged or exposed in build logs                         | Log file audit sampling       |
+| Build Isolation     | Each build in separate ephemeral environment                          | Platform documentation + test |
+| Audit Logging       | All pipeline actions logged with identity                             | Log retention verification    |
+| Access Control      | Role-based access to pipeline configuration                           | Access control audit          |
+| Artifact Repository | Credentials-based access control; repository scan for vulnerabilities | Repository audit              |
+| Deployment Approval | Manual approval gate for critical environments                        | Configuration review          |
 
 **Tested Platforms:**
+
 - GitHub Actions (GitHub Enterprise Cloud with advanced security)
 - GitLab CI (self-hosted with elevated privileges)
 - CircleCI (with private runners and vault integration)
 - Jenkins (with agent segregation and Groovy sandboxing)
 
 **Prohibited Platforms:**
+
 - Shared hosted build agents without network isolation
 - Pipeline systems without cryptographic artifact signing
 - Platforms without audit logging
@@ -161,12 +168,14 @@ RUN echo "tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec 0 0" >> /etc/fstab
 ```
 
 **Build Runner Network Requirements:**
+
 - Outbound: Package registries (PyPI, npm, Maven Central), Git hosting, Docker registries only
 - Inbound: Blocked except for pipeline control messages
 - DNS: Resolved through internal DNS forwarder; external resolution blocked
 - No external load balancer access; builds triggered only via pipeline service
 
 **Build Runner Resource Limits:**
+
 - CPU: 2 cores maximum per build
 - Memory: 4 GB maximum per build
 - Disk: 50 GB temporary storage (cleaned after build)
@@ -175,6 +184,7 @@ RUN echo "tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec 0 0" >> /etc/fstab
 ### Artifact Repository Security
 
 **Repository Access Control:**
+
 - Read access: Restricted to deployment systems and authorized developers
 - Write access: Restricted to build pipeline only
 - Admin access: CISO approval required; actions logged with hardware key signing
@@ -182,6 +192,7 @@ RUN echo "tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec 0 0" >> /etc/fstab
 - Credential storage: Stored in hardware security module (HSM); never in plaintext
 
 **Repository Vulnerability Scanning:**
+
 - All uploaded artifacts scanned within 1 hour of upload
 - Vulnerability scan results attached to artifact metadata; available at deployment time
 - High-risk artifacts (CVSS >8.9) quarantined; deployment rejected unless explicitly approved
@@ -189,13 +200,13 @@ RUN echo "tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec 0 0" >> /etc/fstab
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
-|---|---|---|---|---|
-| Build isolation | A.8.25, A.8.26 | PW.4.1, PW.5 | SAMM-AM | BAI03.10 |
-| Artifact signing | A.8.30, A.8.31 | PW.4.2, RV.1.2 | SLSA | BAI07.02 |
-| Secret management | A.8.24, A.7.2 | PO.5.1, PW.3 | SecureCodeDox | BAI04.02 |
-| Compliance gates | A.8.19, A.8.20 | PW.6, PO.3 | ASVS | DSS05.06 |
-| Access control | A.9.2, A.9.4 | PO.1, PO.2 | AuthN/Z | APO01.03 |
+| EATGF Context     | ISO 27001:2022 | NIST SSDF      | OWASP         | COBIT    |
+| ----------------- | -------------- | -------------- | ------------- | -------- |
+| Build isolation   | A.8.25, A.8.26 | PW.4.1, PW.5   | SAMM-AM       | BAI03.10 |
+| Artifact signing  | A.8.30, A.8.31 | PW.4.2, RV.1.2 | SLSA          | BAI07.02 |
+| Secret management | A.8.24, A.7.2  | PO.5.1, PW.3   | SecureCodeDox | BAI04.02 |
+| Compliance gates  | A.8.19, A.8.20 | PW.6, PO.3     | ASVS          | DSS05.06 |
+| Access control    | A.9.2, A.9.4   | PO.1, PO.2     | AuthN/Z       | APO01.03 |
 
 ## Developer Checklist
 
@@ -260,6 +271,6 @@ Before implementing CI/CD security architecture:
 
 ## Version History
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major | Initial CI/CD security architecture standard for Layer 08 |
+| Version | Date       | Change Type | Description                                               |
+| ------- | ---------- | ----------- | --------------------------------------------------------- |
+| 1.0     | 2026-02-16 | Major       | Initial CI/CD security architecture standard for Layer 08 |

@@ -57,7 +57,7 @@ Define governance controls for building, scanning, signing, and deploying Docker
 ### Secure Dockerfile Standard
 
 ```dockerfile
-# ✅ COMPLIANT: Minimal base, non-root user
+#  COMPLIANT: Minimal base, non-root user
 FROM python:3.12-slim@sha256:abc123...
 
 RUN addgroup --system appgroup && \
@@ -100,7 +100,7 @@ docker push app:$GITHUB_SHA
 ### Runtime Hardening
 
 ```bash
-# ✅ COMPLIANT: Container execution
+#  COMPLIANT: Container execution
 docker run \
   --user 1000:1000 \
   --read-only \

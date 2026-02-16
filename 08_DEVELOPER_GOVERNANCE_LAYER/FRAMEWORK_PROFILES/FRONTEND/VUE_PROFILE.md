@@ -62,7 +62,7 @@ This document defines governance conformance requirements for Vue.js application
 ### Principle 1: Centralized API Client Configuration (MANDATORY)
 
 ```typescript
-// ❌ PROHIBITED: Direct fetch in components
+//  PROHIBITED: Direct fetch in components
 <script setup>
 import { ref } from 'vue';
 
@@ -74,7 +74,7 @@ onMounted(async () => {
 });
 </script>
 
-// ✅ COMPLIANT: Centralized client
+//  COMPLIANT: Centralized client
 import { useApi } from '@/composables/useApi';
 
 <script setup>
@@ -85,16 +85,16 @@ const { data: invoices, error, loading } = useApi('/invoices');
 ### Principle 2: Pinia for Secure State Management (MANDATORY)
 
 ```typescript
-// ❌ PROHIBITED: Reactive tokens in component state
+//  PROHIBITED: Reactive tokens in component state
 <script setup>
 const token = ref(localStorage.getItem('token'));
 </script>
 
-// ✅ COMPLIANT: Pinia store with restricted state
+//  COMPLIANT: Pinia store with restricted state
 import { defineStore } from 'pinia';
 
 export const useAuthStore = defineStore('auth', () => {
-  // ✅ Token in Pinia, not persisted
+  //  Token in Pinia, not persisted
   const user = ref<User | null>(null);
 
   const setUser = (newUser: User) => {
@@ -108,17 +108,17 @@ export const useAuthStore = defineStore('auth', () => {
 ### Principle 3: Template XSS Prevention (MANDATORY)
 
 ```vue
-<!-- ❌ PROHIBITED: Unescaped HTML -->
+<!--  PROHIBITED: Unescaped HTML -->
 <template>
   <div v-html="userComment"></div>
 </template>
 
-<!-- ✅ COMPLIANT: Text interpolation (auto-escaped) -->
+<!--  COMPLIANT: Text interpolation (auto-escaped) -->
 <template>
   <div>{{ userComment }}</div>
 </template>
 
-<!-- ✅ COMPLIANT: Sanitized if HTML needed -->
+<!--  COMPLIANT: Sanitized if HTML needed -->
 <template>
   <div>{{ sanitized }}</div>
 </template>
@@ -132,7 +132,7 @@ const sanitized = computed(() => DOMPurify.sanitize(userComment.value));
 ### Principle 4: Composition API Security (MANDATORY)
 
 ```typescript
-// ✅ COMPLIANT: Extract logic into composables with security context
+//  COMPLIANT: Extract logic into composables with security context
 import { ref } from "vue";
 import { useAuthStore } from "@/stores/auth";
 
@@ -143,7 +143,7 @@ export function useInvoices() {
 
   const fetchInvoices = async () => {
     try {
-      // ✅ Use authenticated context from store
+      //  Use authenticated context from store
       const response = await api.get("/invoices", {
         headers: {
           Authorization: `Bearer ${authStore.token}`,
@@ -162,7 +162,7 @@ export function useInvoices() {
 ### Principle 5: Route Guard Authentication (MANDATORY)
 
 ```typescript
-// ✅ COMPLIANT: Router guards enforce auth
+//  COMPLIANT: Router guards enforce auth
 import { createRouter, createWebHistory } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
 
@@ -191,11 +191,11 @@ router.beforeEach((to, from, next) => {
 ### Principle 6: Environment Variable Isolation (MANDATORY)
 
 ```typescript
-// ✅ COMPLIANT: Prefixed env vars
+//  COMPLIANT: Prefixed env vars
 const apiUrl = import.meta.env.VITE_API_URL;
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
-// ❌ PROHIBITED: Secrets
+//  PROHIBITED: Secrets
 // process.env.DATABASE_PASSWORD (never in frontend)
 // import.meta.env.PRIVATE_JWT_SECRET (exposed to bundle)
 ```
@@ -203,14 +203,14 @@ const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 ### Principle 7: Watch and Computed Security (MANDATORY)
 
 ```typescript
-// ❌ RISKY: Reactive side effects without boundaries
+//  RISKY: Reactive side effects without boundaries
 watch(() => authStore.user, async (newUser) => {
   if (newUser?.role === 'admin') {
     // Too implicit, hard to audit
   }
 });
 
-// ✅ COMPLIANT: Explicit, auditable guards
+//  COMPLIANT: Explicit, auditable guards
 const isAdmin = computed(() => {
   return authStore.user?.roles?.includes('admin') ?? false;
 });
@@ -224,7 +224,7 @@ const isAdmin = computed(() => {
 ### Principle 8: Build Security (MANDATORY)
 
 ```bash
-# ✅ Vite build configuration
+#  Vite build configuration
 export default defineConfig({
   build: {
     sourcemap: false, // Disable source maps in production
@@ -267,7 +267,7 @@ export const useAuth = defineStore("auth", () => {
 
   const login = async (email: string, password: string) => {
     await api.post("/auth/login", { email, password });
-    // ✅ Server sets HTTP-only cookie
+    //  Server sets HTTP-only cookie
     await fetchUser();
   };
 
@@ -495,14 +495,14 @@ export const useLogger = (component: string) => {
 ### Compliant Implementation
 
 ```typescript
-// ✅ Vite config enforcement
+//  Vite config enforcement
 export default defineConfig({
   server: {
     https: true, // Development server uses HTTPS
   },
 });
 
-// ✅ API client enforces HTTPS
+//  API client enforces HTTPS
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true, // Send HTTP-only cookies

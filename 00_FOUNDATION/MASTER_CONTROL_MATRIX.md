@@ -1315,58 +1315,58 @@ Each control is defined with:
 | ID                                  | Title                    | Domain | Type       | Owner      | Frequency    | Startup | SaaS | Enterprise | Environment              |
 | ----------------------------------- | ------------------------ | ------ | ---------- | ---------- | ------------ | ------- | ---- | ---------- | ------------------------ |
 | **GOVERNANCE LAYER**                |                          |        |            |            |              |         |      |            |                          |
-| EATGF-EDM-RISK-01                   | Risk Appetite Definition | EDM    | Governance | CGO        | Annual       | ❌      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-EDM-BEN-01                    | Benefits Monitoring      | EDM    | Detective  | CFO        | Quarterly    | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-EDM-GOV-01                    | Governance Model         | EDM    | Governance | CGO        | Annual       | ❌      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
+| EATGF-EDM-RISK-01                   | Risk Appetite Definition | EDM    | Governance | CGO        | Annual       |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-EDM-BEN-01                    | Benefits Monitoring      | EDM    | Detective  | CFO        | Quarterly    |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-EDM-GOV-01                    | Governance Model         | EDM    | Governance | CGO        | Annual       |       |    |          | Cloud/Hybrid/On-Prem     |
 | **STRATEGY LAYER**                  |                          |        |            |            |              |         |      |            |                          |
-| EATGF-APO-ARCH-01                   | Architecture Framework   | APO    | Preventive | CArch      | Annual       | ❌      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-APO-RISK-01                   | Risk Register            | APO    | Preventive | CRO        | Quarterly    | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-APO-SEC-01                    | ISMS                     | APO    | Governance | CISO       | Annual       | ❌      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-APO-AI-01                     | AIMS                     | APO    | Governance | CAI        | Quarterly    | ❌      | ⚠️   | ✅         | Cloud/Hybrid/On-Prem     |
+| EATGF-APO-ARCH-01                   | Architecture Framework   | APO    | Preventive | CArch      | Annual       |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-APO-RISK-01                   | Risk Register            | APO    | Preventive | CRO        | Quarterly    |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-APO-SEC-01                    | ISMS                     | APO    | Governance | CISO       | Annual       |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-APO-AI-01                     | AIMS                     | APO    | Governance | CAI        | Quarterly    |       |    |          | Cloud/Hybrid/On-Prem     |
 | **BUILD & CHANGE LAYER**            |                          |        |            |            |              |         |      |            |                          |
-| EATGF-BAI-CHG-01                    | Change Management        | BAI    | Preventive | Eng Lead   | Monthly      | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-BAI-CONF-01                   | Configuration Control    | BAI    | Detective  | DevOps     | Continuous   | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-BAI-TEST-01                   | QA & Testing             | BAI    | Preventive | QA Lead    | Per Release  | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
+| EATGF-BAI-CHG-01                    | Change Management        | BAI    | Preventive | Eng Lead   | Monthly      |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-BAI-CONF-01                   | Configuration Control    | BAI    | Detective  | DevOps     | Continuous   |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-BAI-TEST-01                   | QA & Testing             | BAI    | Preventive | QA Lead    | Per Release  |       |    |          | Cloud/Hybrid/On-Prem     |
 | **OPERATIONS & SECURITY LAYER**     |                          |        |            |            |              |         |      |            |                          |
-| EATGF-DSS-SEC-01                    | IAM                      | DSS    | Preventive | Security   | Quarterly    | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-DSS-ENC-01                    | Encryption               | DSS    | Preventive | Security   | Quarterly    | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-DSS-VULN-01                   | Patch Management         | DSS    | Preventive | Security   | Monthly      | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-DSS-INC-01                    | Incident Response        | DSS    | Corrective | Security   | Per Incident | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
+| EATGF-DSS-SEC-01                    | IAM                      | DSS    | Preventive | Security   | Quarterly    |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-DSS-ENC-01                    | Encryption               | DSS    | Preventive | Security   | Quarterly    |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-DSS-VULN-01                   | Patch Management         | DSS    | Preventive | Security   | Monthly      |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-DSS-INC-01                    | Incident Response        | DSS    | Corrective | Security   | Per Incident |       |    |          | Cloud/Hybrid/On-Prem     |
 | **MONITORING & AUDIT LAYER**        |                          |        |            |            |              |         |      |            |                          |
-| EATGF-MEA-AUD-01                    | Internal Audit           | MEA    | Detective  | Compliance | Annual       | ❌      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-MEA-PERF-01                   | Performance Monitoring   | MEA    | Detective  | Governance | Quarterly    | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-MEA-MAT-01                    | Maturity Assessment      | MEA    | Detective  | Governance | Annual       | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
+| EATGF-MEA-AUD-01                    | Internal Audit           | MEA    | Detective  | Compliance | Annual       |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-MEA-PERF-01                   | Performance Monitoring   | MEA    | Detective  | Governance | Quarterly    |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-MEA-MAT-01                    | Maturity Assessment      | MEA    | Detective  | Governance | Annual       |       |    |          | Cloud/Hybrid/On-Prem     |
 | **CLOUD GOVERNANCE LAYER** (NEW)    |                          |        |            |            |              |         |      |            |                          |
-| EATGF-CLD-ARCH-01                   | Cloud Architecture       | CLD    | Preventive | Cloud Arch | Annual       | ❌      | ✅   | ✅         | Cloud/Multi-Cloud/Hybrid |
-| EATGF-CLD-SEC-01                    | Cloud Security           | CLD    | Preventive | Cloud Sec  | Monthly      | ❌      | ✅   | ✅         | Cloud/Multi-Cloud/Hybrid |
-| EATGF-CLD-MON-01                    | Cloud Monitoring         | CLD    | Detective  | Cloud Ops  | Monthly      | ❌      | ✅   | ✅         | Cloud/Multi-Cloud/Hybrid |
-| EATGF-CLD-RES-01                    | Cloud Resilience         | CLD    | Preventive | CTO        | Quarterly    | ❌      | ✅   | ✅         | Cloud/Multi-Cloud/Hybrid |
+| EATGF-CLD-ARCH-01                   | Cloud Architecture       | CLD    | Preventive | Cloud Arch | Annual       |       |    |          | Cloud/Multi-Cloud/Hybrid |
+| EATGF-CLD-SEC-01                    | Cloud Security           | CLD    | Preventive | Cloud Sec  | Monthly      |       |    |          | Cloud/Multi-Cloud/Hybrid |
+| EATGF-CLD-MON-01                    | Cloud Monitoring         | CLD    | Detective  | Cloud Ops  | Monthly      |       |    |          | Cloud/Multi-Cloud/Hybrid |
+| EATGF-CLD-RES-01                    | Cloud Resilience         | CLD    | Preventive | CTO        | Quarterly    |       |    |          | Cloud/Multi-Cloud/Hybrid |
 | **DEVSECOPS LAYER** (NEW)           |                          |        |            |            |              |         |      |            |                          |
-| EATGF-DEV-SDLC-01                   | Secure SDLC              | DEV    | Preventive | Eng Lead   | Per Release  | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-DEV-SCAN-01                   | SAST/DAST/SCA            | DEV    | Detective  | AppSec     | Continuous   | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-DEV-SUP-01                    | Supply Chain & SBOM      | DEV    | Preventive | DevOps     | Per Release  | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-DEV-CI-01                     | CI/CD Pipeline           | DEV    | Preventive | DevOps     | Per Deploy   | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
+| EATGF-DEV-SDLC-01                   | Secure SDLC              | DEV    | Preventive | Eng Lead   | Per Release  |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-DEV-SCAN-01                   | SAST/DAST/SCA            | DEV    | Detective  | AppSec     | Continuous   |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-DEV-SUP-01                    | Supply Chain & SBOM      | DEV    | Preventive | DevOps     | Per Release  |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-DEV-CI-01                     | CI/CD Pipeline           | DEV    | Preventive | DevOps     | Per Deploy   |       |    |          | Cloud/Hybrid/On-Prem     |
 | **DATA PRIVACY LAYER** (NEW)        |                          |        |            |            |              |         |      |            |                          |
-| EATGF-DATA-PRIV-01                  | DPIA                     | DATA   | Preventive | DPO        | Per Activity | ✅\*    | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-DATA-RET-01                   | Data Retention           | DATA   | Preventive | CDO        | Annual       | ✅\*    | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-DATA-MIN-01                   | Data Minimization        | DATA   | Preventive | DPO        | Quarterly    | ✅\*    | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
+| EATGF-DATA-PRIV-01                  | DPIA                     | DATA   | Preventive | DPO        | Per Activity | \*    |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-DATA-RET-01                   | Data Retention           | DATA   | Preventive | CDO        | Annual       | \*    |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-DATA-MIN-01                   | Data Minimization        | DATA   | Preventive | DPO        | Quarterly    | \*    |    |          | Cloud/Hybrid/On-Prem     |
 | **BUSINESS CONTINUITY LAYER** (NEW) |                          |        |            |            |              |         |      |            |                          |
-| EATGF-BCP-PLAN-01                   | BC/DR Planning           | BCP    | Preventive | Resilience | Annual       | ❌      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-BCP-TEST-01                   | BC/DR Testing            | BCP    | Detective  | Resilience | Annual       | ❌      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-BCP-RTO-01                    | RTO/RPO Management       | BCP    | Detective  | Ops        | Monthly      | ❌      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
+| EATGF-BCP-PLAN-01                   | BC/DR Planning           | BCP    | Preventive | Resilience | Annual       |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-BCP-TEST-01                   | BC/DR Testing            | BCP    | Detective  | Resilience | Annual       |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-BCP-RTO-01                    | RTO/RPO Management       | BCP    | Detective  | Ops        | Monthly      |       |    |          | Cloud/Hybrid/On-Prem     |
 | **AI GOVERNANCE LAYER**             |                          |        |            |            |              |         |      |            |                          |
-| EATGF-AI-LC-01                      | AI Lifecycle             | BAI    | Preventive | AI Lead    | Per Release  | ❌      | ⚠️   | ✅         | Cloud/Hybrid             |
-| EATGF-AI-RISK-01                    | AI Risk & Bias           | EDM    | Preventive | AI Risk    | Per Update   | ❌      | ⚠️   | ✅         | Cloud/Hybrid             |
+| EATGF-AI-LC-01                      | AI Lifecycle             | BAI    | Preventive | AI Lead    | Per Release  |       |    |          | Cloud/Hybrid             |
+| EATGF-AI-RISK-01                    | AI Risk & Bias           | EDM    | Preventive | AI Risk    | Per Update   |       |    |          | Cloud/Hybrid             |
 | **API GOVERNANCE LAYER**            |                          |        |            |            |              |         |      |            |                          |
-| EATGF-API-SEC-01                    | API Auth                 | DSS    | Preventive | API Lead   | Quarterly    | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
-| EATGF-API-LC-01                     | API Lifecycle            | BAI    | Preventive | API PM     | Per Release  | ✅      | ✅   | ✅         | Cloud/Hybrid/On-Prem     |
+| EATGF-API-SEC-01                    | API Auth                 | DSS    | Preventive | API Lead   | Quarterly    |       |    |          | Cloud/Hybrid/On-Prem     |
+| EATGF-API-LC-01                     | API Lifecycle            | BAI    | Preventive | API PM     | Per Release  |       |    |          | Cloud/Hybrid/On-Prem     |
 
 **Legend:**
 
-- ✅ = Mandatory for edition
-- ❌ = Not applicable for edition
-- ⚠️ = Conditional (if applicable to organization)
-- ✅\* = Conditional (if processing personal data)
+-  = Mandatory for edition
+-  = Not applicable for edition
+-  = Conditional (if applicable to organization)
+- \* = Conditional (if processing personal data)
 - Cloud/Hybrid/On-Prem/Multi-Cloud = Applicable environment(s)
 
 ---
@@ -1424,17 +1424,17 @@ Each control maps to specific evidence requirements:
 
 ---
 
-## 📅 VERSION & STATUS
+##  VERSION & STATUS
 
 **Framework:** EATGF v1.0 (MCM Complete - Phase 1.5 Integrated)
 **Total Controls:** 35 (21 Foundation + 14 Expansion)
 **Document Version:** 1.0 (Integrated)
 **Last Updated:** February 13, 2026
-**Status:** ✅ **UNIFIED MCM READY FOR PHASE 2**
+**Status:**  **UNIFIED MCM READY FOR PHASE 2**
 
 ---
 
-## 📅 NEXT STEPS (Phase 2)
+##  NEXT STEPS (Phase 2)
 
 **These steps will be completed AFTER MCM v1.0 is fully integrated:**
 
@@ -1458,7 +1458,7 @@ Each control maps to specific evidence requirements:
 
 ---
 
-## 📞 GOVERNANCE & MAINTENANCE
+##  GOVERNANCE & MAINTENANCE
 
 **MCM Authority:** Chief Governance Officer
 **MCM Owner:** Governance Council

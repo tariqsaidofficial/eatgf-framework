@@ -244,6 +244,6 @@ Policy changes require formal approval by policy authority and cross-impact asse
 - **COBIT 2019** – Governance of Enterprise Information Technology (ISACA, 2019)
 
 **Framework Version:** EATGF-v1.0-Foundation  
-**Policy Status:** ✅ Approved & Active  
+**Policy Status:**  Approved & Active  
 **Last Updated:** February 13, 2026  
 **Review Cycle:** Annual

@@ -67,11 +67,11 @@ APIs proceed through three sequential gates before production release:
 
 **Automated Checks (PASS/FAIL):**
 
-- ✓ No hardcoded secrets (pre-commit hook + git-secrets scan)
-- ✓ Input validation schema present (Pydantic, JSON Schema, OpenAPI)
-- ✓ Authentication mechanism declared (OAuth2/OIDC/mTLS/API key)
-- ✓ No SQL/NoSQL injection patterns (Bandit, CodeQL)
-- ✓ HTTPS/TLS enforcement declared (no plaintext HTTP)
+-  No hardcoded secrets (pre-commit hook + git-secrets scan)
+-  Input validation schema present (Pydantic, JSON Schema, OpenAPI)
+-  Authentication mechanism declared (OAuth2/OIDC/mTLS/API key)
+-  No SQL/NoSQL injection patterns (Bandit, CodeQL)
+-  HTTPS/TLS enforcement declared (no plaintext HTTP)
 
 **Failure Action:** PR blocked automatically; author receives detailed error report with remediation steps
 
@@ -83,12 +83,12 @@ APIs proceed through three sequential gates before production release:
 
 **Verification Checks (PASS/FAIL/REVIEW):**
 
-- ✓ Authorization matrix documented (RBAC/ABAC definition)
-- ✓ Rate limiting configured per tier (free/startup/pro/enterprise)
-- ✓ API versioning strategy defined (/v1/, header-based, GraphQL versioning)
-- ✓ OpenAPI 3.0+ specification complete and validated
-- ✓ Webhook security (HMAC-SHA256 + timestamp validation) if async
-- ✓ Logging includes correlation IDs for request traceability
+-  Authorization matrix documented (RBAC/ABAC definition)
+-  Rate limiting configured per tier (free/startup/pro/enterprise)
+-  API versioning strategy defined (/v1/, header-based, GraphQL versioning)
+-  OpenAPI 3.0+ specification complete and validated
+-  Webhook security (HMAC-SHA256 + timestamp validation) if async
+-  Logging includes correlation IDs for request traceability
 
 **Failure Action:** Automated notification to API owner; manual review required
 
@@ -100,13 +100,13 @@ APIs proceed through three sequential gates before production release:
 
 **Verification Checks (PASS/FAIL/AUDIT):**
 
-- ✓ SOC 2 evidence present (logging retention ≥90 days)
-- ✓ Secrets encrypted at rest + in transit (HashiCorp Vault, AWS Secrets Manager)
-- ✓ Rate limiting functional verification (stress test confirms enforcement)
-- ✓ mTLS certificates valid (if service-to-service)
-- ✓ Sensitive data classification documented (PII/PHI/payment card/regulated)
-- ✓ Data residency constraints honored (EU, US, compliance-specific geography)
-- ✓ GDPR/CCPA capability audit completed (if handling customer data)
+-  SOC 2 evidence present (logging retention ≥90 days)
+-  Secrets encrypted at rest + in transit (HashiCorp Vault, AWS Secrets Manager)
+-  Rate limiting functional verification (stress test confirms enforcement)
+-  mTLS certificates valid (if service-to-service)
+-  Sensitive data classification documented (PII/PHI/payment card/regulated)
+-  Data residency constraints honored (EU, US, compliance-specific geography)
+-  GDPR/CCPA capability audit completed (if handling customer data)
 
 **Failure Action:** Canary deployment rejected; issue escalated to Compliance team
 
@@ -263,7 +263,7 @@ jobs:
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: '⚠️ **Compliance Gate Failed**: A mandatory control is missing. Contact API Governance team.'
+                body: ' **Compliance Gate Failed**: A mandatory control is missing. Contact API Governance team.'
               })
             }
 ```

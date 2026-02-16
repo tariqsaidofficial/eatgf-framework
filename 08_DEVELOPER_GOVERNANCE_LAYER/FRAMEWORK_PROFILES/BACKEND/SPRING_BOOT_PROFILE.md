@@ -49,10 +49,10 @@ Spring Boot functions as:
 
 **Conformance Obligations:**
 
-- ✅ 01_SECURE_SDLC standards
-- ✅ 02_API_GOVERNANCE standards (REST-specific controls)
-- ✅ 03_DEVSECOPS standards
-- ✅ 04_CLOUD standards (if deployed in SaaS context)
+-  01_SECURE_SDLC standards
+-  02_API_GOVERNANCE standards (REST-specific controls)
+-  03_DEVSECOPS standards
+-  04_CLOUD standards (if deployed in SaaS context)
 
 ## Relationship to EATGF Layers
 
@@ -336,7 +336,7 @@ public class SecurityConfig {
 **Non-Compliant Example:**
 
 ```java
-// ❌ Session authentication for API
+//  Session authentication for API
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -403,7 +403,7 @@ public class InvoiceController {
 **Non-Compliant Example:**
 
 ```java
-// ❌ No object-level permission check
+//  No object-level permission check
 @GetMapping("/{id}")
 public ResponseEntity<Invoice> getInvoice(@PathVariable Long id) {
     // Missing tenant/ownership validation
@@ -448,7 +448,7 @@ public class VersionedInvoiceController {
 **Non-Compliant Example:**
 
 ```java
-// ❌ No versioning; breaking changes in production
+//  No versioning; breaking changes in production
 @GetMapping("/api/invoices")
 public ResponseEntity<InvoiceResponseV2> getInvoices() {
     // Breaking change: removed fields from v1
@@ -517,7 +517,7 @@ public class InvoiceController {
 **Non-Compliant Example:**
 
 ```java
-// ❌ No validation; raw request body
+//  No validation; raw request body
 @PostMapping
 public ResponseEntity<Invoice> createInvoice(@RequestBody Map<String, Object> request) {
     // Injection risk; no type safety
@@ -588,7 +588,7 @@ public class RateLimitingConfig {
 **Non-Compliant Example:**
 
 ```java
-// ❌ No rate limiting; open to DoS
+//  No rate limiting; open to DoS
 @GetMapping("/api/v1/invoices")
 public ResponseEntity<List<Invoice>> getInvoices(@AuthenticationPrincipal UserDetails user) {
     // No rate limit protection
@@ -658,7 +658,7 @@ public class InvoiceControllerTest {
 **Non-Compliant Example:**
 
 ```java
-// ❌ No tests; no OpenAPI schema
+//  No tests; no OpenAPI schema
 // No test files present
 // No @Operation annotations in controller
 ```
@@ -733,7 +733,7 @@ spring:
 **Non-Compliant Example:**
 
 ```java
-// ❌ No structured logging
+//  No structured logging
 logger.info("User " + user + " accessed " + path);  // Plain text
 ```
 
@@ -799,12 +799,12 @@ public class SecurityConfig {
 **Non-Compliant Example:**
 
 ```yaml
-# ❌ No HTTPS; HTTP allowed
+#  No HTTPS; HTTP allowed
 server:
   ssl:
     enabled: false
 
-# ❌ CORS wide open
+#  CORS wide open
 spring:
   web:
     cors:

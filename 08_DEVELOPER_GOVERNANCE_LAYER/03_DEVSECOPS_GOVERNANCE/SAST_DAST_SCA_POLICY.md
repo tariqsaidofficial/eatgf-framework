@@ -8,7 +8,7 @@
 | Effective Date | 2026-02-16 |
 | Authority | Chief Security Officer and Development Lead |
 | EATGF Layer | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
-| MCM Reference | EATGF-RV-TEST-01, EATGF-RV-TEST-02 |
+| MCM Reference | EATGF-DEV-SCAN-01 |
 
 ---
 
@@ -81,6 +81,8 @@ rules:
 ```
 
 **SAST False Positive Handling:**
+
+
 - False positives tracked in tool configuration
 - Suppression comments require justification: `// NOSONAR: reason`
 - Suppressed findings reviewed monthly; persistent suppressions escalated
@@ -187,52 +189,64 @@ Approved Licenses:
 - CC0 (public domain)
 ```
 
+
 **License Violation Handling:**
+
 - GPL dependency detected → trigger replacement/exemption process
 - No new GPL dependencies added → enforced in SCA gate
 - Existing GPL dependencies → document in SBOM with exemption justification
 
-## Integrated Testing Pipeline
+### Integrated Testing Pipeline
+
 
 **Stage 1: Commit → SAST (Immediate)**
+
 ```
 git push → pre-commit hook
   ├─ Semgrep on changed files
   ├─ ESLint/Bandit/gosec
   └─ Fail if Critical/High found
+
 ```
 
 **Stage 2: Build → SCA (Minutes)**
+
 ```
 Pull Request Created → Build CI
   ├─ Dependency-Check on all libs
   ├─ License scanning
   ├─ npm audit / pip audit
+
   └─ Fail if CVSS > 7.0
 ```
 
 **Stage 3: Release → DAST (Hours)**
+
 ```
 Pre-release (manual trigger) → Test Environment
   ├─ Deploy to staging
   ├─ OWASP ZAP active scan
   ├─ API fuzzing
+
   ├─ Coverage report
   └─ Fail if Critical found
 ```
 
 **Stage 4: Production → Monitoring (Continuous)**
+
 ```
 Post-release → Production Monitoring
   ├─ Runtime error tracking
   ├─ Security event logging
   ├─ Vulnerability advisories watch
+
   └─ Automatic patch PR if CVE discovered
 ```
 
-## Tool Exception Workflow
+### Tool Exception Workflow
 
 **Exception Criteria (Valid Reasons):**
+
 - False positive with documented analysis
 - Business risk accepted with explicit approval
 - Remediation timeline documented with milestone dates
@@ -240,31 +254,39 @@ Post-release → Production Monitoring
 
 **Exception Process:**
 
+
 1. Developer submits exception via tool UI with justification
 2. Security lead reviews (24-hour SLA)
 3. If approved: exception recorded with expiration date (max 30 days)
 4. If denied: developer remediates or escalates to CISO
 
 **Denied Exception Escalation:**
+
+
 - CISO reviews; may override with documented business risk acceptance
 - Override recorded in audit log; reviewed quarterly
 - Trend analysis: frequent overrides indicate tool misconfiguration
 
-## Monitoring and Reporting
+### Monitoring and Reporting
+
 
 **Weekly Reports:**
+
 - Total findings by severity
 - True positive vs. false positive ratio
 - Exception count and age
+
 - Remediation SLA compliance
 
 **Monthly Reports:**
+
 - Trending analysis (improving or worsening?)
 - Top vulnerable libraries company-wide
 - Compliance with testing mandate (% of commits scanned)
 - Tool effectiveness metrics
 
 **Quarterly Executive Review:**
+
 - Critical findings and incident correlation
 - Security posture trend
 - Recommended tool updates
@@ -288,35 +310,43 @@ Before implementing SAST/DAST/SCA testing:
 - [ ] SCA tool configured with automatic updates (Dependency-Check/Snyk)
 - [ ] License scanning enabled with approved/prohibited lists
 - [ ] DAST environment prepared (staging replica with test data)
+
 - [ ] OWASP ZAP configured for API/web testing
 - [ ] Severity classification matrix documented
 - [ ] False positive suppression guidelines established
 - [ ] Exception approval workflow implemented
 - [ ] Weekly/monthly reporting dashboards configured
 - [ ] Developer training on tool outputs and remediation
+
 - [ ] Tool updates scheduled (weekly for vulnerability data)
 
 ## Governance Implications
 
 **Risk if not implemented:**
+
+
 - Vulnerable code reaches production; exploit path discovered in production
 - Third-party libraries with known exploits deployed; incident inevitable
 - License violations expose organization to legal liability
 - Security defects embedded in architecture; expensive to remediate post-deployment
 
 **Operational impact:**
+
+
 - Build times increase 5-10 minutes for scanning
 - False positive rate initially high (requires tuning)
 - Development velocity decreases during vulnerability backlog remediation
 - Security incident response time decreases dramatically
 
 **Audit consequences:**
+
 - SAST/DAST evidence directly supports NIST RV layer compliance
 - Missing SAST scanning indicates deficiency in PW.4 (code review)
 - Undetected vulnerabilities in DAST indicate RV.2 control failure
 - License violations result in compliance findings
 
 **Cross-team dependencies:**
+
 - Development: tool integration into workflows, vulnerability remediation
 - Security: threshold configuration, exception review, vulnerability trending
 - Platform: tool infrastructure, artifact scanning integration

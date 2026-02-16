@@ -1,14 +1,14 @@
 # End-of-Life Governance Standard
 
-| Property | Value |
-|----------|-------|
-| **Document Type** | Implementation Standard |
-| **Version** | 1.0 |
-| **Classification** | Governance |
-| **Effective Date** | February 16, 2026 |
-| **Authority** | Chief Technology Officer |
-| **EATGF Layer** | 08_DEVELOPER_GOVERNANCE_LAYER / 06_APPLICATION_LIFECYCLE_GOVERNANCE |
-| **MCM Reference** | [Control #33: Software Lifecycle Management](../../02_CONTROL_ARCHITECTURE/MASTER_CONTROL_MATRIX.md) |
+| Property           | Value                                                                                                    |
+| ------------------ | -------------------------------------------------------------------------------------------------------- |
+| **Document Type**  | Implementation Standard                                                                                  |
+| **Version**        | 1.0                                                                                                      |
+| **Classification** | Governance                                                                                               |
+| **Effective Date** | February 16, 2026                                                                                        |
+| **Authority**      | Chief Technology Officer                                                                                 |
+| **EATGF Layer**    | 08_DEVELOPER_GOVERNANCE_LAYER / 06_APPLICATION_LIFECYCLE_GOVERNANCE                                      |
+| **MCM Reference**  | [EATGF-DEV-SDLC-01: Secure Software Development Lifecycle](../../00_FOUNDATION/MASTER_CONTROL_MATRIX.md) |
 
 ---
 
@@ -29,14 +29,17 @@ Eventually every software version, API, and feature must retire. This standard e
 ## Architectural Position
 
 **Upstream Dependencies:**
-- Layer 02 Control Architecture [Control #33: Software Lifecycle Management]
+
+- Layer 02 Control Architecture [EATGF-DEV-SDLC-01: Secure Software Development Lifecycle]
 - Layer 04 GOVERNANCE_CHARTER (EOL authority and notice timelines)
 - Layer 08.06 RELEASE_GOVERNANCE_STANDARD (versioning policy for EOL decisions)
 
 **Downstream Usage:**
+
 - Layer 06 AUDIT_AND_ASSURANCE (EOL audit trails)
 
 **Cross-Layer References:**
+
 - RELEASE_GOVERNANCE_STANDARD.md (semantic versioning; breaking changes)
 - API_GOVERNANCE_STANDARD.md (API versioning and deprecation)
 - DATA_PRIVACY_AND_PROTECTION_POLICY.md (data cleanup on EOL)
@@ -128,7 +131,7 @@ T-6 months before EOL (Feb 1, 2026):
 │   Please migrate to Stripe v2. Migration takes ~10 min. [Learn More]"
 └─ Email: Proactive outreach to customers still using v1
    Subject: Action Required: Stripe Integration Migration
-   
+
 T-3 months (May 1, 2026):
 ├─ Escalate: Increase communication frequency
 ├─ Webinar: "How to migrate from Stripe v1 to v2 (30 min walkthrough)"
@@ -172,10 +175,10 @@ API VERSION TIMELINE:
 │ Customer Count: ~40% (industry standard integrations)    │
 │                                                            │
 │ DEPRECATION (Dec 2024): "v1 will sunset Jan 1, 2025"     │
-│ - API responds with X-Deprecated header ✓                │
-│ - SDK logs warnings ✓                                    │
-│ - Documentation page v1 marked "❌ Retired" ✓            │
-│ - Old clients still work (no breaking changes) ✓         │
+│ - API responds with X-Deprecated header                 │
+│ - SDK logs warnings                                     │
+│ - Documentation page v1 marked " Retired"             │
+│ - Old clients still work (no breaking changes)          │
 │                                                            │
 │ EOL (Jan 1, 2025):                                       │
 │ ├─ /api/v1 endpoints return 410 Gone (not 404)          │
@@ -315,21 +318,21 @@ Dear Developers,
 PostgreSQL v13 will reach end-of-life on June 1, 2026.
 We recommend upgrading to PostgreSQL v15 (stable) or v16 (latest).
 
-✓ Actions Required:
+ Actions Required:
   1. Update your Dockerfile: FROM postgres:15-alpine
   2. Test in staging environment
   3. Schedule production upgrade (RTO: ~30 min)
 
-✓ Migration Paths:
+ Migration Paths:
   - v13 → v15 (recommended): Backward compatible
   - v13 → v16 (cutting edge): Recent release; test thoroughly
 
-✓ Support:
+ Support:
   - Migration guide: https://docs/postgres-migration-v13-v15
   - Office hours: Fridays 2pm UTC (migration help)
   - Questions: support@company.com
 
-✓ Timeline:
+ Timeline:
   - By Feb 1, 2026: Upgrade planning complete
   - By May 1, 2026: Staging environment tested
   - By June 1, 2026: Production environment migrated
@@ -349,7 +352,7 @@ EOL DASHBOARD:
 │ Migration Rate: 95% (38 of 40 customers migrated)        │
 │ Remaining Users: 2 (stuck on legacy; paying for support) │
 │ Support Requests: 8 total (average resolution: 2h)      │
-│ Compliance: ✓ Completed on schedule                      │
+│ Compliance:  Completed on schedule                      │
 └──────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────┐
@@ -360,7 +363,7 @@ EOL DASHBOARD:
 │ Remaining Users: 12 (outreach in progress)               │
 │ At-Risk Customers: 3 (no migration activity; escalate)   │
 │ Support Requests: 2 total (migration assistance)         │
-│ Compliance Risk: ⚠️ 12 customers need outreach by May 15 │
+│ Compliance Risk:  12 customers need outreach by May 15 │
 └──────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────┐
@@ -371,22 +374,22 @@ EOL DASHBOARD:
 │ Remaining: 22 environments (staging/dev mostly)          │
 │ At-Risk: 5 production environments (critical; escalate)  │
 │ Support: Dedicated migration team (M-F 10am-6pm UTC)    │
-│ Compliance Risk: 🔴 5 prod environments off-schedule     │
+│ Compliance Risk:  5 prod environments off-schedule     │
 └──────────────────────────────────────────────────────────┘
 
-COMPLIANCE STATUS: 1/3 ✓  |  2/3 ⏳  |  Success Rate: 33%
+COMPLIANCE STATUS: 1/3   |  2/3 ⏳  |  Success Rate: 33%
 ```
 
 ---
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | COBIT 2019 | OWASP |
-|---|---|---|---|---|
-| Software Lifecycle | A.8.2-3, A.8.30 | PW.4, RV.1 | BAI07 | SAMM SM |
-| Data Retention | A.8.30, A.13 | N/A | MEA03 | Not Directly |
-| Deprecation | A.8.2 | PW.4 | BAI07 | SAMM SM |
-| Dependent Systems | A.8.32 | PW.4 | BAI07, DSS04 | SAMM SM |
+| EATGF Control      | ISO 27001:2022  | NIST SSDF  | COBIT 2019   | OWASP        |
+| ------------------ | --------------- | ---------- | ------------ | ------------ |
+| Software Lifecycle | A.8.2-3, A.8.30 | PW.4, RV.1 | BAI07        | SAMM SM      |
+| Data Retention     | A.8.30, A.13    | N/A        | MEA03        | Not Directly |
+| Deprecation        | A.8.2           | PW.4       | BAI07        | SAMM SM      |
+| Dependent Systems  | A.8.32          | PW.4       | BAI07, DSS04 | SAMM SM      |
 
 ---
 
@@ -410,24 +413,28 @@ COMPLIANCE STATUS: 1/3 ✓  |  2/3 ⏳  |  Success Rate: 33%
 ## Governance Implications
 
 **Risk if not implemented:**
+
 - Customers surprised by sudden discontinuation; support load spikes
 - Security patches can't be backported; customers stuck on vulnerable versions
 - Orphaned data not cleaned up properly; compliance issues
 - Dependent systems break abruptly; cascading failures
 
 **Operational impact:**
+
 - Orderly version retirement; predictability for customers
 - Long runway allows customers to plan migrations
 - Clear timelines reduce support escalations
 - Archival process ensures data never truly lost (audit trail)
 
 **Audit consequences:**
+
 - External auditors verify EOL procedures documented
 - Data cleanup traceable through audit logs
 - Compliance with retention policies demonstrated
 - Customer notifications show professional lifecycle management
 
 **Cross-team dependencies:**
+
 - **Engineering:** Develop migration guides; backport security patches
 - **Product:** Determine EOL timeline; manage feature retirement
 - **Support:** Help customers migrate; escalate stragglers
@@ -447,11 +454,11 @@ COMPLIANCE STATUS: 1/3 ✓  |  2/3 ⏳  |  Success Rate: 33%
 
 ## Version History
 
-| Version | Date | Change Type | Notes |
-|---------|------|-------------|-------|
-| 1.0 | Feb 16, 2026 | Major | Initial release; EOL timeline (active/maintenance/extended/EOL), deprecation process, API versioning, data cleanup, dependent system notifications, compliance metrics |
+| Version | Date         | Change Type | Notes                                                                                                                                                                  |
+| ------- | ------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | Feb 16, 2026 | Major       | Initial release; EOL timeline (active/maintenance/extended/EOL), deprecation process, API versioning, data cleanup, dependent system notifications, compliance metrics |
 
 ---
 
-*Last Updated: February 16, 2026*  
-*EATGF v1.0-Foundation: End-of-Life Governance Standard*
+_Last Updated: February 16, 2026_
+_EATGF v1.0-Foundation: End-of-Life Governance Standard_

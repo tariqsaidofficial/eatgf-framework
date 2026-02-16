@@ -200,7 +200,7 @@ This layer will be updated as EATGF evolves:
 - **COBIT 2019** – Governance of Enterprise Information Technology (ISACA, 2019)
 - **ISO/IEC 19011:2018** – Guidelines for Auditing Management Systems (2018)
 
-## 🔄 Integration with Other Layers
+##  Integration with Other Layers
 
 - **Layers 00–06:** Describe the authoritative governance framework (what was built, why, how it works)
 - **Layer 07:** Documents how the framework was built historically and provides deployment guidance
@@ -208,7 +208,7 @@ This layer will be updated as EATGF evolves:
 
 ---
 
-## 📌 Important Notes
+##  Important Notes
 
 ### These Materials Are NOT Normative
 
@@ -234,7 +234,7 @@ For current deployment guidance, refer to: **[FRAMEWORK_ROADMAP/IMPLEMENTATION_R
 **Layer 07 – Reference & Evolution**  
 **Governance Development History & Documentation**  
 **Internal & External Reference Uses Only**
-## 📊 Version & Status
+##  Version & Status
 
 **Framework Version:** EATGF-v1.0-Foundation  
 **Phase:** 2 – Management System Operational Validation  

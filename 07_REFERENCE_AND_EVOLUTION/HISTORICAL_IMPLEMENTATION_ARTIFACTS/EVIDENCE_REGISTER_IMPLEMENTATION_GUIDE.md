@@ -229,35 +229,35 @@ D1: Status
 A2: Overall Compliance %
 B2: >=95%
 C2: =COUNTIF(ACTIVE_EVIDENCE_TRACKER!Q:Q,"VALID")/COUNTA(ACTIVE_EVIDENCE_TRACKER!A:A)
-D2: =IF(C2>=B2,"✓ PASS", "✗ FAIL")
+D2: =IF(C2>=B2," PASS", " FAIL")
 
 A3: Critical Controls Coverage %
 B3: 100%
 C3: =COUNTIFS(ACTIVE_EVIDENCE_TRACKER!D:D,"High",ACTIVE_EVIDENCE_TRACKER!Q:Q,"VALID")/COUNTIF(ACTIVE_EVIDENCE_TRACKER!D:D,"High")
-D3: =IF(C3=1,"✓ PASS", "✗ FAIL")
+D3: =IF(C3=1," PASS", " FAIL")
 
 A4: Evidence Overdue %
 B4: <5%
 C4: =COUNTIF(ACTIVE_EVIDENCE_TRACKER!Q:Q,"EXPIRED")/COUNTA(ACTIVE_EVIDENCE_TRACKER!A:A)
-D4: =IF(C4<B4,"✓ PASS", "✗ FAIL")
+D4: =IF(C4<B4," PASS", " FAIL")
 
 A5: Corrective Actions Open
 B5: <10
 C5: =COUNTIF(ACTIVE_EVIDENCE_TRACKER!Q:Q,"ACTION REQUIRED")
-D5: =IF(C5<B5,"✓ PASS", "✗ FAIL")
+D5: =IF(C5<B5," PASS", " FAIL")
 ```
 
 **Row 7-10: Coverage by Domain**
 
 | Domain | Count | Coverage | Status |
 |--------|-------|----------|--------|
-| EDM | 7 | 100% | ✓ |
-| APO | 8 | 88% | ⚠ |
-| BAI | 6 | 100% | ✓ |
-| DSS | 8 | 100% | ✓ |
-| MEA | 2 | 100% | ✓ |
-| AI | 3 | 100% | ✓ |
-| CLOUD | 1 | 100% | ✓ |
+| EDM | 7 | 100% |  |
+| APO | 8 | 88% |  |
+| BAI | 6 | 100% |  |
+| DSS | 8 | 100% |  |
+| MEA | 2 | 100% |  |
+| AI | 3 | 100% |  |
+| CLOUD | 1 | 100% |  |
 
 **Formula Example (for EDM):**
 
@@ -265,7 +265,7 @@ D5: =IF(C5<B5,"✓ PASS", "✗ FAIL")
 A7: EDM
 B7: =COUNTIF(ACTIVE_EVIDENCE_TRACKER!C:C,"EDM")
 C7: =COUNTIFS(ACTIVE_EVIDENCE_TRACKER!C:C,"EDM",ACTIVE_EVIDENCE_TRACKER!Q:Q,"VALID")/B7
-D7: =IF(C7>=0.95,"✓","⚠")
+D7: =IF(C7>=0.95,"","")
 ```
 
 **Row 12-15: Upcoming Deadlines (Next 30 days)**

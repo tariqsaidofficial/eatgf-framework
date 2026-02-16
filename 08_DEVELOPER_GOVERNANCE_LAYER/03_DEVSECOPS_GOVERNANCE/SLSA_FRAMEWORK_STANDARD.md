@@ -1,14 +1,14 @@
 # SLSA Framework Implementation Standard
 
-| Field | Value |
-|-------|-------|
-| Document Type | Implementation Standard |
-| Version | 1.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-16 |
-| Authority | Chief Information Security Officer |
-| EATGF Layer | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
-| MCM Reference | EATGF-SLSA-LEVEL-01 |
+| Field          | Value                                                   |
+| -------------- | ------------------------------------------------------- |
+| Document Type  | Implementation Standard                                 |
+| Version        | 1.0                                                     |
+| Classification | Controlled                                              |
+| Effective Date | 2026-02-16                                              |
+| Authority      | Chief Information Security Officer                      |
+| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| MCM Reference  | EATGF-DEV-SUP-01                                        |
 
 ---
 
@@ -37,18 +37,19 @@ Implement SLSA (Supply chain Levels for Software Artifacts) framework to increas
 
 ### SLSA Levels Progression
 
-| Level | Code Controls | Build Requirements | Provenance | Deployment |
-|-------|----------------|-------------------|-----------|-----------|
-| **1** | VCS + review | Automated builds | Basic provenance | Manual verification |
-| **2** | Signed commits | Isolated build | Signed provenance | Manual + signature check |
-| **3** | Hardened CI | Hermetic builds | Hardened provenance | Automated verification |
-| **4** | Full hardening | Multi-party approval | Cryptographic provenance | Complete automation |
+| Level | Code Controls  | Build Requirements   | Provenance               | Deployment               |
+| ----- | -------------- | -------------------- | ------------------------ | ------------------------ |
+| **1** | VCS + review   | Automated builds     | Basic provenance         | Manual verification      |
+| **2** | Signed commits | Isolated build       | Signed provenance        | Manual + signature check |
+| **3** | Hardened CI    | Hermetic builds      | Hardened provenance      | Automated verification   |
+| **4** | Full hardening | Multi-party approval | Cryptographic provenance | Complete automation      |
 
 **Target:** SLSA 3 for all production software.
 
 ### SLSA 1: Version Control + Builds
 
 **Requirements:**
+
 - Code in version control (Git)
 - Commit review and approval
 - Runs automated builds
@@ -76,6 +77,7 @@ jobs:
 ### SLSA 2: Signed Commits + Isolated Builds
 
 **Requirements:**
+
 - Commits must be signed (GPG/SSH)
 - Branch protection enforced
 - Builds run in isolated containers
@@ -95,20 +97,20 @@ jobs:
       - uses: actions/checkout@v3
       - name: Verify commit signature
         run: git verify-commit HEAD || exit 1
-      
+
       - name: Build
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm ci --prefer-offline
           npm run build
-      
+
       - name: Sign artifact
         run: |
           cosign sign-blob \
             --key /var/run/secrets/signing-key \
             dist/app.js > dist/app.js.sig
-      
+
       - name: Generate SLSA provenance (L2)
         uses: slsa-framework/github-action-slsa-provenance@v1
         with:
@@ -147,29 +149,29 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write  # For OIDC token
+      id-token: write # For OIDC token
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Full history for verification
-      
+          fetch-depth: 0 # Full history for verification
+
       # Verify repository state
       - name: Verify repo state
         run: |
           # No uncommitted changes
           [ -z "$(git status --porcelain)" ] || exit 1
-          
+
           # Commits signed
           for commit in $(git rev-list HEAD~10..HEAD); do
             git verify-commit $commit || exit 1
           done
-      
+
       # Hermetic build: no network except to allowed registries
       - name: Build hermetically
         run: |
           npm ci --prefer-offline --no-audit
           npm run build
-      
+
       # Generate SLSA 3 provenance
       - uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3@v1
         with:
@@ -197,8 +199,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production-slsa4
-      approval-required: true  # Requires manual approval
-    
+      approval-required: true # Requires manual approval
+
     steps:
       # Verify SLSA provenance before deployment
       - name: Verify SLSA attestation
@@ -207,7 +209,7 @@ jobs:
             --predicate-type slsaprovenance \
             --key=${{ secrets.SIGNINGKEY_PUBLIC }} \
             ${{ env.ARTIFACT_URI }}
-      
+
       # Verify provenance meets SLSA 4
       - name: Validate SLSA level
         run: |
@@ -216,7 +218,7 @@ jobs:
           # - Build environment hermetic
           # - All dependencies listed
           # - Build reproducible
-      
+
       - name: Deploy with multi-party approval
         run: |
           # Deploy only after approval
@@ -289,10 +291,10 @@ cosign verify-attestation ... | jq '.payload | @base64d | fromjson | .predicate 
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | COBIT |
-|---|---|---|---|
-| SLSA 3+ | A.8.30, A.8.31 | PW.4, PW.5, RV | BAI07 |
-| Artifact provenance | A.8.30, A.12.7 | RV.1, RV.2 | MEA02 |
+| EATGF Context       | ISO 27001:2022 | NIST SSDF      | COBIT |
+| ------------------- | -------------- | -------------- | ----- |
+| SLSA 3+             | A.8.30, A.8.31 | PW.4, PW.5, RV | BAI07 |
+| Artifact provenance | A.8.30, A.12.7 | RV.1, RV.2     | MEA02 |
 
 ## Developer Checklist
 
@@ -306,8 +308,38 @@ cosign verify-attestation ... | jq '.payload | @base64d | fromjson | .predicate 
 - [ ] Multi-party approval for SLSA 4
 - [ ] Provenance audit logging enabled
 
+## Governance Implications
+
+**Risk if Not Implemented:**
+- Without SLSA attestation, deployed artifacts lack verifiable provenance, enabling supply chain attacks through tampered binaries, compromised build systems, or unauthorized modifications
+- Organizations without SLSA compliance cannot demonstrate software integrity to auditors or regulatory bodies
+
+**Operational Impact:**
+- All production deployments must include SLSA provenance attestation at Level 2 minimum; regulated environments require Level 3+
+- Build systems must generate signed provenance automatically; manual attestation is prohibited
+- Deployment pipelines must verify provenance before releasing to production; verification failures block deployment
+
+**Audit Consequences:**
+- SLSA compliance audited as part of EATGF-DEV-SUP-01 (Software Supply Chain & SBOM Management)
+- Missing or invalid provenance attestations constitute a High-severity audit finding
+- Build system access logs and signing key management are mandatory audit evidence
+
+**Cross-Team Dependencies:**
+- Platform Engineering: Configures hermetic build environments and provenance generation
+- Security: Manages signing keys (Cosign/Sigstore) and validates attestation integrity
+- DevOps: Integrates provenance verification into CI/CD deployment gates
+- Audit: Reviews provenance chain completeness during annual control assessments
+
+## Official References
+
+- SLSA Specification v1.0 (https://slsa.dev/spec/v1.0/)
+- NIST SP 800-218 (Secure Software Development Framework)
+- NIST SP 800-161 Rev. 1 (Cybersecurity Supply Chain Risk Management)
+- in-toto Attestation Framework (https://in-toto.io/)
+- Sigstore/Cosign Documentation (https://docs.sigstore.dev/)
+
 ## Version History
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major | Initial SLSA framework implementation standard |
+| Version | Date       | Change Type | Description                                    |
+| ------- | ---------- | ----------- | ---------------------------------------------- |
+| 1.0     | 2026-02-16 | Major       | Initial SLSA framework implementation standard |

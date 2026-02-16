@@ -1,15 +1,15 @@
 # EVIDENCE_GOVERNANCE_STANDARD
 
-| Field          | Value                                                                   |
-| -------------- | ------|
-| Document Type  | Standard (Evidence Management)                                          |
-| Version        | 1.0                                                                     |
-| Change Type    | Major (Initial)                                                         |
-| Classification | Controlled                                                              |
-| Effective Date | 2026-02-16                                                              |
-| Authority      | Chief Audit Officer and Records Administrator                           |
-| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                                                  |
-| MCM Reference  | EATGF-MEA-EVD-01, EATGF-APO-REC-01                                      |
+| Field          | Value                                         |
+| -------------- | --------------------------------------------- |
+| Document Type  | Standard (Evidence Management)                |
+| Version        | 1.0                                           |
+| Change Type    | Major (Initial)                               |
+| Classification | Controlled                                    |
+| Effective Date | 2026-02-16                                    |
+| Authority      | Chief Audit Officer and Records Administrator |
+| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                        |
+| MCM Reference  | EATGF-MEA-AUD-01, EATGF-MEA-PERF-01           |
 
 ---
 
@@ -39,26 +39,26 @@ This standard operates within **06_AUDIT_AND_ASSURANCE** as the evidence managem
 
 **Evidence Types and Source Documents:**
 
-| Evidence Category | Evidence Types | Retention Period | Classification |
-|---|---|---|---|
-| **Audit Evidence** | Audit working files, test results, finding documentation, audit reports, management responses | 7 years (10 for critical controls) | Controlled |
-| **Control Testing Evidence** | Test results, sample testing documentation, walkthrough evidence, configuration testing | 3-5 years | Internal |
-| **Investigation Evidence** | Incident investigation reports, witness interviews, forensic reports, forensic data, breach notifications | 5-7 years (breach evidence: 7 years minimum) | Confidential |
-| **Certification Evidence** | SOC 2 audit reports, ISO 27001 audit reports, regulatory audit reports, certification documents | 7 years | Controlled |
-| **Training and Awareness** | Training sign-in sheets, training completion records, awareness campaign evidence | 3 years | Internal |
-| **Compliance Evidence** | Policy acknowledgments, compliance certifications, regulatory submissions, compliance monitoring results | 3-7 years (regulatory specific) | Controlled |
-| **Correspondence** | Auditor communications, regulatory authority communications, certification body communications | 5 years (keep with related evidence) | Controlled |
-| **System/Log Evidence** | System logs, database logs, access logs, network traffic, configuration files | 90 days – 2 years (per data type) | Internal/Confidential |
-| **Financial/Supporting** | Cost tracking for audit remediations, budget allocations, vendor invoicing | 7 years (per accounting standards) | Internal |
+| Evidence Category            | Evidence Types                                                                                            | Retention Period                             | Classification        |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------- | --------------------- |
+| **Audit Evidence**           | Audit working files, test results, finding documentation, audit reports, management responses             | 7 years (10 for critical controls)           | Controlled            |
+| **Control Testing Evidence** | Test results, sample testing documentation, walkthrough evidence, configuration testing                   | 3-5 years                                    | Internal              |
+| **Investigation Evidence**   | Incident investigation reports, witness interviews, forensic reports, forensic data, breach notifications | 5-7 years (breach evidence: 7 years minimum) | Confidential          |
+| **Certification Evidence**   | SOC 2 audit reports, ISO 27001 audit reports, regulatory audit reports, certification documents           | 7 years                                      | Controlled            |
+| **Training and Awareness**   | Training sign-in sheets, training completion records, awareness campaign evidence                         | 3 years                                      | Internal              |
+| **Compliance Evidence**      | Policy acknowledgments, compliance certifications, regulatory submissions, compliance monitoring results  | 3-7 years (regulatory specific)              | Controlled            |
+| **Correspondence**           | Auditor communications, regulatory authority communications, certification body communications            | 5 years (keep with related evidence)         | Controlled            |
+| **System/Log Evidence**      | System logs, database logs, access logs, network traffic, configuration files                             | 90 days – 2 years (per data type)            | Internal/Confidential |
+| **Financial/Supporting**     | Cost tracking for audit remediations, budget allocations, vendor invoicing                                | 7 years (per accounting standards)           | Internal              |
 
 **Data Classification (In Addition to Category):**
 
-| Classification | Definition | Access Restrictions | Storage Requirements |
-|---|---|---|---|
-| **Public** | Evidence approved for public disclosure (published audit reports, certifications) | Wide access; publishable | Standard storage |
-| **Internal** | Non-sensitive organizational evidence (training completion, general test results) | Employees only | Controlled repository with audit trail |
-| **Confidential** | Sensitive organizational information (incident details, control gaps, investigation findings) | Limited access (Audit, Executive, Legal) | Encrypted storage; access logged |
-| **Restricted** | Highly sensitive (breach investigation, forensic evidence, competitor intelligence) | Executive + legal only; subpoena-qualified access | Encrypted storage; dual control access; audit trail |
+| Classification   | Definition                                                                                    | Access Restrictions                               | Storage Requirements                                |
+| ---------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------- | --------------------------------------------------- |
+| **Public**       | Evidence approved for public disclosure (published audit reports, certifications)             | Wide access; publishable                          | Standard storage                                    |
+| **Internal**     | Non-sensitive organizational evidence (training completion, general test results)             | Employees only                                    | Controlled repository with audit trail              |
+| **Confidential** | Sensitive organizational information (incident details, control gaps, investigation findings) | Limited access (Audit, Executive, Legal)          | Encrypted storage; access logged                    |
+| **Restricted**   | Highly sensitive (breach investigation, forensic evidence, competitor intelligence)           | Executive + legal only; subpoena-qualified access | Encrypted storage; dual control access; audit trail |
 
 ### Evidence Storage and Retention
 
@@ -88,18 +88,18 @@ All evidence stored in single authorized repository with:
 
 **Retention Period Matrix:**
 
-| Evidence Type | Retention Period | Start Date | Disposal Trigger | Notes |
-|---|---|---|---|---|
-| **Audit working files (Critical controls)** | 10 years | Audit completion date | 10 years post-audit | Critical controls: governance structural importance warrants extended retention |
-| **Audit working files (Standard controls)** | 7 years | Audit completion date | 7 years post-audit | Standard retention aligns with ISO 27001 audit evidence retention |
-| **Incident/breach investigation** | 7 years minimum | Incident closure date | Statute of limitations (litigation risk) + 7 years | Breach investigations subject to extended litigation risk; 7-year baseline covers most statutes of limitations |
-| **SOC 2 / ISO 27001 audit reports** | 7 years | Audit report issuance date | Report aged 7 years | Certification evidence retained throughout certification validity + retention period |
-| **Regulatory submissions** | 7 years | Submission date | Per regulatory requirement; typically 7 years minimum | GDPR, PCI-DSS, and others specify retention periods; use most restrictive |
-| **Training records** | 3 years | Training completion date | Employee departure + 3 years | Employment law requires retention through covered periods; post-employment 3 years for potential disputes |
-| **System logs (audit-related)** | 1-2 years | Log generation date | Operational log rotation | Operational logs; deleted per standard log rotation unless under litigation hold |
-| **System logs (security incidents)** | Litigation hold + 7 years | Incident discovery date | Statute of limitations + 7 years | Incident-related logs preserved per investigation requirements; deleted only after litigation risk expires |
-| **Control testing results** | 5 years | Test completion date | 5 years post-testing | Control test results retained enabling trend analysis; support repeat audits, remediation verification |
-| **Compliance certifications** | 3-7 years | Certification issue date | Per regulatory requirement | Standard: 3 years; GDPR/Privacy: longer if data processed; use most restrictive applicable |
+| Evidence Type                               | Retention Period          | Start Date                 | Disposal Trigger                                      | Notes                                                                                                          |
+| ------------------------------------------- | ------------------------- | -------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Audit working files (Critical controls)** | 10 years                  | Audit completion date      | 10 years post-audit                                   | Critical controls: governance structural importance warrants extended retention                                |
+| **Audit working files (Standard controls)** | 7 years                   | Audit completion date      | 7 years post-audit                                    | Standard retention aligns with ISO 27001 audit evidence retention                                              |
+| **Incident/breach investigation**           | 7 years minimum           | Incident closure date      | Statute of limitations (litigation risk) + 7 years    | Breach investigations subject to extended litigation risk; 7-year baseline covers most statutes of limitations |
+| **SOC 2 / ISO 27001 audit reports**         | 7 years                   | Audit report issuance date | Report aged 7 years                                   | Certification evidence retained throughout certification validity + retention period                           |
+| **Regulatory submissions**                  | 7 years                   | Submission date            | Per regulatory requirement; typically 7 years minimum | GDPR, PCI-DSS, and others specify retention periods; use most restrictive                                      |
+| **Training records**                        | 3 years                   | Training completion date   | Employee departure + 3 years                          | Employment law requires retention through covered periods; post-employment 3 years for potential disputes      |
+| **System logs (audit-related)**             | 1-2 years                 | Log generation date        | Operational log rotation                              | Operational logs; deleted per standard log rotation unless under litigation hold                               |
+| **System logs (security incidents)**        | Litigation hold + 7 years | Incident discovery date    | Statute of limitations + 7 years                      | Incident-related logs preserved per investigation requirements; deleted only after litigation risk expires     |
+| **Control testing results**                 | 5 years                   | Test completion date       | 5 years post-testing                                  | Control test results retained enabling trend analysis; support repeat audits, remediation verification         |
+| **Compliance certifications**               | 3-7 years                 | Certification issue date   | Per regulatory requirement                            | Standard: 3 years; GDPR/Privacy: longer if data processed; use most restrictive applicable                     |
 
 **Litigation Hold Override:**
 
@@ -115,27 +115,27 @@ If litigation involving organizational controls is reasonably anticipated:
 
 **Access Types and Permissions:**
 
-| User Role | Evidence Access | Purpose | Approval Required |
-|---|---|---|---|
-| **Auditor conducting audit** | Full access to relevant control evidence | Perform control audit testing | Pre-audit authorization per audit schedule |
-| **Control Owner** | Read-only access to own control evidence | Review audit results, certification checklist | Self-service (authenticated access) |
-| **Chief Audit Officer** | Full access to all evidence | Oversight, governance reporting, audit planning | Role-based (CAO role authorized full access) |
-| **CISO/Executive sponsor** | Access to critical findings, investigation evidence, executive summary | Executive governance,  remediation oversight | Role-based authority |
-| **General Counsel** | Confidential evidence, investigation evidence, litigation evidence | Legal review, litigation support, regulatory response | Role-based authority |
-| **External auditor (SOC 2, ISO 27001)** | Limited evidence scoped to certification | Certification audit | Executed audit engagement letter; access time-limited |
-| **Regulatory authority** | Subpoena-specified evidence, voluntary submissions | Regulatory investigation, examination | Legal written directive; access logged and monitored |
+| User Role                               | Evidence Access                                                        | Purpose                                               | Approval Required                                     |
+| --------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| **Auditor conducting audit**            | Full access to relevant control evidence                               | Perform control audit testing                         | Pre-audit authorization per audit schedule            |
+| **Control Owner**                       | Read-only access to own control evidence                               | Review audit results, certification checklist         | Self-service (authenticated access)                   |
+| **Chief Audit Officer**                 | Full access to all evidence                                            | Oversight, governance reporting, audit planning       | Role-based (CAO role authorized full access)          |
+| **CISO/Executive sponsor**              | Access to critical findings, investigation evidence, executive summary | Executive governance, remediation oversight           | Role-based authority                                  |
+| **General Counsel**                     | Confidential evidence, investigation evidence, litigation evidence     | Legal review, litigation support, regulatory response | Role-based authority                                  |
+| **External auditor (SOC 2, ISO 27001)** | Limited evidence scoped to certification                               | Certification audit                                   | Executed audit engagement letter; access time-limited |
+| **Regulatory authority**                | Subpoena-specified evidence, voluntary submissions                     | Regulatory investigation, examination                 | Legal written directive; access logged and monitored  |
 
 **Evidence Access Log:**
 
 All evidence accessed recorded automatically in system audit trail:
 
-| Log Entry | Details |
-|---|---|
-| **Access timestamp** | Date and exact time of access |
-| **Accessor identity** | User ID, name, role of person accessing |
-| **Evidence accessed** | Specific file/folder/document accessed |
-| **Access type** | Read-only, download, print, etc. |
-| **Access duration** | How long evidence accessed |
+| Log Entry                 | Details                                                           |
+| ------------------------- | ----------------------------------------------------------------- |
+| **Access timestamp**      | Date and exact time of access                                     |
+| **Accessor identity**     | User ID, name, role of person accessing                           |
+| **Evidence accessed**     | Specific file/folder/document accessed                            |
+| **Access type**           | Read-only, download, print, etc.                                  |
+| **Access duration**       | How long evidence accessed                                        |
 | **IP address / location** | System from which accessed (organizational network, remote, etc.) |
 
 **Quarterly Access Audit:**
@@ -187,13 +187,13 @@ Example: "Drive image collected from server XYZ during incident investigation ta
 
 Upon retention expiration, evidence disposed securely:
 
-| Evidence Type | Disposal Method | Verification |
-|---|---|---|
-| **Digital evidence (files, documents)** | Secure deletion from primary + backup storage; data overwritten 3x per NIST SP 800-88 | Certificate of destruction issued; hash values verified unrecoverable |
-| **Physical evidence (printed documents)** | Certified shredding by approved vendor; non-recoverable destruction | Certificate of destruction from shredding vendor retained |
-| **Encrypted evidence** | Delete encryption keys; original data destruction not required if keys destroyed | Key destruction verified; evidence unrecoverable without keys |
-| **System logs** | Automated log deletion per log retention policy; deletion logged | IT operations confirms logs deleted per schedule |
-| **Forensic media (USB, drives, tapes)** | Certified physical destruction (degaussing, incineration, shredding) | Certificate from destruction vendor retained; destruction verified |
+| Evidence Type                             | Disposal Method                                                                       | Verification                                                          |
+| ----------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| **Digital evidence (files, documents)**   | Secure deletion from primary + backup storage; data overwritten 3x per NIST SP 800-88 | Certificate of destruction issued; hash values verified unrecoverable |
+| **Physical evidence (printed documents)** | Certified shredding by approved vendor; non-recoverable destruction                   | Certificate of destruction from shredding vendor retained             |
+| **Encrypted evidence**                    | Delete encryption keys; original data destruction not required if keys destroyed      | Key destruction verified; evidence unrecoverable without keys         |
+| **System logs**                           | Automated log deletion per log retention policy; deletion logged                      | IT operations confirms logs deleted per schedule                      |
+| **Forensic media (USB, drives, tapes)**   | Certified physical destruction (degaussing, incineration, shredding)                  | Certificate from destruction vendor retained; destruction verified    |
 
 **Destruction Evidence:**
 
@@ -237,32 +237,32 @@ Records Administrator reports findings to Chief Audit Officer:
 **Remediation of Audit Findings:**
 
 - Over-classified evidence: Reclassified
-- Under-classified evidence: Reclassified  
+- Under-classified evidence: Reclassified
 - Retention errors: Corrected; extended if premature deletion risk
 - Access violations: Reviewed by Security; unauthorized access investigated
 - Process improvements: Implemented for next audit cycle
 
 ### Evidence Governance Roles and Responsibilities
 
-| Role | Responsibility |
-|---|---|
-| **Chief Audit Officer** | Overall evidence governance accountability; storage location selection; retention policy approval; litigation hold authorization; access approvals for external auditors |
-| **Records Administrator** | Day-to-day evidence management; evidence intake and storage; access log review; retention enforcement; destruction scheduling and verification; evidence audit coordination |
-| **Control Owners** | Provide evidence to auditors; maintain control-specific evidence; certify evidence completeness before audits |
-| **Auditors** | Collect and document evidence during audits; preserve evidence per chain of custody; submit evidence to Records Administrator for storage; log access to Repository |
-| **General Counsel** | Litigation hold decisions; retention policy legal review; regulatory hold interpretation; evidence handling for investigations |
-| **IT Security** | Repository infrastructure security; encryption; backup integrity; access control implementation; incident investigation evidence preservation |
-| **Data Protection Officer** | Personal data in evidence; ensures evidence retention complies with GDPR/CCPA (e.g., no excessive personal data retention) |
+| Role                        | Responsibility                                                                                                                                                              |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Chief Audit Officer**     | Overall evidence governance accountability; storage location selection; retention policy approval; litigation hold authorization; access approvals for external auditors    |
+| **Records Administrator**   | Day-to-day evidence management; evidence intake and storage; access log review; retention enforcement; destruction scheduling and verification; evidence audit coordination |
+| **Control Owners**          | Provide evidence to auditors; maintain control-specific evidence; certify evidence completeness before audits                                                               |
+| **Auditors**                | Collect and document evidence during audits; preserve evidence per chain of custody; submit evidence to Records Administrator for storage; log access to Repository         |
+| **General Counsel**         | Litigation hold decisions; retention policy legal review; regulatory hold interpretation; evidence handling for investigations                                              |
+| **IT Security**             | Repository infrastructure security; encryption; backup integrity; access control implementation; incident investigation evidence preservation                               |
+| **Data Protection Officer** | Personal data in evidence; ensures evidence retention complies with GDPR/CCPA (e.g., no excessive personal data retention)                                                  |
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | COBIT |
-|---|---|---|---|
-| Evidence retention and preservation | A.8.17 (Monitoring, measurement, analysis and evaluation), A.6.7 (Management review) | AU-2 (Audit events), AU-4 (Audit log protection) | MEA03.01 (Collect, process, and analyze data) |
-| Evidence storage and protection | A.8.15 (Logging), A.8.16 (Monitoring), A.8.17 (Analysis and evaluation) | SI-4 (Information system monitoring), SC-7 (Boundary protection) | DSS05.02 (Ensure security compliance) |
-| Access controls and confidentiality | A.5.14 (Password management), A.8.2 (Asset management) | AC-2 (Account management), AC-3 (Access enforcement) | DSS05.01 (Manage access levels) |
-| Chain of custody and integrity | A.8.13 (Handling of assets), A.8.14 (Asset disposal) | SI-4 (System monitoring), SC-4 (Information in shared resources) | DSS05.02 (Ensure audit trails) |
-| Destruction and disposal | A.8.4 (Information handling and storage), A.8.14 (Asset disposal) | SC-4 (Shared resources), SC-7 (Sanitization) | DSS03 (Deliver service results) |
+| EATGF Context                       | ISO 27001:2022                                                                       | NIST SSDF                                                        | COBIT                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------- | --------------------------------------------- |
+| Evidence retention and preservation | A.8.17 (Monitoring, measurement, analysis and evaluation), A.6.7 (Management review) | AU-2 (Audit events), AU-4 (Audit log protection)                 | MEA03.01 (Collect, process, and analyze data) |
+| Evidence storage and protection     | A.8.15 (Logging), A.8.16 (Monitoring), A.8.17 (Analysis and evaluation)              | SI-4 (Information system monitoring), SC-7 (Boundary protection) | DSS05.02 (Ensure security compliance)         |
+| Access controls and confidentiality | A.5.14 (Password management), A.8.2 (Asset management)                               | AC-2 (Account management), AC-3 (Access enforcement)             | DSS05.01 (Manage access levels)               |
+| Chain of custody and integrity      | A.8.13 (Handling of assets), A.8.14 (Asset disposal)                                 | SI-4 (System monitoring), SC-4 (Information in shared resources) | DSS05.02 (Ensure audit trails)                |
+| Destruction and disposal            | A.8.4 (Information handling and storage), A.8.14 (Asset disposal)                    | SC-4 (Shared resources), SC-7 (Sanitization)                     | DSS03 (Deliver service results)               |
 
 ## Developer Checklist
 
@@ -332,6 +332,6 @@ Records Administrator reports findings to Chief Audit Officer:
 
 **Version History**
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |
+| Version | Date       | Change Type     | Description                                              |
+| ------- | ---------- | --------------- | -------------------------------------------------------- |
+| 1.0     | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |

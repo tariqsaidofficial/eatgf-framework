@@ -43,10 +43,10 @@ Backend application layer responsible for:
 
 **Conformance Obligations:**
 
-- ✅ 01_SECURE_SDLC standards
-- ✅ 02_API_GOVERNANCE standards (REST-specific controls)
-- ✅ 03_DEVSECOPS standards
-- ✅ 04_CLOUD standards (if deployed in SaaS context via Vapor)
+-  01_SECURE_SDLC standards
+-  02_API_GOVERNANCE standards (REST-specific controls)
+-  03_DEVSECOPS standards
+-  04_CLOUD standards (if deployed in SaaS context via Vapor)
 
 ## Relationship to EATGF Layers
 
@@ -285,7 +285,7 @@ public function login(Request $request)
 **Non-Compliant Example:**
 
 ```php
-// ❌ Session authentication for API
+//  Session authentication for API
 Route::middleware('auth:web')->group(function () {
     Route::get('/appeals', [AppealController::class, 'index']);
 });
@@ -330,7 +330,7 @@ public function update(Request $request, Appeal $appeal)
 **Non-Compliant Example:**
 
 ```php
-// ❌ No Policy check
+//  No Policy check
 public function update(Request $request, Appeal $appeal)
 {
     $appeal->update($request->validated()); // No authorization

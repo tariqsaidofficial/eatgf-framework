@@ -58,7 +58,7 @@ Audit Automation profiles implement:
 All security-relevant events logged at point of occurrence.
 
 ```yaml
-# ✅ COMPLIANT: Comprehensive Kubernetes audit policy
+#  COMPLIANT: Comprehensive Kubernetes audit policy
 apiVersion: audit.k8s.io/v1
 kind: Policy
 rules:
@@ -101,7 +101,7 @@ rules:
 Audit logs stored in append-only, tamper-proof backend.
 
 ```bash
-# ✅ COMPLIANT: Immutable audit storage (WORM - Write Once, Read Many)
+#  COMPLIANT: Immutable audit storage (WORM - Write Once, Read Many)
 # Cloud providers: CloudTrail (AWS), Stackdriver (GCP), Monitor (Azure)
 # On-premises: Splunk WORM filesystem, S3 lock with LEGAL_HOLD
 
@@ -166,7 +166,7 @@ Logs from all sources centrally collected with correlation keys.
 Critical events trigger immediate alerts to on-call team.
 
 ```yaml
-# ✅ COMPLIANT: Real-time alert rules
+#  COMPLIANT: Real-time alert rules
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:

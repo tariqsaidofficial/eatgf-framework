@@ -5,13 +5,13 @@ Foundation Layer – Authority, Identity & Control Inventory
 
 ---
 
-## 📋 Layer Purpose
+##  Layer Purpose
 
 The Foundation Layer contains the authoritative governance identity and the complete control inventory. These documents establish what EATGF is, how it's versioned, and what controls it governs.
 
 ---
 
-## 📂 Contents
+##  Contents
 
 ### OFFICIAL_DESIGNATION.md
 - Framework official name: Enterprise AI-Aligned Technical Governance Framework (EATGF)
@@ -43,7 +43,7 @@ The Foundation Layer contains the authoritative governance identity and the comp
 
 ---
 
-## 🎯 How to Use This Layer
+##  How to Use This Layer
 
 **Governance Leaders:**
 - Start with OFFICIAL_DESIGNATION.md
@@ -67,15 +67,15 @@ The Foundation Layer contains the authoritative governance identity and the comp
 
 ---
 
-## 🔐 Authority Statement
+##  Authority Statement
 
 This layer is the governance authority for EATGF. All policy, management systems, and frameworks in layers 01–07 must trace back to controls in the Master Control Matrix.
 
 ---
 
-## 📊 Version & Status
+##  Version & Status
 
 **Baseline:** EATGF-v1.0-Foundation  
-**Status:** 🔒 **FROZEN** – No changes to controls or naming allowed  
+**Status:**  **FROZEN** – No changes to controls or naming allowed  
 **Created:** February 13, 2026  
 **Authority:** Tariq Said Official

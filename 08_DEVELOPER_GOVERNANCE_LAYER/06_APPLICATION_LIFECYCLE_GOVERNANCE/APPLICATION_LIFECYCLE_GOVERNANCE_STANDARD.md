@@ -14,10 +14,10 @@
 
 **Document Authority:** Implements BAI and DSS domain controls related to application release, change management, and incident response:
 
-- EATGF-BAI-REL-01: Release Management & Change Approval
+- EATGF-BAI-CHG-01: Release Management & Change Approval
 - EATGF-DSS-INC-01: Incident Response & Rollback Procedures
-- EATGF-DSS-EOL-01: Application End-of-Life Governance
-- EATGF-DSS-OPS-01: Production Operations & Monitoring
+- EATGF-DEV-SDLC-01: Application End-of-Life Governance
+- EATGF-MEA-PERF-01: Production Operations & Monitoring
 
 **Relationship to EATGF:** Derivative document - operationalizes BAI/DSS controls with implementation standards for safe, auditable application lifecycle management.
 
@@ -34,7 +34,7 @@
 
 ---
 
-## Control 1: Release Management & Change Approval (EATGF-BAI-REL-01)
+## Control 1: Release Management & Change Approval (EATGF-BAI-CHG-01)
 
 ### Purpose
 
@@ -331,7 +331,7 @@ After Rollback:
 
 ---
 
-## Control 3: Application End-of-Life Governance (EATGF-DSS-EOL-01)
+## Control 3: Application End-of-Life Governance (EATGF-DEV-SDLC-01)
 
 ### Purpose
 
@@ -438,7 +438,7 @@ T+1:00:  Webhook notifications sent (customer integrations informed)
 
 ---
 
-## Control 4: Production Operations & Monitoring (EATGF-DSS-OPS-01)
+## Control 4: Production Operations & Monitoring (EATGF-MEA-PERF-01)
 
 ### Purpose
 
@@ -579,13 +579,13 @@ If something goes wrong:
 
 ## Version & Authority
 
-| Field           | Value                                                                  |
-| --------------- | ---------------------------------------------------------------------- |
-| **Version**     | 2.0-COMPREHENSIVE                                                      |
-| **Date Issued** | 2026-02-15                                                             |
-| **Change Type** | Major (placeholder → comprehensive)                                    |
-| **Related MCM** | EATGF-BAI-REL-01, EATGF-DSS-INC-01, EATGF-DSS-EOL-01, EATGF-DSS-OPS-01 |
-| **Next Review** | 2026-08-15                                                             |
+| Field           | Value                                                                    |
+| --------------- | ------------------------------------------------------------------------ |
+| **Version**     | 2.0-COMPREHENSIVE                                                        |
+| **Date Issued** | 2026-02-15                                                               |
+| **Change Type** | Major (placeholder → comprehensive)                                      |
+| **Related MCM** | EATGF-BAI-CHG-01, EATGF-DSS-INC-01, EATGF-DEV-SDLC-01, EATGF-MEA-PERF-01 |
+| **Next Review** | 2026-08-15                                                               |
 
 **Classification:** Internal - Governance
 **Authority:** EATGF Layer 08, Domain 06

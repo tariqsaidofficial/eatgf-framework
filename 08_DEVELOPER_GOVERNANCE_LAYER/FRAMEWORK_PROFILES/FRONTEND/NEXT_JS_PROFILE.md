@@ -81,7 +81,7 @@ This document defines governance conformance requirements for Next.js applicatio
 Next.js must maintain strict separation between server context and client context.
 
 ```typescript
-// ❌ PROHIBITED: Leaking server secret to client
+//  PROHIBITED: Leaking server secret to client
 export const getServerSideProps = async (context) => {
   const secret = process.env.DATABASE_PASSWORD; // Server secret
   return {
@@ -95,7 +95,7 @@ function Page({ dbSecret }) {
   return <div>{dbSecret}</div>;
 }
 
-// ✅ COMPLIANT: Process secrets server-side only
+//  COMPLIANT: Process secrets server-side only
 export const getServerSideProps = async (context) => {
   const dbSecret = process.env.DATABASE_PASSWORD;
   const data = await fetchFromDB(dbSecret); // Use secret server-side
@@ -122,7 +122,7 @@ export const getServerSideProps = async (context) => {
 Server-rendered HTML must match client-hydrated HTML exactly. Mismatches create XSS vulnerabilities.
 
 ```typescript
-// ❌ PROHIBITED: Non-deterministic rendering
+//  PROHIBITED: Non-deterministic rendering
 function Page() {
   const [timestamp] = useState(() => Date.now()); // Random
   return <div>{timestamp}</div>;
@@ -130,7 +130,7 @@ function Page() {
   // Client hydrates: <div>1708000001</div> ← MISMATCH
 }
 
-// ✅ COMPLIANT: Deterministic rendering
+//  COMPLIANT: Deterministic rendering
 function Page({ timestamp }: { timestamp: number }) {
   return <div>{timestamp}</div>;
   // Both server and client render same value
@@ -158,7 +158,7 @@ export const getServerSideProps = async () => {
 API routes in `/pages/api/` behave like backend endpoints. Same authentication controls apply.
 
 ```typescript
-// ✅ COMPLIANT: Authenticate API route via middleware
+//  COMPLIANT: Authenticate API route via middleware
 import type { NextApiRequest, NextApiResponse } from "next";
 import { verifyAuth } from "@/lib/auth";
 
@@ -166,7 +166,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  // ✅ MANDATORY: Verify authentication on every request
+  //  MANDATORY: Verify authentication on every request
   const user = await verifyAuth(req.cookies.token);
 
   if (!user) {
@@ -202,14 +202,14 @@ export default async function handler(
 React Server Components (RSC) execute on server. Direct database access possible but risky.
 
 ```typescript
-// ✅ COMPLIANT: Use 'use server' for sensitive operations
+//  COMPLIANT: Use 'use server' for sensitive operations
 'use server'; // Top of file
 
 import { db } from '@/lib/db';
 
 export async function deleteInvoice(invoiceId: string, userId: string) {
-  // ✅ Only called from server, never from client
-  // ✅ User ID from authenticated session, not client
+  //  Only called from server, never from client
+  //  User ID from authenticated session, not client
 
   const invoice = await db.invoices.findUnique({ where: { id: invoiceId } });
 
@@ -247,7 +247,7 @@ export function InvoiceCard({ invoice, userId }) {
 Next.js exposes `NEXT_PUBLIC_*` to browser. All others server-side only.
 
 ```typescript
-// ✅ COMPLIANT: Proper env var usage
+//  COMPLIANT: Proper env var usage
 // .env.local (never committed)
 DATABASE_URL=postgres://...
 JWT_SECRET=super-secret-key
@@ -255,16 +255,16 @@ NEXT_PUBLIC_API_URL=https://api.example.com
 
 // src/lib/config.ts
 export const config = {
-  // ✓ Client-accessible config
+  //  Client-accessible config
   apiUrl: process.env.NEXT_PUBLIC_API_URL,
 
-  // ✗ Secret - NOT exposed to client
+  //  Secret - NOT exposed to client
   // process.env.JWT_SECRET is server-side only
 };
 
 // pages/api/auth.ts (server-side)
 export default async function handler(req, res) {
-  const secret = process.env.JWT_SECRET; // ✓ Accessible
+  const secret = process.env.JWT_SECRET; //  Accessible
   const token = jwt.sign({ ... }, secret);
   res.setHeader('Set-Cookie', `token=${token}; HttpOnly; Secure`);
 }
@@ -290,12 +290,12 @@ import { verifyAuth } from "@/lib/auth";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // ✅ Public routes (no auth required)
+  //  Public routes (no auth required)
   if (pathname === "/login" || pathname === "/signup") {
     return NextResponse.next();
   }
 
-  // ✅ Protected routes (require auth)
+  //  Protected routes (require auth)
   if (pathname.startsWith("/dashboard")) {
     const token = request.cookies.get("auth_token")?.value;
 
@@ -306,7 +306,7 @@ export async function middleware(request: NextRequest) {
     try {
       const user = await verifyAuth(token);
 
-      // ✅ Add user to request headers (forwarded to page)
+      //  Add user to request headers (forwarded to page)
       const requestHeaders = new Headers(request.headers);
       requestHeaders.set("x-user-id", user.id);
       requestHeaders.set("x-tenant-id", user.tenantId);
@@ -342,7 +342,7 @@ export const config = {
 Server-rendered HTML is vulnerable to injection if not properly escaped.
 
 ```typescript
-// ❌ PROHIBITED: Unescaped user input in SSR
+//  PROHIBITED: Unescaped user input in SSR
 export const getServerSideProps = async () => {
   const userComment = await fetchComment();
   return {
@@ -356,13 +356,13 @@ export default function Post({ comment }) {
   return <div dangerouslySetInnerHTML={{ __html: comment }} />;
 }
 
-// ✅ COMPLIANT: Escape and sanitize
+//  COMPLIANT: Escape and sanitize
 import DOMPurify from 'isomorphic-dompurify';
 
 export const getServerSideProps = async () => {
   const userComment = await fetchComment();
 
-  // ✅ Sanitize on server before rendering
+  //  Sanitize on server before rendering
   const sanitized = DOMPurify.sanitize(userComment, {
     ALLOWED_TAGS: ['b', 'i', 'em'],
     ALLOWED_ATTR: []
@@ -389,16 +389,16 @@ export default function Post({ comment }) {
 Next.js build process must verify security constraints.
 
 ```bash
-# ✅ next.config.ts
+#  next.config.ts
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ✅ Disable source maps in production
+  //  Disable source maps in production
   productionBrowserSourceMaps: false,
 
-  // ✅ Enable strict mode for development warnings
+  //  Enable strict mode for development warnings
   reactStrictMode: true,
 
-  // ✅ Enforce CSP headers
+  //  Enforce CSP headers
   headers: async () => {
     return [{
       source: '/(.*)',
@@ -411,12 +411,12 @@ const nextConfig = {
     }];
   },
 
-  // ✅ Security headers
+  //  Security headers
   async redirects() {
     return [];
   },
 
-  // ✅ Disable x-powered-by header
+  //  Disable x-powered-by header
   poweredByHeader: false
 };
 
@@ -463,7 +463,7 @@ export async function verifyAuth() {
 
 // pages/dashboard.tsx
 export const getServerSideProps = async (context) => {
-  // ✅ Authenticate server-side before rendering
+  //  Authenticate server-side before rendering
   const user = await verifyAuth();
 
   if (!user) {
@@ -496,14 +496,14 @@ export default async function handler(req, res) {
 
   const { email, password } = req.body;
 
-  // ✅ Validate credentials
+  //  Validate credentials
   const user = await validateCredentials(email, password);
 
   if (!user) {
     return res.status(401).json({ error: "Invalid credentials" });
   }
 
-  // ✅ Check MFA requirement
+  //  Check MFA requirement
   if (user.mfaEnabled) {
     // Generate temporary token (short-lived, single-use)
     const mfaToken = jwt.sign(
@@ -518,7 +518,7 @@ export default async function handler(req, res) {
     });
   }
 
-  // ✅ Issue auth token (HTTP-only cookie)
+  //  Issue auth token (HTTP-only cookie)
   const authToken = jwt.sign(
     { sub: user.id, tenant_id: user.tenantId },
     process.env.JWT_SECRET,
@@ -554,7 +554,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-// ✅ Scoped query: tenant isolation built-in
+//  Scoped query: tenant isolation built-in
 export async function getInvoices(userId: string, tenantId: string) {
   return prisma.invoices.findMany({
     where: {
@@ -570,7 +570,7 @@ export default async function handler(req, res) {
 
   if (!user) return res.status(401).end();
 
-  // ✅ Use server-validated tenant ID
+  //  Use server-validated tenant ID
   const invoices = await getInvoices(user.sub, user.tenant_id);
 
   res.json(invoices);
@@ -607,7 +607,7 @@ export const getServerSideProps = async (context) => {
 export default async function handler(req, res) {
   const user = await verifyAuth();
 
-  // ✅ Version header in response
+  //  Version header in response
   res.setHeader("X-API-Version", "v1");
   res.setHeader("Deprecation", "true");
   res.setHeader("Sunset", "Fri, 01 Dec 2026 23:59:59 GMT");
@@ -685,10 +685,10 @@ export default async function handler(req, res) {
   const user = await verifyAuth();
 
   try {
-    // ✅ Parse and validate request body
+    //  Parse and validate request body
     const validated = CreateInvoiceSchema.parse(req.body);
 
-    // ✅ Add server-controlled fields
+    //  Add server-controlled fields
     const invoice = await createInvoice({
       ...validated,
       userId: user.sub,
@@ -1017,7 +1017,7 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // ✅ Redirect HTTP to HTTPS
+      //  Redirect HTTP to HTTPS
       ...(process.env.ENFORCE_HTTPS === 'true' ? [{
         source: '/:path*',
         destination: 'https://:host/:path*',
@@ -1031,7 +1031,7 @@ module.exports = nextConfig;
 
 // middleware.ts (cookie security)
 export async function middleware(request: NextRequest) {
-  // ✅ Verify HTTPS in production
+  //  Verify HTTPS in production
   if (process.env.NODE_ENV === 'production') {
     const protocol = request.headers.get('x-forwarded-proto');
     if (protocol !== 'https') {
@@ -1048,7 +1048,7 @@ export default async function handler(req, res) {
 
   const token = jwt.sign({ ... }, process.env.JWT_SECRET);
 
-  // ✅ MANDATORY flags: HttpOnly, Secure, SameSite
+  //  MANDATORY flags: HttpOnly, Secure, SameSite
   res.setHeader('Set-Cookie',
     `auth_token=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=3600`
   );
@@ -1099,7 +1099,7 @@ export default async function handler(req, res) {
   const tenantId = headersList.get("x-tenant-id");
   const userId = headersList.get("x-user-id");
 
-  // ✅ Query enforces tenant boundary
+  //  Query enforces tenant boundary
   const invoices = await prisma.invoices.findMany({
     where: {
       tenantId, // ← SERVER enforces

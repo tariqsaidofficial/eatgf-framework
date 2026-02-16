@@ -46,13 +46,13 @@ The Evidence Repository (SharePoint, OneDrive, Confluence, Git, or equivalent) M
 - Audit trail: All uploads logged with timestamp + user ID
 
 **Examples:**
-- ✅ **Microsoft SharePoint:** Version History enabled (default), retention policies set
-- ✅ **OneDrive for Business:** Restore previous versions enabled
-- ✅ **Confluence:** Page history retained (all edits tracked)
-- ✅ **Git:** Immutable commit history (cannot be altered post-sign)
-- ✅ **AWS S3:** Versioning enabled, S3 Object Lock for immutability
-- ❌ **Shared folder (\\server):** No version history → NOT APPROVED
-- ❌ **Email attachment:** No audit trail → NOT APPROVED
+-  **Microsoft SharePoint:** Version History enabled (default), retention policies set
+-  **OneDrive for Business:** Restore previous versions enabled
+-  **Confluence:** Page history retained (all edits tracked)
+-  **Git:** Immutable commit history (cannot be altered post-sign)
+-  **AWS S3:** Versioning enabled, S3 Object Lock for immutability
+-  **Shared folder (\\server):** No version history → NOT APPROVED
+-  **Email attachment:** No audit trail → NOT APPROVED
 
 ---
 
@@ -138,8 +138,8 @@ a3e8c72b9f4b1e6dfc2a9d5e1b3c4f6a8e9d2c5a7b8e9f0d1c2a3b4e5f6a7b
 **During Audit:**
 
 Auditor retrieves evidence file and repeats hash calculation:
-- If hash matches Column T → ✅ File unchanged since upload
-- If hash differs → ⚠️ File modified after upload (investigate)
+- If hash matches Column T →  File unchanged since upload
+- If hash differs →  File modified after upload (investigate)
 
 **Cost:**
 - Each file: 30 seconds to calculate + paste hash
@@ -171,7 +171,7 @@ All three major repositories (SharePoint, OneDrive, Git) provide:
 3. Show: Created 01/15/2026, by [Evidence Owner Name]
 4. Show: Access logs confirming no modifications since upload
 5. If hash present: Show hash unchanged since upload
-6. Conclusion: Evidence is contemporary, unmodified ✅
+6. Conclusion: Evidence is contemporary, unmodified 
 
 ---
 
@@ -179,7 +179,7 @@ All three major repositories (SharePoint, OneDrive, Git) provide:
 
 ### Recommended Repositories (Meet All 3 Requirements)
 
-#### ✅ Microsoft SharePoint
+####  Microsoft SharePoint
 
 **Why:** Enterprise standard, built-in version history, audit logging
 
@@ -199,7 +199,7 @@ Retention: 7 years (via retention policies)
 
 ---
 
-#### ✅ Git (for Development/Cloud Controls)
+####  Git (for Development/Cloud Controls)
 
 **Why:** Immutable commits, perfect audit trail, DevOps-native
 
@@ -216,7 +216,7 @@ Folder structure:
 
 ---
 
-#### ✅ AWS S3 (for Cloud Environments)
+####  AWS S3 (for Cloud Environments)
 
 **Why:** Enterprise scale, versioning, CloudTrail logging
 
@@ -233,14 +233,14 @@ S3 Object Lock: Optional (immutability enforcement)
 
 ---
 
-### ⚠️ Acceptable but Limited
+###  Acceptable but Limited
 
 #### Confluence Wiki
 
 **Why:** Good for documents, limited version history
-- ✅ Version history exists (30-day audit trail)
-- ⚠️ Shorter audit retention than SharePoint
-- ✅ Access logging available
+-  Version history exists (30-day audit trail)
+-  Shorter audit retention than SharePoint
+-  Access logging available
 
 **Use when:** Non-critical evidence, policy documents, reference material
 
@@ -248,24 +248,24 @@ S3 Object Lock: Optional (immutability enforcement)
 
 ---
 
-### ❌ NOT Approved
+###  NOT Approved
 
 #### Email Attachments
-- ❌ No version history
-- ❌ No access control
-- ❌ Limited audit trail
+-  No version history
+-  No access control
+-  Limited audit trail
 - Risk: File can be "accidentally" replaced, auditor cannot verify originality
 
 #### USB Drives / Local Folders
-- ❌ No audit trail
-- ❌ No access control
-- ❌ Files can be deleted/modified
+-  No audit trail
+-  No access control
+-  Files can be deleted/modified
 - Risk: Complete audit trail loss
 
 #### Manual Paper Files
-- ❌ No version control
-- ❌ Physical tampering risk
-- ⚠️ Acceptable ONLY if encrypted scanned + stored in approved digital repository afterward
+-  No version control
+-  Physical tampering risk
+-  Acceptable ONLY if encrypted scanned + stored in approved digital repository afterward
 
 ---
 
@@ -305,7 +305,7 @@ S3 Object Lock: Optional (immutability enforcement)
    - Action: Control Owner reviews, validates completeness
 
 6. **Confirmation:**
-   - Control Owner: "Validated ✅"
+   - Control Owner: "Validated "
    - EVIDENCE_REGISTER Status (Column L): Auto-updates to "VALID"
 
 ---
@@ -333,8 +333,8 @@ S3 Object Lock: Optional (immutability enforcement)
         Mac: shasum -a 256 ~/Downloads/file.pdf
         ```
       - Compare result to Column T
-      - If match: ✅ File integrity confirmed
-      - If mismatch: ⚠️ FILE MODIFIED AFTER UPLOAD → Escalate
+      - If match:  File integrity confirmed
+      - If mismatch:  FILE MODIFIED AFTER UPLOAD → Escalate
 
    c) **Review evidence quality:**
       - Is evidence clear & legible?
@@ -356,39 +356,39 @@ S3 Object Lock: Optional (immutability enforcement)
 ## 7. Roles & Responsibilities
 
 ### Evidence Owner (Role)
-- ✅ Uploads evidence on schedule
-- ✅ Calculates hash if required
-- ✅ Verifies evidence file is correct before upload
-- ❌ CANNOT delete or overwrite uploaded evidence
-- ❌ CANNOT modify evidence after upload (only upload new version)
+-  Uploads evidence on schedule
+-  Calculates hash if required
+-  Verifies evidence file is correct before upload
+-  CANNOT delete or overwrite uploaded evidence
+-  CANNOT modify evidence after upload (only upload new version)
 
 ### Control Owner (Role)
-- ✅ Reviews evidence for completeness & quality
-- ✅ Confirms control operated as described
-- ✅ Signs off on evidence validity
-- ❌ CANNOT modify evidence
-- ❌ CANNOT delete evidence
+-  Reviews evidence for completeness & quality
+-  Confirms control operated as described
+-  Signs off on evidence validity
+-  CANNOT modify evidence
+-  CANNOT delete evidence
 
 ### Governance Office (Role)
-- ✅ Administers evidence repository
-- ✅ Manages folder structure & permissions
-- ✅ Monitors upload deadlines
-- ✅ Escalates missing/late evidence
-- ❌ CANNOT force delete evidence (only IT, after retention window)
+-  Administers evidence repository
+-  Manages folder structure & permissions
+-  Monitors upload deadlines
+-  Escalates missing/late evidence
+-  CANNOT force delete evidence (only IT, after retention window)
 
 ### Internal Auditor (Role)
-- ✅ Accesses evidence for audit sampling
-- ✅ Verifies evidence integrity (hash or repository logs)
-- ✅ Documents audit findings
-- ✅ Escalates integrity violations
-- ❌ CANNOT modify evidence
+-  Accesses evidence for audit sampling
+-  Verifies evidence integrity (hash or repository logs)
+-  Documents audit findings
+-  Escalates integrity violations
+-  CANNOT modify evidence
 
 ### IT/Storage Admin (Role)
-- ✅ Configures repository (version history, permissions, logging)
-- ✅ Maintains backup & disaster recovery
-- ✅ Verifies audit logs
-- ✅ Deletes evidence ONLY after 7-year retention expires
-- ✅ Assists with evidence recovery if needed
+-  Configures repository (version history, permissions, logging)
+-  Maintains backup & disaster recovery
+-  Verifies audit logs
+-  Deletes evidence ONLY after 7-year retention expires
+-  Assists with evidence recovery if needed
 
 ---
 
@@ -397,11 +397,11 @@ S3 Object Lock: Optional (immutability enforcement)
 ### Repository Selection (Friday, Feb 13)
 
 - [ ] **Confirm which repository to use:**
-  - ✅ SharePoint (recommended)
-  - ✅ OneDrive
-  - ✅ Git
-  - ✅ AWS S3
-  - ⚠️ Confluence (acceptable, limited)
+  -  SharePoint (recommended)
+  -  OneDrive
+  -  Git
+  -  AWS S3
+  -  Confluence (acceptable, limited)
 
 - [ ] **Verify 3 Capabilities:**
   1. [ ] Version History: ENABLED
@@ -456,14 +456,14 @@ S3 Object Lock: Optional (immutability enforcement)
 ### Final Verification (Thu, Feb 18)
 
 - [ ] **Repository access test:**
-  - Evidence Owner uploads test file ✅
-  - Control Owner downloads & reads file ✅
-  - Auditor accesses file ✅
-  - Check version history present ✅
-  - Check audit logs recorded ✅
+  - Evidence Owner uploads test file 
+  - Control Owner downloads & reads file 
+  - Auditor accesses file 
+  - Check version history present 
+  - Check audit logs recorded 
 
 - [ ] **If Phase 2 Stabilization Go-Ahead:**
-  - All checks pass → Week 1 deployment ready ✅
+  - All checks pass → Week 1 deployment ready 
 
 ---
 
@@ -527,19 +527,19 @@ S3 Object Lock: Optional (immutability enforcement)
 
 This policy implements:
 
-- ✅ A.7.5 – "Ensure documented information is adequately protected"
-- ✅ Controlled storage (version history, immutability)
-- ✅ Controlled access (role-based permissions)
-- ✅ Evidence of implementation (audit trails)
+-  A.7.5 – "Ensure documented information is adequately protected"
+-  Controlled storage (version history, immutability)
+-  Controlled access (role-based permissions)
+-  Evidence of implementation (audit trails)
 
 ### ISO 19011 – Evidence Requirements
 
 This policy ensures:
 
-- ✅ Evidence is retained for audit evaluation
-- ✅ Evidence integrity can be verified
-- ✅ Evidence chain of custody documented
-- ✅ Auditor can challenge evidence authenticity
+-  Evidence is retained for audit evaluation
+-  Evidence integrity can be verified
+-  Evidence chain of custody documented
+-  Auditor can challenge evidence authenticity
 
 ---
 
@@ -571,7 +571,7 @@ This policy ensures:
 
 ---
 
-**🔐 Evidence Integrity is Foundation of Audit Defensibility**
+** Evidence Integrity is Foundation of Audit Defensibility**
 
 Repository locks the evidence.  
 Hashing proves authenticity.  
@@ -610,8 +610,8 @@ CAPABILITY 3 – ACCESS LOGGING:
   [ ] Test: Request access log for file → Provided? YES/NO
 
 DECISION:
-  [ ] ALL 3 CAPABILITIES CONFIRMED → READY FOR WEEK 1 ✅
-  [ ] ANY CAPABILITY MISSING → CANNOT START (must remediate first) ❌
+  [ ] ALL 3 CAPABILITIES CONFIRMED → READY FOR WEEK 1 
+  [ ] ANY CAPABILITY MISSING → CANNOT START (must remediate first) 
 ```
 
 ---

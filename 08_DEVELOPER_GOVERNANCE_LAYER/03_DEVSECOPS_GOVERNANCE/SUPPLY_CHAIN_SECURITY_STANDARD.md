@@ -1,14 +1,14 @@
 # Supply Chain Security Standard
 
-| Field | Value |
-|-------|-------|
-| Document Type | Implementation Standard |
-| Version | 1.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-16 |
-| Authority | Chief Security Officer and Chief Technology Officer |
-| EATGF Layer | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
-| MCM Reference | EATGF-PW-SUPPLY-01, EATGF-RV-SUPPLY-01 |
+| Field          | Value                                                   |
+| -------------- | ------------------------------------------------------- |
+| Document Type  | Implementation Standard                                 |
+| Version        | 1.0                                                     |
+| Classification | Controlled                                              |
+| Effective Date | 2026-02-16                                              |
+| Authority      | Chief Security Officer and Chief Technology Officer     |
+| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| MCM Reference  | EATGF-DEV-SUP-01                                        |
 
 ---
 
@@ -40,6 +40,7 @@ This standard protects against software supply chain attacks by ensuring integri
 **Layer 1: Developer Machine Security**
 
 Requirements for developer machines:
+
 - Operating system: macOS 13+, Ubuntu 22.04+, Windows 11 with TPM 2.0
 - Disk encryption: BitLocker (Windows), FileVault (macOS), LUKS (Linux)
 - Antivirus: Endpoint Detection and Response (EDR) agent deployed
@@ -47,6 +48,7 @@ Requirements for developer machines:
 - VPN: All development over organization VPN or zero-trust network access
 
 Developer machine security audit:
+
 ```bash
 # macOS check script
 security find-certificate -a -c "developer" > /dev/null
@@ -65,6 +67,7 @@ fi
 **Layer 2: Source Code Repository Security**
 
 Requirements:
+
 - Repository: GitHub Enterprise / GitLab self-hosted / Gitea with RBAC
 - Authentication: Public key infrastructure (SSH or WebAuthn); no password auth
 - Branch protection: Code review + CI pass required; no force-push to main
@@ -72,6 +75,7 @@ Requirements:
 - Access audit: Quarterly review of repository access, delete unused keys
 
 Protected branch rules:
+
 ```yaml
 main:
   require_code_review: 1
@@ -88,6 +92,7 @@ main:
 **Layer 3: Build Tool Supply Chain**
 
 Build tool integrity verification:
+
 - All build tools (npm, Maven, Gradle, PIP, Go) downloaded via checksum verification
 - Build tool vulnerabilities tracked; updates applied within 7 days
 
@@ -107,6 +112,7 @@ python -m pip install --require-hashes -r requirements.txt
 **Layer 4: Build Infrastructure Security**
 
 Build runner security requirements:
+
 - Build runners in isolated network segment; no internet access except to package registries
 - Build runners ephemeral; destroyed after each build
 - Build logs encrypted; retention 90 days then deleted
@@ -137,12 +143,14 @@ ENTRYPOINT ["sh", "-c"]
 **Layer 5: Artifact Signing and Provenance**
 
 All artifacts signed and verified:
+
 - **Code signing:** Developer signs commit with GPG key
 - **Build artifact signing:** Artifact signed immediately after build with HSM-backed key
 - **Container signing:** Container image signed after push to registry (Cosign)
 - **Binary signature:** Executable signed with organization certificate
 
 Artifact provenance includes:
+
 - Builder identity (certificate CN)
 - Build timestamp
 - Build environment fingerprint (OS, build tool versions)
@@ -194,6 +202,7 @@ cosign verify --key=cosign.pub \
 **Layer 6: Container Registry Security**
 
 Registry requirements:
+
 - Registry: Private container registry (not public Docker Hub)
 - Access control: Role-based authentication; MFA for administrative access
 - Image scanning: All images scanned for vulnerabilities before storage; critical images blocked
@@ -201,6 +210,7 @@ Registry requirements:
 - Retention: Images older than 90 days without deployment deleted
 
 Registry policy:
+
 ```yaml
 # Registry access policy
 registries:
@@ -209,21 +219,23 @@ registries:
     push_allowed: only_ci_system
     image_scan_required: true
     vulnerability_threshold: CVSS 7.0
-    
+
   docker.io:
-    pull_allowed: false  # No public Docker Hub
+    pull_allowed: false # No public Docker Hub
     push_allowed: false
 ```
 
 **Layer 7: Deployment Verification**
 
 Deployment-time verification:
+
 - Artifact signature verified against trusted key
 - SBOM verified against expected dependencies
 - Container image scanned for runtime vulnerabilities
 - Deployment approval: manual gate for production
 
 Deployment checklist:
+
 ```bash
 # Pre-deployment verification script
 #!/bin/bash
@@ -250,15 +262,15 @@ echo "All verification passed; deployment approved"
 
 ### Threat Scenarios and Mitigations
 
-| Threat | Attack Vector | Mitigation | Detection |
-|--------|---------------|-----------|-----------|
-| Compromised developer machine | Malware injects code at commit time | Endpoint detection + code signing | Code review + signature verification |
-| Compromised build tool | npm/Maven/PIP infected malware | Tool verification + isolated network | SAST scanning + provenance check |
-| Compromised build infrastructure | Build runner access by attacker | Network isolation + runner ephemeral | Access logs + artifact signature verification |
-| Typosquatting attack | Attacker publishes similarly-named package | Dependency allow-list + SCA scanning | SCA tool alerts + manual verification |
-| Compromised CI/CD platform | Attacker gains pipeline access | Access control + audit logging | Anomalous build patterns + signature verification |
-| Dependency version pinning | Attacker publishes malicious update to used version | Automatic SCA alerts + manual update review | Dependency-Check + license scanning |
-| Container registry compromise | Attacker modifies stored image | Registry access control + signature verification | Image signature validation at deployment |
+| Threat                           | Attack Vector                                       | Mitigation                                       | Detection                                         |
+| -------------------------------- | --------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------- |
+| Compromised developer machine    | Malware injects code at commit time                 | Endpoint detection + code signing                | Code review + signature verification              |
+| Compromised build tool           | npm/Maven/PIP infected malware                      | Tool verification + isolated network             | SAST scanning + provenance check                  |
+| Compromised build infrastructure | Build runner access by attacker                     | Network isolation + runner ephemeral             | Access logs + artifact signature verification     |
+| Typosquatting attack             | Attacker publishes similarly-named package          | Dependency allow-list + SCA scanning             | SCA tool alerts + manual verification             |
+| Compromised CI/CD platform       | Attacker gains pipeline access                      | Access control + audit logging                   | Anomalous build patterns + signature verification |
+| Dependency version pinning       | Attacker publishes malicious update to used version | Automatic SCA alerts + manual update review      | Dependency-Check + license scanning               |
+| Container registry compromise    | Attacker modifies stored image                      | Registry access control + signature verification | Image signature validation at deployment          |
 
 ### Supply Chain Continuous Monitoring
 
@@ -266,7 +278,7 @@ echo "All verification passed; deployment approved"
 
 ```yaml
 metrics:
-  - unverified_artifacts: 0  # All artifacts must have valid signature
+  - unverified_artifacts: 0 # All artifacts must have valid signature
   - unsigned_commits: 0
   - sast_findings_critical: 0
   - sca_vulnerabilities_high: <5
@@ -276,6 +288,7 @@ metrics:
 ```
 
 **Alerts:**
+
 - Any new unverified artifact → immediate investigation
 - Build tool update available → patch within 7 days
 - Anomalous build pattern (different builder, unusual dependencies) → escalate
@@ -283,11 +296,11 @@ metrics:
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
-|---|---|---|---|---|
-| Supply chain verification | A.8.19, A.8.31 | PW.4, PW.5 | SAMM | BAI07 |
-| Provenance tracking | A.8.30, A.12.7 | RV.1, RV.2 | - | MEA02, MEA03 |
-| Dependency management | A.8.31 | PW.4.1 | Dependency Check | BAI07.02 |
+| EATGF Context             | ISO 27001:2022 | NIST SSDF  | OWASP            | COBIT        |
+| ------------------------- | -------------- | ---------- | ---------------- | ------------ |
+| Supply chain verification | A.8.19, A.8.31 | PW.4, PW.5 | SAMM             | BAI07        |
+| Provenance tracking       | A.8.30, A.12.7 | RV.1, RV.2 | -                | MEA02, MEA03 |
+| Dependency management     | A.8.31         | PW.4.1     | Dependency Check | BAI07.02     |
 
 ## Developer Checklist
 
@@ -309,23 +322,27 @@ Before implementing supply chain security:
 ## Governance Implications
 
 **Risk if not implemented:**
+
 - Compromised developer machine = malware in production
 - Unsigned build artifacts = unverifiable deployments
 - Missing SBOM = unknown dependencies = undetectable supply chain attacks
 - Unverified deployments = attacker-modified code in production
 
 **Operational impact:**
+
 - Build complexity increases initially (tool verification, signing)
 - Deployment velocity decreases (manual verification gates)
 - Incident response time decreases (automated verification catch compromises)
 - Audit efficiency increases (provenance trail for investigation)
 
 **Audit consequences:**
+
 - Missing supply chain controls = NIST SSDF PW/RV findings
 - No SBOM = non-compliance with NTIA minimum requirements
 - Unverified artifacts = audit finding for change management
 
 **Cross-team dependencies:**
+
 - Development: commit signing, local machine security
 - Platform: build infrastructure, artifact repository
 - Security: supply chain monitoring, incident response
@@ -342,6 +359,6 @@ Before implementing supply chain security:
 
 ## Version History
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major | Initial supply chain security standard for Layer 08 |
+| Version | Date       | Change Type | Description                                         |
+| ------- | ---------- | ----------- | --------------------------------------------------- |
+| 1.0     | 2026-02-16 | Major       | Initial supply chain security standard for Layer 08 |

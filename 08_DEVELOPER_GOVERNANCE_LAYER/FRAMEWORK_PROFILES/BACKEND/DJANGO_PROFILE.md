@@ -41,10 +41,10 @@ Backend application layer responsible for:
 
 **Conformance Obligations:**
 
-- ✅ 01_SECURE_SDLC standards
-- ✅ 02_API_GOVERNANCE standards (REST-specific controls)
-- ✅ 03_DEVSECOPS standards
-- ✅ 04_CLOUD standards (if deployed in SaaS context)
+-  01_SECURE_SDLC standards
+-  02_API_GOVERNANCE standards (REST-specific controls)
+-  03_DEVSECOPS standards
+-  04_CLOUD standards (if deployed in SaaS context)
 
 ## Relationship to EATGF Layers
 
@@ -235,7 +235,7 @@ class ProtectedView(APIView):
 **Non-Compliant Example:**
 
 ```python
-# ❌ Session authentication for API
+#  Session authentication for API
 class LegacyView(APIView):
     authentication_classes = [SessionAuthentication]  # Vulnerable
 
@@ -270,7 +270,7 @@ class DocumentDetailView(RetrieveUpdateDestroyAPIView):
 **Non-Compliant Example:**
 
 ```python
-# ❌ No object-level permission check
+#  No object-level permission check
 class DocumentDetailView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]  # Missing object check
     queryset = Document.objects.all()
@@ -307,7 +307,7 @@ class UsersListV2View(APIView):
 **Non-Compliant Example:**
 
 ```python
-# ❌ No versioning; breaking changes in production
+#  No versioning; breaking changes in production
 urlpatterns = [
     path('api/users/', UsersListView.as_view()),  # v1 → v2 breaking change
 ]
@@ -346,7 +346,7 @@ class UserSerializer(serializers.ModelSerializer):
 **Non-Compliant Example:**
 
 ```python
-# ❌ No validation; accepts arbitrary input
+#  No validation; accepts arbitrary input
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -391,7 +391,7 @@ REST_FRAMEWORK = {
 **Non-Compliant Example:**
 
 ```python
-# ❌ No rate limiting; open to DoS
+#  No rate limiting; open to DoS
 REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_CLASSES': []  # Disabled
 }
@@ -439,7 +439,7 @@ class UsersAPITestCase(TestCase):
 **Non-Compliant Example:**
 
 ```python
-# ❌ No tests; no documentation
+#  No tests; no documentation
 # No test coverage
 # No OpenAPI schema
 ```
@@ -490,7 +490,7 @@ class SecurityLoggingMiddleware:
 **Non-Compliant Example:**
 
 ```python
-# ❌ No structured logging; text-only format
+#  No structured logging; text-only format
 logger.info(f"User {request.user} accessed {request.path}")
 ```
 
@@ -528,7 +528,7 @@ SIMPLE_JWT = {
 **Non-Compliant Example:**
 
 ```python
-# ❌ CORS wide open; HTTP allowed
+#  CORS wide open; HTTP allowed
 CORS_ALLOWED_ORIGINS = ["*"]
 SECURE_SSL_REDIRECT = False
 ```

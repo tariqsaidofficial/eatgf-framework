@@ -1,15 +1,15 @@
 # CERTIFICATION_READINESS_CHECKLIST_STANDARD
 
-| Field          | Value                                                                   |
-| -------------- | ----------------------------------------------------------------------- |
-| Document Type  | Standard (Pre-Audit Checklist)                                          |
-| Version        | 1.0                                                                     |
-| Change Type    | Major (Initial)                                                         |
-| Classification | Internal                                                                |
-| Effective Date | 2026-02-16                                                              |
-| Authority      | Chief Audit Officer and Control Owners                                  |
-| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                                                  |
-| MCM Reference  | EATGF-MEA-CAR-02, EATGF-MEA-AUD-01                                      |
+| Field          | Value                                  |
+| -------------- | -------------------------------------- |
+| Document Type  | Standard (Pre-Audit Checklist)         |
+| Version        | 1.0                                    |
+| Change Type    | Major (Initial)                        |
+| Classification | Internal                               |
+| Effective Date | 2026-02-16                             |
+| Authority      | Chief Audit Officer and Control Owners |
+| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                 |
+| MCM Reference  | EATGF-MEA-AUD-01, EATGF-MEA-MAT-01     |
 
 ---
 
@@ -90,9 +90,9 @@ This section validates the control is properly designed before operational testi
 
 > I certify that the above control design items are accurate and complete. I am responsible for maintaining control design documentation current and communicating changes to my team.
 
-**Signature:** ________________________  **Date:** __________
+**Signature:** **********\_\_\_\_********** **Date:** ****\_\_****
 
-**Print Name & Title:** _________________________________
+**Print Name & Title:** ****************\_****************
 
 **Section B: Control Operation (Operational Readiness)**
 
@@ -159,9 +159,9 @@ If control relies on IT systems or automation:
 
 > I certify that the above control operation items are accurate and complete. The control is currently operating as designed. I have verified evidence of control execution for the past 30 days. Any prior audit findings have been remediated. The control is ready for independent audit.
 
-**Signature:** ________________________  **Date:** __________
+**Signature:** **********\_\_\_\_********** **Date:** ****\_\_****
 
-**Print Name & Title:** _________________________________
+**Print Name & Title:** ****************\_****************
 
 **Section C: Evidence Staging and Documentation**
 
@@ -211,9 +211,9 @@ This section ensures all audit evidence is organized and accessible for auditor 
 
 > I certify that all evidence listed above is complete, organized, and accessible. Evidence quality is appropriate for audit review. Evidence has been preserved (not modified) and will be available for auditor review during scheduled audit period.
 
-**Signature:** ________________________  **Date:** __________
+**Signature:** **********\_\_\_\_********** **Date:** ****\_\_****
 
-**Print Name & Title:** _________________________________
+**Print Name & Title:** ****************\_****************
 
 **Section D: Executive Certification (For Critical Controls Only)**
 
@@ -239,9 +239,9 @@ This section ensures department head cosigns control statement; executive accoun
 
 > I, the Department Head, confirm I have reviewed the above control certification. I am satisfied the control is appropriately designed and is currently operating as intended. I am accountable for this control's effectiveness and will ensure any audit findings are remediated in alignment with organizational expectations.
 
-**Executive Signature:** ________________________  **Date:** __________
+**Executive Signature:** **********\_\_\_\_********** **Date:** ****\_\_****
 
-**Print Name & Title:** _________________________________
+**Print Name & Title:** ****************\_****************
 
 **Section E: Exceptions and Deviations (Optional – Use if control is not fully ready)**
 
@@ -251,15 +251,15 @@ This section documents any known gaps or deviations from control design; used on
 
 If control is not fully ready for audit, document known gaps:
 
-| Gap Description | Why Gap Exists | Remediation Plan | Target Remediation Date | Impact on Audit Readiness |
-|---|---|---|---|---|
-| Example: Access reviews not completed for DB system #3 | System transferred to new team; transition not completed | Training scheduled for new team; access reviews will be completed Oct 15 | 2026-10-15 | Control partially unverified; audit will identify as design gap untested |
-| ... | | | | |
+| Gap Description                                        | Why Gap Exists                                           | Remediation Plan                                                         | Target Remediation Date | Impact on Audit Readiness                                                |
+| ------------------------------------------------------ | -------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------- | ------------------------------------------------------------------------ |
+| Example: Access reviews not completed for DB system #3 | System transferred to new team; transition not completed | Training scheduled for new team; access reviews will be completed Oct 15 | 2026-10-15              | Control partially unverified; audit will identify as design gap untested |
+| ...                                                    |                                                          |                                                                          |                         |                                                                          |
 
 **E.2 Audit Readiness Assessment (If Not Fully Ready):**
 
 - [ ] Control is partially ready; some evidence/components not yet available
-- [ ] Estimated completion date for full readiness: _________
+- [ ] Estimated completion date for full readiness: ****\_****
 - [ ] Request for audit deferral OR accept audit with limitation that [specific component] not yet audited
 - [ ] Alternative: Proceed with audit; identify gap as operational deficiency; develop remediation plan
 
@@ -267,20 +267,20 @@ If control is not fully ready for audit, document known gaps:
 
 > I acknowledge the above control is not fully prepared for audit. I am requesting [defer audit / proceed with audit with limitation documented above]. I confirm remediation plan and timeline, and accept responsibility for closing this gap.
 
-**Signature:** ________________________  **Date:** __________
+**Signature:** **********\_\_\_\_********** **Date:** ****\_\_****
 
 ### Certification Checklist Process and Deadlines
 
 **Timeline:**
 
-| Milestone | Deadline | Owner | Action |
-|---|---|---|---|
-| **Audit Schedule Published** | January 31 | Chief Audit Officer | 35 controls for year published; control owners notified |
-| **T-90 Days Before Audit** | Control owner receives 90-day notice | Chief Audit Officer | Email notification with audit date, scope, checklist form |
-| **T-60 Days Before Audit** | Certification checklist work begins | Control Owner | Control owner reviews checklist; begins evidence staging |
-| **T-30 Days Before Audit** | Control owner submits draft certification | Control Owner | Checklist submitted to auditor for review; request evidence feedback |
-| **T-15 Days Before Audit** | Final certification submitted | Control Owner | Updated checklist submitted; all exceptions/gaps confirmed; evidence packaged |
-| **Audit Execution** | Scheduled audit period | Auditor | Independent audit conducted using certification checklist as reference |
+| Milestone                    | Deadline                                  | Owner               | Action                                                                        |
+| ---------------------------- | ----------------------------------------- | ------------------- | ----------------------------------------------------------------------------- |
+| **Audit Schedule Published** | January 31                                | Chief Audit Officer | 35 controls for year published; control owners notified                       |
+| **T-90 Days Before Audit**   | Control owner receives 90-day notice      | Chief Audit Officer | Email notification with audit date, scope, checklist form                     |
+| **T-60 Days Before Audit**   | Certification checklist work begins       | Control Owner       | Control owner reviews checklist; begins evidence staging                      |
+| **T-30 Days Before Audit**   | Control owner submits draft certification | Control Owner       | Checklist submitted to auditor for review; request evidence feedback          |
+| **T-15 Days Before Audit**   | Final certification submitted             | Control Owner       | Updated checklist submitted; all exceptions/gaps confirmed; evidence packaged |
+| **Audit Execution**          | Scheduled audit period                    | Auditor             | Independent audit conducted using certification checklist as reference        |
 
 **Submission Process:**
 
@@ -293,11 +293,11 @@ If control is not fully ready for audit, document known gaps:
 
 **Readiness Statuses:**
 
-| Status | Definition | Audit Outcome | Notes |
-|---|---|---|---|
-| **Certified Ready** | All checklist items complete; no exceptions; all evidence staged; executive cosign (if req'd) | Audit proceeds per schedule; expected quick/efficient audit | Ideal state |
-| **Partially Ready** | Some checklist items incomplete; documented gaps; remediation plan in progress | Audit proceeds with limitation; specific gaps noted as scope limitation | Acceptable if gaps minor; control owner commits timeline |
-| **Not Ready** | Major gaps; evidence not staged; control not operating per design | Audit deferred pending control readiness improvements | Rare; requires control owner and executive to agree deferral acceptable |
+| Status              | Definition                                                                                    | Audit Outcome                                                           | Notes                                                                   |
+| ------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Certified Ready** | All checklist items complete; no exceptions; all evidence staged; executive cosign (if req'd) | Audit proceeds per schedule; expected quick/efficient audit             | Ideal state                                                             |
+| **Partially Ready** | Some checklist items incomplete; documented gaps; remediation plan in progress                | Audit proceeds with limitation; specific gaps noted as scope limitation | Acceptable if gaps minor; control owner commits timeline                |
+| **Not Ready**       | Major gaps; evidence not staged; control not operating per design                             | Audit deferred pending control readiness improvements                   | Rare; requires control owner and executive to agree deferral acceptable |
 
 **Escalation if Control Inadequate:**
 
@@ -313,25 +313,25 @@ If control fails certification (Not Ready status):
 
 **Evidence Sufficiency Standards (For Each Control):**
 
-| Control Component | Minimum Evidence Expected | Sample Size | Audit Verification Method |
-|---|---|---|---|
-| **Design validation** | Policy/procedure document + approval | 1 policy | Auditor reviews current policy; confirms reflects control design |
-| **Operation verification** | Execution records for past 90 days | 10-30 samples (proportional to control frequency) | Auditor samples execution records; verifies match procedure; confirms evidence of execution complete and signed |
-| **Training** | Training records for past 12 months | Count: 100% of control operators should be trained; Auditor verifies ≥80% trained within 12 months | Training completion records reviewed; dates verified; new hire training verified |
-| **Monitoring** | Monitoring/review evidence for past quarter | 1 quarterly review minimum | Auditor reviews monitoring documentation; confirms action on findings if any |
-| **Exceptions** | Exception logs for past 12 months | 100% of exceptions should be logged | Auditor spot-checks: select 3-5 situations where exception could have occurred; verify either evidence of execution or documentation why exception occurred |
+| Control Component          | Minimum Evidence Expected                   | Sample Size                                                                                        | Audit Verification Method                                                                                                                                   |
+| -------------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Design validation**      | Policy/procedure document + approval        | 1 policy                                                                                           | Auditor reviews current policy; confirms reflects control design                                                                                            |
+| **Operation verification** | Execution records for past 90 days          | 10-30 samples (proportional to control frequency)                                                  | Auditor samples execution records; verifies match procedure; confirms evidence of execution complete and signed                                             |
+| **Training**               | Training records for past 12 months         | Count: 100% of control operators should be trained; Auditor verifies ≥80% trained within 12 months | Training completion records reviewed; dates verified; new hire training verified                                                                            |
+| **Monitoring**             | Monitoring/review evidence for past quarter | 1 quarterly review minimum                                                                         | Auditor reviews monitoring documentation; confirms action on findings if any                                                                                |
+| **Exceptions**             | Exception logs for past 12 months           | 100% of exceptions should be logged                                                                | Auditor spot-checks: select 3-5 situations where exception could have occurred; verify either evidence of execution or documentation why exception occurred |
 
 ### Certification Checklist Reporting
 
 **Monthly Certification Status Report (To Governance Committee):**
 
-| Metric | Definition | Target | Current (Month) |
-|---|---|---|---|
-| **Certification Completion Rate** | % of controls certified prior to audit | 100% | 87% (34/35 audited, 28/34 Certified Ready, 6/34 Partially Ready, 1/34 deferred) |
-| **Early Certification** | % certified ≥30 days before audit | 80% | 76% |
-| **Evidence Completeness** | % of certified controls with all evidence staged | 95% | 93% |
-| **Executive Cosign Rate** | % of critical controls with executive cosign | 100% | 100% (8/8 critical controls cosigned) |
-| **Audit Efficiency Impact** | Average audit time per control (Certified vs. Not Certified controls) | Certified: 8 hours avg; Not Certified: 16 hours avg | Certified: 7.5 hrs; Not Certified: 15.5 hrs (confirms efficiency gain) |
+| Metric                            | Definition                                                            | Target                                              | Current (Month)                                                                 |
+| --------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **Certification Completion Rate** | % of controls certified prior to audit                                | 100%                                                | 87% (34/35 audited, 28/34 Certified Ready, 6/34 Partially Ready, 1/34 deferred) |
+| **Early Certification**           | % certified ≥30 days before audit                                     | 80%                                                 | 76%                                                                             |
+| **Evidence Completeness**         | % of certified controls with all evidence staged                      | 95%                                                 | 93%                                                                             |
+| **Executive Cosign Rate**         | % of critical controls with executive cosign                          | 100%                                                | 100% (8/8 critical controls cosigned)                                           |
+| **Audit Efficiency Impact**       | Average audit time per control (Certified vs. Not Certified controls) | Certified: 8 hours avg; Not Certified: 16 hours avg | Certified: 7.5 hrs; Not Certified: 15.5 hrs (confirms efficiency gain)          |
 
 **Escalation Triggers:**
 
@@ -341,13 +341,13 @@ If control fails certification (Not Ready status):
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | COBIT |
-|---|---|---|---|
+| EATGF Context                         | ISO 27001:2022                                                                       | NIST SSDF                                                             | COBIT                                                                |
+| ------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Control readiness and self-assessment | A.8.17 (Monitoring, measurement, analysis and evaluation), A.6.7 (Management review) | CA-7 (Continuous monitoring), CA-8 (Penetration testing and analysis) | MEA01.01 (Monitor effectiveness), MEA02.01 (Assess control maturity) |
-| Evidence preparation and staging | A.8.17 (Monitoring records), A.6.7 (Management review) | AU-2 (Audit events), AU-5 (Response to audit findings) | MEA03.01 (Collect and analyze data) |
-| Control design validation | A.5.1 (Information security policies), A.6.7 (Management review) | CA-2 (Security assessments), CA-3 (Assessment procedures) | APO13.01 (Establish governance framework) |
-| Control operation verification | A.8.15 (Logging), A.8.16 (Monitoring), A.8.17 (Monitoring analysis) | CA-7 (Continuous monitoring), SI-4 (Information system monitoring) | DSS05.02 (Ensure security compliance) |
-| Executive accountability | A.6.1 (Executive direction), A.6.2 (Information security roles) | CA-8 (Penetration testing), IR-1 (Incident coordination) | EDM01.01 (Evaluate strategy and objective) |
+| Evidence preparation and staging      | A.8.17 (Monitoring records), A.6.7 (Management review)                               | AU-2 (Audit events), AU-5 (Response to audit findings)                | MEA03.01 (Collect and analyze data)                                  |
+| Control design validation             | A.5.1 (Information security policies), A.6.7 (Management review)                     | CA-2 (Security assessments), CA-3 (Assessment procedures)             | APO13.01 (Establish governance framework)                            |
+| Control operation verification        | A.8.15 (Logging), A.8.16 (Monitoring), A.8.17 (Monitoring analysis)                  | CA-7 (Continuous monitoring), SI-4 (Information system monitoring)    | DSS05.02 (Ensure security compliance)                                |
+| Executive accountability              | A.6.1 (Executive direction), A.6.2 (Information security roles)                      | CA-8 (Penetration testing), IR-1 (Incident coordination)              | EDM01.01 (Evaluate strategy and objective)                           |
 
 ## Developer Checklist
 
@@ -414,6 +414,6 @@ If control fails certification (Not Ready status):
 
 **Version History**
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |
+| Version | Date       | Change Type     | Description                                              |
+| ------- | ---------- | --------------- | -------------------------------------------------------- |
+| 1.0     | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |

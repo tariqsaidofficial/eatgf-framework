@@ -56,7 +56,7 @@ Supply Chain profiles implement:
 All dependencies (direct + transitive) tracked centrally with exact versions pinned.
 
 ```bash
-# ✅ COMPLIANT: Exact versions pinned, lock file committed
+#  COMPLIANT: Exact versions pinned, lock file committed
 # Python: requirements.txt with ==, poetry.lock, or Pipfile.lock
 numpy==1.24.3
 pandas==2.0.2
@@ -533,7 +533,7 @@ RUN pip install --no-index --find-links /cache numpy==1.24.3
 - Tenant-specific signing keys per environment
 
 ```bash
-# ✅ COMPLIANT: Tenant-specific registries
+#  COMPLIANT: Tenant-specific registries
 gcr.io/tenant-a/app:v1.0  # Tenant A artifacts only
 gcr.io/tenant-b/app:v1.0  # Tenant B artifacts only
 
@@ -612,7 +612,7 @@ policies:
 ### Direct Dependencies
 
 ```python
-# ✅ COMPLIANT: Explicit, pinned versions
+#  COMPLIANT: Explicit, pinned versions
 # requirements-prod.txt
 Django==4.2.7
 PostgreSQL==15.1

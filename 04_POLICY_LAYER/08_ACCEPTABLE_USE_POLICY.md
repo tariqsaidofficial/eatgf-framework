@@ -1,15 +1,15 @@
 # 08_ACCEPTABLE_USE_POLICY
 
-| Field          | Value                                                                   |
-| -------------- | ----------------------------------------------------------------------- |
-| Document Type  | Policy                                                                  |
-| Version        | 1.0                                                                     |
-| Change Type    | Major (Initial)                                                         |
-| Classification | Internal                                                                |
-| Effective Date | 2026-02-16                                                              |
-| Authority      | Chief Information Security Officer and Chief Human Resources Officer    |
-| EATGF Layer    | 04_POLICY_LAYER                                                         |
-| MCM Reference  | EATGF-DSS-USE-01, EATGF-DSS-USE-02, EATGF-APO-POL-01                   |
+| Field          | Value                                                                |
+| -------------- | -------------------------------------------------------------------- |
+| Document Type  | Policy                                                               |
+| Version        | 1.0                                                                  |
+| Change Type    | Major (Initial)                                                      |
+| Classification | Internal                                                             |
+| Effective Date | 2026-02-16                                                           |
+| Authority      | Chief Information Security Officer and Chief Human Resources Officer |
+| EATGF Layer    | 04_POLICY_LAYER                                                      |
+| MCM Reference  | EATGF-DSS-SEC-01, EATGF-APO-SEC-01, EATGF-EDM-GOV-01                 |
 
 ---
 
@@ -194,12 +194,12 @@ Acceptable use violations detected via:
 
 **Disciplinary Framework:**
 
-| Violation Type | First Offense | Second Offense | Third Offense |
-|---|---|---|---|
-| **Minor Policy Violation** (policy unclear interpretation, isolated incident, no impact) | Verbal warning + training | Written warning + policy review meeting | Suspension (1-3 days) |
-| **Moderate Violation** (clear policy breach, remediated, minor impact) | Written warning | Suspension (1-5 days) | Termination or demotion |
-| **Serious Violation** (intentional breach, sensitive data involved, repeated despite warning) | Suspension (1-5 days) | Termination or extended suspension | Termination |
-| **Severe/Criminal Violation** (unauthorized access, data theft, illegal activity, malware distribution) | Immediate termination + law enforcement referral | N/A | N/A |
+| Violation Type                                                                                          | First Offense                                    | Second Offense                          | Third Offense           |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------ | --------------------------------------- | ----------------------- |
+| **Minor Policy Violation** (policy unclear interpretation, isolated incident, no impact)                | Verbal warning + training                        | Written warning + policy review meeting | Suspension (1-3 days)   |
+| **Moderate Violation** (clear policy breach, remediated, minor impact)                                  | Written warning                                  | Suspension (1-5 days)                   | Termination or demotion |
+| **Serious Violation** (intentional breach, sensitive data involved, repeated despite warning)           | Suspension (1-5 days)                            | Termination or extended suspension      | Termination             |
+| **Severe/Criminal Violation** (unauthorized access, data theft, illegal activity, malware distribution) | Immediate termination + law enforcement referral | N/A                                     | N/A                     |
 
 **Special Considerations for Severe Violations:**
 
@@ -260,13 +260,13 @@ All users must acknowledge understanding of Acceptable Use Policy:
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | COBIT |
-|---|---|---|---|
-| Acceptable use policy and definition | A.5.1 (Information security policy), A.5.7 (Human resources security—code of conduct) | PS-7 (Supply chain protection), AU-2 (Audit events) | APO01.06 (Enforce policies), DSS05.05 (Enforce policy) |
-| Monitoring and audit logging | A.8.15 (Logging), A.8.16 (Monitoring), A.8.17 (Analysis and evaluation) | AU-6 (Audit review/analysis), SI-4 (Information system monitoring) | MEA01.01 (Monitor effectiveness), DSS05.02 (Ensure security compliance) |
-| Prohibited activities and enforcement | A.5.10 (Information security incident procedures), A.5.14 (Password management) | IR-4 (Incident handling), AC-2 (Account management) | DSS06.01 (Manage IT security incidents) |
-| Investigation and disciplinary action | A.5.26 (Response to security incidents), A.6.10 (Incident management), A.8.37 (Employment termination/change) | IR-4 (Incident handling), AU-9 (Protection of audit information) | DSS06.01 (Incident management), APO07.03 (Human resources compliance) |
-| Third-party acceptable use | A.5.23 (Information security in supplier relationships), A.8.34 (Supplier relationships) | PS-7 (Supply chain protection) | BAI05.04 (Manage third parties) |
+| EATGF Context                         | ISO 27001:2022                                                                                                | NIST SSDF                                                          | COBIT                                                                   |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| Acceptable use policy and definition  | A.5.1 (Information security policy), A.5.7 (Human resources security—code of conduct)                         | PS-7 (Supply chain protection), AU-2 (Audit events)                | APO01.06 (Enforce policies), DSS05.05 (Enforce policy)                  |
+| Monitoring and audit logging          | A.8.15 (Logging), A.8.16 (Monitoring), A.8.17 (Analysis and evaluation)                                       | AU-6 (Audit review/analysis), SI-4 (Information system monitoring) | MEA01.01 (Monitor effectiveness), DSS05.02 (Ensure security compliance) |
+| Prohibited activities and enforcement | A.5.10 (Information security incident procedures), A.5.14 (Password management)                               | IR-4 (Incident handling), AC-2 (Account management)                | DSS06.01 (Manage IT security incidents)                                 |
+| Investigation and disciplinary action | A.5.26 (Response to security incidents), A.6.10 (Incident management), A.8.37 (Employment termination/change) | IR-4 (Incident handling), AU-9 (Protection of audit information)   | DSS06.01 (Incident management), APO07.03 (Human resources compliance)   |
+| Third-party acceptable use            | A.5.23 (Information security in supplier relationships), A.8.34 (Supplier relationships)                      | PS-7 (Supply chain protection)                                     | BAI05.04 (Manage third parties)                                         |
 
 ## Developer Checklist
 
@@ -339,6 +339,6 @@ All users must acknowledge understanding of Acceptable Use Policy:
 
 **Version History**
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |
+| Version | Date       | Change Type     | Description                                              |
+| ------- | ---------- | --------------- | -------------------------------------------------------- |
+| 1.0     | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |

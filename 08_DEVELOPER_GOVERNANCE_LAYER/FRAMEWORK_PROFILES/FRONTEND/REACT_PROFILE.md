@@ -85,13 +85,13 @@ The browser is treated as an untrusted network edge. Client-side logic must neve
 **Enforcement:**
 
 ```typescript
-// ❌ PROHIBITED: Trusting client-side tenant check
+//  PROHIBITED: Trusting client-side tenant check
 function RenderInvoices() {
   const { tenantId } = localStorage.getItem("tenant"); // VIOLATES zero-trust
   return <InvoiceList tenantId={tenantId} />;
 }
 
-// ✅ COMPLIANT: Server provides validated tenant
+//  COMPLIANT: Server provides validated tenant
 function RenderInvoices() {
   const { tenantId } = useUserContext(); // from authenticated /user endpoint
   return <InvoiceList tenantId={tenantId} />;
@@ -109,36 +109,36 @@ Access tokens must **NEVER** be stored persistently on client.
 **Prohibited Storage:**
 
 ```typescript
-// ❌ localStorage
+//  localStorage
 localStorage.setItem("token", accessToken);
 
-// ❌ sessionStorage
+//  sessionStorage
 sessionStorage.setItem("token", accessToken);
 
-// ❌ Redux store (persisted)
+//  Redux store (persisted)
 store.dispatch(setToken(accessToken));
 
-// ❌ IndexedDB
+//  IndexedDB
 db.tokens.add({ token: accessToken });
 
-// ❌ plain JavaScript variable (survives refresh)
+//  plain JavaScript variable (survives refresh)
 window.authToken = accessToken;
 ```
 
 **Mandatory Model: HTTP-Only Secure Cookies**
 
 ```typescript
-// ✅ Server sends HTTP-only cookie on login
+//  Server sends HTTP-only cookie on login
 // Response headers:
 // Set-Cookie: access_token=<JWT>; HttpOnly; Secure; SameSite=Strict; Path=/api
 
-// ✅ Frontend automatically includes cookie
+//  Frontend automatically includes cookie
 fetch("/api/users", {
   method: "GET",
   credentials: "include", // sends HTTP-only cookies
 });
 
-// ✅ Short-lived access token + silent refresh
+//  Short-lived access token + silent refresh
 fetch("/api/auth/refresh", {
   method: "POST",
   credentials: "include",
@@ -149,7 +149,7 @@ fetch("/api/auth/refresh", {
 **Advanced Pattern: Token Rotation on Every Request**
 
 ```typescript
-// ✅ Backend rotates token on each API response
+//  Backend rotates token on each API response
 // Frontend automatically receives new token in Set-Cookie
 // Old token invalidated immediately
 
@@ -165,13 +165,13 @@ fetch("/api/auth/refresh", {
 Rendering user input as HTML is prohibited without explicit sanitization.
 
 ```typescript
-// ❌ CRITICAL VIOLATION
+//  CRITICAL VIOLATION
 <div dangerouslySetInnerHTML={{ __html: userInput }} />
 
-// ❌ Also dangerous
+//  Also dangerous
 <div innerHTML={userInput} />
 
-// ❌ Even with toString()
+//  Even with toString()
 <p>{userInput.toString()}</p> // if userInput is <img src=x onerror=steal()>
 ```
 
@@ -180,18 +180,18 @@ Rendering user input as HTML is prohibited without explicit sanitization.
 ```typescript
 import DOMPurify from "dompurify";
 
-// ✅ COMPLIANT: Sanitize before rendering
+//  COMPLIANT: Sanitize before rendering
 const sanitized = DOMPurify.sanitize(userInput);
 <div dangerouslySetInnerHTML={{ __html: sanitized }} />;
 
-// ✅ PREFERRED: Treat as text (no HTML)
+//  PREFERRED: Treat as text (no HTML)
 <div>{userInput}</div>
 ```
 
 **Configuration:**
 
 ```typescript
-// ✅ Strict DOMPurify config
+//  Strict DOMPurify config
 const config = {
   ALLOWED_TAGS: ["b", "i", "em", "strong"],
   ALLOWED_ATTR: [],
@@ -233,16 +233,16 @@ Content-Security-Policy:
 **Frontend Compliance:**
 
 ```typescript
-// ❌ VIOLATES CSP: Inline script
+//  VIOLATES CSP: Inline script
 <script>console.log("hello");</script>
 
-// ❌ VIOLATES CSP: Inline style
+//  VIOLATES CSP: Inline style
 <div style={{ color: "red" }}>Error</div>
 
-// ✓ COMPLIANT: External stylesheet
+//  COMPLIANT: External stylesheet
 <link rel="stylesheet" href="/styles.css" />
 
-// ✓ COMPLIANT: CSS-in-JS with nonce (if supported)
+//  COMPLIANT: CSS-in-JS with nonce (if supported)
 // Backend provides nonce in CSP-Nonce header
 <style nonce={cspNonce}>
   .error { color: red; }
@@ -258,7 +258,7 @@ Content-Security-Policy:
 All HTTP requests must use a centralized, configured API client. No scattered fetch() or axios() calls.
 
 ```typescript
-// ❌ PROHIBITED: Scattered fetch calls
+//  PROHIBITED: Scattered fetch calls
 function UserProfile() {
   useEffect(() => {
     fetch("https://api.example.com/user")
@@ -267,7 +267,7 @@ function UserProfile() {
   }, []);
 }
 
-// ✓ COMPLIANT: Centralized client
+//  COMPLIANT: Centralized client
 import { api } from "@/lib/api-client";
 
 function UserProfile() {
@@ -292,14 +292,14 @@ export const api: AxiosInstance = axios.create({
   },
 });
 
-// ✅ Request interceptor: Add correlation ID
+//  Request interceptor: Add correlation ID
 api.interceptors.request.use((config) => {
   config.headers["X-Correlation-ID"] = uuidv4();
   config.headers["X-Request-Timestamp"] = new Date().toISOString();
   return config;
 });
 
-// ✅ Response interceptor: Handle auth failures
+//  Response interceptor: Handle auth failures
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
@@ -324,7 +324,7 @@ export default api;
 All dependencies must be locked, audited, and tracked.
 
 ```json
-// ✅ package.json: Pinned versions
+//  package.json: Pinned versions
 {
   "dependencies": {
     "react": "18.2.0",
@@ -342,14 +342,14 @@ All dependencies must be locked, audited, and tracked.
 **Lockfile Enforcement:**
 
 ```bash
-# ✅ MANDATORY: Commit lockfile
+#  MANDATORY: Commit lockfile
 git add package-lock.json
 git commit -m "deps: update packages"
 
-# ✅ CI: Enforce lockfile consistency
+#  CI: Enforce lockfile consistency
 npm ci --omit=dev
 
-# ✅ CI: Audit for vulnerabilities
+#  CI: Audit for vulnerabilities
 npm audit --audit-level=high
 # Fails build on high/critical severity
 ```
@@ -357,13 +357,13 @@ npm audit --audit-level=high
 **Advanced Supply Chain:**
 
 ```bash
-# ✅ License compliance check
+#  License compliance check
 npx license-checker --summary
 
-# ✅ SBOM generation
+#  SBOM generation
 npm ls --json > sbom.json
 
-# ✅ Dependency audit with known vulnerabilities
+#  Dependency audit with known vulnerabilities
 npx npm-check-updates --doctored
 ```
 
@@ -390,11 +390,11 @@ npx npm-check-updates --doctored
 Frontend environment variables must **NEVER** contain secrets. Only public configuration.
 
 ```typescript
-// ❌ CRITICAL VIOLATION: Secrets in frontend env
+//  CRITICAL VIOLATION: Secrets in frontend env
 REACT_APP_STRIPE_SECRET_KEY=sk_live_... // EXPOSED in bundle
 REACT_APP_DATABASE_PASSWORD=... // VIOLATES security boundary
 
-// ✓ COMPLIANT: Public configuration only
+//  COMPLIANT: Public configuration only
 VITE_API_URL=https://api.example.com
 VITE_ENVIRONMENT=production
 VITE_ANALYTICS_KEY=pk_prod_... // public analytics key
@@ -404,24 +404,24 @@ VITE_FEATURE_FLAGS_ENDPOINT=https://api.example.com/features
 **Access Pattern:**
 
 ```typescript
-// ✓ COMPLIANT: Import from centralized config
+//  COMPLIANT: Import from centralized config
 const config = {
   apiUrl: import.meta.env.VITE_API_URL,
   environment: import.meta.env.VITE_ENVIRONMENT,
   analyticsKey: import.meta.env.VITE_ANALYTICS_KEY,
 };
 
-// ✗ PROHIBITED: Direct env variable in component
+//  PROHIBITED: Direct env variable in component
 const secret = process.env.REACT_APP_TOKEN; // VIOLATES principle
 ```
 
 **Build-Time Verification:**
 
 ```bash
-# ✅ CI script: Verify no secrets in build
+#  CI script: Verify no secrets in build
 grep -r "sk_live" dist/ && exit 1
 grep -r "password" dist/ && exit 1
-echo "✓ No hardcoded secrets in build artifact"
+echo " No hardcoded secrets in build artifact"
 ```
 
 ---
@@ -452,7 +452,7 @@ export interface User {
   mfaEnabled: boolean;
 }
 
-// ✅ COMPLIANT: Fetch user identity from server
+//  COMPLIANT: Fetch user identity from server
 export function useAuth() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["auth", "user"],
@@ -472,7 +472,7 @@ export function useAuth() {
   };
 }
 
-// ✅ Usage: Protect routes based on server response
+//  Usage: Protect routes based on server response
 function ProtectedRoute({ children }) {
   const { isAuthenticated, isLoading } = useAuth();
 
@@ -486,7 +486,7 @@ function ProtectedRoute({ children }) {
 ### Non-Compliant (Violation Examples)
 
 ```typescript
-// ❌ VIOLATION: Trusting JWT decoded on client
+//  VIOLATION: Trusting JWT decoded on client
 import jwtDecode from "jwt-decode";
 
 function useAuth() {
@@ -495,7 +495,7 @@ function useAuth() {
   return { userId: decoded.sub }; // No server validation
 }
 
-// ❌ VIOLATION: Login stores token, assumes success
+//  VIOLATION: Login stores token, assumes success
 fetch("/auth/login", {
   method: "POST",
   body: JSON.stringify({ email, password }),
@@ -570,7 +570,7 @@ export function useCanAccessResource(resourceId: string, action: "read" | "write
   return { canAccess: canAccess ?? false, isLoading };
 }
 
-// ✅ COMPLIANT: Frontend checks server auth, shows/hides UI
+//  COMPLIANT: Frontend checks server auth, shows/hides UI
 function InvoiceActions({ invoiceId }) {
   const { canAccess: canDelete, isLoading } = useCanAccessResource(invoiceId, "delete");
 
@@ -588,7 +588,7 @@ function InvoiceActions({ invoiceId }) {
   );
 }
 
-// ✅ Server-side verification happens ALSO on delete
+//  Server-side verification happens ALSO on delete
 async function deleteInvoice(invoiceId: string) {
   try {
     await api.delete(`/invoices/${invoiceId}`);
@@ -605,28 +605,28 @@ async function deleteInvoice(invoiceId: string) {
 ### Non-Compliant (Violation Examples)
 
 ```typescript
-// ❌ VIOLATION: Trust client-side role
+//  VIOLATION: Trust client-side role
 const userRoles = ["admin"]; // hardcoded or localStorage
 function DeleteButton() {
   return userRoles.includes("admin") ? <button>Delete</button> : null;
   // No server verification
 }
 
-// ❌ VIOLATION: Derive tenant from URL
+//  VIOLATION: Derive tenant from URL
 function InvoiceList() {
   const { tenantId } = useParams(); // User can change URL param
   const invoices = fetchInvoices(tenantId); // Server trusts URL param
 }
 
-// ✗ RISK: Showing UI button doesn't mean action is permitted
-// ✗ User can bypass by calling API directly with wrong tenantId
+//  RISK: Showing UI button doesn't mean action is permitted
+//  User can bypass by calling API directly with wrong tenantId
 ```
 
 ### Row-Level Security Pattern
 
 ```typescript
 export function InvoiceEditor({ invoiceId }: { invoiceId: string }) {
-  // ✅ MANDATORY: Server indicates if editing allowed
+  //  MANDATORY: Server indicates if editing allowed
   const { data: invoice, error } = useQuery({
     queryKey: ["invoices", invoiceId],
     queryFn: () => api.get(`/invoices/${invoiceId}`)
@@ -676,7 +676,7 @@ export const api = axios.create({
   withCredentials: true,
 });
 
-// ✅ Response interceptor: Detect version mismatch
+//  Response interceptor: Detect version mismatch
 api.interceptors.response.use(
   (response) => {
     const serverVersion = response.headers["x-api-version"];
@@ -684,7 +684,7 @@ api.interceptors.response.use(
     if (serverVersion && serverVersion !== API_VERSION) {
       if (import.meta.env.DEV) {
         console.warn(
-          `⚠️ API version mismatch: client=${API_VERSION}, server=${serverVersion}`,
+          ` API version mismatch: client=${API_VERSION}, server=${serverVersion}`,
         );
       }
     }
@@ -701,12 +701,12 @@ api.interceptors.response.use(
   },
 );
 
-// ✅ Development mode: Warn on deprecations
+//  Development mode: Warn on deprecations
 if (import.meta.env.DEV) {
   api.interceptors.response.use((response) => {
     const deprecationWarning = response.headers["warning"];
     if (deprecationWarning?.includes("299")) {
-      console.warn(`⚠️ Deprecated API: ${deprecationWarning}`);
+      console.warn(` Deprecated API: ${deprecationWarning}`);
     }
     return response;
   });
@@ -718,7 +718,7 @@ if (import.meta.env.DEV) {
 ```typescript
 import { z } from "zod";
 
-// ✅ Define schema per API version
+//  Define schema per API version
 const UserV1 = z.object({
   id: z.string(),
   email: z.string().email(),
@@ -733,11 +733,11 @@ const UserV2 = z.object({
   lastLogin: z.string().datetime().nullable(), // new in v2
 });
 
-// ✅ Request handler with schema validation
+//  Request handler with schema validation
 async function getUser(userId: string) {
   const response = await api.get(`/users/${userId}`);
 
-  // ✅ Validate response matches expected schema
+  //  Validate response matches expected schema
   const validated = UserV2.parse(response.data);
   return validated;
 }
@@ -746,10 +746,10 @@ async function getUser(userId: string) {
 ### Non-Compliant (Violation Examples)
 
 ```typescript
-// ❌ VIOLATION: Hardcoded endpoint, no versioning
+//  VIOLATION: Hardcoded endpoint, no versioning
 const response = await fetch(`/api/users`); // No version
 
-// ❌ VIOLATION: Assuming response shape without validation
+//  VIOLATION: Assuming response shape without validation
 const user = response.data;
 console.log(user.mfaEnabled); // Undefined if server is older version
 ```
@@ -773,7 +773,7 @@ console.log(user.mfaEnabled); // Undefined if server is older version
 // src/schemas/invoice.ts
 import { z } from "zod";
 
-// ✅ Share validation schema between frontend/backend
+//  Share validation schema between frontend/backend
 export const CreateInvoiceSchema = z.object({
   tenantId: z.string().uuid(), // from server, not user input
   customerId: z.string().min(1, "Customer required"),
@@ -794,7 +794,7 @@ export const CreateInvoiceSchema = z.object({
 
 export type CreateInvoiceInput = z.infer<typeof CreateInvoiceSchema>;
 
-// ✅ Form component with validation
+//  Form component with validation
 function InvoiceForm() {
   const form = useForm<CreateInvoiceInput>({
     resolver: zodResolver(CreateInvoiceSchema),
@@ -805,7 +805,7 @@ function InvoiceForm() {
 
   const onSubmit = async (data: CreateInvoiceInput) => {
     try {
-      // ✅ Send to API (server re-validates)
+      //  Send to API (server re-validates)
       const response = await api.post("/invoices", data);
       navigate(`/invoices/${response.data.id}`);
     } catch (error) {
@@ -835,7 +835,7 @@ function InvoiceForm() {
 ### Non-Compliant (Violation Examples)
 
 ```typescript
-// ❌ VIOLATION: No validation before send
+//  VIOLATION: No validation before send
 function InvoiceForm() {
   const [amount, setAmount] = useState("");
 
@@ -847,7 +847,7 @@ function InvoiceForm() {
   };
 }
 
-// ❌ VIOLATION: Trusting client validation prevents API call
+//  VIOLATION: Trusting client validation prevents API call
 function SubmitButton({ isFormValid }) {
   return (
     <button disabled={!isFormValid}>Submit</button> // Disables button, but data could be sent another way
@@ -874,7 +874,7 @@ function SubmitButton({ isFormValid }) {
 // src/lib/api-client.ts
 import pRetry from "p-retry";
 
-// ✅ Exponential backoff for retries
+//  Exponential backoff for retries
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true,
@@ -884,7 +884,7 @@ export const api = axios.create({
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
-    // ✅ Handle rate limit (429) with backoff
+    //  Handle rate limit (429) with backoff
     if (error.response?.status === 429) {
       const retryAfter = parseInt(
         error.response.headers["retry-after"] || "60"
@@ -905,7 +905,7 @@ api.interceptors.response.use(
   }
 );
 
-// ✅ Debounce search input (UX smoothing only)
+//  Debounce search input (UX smoothing only)
 import { debounce } from "lodash-es";
 
 function SearchUsers({ onResults }) {
@@ -931,7 +931,7 @@ function SearchUsers({ onResults }) {
   return <input onChange={handleChange} />;
 }
 
-// ✅ Request queue to prevent duplicate API calls
+//  Request queue to prevent duplicate API calls
 function useFetchOnce<T>(
   url: string,
   options?: RequestInit
@@ -955,7 +955,7 @@ function useFetchOnce<T>(
 ### Non-Compliant (Violation Examples)
 
 ```typescript
-// ❌ VIOLATION: No throttling on API calls
+//  VIOLATION: No throttling on API calls
 function SearchUsers() {
   const handleChange = (e) => {
     api.get("/users/search", { params: { q: e.target.value } }); // Called on every keystroke
@@ -964,7 +964,7 @@ function SearchUsers() {
   return <input onChange={handleChange} />;
 }
 
-// ❌ VIOLATION: Ignoring 429 response
+//  VIOLATION: Ignoring 429 response
 api.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -1032,7 +1032,7 @@ describe("useAuth", () => {
   });
 });
 
-// ✅ Security test: Verify no XSS from user input
+//  Security test: Verify no XSS from user input
 describe("Input Sanitization", () => {
   it("sanitizes HTML in user comments", () => {
     const maliciousInput = "<img src=x onerror=\"alert('XSS')\" />";
@@ -1049,7 +1049,7 @@ describe("Input Sanitization", () => {
   });
 });
 
-// ✅ Integration test: API contract validation
+//  Integration test: API contract validation
 describe("API Client", () => {
   it("includes correlation ID on all requests", async () => {
     await api.get("/test");
@@ -1124,13 +1124,13 @@ components:
 ### Non-Compliant (Violation Examples)
 
 ```typescript
-// ❌ VIOLATION: No test coverage for security
+//  VIOLATION: No test coverage for security
 function dangerousComponent({ html }) {
   return <div dangerouslySetInnerHTML={{ __html: html }} />;
   // No tests verifying sanitization
 }
 
-// ❌ VIOLATION: Missing integration tests
+//  VIOLATION: Missing integration tests
 // API client modified, but no tests verify contract
 export const api = axios.create({
   baseURL: "https://api.example.com" // No test with mock
@@ -1157,7 +1157,7 @@ export const api = axios.create({
 // src/lib/logger.ts
 import pino from "pino";
 
-// ✅ Browser-compatible structured logging
+//  Browser-compatible structured logging
 const logger = pino({
   level: import.meta.env.DEV ? "debug" : "info",
   browser: {
@@ -1165,7 +1165,7 @@ const logger = pino({
   },
 });
 
-// ✅ Enrich logs with correlation ID
+//  Enrich logs with correlation ID
 import { v4 as uuidv4 } from "uuid";
 
 export const createLogger = (component: string) => {
@@ -1196,7 +1196,7 @@ export const createLogger = (component: string) => {
   };
 };
 
-// ✅ Usage in components
+//  Usage in components
 function InvoiceList() {
   const logger = createLogger("InvoiceList");
 
@@ -1213,7 +1213,7 @@ function InvoiceList() {
           component: "InvoiceList",
           action: "fetch_invoices",
         });
-        // ✅ Send to error tracking service
+        //  Send to error tracking service
         sentry.captureException(error, {
           tags: {
             component: "InvoiceList",
@@ -1224,7 +1224,7 @@ function InvoiceList() {
   }, []);
 }
 
-// ✅ Redact sensitive data from logs
+//  Redact sensitive data from logs
 function sanitizeForLogging(data: any): any {
   const redacted = JSON.parse(JSON.stringify(data));
 
@@ -1243,7 +1243,7 @@ function sanitizeForLogging(data: any): any {
   return redacted;
 }
 
-// ✅ Log API calls with sanitization
+//  Log API calls with sanitization
 api.interceptors.request.use((config) => {
   const sanitizedData = sanitizeForLogging(config.data);
 
@@ -1256,7 +1256,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// ✅ Error tracking (Sentry/similar)
+//  Error tracking (Sentry/similar)
 import * as Sentry from "@sentry/react";
 
 export function initErrorTracking() {
@@ -1265,7 +1265,7 @@ export function initErrorTracking() {
     environment: import.meta.env.VITE_ENVIRONMENT,
     tracesSampleRate: 0.1,
     beforeSend(event) {
-      // ✅ Remove sensitive data before sending to tracking service
+      //  Remove sensitive data before sending to tracking service
       if (event.request) {
         delete event.request.cookies;
         delete event.request.headers["authorization"];
@@ -1279,17 +1279,17 @@ export function initErrorTracking() {
 ### Non-Compliant (Violation Examples)
 
 ```typescript
-// ❌ VIOLATION: Logging sensitive data
+//  VIOLATION: Logging sensitive data
 logger.info("User logged in", {
   email: user.email,
   password: user.password, // EXPOSED
   token: accessToken, // EXPOSED
 });
 
-// ❌ VIOLATION: No correlation ID
+//  VIOLATION: No correlation ID
 api.get("/invoices"); // No correlation tracking
 
-// ❌ VIOLATION: Console.log in production
+//  VIOLATION: Console.log in production
 console.log("Debugging info:", sensitiveData);
 ```
 
@@ -1310,7 +1310,7 @@ console.log("Debugging info:", sensitiveData);
 ### Compliant Implementation
 
 ```typescript
-// ✅ vite.config.ts: Enforce HTTPS in production
+//  vite.config.ts: Enforce HTTPS in production
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -1337,7 +1337,7 @@ export default defineConfig({
   },
 });
 
-// ✅ API client: HTTPS enforcement
+//  API client: HTTPS enforcement
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
   // Verify HTTPS
@@ -1346,40 +1346,40 @@ export const api = axios.create({
   withCredentials: true, // Sends HTTP-only cookies
 });
 
-// ✅ Validate secure cookies from server
+//  Validate secure cookies from server
 api.interceptors.response.use((response) => {
   const setCookie = response.headers["set-cookie"]?.[0] || "";
 
-  // ✅ MANDATORY: Validate Secure, HttpOnly, SameSite flags
+  //  MANDATORY: Validate Secure, HttpOnly, SameSite flags
   if (setCookie.includes("token")) {
     if (!setCookie.includes("Secure")) {
-      console.error("⚠️ Cookie missing Secure flag");
+      console.error(" Cookie missing Secure flag");
     }
     if (!setCookie.includes("HttpOnly")) {
-      console.error("⚠️ Cookie missing HttpOnly flag");
+      console.error(" Cookie missing HttpOnly flag");
     }
     if (!setCookie.includes("SameSite")) {
-      console.error("⚠️ Cookie missing SameSite flag");
+      console.error(" Cookie missing SameSite flag");
     }
   }
 
   return response;
 });
 
-// ✅ CORS enforcement: Only call same-origin API
+//  CORS enforcement: Only call same-origin API
 async function fetchUserData() {
-  // ✓ COMPLIANT: Same-origin (browser enforces CORS)
+  //  COMPLIANT: Same-origin (browser enforces CORS)
   return api.get("/api/user");
 
-  // ✗ VIOLATES same-origin: Browser blocks unless CORS header
+  //  VIOLATES same-origin: Browser blocks unless CORS header
   // return fetch("https://different-domain.example.com/api/user");
 }
 
-// ✅ Subresource integrity for external libraries
+//  Subresource integrity for external libraries
 // HTML: <script src="https://cdn.example.com/lib.js"
 //        integrity="sha384-abc123..." />
 
-// ✅ CSP headers (enforced by server)
+//  CSP headers (enforced by server)
 // Content-Security-Policy:
 //   default-src 'self';
 //   connect-src 'self' https://api.example.com;
@@ -1389,21 +1389,21 @@ async function fetchUserData() {
 ### Non-Compliant (Violation Examples)
 
 ```typescript
-// ❌ VIOLATION: HTTP fallback
+//  VIOLATION: HTTP fallback
 const api = axios.create({
   baseURL: "http://api.example.com", // No HTTPS
 });
 
-// ❌ VIOLATION: Cookies without flags
+//  VIOLATION: Cookies without flags
 // Set-Cookie: token=abc123; Path=/
 // Missing: Secure, HttpOnly, SameSite
 
-// ❌ VIOLATION: Cross-origin without credentials control
+//  VIOLATION: Cross-origin without credentials control
 fetch("https://another-domain.com/api/data", {
   credentials: "include", // Sends cookies to different origin
 });
 
-// ❌ VIOLATION: Hardcoded CDN without integrity
+//  VIOLATION: Hardcoded CDN without integrity
 // <script src="https://cdn.example.com/library.js"></script>
 // No integrity hash
 ```
@@ -1435,7 +1435,7 @@ interface TenantContext {
 
 const TenantCtx = createContext<TenantContext | null>(null);
 
-// ✅ Provide tenant from authenticated user endpoint
+//  Provide tenant from authenticated user endpoint
 export function TenantProvider({ children }: { children: React.ReactNode }) {
   const { data: user } = useQuery({
     queryKey: ["auth", "user"],
@@ -1462,7 +1462,7 @@ export function useTenant() {
   return ctx;
 }
 
-// ✅ Usage: Tenant ID in requests
+//  Usage: Tenant ID in requests
 async function fetchInvoices() {
   const { tenantId } = useTenant();
 
@@ -1473,7 +1473,7 @@ async function fetchInvoices() {
   return response.data;
 }
 
-// ✅ UI cannot switch tenant without logout
+//  UI cannot switch tenant without logout
 function TenantSwitcher() {
   const { tenantId, tenantName } = useTenant();
 
@@ -1495,19 +1495,19 @@ function TenantSwitcher() {
 ### Non-Compliant (Violation Examples)
 
 ```typescript
-// ❌ VIOLATION: Derive tenant from URL
+//  VIOLATION: Derive tenant from URL
 function InvoiceList() {
   const { tenantId } = useParams(); // User can change URL
   const invoices = api.get(`/invoices?tenantId=${tenantId}`);
   // Server trusts URL param
 }
 
-// ❌ VIOLATION: Store tenant in localStorage
+//  VIOLATION: Store tenant in localStorage
 localStorage.setItem("tenantId", tenantId);
 const { tenantId } = JSON.parse(localStorage.getItem("user-context"));
 // User can modify value
 
-// ❌ VIOLATION: Allow tenant switch without re-auth
+//  VIOLATION: Allow tenant switch without re-auth
 const switchTenant = (newTenantId) => {
   setTenant(newTenantId); // No logout, just change in-memory
 };
@@ -1576,38 +1576,38 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # ✅ NPM audit
+      #  NPM audit
       - name: Audit dependencies
         run: npm ci --omit=dev && npm audit --audit-level=high
 
-      # ✅ License compliance
+      #  License compliance
       - name: Check licenses
         run: npx license-checker --summary --onlyAllow "Apache-2.0,MIT,ISC,BSD-2-Clause,BSD-3-Clause"
 
-      # ✅ SBOM generation
+      #  SBOM generation
       - name: Generate SBOM
         run: npm ls --json > sbom.json
 
-      # ✅ Build verification
+      #  Build verification
       - name: Build verification
         run: npm run build
 
-      # ✅ No hardcoded secrets
+      #  No hardcoded secrets
       - name: Secrets check
         run: |
           ! grep -r "sk_live_" dist/
           ! grep -r "password" dist/
           ! grep -r "secret" dist/
 
-      # ✅ Dependency deprecation check
+      #  Dependency deprecation check
       - name: Check for deprecated packages
         run: npx npm-check-updates --doctor
 
-      # ✅ ESLint security rules
+      #  ESLint security rules
       - name: Lint
         run: npx eslint src --max-warnings=0
 
-      # ✅ Test coverage
+      #  Test coverage
       - name: Test coverage
         run: |
           vitest run --coverage
@@ -1617,7 +1617,7 @@ jobs:
 ### Non-Compliant (Violation Examples)
 
 ```json
-// ❌ VIOLATION: Unpinned versions
+//  VIOLATION: Unpinned versions
 {
   "dependencies": {
     "react": "^18.2.0", // Caret version
@@ -1625,7 +1625,7 @@ jobs:
   }
 }
 
-// ❌ VIOLATION: No lockfile committed
+//  VIOLATION: No lockfile committed
 // package-lock.json not in git
 ```
 

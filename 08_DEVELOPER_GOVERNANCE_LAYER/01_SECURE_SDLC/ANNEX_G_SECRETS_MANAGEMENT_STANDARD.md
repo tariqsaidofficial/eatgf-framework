@@ -1,83 +1,28 @@
-# Secrets Management Governance Standard
+# Annex G: Secrets Management Governance Standard
 
-## Purpose
+> **Cross-Reference Notice:** This annex is superseded by the comprehensive implementation standard at Layer 08.03.
 
-Defines secure storage, rotation, and lifecycle governance for secrets.
+## Authoritative Document
 
-## Architectural Position
+The authoritative secrets management standard is maintained at:
 
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
-Control Reference: SDLC-SEC-07
+**[SECRETS_MANAGEMENT_STANDARD.md](../03_DEVSECOPS_GOVERNANCE/SECRETS_MANAGEMENT_STANDARD.md)**
 
-## Governance Principles
+| Field         | Value                                                   |
+| ------------- | ------------------------------------------------------- |
+| Location      | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| MCM Reference | EATGF-DSS-ENC-01                                        |
+| Status        | Active (Authoritative)                                  |
 
-- Secrets must never exist in source control.
-- Rotation must be automated.
-- Access must be logged.
-- Short-lived credentials preferred.
+## Relationship
 
-## Technical Implementation
+This annex originally provided abbreviated secrets management controls within the Secure SDLC domain. The comprehensive standard in Layer 08.03 now provides the complete implementation requirements including vault integration, Kubernetes secret injection, automatic rotation, secret classification tiers, and audit logging.
 
-### 1. Vault Integration Example (Mandatory)
-
-```python
-import hvac
-
-client = hvac.Client(url='https://vault.example.com')
-secret = client.secrets.kv.read_secret_version(path='database')
-```
-
-### 2. Kubernetes Secret Injection (Mandatory)
-
-```yaml
-env:
-  - name: DB_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: db-secret
-        key: password
-```
-
-### 3. Automatic Rotation (Mandatory)
-
-- Database credentials rotated every 90 days
-- API tokens rotated per deployment
-- Emergency revocation procedure defined
-
-## Control Mapping
-
-| Framework   | Mapping                       |
-| ----------- | ----------------------------- |
-| ISO 27001   | A.8.3 Cryptographic controls  |
-| NIST SSDF   | PW.4 Protect secrets          |
-| OWASP       | Sensitive data protection     |
-| COBIT       | DSS05 Manage Security         |
-| NIST 800-53 | IA-5 Authenticator management |
-
-## Developer Checklist
-
-- No secrets in repo
-- Vault or manager used
-- Rotation policy defined
-- Access logs enabled
-- Temporary credentials used where possible
-- Secrets scanned via CI
-
-## Governance Implications
-
-Secret leakage is catastrophic and often irreversible.
-
-## Official References
-
-- NIST SP 800-218
-- ISO/IEC 27001:2022
-- OWASP
-- COBIT 2019
-- NIST SP 800-53 Rev.5
+All references to secrets management controls should cite EATGF-DSS-ENC-01 and the Layer 08.03 document.
 
 ## Version
 
-Version: 1.0
-Status: Authoritative Annex
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
-Classification: Public Governance Standard
+| Version | Date       | Change Type | Description                                                             |
+| ------- | ---------- | ----------- | ----------------------------------------------------------------------- |
+| 1.0     | 2026-02-16 | Major       | Initial annex                                                           |
+| 1.1     | 2026-02-16 | Minor       | Converted to cross-reference stub; authority transferred to Layer 08.03 |

@@ -158,6 +158,6 @@ Changes to control architecture require formal approval and cross-standard impac
 - **OWASP Top 10** – Application Security Framework (OWASP Foundation)
 
 **Framework Version:** EATGF-v1.0-Foundation  
-**Status:** ✅ Complete  
+**Status:**  Complete  
 **Audit Ready:** Yes  
 **Last Updated:** February 13, 2026

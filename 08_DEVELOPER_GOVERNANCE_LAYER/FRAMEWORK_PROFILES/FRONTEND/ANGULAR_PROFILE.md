@@ -64,11 +64,11 @@ This document defines governance conformance requirements for Angular applicatio
 ### Principle 1: HTTP Interceptor Chain (MANDATORY)
 
 ```typescript
-// ❌ PROHIBITED: Multiple fetch calls without interceptor
+//  PROHIBITED: Multiple fetch calls without interceptor
 this.http.get("/api/invoices");
 this.http.get("/api/users"); // No auth injection
 
-// ✅ COMPLIANT: Single interceptor chain
+//  COMPLIANT: Single interceptor chain
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(private auth: AuthService) {}
@@ -77,7 +77,7 @@ export class AuthInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler,
   ): Observable<HttpEvent<any>> {
-    // ✅ Add correlationId to all requests
+    //  Add correlationId to all requests
     const correlatedReq = req.clone({
       setHeaders: {
         "X-Correlation-ID": crypto.randomUUID(),
@@ -87,7 +87,7 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(correlatedReq).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
-          // ✅ Handle auth failure centrally
+          //  Handle auth failure centrally
           this.auth.logout();
         }
         return throwError(() => error);
@@ -109,7 +109,7 @@ providers: [
 ### Principle 2: Route Guard Enforcement (MANDATORY)
 
 ```typescript
-// ✅ COMPLIANT: Auth guard on protected routes
+//  COMPLIANT: Auth guard on protected routes
 @Injectable({
   providedIn: "root",
 })
@@ -147,7 +147,7 @@ routes: [
 ### Principle 3: Service Injection Architecture (MANDATORY)
 
 ```typescript
-// ✅ COMPLIANT: Centralized auth service
+//  COMPLIANT: Centralized auth service
 @Injectable({
   providedIn: "root",
 })
@@ -177,7 +177,7 @@ export class AuthService {
 ### Principle 4: RxJS Subscription Management (MANDATORY)
 
 ```typescript
-// ❌ PROHIBITED: Memory leaks from unmanaged subscriptions
+//  PROHIBITED: Memory leaks from unmanaged subscriptions
 export class InvoiceComponent {
   invoices: Invoice[];
 
@@ -189,7 +189,7 @@ export class InvoiceComponent {
   }
 }
 
-// ✅ COMPLIANT: Managed subscriptions with takeUntilDestroyed
+//  COMPLIANT: Managed subscriptions with takeUntilDestroyed
 export class InvoiceComponent {
   private destroy$ = new Subject<void>();
   public invoices$ = this.api.getInvoices();
@@ -212,19 +212,19 @@ export class InvoiceComponent {
 ### Principle 5: Dependency Injection Security (MANDATORY)
 
 ```typescript
-// ❌ PROHIBITED: Directly instantiating services
+//  PROHIBITED: Directly instantiating services
 export class InvoiceComponent {
   constructor() {
-    const auth = new AuthService(); // ❌ Bypasses DI
+    const auth = new AuthService(); //  Bypasses DI
   }
 }
 
-// ✅ COMPLIANT: DI provides singleton
+//  COMPLIANT: DI provides singleton
 export class InvoiceComponent {
-  constructor(private auth: AuthService) {} // ✅ Managed by Angular
+  constructor(private auth: AuthService) {} //  Managed by Angular
 }
 
-// ✅ Providers enforce singleton
+//  Providers enforce singleton
 providers: [
   {
     provide: AuthService,
@@ -236,13 +236,13 @@ providers: [
 ### Principle 6: Template Security (MANDATORY)
 
 ```typescript
-// ❌ PROHIBITED: Unescaped HTML in templates
+//  PROHIBITED: Unescaped HTML in templates
 <div [innerHTML]="userComment"></div>
 
-// ✅ COMPLIANT: Text interpolation (auto-escaped)
+//  COMPLIANT: Text interpolation (auto-escaped)
 <div>{{ userComment }}</div>
 
-// ✅ COMPLIANT: DomSanitizer for HTML
+//  COMPLIANT: DomSanitizer for HTML
 import { DomSanitizer } from '@angular/platform-browser';
 
 constructor(private sanitizer: DomSanitizer) {}
@@ -257,7 +257,7 @@ getSafeHtml(html: string) {
 ### Principle 7: Token Management in AuthService (MANDATORY)
 
 ```typescript
-// ✅ COMPLIANT: Store tokens in memory, not localStorage
+//  COMPLIANT: Store tokens in memory, not localStorage
 @Injectable({
   providedIn: "root",
 })
@@ -266,7 +266,7 @@ export class TokenService {
 
   setToken(token: string): void {
     this.token = token;
-    // ✅ Server sends HTTP-only cookie
+    //  Server sends HTTP-only cookie
   }
 
   getToken(): string | null {
@@ -282,7 +282,7 @@ export class TokenService {
 ### Principle 8: AOT Compilation & Build Security (MANDATORY)
 
 ```bash
-# ✅ Production build enforces security
+#  Production build enforces security
 ng build --configuration production \
   --aot \
   --build-optimizer \

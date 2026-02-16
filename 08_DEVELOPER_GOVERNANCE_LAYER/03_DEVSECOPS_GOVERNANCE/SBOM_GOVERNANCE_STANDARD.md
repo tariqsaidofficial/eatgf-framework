@@ -1,14 +1,14 @@
 # Software Bill of Materials (SBOM) Governance Standard
 
-| Field | Value |
-|-------|-------|
-| Document Type | Implementation Standard |
-| Version | 1.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-16 |
-| Authority | Chief Security Officer and Chief Technology Officer |
-| EATGF Layer | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
-| MCM Reference | EATGF-RV-SBOM-01 |
+| Field          | Value                                                   |
+| -------------- | ------------------------------------------------------- |
+| Document Type  | Implementation Standard                                 |
+| Version        | 1.0                                                     |
+| Classification | Controlled                                              |
+| Effective Date | 2026-02-16                                              |
+| Authority      | Chief Security Officer and Chief Technology Officer     |
+| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| MCM Reference  | EATGF-DEV-SUP-01                                        |
 
 ---
 
@@ -39,12 +39,12 @@ This standard mandates Software Bill of Materials (SBOM) creation, validation, a
 
 **Recommended Standards:**
 
-| Standard | Format | Use Case | Tool |
-|----------|--------|----------|------|
-| SPDX (Software Package Data Exchange) | JSON/XML/tagvalue | Industry standard; compliance reporting | syft, cyclonedx-maven-plugin |
-| CycloneDX | JSON/XML | Container/application focus; vulnerability correlation | syft, trivy, grype |
-| SWID (Software Identification) | XML | Legacy/commercial software; licensing | Microsoft SBOM tool |
-| Package URL (purl) | Text | Dependency reference standard | syft, grype, OWASP Dependency-Check |
+| Standard                              | Format            | Use Case                                               | Tool                                |
+| ------------------------------------- | ----------------- | ------------------------------------------------------ | ----------------------------------- |
+| SPDX (Software Package Data Exchange) | JSON/XML/tagvalue | Industry standard; compliance reporting                | syft, cyclonedx-maven-plugin        |
+| CycloneDX                             | JSON/XML          | Container/application focus; vulnerability correlation | syft, trivy, grype                  |
+| SWID (Software Identification)        | XML               | Legacy/commercial software; licensing                  | Microsoft SBOM tool                 |
+| Package URL (purl)                    | Text              | Dependency reference standard                          | syft, grype, OWASP Dependency-Check |
 
 ### SBOM Generation
 
@@ -115,12 +115,12 @@ syft ghcr.io/company/app:v1.2.3 -o cyclonedx-json > container-sbom.json
 
 **SBOM Storage:**
 
-| Artifact | Storage Location | Retention |
-|----------|-----------------|-----------|
-| Container image SBOM | In-toto attestation (inside registry) | Lifetime of image |
-| Application SBOM | Artifact repository alongside application | 7 years minimum |
-| Dependency lockfile | Git repository | Lifetime of release |
-| Library SBOM | Published with artifact (npm, Maven Central) | Per package lifetime |
+| Artifact             | Storage Location                             | Retention            |
+| -------------------- | -------------------------------------------- | -------------------- |
+| Container image SBOM | In-toto attestation (inside registry)        | Lifetime of image    |
+| Application SBOM     | Artifact repository alongside application    | 7 years minimum      |
+| Dependency lockfile  | Git repository                               | Lifetime of release  |
+| Library SBOM         | Published with artifact (npm, Maven Central) | Per package lifetime |
 
 **Container Image Example (in-toto attestation):**
 
@@ -165,28 +165,28 @@ def validate_sbom(sbom_path):
     """Verify SBOM completeness and compliance"""
     with open(sbom_path) as f:
         sbom = json.load(f)
-    
+
     # Check NTIA minimum elements
     assert sbom.get('specVersion'), "Missing specVersion"
     assert sbom.get('version'), "Missing SBOM version"
     assert sbom.get('metadata', {}).get('timestamp'), "Missing timestamp"
     assert sbom.get('metadata', {}).get('tools'), "Missing tool info"
-    
+
     # Validate components
     for component in sbom.get('components', []):
         assert component.get('name'), "Component missing name"
         assert component.get('version'), "Component missing version"
         assert component.get('purl'), "Component missing purl"
-        
+
         # Verify hash for integrity
         if not component.get('hashes'):
             warnings.append(f"Component {component['name']} missing hash")
-    
+
     # Check license information
     for component in sbom.get('components', []):
         if not component.get('licenses'):
             warnings.append(f"Component {component['name']} missing license")
-    
+
     return True, warnings
 ```
 
@@ -197,18 +197,18 @@ def validate_sbom(sbom_path):
 - name: Validate SBOM
   run: |
     syft packages . -o cyclonedx-json > sbom.json
-    
+
     # Verify SBOM valid JSON
     jq . sbom.json > /dev/null || exit 1
-    
+
     # Count components
     COMPONENTS=$(jq '.components | length' sbom.json)
     echo "SBOM contains $COMPONENTS components"
-    
+
     # Check for required fields
     jq '.components[] | select(.purl == null)' sbom.json | \
       wc -l | grep -q '^0$' || exit 1
-    
+
     echo "SBOM validation passed"
 ```
 
@@ -232,13 +232,13 @@ def handle_sbom_vulnerability(sbom_path, cve_id, severity):
     """Automated response to SBOM vulnerability"""
     sbom = load_sbom(sbom_path)
     affected_component = find_component_by_cve(sbom, cve_id)
-    
+
     if severity >= 8.0:
         # Critical: immediate remediation
         create_urgent_patch(affected_component)
         notify_team_channels(affected_component, cve_id)
         trigger_emergency_release_planning()
-        
+
     elif severity >= 5.0:
         # Medium-High: planned update
         create_github_issue(affected_component, cve_id)
@@ -315,7 +315,7 @@ metrics:
   - critical_vulnerabilities: 2
   - acknowledged_but_unpatched: 8
   - components_updated_this_week: 12
-  
+
 trending:
   - sbom_generation_compliance: 100%
   - vulnerability_remediation_time: 10 days avg
@@ -330,8 +330,8 @@ licenses_used:
   Apache-2.0: 198 components (22%)
   BSD-3-Clause: 154 components (17%)
   ISC: 89 components (10%)
-  GPL: 12 components (1.3%)  # Flagged for review
-  
+  GPL: 12 components (1.3%) # Flagged for review
+
 prohibited_licenses:
   AGPL: 0
   GPL-3.0: 0
@@ -339,11 +339,11 @@ prohibited_licenses:
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
-|---|---|---|---|---|
-| SBOM generation | A.8.30, A.8.31 | RV.1, RV.2 | - | BAI07 |
-| Vulnerability tracking | A.8.31 | RV.1.2 | Dependency Check | BAI07.02 |
-| License compliance | A.8.18 | PO.1 | OSS License | APO07 |
+| EATGF Context          | ISO 27001:2022 | NIST SSDF  | OWASP            | COBIT    |
+| ---------------------- | -------------- | ---------- | ---------------- | -------- |
+| SBOM generation        | A.8.30, A.8.31 | RV.1, RV.2 | -                | BAI07    |
+| Vulnerability tracking | A.8.31         | RV.1.2     | Dependency Check | BAI07.02 |
+| License compliance     | A.8.18         | PO.1       | OSS License      | APO07    |
 
 ## Developer Checklist
 
@@ -363,21 +363,25 @@ Before implementing SBOM governance:
 ## Governance Implications
 
 **Risk if not implemented:**
+
 - Unknown dependencies = vulnerability blindness
 - License violations = legal liability
 - Untracked supply chain = undetectable compromise
 
 **Operational impact:**
+
 - SBOM generation adds <1 minute to build
 - Vulnerability alerting enables proactive patching
 - License tracking prevents compliance violations
 
 **Audit consequences:**
+
 - SBOM required for NIST SSDF compliance
 - SBOM demonstrates supply chain control
 - Vulnerability tracking = incident investigation evidence
 
 **Cross-team dependencies:**
+
 - Development: SBOM review, dependency updates
 - Security: vulnerability monitoring, license policy
 - Compliance: license tracking, audit evidence
@@ -392,6 +396,6 @@ Before implementing SBOM governance:
 
 ## Version History
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major | Initial SBOM governance standard for Layer 08 |
+| Version | Date       | Change Type | Description                                   |
+| ------- | ---------- | ----------- | --------------------------------------------- |
+| 1.0     | 2026-02-16 | Major       | Initial SBOM governance standard for Layer 08 |

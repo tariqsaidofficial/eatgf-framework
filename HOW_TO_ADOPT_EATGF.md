@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 What is EATGF?
+##  What is EATGF?
 
 EATGF (Enterprise AI-Aligned Technical Governance Framework) is a **vendor-neutral, standards-aligned governance reference architecture** that helps organizations establish:
 
@@ -20,7 +20,7 @@ EATGF (Enterprise AI-Aligned Technical Governance Framework) is a **vendor-neutr
 
 ---
 
-## 📊 Adoption Path: 4 Stages
+##  Adoption Path: 4 Stages
 
 ### Stage 1: Governance Foundation (Weeks 1-4)
 
@@ -54,11 +54,11 @@ EATGF (Enterprise AI-Aligned Technical Governance Framework) is a **vendor-neutr
 
 **Deliverables:**
 
-- ✅ Governance Committee established
-- ✅ MASTER_CONTROL_MATRIX.md adopted
-- ✅ Roles and responsibilities defined
-- ✅ Governance charter published
-- ✅ Monthly governance meeting scheduled
+-  Governance Committee established
+-  MASTER_CONTROL_MATRIX.md adopted
+-  Roles and responsibilities defined
+-  Governance charter published
+-  Monthly governance meeting scheduled
 
 ---
 
@@ -127,11 +127,11 @@ EATGF (Enterprise AI-Aligned Technical Governance Framework) is a **vendor-neutr
 
 **Deliverables:**
 
-- ✅ 8 policies adopted and customized
-- ✅ Policies published to intranet
-- ✅ All staff trained on policies
-- ✅ Policy acknowledgment tracked (HR system)
-- ✅ Q1 policy compliance baseline audited
+-  8 policies adopted and customized
+-  Policies published to intranet
+-  All staff trained on policies
+-  Policy acknowledgment tracked (HR system)
+-  Q1 policy compliance baseline audited
 
 ---
 
@@ -215,11 +215,11 @@ EATGF (Enterprise AI-Aligned Technical Governance Framework) is a **vendor-neutr
 
 **Deliverables:**
 
-- ✅ CI/CD security gates implemented
-- ✅ All development teams trained
-- ✅ Security scanning reporting operational
-- ✅ Artifact signing configured
-- ✅ Development security dashboard live
+-  CI/CD security gates implemented
+-  All development teams trained
+-  Security scanning reporting operational
+-  Artifact signing configured
+-  Development security dashboard live
 
 ---
 
@@ -278,15 +278,15 @@ Year 3+: Mature audit program; focus on continuous improvement
 
 **Deliverables:**
 
-- ✅ Annual audit completed (Q1 + Q2-Q4 samples)
-- ✅ 0 critical findings open >30 days
-- ✅ 90%+ major findings closed within SLA
-- ✅ Annual governance effectiveness report
-- ✅ Board-level governance report
+-  Annual audit completed (Q1 + Q2-Q4 samples)
+-  0 critical findings open >30 days
+-  90%+ major findings closed within SLA
+-  Annual governance effectiveness report
+-  Board-level governance report
 
 ---
 
-## 🏃 Quick-Start Paths
+##  Quick-Start Paths
 
 ### For Startups (10-20 people)
 
@@ -323,7 +323,7 @@ Year 3+: Mature audit program; focus on continuous improvement
 
 ---
 
-## 🛠️ Tools Ecosystem
+##  Tools Ecosystem
 
 ### Recommended Tool Stack (EATGF-Aligned)
 
@@ -363,7 +363,7 @@ Year 3+: Mature audit program; focus on continuous improvement
 
 ---
 
-## 📋 Assessment Checklist
+##  Assessment Checklist
 
 ### Before You Start
 
@@ -391,7 +391,7 @@ Year 3+: Mature audit program; focus on continuous improvement
 
 ---
 
-## 📞 Support Resources
+##  Support Resources
 
 ### Documentation
 
@@ -410,7 +410,7 @@ Year 3+: Mature audit program; focus on continuous improvement
 
 ---
 
-## 🎓 Training Resources
+##  Training Resources
 
 **Self-Service Learning (10 hours):**
 
@@ -431,41 +431,41 @@ Year 3+: Mature audit program; focus on continuous improvement
 
 ---
 
-## ⚡ Common Mistakes (Avoid These)
+##  Common Mistakes (Avoid These)
 
-❌ **Mistake:** "We'll implement ALL EATGF controls immediately"
-✅ **Fix:** Stage adoption in 4 phases; start with governance foundation + top 5 policies
+ **Mistake:** "We'll implement ALL EATGF controls immediately"
+ **Fix:** Stage adoption in 4 phases; start with governance foundation + top 5 policies
 
-❌ **Mistake:** "EATGF replaces our specific industry compliance"
-✅ **Fix:** EATGF is baseline; layer industry-specific controls on top
+ **Mistake:** "EATGF replaces our specific industry compliance"
+ **Fix:** EATGF is baseline; layer industry-specific controls on top
 
-❌ **Mistake:** "We'll hire one compliance person; they handle everything"
-✅ **Fix:** Governance is distributed; each team owns their controls
+ **Mistake:** "We'll hire one compliance person; they handle everything"
+ **Fix:** Governance is distributed; each team owns their controls
 
-❌ **Mistake:** "We implemented security gates; we're done"
-✅ **Fix:** Governance is continuous; audit/remediate quarterly
+ **Mistake:** "We implemented security gates; we're done"
+ **Fix:** Governance is continuous; audit/remediate quarterly
 
-❌ **Mistake:** "We don't have documented evidence for controls"
-✅ **Fix:** Plan evidence collection during implementation (not after)
+ **Mistake:** "We don't have documented evidence for controls"
+ **Fix:** Plan evidence collection during implementation (not after)
 
 ---
 
-## 🚀 Success Criteria
+##  Success Criteria
 
 **After 6 months of adoption, you should:**
 
-✅ Have governance committee operational (monthly meetings)
-✅ Have 8 policies published and acknowledged by staff
-✅ Have CI/CD security gates passing 90%+ of builds
-✅ Have monthly audit findings tracked and remediated
-✅ Have annual audit completed; zero critical findings >30 days old
-✅ Have staff trained on policies and procedures
-✅ Have governance dashboard reporting live
-✅ Have board-level governance report delivered
+ Have governance committee operational (monthly meetings)
+ Have 8 policies published and acknowledged by staff
+ Have CI/CD security gates passing 90%+ of builds
+ Have monthly audit findings tracked and remediated
+ Have annual audit completed; zero critical findings >30 days old
+ Have staff trained on policies and procedures
+ Have governance dashboard reporting live
+ Have board-level governance report delivered
 
 ---
 
-## 📖 Next Steps
+##  Next Steps
 
 1. **Identify your org size** (Startup / Scale-up / Enterprise)
 2. **Review the quick-start path** (6 / 12 / 24 weeks)

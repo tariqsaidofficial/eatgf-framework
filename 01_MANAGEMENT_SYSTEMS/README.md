@@ -196,10 +196,10 @@ AIMS Audits:
 
 ---
 
-## 📊 Version & Status
+##  Version & Status
 
 **Framework Version:** EATGF-v1.0-Foundation  
 **ISMS Version:** v1.0 (per ISO 27001:2022)  
 **AIMS Version:** v1.0 (per ISO 42001:2023)  
-**Status:** ✅ Complete & Audit Ready  
+**Status:**  Complete & Audit Ready  
 **Last Updated:** February 13, 2026

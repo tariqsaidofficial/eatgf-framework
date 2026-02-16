@@ -4,27 +4,27 @@
 
 ```mermaid
 graph TD
-    A["🏗️ LAYER 00: FOUNDATION<br/>---<br/>Master Control Matrix (35)<br/>Document Signature Template<br/>Governance Charter<br/>Writing Standards"]
+    A[" LAYER 00: FOUNDATION<br/>---<br/>Master Control Matrix (35)<br/>Document Signature Template<br/>Governance Charter<br/>Writing Standards"]
     
-    B["📋 LAYER 01: MANAGEMENT SYSTEMS<br/>---<br/>ISMS Manual<br/>AIMS Manual<br/>Management Framework"]
+    B[" LAYER 01: MANAGEMENT SYSTEMS<br/>---<br/>ISMS Manual<br/>AIMS Manual<br/>Management Framework"]
     
-    C["🎯 LAYER 02: CONTROL ARCHITECTURE<br/>---<br/>35 Controls<br/>ISO/NIST/COBIT Mappings<br/>Risk Framework<br/>Vulnerability Glossary"]
+    C[" LAYER 02: CONTROL ARCHITECTURE<br/>---<br/>35 Controls<br/>ISO/NIST/COBIT Mappings<br/>Risk Framework<br/>Vulnerability Glossary"]
     
-    D["📊 LAYER 03: GOVERNANCE MODELS<br/>---<br/>Maturity Model<br/>Performance Model<br/>Governance by Team Size"]
+    D[" LAYER 03: GOVERNANCE MODELS<br/>---<br/>Maturity Model<br/>Performance Model<br/>Governance by Team Size"]
     
-    E["📜 LAYER 04: POLICY LAYER<br/>---<br/>Governance Charter<br/>Sec Policy (8 policies)<br/>Data Governance<br/>Incident Response<br/>BC/DR, Vendor Risk<br/>Data Privacy, AUP"]
+    E[" LAYER 04: POLICY LAYER<br/>---<br/>Governance Charter<br/>Sec Policy (8 policies)<br/>Data Governance<br/>Incident Response<br/>BC/DR, Vendor Risk<br/>Data Privacy, AUP"]
     
-    F["🔧 LAYER 05: DOMAIN FRAMEWORKS<br/>---<br/>AI Governance<br/>API Governance<br/>Secure SDLC"]
+    F[" LAYER 05: DOMAIN FRAMEWORKS<br/>---<br/>AI Governance<br/>API Governance<br/>Secure SDLC"]
     
-    G["✅ LAYER 06: AUDIT & ASSURANCE<br/>---<br/>Internal Audit Procedure<br/>Audit Schedule<br/>Corrective Action Register<br/>Certification Readiness<br/>Evidence Governance"]
+    G[" LAYER 06: AUDIT & ASSURANCE<br/>---<br/>Internal Audit Procedure<br/>Audit Schedule<br/>Corrective Action Register<br/>Certification Readiness<br/>Evidence Governance"]
     
-    H["🧠 LAYER 07: REFERENCE & EVOLUTION<br/>---<br/>Historical Artifacts<br/>Version Migration Path<br/>Standards Evolution<br/>Lessons Learned"]
+    H[" LAYER 07: REFERENCE & EVOLUTION<br/>---<br/>Historical Artifacts<br/>Version Migration Path<br/>Standards Evolution<br/>Lessons Learned"]
     
-    I["⚙️ LAYER 08: DEVELOPER GOVERNANCE<br/>---<br/>SDLC Standards<br/>API Standards<br/>DevSecOps (CICD, SAST, Secrets)<br/>Infrastructure Runtime<br/>SaaS/Cloud (MTL, IaC, ZTA)<br/>App Lifecycle<br/>Tech Accountability"]
+    I[" LAYER 08: DEVELOPER GOVERNANCE<br/>---<br/>SDLC Standards<br/>API Standards<br/>DevSecOps (CICD, SAST, Secrets)<br/>Infrastructure Runtime<br/>SaaS/Cloud (MTL, IaC, ZTA)<br/>App Lifecycle<br/>Tech Accountability"]
     
-    J["📊 LAYER 02: CONTROL ARCHITECTURE"]
+    J[" LAYER 02: CONTROL ARCHITECTURE"]
     
-    K["🎨 GOVERNANCE AUTHORITY"]
+    K[" GOVERNANCE AUTHORITY"]
     
     A -->|defines| C
     C -->|upstream of| E
@@ -100,23 +100,23 @@ graph LR
 
 ```mermaid
 graph TD
-    POLICY["📜 ORGANIZATIONAL POLICIES<br/>(Layer 04)<br/>---<br/> InfoSec | Data Governance<br/>Incident Response | BC/DR<br/>Vendor Risk | Data Privacy<br/>Acceptable Use"]
+    POLICY[" ORGANIZATIONAL POLICIES<br/>(Layer 04)<br/>---<br/> InfoSec | Data Governance<br/>Incident Response | BC/DR<br/>Vendor Risk | Data Privacy<br/>Acceptable Use"]
     
-    FRAMEWORK["🎯 STRATEGIC FRAMEWORKS<br/>(Layer 05)<br/>---<br/>AI Governance<br/>API Governance<br/>Secure SDLC"]
+    FRAMEWORK[" STRATEGIC FRAMEWORKS<br/>(Layer 05)<br/>---<br/>AI Governance<br/>API Governance<br/>Secure SDLC"]
     
-    SDLC["💻 SDLC STANDARDS<br/>(Layer 08.01)<br/>---<br/>Threat Modeling<br/>Code Review<br/>Dependency Management"]
+    SDLC[" SDLC STANDARDS<br/>(Layer 08.01)<br/>---<br/>Threat Modeling<br/>Code Review<br/>Dependency Management"]
     
-    API_STD["🔌 API STANDARDS<br/>(Layer 08.02)<br/>---<br/>REST Design<br/>GraphQL Design<br/>Mobile API Auth<br/>API Testing<br/>API Documentation"]
+    API_STD[" API STANDARDS<br/>(Layer 08.02)<br/>---<br/>REST Design<br/>GraphQL Design<br/>Mobile API Auth<br/>API Testing<br/>API Documentation"]
     
-    DEVSECOPS["🔐 DEVSECOPS<br/>(Layer 08.03)<br/>---<br/>CI/CD Architecture<br/>SAST/DAST/SCA<br/>Secrets Management<br/>Supply Chain Security<br/>SBOM Governance"]
+    DEVSECOPS[" DEVSECOPS<br/>(Layer 08.03)<br/>---<br/>CI/CD Architecture<br/>SAST/DAST/SCA<br/>Secrets Management<br/>Supply Chain Security<br/>SBOM Governance"]
     
-    INFRA["🏗️ INFRASTRUCTURE<br/>(Layer 08.04)<br/>---<br/>Kubernetes Security<br/>Container Security<br/>Infrastructure Monitoring"]
+    INFRA[" INFRASTRUCTURE<br/>(Layer 08.04)<br/>---<br/>Kubernetes Security<br/>Container Security<br/>Infrastructure Monitoring"]
     
-    SAAS["☁️ SaaS/CLOUD<br/>(Layer 08.05)<br/>---<br/>Multi-Tenancy<br/>IaC Governance<br/>Zero Trust<br/>Data Residency"]
+    SAAS[" SaaS/CLOUD<br/>(Layer 08.05)<br/>---<br/>Multi-Tenancy<br/>IaC Governance<br/>Zero Trust<br/>Data Residency"]
     
-    LIFECYCLE["🔄 APP LIFECYCLE<br/>(Layer 08.06)<br/>---<br/>Release Governance<br/>Change Approval<br/>Rollback Procedures<br/>End-of-Life"]
+    LIFECYCLE[" APP LIFECYCLE<br/>(Layer 08.06)<br/>---<br/>Release Governance<br/>Change Approval<br/>Rollback Procedures<br/>End-of-Life"]
     
-    AUDIT["✅ AUDIT VERIFICATION<br/>(Layer 06)<br/>---<br/>Quarterly Testing<br/>Evidence Gathering<br/>Finding Remediation<br/>Sign-Off"]
+    AUDIT[" AUDIT VERIFICATION<br/>(Layer 06)<br/>---<br/>Quarterly Testing<br/>Evidence Gathering<br/>Finding Remediation<br/>Sign-Off"]
     
     POLICY --> FRAMEWORK
     FRAMEWORK --> SDLC
@@ -148,7 +148,7 @@ graph TD
 
 ```mermaid
 graph LR
-    SELECTION["AUDITOR SELECTS<br/>CONTROL #12:<br/>Vendor Risk<br/>Management"]
+    SELECTION["AUDITOR SELECTS<br/>EATGF-APO-RISK-01:<br/>Vendor Risk<br/>Management"]
     
     POINTER_L02["LAYER 02<br/>Control Definition<br/>---<br/>'Vendor risk must<br/>be continuously<br/>managed'"]
     
@@ -185,11 +185,11 @@ graph LR
 ## Knowledge Discovery: How to Navigate EATGF
 
 ```text
-📍 YOU ARE HERE: Adopting EATGF
+ YOU ARE HERE: Adopting EATGF
 
-🎯 GOAL: Implement vendor risk management
+ GOAL: Implement vendor risk management
 
-🔍 NAVIGATION PATH:
+ NAVIGATION PATH:
 
 1. START: Read HOW_TO_ADOPT_EATGF.md
    └─ Tells you: "Stage 2: Implement Policies"
@@ -200,7 +200,7 @@ graph LR
    
 3. CONTEXT: Want to know WHY?
    └─ Go to: LAYER 02_CONTROL_ARCHITECTURE/MASTER_CONTROL_MATRIX.md
-   └─ Find: Control #12 (Vendor Risk Management)
+   └─ Find: EATGF-APO-RISK-01 (Vendor Risk Management)
    └─ See: ISO 27001 A.8.34-35 requirement
    
 4. STRATEGIC FRAMEWORK: Want to understand WHAT vendors do?
@@ -219,7 +219,7 @@ graph LR
    └─ Read: PROOF points in CERTIFICATION_READINESS_CHECKLIST_STANDARD.md
    └─ Template: EVIDENCE_GOVERNANCE_STANDARD.md
    
-✅ COMPLETE: You have end-to-end governance path for vendor risk
+ COMPLETE: You have end-to-end governance path for vendor risk
 ```
 
 ## Version History & Release Path

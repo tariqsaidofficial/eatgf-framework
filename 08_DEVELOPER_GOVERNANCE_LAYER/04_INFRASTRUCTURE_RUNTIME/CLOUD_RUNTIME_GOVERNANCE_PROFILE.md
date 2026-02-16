@@ -68,7 +68,7 @@ Define governance controls for deploying containerized applications to cloud pla
 ### Environment Isolation via Terraform
 
 ```hcl
-# ✅ COMPLIANT: Separate projects/regions per environment
+#  COMPLIANT: Separate projects/regions per environment
 variable "environment" {
   type = string
   validation {
@@ -109,7 +109,7 @@ locals {
 ### Deployment Metadata & Traceability
 
 ```yaml
-# ✅ COMPLIANT: Deployment record with git SHA + actor
+#  COMPLIANT: Deployment record with git SHA + actor
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -169,7 +169,7 @@ spec:
 
 ```bash
 #!/bin/bash
-# ✅ COMPLIANT: Deployment gate validations
+#  COMPLIANT: Deployment gate validations
 
 set -e
 
@@ -212,13 +212,13 @@ kubectl get quota -n "$NAMESPACE" -o json | \
   jq '.items[].status.used' | \
   jq 'to_entries | map(select(.value > 0.8))'
 
-echo "✅ All validation gates passed. Ready for deployment approval."
+echo " All validation gates passed. Ready for deployment approval."
 ```
 
 ### Approval & Rollback
 
 ```yaml
-# ✅ COMPLIANT: Manual approval gate + automatic rollback
+#  COMPLIANT: Manual approval gate + automatic rollback
 name: Deploy to Production
 on:
   workflow_dispatch:

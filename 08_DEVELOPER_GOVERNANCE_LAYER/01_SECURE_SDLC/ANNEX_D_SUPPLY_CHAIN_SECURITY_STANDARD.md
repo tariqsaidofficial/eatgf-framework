@@ -1,88 +1,28 @@
-# Software Supply Chain Security Standard
+# Annex D: Software Supply Chain Security Standard
 
-## Purpose
+> **Cross-Reference Notice:** This annex is superseded by the comprehensive implementation standard at Layer 08.03.
 
-Defines governance controls for dependency integrity, SBOM, third-party risk, and artifact provenance.
+## Authoritative Document
 
-## Architectural Position
+The authoritative supply chain security standard is maintained at:
 
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
-Domain: 01_SECURE_SDLC
-Control Reference: SDLC-SUP-04
+**[SUPPLY_CHAIN_SECURITY_STANDARD.md](../03_DEVSECOPS_GOVERNANCE/SUPPLY_CHAIN_SECURITY_STANDARD.md)**
 
-## Governance Principles
+| Field         | Value                                                   |
+| ------------- | ------------------------------------------------------- |
+| Location      | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| MCM Reference | EATGF-DEV-SUP-01                                        |
+| Status        | Active (Authoritative)                                  |
 
-- All dependencies are potential attack vectors.
-- SBOM must be generated for each release.
-- External components must be traceable.
-- Third-party code requires risk evaluation.
+## Relationship
 
-## Technical Implementation
+This annex originally provided abbreviated supply chain security controls within the Secure SDLC domain. The comprehensive standard in Layer 08.03 now provides the complete implementation requirements including SBOM generation, dependency scanning, artifact provenance, and third-party risk evaluation.
 
-### 1. SBOM Generation (MANDATORY)
-
-```bash
-cyclonedx-py -r -o sbom.json
-```
-
-### 2. Dependency Pinning (MANDATORY)
-
-```
-fastapi==0.110.0
-pydantic==2.6.1
-```
-
-No floating versions.
-
-### 3. Dependency Scanning (MANDATORY)
-
-```bash
-pip-audit
-```
-
-Fail if HIGH vulnerabilities unresolved.
-
-### 4. Third-Party Review
-
-- License review
-- Maintenance activity check
-- Security advisory review
-
-## Control Mapping
-
-| Framework   | Mapping                                             |
-| ----------- | --------------------------------------------------- |
-| ISO 27001   | **A.8.28** Supply chain management (PRIMARY)       |
-| ISO 27001   | A.5.19 Supplier relationships                     |
-| NIST SSDF   | PS.3 Manage third-party software                   |
-| OWASP       | Dependency management                              |
-| COBIT       | APO10 Manage Suppliers                             |
-| NIST 800-53 | SA-12 Supply Chain Protection                     |
-
-## Developer Checklist
-
-- SBOM generated
-- Versions pinned
-- Dependencies scanned
-- License reviewed
-- Advisory monitoring active
-- Artifact provenance verified
-
-## Governance Implications
-
-Supply chain attacks bypass perimeter security.
-Governance must extend to external code.
-
-## Official References
-
-- NIST SP 800-218
-- ISO/IEC 27001:2022
-- NIST SP 800-53
-- COBIT 2019
+All references to supply chain security controls should cite EATGF-DEV-SUP-01 and the Layer 08.03 document.
 
 ## Version
 
-Version: 1.0
-Status: Authoritative Annex
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
-Classification: Public Governance Standard
+| Version | Date       | Change Type | Description                                                             |
+| ------- | ---------- | ----------- | ----------------------------------------------------------------------- |
+| 1.0     | 2026-02-16 | Major       | Initial annex                                                           |
+| 1.1     | 2026-02-16 | Minor       | Converted to cross-reference stub; authority transferred to Layer 08.03 |

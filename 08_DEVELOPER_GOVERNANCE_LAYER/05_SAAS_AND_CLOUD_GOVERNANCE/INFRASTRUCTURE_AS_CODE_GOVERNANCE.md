@@ -1,14 +1,14 @@
 # Infrastructure as Code Governance Standard
 
-| Field | Value |
-|-------|-------|
-| Document Type | Implementation Standard |
-| Version | 1.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-16 |
-| Authority | Chief Technology Officer |
-| EATGF Layer | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE |
-| MCM Reference | EATGF-CLOUD-IaC-01 |
+| Field          | Value                                                        |
+| -------------- | ------------------------------------------------------------ |
+| Document Type  | Implementation Standard                                      |
+| Version        | 1.0                                                          |
+| Classification | Controlled                                                   |
+| Effective Date | 2026-02-16                                                   |
+| Authority      | Chief Technology Officer                                     |
+| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE |
+| MCM Reference  | EATGF-CLD-ARCH-01                                            |
 
 ---
 
@@ -38,6 +38,7 @@ Define security and governance requirements for Infrastructure as Code (Terrafor
 ### IaC Tool Requirements
 
 **Standard Tools:**
+
 - **Terraform:** Multi-cloud; pure IaC
 - **CloudFormation:** AWS-native; template-based
 - **Helm:** Kubernetes package manager
@@ -45,6 +46,7 @@ Define security and governance requirements for Infrastructure as Code (Terrafor
 - **Pulumi:** Programmatic IaC
 
 **Mandatory Requirements:**
+
 - Terraform state backend encrypted and replicated (S3, Terraform Cloud)
 - State file versioning; never delete history
 - Variable separation: secrets in vault, not code
@@ -75,6 +77,7 @@ infrastructure/
 ```
 
 **Git Requirements:**
+
 - All .tf files in Git
 - terraform.tfvars for prod environment encrypted
 - State files never in Git
@@ -117,17 +120,17 @@ metadata:
 spec:
   validationFailureAction: enforce
   rules:
-  - name: check-registry
-    match:
-      resources:
-        kinds:
-        - Pod
-    validate:
-      message: "Images must come from approved registry"
-      pattern:
-        spec:
-          containers:
-          - image: "*.myregistry.com/*"
+    - name: check-registry
+      match:
+        resources:
+          kinds:
+            - Pod
+      validate:
+        message: "Images must come from approved registry"
+        pattern:
+          spec:
+            containers:
+              - image: "*.myregistry.com/*"
 ```
 
 ### Testing and Validation
@@ -221,7 +224,7 @@ drift_scan:
   script: |
     terraform refresh
     terraform plan -out=drift.tfplan
-    
+
     if [ ! -z "$(terraform show -json drift.tfplan)" ]; then
       alert "Infrastructure drift detected"
       create_github_issue "Infrastructure drift"
@@ -230,10 +233,10 @@ drift_scan:
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST | COBIT |
-|---|---|---|---|
-| IaC governance | A.8.1, A.12.1 | CSF ID/PR | BAI01, BAI06 |
-| Policy as code | A.8.1, A.5.1 | CSF PR/DE | BAI01.02 |
+| EATGF Context  | ISO 27001:2022 | NIST      | COBIT        |
+| -------------- | -------------- | --------- | ------------ |
+| IaC governance | A.8.1, A.12.1  | CSF ID/PR | BAI01, BAI06 |
+| Policy as code | A.8.1, A.5.1   | CSF PR/DE | BAI01.02     |
 
 ## Developer Checklist
 
@@ -249,6 +252,6 @@ drift_scan:
 
 ## Version History
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major | Initial IaC governance standard |
+| Version | Date       | Change Type | Description                     |
+| ------- | ---------- | ----------- | ------------------------------- |
+| 1.0     | 2026-02-16 | Major       | Initial IaC governance standard |

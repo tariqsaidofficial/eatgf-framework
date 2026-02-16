@@ -1,14 +1,14 @@
 # Change Approval Standard
 
-| Property | Value |
-|----------|-------|
-| **Document Type** | Implementation Standard |
-| **Version** | 1.0 |
-| **Classification** | Governance |
-| **Effective Date** | February 16, 2026 |
-| **Authority** | Chief Technology Officer |
-| **EATGF Layer** | 08_DEVELOPER_GOVERNANCE_LAYER / 06_APPLICATION_LIFECYCLE_GOVERNANCE |
-| **MCM Reference** | [Control #31: Change Management](../../02_CONTROL_ARCHITECTURE/MASTER_CONTROL_MATRIX.md) |
+| Property           | Value                                                                                          |
+| ------------------ | ---------------------------------------------------------------------------------------------- |
+| **Document Type**  | Implementation Standard                                                                        |
+| **Version**        | 1.0                                                                                            |
+| **Classification** | Governance                                                                                     |
+| **Effective Date** | February 16, 2026                                                                              |
+| **Authority**      | Chief Technology Officer                                                                       |
+| **EATGF Layer**    | 08_DEVELOPER_GOVERNANCE_LAYER / 06_APPLICATION_LIFECYCLE_GOVERNANCE                            |
+| **MCM Reference**  | [EATGF-BAI-CHG-01: Controlled Change Management](../../00_FOUNDATION/MASTER_CONTROL_MATRIX.md) |
 
 ---
 
@@ -29,15 +29,18 @@ Change control prevents unauthorized, untested, or risky modifications from reac
 ## Architectural Position
 
 **Upstream Dependencies:**
-- Layer 02 Control Architecture [Control #31: Change Management]
+
+- Layer 02 Control Architecture [EATGF-BAI-CHG-01: Controlled Change Management]
 - Layer 04 GOVERNANCE_CHARTER (change authority roles)
 - Layer 08.06 RELEASE_GOVERNANCE_STANDARD (release process uses change approvals)
 
 **Downstream Usage:**
+
 - Layer 06 AUDIT_AND_ASSURANCE (change audit trails)
 - Layer 08.06 ROLLBACK_AND_INCIDENT_RESPONSE_STANDARD (change rollback)
 
 **Cross-Layer References:**
+
 - INFRASTRUCTURE_AS_CODE_GOVERNANCE.md (infrastructure change approval)
 - MULTI_TENANCY_GOVERNANCE_STANDARD.md (customer-impact changes)
 
@@ -149,53 +152,64 @@ Change control prevents unauthorized, untested, or risky modifications from reac
 
 ```markdown
 ## Title
+
 [CATEGORY A/B/C/D] Production Database Migration (PostgreSQL 13 → 15)
 
 ## Description
+
 Upgrade PostgreSQL version to 13→15 for performance improvements and security patches.
+
 - Current: PostgreSQL 13.10 (end-of-life Sept 2025)
 - Target: PostgreSQL 15.5 (stable; security backports until Oct 2027)
 - Benefit: 20-30% query performance improvement (benchmarked)
 - Risk: Any query incompatibility (tested in staging)
 
 ## Change Classification
+
 **CATEGORY: B (Standard Change)**
+
 - Scope: Database-only; application code unchanged
 - Risk: Medium (query incompatibility possible but unlikely; tested)
 - Rollback: Database backup available; downtime ~30 min
 - Customers: Possible brief latency during upgrade (5-10 sec)
 
 ## Approval Requirements
+
 - [ ] Engineering Lead: Code review of migration script
 - [ ] Product Manager: Customer impact assessment
 - [ ] (Not required: CTO, Finance, Customer Success)
 
 ## Schedule
+
 - Change Window: Sat 2026-02-20 2:00-4:00 UTC (off-peak)
 - Notice: Sent to customers (48h before)
 - Rollback Decision: By Feb 19, 2pm UTC
 
 ## Impact Analysis
-| Component | Impact | Evidence |
-|-----------|--------|----------|
-| API Latency | +0-5% (expected) | Benchmark vs. v13 |
-| Database Downtime | ~5-10 minutes | Migration test in staging |
-| Query Compatibility | 100% (verified) | Regression test suite |
+
+| Component           | Impact           | Evidence                  |
+| ------------------- | ---------------- | ------------------------- |
+| API Latency         | +0-5% (expected) | Benchmark vs. v13         |
+| Database Downtime   | ~5-10 minutes    | Migration test in staging |
+| Query Compatibility | 100% (verified)  | Regression test suite     |
 
 ## Rollback Plan
+
 1. Stop application (prevent writes during failover)
 2. Restore PostgreSQL from backup (snapshot before upgrade)
 3. Verify data integrity (row counts match)
 4. Resume application
 5. Estimated duration: 30 minutes
 
-Rollback tested in staging: Confirmed successful ✓
+Rollback tested in staging: Confirmed successful 
 
 ## Approvers (Required for CATEGORY B)
-- [ ] Engineering Lead: _________________ (date: TBD)
-- [ ] Product Manager: _________________ (date: TBD)
+
+- [ ] Engineering Lead: ********\_******** (date: TBD)
+- [ ] Product Manager: ********\_******** (date: TBD)
 
 ---
+
 STATUS: Awaiting approvals (submitted 2026-02-16)
 ```
 
@@ -242,7 +256,7 @@ NORMAL PROCESS (Category B):
 ├─ Engineering lead reviews (2h)
 ├─ Product manager reviews (2h)
 ├─ Schedule change window (24-48h later)
-└─ PROBLEM: By then, service may be down ❌
+└─ PROBLEM: By then, service may be down 
 
 EMERGENCY CHANGE PROCEDURE (Category D):
 ├─ T+0: Declare P1 emergency; invoke emergency change protocol
@@ -306,14 +320,14 @@ Subject: [MAINTENANCE] Production Updates - Saturday, Feb 20
 
 Dear Customers,
 
-We're scheduling maintenance on Saturday, Feb 20 from 2:00-4:00 UTC 
+We're scheduling maintenance on Saturday, Feb 20 from 2:00-4:00 UTC
 to upgrade the database and improve performance.
 
-✓ What's changing: Database engine from v13 to v15
-✓ Expected impact: ~5 minute brief latency (queries may feel slower)
-✓ Customer action required: None (automatic)
-✓ Rollback plan: If issues occur, we'll revert (30 min downtime max)
-✓ Support team: Standing by all weekend
+ What's changing: Database engine from v13 to v15
+ Expected impact: ~5 minute brief latency (queries may feel slower)
+ Customer action required: None (automatic)
+ Rollback plan: If issues occur, we'll revert (30 min downtime max)
+ Support team: Standing by all weekend
 
 Questions? Reply to this email or visit our status page.
 
@@ -326,11 +340,11 @@ Engineering Team
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | COBIT 2019 | OWASP |
-|---|---|---|---|---|
-| Change Management | A.8.32, A.6.7 | PW.4, PW.5 | BAI01, BAI07, DSS04 | SAMM SM |
-| Change Authorization | A.8.32 | PW.4 | BAI07.05 | SAMM SM |
-| Change Communication | A.8.32, A.8.17 | RV.1 | DSS04.01 | SAMM SM |
+| EATGF Control        | ISO 27001:2022 | NIST SSDF  | COBIT 2019          | OWASP   |
+| -------------------- | -------------- | ---------- | ------------------- | ------- |
+| Change Management    | A.8.32, A.6.7  | PW.4, PW.5 | BAI01, BAI07, DSS04 | SAMM SM |
+| Change Authorization | A.8.32         | PW.4       | BAI07.05            | SAMM SM |
+| Change Communication | A.8.32, A.8.17 | RV.1       | DSS04.01            | SAMM SM |
 
 ---
 
@@ -355,22 +369,26 @@ Engineering Team
 ## Governance Implications
 
 **Risk if not implemented:**
+
 - Unapproved changes reach production without oversight
 - No rollback plan → extended downtime on failure
 - Customers surprised by changes → support load increases
 - Compliance violations (changes not tracked for audits)
 
 **Operational impact:**
+
 - Clear escalation path for urgent fixes
 - Product and engineering aligned on customer-impacting changes
 - Support team prepared for customer questions
 
 **Audit consequences:**
+
 - Every production change traceable to approval authority
 - Change decisions documented and justified
 - Compliance auditors verify change control effectiveness
 
 **Cross-team dependencies:**
+
 - **Engineering:** Develop and test change
 - **Product:** Assess customer impact
 - **Operations:** Execute change; monitor; handle rollback
@@ -390,11 +408,11 @@ Engineering Team
 
 ## Version History
 
-| Version | Date | Change Type | Notes |
-|---------|------|-------------|-------|
-| 1.0 | Feb 16, 2026 | Major | Initial release; four-category change classification, approval matrix, emergency procedures, communication timelines |
+| Version | Date         | Change Type | Notes                                                                                                                |
+| ------- | ------------ | ----------- | -------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | Feb 16, 2026 | Major       | Initial release; four-category change classification, approval matrix, emergency procedures, communication timelines |
 
 ---
 
-*Last Updated: February 16, 2026*  
-*EATGF v1.0-Foundation: Change Approval Standard*
+_Last Updated: February 16, 2026_
+_EATGF v1.0-Foundation: Change Approval Standard_

@@ -1,14 +1,14 @@
 # Cloud Cost Governance Standard
 
-| Property | Value |
-|----------|-------|
-| **Document Type** | Implementation Standard |
-| **Version** | 1.0 |
-| **Classification** | Governance |
-| **Effective Date** | February 16, 2026 |
-| **Authority** | Chief Technology Officer |
-| **EATGF Layer** | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE |
-| **MCM Reference** | [Control #14: Infrastructure Cost Optimization](../../02_CONTROL_ARCHITECTURE/MASTER_CONTROL_MATRIX.md) |
+| Property           | Value                                                                                                             |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| **Document Type**  | Implementation Standard                                                                                           |
+| **Version**        | 1.0                                                                                                               |
+| **Classification** | Governance                                                                                                        |
+| **Effective Date** | February 16, 2026                                                                                                 |
+| **Authority**      | Chief Technology Officer                                                                                          |
+| **EATGF Layer**    | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE                                                      |
+| **MCM Reference**  | [EATGF-CLD-MON-01: Cloud Cost, Performance & Compliance Monitoring](../../00_FOUNDATION/MASTER_CONTROL_MATRIX.md) |
 
 ---
 
@@ -29,15 +29,18 @@ Cloud infrastructure costs escalate rapidly without disciplined cost governance.
 ## Architectural Position
 
 **Upstream Dependencies:**
-- Layer 02 Control Architecture [Control #14: Infrastructure Cost Optimization]
+
+- Layer 02 Control Architecture [EATGF-CLD-MON-01: Cloud Cost, Performance & Compliance Monitoring]
 - Layer 04 INFORMATION_SECURITY_POLICY (budget authorization procedures)
 - Layer 05 DOMAIN_FRAMEWORKS (cost requirements in architectural decisions)
 
 **Downstream Usage:**
+
 - Layer 06 AUDIT_AND_ASSURANCE (cost variance findings)
 - Layer 08.04 INFRASTRUCTURE_RUNTIME (infrastructure cost reporting)
 
 **Cross-Layer References:**
+
 - ZERO_TRUST_ARCHITECTURE_STANDARD.md (network cost implications)
 - MULTI_TENANCY_GOVERNANCE_STANDARD.md (cost per customer)
 - INFRASTRUCTURE_AS_CODE_GOVERNANCE.md (IaC cost estimation)
@@ -65,15 +68,16 @@ Every cloud resource must have these tags:
 ```yaml
 # AWS example
 Tags:
-  CostCenter: "engineering"     # billing code
-  Project: "platform-apis"       # project identifier
-  Environment: "production"      # prod/staging/dev
-  Owner: "platform-team"         # person/team responsible
-  AutoShutdown: "false"          # auto-shut down after hours?
-  Lifecycle: "permanent"         # permanent/temporary/experiment
+  CostCenter: "engineering" # billing code
+  Project: "platform-apis" # project identifier
+  Environment: "production" # prod/staging/dev
+  Owner: "platform-team" # person/team responsible
+  AutoShutdown: "false" # auto-shut down after hours?
+  Lifecycle: "permanent" # permanent/temporary/experiment
 ```
 
 **Tag Enforcement:**
+
 - AWS: IAM policy prevents resource creation without tags
 - GCP: Organization Policy requires labels
 - Azure: Azure Policy requires tags
@@ -94,26 +98,30 @@ Cost Center Report (February 2026):
 │ Infrastructure  │ $15,000  │ $14,900 │ -0.7%    │
 └─────────────────┴──────────┴─────────┴──────────┘
 
-Total Budget: $115,000 | Total Spent: $114,400 | Variance: -0.5% ✅
+Total Budget: $115,000 | Total Spent: $114,400 | Variance: -0.5% 
 ```
 
 ### 2. Budget Tiers & Escalation
 
 **Tier-1 (Under-utilized: <50% committed):**
+
 - Action: Notify team lead
 - Timeline: 1 week to resize or confirm necessity
 - Escalation: Finance review if not addressed
 
 **Tier-2 (Expected: 50-100% committed):**
+
 - Action: Normal operation; monitor for efficiency
 - Success: 80-90% utilization (not all resources always at peak)
 
 **Tier-3 (Approaching limit: 80-100% budget spent):**
+
 - Action: Alert team lead and cost owner
 - Timeline: 48h decision (reduce scope or increase budget)
 - Escalation: CTO approval required for budget increase
 
 **Tier-4 (Exceeded: 100%+ budget spent):**
+
 - Action: IMMEDIATE suspension of new resources
 - Temporary: Existing workloads continue; no scaling
 - Escalation: Finance + CTO review; emergency budget decision
@@ -126,9 +134,9 @@ For predictable baseline load, purchase multi-year discounts:
 
 ```
 AWS Reserved Instances (RI):
-- Production database: 3-year RI = 72% discount = $8,000/month ✓
-- Predictable API servers: 1-year RI = 40% discount = $3,200/month ✓
-- Test/staging: On-demand only = no commitment ✓
+- Production database: 3-year RI = 72% discount = $8,000/month 
+- Predictable API servers: 1-year RI = 40% discount = $3,200/month 
+- Test/staging: On-demand only = no commitment 
 
 GCP Commitments:
 - Compute Engine: $50k/year commitment = 37% discount
@@ -146,6 +154,7 @@ Azure Reserved Instances:
 - **Target:** 60-70% of infrastructure via commitments; 30-40% on-demand for flexibility
 
 **Review Frequency:**
+
 - Quarterly: Analyze actual usage vs. commitments
 - If < 60% utilization: Reduce commitment size
 - If > 90% utilization: Consider additional commitments
@@ -194,15 +203,16 @@ for instance in ec2.instances:
 for instance in unused_instances:
     owner = instance.tags['Owner']
     send_email(owner, f"""
-        Instance {instance.id} ({instance.tags['Project']}) has 
-        no network traffic for 7 days. Please confirm continued need or 
+        Instance {instance.id} ({instance.tags['Project']}) has
+        no network traffic for 7 days. Please confirm continued need or
         terminate to save ${instance.hourly_cost * 720}/month.
-        
+
         Auto-terminate in 7 days unless confirmed.
     """)
 ```
 
 **Termination Policy:**
+
 - Day 1: Email notification to resource owner
 - Day 4: Slack message; escalate to manager
 - Day 8: Auto-terminate; archive logs for 30 days in case of incident
@@ -229,13 +239,14 @@ Flag: (+33% anomaly, meets >25% threshold) → Immediate investigation
 **Investigation Process:**
 
 1. **Automated:** CloudWatch + Cost Anomaly Detection + Slack bot alerts
+
    ```
-   🚨 Cost Anomaly Detected
+    Cost Anomaly Detected
    Date: Feb 16 2026
    Amount: $4,600 (↑ 33% from $3,500 baseline)
    Primary driver: Data transfer EC2 to S3 (+$1,100)
    Likely cause: New ETL job in production
-   
+
    Action: Review data transfer, confirm necessity, optimize or rollback
    Owner notification: Sent to platform-team@company.com
    ```
@@ -269,6 +280,7 @@ Monthly Chargeback Report:
 ```
 
 **Showback (Informational, no charge) vs. Chargeback (Actual billing):**
+
 - **Startups/Scale-ups:** Showback only (cloud cost is opex shared budget)
 - **Mature Organizations:** Chargeback to departments/projects
 - **SaaS Companies:** Chargeback per customer (multi-tenant cost allocation)
@@ -297,6 +309,7 @@ Q4 2025 Cost Optimization Review:
 ```
 
 **Process:**
+
 1. Analyze 90-day spend data (waste, underutilization, optimization opportunities)
 2. Prioritize by ROI (implementation effort vs. savings)
 3. Assign owner; set implementation deadline
@@ -306,12 +319,12 @@ Q4 2025 Cost Optimization Review:
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | COBIT 2019 | OWASP |
-|---|---|---|---|---|
-| Infrastructure Cost Optimization | A.8.1, A.12.2 | N/A | BAI03.05, BAI09.02 | Not Directly |
-| Budget Enforcement | A.8.1 | N/A | BAI01.01, BAI09.02 | Not Directly |
-| Cost Attribution | A.8.17, A.6.7 | N/A | MEA03.01 | Not Directly |
-| Anomaly Detection | A.8.16, A.12.4.1 | N/A | DSS05.01 | Not Directly |
+| EATGF Control                    | ISO 27001:2022   | NIST SSDF | COBIT 2019         | OWASP        |
+| -------------------------------- | ---------------- | --------- | ------------------ | ------------ |
+| Infrastructure Cost Optimization | A.8.1, A.12.2    | N/A       | BAI03.05, BAI09.02 | Not Directly |
+| Budget Enforcement               | A.8.1            | N/A       | BAI01.01, BAI09.02 | Not Directly |
+| Cost Attribution                 | A.8.17, A.6.7    | N/A       | MEA03.01           | Not Directly |
+| Anomaly Detection                | A.8.16, A.12.4.1 | N/A       | DSS05.01           | Not Directly |
 
 ---
 
@@ -335,23 +348,27 @@ Q4 2025 Cost Optimization Review:
 ## Governance Implications
 
 **Risk if not implemented:**
+
 - Unchecked cloud spending; 30-50% of resources unused/underutilized
 - Budget overruns with no visibility until end of month
 - Inefficient infrastructure (paying for unused capacity)
 - Business units unable to understand cost-benefit trade-offs
 
 **Operational impact:**
+
 - Finance team gains infrastructure cost visibility and predictability
 - Engineering teams empowered to optimize within budget guardrails
 - Product teams can make cost-aware infrastructure decisions
 - Monthly chargeback discipline ensures efficient resource use
 
 **Audit consequences:**
+
 - External auditors verify budget enforcement controls (compliance)
 - Cost governance demonstrates infrastructure management maturity
 - Anomaly detection shows proactive waste prevention
 
 **Cross-team dependencies:**
+
 - **Finance:** Budget approval and chargeback administration
 - **Engineering:** Implement tagging, monitoring, optimization
 - **Product:** Awareness of cost trade-offs in feature planning
@@ -372,11 +389,11 @@ Q4 2025 Cost Optimization Review:
 
 ## Version History
 
-| Version | Date | Change Type | Notes |
-|---------|------|-------------|-------|
-| 1.0 | Feb 16, 2026 | Major | Initial release; comprehensive cost governance framework with budget tiers, commitment strategies, anomaly detection, cost allocation |
+| Version | Date         | Change Type | Notes                                                                                                                                 |
+| ------- | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | Feb 16, 2026 | Major       | Initial release; comprehensive cost governance framework with budget tiers, commitment strategies, anomaly detection, cost allocation |
 
 ---
 
-*Last Updated: February 16, 2026*  
-*EATGF v1.0-Foundation: Cloud Cost Governance Standard*
+_Last Updated: February 16, 2026_
+_EATGF v1.0-Foundation: Cloud Cost Governance Standard_

@@ -9,7 +9,7 @@
 | Classification | Internal |
 | Effective Date | 2026-02-14 |
 | Authority | Enterprise Architecture & Governance Office |
-| MCM Reference | EATGF-GOV-DOC-002 |
+| MCM Reference | EATGF-EDM-GOV-01 |
 
 ---
 
@@ -66,9 +66,9 @@ This guide does not govern external content, third-party integrations, or ISO st
 
 | Pattern | Violation | Correction |
 |---------|-----------|-----------|
-| `# 🏛️ Enterprise Governance Framework` | Emoji in H1 | `# Enterprise Governance Framework` |
-| `## 📋 What's Included` | Emoji in H2 | `## 1. Contents` |
-| `## 1️⃣ Foundation Layer` | Number emoji in H2 | `## 1. Foundation Layer` |
+| `#  Enterprise Governance Framework` | Emoji in H1 | `# Enterprise Governance Framework` |
+| `##  What's Included` | Emoji in H2 | `## 1. Contents` |
+| `## 1 Foundation Layer` | Number emoji in H2 | `## 1. Foundation Layer` |
 | `# OFFICIAL_DESIGNATION.md` | Filename as H1 | `# Official Designation` |
 | `# BASELINE_DECLARATION_v1.0.md` | Version and extension in H1 | `# Baseline Declaration` |
 
@@ -143,11 +143,11 @@ No Docusaurus admonitions (`:::`) are currently used across the framework. The f
 
 ```markdown
 :::caution[Governance Rule]
-This control mandates [requirement]. Non-compliance triggers escalation per EATGF-GOV-ESC-001.
+This control mandates [requirement]. Non-compliance triggers escalation per EATGF-EDM-GOV-01.
 :::
 ```
 
-**Rendered appearance:** Orange/amber left border with ⚖ icon. Use for mandatory compliance statements, control requirements, and governance mandates.
+**Rendered appearance:** Orange/amber left border with  icon. Use for mandatory compliance statements, control requirements, and governance mandates.
 
 #### Enforcement
 
@@ -157,7 +157,7 @@ Deviation from this policy requires written approval from [authority]. Unauthori
 :::
 ```
 
-**Rendered appearance:** Red left border with 🔒 icon. Use for non-compliance consequences, escalation triggers, and enforcement actions.
+**Rendered appearance:** Red left border with  icon. Use for non-compliance consequences, escalation triggers, and enforcement actions.
 
 #### Reference
 
@@ -167,7 +167,7 @@ This requirement aligns with ISO/IEC 27001:2022 Clause 6.1.2 and maps to COBIT 2
 :::
 ```
 
-**Rendered appearance:** Blue left border with 📘 icon. Use for cross-references to external standards (ISO, COBIT, NIST), related EATGF documents, and MCM control traceability.
+**Rendered appearance:** Blue left border with  icon. Use for cross-references to external standards (ISO, COBIT, NIST), related EATGF documents, and MCM control traceability.
 
 #### Implementation Note
 
@@ -177,7 +177,7 @@ For Startup Edition deployments, this control may be implemented using a simplif
 :::
 ```
 
-**Rendered appearance:** Green left border with 🧭 icon. Use for practical implementation guidance, edition-specific adaptations, and deployment recommendations.
+**Rendered appearance:** Green left border with  icon. Use for practical implementation guidance, edition-specific adaptations, and deployment recommendations.
 
 #### Audit Perspective
 
@@ -187,7 +187,7 @@ Evidence for this control shall include timestamped configuration exports and ap
 :::
 ```
 
-**Rendered appearance:** Gray left border with 🧪 icon. Use for auditor-facing evidence requirements, assessment criteria, and audit trail specifications.
+**Rendered appearance:** Gray left border with  icon. Use for auditor-facing evidence requirements, assessment criteria, and audit trail specifications.
 
 ### 7.2 Admonition Usage Rules
 
@@ -219,18 +219,18 @@ Standard Docusaurus admonitions (`:::note`, `:::tip`, `:::info`, `:::caution`, `
 | Data Type | Alignment | Example |
 |-----------|-----------|---------|
 | Text (descriptions, names) | Left-align (`:---`) | `| Description |` |
-| Status indicators | Center-align (`:---:`) | `| ✅ |` |
+| Status indicators | Center-align (`:---:`) | `|  |` |
 | Numeric values | Right-align (`---:`) | `| 35 |` |
 | Dates | Left-align | `| 2026-02-14 |` |
-| Control IDs | Left-align | `| EATGF-SEC-ACC-001 |` |
+| Control IDs | Left-align | `| EATGF-DSS-SEC-01 |` |
 
 ### 8.2 Status Indicators
 
 | Indicator | Meaning | Usage |
 |-----------|---------|-------|
-| ✅ | Implemented / Compliant / Complete | Status columns, compliance matrices |
-| ⚠️ | Partial / In Progress / Requires Attention | Status columns, risk indicators |
-| ❌ | Not Implemented / Non-Compliant / Missing | Status columns, gap analyses |
+|  | Implemented / Compliant / Complete | Status columns, compliance matrices |
+|  | Partial / In Progress / Requires Attention | Status columns, risk indicators |
+|  | Not Implemented / Non-Compliant / Missing | Status columns, gap analyses |
 | N/A | Not Applicable | Applicability matrices |
 
 ### 8.3 Table Rules
@@ -249,8 +249,8 @@ Standard Docusaurus admonitions (`:::note`, `:::tip`, `:::info`, `:::caution`, `
 
 | Context | Permitted Emoji | Notes |
 |---------|----------------|-------|
-| Status tables | ✅ ⚠️ ❌ | Status indicators only |
-| Admonition titles | ⚖ 🔒 📘 🧭 🧪 | Per Section 7.1 definitions |
+| Status tables |    | Status indicators only |
+| Admonition titles |      | Per Section 7.1 definitions |
 | Archived documents | Any | Historical artifacts in Layer 07 are exempt |
 
 ### 9.2 Prohibited Emoji Usage
@@ -267,11 +267,11 @@ Standard Docusaurus admonitions (`:::note`, `:::tip`, `:::info`, `:::caution`, `
 
 | Current | Correction |
 |---------|-----------|
-| `## 📋 Layer Purpose` | `## 1. Layer Purpose` |
-| `## 🎯 Key Objectives` | `## 2. Key Objectives` |
-| `## 🔐 Security` | `## 3. Security` |
-| `Done! 🎉` | `Complete.` |
-| `## 1️⃣ Foundation` | `## 1. Foundation` |
+| `##  Layer Purpose` | `## 1. Layer Purpose` |
+| `##  Key Objectives` | `## 2. Key Objectives` |
+| `##  Security` | `## 3. Security` |
+| `Done! ` | `Complete.` |
+| `## 1 Foundation` | `## 1. Foundation` |
 
 ---
 

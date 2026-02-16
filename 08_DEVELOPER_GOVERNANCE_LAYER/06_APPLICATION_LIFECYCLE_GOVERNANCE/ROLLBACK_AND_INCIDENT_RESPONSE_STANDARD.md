@@ -1,14 +1,14 @@
 # Rollback and Incident Response Standard
 
-| Property | Value |
-|----------|-------|
-| **Document Type** | Implementation Standard |
-| **Version** | 1.0 |
-| **Classification** | Governance |
-| **Effective Date** | February 16, 2026 |
-| **Authority** | Vice President of Engineering |
-| **EATGF Layer** | 08_DEVELOPER_GOVERNANCE_LAYER / 06_APPLICATION_LIFECYCLE_GOVERNANCE |
-| **MCM Reference** | [Control #29: Incident Response & Recovery](../../02_CONTROL_ARCHITECTURE/MASTER_CONTROL_MATRIX.md) |
+| Property           | Value                                                                                          |
+| ------------------ | ---------------------------------------------------------------------------------------------- |
+| **Document Type**  | Implementation Standard                                                                        |
+| **Version**        | 1.0                                                                                            |
+| **Classification** | Governance                                                                                     |
+| **Effective Date** | February 16, 2026                                                                              |
+| **Authority**      | Vice President of Engineering                                                                  |
+| **EATGF Layer**    | 08_DEVELOPER_GOVERNANCE_LAYER / 06_APPLICATION_LIFECYCLE_GOVERNANCE                            |
+| **MCM Reference**  | [EATGF-DSS-INC-01: Incident Response Management](../../00_FOUNDATION/MASTER_CONTROL_MATRIX.md) |
 
 ---
 
@@ -29,14 +29,17 @@ Production failures happen. Rapid recovery minimizes customer impact. This stand
 ## Architectural Position
 
 **Upstream Dependencies:**
-- Layer 02 Control Architecture [Control #29: Incident Response & Recovery]
+
+- Layer 02 Control Architecture [EATGF-DSS-INC-01: Incident Response Management]
 - Layer 04 INCIDENT_RESPONSE_POLICY (incident severity definition)
 - Layer 08.06 RELEASE_GOVERNANCE_STANDARD (releases have rollback plans)
 
 **Downstream Usage:**
+
 - Layer 06 AUDIT_AND_ASSURANCE (incident metrics and trends)
 
 **Cross-Layer References:**
+
 - 04_INCIDENT_RESPONSE_POLICY.md (incident severity P1-P4)
 - MONITORING_AND_OBSERVABILITY_STANDARD.md (alerting thresholds)
 
@@ -282,6 +285,7 @@ echo "$LOG_FILE"  # Output log file path for incident tracking
 ```
 
 **Verification:**
+
 - Tested in staging: ✓ (72h before production)
 - Manual run time: <5 min
 - Automated trigger: On error detection (P1 incidents)
@@ -402,12 +406,12 @@ GOAL: Zero P1 incidents; <10 min MTTR for P2
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | COBIT 2019 | OWASP |
-|---|---|---|---|---|
-| Incident Response | A.5.26, A.6.10, A.16.1 | PO.1.2, PO.3.2 | DSS06, MEA01 | SAMM IM |
-| Business Continuity | A.8.36, A.8.37 | N/A | BAI04.05 | SAMM IM |
-| Change Recovery | A.8.32 | PW.5 | BAI07 | SAMM IM |
-| Metrics & Reporting | A.8.17, A.6.7 | N/A | MEA01 | SAMM IM |
+| EATGF Control       | ISO 27001:2022         | NIST SSDF      | COBIT 2019   | OWASP   |
+| ------------------- | ---------------------- | -------------- | ------------ | ------- |
+| Incident Response   | A.5.26, A.6.10, A.16.1 | PO.1.2, PO.3.2 | DSS06, MEA01 | SAMM IM |
+| Business Continuity | A.8.36, A.8.37         | N/A            | BAI04.05     | SAMM IM |
+| Change Recovery     | A.8.32                 | PW.5           | BAI07        | SAMM IM |
+| Metrics & Reporting | A.8.17, A.6.7          | N/A            | MEA01        | SAMM IM |
 
 ---
 
@@ -429,24 +433,28 @@ GOAL: Zero P1 incidents; <10 min MTTR for P2
 ## Governance Implications
 
 **Risk if not implemented:**
+
 - Long incident recovery times; customers frustrated
 - No rollback procedure → extended outages
 - Repeated incidents; same root causes not fixed
 - Compliance violations (incidents not documented)
 
 **Operational impact:**
+
 - Rapid recovery minimizes customer impact
 - On-call team clear on procedures; less chaos
 - Post-mortems drive continuous improvement
 - Metrics guide investment in monitoring/automation
 
 **Audit consequences:**
+
 - External auditors verify incident response procedures
 - Post-mortems demonstrate root-cause analysis discipline
 - Rollback readiness verifiable through testing records
 - Incident metrics show maturity and improvement
 
 **Cross-team dependencies:**
+
 - **Engineering:** Develop rollback scripts; participate in post-mortems
 - **Operations:** Execute rollback; monitor during incidents
 - **Product:** Communicate with customers; product decisions from incidents
@@ -466,11 +474,11 @@ GOAL: Zero P1 incidents; <10 min MTTR for P2
 
 ## Version History
 
-| Version | Date | Change Type | Notes |
-|---------|------|-------------|-------|
-| 1.0 | Feb 16, 2026 | Major | Initial release; incident severity P1-P4, automated rollback scripts, decision matrix, post-mortem procedures, metrics |
+| Version | Date         | Change Type | Notes                                                                                                                  |
+| ------- | ------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | Feb 16, 2026 | Major       | Initial release; incident severity P1-P4, automated rollback scripts, decision matrix, post-mortem procedures, metrics |
 
 ---
 
-*Last Updated: February 16, 2026*  
-*EATGF v1.0-Foundation: Rollback and Incident Response Standard*
+_Last Updated: February 16, 2026_
+_EATGF v1.0-Foundation: Rollback and Incident Response Standard_

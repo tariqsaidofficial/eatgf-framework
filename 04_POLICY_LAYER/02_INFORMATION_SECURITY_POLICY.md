@@ -91,7 +91,7 @@ Classification determines encryption, access control, retention, and disposal re
 
 ### Incident Management
 
-**⚠️ NOTE ON SLA CONTEXT:** The timelines below refer to INCIDENT ESCALATION and NOTIFICATION, which is different from VULNERABILITY REMEDIATION SLA defined in [VULNERABILITY_REMEDIATION_TERMINOLOGY.md](../02_CONTROL_ARCHITECTURE/VULNERABILITY_REMEDIATION_TERMINOLOGY.md). CVE patching follows a separate 24-hour end-to-end SLA.
+** NOTE ON SLA CONTEXT:** The timelines below refer to INCIDENT ESCALATION and NOTIFICATION, which is different from VULNERABILITY REMEDIATION SLA defined in [VULNERABILITY_REMEDIATION_TERMINOLOGY.md](../02_CONTROL_ARCHITECTURE/VULNERABILITY_REMEDIATION_TERMINOLOGY.md). CVE patching follows a separate 24-hour end-to-end SLA.
 
 **Breach Notification Requirement:**
 

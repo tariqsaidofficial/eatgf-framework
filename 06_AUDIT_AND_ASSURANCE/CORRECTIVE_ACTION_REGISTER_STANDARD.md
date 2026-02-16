@@ -9,7 +9,7 @@
 | Effective Date | 2026-02-16                                 |
 | Authority      | Chief Audit Officer and Governance Officer |
 | EATGF Layer    | 06_AUDIT_AND_ASSURANCE                     |
-| MCM Reference  | EATGF-MEA-CAR-01, EATGF-APO-RES-01         |
+| MCM Reference  | EATGF-MEA-AUD-01, EATGF-MEA-PERF-01        |
 
 ---
 

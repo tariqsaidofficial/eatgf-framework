@@ -62,10 +62,10 @@ This document defines governance conformance requirements for Flutter applicatio
 ### Principle 1: Secure HTTP Client (MANDATORY)
 
 ```dart
-// ❌ PROHIBITED: No certificate pinning
+//  PROHIBITED: No certificate pinning
 final http.Client _httpClient = http.Client();
 
-// ✅ COMPLIANT: Certificate pinning
+//  COMPLIANT: Certificate pinning
 import 'package:flutter_http_client/flutter_http_client.dart';
 
 Future<SecurityContext> createSecurityContext() async {
@@ -88,11 +88,11 @@ final IOClient _httpClient = IOClient(
 ### Principle 2: Secure Credential Storage (MANDATORY)
 
 ```dart
-// ❌ PROHIBITED: SharedPreferences for tokens
+//  PROHIBITED: SharedPreferences for tokens
 final prefs = await SharedPreferences.getInstance();
 prefs.setString('token', token); // EXPOSED
 
-// ✅ COMPLIANT: flutter_secure_storage
+//  COMPLIANT: flutter_secure_storage
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 const storage = FlutterSecureStorage(
@@ -116,7 +116,7 @@ Future<String?> getToken() async {
 ### Principle 3: BLoC Pattern for State (MANDATORY)
 
 ```dart
-// ❌ PROHIBITED: Mutable state directly in widgets
+//  PROHIBITED: Mutable state directly in widgets
 class UserWidget extends StatefulWidget {
   @override
   State<UserWidget> createState() => _UserWidgetState();
@@ -127,7 +127,7 @@ class _UserWidgetState extends State<UserWidget> {
   User? user;
 }
 
-// ✅ COMPLIANT: BLoC manages auth state
+//  COMPLIANT: BLoC manages auth state
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepository _repository;
 
@@ -175,7 +175,7 @@ class AuthPage extends StatelessWidget {
 ### Principle 4: Platform Channel Security (MANDATORY)
 
 ```dart
-// ✅ COMPLIANT: Sealed platform channel
+//  COMPLIANT: Sealed platform channel
 @pragma('vm:entry-point')
 Future<void> _nativeEntryPoint() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -184,7 +184,7 @@ Future<void> _nativeEntryPoint() async {
 
   methodChannel.setMethodCallHandler((MethodCall call) async {
     if (call.method == 'getBiometricsStatus') {
-      // ✅ Signature verification, platform-specific
+      //  Signature verification, platform-specific
       return await _checkBiometrics();
     }
     throw PlatformException(code: 'UNIMPLEMENTED', details: null);
@@ -219,7 +219,7 @@ Future<bool> _checkBiometrics() async {
 ### Principle 5: HTTP Interceptor Chain (MANDATORY)
 
 ```dart
-// ✅ COMPLIANT: http.Client wrapper with interceptor
+//  COMPLIANT: http.Client wrapper with interceptor
 class AuthenticatedHttpClient extends http.BaseClient {
   final http.Client _inner;
   final TokenManager _tokenManager;
@@ -228,18 +228,18 @@ class AuthenticatedHttpClient extends http.BaseClient {
 
   @override
   Future<http.StreamedResponse> send(http.BaseRequest request) async {
-    // ✅ Add token to every request
+    //  Add token to every request
     final token = await _tokenManager.getToken();
     if (token != null) {
       request.headers['Authorization'] = 'Bearer $token';
     }
 
-    // ✅ Add correlation ID
+    //  Add correlation ID
     request.headers['X-Correlation-ID'] = _generateUUID();
 
     final response = await _inner.send(request);
 
-    // ✅ Handle 401 (token expired)
+    //  Handle 401 (token expired)
     if (response.statusCode == 401) {
       await _tokenManager.clearToken();
       // Trigger re-authentication
@@ -253,7 +253,7 @@ class AuthenticatedHttpClient extends http.BaseClient {
 ### Principle 6: Input Validation (MANDATORY)
 
 ```dart
-// ✅ COMPLIANT: Validate before sending
+//  COMPLIANT: Validate before sending
 import 'package:validators/validators.dart';
 
 class InvoiceRepository {
@@ -273,7 +273,7 @@ class InvoiceRepository {
       throw ValidationException('Invalid currency');
     }
 
-    // ✅ Send to server (server re-validates)
+    //  Send to server (server re-validates)
     return await _httpClient.post(
       Uri.parse('$_baseUrl/invoices'),
       body: jsonEncode({
@@ -289,7 +289,7 @@ class InvoiceRepository {
 ### Principle 7: OTA Update Verification (MANDATORY)
 
 ```dart
-// ✅ COMPLIANT: EAS Updates with signature verification
+//  COMPLIANT: EAS Updates with signature verification
 import 'package:eas_update/eas_update.dart';
 
 Future<void> checkForUpdates() async {
@@ -297,7 +297,7 @@ Future<void> checkForUpdates() async {
     final UpdateCheckResult updateCheckResult = await Updates.checkAsync();
 
     if (updateCheckResult.isAvailable) {
-      // ✅ EAS automatically verifies signature
+      //  EAS automatically verifies signature
       await Updates.fetchUpdateAsync();
       await Updates.reloadAsync();
     }
@@ -310,7 +310,7 @@ Future<void> checkForUpdates() async {
 ### Principle 8: Root/Jailbreak Detection (MANDATORY)
 
 ```dart
-// ✅ COMPLIANT: Detect compromised device
+//  COMPLIANT: Detect compromised device
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:root_jailbreak_detection/root_jailbreak_detection.dart';
 
@@ -355,7 +355,7 @@ class AuthRepository {
     final data = jsonDecode(response.body);
     final token = data['token'];
 
-    // ✅ Store in secure storage
+    //  Store in secure storage
     await _storage.write('auth_token', token);
 
     return User.fromJson(data['user']);
@@ -475,7 +475,7 @@ class InvoiceForm {
 
   void submit() {
     if (formKey.currentState!.validate()) {
-      // ✅ Form valid, send to server
+      //  Form valid, send to server
       context.read<InvoiceBloc>().add(CreateInvoiceEvent(...));
     }
   }
@@ -581,15 +581,15 @@ class LoggingHttpClient extends http.BaseClient {
 ### Compliant Implementation
 
 ```dart
-// ✅ Force HTTPS in production
+//  Force HTTPS in production
 final Uri baseUrl = Uri.parse(
   kReleaseMode
     ? 'https://api.example.com'
     : 'https://staging-api.example.com'
 );
 
-// ✅ Certificate pinning (covered in Principle 1)
-// ✅ Secure platform channels for native calls
+//  Certificate pinning (covered in Principle 1)
+//  Secure platform channels for native calls
 ```
 
 ---

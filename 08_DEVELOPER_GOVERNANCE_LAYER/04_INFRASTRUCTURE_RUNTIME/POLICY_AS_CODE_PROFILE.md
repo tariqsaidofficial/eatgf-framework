@@ -56,7 +56,7 @@ Policy-as-Code profiles implement:
 All policies stored as code in version control, not on cluster.
 
 ```yaml
-# ✅ COMPLIANT: Git-stored policy (Kyverno ClusterPolicy)
+#  COMPLIANT: Git-stored policy (Kyverno ClusterPolicy)
 ---
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
@@ -100,7 +100,7 @@ spec:
 Policies enforced at multiple points (registry, admission, runtime).
 
 ```bash
-# ✅ COMPLIANT: Multi-layer enforcement
+#  COMPLIANT: Multi-layer enforcement
 # Layer 1: Registry (Container scanning)
 docker run --rm \
   -v /var/run/docker.sock:/var/run/docker.sock \
@@ -121,7 +121,7 @@ kubectl apply -f pod.yaml  # Kyverno/OPA validates
 Policies directly reference compliance standards.
 
 ```yaml
-# ✅ COMPLIANT: Compliance-mapped policy
+#  COMPLIANT: Compliance-mapped policy
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -185,7 +185,7 @@ All policy violations logged for forensics.
 Exceptions tracked with expiration dates, not permanent.
 
 ```yaml
-# ✅ COMPLIANT: Temporary exception with expiration
+#  COMPLIANT: Temporary exception with expiration
 apiVersion: kyverno.io/v1
 kind: ClusterPolicyException
 metadata:
@@ -210,7 +210,7 @@ spec:
 Policies can auto-remediate violations (e.g., add missing labels).
 
 ```yaml
-# ✅ COMPLIANT: Mutating policy (auto-remediate)
+#  COMPLIANT: Mutating policy (auto-remediate)
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:

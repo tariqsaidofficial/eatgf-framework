@@ -1,14 +1,14 @@
 # Secrets Management Standard
 
-| Field | Value |
-|-------|-------|
-| Document Type | Implementation Standard |
-| Version | 1.0 |
-| Classification | Restricted |
-| Effective Date | 2026-02-16 |
-| Authority | Chief Security Officer and Platform Engineering Lead |
-| EATGF Layer | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
-| MCM Reference | EATGF-PW-SEC-01, EATGF-PO-SEC-01 |
+| Field          | Value                                                   |
+| -------------- | ------------------------------------------------------- |
+| Document Type  | Implementation Standard                                 |
+| Version        | 1.0                                                     |
+| Classification | Restricted                                              |
+| Effective Date | 2026-02-16                                              |
+| Authority      | Chief Security Officer and Platform Engineering Lead    |
+| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| MCM Reference  | EATGF-DSS-ENC-01                                        |
 
 ---
 
@@ -38,12 +38,12 @@ This standard defines mandatory requirements for managing cryptographic secrets,
 
 ### Secret Classification
 
-| Class | Examples | Storage | Rotation | Access Control |
-|-------|----------|---------|----------|-----------------|
-| Tier-1 (Critical) | Private keys, HSM keys, root credentials | HSM only | Quarterly or on compromise | CISO + 1 approval |
-| Tier-2 (High) | Database passwords, API keys for payment/billing | Vault + encryption | 90 days | Engineering lead + 1 |
-| Tier-3 (Medium) | Internal API tokens, service credentials | Vault (encrypted) | 180 days | Service owner |
-| Tier-4 (Low) | GitHub tokens, npm credentials | Local encrypted vault | 90 days | Developer self-service |
+| Class             | Examples                                         | Storage               | Rotation                   | Access Control         |
+| ----------------- | ------------------------------------------------ | --------------------- | -------------------------- | ---------------------- |
+| Tier-1 (Critical) | Private keys, HSM keys, root credentials         | HSM only              | Quarterly or on compromise | CISO + 1 approval      |
+| Tier-2 (High)     | Database passwords, API keys for payment/billing | Vault + encryption    | 90 days                    | Engineering lead + 1   |
+| Tier-3 (Medium)   | Internal API tokens, service credentials         | Vault (encrypted)     | 180 days                   | Service owner          |
+| Tier-4 (Low)      | GitHub tokens, npm credentials                   | Local encrypted vault | 90 days                    | Developer self-service |
 
 ### Development Environment
 
@@ -65,12 +65,14 @@ eval "$(op signin my.1password.com user@company.com)"
 ```
 
 **Prohibited in Development:**
+
 - Hardcoded secrets in .env files
 - Unencrypted secrets in configuration files
 - Shared credentials in team channels (Slack, Discord)
 - Credentials in Git history (if committed, rotate immediately)
 
 **Approved Development Secret Storage:**
+
 - 1Password
 - LastPass
 - HashiCorp Vault (local instance)
@@ -89,14 +91,14 @@ eval "$(op signin my.1password.com user@company.com)"
 
 secrets:
   database:
-    username: staging_app_user  # Read-only or limited to staging data
+    username: staging_app_user # Read-only or limited to staging data
     password: <rotated every 90 days>
     host: staging-db.internal
     # NOT production host
 
   api_keys:
-    stripe: sk_test_xxx  # Stripe test key
-    sendgrid: SG_test_xxx  # SendGrid test key
+    stripe: sk_test_xxx # Stripe test key
+    sendgrid: SG_test_xxx # SendGrid test key
     # NOT production keys
 
   certificates:
@@ -106,6 +108,7 @@ secrets:
 ```
 
 **Access Control in Staging:**
+
 - Staging Vault access: Development team only
 - Password reset: No Vault access for non-engineers; manual request process
 - Audit logging: All secret access logged; daily review for anomalies
@@ -116,6 +119,7 @@ secrets:
 **Production Secrets (Hardware-Backed):**
 
 Requirements:
+
 - **Vault:** AWS Secrets Manager (with KMS encryption) OR HashiCorp Vault Enterprise
 - **Key Storage:** Hardware Security Module (FIPS 140-2 Level 2+)
 - **Access:** Restricted service accounts only; human access requires break-glass procedure
@@ -126,15 +130,15 @@ Requirements:
 # Production Vault Structure
 
 /prod/database/primary:
-  username: prod_service_account  # Service account with minimal privileges
+  username: prod_service_account # Service account with minimal privileges
   password: <auto-rotated every 90 days>
   read_replica_hosts:
     - replica-1.prod.internal
     - replica-2.prod.internal
 
 /prod/tls_certificates/web:
-  certificate: <cert.pem>  # Auto-renewed 30 days before expiration
-  private_key: <key.pem>  # Hardware-backed; never exported
+  certificate: <cert.pem> # Auto-renewed 30 days before expiration
+  private_key: <key.pem> # Hardware-backed; never exported
   key_id: prod-web-2024
   rotation_schedule: annually
 
@@ -147,12 +151,12 @@ Requirements:
 
 **Production Secret Access Procedures:**
 
-| Scenario | Method | Approval | Audit |
-|----------|--------|----------|-------|
-| Application startup | Service account token (short-lived) | Deployment approval | Logged in SIEM |
-| Emergency database access | Break-glass procedure | On-call lead + CISO | Immediate alert |
-| Credential rotation | Automated runner | None (scheduled) | Routine logging |
-| Key compromise | Emergency rotation | CTO/CISO | Incident log |
+| Scenario                  | Method                              | Approval            | Audit           |
+| ------------------------- | ----------------------------------- | ------------------- | --------------- |
+| Application startup       | Service account token (short-lived) | Deployment approval | Logged in SIEM  |
+| Emergency database access | Break-glass procedure               | On-call lead + CISO | Immediate alert |
+| Credential rotation       | Automated runner                    | None (scheduled)    | Routine logging |
+| Key compromise            | Emergency rotation                  | CTO/CISO            | Incident log    |
 
 ### Automated Secret Rotation
 
@@ -165,34 +169,34 @@ kind: CronJob
 metadata:
   name: db-secret-rotation
 spec:
-  schedule: "0 2 1 */3 *"  # 2 AM, first day of every 3rd month
+  schedule: "0 2 1 */3 *" # 2 AM, first day of every 3rd month
   jobTemplate:
     spec:
       template:
         spec:
           serviceAccountName: secret-rotator
           containers:
-          - name: rotator
-            image: postgres:15
-            command:
-            - /bin/sh
-            - -c
-            - |
-              # Fetch current password from vault
-              OLD_PASS=$(vault kv get -field=password prod/database/primary)
-              
-              # Generate new password
-              NEW_PASS=$(openssl rand -base64 32)
-              
-              # Update database user
-              psql -U admin -c "ALTER USER prod_service_account WITH PASSWORD '$NEW_PASS'"
-              
-              # Update vault
-              vault kv put prod/database/primary password="$NEW_PASS"
-              
-              # Notify applications (they refresh on next pod restart)
-              # or trigger rolling restart of deployments
-              kubectl rollout restart deployment/app-primary deployment/app-secondary
+            - name: rotator
+              image: postgres:15
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  # Fetch current password from vault
+                  OLD_PASS=$(vault kv get -field=password prod/database/primary)
+
+                  # Generate new password
+                  NEW_PASS=$(openssl rand -base64 32)
+
+                  # Update database user
+                  psql -U admin -c "ALTER USER prod_service_account WITH PASSWORD '$NEW_PASS'"
+
+                  # Update vault
+                  vault kv put prod/database/primary password="$NEW_PASS"
+
+                  # Notify applications (they refresh on next pod restart)
+                  # or trigger rolling restart of deployments
+                  kubectl rollout restart deployment/app-primary deployment/app-secondary
 ```
 
 **Certificate Auto-Renewal (30 days before expiration):**
@@ -226,7 +230,7 @@ jobs:
     steps:
       # Get secrets from GitHub Secrets Manager
       - uses: actions/checkout@v3
-      
+
       - name: Deploy with secrets
         env:
           DB_PASSWORD: ${{ secrets.PROD_DB_PASSWORD }}
@@ -237,7 +241,7 @@ jobs:
           helm deploy --set db.password=$DB_PASSWORD \
                       --set api.key=$API_KEY \
                       --set tls.key=$TLS_KEY
-          
+
           # Verify secrets NOT in logs
           if grep -i "password\|secret\|key" $GITHUB_STEP_SUMMARY; then
             echo "ERROR: Secret leaked in logs!"
@@ -246,6 +250,7 @@ jobs:
 ```
 
 **Prohibited in CI/CD:**
+
 - Secrets in shell scripts (they get printed in logs)
 - Secrets in YAML manifests committed to Git
 - Secrets as commit messages or Pull Request descriptions
@@ -264,7 +269,7 @@ repos:
       - id: gitleaks
         args: ['--verbose']
         stages: [commit]
-        
+
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.4.0
     hooks:
@@ -278,13 +283,13 @@ repos:
 # GitLab CI secret detection
 stages:
   - scan
-  
+
 secret_scan:
   stage: scan
   image: zricethezav/gitleaks:latest
   script:
     - gitleaks detect --verbose --exit-code=1
-  allow_failure: false  # Fail on secrets detected
+  allow_failure: false # Fail on secrets detected
 ```
 
 ### Secret Access Audit
@@ -306,17 +311,18 @@ secret_scan:
 # Daily scan for suspicious patterns
 SELECT timestamp, client_ip, action, path, error
 FROM vault_audit_log
-WHERE 
-  timestamp > now() - interval '24 hours'
-  AND (
-    client_ip NOT IN (allowed_ips)
-    OR action IN ('create', 'delete')  -- unusual actions
-    OR error IS NOT NULL  -- access denied = potential breach attempt
-  )
+WHERE
+timestamp > now() - interval '24 hours'
+AND (
+client_ip NOT IN (allowed_ips)
+OR action IN ('create', 'delete')  -- unusual actions
+OR error IS NOT NULL  -- access denied = potential breach attempt
+)
 ORDER BY timestamp DESC
 ```
 
 **Anomaly Detection Triggers:**
+
 - Access from unexpected IP address → block and alert
 - Excessive access attempts → rate limit and investigate
 - After-hours access to production secrets → escalate to CISO
@@ -337,7 +343,7 @@ ORDER BY timestamp DESC
 vault write auth/approle/role/breakglass/secret-id \
   ttl=1h \
   num_uses=1
-  
+
 # Usage
 vault login -method=approle role_id=$ROLE_ID secret_id=$SECRET_ID
 vault kv get prod/database/primary
@@ -346,12 +352,12 @@ vault kv get prod/database/primary
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
-|---|---|---|---|---|
-| Secret storage | A.9.2, A.10.1 | PO.5.1, PW.3 | A02:2021 | BAI04.02 |
-| Access control | A.9.2, A.9.4 | PO.1, PO.2 | A01:2021 | APO01.03 |
-| Rotation | A.9.2, A.10.1 | PO.5.1 | ASVS | BAI04.02 |
-| Audit logging | A.12.4, A.12.7 | RV.1, RV.2 | - | MEA02 |
+| EATGF Context  | ISO 27001:2022 | NIST SSDF    | OWASP    | COBIT    |
+| -------------- | -------------- | ------------ | -------- | -------- |
+| Secret storage | A.9.2, A.10.1  | PO.5.1, PW.3 | A02:2021 | BAI04.02 |
+| Access control | A.9.2, A.9.4   | PO.1, PO.2   | A01:2021 | APO01.03 |
+| Rotation       | A.9.2, A.10.1  | PO.5.1       | ASVS     | BAI04.02 |
+| Audit logging  | A.12.4, A.12.7 | RV.1, RV.2   | -        | MEA02    |
 
 ## Developer Checklist
 
@@ -374,24 +380,28 @@ Before implementing secrets management:
 ## Governance Implications
 
 **Risk if not implemented:**
+
 - Secrets leaked in source code; attackers gain production access
 - Shared credentials across services; one compromise affects all
 - Manual password management; rotation forgotten or skipped
 - Audit cannot track who accessed which secrets; insider threat undetectable
 
 **Operational impact:**
+
 - Development velocity increases with pre-commit scanning
 - Incident response time decreases (automated rotation limits damage window)
 - Operational complexity increases initially (vault learning curve)
 - Production resilience improves (automated credential management)
 
 **Audit consequences:**
+
 - Missing rotation evidence = ISO 27001 A.10.1 finding
 - Access audit trail = key evidence for incident investigation
 - Break-glass procedure = key compensating control for emergency access
 - Compromised credentials = reportable security incident
 
 **Cross-team dependencies:**
+
 - Development: secret integration into applications, pre-commit scanning
 - Platform/DevOps: vault infrastructure, rotation automation, audit logging
 - Security: audit oversight, anomaly investigation, break-glass approval
@@ -408,6 +418,6 @@ Before implementing secrets management:
 
 ## Version History
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major | Initial secrets management standard for Layer 08 |
+| Version | Date       | Change Type | Description                                      |
+| ------- | ---------- | ----------- | ------------------------------------------------ |
+| 1.0     | 2026-02-16 | Major       | Initial secrets management standard for Layer 08 |

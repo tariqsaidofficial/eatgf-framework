@@ -1,15 +1,15 @@
 # 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY
 
-| Field          | Value                                                                   |
-| -------------- | ----------------------------------------------------------------------- |
-| Document Type  | Policy                                                                  |
-| Version        | 1.0                                                                     |
-| Change Type    | Major (Initial)                                                         |
-| Classification | Controlled                                                              |
-| Effective Date | 2026-02-16                                                              |
-| Authority      | Chief Operating Officer and Crisis Management Team Lead                 |
-| EATGF Layer    | 04_POLICY_LAYER                                                         |
-| MCM Reference  | EATGF-APO-BCM-01, EATGF-BAI-REC-01, EATGF-DSS-RES-01                   |
+| Field          | Value                                                   |
+| -------------- | ------------------------------------------------------- |
+| Document Type  | Policy                                                  |
+| Version        | 1.0                                                     |
+| Change Type    | Major (Initial)                                         |
+| Classification | Controlled                                              |
+| Effective Date | 2026-02-16                                              |
+| Authority      | Chief Operating Officer and Crisis Management Team Lead |
+| EATGF Layer    | 04_POLICY_LAYER                                         |
+| MCM Reference  | EATGF-BCP-PLAN-01, EATGF-BCP-TEST-01, EATGF-BCP-RTO-01  |
 
 ---
 
@@ -39,12 +39,12 @@ This policy operates within **04_POLICY_LAYER** as the primary business continui
 
 All business functions and supporting systems classified by criticality and assigned recovery targets:
 
-| Criticality Tier | Recovery Time Objective (RTO) | Recovery Point Objective (RPO) | Definition | Examples |
-|---|---|---|---|---|
-| **Critical** | 4 hours | 30 minutes | Business operations halt; immediate revenue impact | Payment processing, customer authentication, order fulfillment |
-| **High** | 8 hours | 1 hour | Operational degradation; customer-facing impact | Customer portal, booking systems, data analytics |
-| **Medium** | 24 hours | 4 hours | Internal operational impact; no external customer impact | Internal tools, HR systems, reporting systems |
-| **Low** | 72 hours | 24 hours | Convenience impact only; business continues with workarounds | Internal documentation, training systems, archived data |
+| Criticality Tier | Recovery Time Objective (RTO) | Recovery Point Objective (RPO) | Definition                                                   | Examples                                                       |
+| ---------------- | ----------------------------- | ------------------------------ | ------------------------------------------------------------ | -------------------------------------------------------------- |
+| **Critical**     | 4 hours                       | 30 minutes                     | Business operations halt; immediate revenue impact           | Payment processing, customer authentication, order fulfillment |
+| **High**         | 8 hours                       | 1 hour                         | Operational degradation; customer-facing impact              | Customer portal, booking systems, data analytics               |
+| **Medium**       | 24 hours                      | 4 hours                        | Internal operational impact; no external customer impact     | Internal tools, HR systems, reporting systems                  |
+| **Low**          | 72 hours                      | 24 hours                       | Convenience impact only; business continues with workarounds | Internal documentation, training systems, archived data        |
 
 **Assignment process:** Business unit leaders, IT leadership, and COO establish criticality tier during annual planning cycle; changes require documented change request and COO approval.
 
@@ -100,12 +100,12 @@ All business functions and supporting systems classified by criticality and assi
 
 **Backup Tiers and Retention:**
 
-| Backup Type | Frequency | Retention | Storage | Encryption |
-|---|---|---|---|---|
-| Continuous replication (Tier 1) | Real-time (< 1 min latency) | 7 days rolling | Off-site secondary datacenter | AES-256 in transit; AES-256 at rest |
-| Daily incremental (Tier 2-3) | Daily at 0200 UTC | 30-90 days | On-site + cloud storage | AES-256 at rest |
-| Weekly full (Tier 3-4) | Weekly (Sunday 0200 UTC) | 12 months | Archive storage + cloud | AES-256 at rest; encrypted archive vaults |
-| Monthly archives (Tier 3-4) | Monthly (first Sunday) | 5 years | Immutable cloud archive | Immutable archive with retention hold |
+| Backup Type                     | Frequency                   | Retention      | Storage                       | Encryption                                |
+| ------------------------------- | --------------------------- | -------------- | ----------------------------- | ----------------------------------------- |
+| Continuous replication (Tier 1) | Real-time (< 1 min latency) | 7 days rolling | Off-site secondary datacenter | AES-256 in transit; AES-256 at rest       |
+| Daily incremental (Tier 2-3)    | Daily at 0200 UTC           | 30-90 days     | On-site + cloud storage       | AES-256 at rest                           |
+| Weekly full (Tier 3-4)          | Weekly (Sunday 0200 UTC)    | 12 months      | Archive storage + cloud       | AES-256 at rest; encrypted archive vaults |
+| Monthly archives (Tier 3-4)     | Monthly (first Sunday)      | 5 years        | Immutable cloud archive       | Immutable archive with retention hold     |
 
 **Backup Location Strategy:**
 
@@ -127,14 +127,14 @@ All business functions and supporting systems classified by criticality and assi
 
 **Crisis Management Structure:**
 
-| Role | Authority | Responsibility |
-|------|-----------|---|
-| **Crisis Commander** (COO or delegated) | Declares disaster, activates DR plan | Operational continuity, resource allocation, stakeholder communication |
-| **Technical Recovery Lead** (CIO or delegated) | Manages system recovery execution | Recovery site activation, RTO/RPO tracking, technical decision-making |
-| **Infrastructure Lead** | Manages data center and network recovery | Network restoration, database failover, infrastructure availability |
-| **Application Lead** | Manages application recovery and validation | Application failover, data consistency verification, service validation |
-| **Communications Lead** | Manages external and internal notifications | Customer notification, status page updates, executive briefing |
-| **Finance Lead** | Manages disaster costs and insurance claims | Cost tracking, insurance notification, vendor invoicing |
+| Role                                           | Authority                                   | Responsibility                                                          |
+| ---------------------------------------------- | ------------------------------------------- | ----------------------------------------------------------------------- |
+| **Crisis Commander** (COO or delegated)        | Declares disaster, activates DR plan        | Operational continuity, resource allocation, stakeholder communication  |
+| **Technical Recovery Lead** (CIO or delegated) | Manages system recovery execution           | Recovery site activation, RTO/RPO tracking, technical decision-making   |
+| **Infrastructure Lead**                        | Manages data center and network recovery    | Network restoration, database failover, infrastructure availability     |
+| **Application Lead**                           | Manages application recovery and validation | Application failover, data consistency verification, service validation |
+| **Communications Lead**                        | Manages external and internal notifications | Customer notification, status page updates, executive briefing          |
+| **Finance Lead**                               | Manages disaster costs and insurance claims | Cost tracking, insurance notification, vendor invoicing                 |
 
 **Crisis command structure:** Crisis Commander chairs daily syncs until RTO achieved; escalation to board of directors for disasters exceeding 8 hours or impacting customer commitment SLAs.
 
@@ -215,6 +215,7 @@ All business functions and supporting systems classified by criticality and assi
 **Annual Testing Requirements:**
 
 **Q1 – Full Recovery Test (Critical Systems):**
+
 - Tier 1 critical systems recovered to secondary site
 - Full operational validation performed (end-to-end business process testing)
 - RTO/RPO targets validated and measured
@@ -224,6 +225,7 @@ All business functions and supporting systems classified by criticality and assi
 - Success criteria: RTO < target, RPO met, all critical functions validated
 
 **Q2 – Tabletop Exercise (Executive):**
+
 - Hypothetical disaster scenario presented to executive crisis command
 - Decision-making and communication flows tested
 - Escalation procedures validated (notification to board, external stakeholder communication)
@@ -232,6 +234,7 @@ All business functions and supporting systems classified by criticality and assi
 - Success criteria: Clear decision authority, communication procedures followed
 
 **Q3 – Backup Restoration Test (Medium Systems):**
+
 - Tier 3-4 systems selected randomly; backups restored to test environment
 - Data integrity and completeness validated
 - Restoration time measured and compared to documented procedure
@@ -241,6 +244,7 @@ All business functions and supporting systems classified by criticality and assi
 - Success criteria: Backup integrity confirmed, restoration procedure validated
 
 **Q4 – Database Replication Test (High Systems):**
+
 - Database replication to secondary site tested and validated
 - Replication lag measured; RPO target compliance confirmed
 - Transaction consistency verified across primary and secondary
@@ -293,13 +297,13 @@ All business functions and supporting systems classified by criticality and assi
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | COBIT |
-|---|---|---|---|
-| BC/DR planning and RTO/RPO definition | A.5.30 (IT continuity planning), A.8.36 (Business continuity management) | CP-2 (Contingency Planning), IR-4 (Incident Handling) | BAI04.05 (Manage IT assets—continuity), DSS04.01 (Manage service delivery) |
-| Backup and replication strategy | A.6.8 (Backup of information), A.8.10 (Redundancy) | CP-4 (Contingency Plan Testing), CP-9 (Information System Backup) | DSS04.07 (Ensure service continuity and availability) |
-| Disaster recovery testing and validation | A.5.30, A.8.36 (Testing procedures), A.8.17 (Monitoring) | CP-2 (Contingency Plan), CP-4 (Testing) | MEA01.01 (Monitor IT performance) |
-| Crisis management and escalation | A.5.30, A.6.10 (Incident management) | IR-1 (Coordination), IR-4 (Incident Handling) | DSS06.01 (Manage IT security incidents) |
-| Data residency and regulatory compliance | A.8.21 (Sensitive delivery of information), A.5.15 (Access control) | CP-2 (Data protection in recovery) | APO12.06 (Compliance reporting) |
+| EATGF Context                            | ISO 27001:2022                                                           | NIST SSDF                                                         | COBIT                                                                      |
+| ---------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| BC/DR planning and RTO/RPO definition    | A.5.30 (IT continuity planning), A.8.36 (Business continuity management) | CP-2 (Contingency Planning), IR-4 (Incident Handling)             | BAI04.05 (Manage IT assets—continuity), DSS04.01 (Manage service delivery) |
+| Backup and replication strategy          | A.6.8 (Backup of information), A.8.10 (Redundancy)                       | CP-4 (Contingency Plan Testing), CP-9 (Information System Backup) | DSS04.07 (Ensure service continuity and availability)                      |
+| Disaster recovery testing and validation | A.5.30, A.8.36 (Testing procedures), A.8.17 (Monitoring)                 | CP-2 (Contingency Plan), CP-4 (Testing)                           | MEA01.01 (Monitor IT performance)                                          |
+| Crisis management and escalation         | A.5.30, A.6.10 (Incident management)                                     | IR-1 (Coordination), IR-4 (Incident Handling)                     | DSS06.01 (Manage IT security incidents)                                    |
+| Data residency and regulatory compliance | A.8.21 (Sensitive delivery of information), A.5.15 (Access control)      | CP-2 (Data protection in recovery)                                | APO12.06 (Compliance reporting)                                            |
 
 ## Developer Checklist
 
@@ -367,6 +371,6 @@ All business functions and supporting systems classified by criticality and assi
 
 **Version History**
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |
+| Version | Date       | Change Type     | Description                                              |
+| ------- | ---------- | --------------- | -------------------------------------------------------- |
+| 1.0     | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |

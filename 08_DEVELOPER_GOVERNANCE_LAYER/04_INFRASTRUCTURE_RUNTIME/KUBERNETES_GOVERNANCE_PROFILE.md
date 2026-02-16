@@ -57,7 +57,7 @@ Define governance controls for Kubernetes cluster security, pod isolation, netwo
 ### Service Account & RBAC
 
 ```yaml
-# ✅ COMPLIANT: Minimal service account, no cluster-admin
+#  COMPLIANT: Minimal service account, no cluster-admin
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -103,7 +103,7 @@ subjects:
 ### Network Policy (Zero-Trust)
 
 ```yaml
-# ✅ COMPLIANT: Deny-all default with explicit allows
+#  COMPLIANT: Deny-all default with explicit allows
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -152,7 +152,7 @@ spec:
 ### Pod Security & Secrets
 
 ```yaml
-# ✅ COMPLIANT: Read-only filesystem, drop capabilities
+#  COMPLIANT: Read-only filesystem, drop capabilities
 ---
 apiVersion: v1
 kind: Pod
@@ -219,7 +219,7 @@ spec:
 ### Audit Logging Configuration
 
 ```yaml
-# ✅ COMPLIANT: Capture secret access, RBAC denials
+#  COMPLIANT: Capture secret access, RBAC denials
 ---
 apiVersion: audit.k8s.io/v1
 kind: Policy

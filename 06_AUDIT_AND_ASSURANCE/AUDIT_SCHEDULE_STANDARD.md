@@ -9,7 +9,7 @@
 | Effective Date | 2026-02-16                                      |
 | Authority      | Chief Audit Officer and Internal Audit Function |
 | EATGF Layer    | 06_AUDIT_AND_ASSURANCE                          |
-| MCM Reference  | EATGF-MEA-AUD-01, EATGF-MEA-AUD-02              |
+| MCM Reference  | EATGF-MEA-AUD-01, EATGF-MEA-PERF-01             |
 
 ---
 
@@ -78,19 +78,19 @@ All 35 EATGF controls classified by audit frequency:
 
 **Phase 1Q2 – November 2025 (Weeks 5-9):**
 
-| Week  | Control Code     | Control Name                            | Audit Type | Auditor Assigned | Evidence Due |
-| ----- | ---------------- | --------------------------------------- | ---------- | ---------------- | ------------ |
-| Wk5-6 | EATGF-BAI-CHG-01 | Change Management Implementation        | Full Audit | Auditor F        | Oct 28       |
-| Wk6-7 | EATGF-DSS-INC-01 | Incident Response Capability Maturity   | Full Audit | Auditor G + H    | Nov 4        |
-| Wk8   | EATGF-APO-BCM-01 | Business Continuity Plan Readiness      | Full Audit | Auditor C        | Nov 18       |
-| Wk9   | EATGF-BAI-REC-01 | Disaster Recovery Testing Effectiveness | Full Audit | Auditor I        | Nov 25       |
+| Week  | Control Code      | Control Name                            | Audit Type | Auditor Assigned | Evidence Due |
+| ----- | ----------------- | --------------------------------------- | ---------- | ---------------- | ------------ |
+| Wk5-6 | EATGF-BAI-CHG-01  | Change Management Implementation        | Full Audit | Auditor F        | Oct 28       |
+| Wk6-7 | EATGF-DSS-INC-01  | Incident Response Capability Maturity   | Full Audit | Auditor G + H    | Nov 4        |
+| Wk8   | EATGF-BCP-PLAN-01 | Business Continuity Plan Readiness      | Full Audit | Auditor C        | Nov 18       |
+| Wk9   | EATGF-BCP-TEST-01 | Disaster Recovery Testing Effectiveness | Full Audit | Auditor I        | Nov 25       |
 
 **Phase 1Q3 – December 2025 (Weeks 11-13):**
 
-| Week    | Control Code     | Control Name           | Audit Type     | Auditor Assigned | Evidence Due |
-| ------- | ---------------- | ---------------------- | -------------- | ---------------- | ------------ |
-| Wk11    | EATGF-DSS-VEN-01 | Vendor Risk Management | Full Audit     | Auditor J        | Dec 2        |
-| Wk12-13 | Phase 1          | Reporting & Close-out  | Administrative | Audit Manager    | -            |
+| Week    | Control Code      | Control Name           | Audit Type     | Auditor Assigned | Evidence Due |
+| ------- | ----------------- | ---------------------- | -------------- | ---------------- | ------------ |
+| Wk11    | EATGF-APO-RISK-01 | Vendor Risk Management | Full Audit     | Auditor J        | Dec 2        |
+| Wk12-13 | Phase 1           | Reporting & Close-out  | Administrative | Audit Manager    | -            |
 
 **Q1 Audit Load:** 9 controls audited; 5-6 full audits requiring design review + testing; 8 audit team members required (~250-300 hours total).
 
@@ -105,13 +105,13 @@ All 35 EATGF controls classified by audit frequency:
 | EATGF-EDM-GOV-01 (Governance Charter)          | X   |     |     |     |
 | EATGF-APO-SEC-01 (Information Security Policy) | X   |     |     |     |
 | EATGF-DSS-SEC-01 (Access Control)              | X   |     |     |     |
-| EATGF-APO-BCM-01 (Business Continuity)         | X   |     |     |     |
+| EATGF-BCP-PLAN-01 (Business Continuity)        | X   |     |     |     |
 | EATGF-DSS-INC-01 (Incident Response)           | X   |     |     |     |
-| EATGF-APO-VEN-01 (Vendor Risk Mgmt)            | X   |     |     |     |
-| EATGF-DSS-PRI-01 (Data Privacy)                |     | X   |     |     |
+| EATGF-APO-RISK-01 (Vendor Risk Mgmt)           | X   |     |     |     |
+| EATGF-DATA-PRIV-01 (Data Privacy)              |     | X   |     |     |
 | EATGF-BAI-CHG-01 (Change Management)           | X   |     |     |     |
-| EATGF-BAI-REC-01 (DR Testing)                  | X   |     |     |     |
-| EATGF-APO-POL-01 (Acceptable Use)              |     |     | X   |     |
+| EATGF-BCP-TEST-01 (DR Testing)                 | X   |     |     |     |
+| EATGF-APO-SEC-01 (Acceptable Use)              |     |     | X   |     |
 
 **High Risk Tier (Full Audit):**
 

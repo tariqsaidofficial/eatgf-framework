@@ -49,10 +49,10 @@ Node.js functions as:
 
 **Conformance Obligations:**
 
-- ✅ 01_SECURE_SDLC standards
-- ✅ 02_API_GOVERNANCE standards (REST-specific controls)
-- ✅ 03_DEVSECOPS standards
-- ✅ 04_CLOUD standards (if deployed in SaaS context)
+-  01_SECURE_SDLC standards
+-  02_API_GOVERNANCE standards (REST-specific controls)
+-  03_DEVSECOPS standards
+-  04_CLOUD standards (if deployed in SaaS context)
 
 ## Relationship to EATGF Layers
 
@@ -359,7 +359,7 @@ export class InvoiceController {
 **Non-Compliant Example:**
 
 ```typescript
-// ❌ Session authentication for API
+//  Session authentication for API
 @Controller("api/v1")
 export class InvoiceController {
   @UseGuards(SessionGuard) // Vulnerable
@@ -416,7 +416,7 @@ async getInvoices(@Req() req: Request) {
 **Non-Compliant Example:**
 
 ```typescript
-// ❌ No object-level permission check
+//  No object-level permission check
 @Get(":tenantId/invoices")
 async getInvoices(@Req() req: Request) {
   const tenantId = req.params.tenantId;
@@ -459,7 +459,7 @@ app.use("/api/v2", v2Router);
 **Non-Compliant Example:**
 
 ```typescript
-// ❌ No versioning; breaking changes in production
+//  No versioning; breaking changes in production
 app.get("/api/invoices", (req, res) => {
   res.json({ data: [] }); // Breaking change from old format
 });
@@ -507,7 +507,7 @@ async create(@Body() dto: CreateInvoiceDto) {
 **Non-Compliant Example:**
 
 ```typescript
-// ❌ No validation; raw request body
+//  No validation; raw request body
 @Post("invoices")
 async create(@Body() invoice: any) {
   return this.service.create(invoice);  // Injection risk
@@ -565,7 +565,7 @@ app.get("/api/v1/invoices", limiter, getInvoices);
 **Non-Compliant Example:**
 
 ```typescript
-// ❌ No rate limiting; open to DoS
+//  No rate limiting; open to DoS
 @Get("invoices")
 async getInvoices(@Req() req: Request) {
   return this.service.findByTenant(req.user.tenant_id);  // No protection
@@ -629,7 +629,7 @@ describe("InvoiceController", () => {
 **Non-Compliant Example:**
 
 ```typescript
-// ❌ No tests; no schema validation
+//  No tests; no schema validation
 // No test files present
 // No OpenAPI/Swagger decorators
 ```
@@ -687,7 +687,7 @@ export class LoggerMiddleware implements NestMiddleware {
 **Non-Compliant Example:**
 
 ```typescript
-// ❌ No structured logging
+//  No structured logging
 logger.info(`User ${req.user} accessed ${req.path}`); // Plain text
 ```
 
@@ -736,7 +736,7 @@ app.use((req, res, next) => {
 **Non-Compliant Example:**
 
 ```typescript
-// ❌ CORS wide open; HTTP allowed
+//  CORS wide open; HTTP allowed
 app.use(cors({ origin: "*" })); // Dangerous
 // No HTTPS redirect in production
 ```

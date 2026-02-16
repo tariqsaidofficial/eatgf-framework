@@ -1,14 +1,14 @@
 # Infrastructure Zero Trust Architecture Standard
 
-| Field | Value |
-|-------|-------|
-| Document Type | Implementation Standard |
-| Version | 1.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-16 |
-| Authority | Chief Information Security Officer |
-| EATGF Layer | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE |
-| MCM Reference | EATGF-CLOUD-ZERO-TRUST-01 |
+| Field          | Value                                                        |
+| -------------- | ------------------------------------------------------------ |
+| Document Type  | Implementation Standard                                      |
+| Version        | 1.0                                                          |
+| Classification | Controlled                                                   |
+| Effective Date | 2026-02-16                                                   |
+| Authority      | Chief Information Security Officer                           |
+| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE |
+| MCM Reference  | EATGF-DSS-SEC-01                                             |
 
 ---
 
@@ -39,12 +39,12 @@ Implement Zero Trust architecture for cloud infrastructure: assume breach, verif
 
 **Traditional vs. Zero Trust:**
 
-| Traditional | Zero Trust |
-|-------------|-----------|
-| Network perimeter (DMZ) | No perimeter; cryptographic identity |
-| VPN access | VPN + device posture + user verification |
-| Private DNS | Private DNS + cryptographic validation |
-| Security groups (source IP) | mTLS identity + RBAC policies |
+| Traditional                 | Zero Trust                               |
+| --------------------------- | ---------------------------------------- |
+| Network perimeter (DMZ)     | No perimeter; cryptographic identity     |
+| VPN access                  | VPN + device posture + user verification |
+| Private DNS                 | Private DNS + cryptographic validation   |
+| Security groups (source IP) | mTLS identity + RBAC policies            |
 
 **Zero Trust Network Architecture:**
 
@@ -55,13 +55,13 @@ Application Load Balancer:
   - Client cert verification (mutual TLS)
   - Certificate pinning for known clients
   - WAF rules: rate limiting, IP reputation
-  
+
 Service Mesh (Istio/Linkerd):
   - mTLS between all services
   - Service identity via Kubernetes SPIFFE/SVID certificates
   - Automatic certificate rotation (24-hour TTL)
   - Network policies: allow-list model (default deny)
-  
+
 Database Access:
   - No direct internet-facing endpoints
   - Bastion host + hardware key for access
@@ -81,7 +81,7 @@ metadata:
   name: default
 spec:
   mtls:
-    mode: STRICT  # All traffic must be mTLS
+    mode: STRICT # All traffic must be mTLS
 
 ---
 apiVersion: security.istio.io/v1beta1
@@ -93,34 +93,34 @@ spec:
     matchLabels:
       app: api-server
   rules:
-  - from:
-    - source:
-        principals:
-        - cluster.local/ns/default/sa/web-frontend
-    to:
-    - operation:
-        methods: ["GET", "POST"]
-        paths: ["/api/v1/*"]
+    - from:
+        - source:
+            principals:
+              - cluster.local/ns/default/sa/web-frontend
+      to:
+        - operation:
+            methods: ["GET", "POST"]
+            paths: ["/api/v1/*"]
 ```
 
 **Service-to-Service Identity:**
 
 ```javascript
 // Node.js microservice with mTLS
-const fs = require('fs');
-const https = require('https');
+const fs = require("fs");
+const https = require("https");
 
 const options = {
-  key: fs.readFileSync('/var/run/secrets/tls/key.pem'),
-  cert: fs.readFileSync('/var/run/secrets/tls/cert.pem'),
-  ca: fs.readFileSync('/var/run/secrets/tls/ca.pem'),
-  rejectUnauthorized: true  // Verify server certificate
+  key: fs.readFileSync("/var/run/secrets/tls/key.pem"),
+  cert: fs.readFileSync("/var/run/secrets/tls/cert.pem"),
+  ca: fs.readFileSync("/var/run/secrets/tls/ca.pem"),
+  rejectUnauthorized: true, // Verify server certificate
 };
 
 const agent = new https.Agent(options);
 
 // Request includes client certificate
-https.get('https://api-service:443/data', { agent }, (res) => {
+https.get("https://api-service:443/data", { agent }, (res) => {
   // Both client and server authenticated
 });
 ```
@@ -151,8 +151,8 @@ metadata:
 spec:
   podSelector: {}
   policyTypes:
-  - Ingress
-  - Egress
+    - Ingress
+    - Egress
 
 ---
 # Allow specific: web → api
@@ -165,15 +165,15 @@ spec:
     matchLabels:
       tier: api
   policyTypes:
-  - Ingress
+    - Ingress
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          tier: web
-    ports:
-    - protocol: TCP
-      port: 443  # HTTPS only
+    - from:
+        - podSelector:
+            matchLabels:
+              tier: web
+      ports:
+        - protocol: TCP
+          port: 443 # HTTPS only
 
 ---
 # Allow specific: api → database
@@ -186,15 +186,15 @@ spec:
     matchLabels:
       tier: database
   policyTypes:
-  - Ingress
+    - Ingress
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          tier: api
-    ports:
-    - protocol: TCP
-      port: 5432
+    - from:
+        - podSelector:
+            matchLabels:
+              tier: api
+      ports:
+        - protocol: TCP
+          port: 5432
 ```
 
 ### Principle of Least Privilege
@@ -214,14 +214,14 @@ kind: Role
 metadata:
   name: api-service-role
 rules:
-- apiGroups: [""]
-  resources: ["configmaps"]
-  resourceNames: ["api-config"]  # Only specific configmap
-  verbs: ["get"]
-- apiGroups: [""]
-  resources: ["secrets"]
-  resourceNames: ["api-tls-cert"]  # Only TLS secret
-  verbs: ["get"]
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    resourceNames: ["api-config"] # Only specific configmap
+    verbs: ["get"]
+  - apiGroups: [""]
+    resources: ["secrets"]
+    resourceNames: ["api-tls-cert"] # Only TLS secret
+    verbs: ["get"]
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -233,8 +233,8 @@ roleRef:
   kind: Role
   name: api-service-role
 subjects:
-- kind: ServiceAccount
-  name: api-service
+  - kind: ServiceAccount
+    name: api-service
 ```
 
 **Cloud IAM (AWS/GCP example):**
@@ -245,10 +245,7 @@ subjects:
   "Statement": [
     {
       "Effect": "Allow",
-      "Action": [
-        "s3:GetObject",
-        "s3:PutObject"
-      ],
+      "Action": ["s3:GetObject", "s3:PutObject"],
       "Resource": "arn:aws:s3:::prod-data/app-123/*",
       "Condition": {
         "IpAddress": {
@@ -285,16 +282,17 @@ device_requirements:
 // Re-verify identity every 30 minutes for sensitive operations
 async function verifyIdentity(req, res, next) {
   const tokenAge = Date.now() - req.session.issued_at;
-  
-  if (tokenAge > 30 * 60 * 1000) {  // 30 minutes
+
+  if (tokenAge > 30 * 60 * 1000) {
+    // 30 minutes
     // Re-authenticate
     const verified = await oidc.verify(req.session.id_token);
     if (!verified) {
-      return res.status(403).send('Session re-verification failed');
+      return res.status(403).send("Session re-verification failed");
     }
     req.session.last_verified = Date.now();
   }
-  
+
   next();
 }
 ```
@@ -312,14 +310,14 @@ logging:
     - action (allow/deny)
     - timestamp
     - request_id (for tracing)
-  
+
   access_events:
     - principal_identity
     - resource_accessed
     - action
     - result (success/failure)
     - timestamp
-  
+
   data_events:
     - who accessed what data
     - when
@@ -336,11 +334,11 @@ alerts:
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST | COBIT |
-|---|---|---|---|
+| EATGF Context           | ISO 27001:2022      | NIST                  | COBIT |
+| ----------------------- | ------------------- | --------------------- | ----- |
 | Zero Trust architecture | A.8.2, A.8.3, A.9.1 | CSF PR.AC, SP 800-207 | BAI10 |
-| Network segmentation | A.8.2 | CSF PR.AC | DSS05 |
-| Continuous verification | A.8.19, A.12.4 | CSF DE.AE | MEA02 |
+| Network segmentation    | A.8.2               | CSF PR.AC             | DSS05 |
+| Continuous verification | A.8.19, A.12.4      | CSF DE.AE             | MEA02 |
 
 ## Developer Checklist
 
@@ -357,6 +355,6 @@ alerts:
 
 ## Version History
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major | Initial Zero Trust architecture standard |
+| Version | Date       | Change Type | Description                              |
+| ------- | ---------- | ----------- | ---------------------------------------- |
+| 1.0     | 2026-02-16 | Major       | Initial Zero Trust architecture standard |

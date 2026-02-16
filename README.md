@@ -23,29 +23,29 @@ This repository serves as the **Authoritative Knowledge Centre Edition** of the 
 
 This repository includes:
 
-✅ **Master Control Matrix** – Single authoritative control inventory (35 controls across 7 COBIT domains)
+ **Master Control Matrix** – Single authoritative control inventory (35 controls across 7 COBIT domains)
 
-✅ **ISO-aligned Management System Specifications** – ISMS (ISO/IEC 27001:2022) and AIMS (ISO/IEC 42001:2023)
+ **ISO-aligned Management System Specifications** – ISMS (ISO/IEC 27001:2022) and AIMS (ISO/IEC 42001:2023)
 
-✅ **Cross-standard Mapping Architecture** – COBIT ↔ ISO ↔ NIST alignment matrices
+ **Cross-standard Mapping Architecture** – COBIT ↔ ISO ↔ NIST alignment matrices
 
-✅ **Governance Maturity and Performance Models** – Capability assessment frameworks and KPI definitions
+ **Governance Maturity and Performance Models** – Capability assessment frameworks and KPI definitions
 
-✅ **Policy Architecture Examples** – Governance charters and formal policy templates
+ **Policy Architecture Examples** – Governance charters and formal policy templates
 
-✅ **Domain-specific Governance Extensions** – AI and API governance frameworks
+ **Domain-specific Governance Extensions** – AI and API governance frameworks
 
-✅ **Audit and Assurance Framework Design** – Methodology aligned with ISO 19011:2018
+ **Audit and Assurance Framework Design** – Methodology aligned with ISO 19011:2018
 
 **This repository does not include:**
 
-❌ Operational tooling (no Excel, SharePoint, or deployment scripts)
+ Operational tooling (no Excel, SharePoint, or deployment scripts)
 
-❌ Vendor-specific configurations
+ Vendor-specific configurations
 
-❌ Organization-specific execution playbooks
+ Organization-specific execution playbooks
 
-❌ Deployment automation
+ Deployment automation
 
 ---
 
@@ -250,12 +250,12 @@ EATGF represents an original governance architecture synthesis developed by comb
 
 EATGF:
 
-- ✅ Creates novel control taxonomy and cross-standard alignment
-- ✅ Provides original governance architecture design
-- ✅ Supplies structured implementation guidance
-- ❌ Does not replicate proprietary standard content
-- ❌ Does not claim certification equivalence
-- ❌ Does not substitute for acquiring licenses to referenced standards
+-  Creates novel control taxonomy and cross-standard alignment
+-  Provides original governance architecture design
+-  Supplies structured implementation guidance
+-  Does not replicate proprietary standard content
+-  Does not claim certification equivalence
+-  Does not substitute for acquiring licenses to referenced standards
 
 **Attribution Format:**
 
@@ -281,7 +281,7 @@ Source: https://github.com/tariqsaidofficial/eatgf-framework
 
 ---
 
-## 📖 How to Use This Framework
+##  How to Use This Framework
 
 **For Governance Professionals:** Start with [00_FOUNDATION](00_FOUNDATION/README.md) to understand framework authority and control inventory.
 

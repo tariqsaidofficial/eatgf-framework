@@ -1,15 +1,15 @@
 # 04_INCIDENT_RESPONSE_POLICY
 
-| Field          | Value                                                                   |
-| -------------- | ----------------------------------------------------------------------- |
-| Document Type  | Policy                                                                  |
-| Version        | 1.0                                                                     |
-| Change Type    | Major (Initial)                                                         |
-| Classification | Controlled                                                              |
-| Effective Date | 2026-02-16                                                              |
-| Authority      | Chief Information Security Officer and Incident Response Team Lead      |
-| EATGF Layer    | 04_POLICY_LAYER                                                         |
-| MCM Reference  | EATGF-DSS-INC-01, EATGF-DSS-INC-02, EATGF-MEA-AUD-01                   |
+| Field          | Value                                                              |
+| -------------- | ------------------------------------------------------------------ |
+| Document Type  | Policy                                                             |
+| Version        | 1.0                                                                |
+| Change Type    | Major (Initial)                                                    |
+| Classification | Controlled                                                         |
+| Effective Date | 2026-02-16                                                         |
+| Authority      | Chief Information Security Officer and Incident Response Team Lead |
+| EATGF Layer    | 04_POLICY_LAYER                                                    |
+| MCM Reference  | EATGF-DSS-INC-01, EATGF-MEA-AUD-01                                 |
 
 ---
 
@@ -39,12 +39,12 @@ This policy operates within **04_POLICY_LAYER** as the primary incident response
 
 All incidents classified by impact severity and response SLA:
 
-| Severity | Definition | Impact | Response SLA | Escalation |
-|----------|-----------|--------|-------------|-----------|
-| **P1 - Critical** | Confirmed data breach, active attack, system compromise | Organizational operations halted, data exfiltration, customer impact | 1 hour detection-to-response | CISO, CEO, Board |
-| **P2 - High** | Suspicious activity, unauthorized access, malware detected | Operational degradation, elevated risk to critical systems | 4 hours detection-to-response | CISO, CTO, line management |
-| **P3 - Medium** | Configuration issues, failed access attempts, policy violations | System availability degraded, non-critical data at risk | 8 hours detection-to-response | SOC Team Lead, ISMS Manager |
-| **P4 - Low** | Informational alerts, routine policy violations, isolated errors | No immediate operational impact | 24 hours detection-to-response | SOC Team, documented in log |
+| Severity          | Definition                                                       | Impact                                                               | Response SLA                   | Escalation                  |
+| ----------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------ | --------------------------- |
+| **P1 - Critical** | Confirmed data breach, active attack, system compromise          | Organizational operations halted, data exfiltration, customer impact | 1 hour detection-to-response   | CISO, CEO, Board            |
+| **P2 - High**     | Suspicious activity, unauthorized access, malware detected       | Operational degradation, elevated risk to critical systems           | 4 hours detection-to-response  | CISO, CTO, line management  |
+| **P3 - Medium**   | Configuration issues, failed access attempts, policy violations  | System availability degraded, non-critical data at risk              | 8 hours detection-to-response  | SOC Team Lead, ISMS Manager |
+| **P4 - Low**      | Informational alerts, routine policy violations, isolated errors | No immediate operational impact                                      | 24 hours detection-to-response | SOC Team, documented in log |
 
 **Escalation authority:** P1 incidents escalated to CISO within 1 hour of detection regardless of confirmation status. Retroactive classification review conducted within 6 hours.
 
@@ -119,14 +119,14 @@ Long-term containment objectives:
 
 **Incident Response Team Composition:**
 
-| Role | Responsibility | Authority |
-|------|---|---|
-| **CISO** | Incident classification, executive escalation, response direction | Authorizes evidence handling, external reporting, service interruptions |
-| **SOC Manager** | Day-to-day incident coordination, team leadership | Incident triage, containment decisions, team tasking |
-| **Incident Responder** | Investigation, evidence collection, technical analysis | Evidence handling per chain-of-custody, system access for investigation |
-| **Forensics Specialist** | Digital forensics, evidence preservation, attack analysis | Forensic toolkit deployment, legal-grade evidence collection |
-| **Communications Lead** | External notifications, regulatory reporting, customer communication | Press releases, regulator notifications, customer incident disclosure |
-| **Legal Counsel** | Regulatory obligations, notification requirements, legal liability | Guidance on breach notification, privilege claims, subpoena response |
+| Role                     | Responsibility                                                       | Authority                                                               |
+| ------------------------ | -------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **CISO**                 | Incident classification, executive escalation, response direction    | Authorizes evidence handling, external reporting, service interruptions |
+| **SOC Manager**          | Day-to-day incident coordination, team leadership                    | Incident triage, containment decisions, team tasking                    |
+| **Incident Responder**   | Investigation, evidence collection, technical analysis               | Evidence handling per chain-of-custody, system access for investigation |
+| **Forensics Specialist** | Digital forensics, evidence preservation, attack analysis            | Forensic toolkit deployment, legal-grade evidence collection            |
+| **Communications Lead**  | External notifications, regulatory reporting, customer communication | Press releases, regulator notifications, customer incident disclosure   |
+| **Legal Counsel**        | Regulatory obligations, notification requirements, legal liability   | Guidance on breach notification, privilege claims, subpoena response    |
 
 **Escalation Path:** SOC Manager → CISO → CTO/COO → CEO/Board (for P1 incidents affecting customer data or brand reputation)
 
@@ -230,14 +230,14 @@ Long-term containment objectives:
 
 ## Control Mapping
 
-| EATGF Context | ISO 27001:2022 | NIST SSDF | OWASP | COBIT |
-|---|---|---|---|---|
-| Incident detection and classification | A.5.26 (Response to information security incidents) | PO.1.2 (Incident coordination process) | SAMM Governance 2.1 (Incident Management) | DSS06.01 (Prepare for incident handling) |
-| Response SLA and escalation | A.5.26, A.6.10 (Information security incident management procedures) | PO.3.2 (Incident response execution) | ASVS 9.2 (Data breach response) | DSS06.02 (Detect security incidents) |
-| Investigation and containment | A.5.26, A.6.11 (Restoring information systems) | PO.3.2 (Containment and eradication) | SAMM Operations 1.1 (Incident Analysis) | DSS06.03 (Report security incidents) |
-| Post-incident review and RCA | A.5.26, A.8.17 (Monitoring and review of information security) | PO.1.1 (Policy and strategy) | SAMM Operations 2.2 (Post-incident assessment) | MEA01.01 (Monitor effectiveness) |
-| Evidence preservation and chain of custody | A.5.23 (Information security to be addressed in supplier agreements), A.7.1 (Positions with access to information assets) | PO.1.3 (Records and forensic evidence management) | ASVS 9.2.5 (Forensic evidence gathering) | DSS06.06 (Implement improvements) |
-| Regulatory notification | A.6.10, A.6.11 (Notification procedures) | PO.3.3 (Stakeholder notification) | ASVS 8.3.2 (Breach notification) | APO12.06 (Compliance reporting) |
+| EATGF Context                              | ISO 27001:2022                                                                                                            | NIST SSDF                                         | OWASP                                          | COBIT                                    |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ---------------------------------------------- | ---------------------------------------- |
+| Incident detection and classification      | A.5.26 (Response to information security incidents)                                                                       | PO.1.2 (Incident coordination process)            | SAMM Governance 2.1 (Incident Management)      | DSS06.01 (Prepare for incident handling) |
+| Response SLA and escalation                | A.5.26, A.6.10 (Information security incident management procedures)                                                      | PO.3.2 (Incident response execution)              | ASVS 9.2 (Data breach response)                | DSS06.02 (Detect security incidents)     |
+| Investigation and containment              | A.5.26, A.6.11 (Restoring information systems)                                                                            | PO.3.2 (Containment and eradication)              | SAMM Operations 1.1 (Incident Analysis)        | DSS06.03 (Report security incidents)     |
+| Post-incident review and RCA               | A.5.26, A.8.17 (Monitoring and review of information security)                                                            | PO.1.1 (Policy and strategy)                      | SAMM Operations 2.2 (Post-incident assessment) | MEA01.01 (Monitor effectiveness)         |
+| Evidence preservation and chain of custody | A.5.23 (Information security to be addressed in supplier agreements), A.7.1 (Positions with access to information assets) | PO.1.3 (Records and forensic evidence management) | ASVS 9.2.5 (Forensic evidence gathering)       | DSS06.06 (Implement improvements)        |
+| Regulatory notification                    | A.6.10, A.6.11 (Notification procedures)                                                                                  | PO.3.3 (Stakeholder notification)                 | ASVS 8.3.2 (Breach notification)               | APO12.06 (Compliance reporting)          |
 
 ## Developer Checklist
 
@@ -301,6 +301,6 @@ Long-term containment objectives:
 
 **Version History**
 
-| Version | Date | Change Type | Description |
-|---------|------|-------------|-------------|
-| 1.0 | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |
+| Version | Date       | Change Type     | Description                                              |
+| ------- | ---------- | --------------- | -------------------------------------------------------- |
+| 1.0     | 2026-02-16 | Major (Initial) | Initial publication aligning to EATGF mandatory template |

@@ -91,10 +91,10 @@ This document defines governance conformance requirements for React Native appli
 Prevent MITM attacks by validating server certificate against pinned public key.
 
 ```typescript
-// ❌ PROHIBITED: Accept any valid SSL certificate
+//  PROHIBITED: Accept any valid SSL certificate
 const response = await fetch("https://api.example.com/invoices");
 
-// ✅ COMPLIANT: Pin certificate
+//  COMPLIANT: Pin certificate
 import { fetch as pinnedFetch } from "react-native-pinch";
 
 const config = {
@@ -120,7 +120,7 @@ const response = await pinnedFetch(
 import { Platform } from "react-native";
 import { CertificatePinning } from "react-native-certificate-pinning";
 
-// ✅ Pin public key hash (survives certificate rotation)
+//  Pin public key hash (survives certificate rotation)
 const publicKeyHashes = {
   "api.example.com": [
     "sha256/4QfD+yj7Kpq6ELVIz4pzXfMpJDkqvvQ+VRNW2xv7Q2g=", // Primary
@@ -142,7 +142,7 @@ export async function setupCertificatePinning() {
   );
 }
 
-// ✅ Validate in app initialization
+//  Validate in app initialization
 export function initializeApp() {
   setupCertificatePinning().catch((error) => {
     console.error("Certificate pinning setup failed:", error);
@@ -166,15 +166,15 @@ export function initializeApp() {
 Never store tokens in plain text. Use OS-provided secure storage.
 
 ```typescript
-// ❌ PROHIBITED: AsyncStorage (plain text)
+//  PROHIBITED: AsyncStorage (plain text)
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 await AsyncStorage.setItem("auth_token", token); // EXPOSED
 
-// ❌ PROHIBITED: Redux persist
+//  PROHIBITED: Redux persist
 store.dispatch(setToken(token)); // Persisted to storage
 
-// ✅ COMPLIANT: Keychain (iOS) / Keystore (Android)
+//  COMPLIANT: Keychain (iOS) / Keystore (Android)
 import * as SecureStore from "expo-secure-store";
 
 export async function saveToken(token: string) {
@@ -197,7 +197,7 @@ export async function getToken(): Promise<string | null> {
   }
 }
 
-// ✅ Initialization: Restore token on app launch
+//  Initialization: Restore token on app launch
 export function useAuthRestoration() {
   const [isReady, setIsReady] = useState(false);
 
@@ -206,7 +206,7 @@ export function useAuthRestoration() {
       const token = await getToken();
 
       if (token) {
-        // ✅ Validate with server before using
+        //  Validate with server before using
         const isValid = await validateToken(token);
         if (!isValid) {
           await deleteToken();
@@ -237,7 +237,7 @@ export function useAuthRestoration() {
 Prevent app execution on compromised devices.
 
 ```typescript
-// ✅ COMPLIANT: Detect jailbreak/root
+//  COMPLIANT: Detect jailbreak/root
 import { Platform } from "react-native";
 import { jailmonkey } from "jailmonkey";
 
@@ -247,7 +247,7 @@ export async function checkDeviceIntegrity(): Promise<boolean> {
       const isJailbroken = await jailmonkey.isJailBrokenIOS(true);
 
       if (isJailbroken) {
-        // ✅ Disable sensitive features
+        //  Disable sensitive features
         console.warn("Jailbroken device detected");
         return false;
       }
@@ -264,13 +264,13 @@ export async function checkDeviceIntegrity(): Promise<boolean> {
 
     return true;
   } catch (error) {
-    // ❌ If check fails, assume compromised
+    //  If check fails, assume compromised
     console.error("Device integrity check failed:", error);
     return false;
   }
 }
 
-// ✅ Enforcement: Block app usage on compromised device
+//  Enforcement: Block app usage on compromised device
 export function useDeviceIntegrityCheck() {
   useEffect(() => {
     checkDeviceIntegrity().then((isSecure) => {
@@ -300,12 +300,12 @@ export function useDeviceIntegrityCheck() {
 Support biometric (fingerprint, Face ID) with fallback to password.
 
 ```typescript
-// ✅ COMPLIANT: Biometric authentication with fallback
+//  COMPLIANT: Biometric authentication with fallback
 import * as LocalAuthentication from "expo-local-authentication";
 
 export async function authenticateBiometric(): Promise<boolean> {
   try {
-    // ✅ Check if device supports biometric
+    //  Check if device supports biometric
     const compatible = await LocalAuthentication.hasHardwareAsync();
 
     if (!compatible) {
@@ -313,7 +313,7 @@ export async function authenticateBiometric(): Promise<boolean> {
       return false;
     }
 
-    // ✅ Check if biometric is enrolled
+    //  Check if biometric is enrolled
     const enrolled = await LocalAuthentication.isEnrolledAsync();
 
     if (!enrolled) {
@@ -321,7 +321,7 @@ export async function authenticateBiometric(): Promise<boolean> {
       return false;
     }
 
-    // ✅ Prompt for biometric (face ID or fingerprint)
+    //  Prompt for biometric (face ID or fingerprint)
     const result = await LocalAuthentication.authenticateAsync({
       disableDeviceFallback: false, // Allow device passcode as fallback
       reason: "Authenticate to access your invoices",
@@ -335,7 +335,7 @@ export async function authenticateBiometric(): Promise<boolean> {
   }
 }
 
-// ✅ Usage: Require biometric for sensitive operations
+//  Usage: Require biometric for sensitive operations
 export function useProtectedOperation() {
   const performSensitiveAction = async (action: () => Promise<void>) => {
     const authenticated = await authenticateBiometric();
@@ -351,7 +351,7 @@ export function useProtectedOperation() {
   return { performSensitiveAction };
 }
 
-// ✅ CRITICAL: Never transmit biometric data to server
+//  CRITICAL: Never transmit biometric data to server
 // Biometric verification is local only
 // Server verifies session token, not biometric
 ```
@@ -369,9 +369,9 @@ import * as SecureStore from "expo-secure-store";
 import { Platform } from "react-native";
 import { CertificatePinning } from "react-native-certificate-pinning";
 
-// ✅ Centralized API client
+//  Centralized API client
 export const createApiClient = async (): Promise<AxiosInstance> => {
-  // ✅ Setup certificate pinning
+  //  Setup certificate pinning
   await setupCertificatePinning();
 
   const api = axios.create({
@@ -382,7 +382,7 @@ export const createApiClient = async (): Promise<AxiosInstance> => {
     timeout: 5000,
   });
 
-  // ✅ Request interceptor: Add auth token from secure storage
+  //  Request interceptor: Add auth token from secure storage
   api.interceptors.request.use(async (config) => {
     const token = await SecureStore.getItemAsync("auth_token");
 
@@ -396,7 +396,7 @@ export const createApiClient = async (): Promise<AxiosInstance> => {
     return config;
   });
 
-  // ✅ Response interceptor: Handle 401 (token expired)
+  //  Response interceptor: Handle 401 (token expired)
   api.interceptors.response.use(
     (response) => response,
     async (error) => {
@@ -423,7 +423,7 @@ export const api = createApiClient();
 Request OS permissions only when needed.
 
 ```typescript
-// ✅ COMPLIANT: Request permissions at usage time
+//  COMPLIANT: Request permissions at usage time
 import * as Permissions from 'expo-permissions';
 
 export async function requestCameraPermission() {
@@ -437,7 +437,7 @@ export async function requestCameraPermission() {
   return true;
 }
 
-// ✅ Usage: Request only when feature is used
+//  Usage: Request only when feature is used
 export function CameraScanner() {
   const [hasPermission, setHasPermission] = useState(false);
 
@@ -453,7 +453,7 @@ export function CameraScanner() {
   );
 }
 
-// ✅ Manifest declaration (app.json)
+//  Manifest declaration (app.json)
 {
   "expo": {
     "plugins": [
@@ -475,16 +475,16 @@ export function CameraScanner() {
 Verify integrity of over-the-air updates.
 
 ```typescript
-// ✅ COMPLIANT: EAS Updates with signature verification
+//  COMPLIANT: EAS Updates with signature verification
 import * as Updates from "expo-updates";
 
 export async function initializeUpdates() {
   try {
-    // ✅ EAS automatically handles signature verification
+    //  EAS automatically handles signature verification
     const update = await Updates.checkAsync();
 
     if (update.isAvailable) {
-      // ✅ Verify update before installing
+      //  Verify update before installing
       console.log("Update available, installing...");
 
       await Updates.fetchUpdateAsync();
@@ -492,29 +492,29 @@ export async function initializeUpdates() {
     }
   } catch (error) {
     if (error instanceof Updates.UpdatesError) {
-      // ✅ Handle update failures securely
+      //  Handle update failures securely
       console.error("Update failed:", error);
       // Don't crash, continue with current version
     }
   }
 }
 
-// ✅ Alternative: CodePush with signature verification
+//  Alternative: CodePush with signature verification
 import CodePush from "react-native-code-push";
 
 const codePushOptions = {
-  // ✅ Checksum verification mandatory
+  //  Checksum verification mandatory
   checkFrequency: CodePush.CheckFrequency.ON_APP_START,
-  // ✅ Install immediately only for critical fixes
+  //  Install immediately only for critical fixes
   installMode: CodePush.InstallMode.ON_NEXT_RESTART,
-  // ✅ Deployment key from secure config, not hardcoded
+  //  Deployment key from secure config, not hardcoded
   deploymentKey: process.env.CODEPUSH_KEY,
 };
 
 export const App = CodePush(codePushOptions)(MainApp);
 
-// ❌ PROHIBITED: Disable signature verification
-// ❌ PROHIBITED: Hardcoded deployment keys
+//  PROHIBITED: Disable signature verification
+//  PROHIBITED: Hardcoded deployment keys
 ```
 
 ---
@@ -524,20 +524,20 @@ export const App = CodePush(codePushOptions)(MainApp);
 Ensure app builds are signed and verified.
 
 ```bash
-# ✅ iOS: Build with signing certificate
+#  iOS: Build with signing certificate
 fastlane ios build --signing-certificate MyCompanyCA
 
-# ✅ Android: Sign with keystore
+#  Android: Sign with keystore
 jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 \
   -keystore my-app.keystore app-release.apk my-app-key
 
-# ✅ Verify signature
+#  Verify signature
 jarsigner -verify -verbose -certs app-release.apk
 
-# ✅ CI/CD: Strip debug symbols from production build
+#  CI/CD: Strip debug symbols from production build
 --release --minify
 
-# ✅ CI/CD: Verify no secrets in build
+#  CI/CD: Verify no secrets in build
 ! grep -r "API_KEY\|SECRET" build/
 ```
 
@@ -565,11 +565,11 @@ export function useAuth() {
   useEffect(() => {
     const restoreSession = async () => {
       try {
-        // ✅ Retrieve token from secure storage
+        //  Retrieve token from secure storage
         const token = await SecureStore.getItemAsync("auth_token");
 
         if (token) {
-          // ✅ Validate token with server
+          //  Validate token with server
           const response = await api.get("/auth/user");
           setUser(response.data);
         }
@@ -588,7 +588,7 @@ export function useAuth() {
     try {
       const response = await api.post("/auth/login", { email, password });
 
-      // ✅ Store token in secure storage
+      //  Store token in secure storage
       await SecureStore.setItemAsync("auth_token", response.data.token);
 
       setUser(response.data.user);
@@ -632,7 +632,7 @@ export function useAuthorization(action: string) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        // ✅ Server authorizes action
+        //  Server authorizes action
         const response = await api.get('/auth/can', {
           params: { action }
         });
@@ -657,7 +657,7 @@ export function DeleteInvoiceButton({ invoiceId }) {
 
   return (
     <button onPress={async () => {
-      // ✅ Server validates permission again
+      //  Server validates permission again
       await api.delete(`/invoices/${invoiceId}`);
     }}>
       Delete
@@ -741,10 +741,10 @@ export function InvoiceForm() {
 
   const handleSubmit = async (data) => {
     try {
-      // ✅ Parse and validate
+      //  Parse and validate
       const validated = InvoiceSchema.parse(data);
 
-      // ✅ Send to server (server re-validates)
+      //  Send to server (server re-validates)
       await api.post('/invoices', validated);
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -859,7 +859,7 @@ import * as Sentry from "@sentry/react-native";
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
   beforeSend(event) {
-    // ✅ Remove sensitive data
+    //  Remove sensitive data
     if (event.request) {
       delete event.request.cookies;
       delete event.request.headers["authorization"];
@@ -896,15 +896,15 @@ export const logger = {
 ### Compliant Implementation
 
 ```typescript
-// ✅ Certificate pinning (covered in Principle 1)
-// ✅ HTTPS-only configuration
+//  Certificate pinning (covered in Principle 1)
+//  HTTPS-only configuration
 const api = axios.create({
   baseURL: "https://api.example.com", // HTTPS only
   timeout: 5000,
   withCredentials: true,
 });
 
-// ✅ No plain HTTP URLs
+//  No plain HTTP URLs
 // Build fails if HTTP URL detected
 if (API_URL.startsWith("http://") && !DEV_MODE) {
   throw new Error("API URL must use HTTPS in production");
@@ -937,7 +937,7 @@ export function useTenant(): string {
   return user.tenantId; // From authenticated session
 }
 
-// ✅ All requests include tenant context
+//  All requests include tenant context
 api.interceptors.request.use((config) => {
   const tenantId = useTenant();
   config.headers["X-Tenant-ID"] = tenantId;

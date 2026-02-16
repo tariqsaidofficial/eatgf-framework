@@ -1,14 +1,14 @@
 # Data Residency and Compliance Standard
 
-| Property | Value |
-|----------|-------|
-| **Document Type** | Implementation Standard |
-| **Version** | 1.0 |
-| **Classification** | Governance |
-| **Effective Date** | February 16, 2026 |
-| **Authority** | Chief Legal Officer / Data Protection Officer |
-| **EATGF Layer** | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE |
-| **MCM Reference** | [Control #28: Data Location & Sovereignty](../../02_CONTROL_ARCHITECTURE/MASTER_CONTROL_MATRIX.md) |
+| Property           | Value                                                                                                 |
+| ------------------ | ----------------------------------------------------------------------------------------------------- |
+| **Document Type**  | Implementation Standard                                                                               |
+| **Version**        | 1.0                                                                                                   |
+| **Classification** | Governance                                                                                            |
+| **Effective Date** | February 16, 2026                                                                                     |
+| **Authority**      | Chief Legal Officer / Data Protection Officer                                                         |
+| **EATGF Layer**    | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE                                          |
+| **MCM Reference**  | [EATGF-DATA-PRIV-01: Data Protection Impact Assessment](../../00_FOUNDATION/MASTER_CONTROL_MATRIX.md) |
 
 ---
 
@@ -29,16 +29,19 @@ Data residency laws require personal data to remain within specific geographic b
 ## Architectural Position
 
 **Upstream Dependencies:**
-- Layer 02 Control Architecture [Control #28: Data Location & Sovereignty]
+
+- Layer 02 Control Architecture [EATGF-DATA-PRIV-01: Data Protection Impact Assessment]
 - Layer 04 DATA_GOVERNANCE_POLICY (data classification and handling)
 - Layer 04 DATA_PRIVACY_AND_PROTECTION_POLICY (GDPR/CCPA requirements)
 
 **Downstream Usage:**
+
 - Layer 06 AUDIT_AND_ASSURANCE (data residency verification)
 - Layer 08.04 INFRASTRUCTURE_RUNTIME (physical server location)
 - Layer 08.05 MULTI_TENANCY_GOVERNANCE_STANDARD (per-customer residency)
 
 **Cross-Layer References:**
+
 - INFRASTRUCTURE_AS_CODE_GOVERNANCE.md (region constraints in Terraform)
 - SECURITY_MANAGEMENT_STANDARD.md (encryption at rest in-region)
 
@@ -64,7 +67,7 @@ Data residency laws require personal data to remain within specific geographic b
 # Company policies by region
 
 EU Customers (GDPR):
-  data_residency: "EU-only"  # EU-27 + UK + Iceland + Liechtenstein + Norway
+  data_residency: "EU-only" # EU-27 + UK + Iceland + Liechtenstein + Norway
   processing:
     - Storage: Ireland (AWS eu-west-1) ✓
     - Backups: Germany (AWS eu-central-1) ✓
@@ -186,7 +189,7 @@ resource "aws_db_instance" "customer_data" {
   customer_id     = var.customer_id
   engine          = "postgres"
   allocated_storage = 100
-  
+
   # Enforce residency constraint
   availability_zone = var.allowed_az  # e.g., eu-west-1a
 
@@ -205,12 +208,12 @@ resource "aws_db_instance" "customer_data" {
 
   # Encryption must be in-region (not cross-region key)
   kms_key_id = var.in_region_kms_key_arn
-  
+
   # Backups retained in-country only
   backup_retention_period = 30
   # Cross-region backups DISABLED by default
   copy_backups_to_region = ""  # Empty = no cross-region copy
-  
+
   tags = {
     Residency = var.customer_residency_zone
     Customer  = var.customer_id
@@ -276,18 +279,18 @@ import alerts
 
 def verify_eu_data_residency():
     """Verify all EU customer data remains in EU-only AWS regions"""
-    
+
     # EU-allowed regions
     allowed_regions = ['eu-west-1', 'eu-central-1']
     forbidden_regions = ['us-east-1', 'us-west-1', 'ap-northeast-1']
-    
+
     # Query all EU customers
     eu_customers = rds.query_customers(
         where="residency_zone = 'EU' AND status = 'active'"
     )
-    
+
     violations = []
-    
+
     for customer in eu_customers:
         # Check RDS database location
         db_region = customer.database.region
@@ -299,7 +302,7 @@ def verify_eu_data_residency():
                 'allowed_regions': allowed_regions,
                 'severity': 'CRITICAL'
             })
-        
+
         # Check S3 bucket region
         s3_region = customer.s3_bucket.region
         if s3_region not in allowed_regions:
@@ -309,7 +312,7 @@ def verify_eu_data_residency():
                 'current_region': s3_region,
                 'severity': 'CRITICAL'
             })
-        
+
         # Check backup locations
         for backup in customer.database.backups:
             backup_region = backup.region
@@ -321,7 +324,7 @@ def verify_eu_data_residency():
                     'backup_id': backup.id,
                     'severity': 'CRITICAL'
                 })
-    
+
     # Report violations
     if violations:
         for v in violations:
@@ -330,18 +333,18 @@ def verify_eu_data_residency():
                 Type: {v['violation']}
                 Current Region: {v['current_region']}
                 Allowed: {', '.join(v['allowed_regions'])}
-                
+
                 Action: IMMEDIATE DATA RETURN to {v['allowed_regions'][0]}
                 Escalation: DPO + Legal + Engineering
                 Deadline: 4 hours
             """)
-        
+
         # Pause all write operations to flagged customer data (safety)
         for v in violations:
             customer_id = v['customer']
             disable_write_access(customer_id)
             notify_customer(customer_id, v)
-    
+
     return len(violations)  # 0 = success, >0 = violations
 ```
 
@@ -395,12 +398,12 @@ def verify_eu_data_residency():
 
 ## Control Mapping
 
-| EATGF Control | ISO 27001:2022 | NIST SSDF | COBIT 2019 | OWASP |
-|---|---|---|---|---|
-| Data Location & Sovereignty | A.8.8, A.8.9, A.8.30 | N/A | BAI06.01, DSS04.08 | Not Directly |
-| Cross-Border Transfer | A.8.8 (GDPR Article 46) | N/A | BAI06.01 | Not Directly |
-| Compliance Verification | A.8.17, A.6.7 | N/A | MEA03.01 | Not Directly |
-| Incident Notification | A.5.31, A.7.4 | N/A | APO12.06 | Not Directly |
+| EATGF Control               | ISO 27001:2022          | NIST SSDF | COBIT 2019         | OWASP        |
+| --------------------------- | ----------------------- | --------- | ------------------ | ------------ |
+| Data Location & Sovereignty | A.8.8, A.8.9, A.8.30    | N/A       | BAI06.01, DSS04.08 | Not Directly |
+| Cross-Border Transfer       | A.8.8 (GDPR Article 46) | N/A       | BAI06.01           | Not Directly |
+| Compliance Verification     | A.8.17, A.6.7           | N/A       | MEA03.01           | Not Directly |
+| Incident Notification       | A.5.31, A.7.4           | N/A       | APO12.06           | Not Directly |
 
 ---
 
@@ -424,24 +427,28 @@ def verify_eu_data_residency():
 ## Governance Implications
 
 **Risk if not implemented:**
+
 - GDPR fines: €10-15 million or 4% annual revenue for violations
 - CCPA penalties: $2,500-$7,500 per violation; class action status
 - LGPD fines: Up to 2% annual revenue (~$10 million for large companies)
 - Regulatory shutdown of data processing; customer churn
 
 **Operational impact:**
+
 - Engineering must know customer residency before deploying infrastructure
 - Disaster recovery procedures require pre-approval for cross-border failover
 - Legal team involved in any exception requests
 - Monitoring overhead (daily residency verification checks)
 
 **Audit consequences:**
+
 - External auditors verify infrastructure location matches customer agreement
 - GDPR audits require demonstration of SCC compliance
 - Multi-jurisdiction evidence collection (one per regulatory body)
 - Potential regulatory investigation if violations discovered
 
 **Cross-team dependencies:**
+
 - **Legal/DPO:** Reviews SCC; approves cross-border transfers; handles regulatory inquiries
 - **Engineering:** Implements region constraints; verifies residency daily
 - **Finance:** Tracks per-region cost (EU data more expensive due to premium regions)
@@ -462,11 +469,11 @@ def verify_eu_data_residency():
 
 ## Version History
 
-| Version | Date | Change Type | Notes |
-|---------|------|-------------|-------|
-| 1.0 | Feb 16, 2026 | Major | Initial release; GDPR/CCPA/LGPD/PIPL residency requirements, SCC procedures, daily verification, emergency DR |
+| Version | Date         | Change Type | Notes                                                                                                         |
+| ------- | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------- |
+| 1.0     | Feb 16, 2026 | Major       | Initial release; GDPR/CCPA/LGPD/PIPL residency requirements, SCC procedures, daily verification, emergency DR |
 
 ---
 
-*Last Updated: February 16, 2026*  
-*EATGF v1.0-Foundation: Data Residency and Compliance Standard*
+_Last Updated: February 16, 2026_
+_EATGF v1.0-Foundation: Data Residency and Compliance Standard_

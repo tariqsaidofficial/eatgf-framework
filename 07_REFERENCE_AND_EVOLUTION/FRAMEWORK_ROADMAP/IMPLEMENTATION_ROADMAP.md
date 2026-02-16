@@ -6,7 +6,7 @@
 
 ---
 
-## 📊 ROADMAP OVERVIEW
+##  ROADMAP OVERVIEW
 
 ```
 Month  1-3     4-6        7-9         10-12
@@ -37,9 +37,9 @@ Month  1-3     4-6        7-9         10-12
 - [ ] Schedule recurring governance meetings
 
 **Deliverables:**
-- ✅ Executive commitment & sponsorship
-- ✅ Governance team in place
-- ✅ Governance council established & meeting
+-  Executive commitment & sponsorship
+-  Governance team in place
+-  Governance council established & meeting
 
 **Success Metrics:**
 - Executive commitment: Signed charter
@@ -68,9 +68,9 @@ Month  1-3     4-6        7-9         10-12
 - [ ] Set acknowledgment deadline
 
 **Deliverables:**
-- ✅ 5-7 formal policies approved
-- ✅ All staff aware (target: 95% acknowledgment)
-- ✅ Training materials created
+-  5-7 formal policies approved
+-  All staff aware (target: 95% acknowledgment)
+-  Training materials created
 
 **Success Metrics:**
 - Policies: Approved & signed
@@ -94,10 +94,10 @@ Month  1-3     4-6        7-9         10-12
 - [ ] Prioritize quick wins
 
 **Deliverables:**
-- ✅ Risk register with top 20 risks assessed
-- ✅ Risk heat map created
-- ✅ Control baseline documented
-- ✅ Gap remediation plan prioritized
+-  Risk register with top 20 risks assessed
+-  Risk heat map created
+-  Control baseline documented
+-  Gap remediation plan prioritized
 
 **Success Metrics:**
 - Risk coverage: 50+ risks identified
@@ -135,9 +135,9 @@ Month  1-3     4-6        7-9         10-12
   - [ ] First vulnerability scan completed
 
 **Deliverables:**
-- ✅ 3 core security controls implemented
-- ✅ Evidence collection underway
-- ✅ Monitoring dashboards created
+-  3 core security controls implemented
+-  Evidence collection underway
+-  Monitoring dashboards created
 
 **Success Metrics:**
 - Implementation: 90%+ deployment
@@ -168,9 +168,9 @@ Month  1-3     4-6        7-9         10-12
   - [ ] Architecture assessments scheduled
 
 **Deliverables:**
-- ✅ Domain-specific controls defined
-- ✅ Implementation roadmaps created
-- ✅ Teams trained
+-  Domain-specific controls defined
+-  Implementation roadmaps created
+-  Teams trained
 
 ---
 
@@ -191,9 +191,9 @@ Month  1-3     4-6        7-9         10-12
   - [ ] Resource needs for next phase?
 
 **Deliverables:**
-- ✅ KPI dashboard live
-- ✅ Monthly reporting established
-- ✅ H1 effectiveness review completed
+-  KPI dashboard live
+-  Monthly reporting established
+-  H1 effectiveness review completed
 
 **Success Metrics:**
 - Controls: 70%+ effective
@@ -220,9 +220,9 @@ Month  1-3     4-6        7-9         10-12
 - [ ] Deploy compliance automation (where possible)
 
 **Deliverables:**
-- ✅ Automation reducing manual effort by 30%
-- ✅ Real-time monitoring dashboards
-- ✅ Incident response improvements
+-  Automation reducing manual effort by 30%
+-  Real-time monitoring dashboards
+-  Incident response improvements
 
 ---
 
@@ -246,9 +246,9 @@ Month  1-3     4-6        7-9         10-12
 - [ ] Gap analysis & improvement roadmap
 
 **Deliverables:**
-- ✅ Maturity assessment completed
-- ✅ Scores documented
-- ✅ Improvement plan for year 2
+-  Maturity assessment completed
+-  Scores documented
+-  Improvement plan for year 2
 
 ---
 
@@ -266,9 +266,9 @@ Month  1-3     4-6        7-9         10-12
 - [ ] Auditor engagement & kickoff
 
 **Deliverables:**
-- ✅ Audit readiness confirmed
-- ✅ All evidence collected & organized
-- ✅ External auditor engaged
+-  Audit readiness confirmed
+-  All evidence collected & organized
+-  External auditor engaged
 
 ---
 
@@ -291,9 +291,9 @@ Month  1-3     4-6        7-9         10-12
 - [ ] Technology refreshed
 
 **Deliverables:**
-- ✅ Audit completed successfully
-- ✅ Certification granted (if applicable)
-- ✅ Continuous improvement processes in place
+-  Audit completed successfully
+-  Certification granted (if applicable)
+-  Continuous improvement processes in place
 
 ---
 
@@ -313,9 +313,9 @@ Month  1-3     4-6        7-9         10-12
 - [ ] Year 2 roadmap finalized
 
 **Deliverables:**
-- ✅ Year 2 governance plan finalized
-- ✅ Budget approved
-- ✅ Executive alignment confirmed
+-  Year 2 governance plan finalized
+-  Budget approved
+-  Executive alignment confirmed
 
 ---
 
@@ -328,10 +328,10 @@ Month  1-3     4-6        7-9         10-12
 - [ ] Year 1 impact documented
 
 **Deliverables:**
-- ✅ Year 1 summary report
-- ✅ Lessons learned documented
-- ✅ Team appreciation & recognition
-- ✅ Year 2 roadmap ready to launch
+-  Year 1 summary report
+-  Lessons learned documented
+-  Team appreciation & recognition
+-  Year 2 roadmap ready to launch
 
 ---
 

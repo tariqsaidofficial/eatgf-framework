@@ -29,12 +29,12 @@ This document defines the architecture and operational specifications for the EV
 
 The Evidence Register must:
 
-✅ **Be control-centric** – MCM ID driven (not process-driven)  
-✅ **Be time-bounded** – Review frequency enforced, not optional  
-✅ **Be ownership-bound** – Clear accountability layers  
-✅ **Be audit-traceable** – Links to specific audit cycle  
-✅ **Be version-controlled** – Every entry immutable, timestamped  
-✅ **Be exportable** – Ready for external auditor consumption  
+ **Be control-centric** – MCM ID driven (not process-driven)  
+ **Be time-bounded** – Review frequency enforced, not optional  
+ **Be ownership-bound** – Clear accountability layers  
+ **Be audit-traceable** – Links to specific audit cycle  
+ **Be version-controlled** – Every entry immutable, timestamped  
+ **Be exportable** – Ready for external auditor consumption  
 
 ---
 
@@ -254,32 +254,32 @@ IF(Evidence_Location = BLANK, "MISSING",
 
 ### Minimum Requirements for ALL Evidence
 
-✅ **Dated** – Must have clear date (creation or last modified)  
-✅ **Signed** – If document: digital signature or attestation  
-✅ **Log-Generated** – If system: timestamp and source logged  
-✅ **Immutable** – Original format preserved (PDF preferred)  
-✅ **Traceable** – Linked to specific Control ID  
-✅ **Accessible** – URL valid or documentation location clear  
+ **Dated** – Must have clear date (creation or last modified)  
+ **Signed** – If document: digital signature or attestation  
+ **Log-Generated** – If system: timestamp and source logged  
+ **Immutable** – Original format preserved (PDF preferred)  
+ **Traceable** – Linked to specific Control ID  
+ **Accessible** – URL valid or documentation location clear  
 
 ### AI-Specific Evidence Validation
 
 For any EATGF-AI-* control:
 
-✅ **Model Version** – Exact version number  
-✅ **Dataset Version** – Training data snapshot ID  
-✅ **Test Report ID** – Bias/drift/accuracy test reference  
-✅ **Deployment Timestamp** – When model went live  
-✅ **Monitoring Link** – Active dashboard URL  
+ **Model Version** – Exact version number  
+ **Dataset Version** – Training data snapshot ID  
+ **Test Report ID** – Bias/drift/accuracy test reference  
+ **Deployment Timestamp** – When model went live  
+ **Monitoring Link** – Active dashboard URL  
 
 ### Cloud-Specific Evidence Validation
 
 For any EATGF-CLD-* or cloud-related control:
 
-✅ **Region** – Geographic deployment location  
-✅ **Account ID** – Cloud provider account identifier  
-✅ **Configuration Snapshot** – Point-in-time config export  
-✅ **Scan Date** – Last compliance/security scan  
-✅ **Compliance Framework** – CIS, PCI-DSS, SOC 2, etc.  
+ **Region** – Geographic deployment location  
+ **Account ID** – Cloud provider account identifier  
+ **Configuration Snapshot** – Point-in-time config export  
+ **Scan Date** – Last compliance/security scan  
+ **Compliance Framework** – CIS, PCI-DSS, SOC 2, etc.  
 
 ---
 
@@ -473,10 +473,10 @@ Export MASTER_CONTROL_IMPORT + ACTIVE_EVIDENCE_TRACKER
 
 This Evidence Register architecture is:
 
-✅ **ISO 27001:2022 Compliant** – Operationalizes Clause 9.2 (Internal Audit)  
-✅ **ISO 42001:2023 Compliant** – Operationalizes Clause 9 (Performance Evaluation)  
-✅ **ISO 19011:2018 Aligned** – Supports audit evidence collection  
-✅ **MCM Authority** – All controls sourced from MASTER_CONTROL_MATRIX.md  
+ **ISO 27001:2022 Compliant** – Operationalizes Clause 9.2 (Internal Audit)  
+ **ISO 42001:2023 Compliant** – Operationalizes Clause 9 (Performance Evaluation)  
+ **ISO 19011:2018 Aligned** – Supports audit evidence collection  
+ **MCM Authority** – All controls sourced from MASTER_CONTROL_MATRIX.md  
 
 No control duplication. MCM remains sole authority.
 

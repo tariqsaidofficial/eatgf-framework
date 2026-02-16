@@ -42,10 +42,10 @@ FastAPI acts as:
 
 **Conformance Obligations:**
 
-- ✅ 01_SECURE_SDLC standards
-- ✅ 02_API_GOVERNANCE standards (REST-specific controls)
-- ✅ 03_DEVSECOPS standards
-- ✅ 04_CLOUD standards (if deployed in SaaS context)
+-  01_SECURE_SDLC standards
+-  02_API_GOVERNANCE standards (REST-specific controls)
+-  03_DEVSECOPS standards
+-  04_CLOUD standards (if deployed in SaaS context)
 
 ## Relationship to EATGF Layers
 
@@ -294,7 +294,7 @@ async def get_user(token: dict = Depends(verify_token)):
 **Non-Compliant Example:**
 
 ```python
-# ❌ Session authentication for API
+#  Session authentication for API
 @app.get("/api/v1/me")
 async def get_user(request: Request):
     user = request.session.get("user")  # Vulnerable
@@ -336,7 +336,7 @@ async def get_invoice(invoice: Invoice = Depends(check_invoice_ownership)):
 **Non-Compliant Example:**
 
 ```python
-# ❌ No object-level permission check
+#  No object-level permission check
 @app.get("/api/v1/invoices/{invoice_id}")
 async def get_invoice(
     invoice_id: int,
@@ -387,7 +387,7 @@ app.include_router(router_v2)
 **Non-Compliant Example:**
 
 ```python
-# ❌ No versioning; breaking changes in place
+#  No versioning; breaking changes in place
 @app.get("/api/invoices")
 async def list_invoices(session: AsyncSession = Depends(get_db)):
     # Breaking change: removed `count` field
@@ -442,7 +442,7 @@ async def create_invoice(
 **Non-Compliant Example:**
 
 ```python
-# ❌ No Pydantic validation; dict payload
+#  No Pydantic validation; dict payload
 @app.post("/api/v1/invoices")
 async def create_invoice(
     invoice: dict,  # Unvalidated dict
@@ -496,7 +496,7 @@ async def list_invoices(
 **Non-Compliant Example:**
 
 ```python
-# ❌ No rate limiting; open to DoS
+#  No rate limiting; open to DoS
 @app.get("/api/v1/invoices")
 async def list_invoices(current_user: dict = Depends(verify_token)):
     # No rate limit protection
@@ -568,7 +568,7 @@ def test_openapi_schema_valid(client):
 **Non-Compliant Example:**
 
 ```python
-# ❌ No tests; no OpenAPI schema validation
+#  No tests; no OpenAPI schema validation
 # No explicit tests
 # No schema coverage
 ```
@@ -621,7 +621,7 @@ async def log_security_events(request: Request, call_next):
 **Non-Compliant Example:**
 
 ```python
-# ❌ No structured logging; text-only format
+#  No structured logging; text-only format
 logger.info(f"User {user_id} accessed {path}")
 ```
 
@@ -672,7 +672,7 @@ async def verify_token(credentials: HTTPAuthorizationCredentials = Depends(secur
 **Non-Compliant Example:**
 
 ```python
-# ❌ CORS wide open; HTTP allowed
+#  CORS wide open; HTTP allowed
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Dangerous

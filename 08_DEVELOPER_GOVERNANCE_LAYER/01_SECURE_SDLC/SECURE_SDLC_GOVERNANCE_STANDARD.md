@@ -2,13 +2,13 @@
 
 ## Document Metadata
 
-**Version:** 1.0  
-**Issue Date:** 2026-02-14  
-**Change Type:** Major  
-**Layer:** 08_DEVELOPER_GOVERNANCE_LAYER  
-**Domain:** 01_SECURE_SDLC  
-**Classification:** Developer Governance Standard  
-**Governance Scope:** Standard, Policy, Architecture  
+**Version:** 1.0
+**Issue Date:** 2026-02-14
+**Change Type:** Major
+**Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
+**Domain:** 01_SECURE_SDLC
+**Classification:** Developer Governance Standard
+**Governance Scope:** Standard, Policy, Architecture
 **Control Authority Relationship:** Implements controls from ISO 27001, NIST SSDF, OWASP SAMM, COBIT
 
 ---
@@ -257,7 +257,7 @@ Type: Story - Security Requirement
 Epic: Authentication System Hardening
 Title: Enforce TLS 1.3 on all external API endpoints
 Severity: High
-Control Reference: EATGF-DEV-SDLC-SEC-001
+Control Reference: EATGF-DEV-SDLC-01
 Description: >
   Implement TLS 1.3 enforcement across all public-facing API endpoints
   to prevent downgrade attacks and ensure modern cryptographic standards.
@@ -685,7 +685,7 @@ Each profile includes:
 - Production-ready CI/CD snippets
 - Runtime hardening notes
 
-### Available Profiles:
+### Available Profiles
 
 | Profile               | Type                    | Status         |
 | --------------------- | ----------------------- | -------------- |
@@ -916,7 +916,7 @@ Secure SDLC maturity is measured across 5 levels. Organizations can be at differ
 
 ## Governance Implications
 
-### Risk if not implemented:
+### Risk if not implemented
 
 - **Vulnerability Introduction:** Exploitable vulnerabilities in production systems
 - **Supply Chain Attacks:** Compromised dependencies and transitive vulnerabilities
@@ -924,7 +924,7 @@ Secure SDLC maturity is measured across 5 levels. Organizations can be at differ
 - **Data Breaches:** Unauthorized access to customer data and PII
 - **Business Impact:** Operational disruption, financial loss, reputation damage
 
-### Operational impact:
+### Operational impact
 
 - **Early Vulnerability Detection:** Reduces remediation cost by 10-100x vs. post-production discovery
 - **Automation:** Reduces manual security review time by 70-80%
@@ -932,14 +932,14 @@ Secure SDLC maturity is measured across 5 levels. Organizations can be at differ
 - **Developer Onboarding:** Well-documented standards reduce onboarding from weeks to days
 - **Organizational Learning:** Centralized secure coding practices shared across teams
 
-### Audit consequences:
+### Audit consequences
 
 - **Compliance Audits:** NIST SSDF compliance required for government contracts (FedRAMP, etc.)
 - **Certification Impact:** ISO 27001, SOC 2, and PCI-DSS audits require evidence of secure SDLC
 - **Exception Process:** Non-compliance triggers formal exception request and risk acceptance
 - **Regulatory Fines:** Failure to implement baseline controls can result in significant penalties
 
-### Cross-team dependencies:
+### Cross-team dependencies
 
 - **Security Team:** Threat modeling review, security training, policy guidance, incident response
 - **Platform/DevOps Team:** CI/CD infrastructure, secret management tooling, container registry

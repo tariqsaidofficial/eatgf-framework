@@ -14,19 +14,19 @@ Evidence Register v1.0 – Excel Technical Build Specification
 
 ---
 
-## 🎯 Build Objective
+##  Build Objective
 
 Create a **fully operational, formula-driven, audit-defensible** Evidence Register in Excel that:
-- ✅ Enforces time-bound evidence tracking (no manual override)
-- ✅ Auto-calculates status based on evidence currency
-- ✅ Escalates high-criticality gaps automatically
-- ✅ Generates audit-ready reports
-- ✅ Maintains 7-year retention enforcement
-- ✅ Prevents control duplication or definition drift
+-  Enforces time-bound evidence tracking (no manual override)
+-  Auto-calculates status based on evidence currency
+-  Escalates high-criticality gaps automatically
+-  Generates audit-ready reports
+-  Maintains 7-year retention enforcement
+-  Prevents control duplication or definition drift
 
 ---
 
-## 📋 File Structure Overview
+##  File Structure Overview
 
 ```
 EVIDENCE_REGISTER_v1.0.xlsx
@@ -39,7 +39,7 @@ EVIDENCE_REGISTER_v1.0.xlsx
 
 ---
 
-## 🧱 SHEET 1: CONTROL_MASTER
+##  SHEET 1: CONTROL_MASTER
 
 ### Purpose
 Single source of truth for all 35 MCM controls. Read-only reference layer.
@@ -48,14 +48,14 @@ Single source of truth for all 35 MCM controls. Read-only reference layer.
 
 | Column | Name | Type | Source | Locked |
 |--------|------|------|--------|--------|
-| A | Control ID | Text | MCM v1.0 | ✅ Yes |
-| B | Control Title | Text | MCM v1.0 | ✅ Yes |
-| C | Domain | Text | MCM v1.0 | ✅ Yes |
-| D | Criticality | Text | MCM v1.0 | ✅ Yes |
-| E | Residual Risk | Text | MCM v1.0 | ✅ Yes |
-| F | Review Frequency | Text | MCM v1.0 | ✅ Yes |
-| G | Control Owner | Text | MCM v1.0 | ✅ Yes |
-| H | Evidence Owner (Role) | Text | MCM v1.0 | ✅ Yes |
+| A | Control ID | Text | MCM v1.0 |  Yes |
+| B | Control Title | Text | MCM v1.0 |  Yes |
+| C | Domain | Text | MCM v1.0 |  Yes |
+| D | Criticality | Text | MCM v1.0 |  Yes |
+| E | Residual Risk | Text | MCM v1.0 |  Yes |
+| F | Review Frequency | Text | MCM v1.0 |  Yes |
+| G | Control Owner | Text | MCM v1.0 |  Yes |
+| H | Evidence Owner (Role) | Text | MCM v1.0 |  Yes |
 
 ### Sample Data (First 5 Controls)
 
@@ -80,7 +80,7 @@ Row 36: [Last control from MCM]
 
 ---
 
-## 🧮 SHEET 2: EVIDENCE_TRACKER (PRIMARY OPERATIONAL)
+##  SHEET 2: EVIDENCE_TRACKER (PRIMARY OPERATIONAL)
 
 ### Purpose
 Live evidence tracking. One row per control per audit cycle.
@@ -89,31 +89,31 @@ Live evidence tracking. One row per control per audit cycle.
 
 | Col | Name | Type | Formula / Validation | Editable |
 |-----|------|------|---------------------|----------|
-| A | Control ID | Dropdown | Source: CONTROL_MASTER!A:A | ✅ Edit |
-| B | Control Title | Auto-lookup | =XLOOKUP(A2,...) | ❌ Read-only |
-| C | Domain | Auto-lookup | =XLOOKUP(A2,...) | ❌ Read-only |
-| D | Criticality | Auto-lookup | =XLOOKUP(A2,...) | ❌ Read-only |
-| E | Residual Risk | Auto-lookup | =XLOOKUP(A2,...) | ❌ Read-only |
-| F | Review Frequency | Auto-lookup | =XLOOKUP(A2,...) | ❌ Read-only |
-| G | Evidence Description | Text | Max 255 chars | ✅ Edit |
-| H | Evidence Location | URL/Path | Validation: URL format | ✅ Edit |
-| I | Last Review Date | Date | MM/DD/YYYY format | ✅ Edit |
-| J | Next Review Date | Auto-calc | Date formula | ❌ Read-only |
-| K | Days Until Expiry | Auto-calc | Days formula | ❌ Read-only |
-| L | Evidence Status | Auto-calc | Status formula | ❌ Read-only |
-| M | Audit Cycle | Dropdown | 2026-Q1, 2026-Q2, 2026-Annual, etc. | ✅ Edit |
-| N | Control Owner | Auto-lookup | =XLOOKUP(A2,...) | ❌ Read-only |
-| O | Evidence Owner | Auto-lookup | =XLOOKUP(A2,...) | ❌ Read-only |
-| P | Escalation Flag | Auto-calc | IF formula (High + Not Valid) | ❌ Read-only |
-| Q | Auditor Notes | Text | Max 500 chars | ✅ Edit |
-| R | Corrective Action ID | Text | Link format (e.g., CAL-2026-001) | ✅ Edit |
-| S | Retention Until | Auto-calc | =EDATE(I2, 84) | ❌ Read-only |
-| T | Evidence Hash (Optional) | Text | SHA256 hex string | ❌ Read-only |
-| U | Evidence Integrity Status | Auto-calc | VERIFIED / TAMPERED / N/A | ❌ Read-only |
+| A | Control ID | Dropdown | Source: CONTROL_MASTER!A:A |  Edit |
+| B | Control Title | Auto-lookup | =XLOOKUP(A2,...) |  Read-only |
+| C | Domain | Auto-lookup | =XLOOKUP(A2,...) |  Read-only |
+| D | Criticality | Auto-lookup | =XLOOKUP(A2,...) |  Read-only |
+| E | Residual Risk | Auto-lookup | =XLOOKUP(A2,...) |  Read-only |
+| F | Review Frequency | Auto-lookup | =XLOOKUP(A2,...) |  Read-only |
+| G | Evidence Description | Text | Max 255 chars |  Edit |
+| H | Evidence Location | URL/Path | Validation: URL format |  Edit |
+| I | Last Review Date | Date | MM/DD/YYYY format |  Edit |
+| J | Next Review Date | Auto-calc | Date formula |  Read-only |
+| K | Days Until Expiry | Auto-calc | Days formula |  Read-only |
+| L | Evidence Status | Auto-calc | Status formula |  Read-only |
+| M | Audit Cycle | Dropdown | 2026-Q1, 2026-Q2, 2026-Annual, etc. |  Edit |
+| N | Control Owner | Auto-lookup | =XLOOKUP(A2,...) |  Read-only |
+| O | Evidence Owner | Auto-lookup | =XLOOKUP(A2,...) |  Read-only |
+| P | Escalation Flag | Auto-calc | IF formula (High + Not Valid) |  Read-only |
+| Q | Auditor Notes | Text | Max 500 chars |  Edit |
+| R | Corrective Action ID | Text | Link format (e.g., CAL-2026-001) |  Edit |
+| S | Retention Until | Auto-calc | =EDATE(I2, 84) |  Read-only |
+| T | Evidence Hash (Optional) | Text | SHA256 hex string |  Read-only |
+| U | Evidence Integrity Status | Auto-calc | VERIFIED / TAMPERED / N/A |  Read-only |
 
 ---
 
-## 🔧 FORMULAS – CRITICAL IMPLEMENTATION
+##  FORMULAS – CRITICAL IMPLEMENTATION
 
 ### Column A – Control ID (Dropdown Validation)
 
@@ -124,8 +124,8 @@ Live evidence tracking. One row per control per audit cycle.
 2. Data → Data Validation
 3. Allow: List
 4. Source: `=CONTROL_MASTER!$A$2:$A$36`
-5. In-cell dropdown: ✅ Checked
-6. Error Alert: ✅ Checked (message: "Select valid Control ID")
+5. In-cell dropdown:  Checked
+6. Error Alert:  Checked (message: "Select valid Control ID")
 
 ---
 
@@ -145,7 +145,7 @@ Live evidence tracking. One row per control per audit cycle.
 1. Click cell B2
 2. Paste formula
 3. Copy down to row 1000 (Ctrl+C, select range, Ctrl+V)
-4. Lock cell (Format → Cells → Protection → Locked ✅)
+4. Lock cell (Format → Cells → Protection → Locked )
 
 ---
 
@@ -285,7 +285,7 @@ Between: 01/01/2000 and TODAY()
 
 ---
 
-### Column L – Evidence Status (AUTO-CALCULATE) 🔴 **CRITICAL**
+### Column L – Evidence Status (AUTO-CALCULATE)  **CRITICAL**
 
 **THIS COLUMN DRIVES ALL AUDIT DECISIONS**
 
@@ -307,10 +307,10 @@ Between: 01/01/2000 and TODAY()
 6. **Otherwise** → `VALID`
 
 **Possible Outputs (Only):**
-- ✅ `VALID` – Evidence current, on schedule
-- ⚠️ `EXPIRING SOON` – Will expire in ≤14 days
-- ❌ `EXPIRED` – Past review date, no current evidence
-- ❌ `MISSING` – No evidence linked
+-  `VALID` – Evidence current, on schedule
+-  `EXPIRING SOON` – Will expire in ≤14 days
+-  `EXPIRED` – Past review date, no current evidence
+-  `MISSING` – No evidence linked
 - [blank] – Incomplete row (skip)
 
 **NO MANUAL OVERRIDE ALLOWED**
@@ -354,7 +354,7 @@ Between: 01/01/2000 and TODAY()
 
 ---
 
-### Column P – Escalation Flag (AUTO-CALCULATE) 🚨
+### Column P – Escalation Flag (AUTO-CALCULATE) 
 
 **DRIVES EXECUTIVE NOTIFICATIONS**
 
@@ -464,8 +464,8 @@ Auditor validates integrity:
 Step 1: Download evidence file from repository
 Step 2: Calculate SHA256 hash of downloaded file
 Step 3: Compare with Column T value
-        IF Match → ✅ VERIFIED (file unchanged since upload)
-        IF Different → ⚠️ TAMPERED (file modified, investigate)
+        IF Match →  VERIFIED (file unchanged since upload)
+        IF Different →  TAMPERED (file modified, investigate)
 ```
 
 ---
@@ -494,9 +494,9 @@ If Column T has value AND evidence file MISSING from repository:
 ```
 
 **Display:** Shows integrity confidence
-- ✅ N/A = No hash tracking (acceptable)
-- ✅ VERIFIED = Hash present, file present (good)
-- ❌ FILE MISSING = Critical (evidence unavailable)
+-  N/A = No hash tracking (acceptable)
+-  VERIFIED = Hash present, file present (good)
+-  FILE MISSING = Critical (evidence unavailable)
 
 **Auditor Use:** During audit, if any "FILE MISSING" → immediate escalation
 
@@ -512,7 +512,7 @@ If Column T has value AND evidence file MISSING from repository:
    - Download evidence file from repository
    - Calculate: `shasum -a 256 [file]` (or `certutil` on Windows)
    - Compare: Result with Column T
-   - Document: ✅ VERIFIED or ❌ TAMPERED
+   - Document:  VERIFIED or  TAMPERED
 3. **If hash mismatch found:**
    - Escalate to Governance Office immediately
    - Root cause: Who modified? When? Why?
@@ -523,30 +523,30 @@ If Column T has value AND evidence file MISSING from repository:
 
 ---
 
-## 🔐 Evidence Repository Control Requirements
+##  Evidence Repository Control Requirements
 
 **Before Week 1 Launch, Confirm Repository Supports:**
 
 ### Requirement 1: Version History
-- ✅ Every file upload creates timestamped version
-- ✅ Previous versions retained (not overwritten)
-- ✅ Auditor can request version as of [specific date]
+-  Every file upload creates timestamped version
+-  Previous versions retained (not overwritten)
+-  Auditor can request version as of [specific date]
 
 **Check:** SharePoint / OneDrive / Confluence / Git all support this by default
 
 ### Requirement 2: Restricted Write Access
-- ✅ Evidence Owners can UPLOAD (write)
-- ✅ Evidence Owners can READ their own evidence
-- ✅ Control Owners can READ (not write/delete)
-- ✅ Auditors can READ (not write/delete)
-- ✅ NO ONE can DELETE uploaded evidence (except IT after 7-year retention)
+-  Evidence Owners can UPLOAD (write)
+-  Evidence Owners can READ their own evidence
+-  Control Owners can READ (not write/delete)
+-  Auditors can READ (not write/delete)
+-  NO ONE can DELETE uploaded evidence (except IT after 7-year retention)
 
 **Check:** Apply folder-level permissions (NTFS or cloud equivalent)
 
 ### Requirement 3: Access Logging
-- ✅ Every file access logged (date, time, user, action)
-- ✅ Logs retained minimum 1 year
-- ✅ Logs auditable (not deletable by regular users)
+-  Every file access logged (date, time, user, action)
+-  Logs retained minimum 1 year
+-  Logs auditable (not deletable by regular users)
 
 **Check:** SharePoint → Site Audit Logs active?  OneDrive → Audit retained?  Confluence → Access tracking enabled?
 
@@ -563,7 +563,7 @@ If Column T has value AND evidence file MISSING from repository:
 
 ---
 
-## 🎨 SHEET 2: CONDITIONAL FORMATTING RULES
+##  SHEET 2: CONDITIONAL FORMATTING RULES
 
 ### Rule 1 – Evidence Status Color Coding
 
@@ -644,7 +644,7 @@ IF K2 > 14
 
 ---
 
-## 📊 SHEET 3: DASHBOARD (Real-Time KPIs)
+##  SHEET 3: DASHBOARD (Real-Time KPIs)
 
 ### Purpose
 Executive visibility into governance compliance status.
@@ -698,7 +698,7 @@ Control ID | Next Review Date | Days | Status | Owner
 
 ---
 
-## 🔐 SHEET 2: DATA PROTECTION & LOCKING
+##  SHEET 2: DATA PROTECTION & LOCKING
 
 ### Protection Strategy
 
@@ -716,14 +716,14 @@ Control ID | Next Review Date | Days | Status | Owner
 ### Steps to Implement
 
 1. **Select all cells:** Ctrl+A
-2. **Lock all:** Format → Cells → Protection tab → ✅ Locked
+2. **Lock all:** Format → Cells → Protection tab →  Locked
 3. **Select editable columns:** Hold Ctrl, click each column header
-4. **Unlock selected:** Format → Cells → Protection tab → ❌ Uncheck Locked
+4. **Unlock selected:** Format → Cells → Protection tab →  Uncheck Locked
 5. **Protect sheet:** Review tab → Protect Sheet → Set password (optional)
 
 ---
 
-## ⚙️ AUTOMATED WORKFLOWS
+##  AUTOMATED WORKFLOWS
 
 ### Workflow 1 – Monthly Governance Alert (Email Export)
 
@@ -759,12 +759,12 @@ Control ID | Next Review Date | Days | Status | Owner
 **Action:**
 - Flag row
 - Email to: CISO + Chief AI Officer + Governance Council
-- **Subject:** "🚨 CRITICAL – Control Escalation Required"
+- **Subject:** " CRITICAL – Control Escalation Required"
 - **Content:** Control ID + Owner + Issue + Deadline
 
 ---
 
-## 📁 FILE SETUP CHECKLIST
+##  FILE SETUP CHECKLIST
 
 - [ ] Create new Excel workbook
 - [ ] Create CONTROL_MASTER sheet (import from MCM, lock all)
@@ -787,7 +787,7 @@ Control ID | Next Review Date | Days | Status | Owner
 
 ---
 
-## 🧪 TESTING PROTOCOL
+##  TESTING PROTOCOL
 
 ### Test Case 1 – Annual Control with Valid Evidence
 
@@ -802,7 +802,7 @@ Input:
 Expected Output:
   Next Review Date: 01/10/2027
   Days Until Expiry: 332
-  Evidence Status: VALID ✅
+  Evidence Status: VALID 
   Escalation Flag: [blank]
 ```
 
@@ -821,8 +821,8 @@ Input:
 Expected Output:
   Next Review Date: [blank]
   Days Until Expiry: [blank]
-  Evidence Status: MISSING ❌
-  Escalation Flag: ESCALATE 🚨 (if Criticality = High)
+  Evidence Status: MISSING 
+  Escalation Flag: ESCALATE  (if Criticality = High)
 ```
 
 ---
@@ -840,8 +840,8 @@ Input:
 Expected Output:
   Next Review Date: 02/01/2026
   Days Until Expiry: -13 (today is Feb 15, 2026)
-  Evidence Status: EXPIRED ❌
-  Escalation Flag: ESCALATE 🚨 (if Criticality = High)
+  Evidence Status: EXPIRED 
+  Escalation Flag: ESCALATE  (if Criticality = High)
 ```
 
 ---
@@ -859,13 +859,13 @@ Input:
 Expected Output:
   Next Review Date: 07/20/2026
   Days Until Expiry: 156 (today is Feb 15, 2026)
-  Evidence Status: VALID ✅
+  Evidence Status: VALID 
   Escalation Flag: [blank]
 ```
 
 ---
 
-## 🎯 STABILIZATION PILOT SEQUENCE
+##  STABILIZATION PILOT SEQUENCE
 
 ### Week 1 – Load & Test
 
@@ -887,14 +887,14 @@ Deliverable:
 
 ```
 Controls to load (evidence data):
-  ✅ EATGF-EDM-GOV-01 (Governance Charter)
-  ✅ EATGF-APO-SEC-01 (Information Security Policy)
-  ✅ EATGF-APO-RISK-01 (Risk Assessment & Treatment)
-  ✅ EATGF-DSS-SEC-01 (IAM & Access Control)
-  ✅ EATGF-DSS-ENC-01 (Encryption Standards)
-  ✅ EATGF-DSS-INC-01 (Incident Management)
-  ✅ EATGF-AI-LC-01 (AI Lifecycle Governance)
-  ✅ EATGF-AI-RISK-01 (AI Risk Management)
+   EATGF-EDM-GOV-01 (Governance Charter)
+   EATGF-APO-SEC-01 (Information Security Policy)
+   EATGF-APO-RISK-01 (Risk Assessment & Treatment)
+   EATGF-DSS-SEC-01 (IAM & Access Control)
+   EATGF-DSS-ENC-01 (Encryption Standards)
+   EATGF-DSS-INC-01 (Incident Management)
+   EATGF-AI-LC-01 (AI Lifecycle Governance)
+   EATGF-AI-RISK-01 (AI Risk Management)
 
 For each:
   [ ] Evidence Description: Clear, specific
@@ -980,27 +980,27 @@ Use the verification checklist from:
     [ ] Previous versions retained (not overwritten)
     [ ] Timestamp recorded for each version
     [ ] Test: Upload file → Modify → Check history → Both visible?
-    STATUS: ✅ PASS / ❌ FAIL
+    STATUS:  PASS /  FAIL
 
 [ ] CAPABILITY 2 – RESTRICTED WRITE
     [ ] Evidence Owner can UPLOAD
     [ ] Evidence Owner CANNOT DELETE
     [ ] Control Owner can READ ONLY
     [ ] Test: Try delete as non-owner → DENIED?
-    STATUS: ✅ PASS / ❌ FAIL
+    STATUS:  PASS /  FAIL
 
 [ ] CAPABILITY 3 – ACCESS LOGGING
     [ ] All uploads logged (date, time, user)
     [ ] All downloads logged
     [ ] Logs retained ≥1 year
     [ ] Test: Request access log for file → Provided?
-    STATUS: ✅ PASS / ❌ FAIL
+    STATUS:  PASS /  FAIL
 ```
 
 **Decision Gate:**
 
-- ✅ **ALL 3 PASS:** → Excel build can start Monday (Feb 16)
-- ❌ **ANY FAIL:** → Remediate repository first (policy: Section 5 has setup steps)
+-  **ALL 3 PASS:** → Excel build can start Monday (Feb 16)
+-  **ANY FAIL:** → Remediate repository first (policy: Section 5 has setup steps)
 
 ### Evidence Hash Setup (If Using)
 
@@ -1032,14 +1032,14 @@ Use the verification checklist from:
 
 ---
 
-## �🚀 After Phase 2 Stabilization Complete
+## � After Phase 2 Stabilization Complete
 
 **If pilot audit is successful:**
 
-✅ ISMS operational  
-✅ AIMS operational  
-✅ Audit procedures validated  
-✅ Evidence tracking proven  
+ ISMS operational  
+ AIMS operational  
+ Audit procedures validated  
+ Evidence tracking proven  
 
 **Decision:** Proceed to **Phase 3 – Edition Deployment Model**
 
@@ -1049,7 +1049,7 @@ Use the verification checklist from:
 
 ---
 
-## 📝 Document Control
+##  Document Control
 
 | Field | Value |
 |-------|-------|
@@ -1063,7 +1063,7 @@ Use the verification checklist from:
 
 ---
 
-**🔒 This is NOT a template.**
+** This is NOT a template.**
 
 **This is a fully specified build plan. Give to developer → They build → Test → Use.**
 

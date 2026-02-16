@@ -4,8 +4,8 @@
 
 This document establishes mandatory formatting standards for all Enterprise AI-Aligned Technical Governance Framework (EATGF) documentation. All authors, contributors, and publishing processes must adhere strictly to these standards without exception.
 
-**Effective Date:** February 14, 2026  
-**Authority:** EATGF Governance Council  
+**Effective Date:** February 14, 2026
+**Authority:** EATGF Governance Council
 **Classification:** Controlled
 
 ---
@@ -32,14 +32,14 @@ Every governance document must include these eight sections in this precise orde
 ```markdown
 # Document Title (Exact Name)
 
-| Field | Value |
-|-------|-------|
-| Document Type | Framework / Policy / Procedure / Specification |
-| Version | X.Y |
-| Classification | Controlled / Public / Internal |
-| Effective Date | YYYY-MM-DD |
-| Authority | Role / Team / Council |
-| EATGF Layer | 00_FOUNDATION / 01_MANAGEMENT_SYSTEMS / etc. |
+| Field          | Value                                          |
+| -------------- | ---------------------------------------------- |
+| Document Type  | Framework / Policy / Procedure / Specification |
+| Version        | X.Y                                            |
+| Classification | Controlled / Public / Internal                 |
+| Effective Date | YYYY-MM-DD                                     |
+| Authority      | Role / Team / Council                          |
+| EATGF Layer    | 00_FOUNDATION / 01_MANAGEMENT_SYSTEMS / etc.   |
 
 ---
 ```
@@ -50,37 +50,40 @@ Every governance document must include these eight sections in this precise orde
 
 ### What IS Required
 
-✅ **Clear, structured, readable prose**
+ **Clear, structured, readable prose**
+
 - Short paragraphs (2–4 sentences maximum)
 - Action-oriented language
 - Precise technical terminology
 - Concise but complete explanations
 
-✅ **Enterprise authority tone**
+ **Enterprise authority tone**
+
 - Professional and formal
 - Confident without being condescending
 - Prescriptive for mandatory controls
 - Advisory for guidance sections
 
-✅ **No academic tone**
+ **No academic tone**
+
 - Avoid: "This paper explores...", "It is noteworthy that...", "As per the literature..."
 - Use: "The control requires...", "Implementation must ensure...", "Organizations adopt..."
 
 ### What IS NOT Allowed
 
-❌ **Footnotes** – Use inline clarification or separate sections instead
+ **Footnotes** – Use inline clarification or separate sections instead
 
-❌ **Hidden HTML** – No HTML comments, no embedded styling
+ **Hidden HTML** – No HTML comments, no embedded styling
 
-❌ **Emojis** – No ✅, ❌, 🔒, or any emoji characters (except in tables where already established)
+ **Emojis** – No , , , or any emoji characters (except in tables where already established)
 
-❌ **Decorative text** – No stars, arrows, or special characters for formatting
+ **Decorative text** – No stars, arrows, or special characters for formatting
 
-❌ **Toy examples** – All code and process examples must be production-grade
+ **Toy examples** – All code and process examples must be production-grade
 
-❌ **Personal voice** – Avoid "I", "we", "you"; use passive or organizational voice
+ **Personal voice** – Avoid "I", "we", "you"; use passive or organizational voice
 
-❌ **Casual language** – No colloquialisms, slang, or informal phrasing
+ **Casual language** – No colloquialisms, slang, or informal phrasing
 
 ---
 
@@ -88,7 +91,7 @@ Every governance document must include these eight sections in this precise orde
 
 ### Requirements
 
-✅ **Use fenced code blocks with language specification**
+ **Use fenced code blocks with language specification**
 
 ```python
 # All code blocks must specify the language: python, yaml, javascript, bash, json, sql, etc.
@@ -96,11 +99,13 @@ Every governance document must include these eight sections in this precise orde
 # This is production-grade example code only
 ```
 
-✅ **Brief inline comments (max 2 per code block)**
+ **Brief inline comments (max 2 per code block)**
+
 - Comment WHAT and WHY, not obvious implementation details
 - Example: `# Validate API token expiration` instead of `# Check if token < 1 hour`
 
-✅ **Production-grade examples only**
+ **Production-grade examples only**
+
 - Real-world configuration patterns
 - Security best practices applied
 - Error handling included where critical
@@ -109,6 +114,7 @@ Every governance document must include these eight sections in this precise orde
 ### Examples of Acceptable Code
 
 **Python: API Integration with Security**
+
 ```python
 import requests
 from cryptography.fernet import Fernet
@@ -119,7 +125,7 @@ class SecureAPIClient:
         # Decrypt API key from secure storage on initialization
         self.api_key = cipher.decrypt(api_key_encrypted.encode())
         self.logger = logging.getLogger(__name__)
-    
+
     def call_governance_api(self, endpoint: str, payload: dict) -> dict:
         # Add security headers and request signing
         headers = {
@@ -132,9 +138,10 @@ class SecureAPIClient:
 ```
 
 **YAML: Control Definition Structure**
+
 ```yaml
 control:
-  id: EATGF-APO-GOV-01
+  id: EATGF-EDM-GOV-01
   name: Governance Authority Definition
   category: Governance Architecture
   iso27001_mapping: [5.1, 5.2]
@@ -149,6 +156,7 @@ control:
 ```
 
 **Bash: Infrastructure Deployment**
+
 ```bash
 #!/bin/bash
 # Deploy governance documentation site with standard security posture
@@ -176,7 +184,8 @@ npm run deploy -- --tls-required --csp-enabled
 
 ### ONLY Approved Primary Sources
 
-✅ **Required sources (use these exclusively)**
+ **Required sources (use these exclusively)**
+
 - NIST (SP 800 series, AI RMF, SSDF)
 - ISO/IEC (27001:2022, 27002:2022, 42001:2023, others)
 - IETF RFC documents
@@ -185,7 +194,8 @@ npm run deploy -- --tls-required --csp-enabled
 
 ### NEVER Use These Sources
 
-❌ **Secondary sources never allowed**
+ **Secondary sources never allowed**
+
 - Wikipedia (unreliable, not authoritative)
 - Blog posts (no matter how credible the author)
 - Academic papers from arXiv (not peer-reviewed official sources)
@@ -196,8 +206,9 @@ npm run deploy -- --tls-required --csp-enabled
 ### Citation Format
 
 **In-text** (no footnotes):
+
 ```
-According to NIST SP 800-53 Rev. 5, access control policies must 
+According to NIST SP 800-53 Rev. 5, access control policies must
 establish role definitions before implementation.
 ```
 
@@ -238,21 +249,25 @@ Every policy, framework, and specification MUST include a "Control Mapping" sect
 ## Control Mapping
 
 ### ISO 27001:2022 Alignment
+
 - **Clause 5.2** – Information security policies and procedures
 - **Clause 6.2** – Risk assessment and treatment
 - **Clause 7.2** – Competence and awareness
 
 ### NIST SSDF v1.1 Alignment
+
 - **PO1.3** – Review and incorporate security requirements into criteria
 - **PO2.1** – Document and communicate security and privacy requirements
 - **PR3.1** – Use standard security configurations for infrastructure
 
 ### OWASP Alignment
+
 - **Secure Code Review** – OWASP SAMM (SM: Governance)
 - **Threat Modeling** – OWASP Threat Modeling Framework
 - **Architecture Review** – OWASP Architecture Review Board
 
 ### COBIT 2019 Alignment
+
 - **EDM02** – Ensure stakeholder value delivery
 - **APO01** – Manage IT management framework
 - **APO05** – Manage portfolio
@@ -264,13 +279,15 @@ Every policy, framework, and specification MUST include a "Control Mapping" sect
 
 ### Spacing and Readability
 
-✅ **Proper spacing**
+ **Proper spacing**
+
 - Blank line before each H2 section
 - Blank line between paragraphs
 - No more than 4 consecutive paragraph lines
 - Tables must have blank lines before and after
 
-✅ **Lists and structure**
+ **Lists and structure**
+
 - Use unordered lists (`-`) for parallel items
 - Use ordered lists (`1.`) only for sequential procedures
 - Indent sublists with 4 spaces
@@ -286,10 +303,10 @@ Every policy, framework, and specification MUST include a "Control Mapping" sect
 ### H3: Subsection (as needed within H2 sections)
 
 #### H4: Minor subsection (rarely needed; max 1 level deeper)
-
 ```
 
 **NO OTHER ELEMENTS:**
+
 - No decorative lines (---) except after H1
 - No colored text or highlighting
 - No tables outside metadata blocks
@@ -300,19 +317,19 @@ Every policy, framework, and specification MUST include a "Control Mapping" sect
 Metadata tables use standard Markdown tables:
 
 ```markdown
-| Field | Value |
-|-------|-------|
-| Document Type | Framework |
-| Version | 1.0 |
+| Field          | Value      |
+| -------------- | ---------- |
+| Document Type  | Framework  |
+| Version        | 1.0        |
 | Classification | Controlled |
 ```
 
 Data tables must use clear headers:
 
 ```markdown
-| Control ID | Control Objective | ISO Mapping | Implementation |
-|------------|-------------------|-------------|-----------------|
-| EATGF-APO-01 | Governance Structure | 5.1, 5.2 | Establish bodies |
+| Control ID   | Control Objective    | ISO Mapping | Implementation   |
+| ------------ | -------------------- | ----------- | ---------------- |
+| EATGF-APO-01 | Governance Structure | 5.1, 5.2    | Establish bodies |
 ```
 
 ---
@@ -321,26 +338,30 @@ Data tables must use clear headers:
 
 ### What IS Allowed
 
-✅ **Standard Markdown**
+ **Standard Markdown**
+
 - Headers, paragraphs, lists
 - Fenced code blocks
 - Tables
 - Links to other documentation
-- Emphasis: **bold** and *italic* (minimal use)
+- Emphasis: **bold** and _italic_ (minimal use)
 
 ### What IS NOT Allowed
 
-❌ **NO HTML tags** – Even those that "don't render"
+ **NO HTML tags** – Even those that "don't render"
+
 - `<!-- comments -->`
 - `<div>`, `<span>`, `<style>` tags
 - `&nbsp;`, `&mdash;`, or HTML entities
 
-❌ **NO custom formatting directives**
+ **NO custom formatting directives**
+
 - No Jekyll front matter beyond YAML metadata blocks
 - No preprocessing instructions
 - No Docusaurus-specific JSX or MDX
 
-❌ **NO unescaped special characters**
+ **NO unescaped special characters**
+
 - Content must be valid Markdown that renders identically across platforms
 
 ---
@@ -391,12 +412,13 @@ Every document MUST have exactly one H1 (`#`) header as the document title. This
 ### Automated Checks (Future)
 
 All documents will be validated against:
-- ✅ Single H1 per file
-- ✅ Presence of all 8 major H2 sections
-- ✅ No emojis in content
-- ✅ No HTML tags
-- ✅ All code blocks have language specification
-- ✅ All references are primary sources only
+
+-  Single H1 per file
+-  Presence of all 8 major H2 sections
+-  No emojis in content
+-  No HTML tags
+-  All code blocks have language specification
+-  All references are primary sources only
 
 ### Manual Review Checklist
 
@@ -419,12 +441,13 @@ Before publication, reviewers must verify:
 
 **This formatting standard is binding on all EATGF contributors.**
 
-**Change Authority:** EATGF Governance Council  
-**Review Frequency:** Quarterly  
-**Last Updated:** February 14, 2026  
+**Change Authority:** EATGF Governance Council
+**Review Frequency:** Quarterly
+**Last Updated:** February 14, 2026
 **Next Review:** May 14, 2026
 
 Document changes require:
+
 1. Formal change request to governance council
 2. Impact assessment on existing documentation
 3. Bulk update of all affected documents

@@ -9,7 +9,7 @@
 | Classification | Internal |
 | Effective Date | 2026-02-14 |
 | Authority | Enterprise Architecture & Governance Office |
-| MCM Reference | EATGF-GOV-DOC-001 |
+| MCM Reference | EATGF-EDM-GOV-01 |
 
 ---
 
@@ -54,12 +54,12 @@ Every EATGF document shall conform to the following 10-element structure:
 
 | Document | Title | Header Sig | Purpose | Scope | Definitions | Responsibilities | Enforcement | Version Block | Auth Sign-Off |
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
-| README.md | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| 00_FOUNDATION/README.md | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ Partial | ✅ | ✅ |
-| OFFICIAL_DESIGNATION.md | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| GOVERNANCE_FRAMEWORK_README.md | ✅ | ❌ | ✅ Partial | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| BASELINE_DECLARATION_v1.0.md | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ Partial |
-| MASTER_CONTROL_MATRIX.md | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| README.md |  |  |  |  |  |  |  |  |  |
+| 00_FOUNDATION/README.md |  |  |  |  |  |  |  Partial |  |  |
+| OFFICIAL_DESIGNATION.md |  |  |  |  |  |  |  |  |  |
+| GOVERNANCE_FRAMEWORK_README.md |  |  |  Partial |  |  |  |  |  |  |
+| BASELINE_DECLARATION_v1.0.md |  |  |  |  |  |  |  |  |  Partial |
+| MASTER_CONTROL_MATRIX.md |  |  |  |  |  |  |  |  |  |
 
 **Layer 00 Compliance Rate:** 63% (57 of 90 elements present or partially present)
 
@@ -67,10 +67,10 @@ Every EATGF document shall conform to the following 10-element structure:
 
 | Document | Title | Header Sig | Purpose | Scope | Definitions | Responsibilities | Enforcement | Version Block | Auth Sign-Off |
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
-| 01_MANAGEMENT_SYSTEMS/README.md | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ |
-| ISMS_MANUAL_v1.0.md | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ |
-| 01_STATEMENT_OF_APPLICABILITY_TEMPLATE.md | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ |
-| AIMS_MANUAL_v1.0.md | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ |
+| 01_MANAGEMENT_SYSTEMS/README.md |  |  |  |  |  |  |  |  |  |
+| ISMS_MANUAL_v1.0.md |  |  |  |  |  |  |  |  |  |
+| 01_STATEMENT_OF_APPLICABILITY_TEMPLATE.md |  |  |  |  |  |  |  |  |  |
+| AIMS_MANUAL_v1.0.md |  |  |  |  |  |  |  |  |  |
 
 **Layer 01 Compliance Rate:** 75% (27 of 36 elements)
 
@@ -78,11 +78,11 @@ Every EATGF document shall conform to the following 10-element structure:
 
 | Document | Title | Header Sig | Purpose | Scope | Definitions | Responsibilities | Enforcement | Version Block | Auth Sign-Off |
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
-| 02_CONTROL_ARCHITECTURE/README.md | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ |
-| CONTROL_OBJECTIVES.md | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ Partial | ❌ | ✅ Partial | ❌ |
-| FRAMEWORK_MAPPINGS.md | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md | ✅ | ✅ | ✅ | ✅ | ✅ Partial | ✅ | ✅ | ✅ | ✅ |
-| RISK_FRAMEWORK.md | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ Partial | ❌ |
+| 02_CONTROL_ARCHITECTURE/README.md |  |  |  |  |  |  |  |  |  |
+| CONTROL_OBJECTIVES.md |  |  |  |  |  |  Partial |  |  Partial |  |
+| FRAMEWORK_MAPPINGS.md |  |  |  |  |  |  |  |  |  |
+| FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md |  |  |  |  |  Partial |  |  |  |  |
+| RISK_FRAMEWORK.md |  |  |  |  |  |  |  |  Partial |  |
 
 **Layer 02 Compliance Rate:** 47% (21 of 45 elements)
 
@@ -90,10 +90,10 @@ Every EATGF document shall conform to the following 10-element structure:
 
 | Document | Title | Header Sig | Purpose | Scope | Definitions | Responsibilities | Enforcement | Version Block | Auth Sign-Off |
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
-| 03_GOVERNANCE_MODELS/README.md | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ |
-| GOVERNANCE_BY_TEAM_SIZE.md | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ Partial | ❌ |
-| MATURITY_ASSESSMENT.md | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ Partial | ❌ | ✅ Partial | ❌ |
-| PERFORMANCE_MODEL.md | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ Partial | ❌ |
+| 03_GOVERNANCE_MODELS/README.md |  |  |  |  |  |  |  |  |  |
+| GOVERNANCE_BY_TEAM_SIZE.md |  |  |  |  |  |  |  |  Partial |  |
+| MATURITY_ASSESSMENT.md |  |  |  |  |  |  Partial |  |  Partial |  |
+| PERFORMANCE_MODEL.md |  |  |  |  |  |  |  |  Partial |  |
 
 **Layer 03 Compliance Rate:** 42% (15 of 36 elements)
 
@@ -101,11 +101,11 @@ Every EATGF document shall conform to the following 10-element structure:
 
 | Document | Title | Header Sig | Purpose | Scope | Definitions | Responsibilities | Enforcement | Version Block | Auth Sign-Off |
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
-| 04_POLICY_LAYER/README.md | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ |
-| 01_GOVERNANCE_CHARTER.md | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ |
-| GOVERNANCE_CHARTER_FORMAL_v2.md | ✅ | ✅ | ✅ | ✅ | ✅ Partial | ✅ | ✅ | ✅ | ✅ |
-| 02_INFORMATION_SECURITY_POLICY.md | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ✅ Partial | ✅ Partial | ❌ |
-| 03_DATA_GOVERNANCE_POLICY.md | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ Partial | ❌ | ✅ Partial | ❌ |
+| 04_POLICY_LAYER/README.md |  |  |  |  |  |  |  |  |  |
+| 01_GOVERNANCE_CHARTER.md |  |  |  |  |  |  |  |  |  |
+| GOVERNANCE_CHARTER_FORMAL_v2.md |  |  |  |  |  Partial |  |  |  |  |
+| 02_INFORMATION_SECURITY_POLICY.md |  |  |  |  |  |  |  Partial |  Partial |  |
+| 03_DATA_GOVERNANCE_POLICY.md |  |  |  |  |  |  Partial |  |  Partial |  |
 
 **Layer 04 Compliance Rate:** 58% (26 of 45 elements)
 
@@ -113,9 +113,9 @@ Every EATGF document shall conform to the following 10-element structure:
 
 | Document | Title | Header Sig | Purpose | Scope | Definitions | Responsibilities | Enforcement | Version Block | Auth Sign-Off |
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
-| 05_DOMAIN_FRAMEWORKS/README.md | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ |
-| AI_GOVERNANCE_FRAMEWORK.md | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ Partial | ❌ |
-| API_GOVERNANCE_FRAMEWORK.md | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ Partial | ❌ |
+| 05_DOMAIN_FRAMEWORKS/README.md |  |  |  |  |  |  |  |  |  |
+| AI_GOVERNANCE_FRAMEWORK.md |  |  |  |  |  |  |  |  Partial |  |
+| API_GOVERNANCE_FRAMEWORK.md |  |  |  |  |  |  |  |  Partial |  |
 
 **Layer 05 Compliance Rate:** 56% (15 of 27 elements)
 
@@ -123,8 +123,8 @@ Every EATGF document shall conform to the following 10-element structure:
 
 | Document | Title | Header Sig | Purpose | Scope | Definitions | Responsibilities | Enforcement | Version Block | Auth Sign-Off |
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
-| 06_AUDIT_AND_ASSURANCE/README.md | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ |
-| INTERNAL_AUDIT_PROCEDURE_v1.0.md | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 06_AUDIT_AND_ASSURANCE/README.md |  |  |  |  |  |  |  |  |  |
+| INTERNAL_AUDIT_PROCEDURE_v1.0.md |  |  |  |  |  |  |  |  |  |
 
 **Layer 06 Compliance Rate:** 72% (13 of 18 elements)
 
@@ -132,21 +132,21 @@ Every EATGF document shall conform to the following 10-element structure:
 
 | Document | Title | Header Sig | Purpose | Scope | Definitions | Responsibilities | Enforcement | Version Block | Auth Sign-Off |
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
-| 07_REFERENCE_AND_EVOLUTION/README.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| PHASE_2_vs_PHASE_3_DECISION_FRAMEWORK.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| PHASE_1.5_CONTROL_EXPANSION.md | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| PHASE_2_COMPLETION_SUMMARY.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| IMPLEMENTATION_ROADMAP.md | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ Partial | ❌ |
-| PHASE_2_STABILIZATION_PLAN.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| HISTORICAL_ARTIFACTS/README.md | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| EVIDENCE_REGISTER_MASTER.md | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| EVIDENCE_REGISTER_IMPLEMENTATION_GUIDE.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| EVIDENCE_REGISTER_EXCEL_BUILD_SPECIFICATION.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| EVIDENCE_INTEGRITY_AND_REPOSITORY_CONTROL_POLICY.md | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ |
-| WEEK_1_EXECUTION_PLAN.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| WEEK_1_STATUS.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| PHASE_2_WEEK_1_GO_APPROVAL.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| PHASE_2_FINAL_GO_NO_GO_GATE.md | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| 07_REFERENCE_AND_EVOLUTION/README.md |  |  |  |  |  |  |  |  |  |
+| PHASE_2_vs_PHASE_3_DECISION_FRAMEWORK.md |  |  |  |  |  |  |  |  |  |
+| PHASE_1.5_CONTROL_EXPANSION.md |  |  |  |  |  |  |  |  |  |
+| PHASE_2_COMPLETION_SUMMARY.md |  |  |  |  |  |  |  |  |  |
+| IMPLEMENTATION_ROADMAP.md |  |  |  |  |  |  |  |  Partial |  |
+| PHASE_2_STABILIZATION_PLAN.md |  |  |  |  |  |  |  |  |  |
+| HISTORICAL_ARTIFACTS/README.md |  |  |  |  |  |  |  |  |  |
+| EVIDENCE_REGISTER_MASTER.md |  |  |  |  |  |  |  |  |  |
+| EVIDENCE_REGISTER_IMPLEMENTATION_GUIDE.md |  |  |  |  |  |  |  |  |  |
+| EVIDENCE_REGISTER_EXCEL_BUILD_SPECIFICATION.md |  |  |  |  |  |  |  |  |  |
+| EVIDENCE_INTEGRITY_AND_REPOSITORY_CONTROL_POLICY.md |  |  |  |  |  |  |  |  |  |
+| WEEK_1_EXECUTION_PLAN.md |  |  |  |  |  |  |  |  |  |
+| WEEK_1_STATUS.md |  |  |  |  |  |  |  |  |  |
+| PHASE_2_WEEK_1_GO_APPROVAL.md |  |  |  |  |  |  |  |  |  |
+| PHASE_2_FINAL_GO_NO_GO_GATE.md |  |  |  |  |  |  |  |  |  |
 
 **Layer 07 Compliance Rate:** 37% (51 of 135 elements)
 
@@ -181,7 +181,7 @@ Two governance charters exist with overlapping scope:
 
 ### 6.3 CRITICAL — Legacy README Conflict
 
-GOVERNANCE_FRAMEWORK_README.md uses the deprecated name "Enterprise Governance Framework", references 14 controls, contains marketing tone with emoji (🚀🎓🎉❤️), shows an incorrect directory structure, and includes placeholder contact information. This document directly contradicts the authoritative README.md and OFFICIAL_DESIGNATION.md.
+GOVERNANCE_FRAMEWORK_README.md uses the deprecated name "Enterprise Governance Framework", references 14 controls, contains marketing tone with emoji (), shows an incorrect directory structure, and includes placeholder contact information. This document directly contradicts the authoritative README.md and OFFICIAL_DESIGNATION.md.
 
 **Remediation:** Rewrite in-place to align with EATGF naming, 35-control MCM, formal tone, and accurate directory structure.
 
@@ -212,7 +212,7 @@ ISO/IEC 42001 was published 18 December 2023. No 2024 edition or amendment exist
 | Violation | Document | Example |
 |-----------|----------|---------|
 | First-person plural | RISK_FRAMEWORK.md | "how **we** identify" |
-| Marketing tone | GOVERNANCE_FRAMEWORK_README.md | Badges, 🎉, ❤️, FAQ format |
+| Marketing tone | GOVERNANCE_FRAMEWORK_README.md | Badges, , , FAQ format |
 | Casual language | GOVERNANCE_BY_TEAM_SIZE.md | "Avoid lengthy 50-page policies nobody reads" |
 | Marketing tagline | EVIDENCE_REGISTER_EXCEL_BUILD_SPECIFICATION.md | "Buildable. Testable. Audit-Defensible." |
 | Strategic marketing | 03_DATA_GOVERNANCE_POLICY.md | "Data is a strategic asset" |

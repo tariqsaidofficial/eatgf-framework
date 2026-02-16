@@ -44,10 +44,10 @@ Backend application layer responsible for:
 
 **Conformance Obligations:**
 
-- ✅ 01_SECURE_SDLC standards
-- ✅ 02_API_GOVERNANCE standards (REST/GraphQL-specific controls)
-- ✅ 03_DEVSECOPS standards
-- ✅ 04_CLOUD standards (if deployed in cloud context)
+-  01_SECURE_SDLC standards
+-  02_API_GOVERNANCE standards (REST/GraphQL-specific controls)
+-  03_DEVSECOPS standards
+-  04_CLOUD standards (if deployed in cloud context)
 
 ## Relationship to EATGF Layers
 

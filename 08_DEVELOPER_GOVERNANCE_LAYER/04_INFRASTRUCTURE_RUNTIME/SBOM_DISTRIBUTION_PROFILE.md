@@ -56,7 +56,7 @@ SBOM Distribution profiles implement:
 Every publishable artifact automatically generates an SBOM at build time.
 
 ```bash
-# ✅ COMPLIANT: SBOM generated for every artifact
+#  COMPLIANT: SBOM generated for every artifact
 # Build pipeline
 docker build -t app:v1.0 .
 syft packages docker:app:v1.0 -o cyclonedx-json > sbom.json
@@ -74,7 +74,7 @@ cosign attach sbom --sbom sbom.json app:v1.0
 SBOM published in industry-standard formats for interoperability.
 
 ```json
-// ✅ COMPLIANT: CycloneDX format (NTIA-approved)
+//  COMPLIANT: CycloneDX format (NTIA-approved)
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
@@ -147,7 +147,7 @@ oras attach app:v1.0 sbom.json:application/vnd.cyclonedx+json
 SBOM cryptographically signed to prove integrity.
 
 ```bash
-# ✅ COMPLIANT: SBOM signed with artifact
+#  COMPLIANT: SBOM signed with artifact
 cosign sign-sbom --sbom sbom.json gcr.io/prod/app:v1.0
 cosign verify-sbom gcr.io/prod/app:v1.0 \
   --certificate-identity https://github.com/org/repo/.github/workflows/build.yml \
@@ -189,7 +189,7 @@ SBOM includes full build context for reproducibility.
 SBOM consumed by vulnerability scanners for real-time risk assessment.
 
 ```bash
-# ✅ COMPLIANT: SBOM fed to multiple scanners
+#  COMPLIANT: SBOM fed to multiple scanners
 cosign download sbom gcr.io/prod/app:v1.0 | \
   grype --file - --output json > vulns.json
 

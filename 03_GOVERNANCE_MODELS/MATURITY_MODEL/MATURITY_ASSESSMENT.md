@@ -51,11 +51,11 @@ The governance maturity model measures organizational capability across 5 core d
 
 | Level              | Status    | Characteristics                    |
 | ------------------ | --------- | ---------------------------------- |
-| **1 - Initial**    | ⚫ Red    | Ad-hoc, reactive, undocumented     |
-| **2 - Developing** | 🟠 Orange | Processes documented, inconsistent |
-| **3 - Defined**    | 🟡 Yellow | Standardized, measured             |
-| **4 - Managed**    | 🟢 Green  | Measured, controlled               |
-| **5 - Optimized**  | 🟣 Purple | Continuous improvement             |
+| **1 - Initial**    |  Red    | Ad-hoc, reactive, undocumented     |
+| **2 - Developing** |  Orange | Processes documented, inconsistent |
+| **3 - Defined**    |  Yellow | Standardized, measured             |
+| **4 - Managed**    |  Green  | Measured, controlled               |
+| **5 - Optimized**  |  Purple | Continuous improvement             |
 
 ---
 
@@ -254,11 +254,11 @@ Domain Scores:
 Overall Score: _____ / 100
 
 Interpretation:
-- 0-20: 🔴 Critical (Immediate action needed)
-- 21-40: 🟠 Poor (Significant improvements needed)
-- 41-60: 🟡 Fair (Moderate progress)
-- 61-80: 🟢 Good (On track)
-- 81-100: 🟣 Excellent (World-class practices)
+- 0-20:  Critical (Immediate action needed)
+- 21-40:  Poor (Significant improvements needed)
+- 41-60:  Fair (Moderate progress)
+- 61-80:  Good (On track)
+- 81-100:  Excellent (World-class practices)
 ```
 
 ---

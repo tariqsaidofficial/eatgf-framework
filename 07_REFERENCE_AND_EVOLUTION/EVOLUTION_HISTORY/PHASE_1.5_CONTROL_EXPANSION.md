@@ -11,7 +11,7 @@
 
 ---
 
-## 📊 EXPANSION OVERVIEW
+##  EXPANSION OVERVIEW
 
 ### Current State (MCM v0.9)
 - 21 controls across 5 COBIT domains
@@ -36,7 +36,7 @@
 
 ---
 
-## 🎯 Status: ARCHIVED REFERENCE MATERIAL
+##  Status: ARCHIVED REFERENCE MATERIAL
 
 This document captures the control expansion work that led to EATGF v1.0-Foundation. It is retained for historical reference and demonstrates the evolution of the Master Control Matrix.
 

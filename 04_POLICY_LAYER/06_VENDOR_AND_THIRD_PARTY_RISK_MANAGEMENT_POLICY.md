@@ -9,7 +9,7 @@
 | Effective Date | 2026-02-16                                                       |
 | Authority      | Chief Procurement Officer and Chief Information Security Officer |
 | EATGF Layer    | 04_POLICY_LAYER                                                  |
-| MCM Reference  | EATGF-APO-VEN-01, EATGF-APO-VEN-02, EATGF-DSS-VEN-01             |
+| MCM Reference  | EATGF-APO-RISK-01, EATGF-DSS-SEC-01, EATGF-MEA-AUD-01            |
 
 ---
 

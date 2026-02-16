@@ -57,7 +57,7 @@ Define governance controls for Infrastructure-as-Code (IaC) using Terraform to e
 ### Provider & Version Pinning
 
 ```hcl
-# ✅ COMPLIANT: Explicit provider versions + lock file
+#  COMPLIANT: Explicit provider versions + lock file
 terraform {
   required_version = ">= 1.5.0, < 2.0.0"
 
@@ -104,7 +104,7 @@ provider "aws" {
 ### Secrets Externalization
 
 ```hcl
-# ✅ COMPLIANT: Secrets from AWS Secrets Manager/Vault, never in code
+#  COMPLIANT: Secrets from AWS Secrets Manager/Vault, never in code
 data "aws_secretsmanager_secret_version" "db_password" {
   secret_id = "prod/rds/master_password"
 }
@@ -147,7 +147,7 @@ resource "aws_rds_cluster_parameter_group" "audit" {
 ### Policy Enforcement (Sentinel)
 
 ```hcl
-# ✅ COMPLIANT: Sentinel policy prevents non-compliant resources
+#  COMPLIANT: Sentinel policy prevents non-compliant resources
 # policy.sentinel
 
 import "tfplan/v2" as tfplan
@@ -180,7 +180,7 @@ deny_public_security_groups = rule {
 ### Testing with Terratest
 
 ```go
-// ✅ COMPLIANT: Go testing framework for IaC
+//  COMPLIANT: Go testing framework for IaC
 package test
 
 import (
