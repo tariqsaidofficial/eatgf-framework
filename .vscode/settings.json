@@ -1,0 +1,47 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "awk": true,
+        "git mv": true
+    },
+    
+    // EATGF Mandatory Document Standards Enforcement
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "text": "CRITICAL: All EATGF documents MUST comply with EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md in 00_FOUNDATION/. Every document requires: (1) Architectural Position (Layer/Scope/Authority), (2) Governance Principles, (3) Control Mapping table (ISO 27001/NIST/OWASP/COBIT), (4) Developer Checklist, (5) Governance Implications, (6) Version info. Use production-grade code only. NO emojis, NO decorative formatting. Professional tone only. Reference: .github/copilot-instructions.md"
+        }
+    ],
+    
+    // Markdown formatting enforcement
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    
+    // File associations for EATGF documents
+    "files.associations": {
+        "**/eatgf-framework/**/*.md": "markdown",
+        "**/governance-docs-site/framework/**/*.md": "markdown"
+    },
+    
+    // Workspace-specific linting
+    "markdownlint.config": {
+        "MD013": false,
+        "MD033": false,
+        "MD041": false
+    },
+    
+    // Copilot workspace instructions
+    "github.copilot.chat.welcomeMessage": "always",
+    "github.copilot.editor.enableAutoCompletions": true,
+    
+    // EATGF Document Template Enforcement
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": "explicit"
+    }
+}

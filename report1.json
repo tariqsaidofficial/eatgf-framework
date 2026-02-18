@@ -1,0 +1,79 @@
+{
+  "controls": [
+    {
+      "applicable": true,
+      "control_id": "EATGF-AI-RISK-01",
+      "domain": "EDM",
+      "status": "NOT_TESTED"
+    },
+    {
+      "applicable": true,
+      "control_id": "EATGF-API-SEC-01",
+      "domain": "DSS",
+      "status": "COMPLIANT"
+    },
+    {
+      "applicable": true,
+      "control_id": "EATGF-DSS-ENC-01",
+      "domain": "DSS",
+      "status": "COMPLIANT"
+    },
+    {
+      "applicable": true,
+      "control_id": "EATGF-DSS-INC-01",
+      "domain": "DSS",
+      "status": "COMPLIANT"
+    },
+    {
+      "applicable": true,
+      "control_id": "EATGF-DSS-SEC-01",
+      "domain": "DSS",
+      "status": "COMPLIANT"
+    },
+    {
+      "applicable": true,
+      "control_id": "EATGF-DSS-VULN-01",
+      "domain": "DSS",
+      "status": "NON_COMPLIANT"
+    },
+    {
+      "applicable": true,
+      "control_id": "EATGF-EDM-BEN-01",
+      "domain": "EDM",
+      "status": "PARTIAL"
+    },
+    {
+      "applicable": true,
+      "control_id": "EATGF-EDM-GOV-01",
+      "domain": "EDM",
+      "status": "COMPLIANT"
+    },
+    {
+      "applicable": true,
+      "control_id": "EATGF-EDM-RISK-01",
+      "domain": "EDM",
+      "status": "COMPLIANT"
+    }
+  ],
+  "domain_breakdown": {
+    "DSS": {
+      "applicable": 5,
+      "score_percent": 80.0
+    },
+    "EDM": {
+      "applicable": 4,
+      "score_percent": 50.0
+    }
+  },
+  "engine_version": "1.1",
+  "evaluation_timestamp": "2026-02-16T18:13:26.479834+00:00",
+  "registry_version": "1.1",
+  "summary": {
+    "applicable_controls": 9,
+    "compliance_score_percent": 66.7,
+    "compliant": 6,
+    "non_compliant": 1,
+    "not_tested": 1,
+    "partial": 1
+  }
+}

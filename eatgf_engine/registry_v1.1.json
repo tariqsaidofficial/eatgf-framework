@@ -41,6 +41,126 @@
         "justification": "Cross-domain decomposition: governance layer separated from execution layer (APO-RISK-01)."
       }
     },
+      {
+        "control_id": "EATGF-APO-STR-01",
+        "domain": "APO",
+        "atomic_objective": "Establish and maintain IT and AI strategic planning process with formalized objectives, stakeholder alignment, and periodic review.",
+        "lifecycle_state": "Approved",
+        "applicability": {
+          "environments": ["Cloud", "SaaS", "On-Prem", "Hybrid"],
+          "ai_usage": "All",
+          "mandatory": true
+        },
+        "relationships": {
+          "implements": [],
+          "enforces": [],
+          "requires": []
+        }
+          ,
+          "primary_authority": "COBIT APO02",
+          "authority_class": "COBIT"
+      },
+      {
+        "control_id": "EATGF-APO-ORG-01",
+        "domain": "APO",
+        "atomic_objective": "Define and maintain organizational structure for IT and AI, including roles, responsibilities, and reporting lines.",
+        "lifecycle_state": "Approved",
+        "applicability": {
+          "environments": ["Cloud", "SaaS", "On-Prem", "Hybrid"],
+          "ai_usage": "All",
+          "mandatory": true
+        },
+        "relationships": {
+          "implements": [],
+          "enforces": [],
+          "requires": []
+        }
+          ,
+          "primary_authority": "COBIT APO01",
+          "authority_class": "COBIT"
+      },
+      {
+        "control_id": "EATGF-APO-RES-01",
+        "domain": "APO",
+        "atomic_objective": "Establish and maintain resource management for IT and AI including skills inventory, capacity planning, and succession management.",
+        "lifecycle_state": "Approved",
+        "applicability": {
+          "environments": ["Cloud", "SaaS", "On-Prem", "Hybrid"],
+          "ai_usage": "All",
+          "mandatory": true
+        },
+        "relationships": {
+          "implements": [],
+          "enforces": [],
+          "requires": []
+        }
+          ,
+          "primary_authority": "COBIT APO07",
+          "authority_class": "COBIT"
+      },
+      {
+        "control_id": "EATGF-APO-RISK-01",
+        "domain": "APO",
+        "atomic_objective": "Establish and maintain risk management process for IT and AI including risk identification, assessment, mitigation, and monitoring.",
+        "lifecycle_state": "Approved",
+        "applicability": {
+          "environments": ["Cloud", "SaaS", "On-Prem", "Hybrid"],
+          "ai_usage": "All",
+          "mandatory": true
+        },
+        "relationships": {
+          "implements": [],
+          "enforces": [],
+          "requires": []
+        },
+        "decomposition": {
+          "clause": "COBIT APO12",
+          "justification": "Risk management decomposed from governance layer (EDM-RISK-01)."
+        }
+          ,
+          "primary_authority": "ISO 27001 A.6.1.2",
+          "authority_class": "ISO27001",
+          "decomposition_note": "Cross-domain decomposition with EDM-RISK-01: EDM covers appetite/oversight, APO covers execution/process lifecycle."
+      },
+      {
+        "control_id": "EATGF-APO-BEN-01",
+        "domain": "APO",
+        "atomic_objective": "Establish and maintain benefits management process for IT and AI including value realization, benefit tracking, and optimization.",
+        "lifecycle_state": "Approved",
+        "applicability": {
+          "environments": ["Cloud", "SaaS", "On-Prem", "Hybrid"],
+          "ai_usage": "All",
+          "mandatory": true
+        },
+        "relationships": {
+          "implements": [],
+          "enforces": [],
+          "requires": []
+        }
+          ,
+          "primary_authority": "COBIT APO04",
+          "authority_class": "COBIT"
+      },
+      {
+        "control_id": "EATGF-APO-PRJ-01",
+        "domain": "APO",
+        "atomic_objective": "Establish and maintain project management process for IT and AI including project initiation, planning, execution, monitoring, and closure.",
+        "lifecycle_state": "Approved",
+        "applicability": {
+          "environments": ["Cloud", "SaaS", "On-Prem", "Hybrid"],
+          "ai_usage": "All",
+          "mandatory": true
+        },
+        "relationships": {
+          "implements": [],
+          "enforces": [],
+          "requires": []
+        }
+          ,
+          "primary_authority": "COBIT BAI01",
+          "authority_class": "COBIT",
+          "decomposition_note": "Project lifecycle execution belongs to BAI domain in COBIT taxonomy; kept in APO temporarily for structural continuity."
+      }
     {
       "control_id": "EATGF-EDM-BEN-01",
       "domain": "EDM",

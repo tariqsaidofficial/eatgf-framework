@@ -1,0 +1,2357 @@
+📂 Loading documents...
+  ✓ Loaded: GITHUB_ACTIONS_SBOM_WORKFLOW.md
+  ✓ Loaded: PHASE_13-15_TIMELINE_MASTER.md
+  ✓ Loaded: COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md
+  ✓ Loaded: SETUP_COMPLETE.md
+  ✓ Loaded: DYNAMIC_VALIDATION_MECHANISM_GUIDE.md
+  ✓ Loaded: PHASE_13_IMPLEMENTATION_ROADMAP.md
+  ✓ Loaded: EATGF_FRAMEWORK_INDEX.md
+  ✓ Loaded: EXECUTIVE_SUMMARY_PHASE_13.md
+  ✓ Loaded: VULNERABILITY_REMEDIATION_TERMINOLOGY.md
+  ✓ Loaded: EXECUTIVE_SUMMARY_AUDIT_ARABIC.md
+  ✓ Loaded: PHASE_13_STRATEGIC_RECOMMENDATIONS.md
+  ✓ Loaded: CONFORMANCE_AUDIT_PROFILES_PHASE12.md
+  ✓ Loaded: FRAMEWORK_COMPLETION_SUMMARY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LAYER_08_COMPLIANCE_AUDIT_REPORT.md
+  ✓ Loaded: README.md
+  ✓ Loaded: TECHNICAL_DECISION_AUTHORITY_MODEL.md
+  ✓ Loaded: RACI_FOR_ENGINEERING.md
+  ✓ Loaded: SECURITY_EXCEPTION_MANAGEMENT_STANDARD.md
+  ✓ Loaded: ANNEX_B_SECURE_CODING_STANDARD.md
+  ✓ Loaded: ANNEX_E_RUNTIME_SECURITY_STANDARD.md
+  ✓ Loaded: ANNEX_D_SUPPLY_CHAIN_SECURITY_STANDARD.md
+  ✓ Loaded: CONTROL_MAPPING_APPENDIX.md
+  ✓ Loaded: ANNEX_A_THREAT_MODELING_STANDARD.md
+  ✓ Loaded: SECURE_SDLC_GOVERNANCE_STANDARD.md
+  ✓ Loaded: ENFORCEMENT_MATRIX.md
+  ✓ Loaded: ANNEX_F_SECURITY_TESTING_STANDARD.md
+  ✓ Loaded: ANNEX_G_SECRETS_MANAGEMENT_STANDARD.md
+  ✓ Loaded: ANNEX_C_SECURE_PIPELINE_STANDARD.md
+  ✓ Loaded: PYTHON_PROFILE.md
+  ✓ Loaded: SBOM_DISTRIBUTION_PROFILE.md
+  ✓ Loaded: AUDIT_AUTOMATION_PROFILE.md
+  ✓ Loaded: TERRAFORM_GOVERNANCE_PROFILE.md
+  ✓ Loaded: SUPPLY_CHAIN_GOVERNANCE_PROFILE.md
+  ✓ Loaded: DOCKER_GOVERNANCE_PROFILE.md
+  ✓ Loaded: DATABASE_GOVERNANCE_PROFILE.md
+  ✓ Loaded: KUBERNETES_GOVERNANCE_PROFILE.md
+  ✓ Loaded: VULNERABILITY_MANAGEMENT_PROFILE.md
+  ✓ Loaded: POLICY_AS_CODE_PROFILE.md
+  ✓ Loaded: CLOUD_RUNTIME_GOVERNANCE_PROFILE.md
+  ✓ Loaded: API_CONTROL_MAPPING_APPENDIX.md
+  ✓ Loaded: API_GOVERNANCE_STANDARD.md
+  ✓ Loaded: API_ENFORCEMENT_MATRIX.md
+  ✓ Loaded: API_GATEWAY_GOVERNANCE_STANDARD.md
+  ✓ Loaded: REST_API_GOVERNANCE_PROFILE.md
+  ✓ Loaded: OAUTH_IDENTITY_GOVERNANCE_PROFILE.md
+  ✓ Loaded: GRPC_PROTOCOL_BUFFERS_GOVERNANCE_PROFILE.md
+  ✓ Loaded: GRAPHQL_API_GOVERNANCE_PROFILE.md
+  ✓ Loaded: SERVICE_MESH_GOVERNANCE_PROFILE.md
+  ✓ Loaded: WEBHOOK_EVENT_DRIVEN_GOVERNANCE_PROFILE.md
+  ✓ Loaded: ANNEX_G_ZERO_TRUST_API_STANDARD.md
+  ✓ Loaded: ANNEX_B_AUTHORIZATION_STANDARD.md
+  ✓ Loaded: ANNEX_E_RATE_LIMITING_STANDARD.md
+  ✓ Loaded: ANNEX_A_AUTHENTICATION_STANDARD.md
+  ✓ Loaded: ANNEX_F_API_DOCUMENTATION_STANDARD.md
+  ✓ Loaded: ANNEX_C_API_VERSIONING_STANDARD.md
+  ✓ Loaded: ANNEX_D_WEBHOOK_SECURITY_STANDARD.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SVELTE_PROFILE.md
+  ✓ Loaded: REACT_NATIVE_PROFILE.md
+  ✓ Loaded: ANGULAR_PROFILE.md
+  ✓ Loaded: NEXT_JS_PROFILE.md
+  ✓ Loaded: ASTRO_PROFILE.md
+  ✓ Loaded: FLUTTER_PROFILE.md
+  ✓ Loaded: REACT_PROFILE.md
+  ✓ Loaded: VUE_PROFILE.md
+  ✓ Loaded: ASPNET_CORE_PROFILE.md
+  ✓ Loaded: RAILS_PROFILE.md
+  ✓ Loaded: FASTAPI_PROFILE.md
+  ✓ Loaded: SPRING_BOOT_PROFILE.md
+  ✓ Loaded: DJANGO_PROFILE.md
+  ✓ Loaded: NODE_PROFILE.md
+  ✓ Loaded: LARAVEL_PROFILE.md
+  ✓ Loaded: MASTER_CONTROL_MATRIX.md
+  ✓ Loaded: EATGF_ARCHITECTURE_DIAGRAM.md
+  ✓ Loaded: EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+  ✓ Loaded: BASELINE_DECLARATION_v1.0.md
+  ✓ Loaded: FORMATTING_STANDARDS_OFFICIAL.md
+  ✓ Loaded: GOVERNANCE_FRAMEWORK_README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: EATGF_WRITING_IDENTITY_FRAMEWORK.md
+  ✓ Loaded: EATGF_UX_VISUAL_STANDARD_GUIDE.md
+  ✓ Loaded: OFFICIAL_DESIGNATION.md
+  ✓ Loaded: DOCUMENTATION_STYLE_REVIEW_REPORT.md
+  ✓ Loaded: INTERNAL_AUDIT_PROCEDURE_v1.0.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: IMPLEMENTATION_ROADMAP.md
+  ✓ Loaded: PHASE_2_STABILIZATION_PLAN.md
+  ✓ Loaded: PHASE_2_WEEK_1_GO_APPROVAL.md
+  ✓ Loaded: EVIDENCE_INTEGRITY_AND_REPOSITORY_CONTROL_POLICY.md
+  ✓ Loaded: EVIDENCE_REGISTER_EXCEL_BUILD_SPECIFICATION.md
+  ✓ Loaded: WEEK_1_EXECUTION_PLAN.md
+  ✓ Loaded: README.md
+  ✓ Loaded: PHASE_2_FINAL_GO_NO_GO_GATE.md
+  ✓ Loaded: WEEK_1_STATUS.md
+  ✓ Loaded: EVIDENCE_REGISTER_MASTER.md
+  ✓ Loaded: EVIDENCE_REGISTER_IMPLEMENTATION_GUIDE.md
+  ✓ Loaded: PHASE_2_vs_PHASE_3_DECISION_FRAMEWORK.md
+  ✓ Loaded: PHASE_2_COMPLETION_SUMMARY.md
+  ✓ Loaded: PHASE_1.5_CONTROL_EXPANSION.md
+  ✓ Loaded: README.md
+  ✓ Loaded: ISMS_MANUAL_v1.0.md
+  ✓ Loaded: 01_STATEMENT_OF_APPLICABILITY_TEMPLATE.md
+  ✓ Loaded: AIMS_MANUAL_v1.0.md
+  ✓ Loaded: README.md
+  ✓ Loaded: GOVERNANCE_BY_TEAM_SIZE.md
+  ✓ Loaded: MATURITY_ASSESSMENT.md
+  ✓ Loaded: PERFORMANCE_MODEL.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API_GOVERNANCE_FRAMEWORK.md
+  ✓ Loaded: AI_GOVERNANCE_FRAMEWORK.md
+  ✓ Loaded: 03_DATA_GOVERNANCE_POLICY.md
+  ✓ Loaded: 02_INFORMATION_SECURITY_POLICY.md
+  ✓ Loaded: EATGF_GIT_GOVERNANCE_POLICY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: GOVERNANCE_CHARTER_FORMAL_v2.md
+  ✓ Loaded: EATGF_VERSION_GOVERNANCE_POLICY.md
+  ✓ Loaded: 01_GOVERNANCE_CHARTER.md
+  ✓ Loaded: FRAMEWORK_MAPPINGS.md
+  ✓ Loaded: FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md
+  ✓ Loaded: CONTROL_OBJECTIVES.md
+  ✓ Loaded: RISK_FRAMEWORK.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SUBMODULE_OPERATIONS.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: license.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: AUTHORS.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CODE_OF_CONDUCT.md
+  ✓ Loaded: PULL_REQUEST_TEMPLATE.md
+  ✓ Loaded: ISSUE_TEMPLATE.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: license.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGES.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: THREAT_MODEL.md
+  ✓ Loaded: INCIDENT_RESPONSE_PROCESS.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: license.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: license.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: History.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: Changelog.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: THREAT_MODEL.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: GOVERNANCE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CONTRIBUTING.md
+  ✓ Loaded: 2015-01-30.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CODE_OF_CONDUCT.md
+  ✓ Loaded: api.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Porting-Buffer.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: changelog.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: License.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: Notes.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: History.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: INSTALL.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: license.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CONTRIBUTING.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CODE_OF_CONDUCT.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CONTRIBUTORS.md
+  ✓ Loaded: CONTRIBUTING.md
+  ✓ Loaded: feature_request.md
+  ✓ Loaded: bug_report.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: security.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: license.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SUPPORT.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: security.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: PATRONS.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: license.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CONTRIBUTING.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: license.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: license.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: History.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CODE_OF_CONDUCT.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: SECURITY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: GOVERNANCE.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CONTRIBUTING.md
+  ✓ Loaded: Readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: AUTHORS.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: HISTORY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: LICENSE.md
+  ✓ Loaded: CHANGELOG.md
+  ✓ Loaded: README.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: readme.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: intro.md
+  ✓ Loaded: 2019-05-29-long-blog-post.md
+  ✓ Loaded: 2019-05-28-first-blog-post.md
+  ✓ Loaded: index.md
+  ✓ Loaded: markdown-page.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: TECHNICAL_DECISION_AUTHORITY_MODEL.md
+  ✓ Loaded: RACI_FOR_ENGINEERING.md
+  ✓ Loaded: SECURITY_EXCEPTION_MANAGEMENT_STANDARD.md
+  ✓ Loaded: MULTI_TENANCY_GOVERNANCE_STANDARD.md
+  ✓ Loaded: DATA_RESIDENCY_AND_COMPLIANCE_STANDARD.md
+  ✓ Loaded: INFRASTRUCTURE_AS_CODE_GOVERNANCE.md
+  ✓ Loaded: CLOUD_RESOURCE_GOVERNANCE_POLICY.md
+  ✓ Loaded: CLOUD_COST_CONTROL_STANDARD.md
+  ✓ Loaded: SECURE_CODING_STANDARD.md
+  ✓ Loaded: THREAT_MODELING_GUIDELINE.md
+  ✓ Loaded: CODE_REVIEW_GOVERNANCE_STANDARD.md
+  ✓ Loaded: NIST_SSDF_DEVELOPER_IMPLEMENTATION.md
+  ✓ Loaded: ZERO_TRUST_API_ARCHITECTURE.md
+  ✓ Loaded: WEBHOOK_SECURITY_STANDARD.md
+  ✓ Loaded: OPENAPI_CONTRACT_GOVERNANCE.md
+  ✓ Loaded: API_VERSIONING_STANDARD.md
+  ✓ Loaded: API_GOVERNANCE_IMPLEMENTATION_STANDARD.md
+  ✓ Loaded: SECRETS_MANAGEMENT_STANDARD.md
+  ✓ Loaded: SAST_DAST_SCA_POLICY.md
+  ✓ Loaded: SUPPLY_CHAIN_SECURITY_STANDARD.md
+  ✓ Loaded: SBOM_GOVERNANCE_STANDARD.md
+  ✓ Loaded: CI_CD_SECURITY_ARCHITECTURE.md
+  ✓ Loaded: RELEASE_GOVERNANCE_STANDARD.md
+  ✓ Loaded: END_OF_LIFE_GOVERNANCE_STANDARD.md
+  ✓ Loaded: CHANGE_APPROVAL_MODEL.md
+  ✓ Loaded: ROLLBACK_AND_INCIDENT_RESPONSE_STANDARD.md
+  ✓ Loaded: MASTER_CONTROL_MATRIX.md
+  ✓ Loaded: EATGF_ARCHITECTURE_DIAGRAM.md
+  ✓ Loaded: EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+  ✓ Loaded: BASELINE_DECLARATION_v1.0.md
+  ✓ Loaded: FORMATTING_STANDARDS_OFFICIAL.md
+  ✓ Loaded: GOVERNANCE_FRAMEWORK_README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: EATGF_WRITING_IDENTITY_FRAMEWORK.md
+  ✓ Loaded: EATGF_UX_VISUAL_STANDARD_GUIDE.md
+  ✓ Loaded: OFFICIAL_DESIGNATION.md
+  ✓ Loaded: DOCUMENTATION_STYLE_REVIEW_REPORT.md
+  ✓ Loaded: INTERNAL_AUDIT_PROCEDURE_v1.0.md
+  ✓ Loaded: README.md
+  ✓ Loaded: README.md
+  ✓ Loaded: IMPLEMENTATION_ROADMAP.md
+  ✓ Loaded: PHASE_2_STABILIZATION_PLAN.md
+  ✓ Loaded: PHASE_2_WEEK_1_GO_APPROVAL.md
+  ✓ Loaded: EVIDENCE_INTEGRITY_AND_REPOSITORY_CONTROL_POLICY.md
+  ✓ Loaded: EVIDENCE_REGISTER_EXCEL_BUILD_SPECIFICATION.md
+  ✓ Loaded: WEEK_1_EXECUTION_PLAN.md
+  ✓ Loaded: README.md
+  ✓ Loaded: PHASE_2_FINAL_GO_NO_GO_GATE.md
+  ✓ Loaded: WEEK_1_STATUS.md
+  ✓ Loaded: EVIDENCE_REGISTER_MASTER.md
+  ✓ Loaded: EVIDENCE_REGISTER_IMPLEMENTATION_GUIDE.md
+  ✓ Loaded: PHASE_2_vs_PHASE_3_DECISION_FRAMEWORK.md
+  ✓ Loaded: PHASE_2_COMPLETION_SUMMARY.md
+  ✓ Loaded: PHASE_1.5_CONTROL_EXPANSION.md
+  ✓ Loaded: README.md
+  ✓ Loaded: ISMS_MANUAL_v1.0.md
+  ✓ Loaded: 01_STATEMENT_OF_APPLICABILITY_TEMPLATE.md
+  ✓ Loaded: AIMS_MANUAL_v1.0.md
+  ✓ Loaded: README.md
+  ✓ Loaded: GOVERNANCE_BY_TEAM_SIZE.md
+  ✓ Loaded: MATURITY_ASSESSMENT.md
+  ✓ Loaded: PERFORMANCE_MODEL.md
+  ✓ Loaded: README.md
+  ✓ Loaded: API_GOVERNANCE_FRAMEWORK.md
+  ✓ Loaded: AI_GOVERNANCE_FRAMEWORK.md
+  ✓ Loaded: 03_DATA_GOVERNANCE_POLICY.md
+  ✓ Loaded: 02_INFORMATION_SECURITY_POLICY.md
+  ✓ Loaded: EATGF_GIT_GOVERNANCE_POLICY.md
+  ✓ Loaded: README.md
+  ✓ Loaded: GOVERNANCE_CHARTER_FORMAL_v2.md
+  ✓ Loaded: EATGF_VERSION_GOVERNANCE_POLICY.md
+  ✓ Loaded: 01_GOVERNANCE_CHARTER.md
+  ✓ Loaded: FRAMEWORK_MAPPINGS.md
+  ✓ Loaded: FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md
+  ✓ Loaded: CONTROL_OBJECTIVES.md
+  ✓ Loaded: RISK_FRAMEWORK.md
+  ✓ Loaded: README.md
+  ✓ Loaded: intro.md
+  ✓ Loaded: quick-start.md
+  ✓ Loaded: copilot-instructions.md
+  ✓ Loaded: README.md
+
+🔍 Running validation checks...
+
+  🔍 Checking for duplicate Go/No-Go dates...
+  🔍 Checking SLA consistency...
+  🔍 Checking for duplicate problem statements...
+  🔍 Checking timeline duplication...
+  🔍 Checking terminology consistency...
+  🔍 Checking cross-references...
+  🔍 Checking control mapping consistency...
+  🔍 Checking EATGF template compliance...
+
+================================================================================
+ EATGF COMPLIANCE VALIDATION REPORT
+================================================================================
+
+📊 SUMMARY:
+  Total Issues: 19
+  🔴 CRITICAL: 2
+  🟠 HIGH: 15
+  🟡 MEDIUM: 2
+  Compliance Status: ❌ FAILED
+
+
+🔴 CRITICAL ISSUES (2):
+--------------------------------------------------------------------------------
+
+  Title: Multiple Go/No-Go dates in single document
+  Category: CONFLICT
+  Description: Document contains 2 different Go/No-Go dates: 2026-03-10, 2026-02-22
+  Locations:
+    - EXECUTIVE_SUMMARY_AUDIT_ARABIC.md:61
+    - EXECUTIVE_SUMMARY_AUDIT_ARABIC.md:62
+  Recommendation:
+    Clarify: Is first date leadership approval gate? Is second date pilot completion checkpoint?
+
+  Title: SLA conflicts for CRITICAL vulnerabilities
+  Category: CONFLICT
+  Description: Different documents define different SLAs: ['1 hour', '4 hrs', '24 hour', '4 hour', '60 day']
+  Locations:
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:83
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:114
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:331
+    ... and 12 more
+  Recommendation:
+    Standardize SLA definitions. VULNERABILITY_MANAGEMENT_PROFILE.md is authoritative. Update other documents to match.
+
+🟠 HIGH ISSUES (15):
+--------------------------------------------------------------------------------
+
+  Title: SLA conflicts for HIGH vulnerabilities
+  Category: CONFLICT
+  Description: Different documents define different SLAs: ['1 hour', '24 hour', '24 hrs', '8 hour']
+  Locations:
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:332
+    - VULNERABILITY_MANAGEMENT_PROFILE.md:172
+    - GOVERNANCE_CHARTER_FORMAL_v2.md:842
+    ... and 5 more
+  Recommendation:
+    Standardize SLA definitions. VULNERABILITY_MANAGEMENT_PROFILE.md is authoritative. Update other documents to match.
+
+  Title: Phase 13-15 timeline duplicated across documents
+  Category: DUPLICATION
+  Description: Timeline details appear in 5 documents: PHASE_13-15_TIMELINE_MASTER.md, PHASE_13_IMPLEMENTATION_ROADMAP.md, EATGF_FRAMEWORK_INDEX.md, EXECUTIVE_SUMMARY_PHASE_13.md, PHASE_13_STRATEGIC_RECOMMENDATIONS.md
+  Locations:
+    - PHASE_13-15_TIMELINE_MASTER.md:1
+    - PHASE_13_IMPLEMENTATION_ROADMAP.md:1
+    - EATGF_FRAMEWORK_INDEX.md:1
+    ... and 2 more
+  Recommendation:
+    Create PHASE_13-15_TIMELINE_MASTER.md as single source of truth. Reference from all other documents.
+
+  Title: Missing required EATGF sections in PYTHON_PROFILE.md
+  Category: MISSING
+  Description: Missing: Authority Notice, Governance Principles, Developer Checklist, Control Mapping, Official References
+  Locations:
+    - PYTHON_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in CLOUD_RUNTIME_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Authority Notice
+  Locations:
+    - CLOUD_RUNTIME_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in OAUTH_IDENTITY_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - OAUTH_IDENTITY_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in GRPC_PROTOCOL_BUFFERS_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Control Mapping
+  Locations:
+    - GRPC_PROTOCOL_BUFFERS_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in SERVICE_MESH_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - SERVICE_MESH_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in WEBHOOK_EVENT_DRIVEN_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Control Mapping
+  Locations:
+    - WEBHOOK_EVENT_DRIVEN_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in SVELTE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - SVELTE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in REACT_NATIVE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - REACT_NATIVE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in ANGULAR_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - ANGULAR_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in NEXT_JS_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - NEXT_JS_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in ASTRO_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - ASTRO_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in FLUTTER_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - FLUTTER_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in VUE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - VUE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+🟡 MEDIUM ISSUES (2):
+--------------------------------------------------------------------------------
+
+  Title: Broken cross-references found (639)
+  Category: MISSING
+  Description: Some markdown links reference non-existent files
+  Locations:
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:381
+    - SETUP_COMPLETE.md:191
+    - SETUP_COMPLETE.md:194
+    ... and 636 more
+  Recommendation:
+    Verify link targets or create missing documents
+
+  Title: Missing ISO 27001 A.8.28 mapping in supply chain profiles
+  Category: MISSING
+  Description: 4 profiles don't map to A.8.28
+  Locations:
+    - GITHUB_ACTIONS_SBOM_WORKFLOW.md:1
+    - ANNEX_D_SUPPLY_CHAIN_SECURITY_STANDARD.md:1
+    - SUPPLY_CHAIN_SECURITY_STANDARD.md:1
+    ... and 1 more
+  Recommendation:
+    Add explicit mapping to ISO 27001 A.8.28 (Supply chain management)
+
+================================================================================
+Report Generated: 2026-02-15T15:43:11.357676
+Classification: Internal - Governance Only
+================================================================================
+
+
+================================================================================
+ EATGF COMPLIANCE VALIDATION REPORT
+================================================================================
+
+📊 SUMMARY:
+  Total Issues: 19
+  🔴 CRITICAL: 2
+  🟠 HIGH: 15
+  🟡 MEDIUM: 2
+  Compliance Status: ❌ FAILED
+
+
+🔴 CRITICAL ISSUES (2):
+--------------------------------------------------------------------------------
+
+  Title: Multiple Go/No-Go dates in single document
+  Category: CONFLICT
+  Description: Document contains 2 different Go/No-Go dates: 2026-03-10, 2026-02-22
+  Locations:
+    - EXECUTIVE_SUMMARY_AUDIT_ARABIC.md:61
+    - EXECUTIVE_SUMMARY_AUDIT_ARABIC.md:62
+  Recommendation:
+    Clarify: Is first date leadership approval gate? Is second date pilot completion checkpoint?
+
+  Title: SLA conflicts for CRITICAL vulnerabilities
+  Category: CONFLICT
+  Description: Different documents define different SLAs: ['1 hour', '4 hrs', '24 hour', '4 hour', '60 day']
+  Locations:
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:83
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:114
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:331
+    ... and 12 more
+  Recommendation:
+    Standardize SLA definitions. VULNERABILITY_MANAGEMENT_PROFILE.md is authoritative. Update other documents to match.
+
+🟠 HIGH ISSUES (15):
+--------------------------------------------------------------------------------
+
+  Title: SLA conflicts for HIGH vulnerabilities
+  Category: CONFLICT
+  Description: Different documents define different SLAs: ['1 hour', '24 hour', '24 hrs', '8 hour']
+  Locations:
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:332
+    - VULNERABILITY_MANAGEMENT_PROFILE.md:172
+    - GOVERNANCE_CHARTER_FORMAL_v2.md:842
+    ... and 5 more
+  Recommendation:
+    Standardize SLA definitions. VULNERABILITY_MANAGEMENT_PROFILE.md is authoritative. Update other documents to match.
+
+  Title: Phase 13-15 timeline duplicated across documents
+  Category: DUPLICATION
+  Description: Timeline details appear in 5 documents: PHASE_13-15_TIMELINE_MASTER.md, PHASE_13_IMPLEMENTATION_ROADMAP.md, EATGF_FRAMEWORK_INDEX.md, EXECUTIVE_SUMMARY_PHASE_13.md, PHASE_13_STRATEGIC_RECOMMENDATIONS.md
+  Locations:
+    - PHASE_13-15_TIMELINE_MASTER.md:1
+    - PHASE_13_IMPLEMENTATION_ROADMAP.md:1
+    - EATGF_FRAMEWORK_INDEX.md:1
+    ... and 2 more
+  Recommendation:
+    Create PHASE_13-15_TIMELINE_MASTER.md as single source of truth. Reference from all other documents.
+
+  Title: Missing required EATGF sections in PYTHON_PROFILE.md
+  Category: MISSING
+  Description: Missing: Authority Notice, Governance Principles, Developer Checklist, Control Mapping, Official References
+  Locations:
+    - PYTHON_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in CLOUD_RUNTIME_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Authority Notice
+  Locations:
+    - CLOUD_RUNTIME_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in OAUTH_IDENTITY_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - OAUTH_IDENTITY_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in GRPC_PROTOCOL_BUFFERS_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Control Mapping
+  Locations:
+    - GRPC_PROTOCOL_BUFFERS_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in SERVICE_MESH_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - SERVICE_MESH_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in WEBHOOK_EVENT_DRIVEN_GOVERNANCE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Control Mapping
+  Locations:
+    - WEBHOOK_EVENT_DRIVEN_GOVERNANCE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in SVELTE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - SVELTE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in REACT_NATIVE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - REACT_NATIVE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in ANGULAR_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - ANGULAR_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in NEXT_JS_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - NEXT_JS_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in ASTRO_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - ASTRO_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in FLUTTER_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - FLUTTER_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+  Title: Missing required EATGF sections in VUE_PROFILE.md
+  Category: MISSING
+  Description: Missing: Official References
+  Locations:
+    - VUE_PROFILE.md:1
+  Recommendation:
+    Add missing sections per EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+🟡 MEDIUM ISSUES (2):
+--------------------------------------------------------------------------------
+
+  Title: Broken cross-references found (639)
+  Category: MISSING
+  Description: Some markdown links reference non-existent files
+  Locations:
+    - COMPREHENSIVE_DUPLICATION_AND_CONFLICT_AUDIT.md:381
+    - SETUP_COMPLETE.md:191
+    - SETUP_COMPLETE.md:194
+    ... and 636 more
+  Recommendation:
+    Verify link targets or create missing documents
+
+  Title: Missing ISO 27001 A.8.28 mapping in supply chain profiles
+  Category: MISSING
+  Description: 4 profiles don't map to A.8.28
+  Locations:
+    - GITHUB_ACTIONS_SBOM_WORKFLOW.md:1
+    - ANNEX_D_SUPPLY_CHAIN_SECURITY_STANDARD.md:1
+    - SUPPLY_CHAIN_SECURITY_STANDARD.md:1
+    ... and 1 more
+  Recommendation:
+    Add explicit mapping to ISO 27001 A.8.28 (Supply chain management)
+
+================================================================================
+Report Generated: 2026-02-15T15:43:11.359102
+Classification: Internal - Governance Only
+================================================================================
+
+
+✅ JSON report saved to: validation_report.json

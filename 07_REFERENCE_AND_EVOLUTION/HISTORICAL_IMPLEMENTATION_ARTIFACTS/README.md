@@ -1,1 +1,0 @@
-These documents represent historical implementation examples and are not part of the authoritative framework specification.

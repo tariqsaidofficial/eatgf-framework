@@ -1,0 +1,48 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# EATGF Document Standards Enforcement
+# All EATGF documents MUST comply with EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+# Markdown files - EATGF standards
+indent_style = space
+indent_size = 2
+max_line_length = off
+trim_trailing_whitespace = true
+
+# NO decorative formatting
+# NO emojis
+# Professional tone only
+
+[*.{json,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+[*.{js,ts,jsx,tsx}]
+indent_style = space
+indent_size = 2
+
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2
+
+# EATGF Framework Documents - Strict Enforcement
+[eatgf-framework/**/*.md]
+# All documents MUST include:
+# 1. Architectural Position
+# 2. Governance Principles
+# 3. Control Mapping
+# 4. Developer Checklist
+# 5. Governance Implications
+# 6. Version Information
+
+[governance-docs-site/framework/**/*.md]
+# Same standards as eatgf-framework
