@@ -9,6 +9,7 @@
 5. Sample Compliance Report (JSON)
 6. Negative Matrix Test Cases
 7. Versioning & ADR Policy
+8. Evidence Metrics Status (v1.1)
 
 ---
 
@@ -58,5 +59,13 @@
 
 **Operational Artifact Note:**
 If `implements` and `enforces` are empty, operational artifacts (e.g., Governance Charter, RACI Matrix, Committee Charters, Internal Audit, Board Governance Review) are documented in governance documentation and are not structurally enforced in registry relationships. This is a deliberate design for structural minimalism and audit clarity.
+
+---
+
+## Evidence Metrics Status (v1.1)
+
+- `evidence_metrics` is present structurally in the evidence model.
+- `evidence_metrics` is ignored by v1.1 scoring and reporting.
+- `evidence_metrics` is reserved for v1.2+ structured evaluation extensions.
 
 ---
