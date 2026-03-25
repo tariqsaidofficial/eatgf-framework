@@ -51,6 +51,12 @@ This repository includes:
 
 ## 3. Architectural Principles
 
+---
+
+## Execution Engine
+
+The deterministic compliance engine implementation:
+https://github.com/tariqsaidofficial/eatgf-engine
 EATGF is built on seven core architectural principles:
 
 1. **Single Control Authority** – The Master Control Matrix serves as the sole control source of truth; no alternative control taxonomies
