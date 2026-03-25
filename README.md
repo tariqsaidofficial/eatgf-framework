@@ -301,6 +301,16 @@ Source: https://github.com/tariqsaidofficial/eatgf-framework
 
 ---
 
+## Related Projects
+
+| Repository | Role | Status |
+|---|---|---|
+| [eatgf-engine](https://github.com/tariqsaidofficial/eatgf-engine) | Deterministic Compliance Engine v1.1.0 | ![CI](https://github.com/tariqsaidofficial/eatgf-engine/actions/workflows/engine-ci.yml/badge.svg) |
+| [governance-docs-site](https://github.com/tariqsaidofficial/governance-docs-site) | Governance Documentation Portal | Published |
+| [eatgf-framework](https://github.com/tariqsaidofficial/eatgf-framework) | Framework Knowledge Centre (this repo) | v1.0 Foundation |
+
+---
+
 **EATGF – Governance Architecture & Knowledge Centre**
 **Version 1.0 – Foundation Baseline**
 **Authoritative Reference Edition**
