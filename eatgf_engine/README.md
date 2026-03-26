@@ -6,6 +6,58 @@
 
 This repository contains the canonical, institutionally frozen EATGF Engine v1.1.0. It is architecturally real, audit-grade, and strictly aligned with the published whitepaper and annex.
 
+### Installation
+
+```bash
+pip install -e .
+```
+
+After installation, use the CLI entrypoint:
+
+```bash
+eatgf-engine validate-registry registry_v1.1.json
+eatgf-engine evaluate-compliance registry_v1.1.json org_profile.json evidence.json --format human
+eatgf-engine evaluate-compliance registry_v1.1.json org_profile.json evidence.json --format json --output-json compliance_report.json
+```
+
+### CLI Contract (v1.1)
+
+- Commands:
+  - `validate-registry`
+  - `evaluate-compliance`
+- Output flags:
+  - `--format human|json` (default: `human`)
+  - `--output-json <path>`
+
+### org_profile Contract (v1.1)
+
+Required fields:
+
+- `environment` (allowed values only: `Cloud`, `SaaS`, `On-Prem`, `Hybrid`)
+- `ai_usage` (boolean: `true`/`false`)
+- `apis_exposed` (boolean: `true`/`false`)
+
+The engine uses fail-fast validation for `org_profile.json`. Missing fields or invalid values are rejected with explicit error messages.
+
+### evidence_metrics Status (v1.1)
+
+`evidence_metrics` is reserved for future structured evaluation and is ignored in v1.1 scoring.
+
+### Adapter Packaging Policy
+
+The HTTP adapter under `adapter/` is an optional integration surface and is not part of the core deterministic engine package contract.
+
+- Core package installation (`pip install -e .`) targets CLI and engine modules under `eatgf_engine/`.
+- Adapter runtime dependencies are intentionally isolated in `adapter/requirements.txt`.
+- This separation keeps the core engine minimal, deterministic, and free from web-framework dependency coupling.
+
+When running the adapter, install its requirements explicitly:
+
+```bash
+pip install -r adapter/requirements.txt
+uvicorn adapter.main:app --reload --port 8000
+```
+
 ### Key Features
 
 - Deterministic compliance computation
@@ -23,7 +75,7 @@ This repository contains the canonical, institutionally frozen EATGF Engine v1.1
 
 ### Structure
 
-```
+```text
 /eatgf_engine
   ├── engine/
   ├── registry/
@@ -60,18 +112,19 @@ This repository contains the canonical, institutionally frozen EATGF Engine v1.1
 
 ### For All Contributions
 
----
-
-## Related Projects
-
-- **EATGF Framework (Knowledge Core)**  
-  https://github.com/tariqsaidofficial/eatgf-framework
-
-- **Governance Documentation Portal**  
-  https://github.com/tariqsaidofficial/governance-docs-site
 - v1.2 and beyond require ADR and version increment
 - No silent evolution permitted
 
 ---
 
-For full details, see docs/whitepaper_v1.1.md and docs/annex_v1.1.md.
+## Related Projects
+
+- **EATGF Framework (Knowledge Core)**
+  [tariqsaidofficial/eatgf-framework](https://github.com/tariqsaidofficial/eatgf-framework)
+
+- **Governance Documentation Portal**
+  [tariqsaidofficial/governance-docs-site](https://github.com/tariqsaidofficial/governance-docs-site)
+
+---
+
+For full details, see [docs/whitepaper_v1.1.md](docs/whitepaper_v1.1.md) and [docs/annex_v1.1.md](docs/annex_v1.1.md).
