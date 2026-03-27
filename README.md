@@ -79,7 +79,7 @@ EATGF is built on seven core architectural principles:
 
 EATGF is organized into eight authoritative layers, each serving a distinct governance function:
 
-### **[00_FOUNDATION](00_FOUNDATION/README.md)**
+### **[00_FOUNDATION](./00_FOUNDATION/)**
 
 Authority, naming conventions, and control inventory
 
@@ -90,7 +90,7 @@ Authority, naming conventions, and control inventory
 
 ---
 
-### **[01_MANAGEMENT_SYSTEMS](01_MANAGEMENT_SYSTEMS/README.md)**
+### **[01_MANAGEMENT_SYSTEMS](./01_MANAGEMENT_SYSTEMS/)**
 
 ISO-aligned formal management systems
 
@@ -105,7 +105,7 @@ ISO-aligned formal management systems
 
 ---
 
-### **[02_CONTROL_ARCHITECTURE](02_CONTROL_ARCHITECTURE/README.md)**
+### **[02_CONTROL_ARCHITECTURE](./02_CONTROL_ARCHITECTURE/)**
 
 Controls, mappings, and risk framework
 
@@ -116,7 +116,7 @@ Controls, mappings, and risk framework
 
 ---
 
-### **[03_GOVERNANCE_MODELS](03_GOVERNANCE_MODELS/README.md)**
+### **[03_GOVERNANCE_MODELS](./03_GOVERNANCE_MODELS/)**
 
 Maturity, performance, and team-sizing models
 
@@ -134,7 +134,7 @@ Maturity, performance, and team-sizing models
 
 ---
 
-### **[04_POLICY_LAYER](04_POLICY_LAYER/README.md)**
+### **[04_POLICY_LAYER](./04_POLICY_LAYER/)**
 
 Formal governance policies and charters
 
@@ -150,7 +150,7 @@ Formal governance policies and charters
 
 ---
 
-### **[05_DOMAIN_FRAMEWORKS](05_DOMAIN_FRAMEWORKS/README.md)**
+### **[05_DOMAIN_FRAMEWORKS](./05_DOMAIN_FRAMEWORKS/)**
 
 Domain-specific governance extensions
 
@@ -159,7 +159,7 @@ Domain-specific governance extensions
 
 ---
 
-### **[06_AUDIT_AND_ASSURANCE](06_AUDIT_AND_ASSURANCE/README.md)**
+### **[06_AUDIT_AND_ASSURANCE](./06_AUDIT_AND_ASSURANCE/)**
 
 Audit methodology and assurance framework
 
@@ -175,7 +175,7 @@ Audit methodology and assurance framework
 
 ---
 
-### **[07_REFERENCE_AND_EVOLUTION](07_REFERENCE_AND_EVOLUTION/README.md)**
+### **[07_REFERENCE_AND_EVOLUTION](./07_REFERENCE_AND_EVOLUTION/)**
 
 Implementation history, evolution records, and historical artifacts
 
@@ -289,15 +289,15 @@ Source: https://github.com/tariqsaidofficial/eatgf-framework
 
 ## How to Use This Framework
 
-**For Governance Professionals:** Start with [00_FOUNDATION](00_FOUNDATION/README.md) to understand framework authority and control inventory.
+**For Governance Professionals:** Start with [00_FOUNDATION](./00_FOUNDATION/) to understand framework authority and control inventory.
 
-**For Security Teams:** Review [01_MANAGEMENT_SYSTEMS](01_MANAGEMENT_SYSTEMS/README.md) for ISMS architecture aligned with ISO 27001:2022.
+**For Security Teams:** Review [01_MANAGEMENT_SYSTEMS](./01_MANAGEMENT_SYSTEMS/) for ISMS architecture aligned with ISO 27001:2022.
 
-**For AI Governance:** Study [05_DOMAIN_FRAMEWORKS](05_DOMAIN_FRAMEWORKS/README.md) for AI lifecycle governance aligned with ISO 42001:2023.
+**For AI Governance:** Study [05_DOMAIN_FRAMEWORKS](./05_DOMAIN_FRAMEWORKS/) for AI lifecycle governance aligned with ISO 42001:2023.
 
-**For Compliance & Audit:** Use [06_AUDIT_AND_ASSURANCE](06_AUDIT_AND_ASSURANCE/README.md) for audit methodology and control assessment.
+**For Compliance & Audit:** Use [06_AUDIT_AND_ASSURANCE](./06_AUDIT_AND_ASSURANCE/) for audit methodology and control assessment.
 
-**For Architecture Decisions:** Reference [02_CONTROL_ARCHITECTURE](02_CONTROL_ARCHITECTURE/README.md) for control definitions and cross-standard alignment.
+**For Architecture Decisions:** Reference [02_CONTROL_ARCHITECTURE](./02_CONTROL_ARCHITECTURE/) for control definitions and cross-standard alignment.
 
 ---
 
