@@ -1,3 +1,7 @@
+---
+sidebar_label: Foundation
+---
+
 # 00_FOUNDATION
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**  
