@@ -2,7 +2,7 @@
 sidebar_label: Foundation
 ---
 
-# 00_FOUNDATION
+# Foundation
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**  
 Foundation Layer – Authority, Identity & Control Inventory
