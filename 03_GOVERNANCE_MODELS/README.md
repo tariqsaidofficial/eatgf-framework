@@ -4,14 +4,14 @@ sidebar_label: Governance Models
 
 # Governance Models
 
-| Field | Value |
-|-------|-------|
-| Document Type | Layer Navigation & Overview |
-| Version | 2.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-14 |
-| Authority | Enterprise Architecture and Governance Office |
-| EATGF Layer | 03_GOVERNANCE_MODELS |
+| Field          | Value                                         |
+| -------------- | --------------------------------------------- |
+| Document Type  | Layer Navigation & Overview                   |
+| Version        | 2.0                                           |
+| Classification | Controlled                                    |
+| Effective Date | 2026-02-14                                    |
+| Authority      | Enterprise Architecture and Governance Office |
+| EATGF Layer    | 03_GOVERNANCE_MODELS                          |
 
 ---
 
@@ -44,24 +44,28 @@ Document: MATURITY_MODEL/MATURITY_ASSESSMENT.md
 Governance capability maturity model with five levels:
 
 Level 1 – Initial:
+
 - Ad hoc governance processes
 - No formal documentation
 - Reactive approach
 - No consistent procedures
 
 Level 2 – Repeatable:
+
 - Basic processes established
 - Documentation exists but informal
 - Repeated on demand
 - Basic planning and tracking
 
 Level 3 – Defined:
+
 - Processes documented and standardized
 - Training and procedures established
 - Proactive approach
 - Published standards and procedures
 
 Level 4 – Managed:
+
 - Quantitative measurement established
 - Processes measured and controlled
 - Trend analysis and reporting
@@ -69,6 +73,7 @@ Level 4 – Managed:
 - Continuous feedback loops
 
 Level 5 – Optimized:
+
 - Focus on continuous improvement
 - Automated where appropriate
 - Innovation and optimization
@@ -76,6 +81,7 @@ Level 5 – Optimized:
 - Predictive analytics
 
 Assessment Tool:
+
 - Current state assessment per control
 - Roadmap for maturity improvement
 - Timeline and resource planning
@@ -88,6 +94,7 @@ Document: PERFORMANCE_MODEL/PERFORMANCE_MODEL.md
 KPI framework and measurement approach:
 
 Governance Effectiveness KPIs:
+
 - Control implementation rate (% of controls active)
 - Control compliance scoring (ratio of compliant to non-compliant)
 - Risk trend analysis (trending risk and mitigation effectiveness)
@@ -95,6 +102,7 @@ Governance Effectiveness KPIs:
 - Audit finding resolution rate
 
 Dashboard Metrics:
+
 - Overall governance health score
 - Control compliance by domain
 - Risk heatmap by control domain
@@ -103,6 +111,7 @@ Dashboard Metrics:
 - Stakeholder reporting dashboards
 
 Reporting Cadence:
+
 - Weekly operational metrics
 - Monthly governance dashboard to leadership
 - Quarterly risk and audit reports
@@ -115,6 +124,7 @@ Document: GOVERNANCE_BY_TEAM_SIZE.md
 Edition-specific guidance for three organizational scales:
 
 Startup Edition (1-10 personnel):
+
 - Essential controls only (high-risk controls prioritized)
 - Lightweight procedures
 - Manual processes and spreadsheets
@@ -123,6 +133,7 @@ Startup Edition (1-10 personnel):
 - Focus on compliance and risk management
 
 SaaS Edition (10-50 personnel):
+
 - Standard implementation of full framework
 - Balanced controls and procedures
 - Semi-automated processes
@@ -131,6 +142,7 @@ SaaS Edition (10-50 personnel):
 - Balanced control and efficiency
 
 Enterprise Edition (50+ personnel):
+
 - Full framework implementation
 - Advanced automation and tooling
 - Specialized roles and committees
@@ -139,6 +151,7 @@ Enterprise Edition (50+ personnel):
 - Continuous improvement programs
 
 Edition Selection:
+
 - Choose edition based on current organizational size
 - Plan for edition upgrade as organization scales
 - Edition transition increases governance rigor and automation
@@ -146,6 +159,7 @@ Edition Selection:
 ### Layer Integration
 
 Layer Relationships:
+
 - **Layers 00-02:** Define controls and architecture measured by this layer
 - **Layer 04 (Policy):** Framework policies scaled per edition
 - **Layer 06 (Audit & Assurance):** Audits assess maturity and performance against this framework
@@ -153,16 +167,19 @@ Layer Relationships:
 ## Control Mapping
 
 ### ISO 27001:2022 Alignment
+
 - **Clause 9.2** – Internal audit (maturity assessment)
 - **Clause 10.2** – Nonconformity and corrective action (improvement planning)
 - **Clause 10.3** – Continual improvement (optimization drive)
 
 ### COBIT 2019 Alignment
+
 - **MEA01** – Monitor, Evaluate and Assess Compliance (performance measurement)
 - **MEA02** – Monitor, Evaluate and Assess the System of Internal Control (maturity assessment)
 - **MEA03** – Monitor, Evaluate and Assess Governance (governance performance)
 
 ### Capability Maturity Model Integration (CMMI)
+
 - **Level 1 – Initial:** Unpredictable, reactive
 - **Level 2 – Managed:** Some processes established
 - **Level 3 – Defined:** Standard processes documented
@@ -187,6 +204,7 @@ Before governance assessment and improvement:
 ### Maturity Progression Planning
 
 Organizations must:
+
 - Assess current governance maturity honestly
 - Plan realistic progression to next level
 - Allocate resources and timelines for improvement
@@ -196,6 +214,7 @@ Organizations must:
 ### Edition Transition
 
 As organizations grow:
+
 - Startup edition → SaaS edition (≥10 personnel or revenue-based milestone)
 - SaaS edition → Enterprise edition (≥50 personnel)
 - Transition requires governance process enhancement and investment
@@ -204,6 +223,7 @@ As organizations grow:
 ### Performance Excellence
 
 Organizations committed to governance excellence should:
+
 - Target Level 4 (Managed) maturity as sustained state
 - Pursue Level 5 (Optimized) capabilities for key controls
 - Implement continuous improvement culture

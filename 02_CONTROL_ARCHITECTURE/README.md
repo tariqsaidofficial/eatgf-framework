@@ -4,14 +4,14 @@ sidebar_label: Control Architecture
 
 # Control Architecture
 
-| Field | Value |
-|-------|-------|
-| Document Type | Layer Navigation & Overview |
-| Version | 2.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-14 |
-| Authority | Enterprise Architecture and Governance Office |
-| EATGF Layer | 02_CONTROL_ARCHITECTURE |
+| Field          | Value                                         |
+| -------------- | --------------------------------------------- |
+| Document Type  | Layer Navigation & Overview                   |
+| Version        | 2.0                                           |
+| Classification | Controlled                                    |
+| Effective Date | 2026-02-14                                    |
+| Authority      | Enterprise Architecture and Governance Office |
+| EATGF Layer    | 02_CONTROL_ARCHITECTURE                       |
 
 ---
 
@@ -42,6 +42,7 @@ This layer operates within **02_CONTROL_ARCHITECTURE** as the definitive control
 Document: CONTROL_OBJECTIVES.md
 
 Defines effectiveness criteria for all 35 MCM controls:
+
 - Control objective and scope
 - What success looks like (measurable criteria)
 - Evidence requirements for audit demonstration
@@ -53,6 +54,7 @@ Defines effectiveness criteria for all 35 MCM controls:
 Document: FRAMEWORK_MAPPINGS.md
 
 Cross-standard mapping matrix aligning EATGF to:
+
 - COBIT 2019 (Information Technology governance domains)
 - ISO 27001:2022 (Information Security Management System)
 - NIST SP 800-53 Rev. 5 (Federal security standards)
@@ -66,6 +68,7 @@ Mapping demonstrates how each EATGF control satisfies external standard requirem
 Document: FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md
 
 Detailed justifications explaining:
+
 - Why each EATGF control satisfies external standard requirements
 - How controls map across multiple standards
 - Audit trail for compliance verification
@@ -76,6 +79,7 @@ Detailed justifications explaining:
 Document: RISK_FRAMEWORK.md
 
 Risk governance methodology aligned with ISO 31000:
+
 - Risk assessment process and procedures
 - Risk tolerance and appetite definition
 - Mitigation strategies and controls
@@ -85,6 +89,7 @@ Risk governance methodology aligned with ISO 31000:
 ### Document Integration
 
 Layer Relationships:
+
 - **Layer 00 (Foundation):** Maps MCM controls to external standards
 - **Layer 01 (Management Systems):** ISMS and AIMS implement controls defined here
 - **Layer 03 (Governance Models):** Maturity and performance measured per control effectiveness
@@ -93,6 +98,7 @@ Layer Relationships:
 ## Control Mapping
 
 ### ISO 27001:2022 Alignment
+
 - **Clause 5.1** – Leadership and commitment to information security
 - **Clause 6.1** – Planning to address risks and opportunities
 - **Clause 6.2** – Information security objectives and planning
@@ -100,12 +106,14 @@ Layer Relationships:
 - **Clause 9.1** – Monitoring, measurement, analysis and evaluation
 
 ### NIST SSDF v1.1 Alignment
+
 - **PO1.2** – Establish and maintain information and data security requirements
 - **PO3.1** – Identify and maintain a consistent set of tools
 - **PO3.2** – Document and enforce a versioning policy
 - **PL1.1** – Assess processes for conducting security and threat modeling
 
 ### COBIT 2019 Alignment
+
 - **EDM01** – Evaluate, Direct and Monitor the Establishment of Governance
 - **APO01** – Manage the IT Management Framework
 - **APO02** – Manage Strategy
@@ -129,6 +137,7 @@ Before control implementation or audit:
 ### Control Ownership and Accountability
 
 Each of the 35 MCM controls requires:
+
 - Clear ownership assignment
 - Documented control procedures
 - Evidence collection and retention
@@ -138,6 +147,7 @@ Each of the 35 MCM controls requires:
 ### External Compliance Demonstration
 
 Framework mappings provide evidence for:
+
 - ISO 27001:2022 certification audits
 - ISO 42001:2023 compliance assessment
 - NIST SP 800-53 compliance reporting
@@ -146,8 +156,8 @@ Framework mappings provide evidence for:
 
 ### Risk Governance Authority
 
-Framework Authority: Enterprise Architecture and Governance Office  
-Risk Governance: Enterprise Risk Committee  
+Framework Authority: Enterprise Architecture and Governance Office
+Risk Governance: Enterprise Risk Committee
 Control Oversight: Internal Audit Function
 
 Changes to control architecture require formal approval and cross-standard impact assessment.
@@ -161,7 +171,7 @@ Changes to control architecture require formal approval and cross-standard impac
 - **COBIT 2019** – Governance of Enterprise Information Technology (ISACA, 2019)
 - **OWASP Top 10** – Application Security Framework (OWASP Foundation)
 
-**Framework Version:** EATGF-v1.0-Foundation  
-**Status:**  Complete  
-**Audit Ready:** Yes  
+**Framework Version:** EATGF-v1.0-Foundation
+**Status:** Complete
+**Audit Ready:** Yes
 **Last Updated:** February 13, 2026

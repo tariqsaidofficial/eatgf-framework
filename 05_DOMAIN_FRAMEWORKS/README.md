@@ -4,14 +4,14 @@ sidebar_label: Domain Frameworks
 
 # Domain Frameworks
 
-| Field | Value |
-|-------|-------|
-| Document Type | Layer Navigation & Overview |
-| Version | 2.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-14 |
-| Authority | Chief AI Officer and Chief Security Officer |
-| EATGF Layer | 05_DOMAIN_FRAMEWORKS |
+| Field          | Value                                       |
+| -------------- | ------------------------------------------- |
+| Document Type  | Layer Navigation & Overview                 |
+| Version        | 2.0                                         |
+| Classification | Controlled                                  |
+| Effective Date | 2026-02-14                                  |
+| Authority      | Chief AI Officer and Chief Security Officer |
+| EATGF Layer    | 05_DOMAIN_FRAMEWORKS                        |
 
 ---
 
@@ -42,6 +42,7 @@ This layer operates within **05_DOMAIN_FRAMEWORKS** as the extension point for s
 Document: AI_GOVERNANCE_FRAMEWORK.md
 
 AI-specific governance extension:
+
 - AI system lifecycle governance (development through retirement)
 - AI model governance and version control
 - Bias detection and mitigation procedures
@@ -56,6 +57,7 @@ AI-specific governance extension:
 Document: API_GOVERNANCE_FRAMEWORK.md
 
 API-specific governance extension:
+
 - API security and governance procedures
 - API authentication, authorization, and access control
 - Rate limiting, throttling, and quota management
@@ -69,6 +71,7 @@ API-specific governance extension:
 ### Domain Governance Integration
 
 Layer Relationships:
+
 - **Layer 00 (Foundation):** Domain MCM controls included in Master Control Matrix
 - **Layer 01 (Management Systems):** AIMS includes AI governance; ISMS includes API security
 - **Layer 02 (Control Architecture):** Framework mappings include domain-specific control alignment
@@ -77,12 +80,14 @@ Layer Relationships:
 ### Organizational Governance Bodies
 
 AI Governance Oversight:
+
 - Chief AI Officer – Strategic AI governance authority
 - AI Governance Board – Review and approval of AI initiatives
 - ML Engineering Leadership – Technical and operational implementation
 - AI Ethics Committee – Fairness, transparency, and responsible AI oversight
 
 API Governance Oversight:
+
 - Chief Technology Officer – API architecture and standards
 - API Review Board – Security and lifecycle governance
 - Security Team – API security assessment and enforcement
@@ -91,6 +96,7 @@ API Governance Oversight:
 ## Control Mapping
 
 ### ISO 42001:2023 Alignment (AI Governance)
+
 - **Clause 5.2** – AI management policies
 - **Clause 6.1** – AI risk management planning
 - **Clause 8.1** – AI system operational planning and control
@@ -98,6 +104,7 @@ API Governance Oversight:
 - **Clause 9.2** – AI system performance evaluation
 
 ### OWASP API Security Top 10 Alignment (API Governance)
+
 - **API1:2023** – Broken Object Level Authorization
 - **API2:2023** – Broken Authentication
 - **API3:2023** – Broken Object Property Level Authorization
@@ -105,6 +112,7 @@ API Governance Oversight:
 - **API5:2023** – Broken Function Level Authorization
 
 ### NIST AI Risk Management Framework
+
 - **GOVERN** – AI governance and risk framework
 - **MAP** – AI system mapping and documentation
 - **MEASURE** – AI system performance and fairness measurement
@@ -127,8 +135,8 @@ Before implementing domain-specific governance:
 
 ### Domain Governance Authority
 
-AI Governance Authority: Chief AI Officer  
-API Governance Authority: Chief Technology Officer  
+AI Governance Authority: Chief AI Officer
+API Governance Authority: Chief Technology Officer
 Security Oversight: Chief Information Security Officer
 
 Domain governance operates under core EATGF framework with domain-specific extensions and specialized procedures.
@@ -136,6 +144,7 @@ Domain governance operates under core EATGF framework with domain-specific exten
 ### Cross-Domain Coordination
 
 Domain frameworks must coordinate:
+
 - AI systems using APIs must conform to both frameworks
 - Security controls apply to all domains
 - Incident response procedures consistent across domains
@@ -144,6 +153,7 @@ Domain frameworks must coordinate:
 ### Future Domain Extensions
 
 Additional domains may be added in future framework versions:
+
 - Cloud infrastructure governance
 - DevSecOps and CI/CD pipeline governance
 - Data platform and analytics governance

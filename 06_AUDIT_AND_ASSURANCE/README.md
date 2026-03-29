@@ -4,14 +4,14 @@ sidebar_label: Audit and Assurance
 
 # Audit and Assurance
 
-| Field | Value |
-|-------|-------|
-| Document Type | Layer Navigation & Overview |
-| Version | 2.1 |
-| Classification | Controlled |
-| Effective Date | 2026-02-16 |
-| Authority | Chief Audit Officer and Internal Audit Function |
-| EATGF Layer | 06_AUDIT_AND_ASSURANCE |
+| Field          | Value                                           |
+| -------------- | ----------------------------------------------- |
+| Document Type  | Layer Navigation & Overview                     |
+| Version        | 2.1                                             |
+| Classification | Controlled                                      |
+| Effective Date | 2026-02-16                                      |
+| Authority      | Chief Audit Officer and Internal Audit Function |
+| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                          |
 
 ---
 
@@ -44,30 +44,35 @@ Document: INTERNAL_AUDIT_PROCEDURE_v1.0.md
 Audit methodology per ISO 19011:2018:
 
 Annual Full Audit (Q1):
+
 - Comprehensive assessment of all 35 MCM controls
 - Detailed control testing and evidence collection
 - Executive summary and detailed audit report
 - Findings and corrective action recommendations
 
 Quarterly Sampling Audits (Q2-Q4):
+
 - Rolling sample of 10-15 controls per quarter
 - Risk-based selection of controls to test
 - Focused testing on high-risk or critical controls
 - Summary report and findings tracking
 
 Thematic Audits (ad-hoc):
+
 - Risk-based focus on specific governance areas
 - Response to significant findings or changes
 - Compliance verification for new initiatives
 - Executive steering committee direction
 
 Auditor Qualifications:
+
 - Professional certifications (CIA, CISA, or equivalent)
 - EATGF framework knowledge and training
 - Internal audit methodology expertise
 - Information security domain knowledge
 
 Audit Independence Requirements:
+
 - Auditors independent from audited functions
 - Reporting line directly to governance authority
 - Cannot audit own areas of responsibility
@@ -75,6 +80,7 @@ Audit Independence Requirements:
 - Apply impartial professional judgment
 
 Audit Execution Procedures:
+
 - Audit planning and preparation
 - Auditable unit understanding and risk assessment
 - Fieldwork and evidence collection
@@ -84,6 +90,7 @@ Audit Execution Procedures:
 ### Findings and Corrective Action
 
 Audit Finding Management:
+
 - Classification: Critical, High, Medium, Low
 - Root cause analysis for significant findings
 - Corrective action planning and assignment
@@ -91,6 +98,7 @@ Audit Finding Management:
 - Closure verification and follow-up
 
 Finding Tracking:
+
 - Audit finding register maintained
 - Status tracking to closure
 - Management response and remediation evidence
@@ -100,6 +108,7 @@ Finding Tracking:
 ### Audit Reporting and Communication
 
 Audit Communications:
+
 - Post-audit management conference
 - Formal audit report to governance council
 - Executive summary for senior leadership
@@ -107,6 +116,7 @@ Audit Communications:
 - Aggregate governance effectiveness report
 
 Management Review:
+
 - Governance council review of audit findings
 - Resource allocation for corrective actions
 - Executive sponsorship for remediation
@@ -116,6 +126,7 @@ Management Review:
 ### Audit Schedule
 
 Annual Audit Cycle:
+
 - Q1 (Jan-Mar): Full audit of all 35 controls
 - Q2 (Apr-Jun): Quarterly sampling audit
 - Q3 (Jul-Sep): Quarterly sampling audit
@@ -124,6 +135,7 @@ Annual Audit Cycle:
 Plus thematic audits as risk-based and approved by governance council.
 
 Management review and reporting:
+
 - Fortnightly finding updates
 - Monthly management dashboard
 - Quarterly governance council reports
@@ -134,6 +146,7 @@ Management review and reporting:
 Document: AUDIT_SCHEDULE_STANDARD.md
 
 Formal audit scheduling standard establishing:
+
 - 5-quarter rolling audit cycle with phase-based execution (Phase 0 planning, Phases 1-3 quarterly execution, Phase 4 close-out)
 - Control frequency classification matrix (Critical Annual 8-10 controls; High Annual 12-15 controls; Supporting Annual 10-15 controls; Quarterly Risk-Based 2-3 controls)
 - Quarterly audit roadmap with specific controls, auditor assignments, and evidence collection timeline
@@ -149,6 +162,7 @@ Formal audit scheduling standard establishing:
 Document: CORRECTIVE_ACTION_REGISTER_STANDARD.md
 
 Formal CAR standard establishing:
+
 - Data model for finding documentation (Master Finding fields: ID, date, source, control, category, severity, description, root cause)
 - Remediation tracking fields (owner, plan, timeline, effort estimate, dependencies, status, % complete, progress updates)
 - Closure procedures with evidence standards differentiated by finding type (Design Gap, Operational Defect, Compliance Miss)
@@ -166,6 +180,7 @@ Formal CAR standard establishing:
 Document: CERTIFICATION_READINESS_CHECKLIST_STANDARD.md
 
 Formal certification readiness standard establishing:
+
 - 5-section checklist structure (Section A: Design Validation; Section B: Operation Readiness; Section C: Evidence Staging; Section D: Executive Certification; Section E: Exceptions)
 - Section A design validation covering control definition, design documentation, procedures, training, governance
 - Section B operation readiness covering execution evidence, SLA compliance, exception handling, monitoring, remediation of prior findings
@@ -181,6 +196,7 @@ Formal certification readiness standard establishing:
 Document: EVIDENCE_GOVERNANCE_STANDARD.md
 
 Formal evidence governance standard establishing:
+
 - Evidence classification by type with retention periods (audit 7-10 years; investigations 5-7 years; certifications 7 years; investigations 5-7 years; training 3 years; logs 90 days-2 years)
 - Data classification levels (Public/Internal/Confidential/Restricted) with access and storage requirements
 - Centralized evidence repository with folder structure, access controls, audit trail, version history, encryption
@@ -199,17 +215,20 @@ Formal evidence governance standard establishing:
 ## Control Mapping
 
 ### ISO 19011:2018 Alignment
+
 - **Clause 5.2** – Auditor competence (qualifications and training)
 - **Clause 6.1** – Audit planning and preparation
 - **Clause 6.3** – Auditor independence and impartiality
 - **Clause 7.6** – Follow-up audits and corrective action verification
 
 ### ISO 27001:2022 Alignment
+
 - **Clause 9.2** – Internal audit (audit planning, execution, reporting)
 - **Clause 10.2** – Nonconformity and corrective action (management response)
 - **Clause 10.3** – Continual improvement (improvement from audit findings)
 
 ### COBIT 2019 Alignment
+
 - **MEA01** – Monitor, Evaluate and Assess Conformance with External Requirements
 - **MEA02** – Monitor, Evaluate and Assess System of Internal Control
 - **MEA03** – Monitor, Evaluate and Assess Governance
@@ -239,12 +258,13 @@ Before audit implementation:
 
 ### Audit Governance Authority
 
-Chief Audit Officer – Independent audit authority  
-Internal Audit Function – Execution and administration  
-Governance Council – Oversight and resource authorization  
+Chief Audit Officer – Independent audit authority
+Internal Audit Function – Execution and administration
+Governance Council – Oversight and resource authorization
 Control Owners – Corrective action accountability
 
 Auditor independence maintained through:
+
 - Direct reporting to governance council, not operations
 - Separate budget and resource authority
 - Annual audit plan approved by governance council
@@ -253,6 +273,7 @@ Auditor independence maintained through:
 ### Corrective Action Accountability
 
 Control owners assigned accountability for:
+
 - Timely response to audit findings
 - Root cause analysis and corrective action planning
 - Resource allocation for remediation
@@ -262,6 +283,7 @@ Control owners assigned accountability for:
 ### Continuous Improvement Cycle
 
 Audit findings inform improvement:
+
 - Control procedure enhancements
 - Policy clarifications and updates
 - Process standardization

@@ -4,14 +4,14 @@ sidebar_label: Reference and Evolution
 
 # Reference and Evolution
 
-| Field | Value |
-|-------|-------|
-| Document Type | Layer Navigation & Reference |
-| Version | 2.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-14 |
-| Authority | Enterprise Architecture and Governance Office |
-| EATGF Layer | 07_REFERENCE_AND_EVOLUTION |
+| Field          | Value                                         |
+| -------------- | --------------------------------------------- |
+| Document Type  | Layer Navigation & Reference                  |
+| Version        | 2.0                                           |
+| Classification | Controlled                                    |
+| Effective Date | 2026-02-14                                    |
+| Authority      | Enterprise Architecture and Governance Office |
+| EATGF Layer    | 07_REFERENCE_AND_EVOLUTION                    |
 
 ---
 
@@ -44,12 +44,14 @@ Directory: EVOLUTION_HISTORY/
 Historical documentation of EATGF governance architecture development:
 
 **PHASE_1.5_CONTROL_EXPANSION.md**
+
 - Documents control matrix expansion from 21 to 35 controls
 - Rationale for domain additions (AI, API, Cloud, DevSecOps, Data, BCP)
 - Historical control development approach
 - Archived reference showing framework maturation
 
 **PHASE_2_COMPLETION_SUMMARY.md**
+
 - Documents Phase 2 management system layer establishment
 - ISMS implementation (ISO 27001:2022)
 - AIMS implementation (ISO 42001:2023)
@@ -66,6 +68,7 @@ Directory: DECISION_RECORDS/
 Strategic governance decisions documenting framework evolution methodology:
 
 **PHASE_2_vs_PHASE_3_DECISION_FRAMEWORK.md**
+
 - Strategic decision: Why Phase 2 stabilization before Phase 3 deployment
 - Engineering discipline applied to governance framework validation
 - Test-before-scale approach rationale
@@ -81,6 +84,7 @@ Directory: FRAMEWORK_ROADMAP/
 Governance deployment planning and guidance:
 
 **IMPLEMENTATION_ROADMAP.md**
+
 - 12-month governance deployment roadmap
 - Phase-by-phase delivery plan with timeline
 - Success metrics and governance effectiveness indicators
@@ -90,6 +94,7 @@ Governance deployment planning and guidance:
 - Stakeholder communication plan
 
 **PHASE_2_STABILIZATION_PLAN.md**
+
 - Historical operational validation plan for Phase 2
 - 6-week stabilization cycle approach
 - Week-by-week operational activities
@@ -104,6 +109,7 @@ Directory: HISTORICAL_IMPLEMENTATION_ARTIFACTS/
 Reference-only materials documenting Phase 2 operational execution and implementation specifications. **These materials are NOT part of the authoritative governance framework.**
 
 **Evidence Register Specifications**
+
 - EVIDENCE_REGISTER_MASTER.md – Evidence register specification (20-column architecture)
 - EVIDENCE_REGISTER_IMPLEMENTATION_GUIDE.md – Excel setup and implementation guide
 - EVIDENCE_REGISTER_EXCEL_BUILD_SPECIFICATION.md – Technical developer specifications
@@ -111,11 +117,13 @@ Reference-only materials documenting Phase 2 operational execution and implement
 Provides reference examples for organizations tracking governance evidence.
 
 **Evidence Integrity and Controls**
+
 - EVIDENCE_INTEGRITY_AND_REPOSITORY_CONTROL_POLICY.md – SHA256 hashing, access controls, confidentiality procedures
 
 Demonstrates evidence security approach for governance frameworks.
 
 **Operational Execution Materials**
+
 - WEEK_1_EXECUTION_PLAN.md – Development day-by-day specifications
 - WEEK_1_STATUS.md – Status tracking template
 - PHASE_2_WEEK_1_GO_APPROVAL.md – Executive go/no-go approval template
@@ -129,6 +137,7 @@ Status: Reference-only materials for understanding Phase 2 implementation method
 ## Control Mapping
 
 ### Reference and Traceability
+
 - **Layers 00-06** – Authoritative framework controls and procedures
 - **Evolution History** – Shows control framework development and rationalization
 - **Decision Records** – Documents governance methodology choices
@@ -138,6 +147,7 @@ Status: Reference-only materials for understanding Phase 2 implementation method
 ### Cross-Reference Documentation
 
 Evolution materials cross-reference:
+
 - **Layer 00:** Framework identity and baseline evolution
 - **Layer 01:** ISMS and AIMS implementation journey
 - **Layer 02:** Control architecture development
@@ -164,6 +174,7 @@ Before implementing EATGF:
 ### Knowledge Management
 
 Organization adopting EATGF benefits from:
+
 - Clear understanding of framework development rationale
 - Access to decision-maker insights and lessons learned
 - Reference implementations and approaches
@@ -173,6 +184,7 @@ Organization adopting EATGF benefits from:
 ### Framework Adoption and Evolution
 
 New implementing organizations:
+
 - Use implementation roadmap as deployment template
 - Reference historical artifacts for evidence tracking
 - Understand strategic decision-making context
@@ -182,6 +194,7 @@ New implementing organizations:
 ### Non-Authoritative Status
 
 Important distinction:
+
 - Reference layer for context and guidance
 - Not authoritative governance specifications
 - Authoritative governance defined in Layers 00-06
@@ -191,6 +204,7 @@ Important distinction:
 ### Future Evolution Planning
 
 This layer will be updated as EATGF evolves:
+
 - Phase 3 deployment documentation
 - Edition-specific variant documentation
 - New domain framework additions
@@ -204,7 +218,7 @@ This layer will be updated as EATGF evolves:
 - **COBIT 2019** – Governance of Enterprise Information Technology (ISACA, 2019)
 - **ISO/IEC 19011:2018** – Guidelines for Auditing Management Systems (2018)
 
-##  Integration with Other Layers
+## Integration with Other Layers
 
 - **Layers 00–06:** Describe the authoritative governance framework (what was built, why, how it works)
 - **Layer 07:** Documents how the framework was built historically and provides deployment guidance
@@ -212,13 +226,14 @@ This layer will be updated as EATGF evolves:
 
 ---
 
-##  Important Notes
+## Important Notes
 
 ### These Materials Are NOT Normative
 
 Layer 07 provides **context and history**, not governance authority.
 
 For authoritative governance requirements, consult:
+
 - **[00_FOUNDATION](../00_FOUNDATION/)** – Framework authority and control inventory
 - **[01_MANAGEMENT_SYSTEMS](../01_MANAGEMENT_SYSTEMS/)** – ISO-aligned management system specifications
 - **[02_CONTROL_ARCHITECTURE](../02_CONTROL_ARCHITECTURE/)** – Control definitions and mappings
@@ -235,13 +250,14 @@ For current deployment guidance, refer to: **[FRAMEWORK_ROADMAP/IMPLEMENTATION_R
 
 ---
 
-**Layer 07 – Reference & Evolution**  
-**Governance Development History & Documentation**  
+**Layer 07 – Reference & Evolution**
+**Governance Development History & Documentation**
 **Internal & External Reference Uses Only**
-##  Version & Status
 
-**Framework Version:** EATGF-v1.0-Foundation  
-**Phase:** 2 – Management System Operational Validation  
-**Operational Period:** Feb 16 – Mar 31, 2026  
-**Decision Gate:** March 31, 2026 (Phase 3 authorization)  
+## Version & Status
+
+**Framework Version:** EATGF-v1.0-Foundation
+**Phase:** 2 – Management System Operational Validation
+**Operational Period:** Feb 16 – Mar 31, 2026
+**Decision Gate:** March 31, 2026 (Phase 3 authorization)
 **Last Updated:** February 13, 2026

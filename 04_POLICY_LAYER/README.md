@@ -4,14 +4,14 @@ sidebar_label: Policy Layer
 
 # Policy Layer
 
-| Field | Value |
-|-------|-------|
-| Document Type | Layer Navigation & Overview |
-| Version | 2.1 |
-| Classification | Controlled |
-| Effective Date | 2026-02-16 |
-| Authority | Governance Office and CISO |
-| EATGF Layer | 04_POLICY_LAYER |
+| Field          | Value                       |
+| -------------- | --------------------------- |
+| Document Type  | Layer Navigation & Overview |
+| Version        | 2.1                         |
+| Classification | Controlled                  |
+| Effective Date | 2026-02-16                  |
+| Authority      | Governance Office and CISO  |
+| EATGF Layer    | 04_POLICY_LAYER             |
 
 ---
 
@@ -42,6 +42,7 @@ This layer operates within **04_POLICY_LAYER** as the definitive source for form
 Document: GOVERNANCE_CHARTER_FORMAL_v2.md
 
 This authoritative charter establishes:
+
 - Governance structure and decision bodies
 - Roles and responsibilities across all levels
 - Authority and decision rights for governance matters
@@ -55,6 +56,7 @@ This authoritative charter establishes:
 Document: 01_GOVERNANCE_CHARTER.md
 
 Breakdown of governance structure including:
+
 - Governance Committee composition and scope
 - Board and executive leadership roles
 - Risk Committee responsibilities
@@ -67,6 +69,7 @@ Breakdown of governance structure including:
 Document: 02_INFORMATION_SECURITY_POLICY.md
 
 Formal security policy establishing:
+
 - Information security governance objectives
 - Data classification and sensitivity levels
 - Access control requirements and procedures
@@ -81,6 +84,7 @@ Formal security policy establishing:
 Document: 03_DATA_GOVERNANCE_POLICY.md
 
 Formal data governance policy establishing:
+
 - Data ownership and stewardship structure
 - Data quality and validation standards
 - Data retention and deletion procedures
@@ -95,6 +99,7 @@ Formal data governance policy establishing:
 Document: 04_INCIDENT_RESPONSE_POLICY.md
 
 Formal incident response policy establishing:
+
 - Incident severity classification (P1-P4 with escalating SLAs)
 - 6-phase incident response lifecycle (Detection → Analysis → Containment → Eradication → Recovery → Post-Incident Review)
 - Incident response team structure and roles (CISO, SOC Manager, Responders, Forensics, Communications, Legal)
@@ -109,6 +114,7 @@ Formal incident response policy establishing:
 Document: 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY.md
 
 Formal BC/DR policy establishing:
+
 - Business criticality classification with RTO/RPO targets (Critical ≤4h/≤1h; High ≤8h/≤1h; Medium ≤24h/≤4h; Low ≤72h/≤24h)
 - Tier 1-4 recovery architectures (Tier 1 active-active replication; Tier 2 warm standby; Tier 3-4 regular backups)
 - Backup strategy with retention tiers (continuous rolling, daily 30-90 days, weekly 12 months, monthly archives 5 years)
@@ -123,6 +129,7 @@ Formal BC/DR policy establishing:
 Document: 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY.md
 
 Formal vendor risk management policy establishing:
+
 - Vendor classification framework (Critical/High/Medium/Low with differentiated assessment depth)
 - Pre-selection assessment procedure including financial stability, regulatory compliance, and security questionnaire
 - Contract security clauses requiring data protection, incident notification (24-hour), audit rights, and certifications (SOC2/ISO27001)
@@ -138,6 +145,7 @@ Formal vendor risk management policy establishing:
 Document: 07_DATA_PRIVACY_AND_PROTECTION_POLICY.md
 
 Formal data privacy policy establishing:
+
 - Personal data classification (Public/Internal/Personal Data/Sensitive Personal Data/Restricted)
 - Data Processing Register documentation for all data processing
 - Legal basis for processing (Consent, Contract, Legal Obligation, Vital Interests, Public Task, Legitimate Interest)
@@ -155,6 +163,7 @@ Formal data privacy policy establishing:
 Document: 08_ACCEPTABLE_USE_POLICY.md
 
 Formal acceptable use policy establishing:
+
 - Acceptable use principles (systems for authorized business purposes; credential protection; incident reporting)
 - Prohibited use categories (illegal activity; unauthorized access; IP violation; data theft; harmful content; resource abuse; personal business)
 - Monitoring scope and technology inventory (email, web, application usage, file transfers, EDR, DLP, SIEM, behavioral analytics)
@@ -168,6 +177,7 @@ Formal acceptable use policy establishing:
 ### Policy Integration
 
 Layer Relationships:
+
 - **Layers 00-02 (Foundation through Control Architecture):** Policies implement defined controls
 - **Layer 01 (Management Systems):** ISMS and AIMS operationalize policies through procedures
 - **Layer 06 (Audit & Assurance):** Internal audit verifies policy compliance and effectiveness
@@ -175,6 +185,7 @@ Layer Relationships:
 ## Control Mapping
 
 ### ISO 27001:2022 Alignment
+
 - **Clause 5.1** – Leadership commitment and organizational policies
 - **Clause 5.2** – Information security policies and procedures
 - **Clause 5.3** – Organization of information security roles
@@ -182,6 +193,7 @@ Layer Relationships:
 - **Clause 7.2** – Competence and awareness
 
 ### COBIT 2019 Alignment
+
 - **EDM01** – Establish and maintain governance framework
 - **APO01** – Manage IT Management Framework
 - **APO02** – Manage Strategy
@@ -189,6 +201,7 @@ Layer Relationships:
 - **APO07** – Manage Human Resources
 
 ### NIST SSDF v1.1 Alignment
+
 - **PO1.1** – Establish or reuse secure development policy
 - **PO2.1** – Document and communicate security requirements
 - **PO3.1** – Use consistent set of tools and methods
@@ -217,6 +230,7 @@ Before governance operations:
 ### Organizational Authority and Accountability
 
 All policies establish clear accountability:
+
 - Executive sponsorship for policy domains
 - Manager responsibility for policy enforcement
 - Individual accountability for policy compliance
@@ -225,6 +239,7 @@ All policies establish clear accountability:
 ### Policy Enforcement and Monitoring
 
 Organization must:
+
 - Communicate policies to all stakeholders
 - Conduct training and awareness programs
 - Monitor compliance through control procedures
@@ -233,8 +248,8 @@ Organization must:
 
 ### Policy Authority and Change
 
-Policy Authority: Governance Council and Executive Leadership  
-Security Policy Authority: Chief Information Security Officer  
+Policy Authority: Governance Council and Executive Leadership
+Security Policy Authority: Chief Information Security Officer
 Data Governance Authority: Chief Data Officer / Data Governance Board
 
 Policy changes require formal approval by policy authority and cross-impact assessment before implementation.
@@ -247,7 +262,7 @@ Policy changes require formal approval by policy authority and cross-impact asse
 - **NIST SP 800-53 Rev. 5** – Security and Privacy Controls (2020)
 - **COBIT 2019** – Governance of Enterprise Information Technology (ISACA, 2019)
 
-**Framework Version:** EATGF-v1.0-Foundation  
-**Policy Status:**  Approved & Active  
-**Last Updated:** February 13, 2026  
+**Framework Version:** EATGF-v1.0-Foundation
+**Policy Status:** Approved & Active
+**Last Updated:** February 13, 2026
 **Review Cycle:** Annual

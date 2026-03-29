@@ -4,14 +4,14 @@ sidebar_label: Management Systems
 
 # Management Systems
 
-| Field | Value |
-|-------|-------|
-| Document Type | Layer Navigation & Overview |
-| Version | 2.0 |
-| Classification | Controlled |
-| Effective Date | 2026-02-14 |
-| Authority | Enterprise Architecture and Governance Office |
-| EATGF Layer | 01_MANAGEMENT_SYSTEMS |
+| Field          | Value                                         |
+| -------------- | --------------------------------------------- |
+| Document Type  | Layer Navigation & Overview                   |
+| Version        | 2.0                                           |
+| Classification | Controlled                                    |
+| Effective Date | 2026-02-14                                    |
+| Authority      | Enterprise Architecture and Governance Office |
+| EATGF Layer    | 01_MANAGEMENT_SYSTEMS                         |
 
 ---
 
@@ -39,11 +39,12 @@ This layer operates within **01_MANAGEMENT_SYSTEMS** and establishes formal mana
 
 ### Information Security Management System (ISMS)
 
-**Standard:** ISO 27001:2022  
-**Scope:** All information security procedures and controls  
+**Standard:** ISO 27001:2022
+**Scope:** All information security procedures and controls
 **Document:** ISMS_MANUAL_v1.0.md
 
 ISMS Coverage:
+
 - Clause 4 – Context of the organization (scope and boundaries)
 - Clause 5 – Leadership and commitment (responsibility and policy)
 - Clause 6 – Planning (risk assessment, objectives, change management)
@@ -53,6 +54,7 @@ ISMS Coverage:
 - Clause 10 – Improvement (nonconformity handling, corrective actions)
 
 ISMS Procedures Include:
+
 - Information security policies and procedures
 - Access control procedures
 - Asset management and classification
@@ -63,11 +65,12 @@ ISMS Procedures Include:
 
 ### Artificial Intelligence Management System (AIMS)
 
-**Standard:** ISO 42001:2023  
-**Scope:** All AI and machine learning system procedures and controls  
+**Standard:** ISO 42001:2023
+**Scope:** All AI and machine learning system procedures and controls
 **Document:** AIMS_MANUAL_v1.0.md
 
 AIMS Coverage:
+
 - Clause 4 – Context of the organization (AI system scope)
 - Clause 5 – Leadership and commitment (AI governance commitment)
 - Clause 6 – Planning (AI risk management, objectives)
@@ -77,6 +80,7 @@ AIMS Coverage:
 - Clause 10 – Improvement (AI system optimization and lifecycle)
 
 AIMS Procedures Include:
+
 - AI system procurement and acquisition procedures
 - AI model development and training processes
 - Bias detection and mitigation procedures
@@ -92,12 +96,14 @@ AIMS Procedures Include:
 The Statement of Applicability (SoA) provides a framework for documenting control applicability:
 
 Purpose:
+
 - Mark each EATGF control as applicable or not applicable
 - Document justification for control exclusions
 - Map controls to evidence artifacts
 - Support audit readiness and preparation
 
 Usage:
+
 - Complete SoA before formal ISO audit
 - Use as control-to-evidence traceability tool
 - Share with external auditors and certification bodies
@@ -116,6 +122,7 @@ Layer Relationships:
 ## Control Mapping
 
 ### ISO 27001:2022 Alignment
+
 - **Clause 4.4** – Determining the scope of the ISMS
 - **Clause 5.1** – Leadership and commitment
 - **Clause 5.2** – Information security policies
@@ -124,6 +131,7 @@ Layer Relationships:
 - **Clause 8.1** – Operational planning and control
 
 ### ISO 42001:2023 Alignment
+
 - **Clause 4.4** – Determining the scope of the AI management system
 - **Clause 5.1** – Leadership and commitment to AI governance
 - **Clause 6.1** – Planning for AI risk management
@@ -132,6 +140,7 @@ Layer Relationships:
 - **Clause 8.2** – Lifecycle management for AI systems
 
 ### COBIT 2019 Alignment
+
 - **APO01** – Manage IT Management Framework (extends to AI/security)
 - **BAI01** – Manage Programmes and Projects
 - **DSS02** – Manage User Access
@@ -155,7 +164,7 @@ Before implementing management systems:
 
 ### Dual Management System Implementation
 
-Organizations must implement both ISMS and  AIMS formal management systems. This includes:
+Organizations must implement both ISMS and AIMS formal management systems. This includes:
 
 - Establishing formal governance bodies for each system
 - Documenting policies and procedures per ISO specifications
@@ -167,11 +176,13 @@ Organizations must implement both ISMS and  AIMS formal management systems. This
 ### Roles and Responsibilities
 
 **ISMS Governance:**
+
 - Information Security Manager – Responsible for ISMS operation
 - CISO – Oversees information security governance
 - Management Representative – Formal liaison between management and ISMS implementation
 
 **AIMS Governance:**
+
 - AI Governance Officer – Responsible for AIMS operation
 - Chief AI Officer – Oversees AI governance strategy
 - AI Ethics Committee – Ensures fairness and responsible AI practices
@@ -179,11 +190,13 @@ Organizations must implement both ISMS and  AIMS formal management systems. This
 ### Audit and Certification
 
 ISMS Audits:
+
 - Internal audits per ISO 19011:2018
 - External certification audits by accredited certification bodies
 - Annual surveillance and multi-year recertification audits
 
 AIMS Audits:
+
 - Internal audits per ISO 42001:2023
 - External audits by ISO 42001 qualified auditors
 - Continuous monitoring for AI-specific risks
@@ -200,10 +213,10 @@ AIMS Audits:
 
 ---
 
-##  Version & Status
+## Version & Status
 
-**Framework Version:** EATGF-v1.0-Foundation  
-**ISMS Version:** v1.0 (per ISO 27001:2022)  
-**AIMS Version:** v1.0 (per ISO 42001:2023)  
-**Status:**  Complete & Audit Ready  
+**Framework Version:** EATGF-v1.0-Foundation
+**ISMS Version:** v1.0 (per ISO 27001:2022)
+**AIMS Version:** v1.0 (per ISO 42001:2023)
+**Status:** Complete & Audit Ready
 **Last Updated:** February 13, 2026
