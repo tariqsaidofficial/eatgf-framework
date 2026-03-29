@@ -130,49 +130,77 @@ Reference and Evolution
 %%{init: {
   'theme': 'base',
   'themeVariables': {
-    'fontSize': '18px',
-    'fontFamily': 'Segoe UI, Arial, sans-serif',
-    'lineColor': '#1f2937',
-    'primaryTextColor': '#111827',
-    'secondaryTextColor': '#111827'
+    'fontSize': '14px',
+    'fontFamily': 'Segoe UI, -apple-system, sans-serif',
+    'lineColor': '#4b5563',
+    'primaryTextColor': '#1f2937'
   }
 }}%%
 
-flowchart TD
-
-  L00["L00 Foundation\nMaster Control Matrix + Baseline"]
-  L01["L01 Management Systems\nISMS + AIMS + SoA"]
-  L02["L02 Control Architecture\nControl Objectives + Risk + Mapping"]
-  L03["L03 Governance Models\nMaturity + Performance + Team Size"]
-  L04["L04 Policy Layer\nGovernance + Security + Data Policies"]
-  L05["L05 Domain Frameworks\nAI + API Governance Frameworks"]
-  L06["L06 Audit and Assurance\nAudit Procedure + Evidence"]
-  L07["L07 Reference and Evolution\nRoadmap + Changelog"]
-  L08["L08 Developer Governance\nSecure SDLC + DevSecOps + API Practices"]
-
-  %% Main governance chain
-  L00 --> L01 --> L02 --> L03 --> L04 --> L05 --> L08
-
-  %% Assurance and feedback
-  L06 -->|audit findings| L02
-  L06 -->|compliance validation| L04
-  L07 -->|versioned updates| L00
-  L07 -->|improvement inputs| L03
-
-  %% Reference links
-  L02 -.external mapping.-> L01
-  L04 -.policy implementation.-> L08
-
-  classDef core fill:#0f766e,stroke:#115e59,color:#ffffff,stroke-width:2px;
-  classDef support fill:#1e3a8a,stroke:#1e40af,color:#ffffff,stroke-width:2px;
-  classDef assurance fill:#92400e,stroke:#b45309,color:#ffffff,stroke-width:2px;
-  classDef evolution fill:#374151,stroke:#4b5563,color:#ffffff,stroke-width:2px;
-  classDef dev fill:#7c2d12,stroke:#9a3412,color:#ffffff,stroke-width:2px;
-
-  class L00,L01,L02,L03,L04,L05 core;
-  class L06 assurance;
-  class L07 evolution;
-  class L08 dev;
+graph LR
+  MCM["<b>Master Control Matrix</b><br/>35 Controls"]
+  ISMS["ISMS<br/>ISO 27001"]
+  AIMS["AIMS<br/>ISO 42001"]
+  SOA["SoA"]
+  CO["Control<br/>Objectives"]
+  RF["Risk<br/>Framework"]
+  FM["Framework<br/>Mappings"]
+  IAP["Internal<br/>Audit"]
+  ER["Evidence"]
+  GC["Charter"]
+  ISP["Security<br/>Policy"]
+  DGP["Data<br/>Policy"]
+  AIGF["AI Framework"]
+  APIGF["API Framework"]
+  MM["Maturity Model"]
+  PM["Performance Model"]
+  GTS["Team Size"]
+  RD["Roadmap"]
+  
+  MCM -->|scope| ISMS
+  MCM -->|scope| AIMS
+  MCM -->|scope| SOA
+  MCM -->|define| CO
+  MCM -->|establish| RF
+  MCM -->|map| FM
+  MCM -->|enforce| GC
+  MCM -->|enforce| ISP
+  MCM -->|enforce| DGP
+  CO -->|measure| MM
+  CO -->|track| PM
+  CO -->|scale| GTS
+  CO -->|specialize| AIGF
+  CO -->|specialize| APIGF
+  ISP -->|rules| APIGF
+  ER -->|evidence| IAP
+  IAP -->|audit| ISMS
+  IAP -->|audit| AIMS
+  IAP -->|validate| MCM
+  IAP -->|findings| RF
+  RF -->|updates| MCM
+  RD -->|track| MCM
+  FM -.->|ISO27001| ISMS
+  FM -.->|ISO42001| AIMS
+  FM -.->|COBIT| CO
+  
+  style MCM fill:#0d9488,stroke:#0f766e,stroke-width:4px,color:#fff,font-weight:bold
+  style CO fill:#0369a1,stroke:#0c4a6e,stroke-width:2px,color:#fff
+  style RF fill:#0369a1,stroke:#0c4a6e,stroke-width:2px,color:#fff
+  style FM fill:#0369a1,stroke:#0c4a6e,stroke-width:2px,color:#fff
+  style IAP fill:#d97706,stroke:#b45309,stroke-width:2px,color:#fff
+  style ISMS fill:#6366f1,stroke:#4f46e5,stroke-width:2px,color:#fff
+  style AIMS fill:#6366f1,stroke:#4f46e5,stroke-width:2px,color:#fff
+  style SOA fill:#6366f1,stroke:#4f46e5,stroke-width:2px,color:#fff
+  style GC fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
+  style ISP fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
+  style DGP fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
+  style AIGF fill:#d946ef,stroke:#be185d,stroke-width:2px,color:#fff
+  style APIGF fill:#d946ef,stroke:#be185d,stroke-width:2px,color:#fff
+  style MM fill:#ec4899,stroke:#be185d,stroke-width:1px,color:#fff
+  style PM fill:#ec4899,stroke:#be185d,stroke-width:1px,color:#fff
+  style GTS fill:#ec4899,stroke:#be185d,stroke-width:1px,color:#fff
+  style ER fill:#6b7280,stroke:#4b5563,stroke-width:2px,color:#fff
+  style RD fill:#6b7280,stroke:#4b5563,stroke-width:2px,color:#fff
 ```
 
 ---
