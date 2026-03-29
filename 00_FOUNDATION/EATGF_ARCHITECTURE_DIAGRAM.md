@@ -156,7 +156,7 @@ graph LR
   PM["Performance Model"]
   GTS["Team Size"]
   RD["Roadmap"]
-  
+
   MCM -->|scope| ISMS
   MCM -->|scope| AIMS
   MCM -->|scope| SOA
@@ -182,7 +182,7 @@ graph LR
   FM -.->|ISO27001| ISMS
   FM -.->|ISO42001| AIMS
   FM -.->|COBIT| CO
-  
+
   style MCM fill:#0d9488,stroke:#0f766e,stroke-width:4px,color:#fff,font-weight:bold
   style CO fill:#0369a1,stroke:#0c4a6e,stroke-width:2px,color:#fff
   style RF fill:#0369a1,stroke:#0c4a6e,stroke-width:2px,color:#fff
