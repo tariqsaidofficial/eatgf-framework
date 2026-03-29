@@ -27,7 +27,7 @@
       "type": "shell",
       "command": "echo",
       "args": [
-        "Creating EATGF-compliant document...\n\nUSE SNIPPET: Type 'eatgf-doc' in any .md file\n\nOR manually ensure:\n1. Architectural Position declared\n2. Governance Principles stated\n3. Control Mapping table included\n4. Developer Checklist provided\n5. Governance Implications explained\n6. Version info documented\n\nTemplate: eatgf-framework/00_FOUNDATION/EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md"
+        "Creating EATGF-compliant document...\n\nUSE SNIPPET: Type 'eatgf-doc' in any .md file\n\nOR manually ensure:\n1. Architectural Position declared\n2. Governance Principles stated\n3. Control Mapping table included\n4. Developer Checklist provided\n5. Governance Implications explained\n6. Version info documented\n\nTemplate: 00_FOUNDATION/EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md"
       ],
       "problemMatcher": [],
       "group": {

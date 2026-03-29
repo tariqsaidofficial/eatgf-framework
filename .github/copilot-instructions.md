@@ -108,6 +108,6 @@ If conflict exists, this order prevails:
 
 ## Reference Document
 
-Full template: `/eatgf-framework/00_FOUNDATION/EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md`
+Full template: `/00_FOUNDATION/EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md`
 
 **NO DOCUMENT MAY BE PUBLISHED WITHOUT FULL COMPLIANCE TO THIS TEMPLATE.**

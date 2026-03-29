@@ -399,11 +399,11 @@ Year 3+: Mature audit program; focus on continuous improvement
 
 ### Documentation
 
-- **Getting Started:** eatgf-framework/GOVERNANCE_FRAMEWORK_README.md
-- **Controls:** eatgf-framework/02_CONTROL_ARCHITECTURE/MASTER_CONTROL_MATRIX.md
-- **Policies:** eatgf-framework/04_POLICY_LAYER/
-- **Development:** eatgf-framework/08_DEVELOPER_GOVERNANCE_LAYER/
-- **Audit:** eatgf-framework/06_AUDIT_AND_ASSURANCE/
+- **Getting Started:** GOVERNANCE_FRAMEWORK_README.md
+- **Controls:** 02_CONTROL_ARCHITECTURE/MASTER_CONTROL_MATRIX.md
+- **Policies:** 04_POLICY_LAYER/
+- **Development:** 08_DEVELOPER_GOVERNANCE_LAYER/
+- **Audit:** 06_AUDIT_AND_ASSURANCE/
 
 ### External Resources
 
