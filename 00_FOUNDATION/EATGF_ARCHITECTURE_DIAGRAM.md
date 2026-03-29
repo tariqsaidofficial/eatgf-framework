@@ -130,114 +130,49 @@ Reference and Evolution
 %%{init: {
   'theme': 'base',
   'themeVariables': {
-    'fontSize': '14px',
-    'fontFamily': 'Inter, system-ui, sans-serif'
+    'fontSize': '18px',
+    'fontFamily': 'Segoe UI, Arial, sans-serif',
+    'lineColor': '#1f2937',
+    'primaryTextColor': '#111827',
+    'secondaryTextColor': '#111827'
   }
 }}%%
 
 flowchart TD
 
-  subgraph L00["<b>LAYER 00 — FOUNDATION</b>"]
-    direction LR
-    MCM["<b>MASTER CONTROL MATRIX</b><br/>35 Controls | Single Authority<br/>EATGF-[DOMAIN]-[CATEGORY]-[NUM]"]
-    BD["Baseline Declaration"]
-    OD["Official Designation"]
-  end
+  L00["L00 Foundation\nMaster Control Matrix + Baseline"]
+  L01["L01 Management Systems\nISMS + AIMS + SoA"]
+  L02["L02 Control Architecture\nControl Objectives + Risk + Mapping"]
+  L03["L03 Governance Models\nMaturity + Performance + Team Size"]
+  L04["L04 Policy Layer\nGovernance + Security + Data Policies"]
+  L05["L05 Domain Frameworks\nAI + API Governance Frameworks"]
+  L06["L06 Audit and Assurance\nAudit Procedure + Evidence"]
+  L07["L07 Reference and Evolution\nRoadmap + Changelog"]
+  L08["L08 Developer Governance\nSecure SDLC + DevSecOps + API Practices"]
 
-  subgraph L01["<b>LAYER 01 — MANAGEMENT SYSTEMS</b>"]
-    direction LR
-    ISMS["<b>ISMS</b><br/>ISO/IEC 27001:2022"]
-    AIMS["<b>AIMS</b><br/>ISO/IEC 42001:2023"]
-    SOA["Statement of<br/>Applicability"]
-  end
+  %% Main governance chain
+  L00 --> L01 --> L02 --> L03 --> L04 --> L05 --> L08
 
-  subgraph L02["<b>LAYER 02 — CONTROL ARCHITECTURE</b>"]
-    direction LR
-    CO["Control Objectives"]
-    RF["Risk Framework"]
-    FM["Framework Mappings<br/>COBIT | NIST | ISO"]
-  end
+  %% Assurance and feedback
+  L06 -->|audit findings| L02
+  L06 -->|compliance validation| L04
+  L07 -->|versioned updates| L00
+  L07 -->|improvement inputs| L03
 
-  subgraph L03["<b>LAYER 03 — GOVERNANCE MODELS</b>"]
-    direction LR
-    MM["Maturity Model"]
-    PM["Performance Model"]
-    GTS["Governance by<br/>Team Size"]
-  end
+  %% Reference links
+  L02 -.external mapping.-> L01
+  L04 -.policy implementation.-> L08
 
-  subgraph L04["<b>LAYER 04 — POLICY LAYER</b>"]
-    direction LR
-    GC["Governance Charter"]
-    ISP["Information Security<br/>Policy"]
-    DGP["Data Governance<br/>Policy"]
-  end
+  classDef core fill:#0f766e,stroke:#115e59,color:#ffffff,stroke-width:2px;
+  classDef support fill:#1e3a8a,stroke:#1e40af,color:#ffffff,stroke-width:2px;
+  classDef assurance fill:#92400e,stroke:#b45309,color:#ffffff,stroke-width:2px;
+  classDef evolution fill:#374151,stroke:#4b5563,color:#ffffff,stroke-width:2px;
+  classDef dev fill:#7c2d12,stroke:#9a3412,color:#ffffff,stroke-width:2px;
 
-  subgraph L05["<b>LAYER 05 — DOMAIN FRAMEWORKS</b>"]
-    direction LR
-    AIGF["AI Governance<br/>Framework"]
-    APIGF["API Governance<br/>Framework"]
-  end
-
-  subgraph L06["<b>LAYER 06 — AUDIT & ASSURANCE</b>"]
-    direction LR
-    IAP["Internal Audit<br/>Procedure<br/>ISO 19011:2018"]
-    ER["Evidence Register"]
-  end
-
-  subgraph L07["<b>LAYER 07 — REFERENCE & EVOLUTION</b>"]
-    direction LR
-    RD["Roadmap &<br/>Decision Records"]
-    CL["Changelog &<br/>Version History"]
-  end
-
-  %% --- PRIMARY GOVERNANCE FLOW (top-down) ---
-  MCM -->|"defines controls for"| ISMS
-  MCM -->|"defines controls for"| AIMS
-  MCM -->|"scopes applicability"| SOA
-
-  MCM -->|"provides objectives to"| CO
-  MCM -->|"establishes risk criteria"| RF
-  MCM -->|"maps to external standards"| FM
-
-  CO -->|"measured by"| MM
-  CO -->|"tracked by"| PM
-  CO -->|"scaled by edition"| GTS
-
-  MCM -->|"enforced through"| GC
-  MCM -->|"enforced through"| ISP
-  MCM -->|"enforced through"| DGP
-
-  CO -->|"specialized into"| AIGF
-  CO -->|"specialized into"| APIGF
-  ISP -->|"domain rules for"| APIGF
-
-  %% --- ASSURANCE FLOW (bottom-up) ---
-  IAP -->|"audits compliance of"| ISMS
-  IAP -->|"audits compliance of"| AIMS
-  IAP -->|"validates controls in"| MCM
-  ER -->|"stores evidence for"| IAP
-
-  %% --- FEEDBACK LOOP ---
-  IAP -->|"findings feed into"| RF
-  RF -->|"risk updates to"| MCM
-  RD -->|"evolution tracked in"| MCM
-
-  %% --- LATERAL MAPPINGS ---
-  FM -.->|"ISO 27001:2022"| ISMS
-  FM -.->|"ISO 42001:2023"| AIMS
-  FM -.->|"COBIT 2019"| CO
-
-  %% --- STYLING ---
-  style L00 fill:#1a365d,stroke:#2d5591,color:#fff,stroke-width:3px
-  style L01 fill:#22543d,stroke:#38a169,color:#fff,stroke-width:2px
-  style L02 fill:#7b341e,stroke:#c05621,color:#fff,stroke-width:2px
-  style L03 fill:#44337a,stroke:#805ad5,color:#fff,stroke-width:2px
-  style L04 fill:#742a2a,stroke:#c53030,color:#fff,stroke-width:2px
-  style L05 fill:#234e52,stroke:#38b2ac,color:#fff,stroke-width:2px
-  style L06 fill:#744210,stroke:#d69e2e,color:#fff,stroke-width:2px
-  style L07 fill:#4a5568,stroke:#a0aec0,color:#fff,stroke-width:2px
-
-  style MCM fill:#2b6cb0,stroke:#1a365d,color:#fff,stroke-width:4px
+  class L00,L01,L02,L03,L04,L05 core;
+  class L06 assurance;
+  class L07 evolution;
+  class L08 dev;
 ```
 
 ---
