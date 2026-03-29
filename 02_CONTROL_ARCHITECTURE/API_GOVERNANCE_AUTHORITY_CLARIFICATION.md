@@ -1,3 +1,7 @@
+---
+sidebar_label: "API Governance: Authority Hierarchy and Enforcement Clarification"
+---
+
 # API Governance: Authority Hierarchy and Enforcement Clarification
 
 | Field          | Value                                                              |

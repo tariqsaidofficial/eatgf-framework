@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Writing Identity Framework"
+---
+
 # EATGF Writing Identity Framework
 
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)

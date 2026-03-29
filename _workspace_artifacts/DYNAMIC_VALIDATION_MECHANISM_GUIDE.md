@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Dynamic Validation Mechanism"
+---
+
 # EATGF Dynamic Validation Mechanism
 
 ## Automated Compliance Checking System

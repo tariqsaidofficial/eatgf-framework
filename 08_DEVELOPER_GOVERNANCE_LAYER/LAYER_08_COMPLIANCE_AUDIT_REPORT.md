@@ -1,3 +1,7 @@
+---
+sidebar_label: "Layer 08 Compliance Audit Report"
+---
+
 # Layer 08 Compliance Audit Report
 
 **Enterprise Architecture Governance Framework (EATGF)**

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Corrective Action Register Standard"
+---
+
 # CORRECTIVE_ACTION_REGISTER_STANDARD
 
 | Field          | Value                                      |

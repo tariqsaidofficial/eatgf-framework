@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Framework Document Index"
+---
+
 # EATGF Framework Document Index
 
 **Last Updated:** 2026-02-15

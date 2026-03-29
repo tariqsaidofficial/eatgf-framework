@@ -1,3 +1,7 @@
+---
+sidebar_label: "full-report"
+---
+
 EATGF Framework Full System Report
 =================================
 

@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Git Governance Policy"
+---
+
 # EATGF_GIT_GOVERNANCE_POLICY
 
 | Field          | Value                                                         |

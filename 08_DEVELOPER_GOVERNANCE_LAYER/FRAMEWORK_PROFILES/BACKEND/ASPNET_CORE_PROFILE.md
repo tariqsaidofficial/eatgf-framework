@@ -1,3 +1,7 @@
+---
+sidebar_label: "ASP.NET Core Framework Governance Profile"
+---
+
 # ASP.NET Core Framework Governance Profile
 
 > **Authority Notice:** This profile implements EATGF controls for ASP.NET Core-based backend systems. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW ASP.NET Core applications satisfy Secure SDLC (Layer 01), API Governance (Layer 05), and DevSecOps (Layer 03) requirements.

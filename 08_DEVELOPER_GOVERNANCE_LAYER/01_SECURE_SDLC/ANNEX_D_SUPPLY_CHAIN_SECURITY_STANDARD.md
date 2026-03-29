@@ -1,3 +1,7 @@
+---
+sidebar_label: "Annex D: Software Supply Chain Security Standard"
+---
+
 # Annex D: Software Supply Chain Security Standard
 
 > **Cross-Reference Notice:** This annex is superseded by the comprehensive implementation standard at Layer 08.03.

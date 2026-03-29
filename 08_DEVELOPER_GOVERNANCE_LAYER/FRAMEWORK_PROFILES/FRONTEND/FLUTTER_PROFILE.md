@@ -1,3 +1,7 @@
+---
+sidebar_label: "Flutter Framework Governance Profile"
+---
+
 # Flutter Framework Governance Profile
 
 ## Enterprise Conformance Model (v1.0)

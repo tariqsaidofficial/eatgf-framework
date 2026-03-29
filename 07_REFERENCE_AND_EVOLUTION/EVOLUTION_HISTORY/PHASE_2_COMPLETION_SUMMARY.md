@@ -1,3 +1,7 @@
+---
+sidebar_label: "Phase 2 Completion Summary"
+---
+
 # PHASE_2_COMPLETION_SUMMARY.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**

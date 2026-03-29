@@ -1,3 +1,7 @@
+---
+sidebar_label: "Audit Automation Profile"
+---
+
 # Audit Automation Profile
 
 > **Authority Notice:** This profile implements EATGF controls for continuous audit logging, forensic analysis, compliance reporting, and incident investigation automation. It does NOT define new controls, redefine audit requirements, or override standards. This profile clarifies HOW organizations satisfy Monitoring & Logging (Layer 03/06), Incident Response (Layer 06), and compliance requirements per ISO 27001 A.8.15 and NIST SP 800-61.

@@ -1,3 +1,7 @@
+---
+sidebar_label: "CI/CD Security Architecture Standard"
+---
+
 # CI/CD Security Architecture Standard
 
 | Field          | Value                                                   |

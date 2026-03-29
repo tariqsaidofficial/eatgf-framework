@@ -1,3 +1,7 @@
+---
+sidebar_label: "Phase 2 Final Go No Go Gate"
+---
+
 # PHASE_2_FINAL_GO_NO_GO_GATE.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**

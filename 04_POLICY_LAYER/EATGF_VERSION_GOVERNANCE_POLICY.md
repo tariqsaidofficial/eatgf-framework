@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Version Governance Policy"
+---
+
 # EATGF_VERSION_GOVERNANCE_POLICY
 
 | Field          | Value                                                         |

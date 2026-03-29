@@ -1,3 +1,7 @@
+---
+sidebar_label: "Software Bill of Materials (SBOM) Governance Standard"
+---
+
 # Software Bill of Materials (SBOM) Governance Standard
 
 | Field          | Value                                                   |

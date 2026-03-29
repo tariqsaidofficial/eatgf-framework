@@ -1,3 +1,7 @@
+---
+sidebar_label: "Governance Charter Formal v2"
+---
+
 # GOVERNANCE_CHARTER_FORMAL_v2
 
 | Field             | Value                                             |

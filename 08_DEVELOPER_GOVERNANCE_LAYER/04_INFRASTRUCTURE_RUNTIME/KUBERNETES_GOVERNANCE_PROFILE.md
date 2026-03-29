@@ -1,3 +1,7 @@
+---
+sidebar_label: "Kubernetes Governance Profile"
+---
+
 # Kubernetes Governance Profile
 
 > **Authority Notice:** This profile implements EATGF controls for Container Orchestration runtime security. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW Kubernetes deployments satisfy DevSecOps (Layer 03), Infrastructure Runtime (Layer 04), and Zero-Trust security requirements.

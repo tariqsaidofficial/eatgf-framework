@@ -1,3 +1,7 @@
+---
+sidebar_label: "Risk Framework"
+---
+
 # RISK_FRAMEWORK
 
 | Field          | Value                                                  |

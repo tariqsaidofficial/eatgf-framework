@@ -1,3 +1,7 @@
+---
+sidebar_label: "Week 1 Status"
+---
+
 # WEEK_1_STATUS.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**  

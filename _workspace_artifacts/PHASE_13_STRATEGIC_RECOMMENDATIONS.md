@@ -1,3 +1,7 @@
+---
+sidebar_label: "Strategic Recommendations: Phase 13-15 Execution"
+---
+
 # Strategic Recommendations: Phase 13-15 Execution
 
 **Classification:** Governance Roadmap

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Infrastructure as Code Governance Standard"
+---
+
 # Infrastructure as Code Governance Standard
 
 | Field          | Value                                                        |

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Astro Framework Governance Profile"
+---
+
 # Astro Framework Governance Profile
 
 ## Enterprise Conformance Model (v1.0)

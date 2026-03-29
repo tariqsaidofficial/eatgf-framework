@@ -1,3 +1,7 @@
+---
+sidebar_label: "End-of-Life Governance Standard"
+---
+
 # End-of-Life Governance Standard
 
 | Property           | Value                                                                                                    |

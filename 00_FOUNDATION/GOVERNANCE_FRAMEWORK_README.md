@@ -1,3 +1,7 @@
+---
+sidebar_label: "Enterprise AI-Aligned Technical Governance Framework (EATGF)"
+---
+
 # Enterprise AI-Aligned Technical Governance Framework (EATGF)
 
 | Field | Value |

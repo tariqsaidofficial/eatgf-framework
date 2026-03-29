@@ -1,3 +1,7 @@
+---
+sidebar_label: "Comprehensive Duplication & Conflict Audit"
+---
+
 # Comprehensive Duplication & Conflict Audit
 
 ## Phase 13 Documentation Analysis

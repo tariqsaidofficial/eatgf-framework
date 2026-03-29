@@ -1,3 +1,7 @@
+---
+sidebar_label: "Evidence Register Excel Build Specification"
+---
+
 # EVIDENCE_REGISTER_EXCEL_BUILD_SPECIFICATION.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**

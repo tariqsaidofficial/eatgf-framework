@@ -1,3 +1,7 @@
+---
+sidebar_label: "Evidence Register Implementation Guide"
+---
+
 # EVIDENCE_REGISTER_IMPLEMENTATION_GUIDE.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**

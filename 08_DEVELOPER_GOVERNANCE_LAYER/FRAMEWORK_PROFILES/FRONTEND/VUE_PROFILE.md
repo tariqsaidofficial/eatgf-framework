@@ -1,3 +1,7 @@
+---
+sidebar_label: "Vue.js Framework Governance Profile"
+---
+
 # Vue.js Framework Governance Profile
 
 ## Enterprise Conformance Model (v1.0)

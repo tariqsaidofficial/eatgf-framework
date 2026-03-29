@@ -1,3 +1,7 @@
+---
+sidebar_label: "DevSecOps Governance Standard"
+---
+
 # DevSecOps Governance Standard
 
 **Version:** 0.1-DRAFT

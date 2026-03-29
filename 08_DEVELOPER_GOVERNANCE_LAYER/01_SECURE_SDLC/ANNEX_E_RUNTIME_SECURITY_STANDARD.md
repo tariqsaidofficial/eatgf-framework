@@ -1,3 +1,7 @@
+---
+sidebar_label: "Runtime Security Governance Standard"
+---
+
 # Runtime Security Governance Standard
 
 ## Purpose

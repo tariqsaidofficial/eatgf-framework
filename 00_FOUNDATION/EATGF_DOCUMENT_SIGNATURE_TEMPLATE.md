@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Document Signature Template"
+---
+
 # EATGF Document Signature Template
 
 ## Purpose

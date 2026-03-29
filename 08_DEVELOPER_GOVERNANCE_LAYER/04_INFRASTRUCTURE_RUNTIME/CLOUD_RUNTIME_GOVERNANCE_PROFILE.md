@@ -1,3 +1,7 @@
+---
+sidebar_label: "Cloud Runtime Governance Profile"
+---
+
 # Cloud Runtime Governance Profile
 
 **Version:** 1.0  

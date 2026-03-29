@@ -1,3 +1,7 @@
+---
+sidebar_label: "SLSA Framework Implementation Standard"
+---
+
 # SLSA Framework Implementation Standard
 
 | Field          | Value                                                   |

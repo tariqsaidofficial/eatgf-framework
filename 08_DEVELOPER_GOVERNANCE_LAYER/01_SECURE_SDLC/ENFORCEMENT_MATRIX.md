@@ -1,3 +1,7 @@
+---
+sidebar_label: "Secure SDLC Enforcement Matrix"
+---
+
 # Secure SDLC Enforcement Matrix
 
 ## Document Metadata

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Technical Decision Authority Model"
+---
+
 # Technical Decision Authority Model
 
 ## Document Metadata

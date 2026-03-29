@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Phase 13: Executive Summary for Leadership"
+---
+
 # EATGF Phase 13: Executive Summary for Leadership
 
 **Prepared for:** CISO, CTO, VP Engineering, Compliance Officer

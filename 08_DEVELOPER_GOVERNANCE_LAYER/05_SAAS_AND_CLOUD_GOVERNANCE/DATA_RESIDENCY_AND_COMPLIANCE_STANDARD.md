@@ -1,3 +1,7 @@
+---
+sidebar_label: "Data Residency and Compliance Standard"
+---
+
 # Data Residency and Compliance Standard
 
 | Property           | Value                                                                                                 |

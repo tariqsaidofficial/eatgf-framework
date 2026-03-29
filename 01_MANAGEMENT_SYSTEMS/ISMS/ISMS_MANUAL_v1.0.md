@@ -1,3 +1,7 @@
+---
+sidebar_label: "ISMS Manual v1.0"
+---
+
 # ISMS Manual v1.0
 
 | Field | Value |

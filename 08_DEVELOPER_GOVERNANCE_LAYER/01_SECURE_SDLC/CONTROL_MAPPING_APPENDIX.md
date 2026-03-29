@@ -1,3 +1,7 @@
+---
+sidebar_label: "Control Mapping Appendix – Secure SDLC"
+---
+
 # Control Mapping Appendix – Secure SDLC
 
 ## Document Metadata

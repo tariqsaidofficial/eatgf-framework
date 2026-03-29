@@ -1,3 +1,7 @@
+---
+sidebar_label: "Svelte Framework Governance Profile"
+---
+
 # Svelte Framework Governance Profile
 
 ## Enterprise Conformance Model (v1.0)

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Evidence Register Master v1.0"
+---
+
 # EVIDENCE_REGISTER_MASTER_v1.0
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**

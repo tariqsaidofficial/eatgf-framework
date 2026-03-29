@@ -1,3 +1,7 @@
+---
+sidebar_label: "Governance Charter (deprecated)"
+---
+
 # 01_GOVERNANCE_CHARTER -- DEPRECATED
 
 **NOTICE: This document has been superseded by [GOVERNANCE_CHARTER_FORMAL_v2.md](./GOVERNANCE_CHARTER_FORMAL_v2.md)**

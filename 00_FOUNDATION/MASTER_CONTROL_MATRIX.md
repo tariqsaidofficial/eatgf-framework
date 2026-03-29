@@ -1,3 +1,7 @@
+---
+sidebar_label: "Master Control Matrix (MCM)"
+---
+
 # MASTER CONTROL MATRIX (MCM)
 
 Enterprise AI-Aligned Technical Governance Framework (EATGF)

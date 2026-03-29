@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Mandatory Document Standards"
+---
+
 # EATGF Mandatory Document Standards
 
 ## Critical Rule: All EATGF documents MUST comply with the Document Signature Template

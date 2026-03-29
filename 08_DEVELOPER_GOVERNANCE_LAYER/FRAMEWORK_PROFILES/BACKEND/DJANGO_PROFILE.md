@@ -1,3 +1,7 @@
+---
+sidebar_label: "Django Framework Governance Profile"
+---
+
 # Django Framework Governance Profile
 
 > **Authority Notice:** This profile implements EATGF controls for Django-based backend systems. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW Django applications satisfy Secure SDLC (Layer 01), API Governance (Layer 05), and DevSecOps (Layer 03) requirements.

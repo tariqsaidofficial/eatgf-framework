@@ -1,3 +1,7 @@
+---
+sidebar_label: "Acceptable Use Policy"
+---
+
 # 08_ACCEPTABLE_USE_POLICY
 
 | Field          | Value                                                                |

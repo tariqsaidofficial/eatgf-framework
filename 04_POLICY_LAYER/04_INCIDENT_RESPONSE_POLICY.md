@@ -1,3 +1,7 @@
+---
+sidebar_label: "Incident Response Policy"
+---
+
 # 04_INCIDENT_RESPONSE_POLICY
 
 | Field          | Value                                                              |

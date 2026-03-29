@@ -1,3 +1,7 @@
+---
+sidebar_label: "Cloud & SaaS Governance Standard"
+---
+
 # Cloud & SaaS Governance Standard
 
 **Version:** 2.0-COMPREHENSIVE

@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF v1.0-Foundation: Architecture Diagram"
+---
+
 # EATGF v1.0-Foundation: Architecture Diagram
 
 ## Layer Architecture

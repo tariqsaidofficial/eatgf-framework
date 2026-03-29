@@ -1,3 +1,7 @@
+---
+sidebar_label: "Framework Mappings (deprecated)"
+---
+
 # FRAMEWORK_MAPPINGS -- DEPRECATED
 
 **NOTICE: This document has been superseded by [FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md](./FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md)**

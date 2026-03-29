@@ -1,3 +1,7 @@
+---
+sidebar_label: "Documentation Style Review Report"
+---
+
 # Documentation Style Review Report
 
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)

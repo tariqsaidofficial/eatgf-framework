@@ -1,3 +1,7 @@
+---
+sidebar_label: "Vendor and Third Party Risk Management Policy"
+---
+
 # 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY
 
 | Field          | Value                                                            |

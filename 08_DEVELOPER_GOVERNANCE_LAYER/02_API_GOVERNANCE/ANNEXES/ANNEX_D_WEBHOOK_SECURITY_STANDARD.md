@@ -1,3 +1,7 @@
+---
+sidebar_label: "Webhook Security Governance Standard"
+---
+
 # Webhook Security Governance Standard
 
 > **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.

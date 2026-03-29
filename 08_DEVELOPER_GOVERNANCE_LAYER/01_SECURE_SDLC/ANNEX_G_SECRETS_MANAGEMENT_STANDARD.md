@@ -1,3 +1,7 @@
+---
+sidebar_label: "Annex G: Secrets Management Governance Standard"
+---
+
 # Annex G: Secrets Management Governance Standard
 
 > **Cross-Reference Notice:** This annex is superseded by the comprehensive implementation standard at Layer 08.03.

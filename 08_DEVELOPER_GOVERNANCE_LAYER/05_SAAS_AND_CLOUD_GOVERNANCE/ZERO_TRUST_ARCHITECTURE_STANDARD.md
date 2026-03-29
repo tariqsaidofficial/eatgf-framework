@@ -1,3 +1,7 @@
+---
+sidebar_label: "Infrastructure Zero Trust Architecture Standard"
+---
+
 # Infrastructure Zero Trust Architecture Standard
 
 | Field          | Value                                                        |

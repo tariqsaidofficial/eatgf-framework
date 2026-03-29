@@ -1,3 +1,7 @@
+---
+sidebar_label: "Phase 2 Stabilization Plan"
+---
+
 # PHASE_2_STABILIZATION_PLAN.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**

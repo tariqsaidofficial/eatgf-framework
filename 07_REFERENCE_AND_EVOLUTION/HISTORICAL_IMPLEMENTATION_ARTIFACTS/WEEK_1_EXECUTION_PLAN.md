@@ -1,3 +1,7 @@
+---
+sidebar_label: "Week 1 Execution Plan"
+---
+
 # WEEK_1_EXECUTION_PLAN.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**

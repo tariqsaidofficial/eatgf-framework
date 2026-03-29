@@ -1,3 +1,7 @@
+---
+sidebar_label: "Metadata Governance Rules v1.1"
+---
+
 # METADATA_GOVERNANCE_RULES_v1.1
 
 **Purpose:**

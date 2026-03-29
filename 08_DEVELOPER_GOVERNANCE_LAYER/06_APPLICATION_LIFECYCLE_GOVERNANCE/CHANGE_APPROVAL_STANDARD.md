@@ -1,3 +1,7 @@
+---
+sidebar_label: "Change Approval Standard"
+---
+
 # Change Approval Standard
 
 | Property           | Value                                                                                          |

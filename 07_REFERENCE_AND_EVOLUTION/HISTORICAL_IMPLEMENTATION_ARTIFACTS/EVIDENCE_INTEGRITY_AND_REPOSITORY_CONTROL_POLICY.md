@@ -1,3 +1,7 @@
+---
+sidebar_label: "Evidence Integrity and Repository Control Policy"
+---
+
 # EVIDENCE_INTEGRITY_AND_REPOSITORY_CONTROL_POLICY.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**

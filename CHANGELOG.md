@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF v1.0-Foundation Release - Changelog"
+---
+
 # EATGF v1.0-Foundation Release - Changelog
 
 **Release Date:** February 16, 2026

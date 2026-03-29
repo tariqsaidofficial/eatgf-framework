@@ -1,3 +1,7 @@
+---
+sidebar_label: "API Governance Enforcement Matrix"
+---
+
 # API Governance Enforcement Matrix
 
 ## Purpose

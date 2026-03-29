@@ -1,3 +1,7 @@
+---
+sidebar_label: "Business Continuity and Disaster Recovery Policy"
+---
+
 # 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY
 
 | Field          | Value                                                   |

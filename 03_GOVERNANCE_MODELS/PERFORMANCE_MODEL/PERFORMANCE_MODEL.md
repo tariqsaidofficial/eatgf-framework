@@ -1,3 +1,7 @@
+---
+sidebar_label: "Governance Performance Model"
+---
+
 # Governance Performance Model
 
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)

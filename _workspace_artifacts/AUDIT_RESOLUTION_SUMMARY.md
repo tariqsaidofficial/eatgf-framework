@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Comprehensive Audit Summary"
+---
+
 # EATGF Comprehensive Audit Summary
 
 ## Final Report - Issues Resolved

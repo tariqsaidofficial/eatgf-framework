@@ -1,3 +1,7 @@
+---
+sidebar_label: "Engine Baseline v1.1"
+---
+
 # ENGINE_BASELINE_v1.1
 
 **EATGF Engine Baseline – Version 1.1**

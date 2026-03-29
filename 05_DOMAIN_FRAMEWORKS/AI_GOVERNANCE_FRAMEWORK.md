@@ -1,3 +1,7 @@
+---
+sidebar_label: "AI Governance Framework"
+---
+
 # AI_GOVERNANCE_FRAMEWORK
 
 | Field          | Value                                             |

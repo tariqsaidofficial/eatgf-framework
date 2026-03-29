@@ -1,3 +1,7 @@
+---
+sidebar_label: "API Governance Standard"
+---
+
 # API Governance Standard
 
 Enterprise AI-Aligned Technical Governance Framework (EATGF)

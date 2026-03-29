@@ -1,3 +1,7 @@
+---
+sidebar_label: "Application Lifecycle Governance Standard"
+---
+
 # Application Lifecycle Governance Standard
 
 **Version:** 2.0-COMPREHENSIVE

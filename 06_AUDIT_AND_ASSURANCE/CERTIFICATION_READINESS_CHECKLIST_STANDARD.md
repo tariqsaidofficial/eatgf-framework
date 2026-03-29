@@ -1,3 +1,7 @@
+---
+sidebar_label: "Certification Readiness Checklist Standard"
+---
+
 # CERTIFICATION_READINESS_CHECKLIST_STANDARD
 
 | Field          | Value                                  |

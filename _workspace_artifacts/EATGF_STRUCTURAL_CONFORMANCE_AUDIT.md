@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Structural Conformance Audit Report"
+---
+
 # EATGF Structural Conformance Audit Report
 
 | Field              | Value                                  |

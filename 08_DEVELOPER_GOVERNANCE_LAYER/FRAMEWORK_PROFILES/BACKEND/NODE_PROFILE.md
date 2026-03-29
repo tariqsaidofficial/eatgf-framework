@@ -1,3 +1,7 @@
+---
+sidebar_label: "Node.js (Express/NestJS) Framework Governance Profile"
+---
+
 # Node.js (Express/NestJS) Framework Governance Profile
 
 > **Authority Notice:** This profile implements EATGF controls for Node.js backend systems built using Express or NestJS. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW Node.js applications satisfy Secure SDLC (Layer 01), API Governance (Layer 05), and DevSecOps (Layer 03) requirements.

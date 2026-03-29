@@ -1,3 +1,7 @@
+---
+sidebar_label: "Framework Mappings Comprehensive"
+---
+
 # FRAMEWORK_MAPPINGS_COMPREHENSIVE
 
 | Field | Value |

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Spring Boot Framework Governance Profile"
+---
+
 # Spring Boot Framework Governance Profile
 
 > **Authority Notice:** This profile implements EATGF controls for Spring Boot-based backend systems. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW Spring Boot applications satisfy Secure SDLC (Layer 01), API Governance (Layer 05), and DevSecOps (Layer 03) requirements.

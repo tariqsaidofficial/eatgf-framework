@@ -1,3 +1,7 @@
+---
+sidebar_label: "Governance by Team Size"
+---
+
 # Governance by Team Size
 
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)

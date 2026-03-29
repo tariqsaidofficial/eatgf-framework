@@ -1,3 +1,7 @@
+---
+sidebar_label: "Phase 1.5: Control Expansion"
+---
+
 # ENTERPRISE AI-ALIGNED TECHNICAL GOVERNANCE FRAMEWORK (EATGF)
 ## Master Control Matrix - EXPANSION LAYER (Phase 1.5)
 ### Adding Cloud, DevSecOps, Data Privacy, and Business Continuity Controls

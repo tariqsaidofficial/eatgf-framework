@@ -1,3 +1,7 @@
+---
+sidebar_label: "Database Governance Profile"
+---
+
 # Database Governance Profile
 
 > **Authority Notice:** This profile implements EATGF controls for relational and non-relational database systems. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW databases satisfy Infrastructure Runtime (Layer 04), Data Protection, and Multi-Tenancy Isolation requirements.

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Annex v1.1 – Technical Details"
+---
+
 # Annex v1.1 – Technical Details
 
 ## Table of Contents

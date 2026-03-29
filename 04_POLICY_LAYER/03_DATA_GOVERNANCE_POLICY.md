@@ -1,3 +1,7 @@
+---
+sidebar_label: "Data Governance Policy"
+---
+
 # 03_DATA_GOVERNANCE_POLICY
 
 | Field          | Value                                                    |

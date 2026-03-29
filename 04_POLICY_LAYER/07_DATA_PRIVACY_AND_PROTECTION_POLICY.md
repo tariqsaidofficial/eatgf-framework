@@ -1,3 +1,7 @@
+---
+sidebar_label: "Data Privacy and Protection Policy"
+---
+
 # 07_DATA_PRIVACY_AND_PROTECTION_POLICY
 
 | Field          | Value                                                        |

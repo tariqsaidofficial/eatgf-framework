@@ -1,3 +1,7 @@
+---
+sidebar_label: "API Documentation & Specification Standard"
+---
+
 # API Documentation & Specification Standard
 
 > **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.

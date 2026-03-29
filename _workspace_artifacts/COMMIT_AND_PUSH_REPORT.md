@@ -1,3 +1,7 @@
+---
+sidebar_label: "Full Commit & Push Report"
+---
+
 # Full Commit & Push Report
 
 **Date:** 2026-02-15

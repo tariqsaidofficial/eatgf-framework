@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Official Formatting Standards"
+---
+
 # EATGF Official Formatting Standards
 
 ## Purpose

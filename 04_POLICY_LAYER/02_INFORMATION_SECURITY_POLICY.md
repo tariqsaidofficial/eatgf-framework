@@ -1,3 +1,7 @@
+---
+sidebar_label: "Information Security Policy"
+---
+
 # 02_INFORMATION_SECURITY_POLICY
 
 | Field          | Value                                                                   |

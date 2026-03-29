@@ -1,3 +1,7 @@
+---
+sidebar_label: "Angular Framework Governance Profile"
+---
+
 # Angular Framework Governance Profile
 
 ## Enterprise Conformance Model (v1.0)

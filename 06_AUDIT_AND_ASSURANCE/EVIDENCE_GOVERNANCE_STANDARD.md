@@ -1,3 +1,7 @@
+---
+sidebar_label: "Evidence Governance Standard"
+---
+
 # EVIDENCE_GOVERNANCE_STANDARD
 
 | Field          | Value                                         |

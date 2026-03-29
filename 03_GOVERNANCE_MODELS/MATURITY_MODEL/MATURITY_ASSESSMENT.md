@@ -1,3 +1,7 @@
+---
+sidebar_label: "Governance Maturity Model"
+---
+
 # Governance Maturity Model
 
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)

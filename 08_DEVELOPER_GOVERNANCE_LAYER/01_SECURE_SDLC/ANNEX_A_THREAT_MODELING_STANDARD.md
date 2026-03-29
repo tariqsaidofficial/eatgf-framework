@@ -1,3 +1,7 @@
+---
+sidebar_label: "Threat Modeling Governance Standard"
+---
+
 # Threat Modeling Governance Standard
 
 ## Document Metadata

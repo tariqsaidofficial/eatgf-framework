@@ -1,3 +1,7 @@
+---
+sidebar_label: "Baseline Declaration v1.0"
+---
+
 # Baseline Declaration v1.0
 
 | Field | Value |

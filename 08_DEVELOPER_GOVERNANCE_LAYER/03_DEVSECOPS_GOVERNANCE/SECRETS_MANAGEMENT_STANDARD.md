@@ -1,3 +1,7 @@
+---
+sidebar_label: "Secrets Management Standard"
+---
+
 # Secrets Management Standard
 
 | Field          | Value                                                   |

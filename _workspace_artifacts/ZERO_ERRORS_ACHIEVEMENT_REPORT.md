@@ -1,3 +1,7 @@
+---
+sidebar_label: "Zero-Errors Achievement Report"
+---
+
 # Zero-Errors Achievement Report
 
 **Date:** 2026-02-15

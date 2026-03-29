@@ -1,3 +1,7 @@
+---
+sidebar_label: "Policy-as-Code Profile (OPA/Kyverno)"
+---
+
 # Policy-as-Code Profile (OPA/Kyverno)
 
 > **Authority Notice:** This profile implements EATGF controls for declarative policy enforcement, compliance automation, and governance at admission/deployment time. It does NOT define new controls, redefine policies, or override standards. This profile clarifies HOW organizations satisfy Container Security (Layer 03), Governance Models (Layer 03), and compliance requirements per ISO 27001 A.8.1 and Kubernetes Network Policies.

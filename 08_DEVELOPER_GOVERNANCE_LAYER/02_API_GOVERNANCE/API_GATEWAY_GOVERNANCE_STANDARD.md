@@ -1,3 +1,7 @@
+---
+sidebar_label: "API Gateway Governance Standard"
+---
+
 # API Gateway Governance Standard
 
 ## Purpose

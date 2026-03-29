@@ -1,3 +1,7 @@
+---
+sidebar_label: "Release Governance Standard"
+---
+
 # Release Governance Standard
 
 | Property           | Value                                                                                          |

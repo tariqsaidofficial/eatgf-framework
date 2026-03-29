@@ -1,3 +1,7 @@
+---
+sidebar_label: "React Framework Governance Profile"
+---
+
 # React Framework Governance Profile
 
 ## Enterprise Conformance Model (v1.0)

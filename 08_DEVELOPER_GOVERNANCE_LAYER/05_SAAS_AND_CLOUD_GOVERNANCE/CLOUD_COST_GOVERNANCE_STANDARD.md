@@ -1,3 +1,7 @@
+---
+sidebar_label: "Cloud Cost Governance Standard"
+---
+
 # Cloud Cost Governance Standard
 
 | Property           | Value                                                                                                             |

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Multi-Tenancy Governance Standard"
+---
+
 # Multi-Tenancy Governance Standard
 
 | Field          | Value                                                        |

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Phase 2 Week 1 Go Approval"
+---
+
 # PHASE_2_WEEK_1_GO_APPROVAL.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**  

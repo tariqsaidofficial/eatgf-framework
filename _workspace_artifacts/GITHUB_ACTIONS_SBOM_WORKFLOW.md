@@ -1,3 +1,7 @@
+---
+sidebar_label: "GitHub Actions Workflow: SBOM Generation + Cosign Signing"
+---
+
 # GitHub Actions Workflow: SBOM Generation + Cosign Signing
 
 **Purpose:** Production-ready GitHub Actions workflow for SBOM generation, vulnerability scanning, artifact signing, and registry publication.

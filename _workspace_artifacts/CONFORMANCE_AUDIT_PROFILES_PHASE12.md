@@ -1,3 +1,7 @@
+---
+sidebar_label: "Block 2 Profile Conformance Audit (Phase 12)"
+---
+
 # Block 2 Profile Conformance Audit (Phase 12)
 
 **Date:** February 14, 2026

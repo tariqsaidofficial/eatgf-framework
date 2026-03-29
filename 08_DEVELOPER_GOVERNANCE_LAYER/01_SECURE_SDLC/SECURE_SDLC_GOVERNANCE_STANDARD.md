@@ -1,3 +1,7 @@
+---
+sidebar_label: "Secure Software Development Lifecycle Governance Standard"
+---
+
 # Secure Software Development Lifecycle Governance Standard
 
 ## Document Metadata

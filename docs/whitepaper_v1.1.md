@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Engine v1.1 – Technical Whitepaper"
+---
+
 # EATGF Engine v1.1 – Technical Whitepaper
 
 ## Table of Contents

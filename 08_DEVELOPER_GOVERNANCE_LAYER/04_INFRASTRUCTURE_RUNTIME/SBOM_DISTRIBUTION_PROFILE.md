@@ -1,3 +1,7 @@
+---
+sidebar_label: "SBOM Distribution Profile"
+---
+
 # SBOM Distribution Profile
 
 > **Authority Notice:** This profile implements EATGF controls for Software Bill of Materials (SBOM) generation, publishing, distribution, and consumption. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW organizations satisfy Supply Chain Security (Layer 04), DevSecOps (Layer 03), and compliance requirements per ISO 27001 A.8.28 and CycloneDX/SPDX standards.

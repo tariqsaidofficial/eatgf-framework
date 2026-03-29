@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Architecture Model & Structural Diagram"
+---
+
 # EATGF Architecture Model & Structural Diagram
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**

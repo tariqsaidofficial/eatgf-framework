@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF Framework: Complete Infrastructure Runtime Governance"
+---
+
 # EATGF Framework: Complete Infrastructure Runtime Governance
 
 **Status:** ✅ All 16 Profiles Complete & EATGF-Compliant

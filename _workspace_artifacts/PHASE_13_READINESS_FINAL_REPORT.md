@@ -1,3 +1,7 @@
+---
+sidebar_label: "Phase 13 Readiness: Final Validation Report"
+---
+
 # Phase 13 Readiness: Final Validation Report
 
 **Date:** 2026-02-15

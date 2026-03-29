@@ -1,3 +1,7 @@
+---
+sidebar_label: "EATGF UX and Visual Standard Guide"
+---
+
 # EATGF UX and Visual Standard Guide
 
 ## Enterprise AI-Aligned Technical Governance Framework (EATGF)

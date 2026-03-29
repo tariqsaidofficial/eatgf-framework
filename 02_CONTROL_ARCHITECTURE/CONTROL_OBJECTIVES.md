@@ -1,3 +1,7 @@
+---
+sidebar_label: "Control Objectives"
+---
+
 # CONTROL_OBJECTIVES
 
 | Field          | Value                                                      |

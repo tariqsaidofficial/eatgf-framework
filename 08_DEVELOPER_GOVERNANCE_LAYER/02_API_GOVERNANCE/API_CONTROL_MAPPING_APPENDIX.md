@@ -1,3 +1,7 @@
+---
+sidebar_label: "API Control Mapping Appendix"
+---
+
 # API Control Mapping Appendix
 
 ## Purpose

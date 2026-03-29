@@ -1,3 +1,7 @@
+---
+sidebar_label: "Secure Coding Governance Standard"
+---
+
 # Secure Coding Governance Standard
 
 ## Purpose

@@ -1,3 +1,7 @@
+---
+sidebar_label: "Next.js Framework Governance Profile"
+---
+
 # Next.js Framework Governance Profile
 
 ## Enterprise Conformance Model (v1.0)

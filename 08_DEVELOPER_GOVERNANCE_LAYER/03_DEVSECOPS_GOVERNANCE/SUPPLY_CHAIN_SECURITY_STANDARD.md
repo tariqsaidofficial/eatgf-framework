@@ -1,3 +1,7 @@
+---
+sidebar_label: "Supply Chain Security Standard"
+---
+
 # Supply Chain Security Standard
 
 | Field          | Value                                                   |

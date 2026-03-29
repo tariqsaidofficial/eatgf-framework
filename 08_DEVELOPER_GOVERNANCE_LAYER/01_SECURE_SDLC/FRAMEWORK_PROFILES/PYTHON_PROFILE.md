@@ -1,3 +1,7 @@
+---
+sidebar_label: "Python Secure SDLC Framework Profile"
+---
+
 # Python Secure SDLC Framework Profile
 
 ## Document Metadata

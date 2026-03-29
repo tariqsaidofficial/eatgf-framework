@@ -1,3 +1,7 @@
+---
+sidebar_label: "GraphQL API Governance Profile"
+---
+
 # GraphQL API Governance Profile
 
 > **Authority Notice:** This document implements the controls defined in API_GOVERNANCE_STANDARD.md. It does not introduce new governance controls.

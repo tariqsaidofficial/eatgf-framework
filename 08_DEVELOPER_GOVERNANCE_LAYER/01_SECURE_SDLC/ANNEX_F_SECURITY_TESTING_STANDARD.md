@@ -1,3 +1,7 @@
+---
+sidebar_label: "Security Testing Governance Standard"
+---
+
 # Security Testing Governance Standard
 
 ## Purpose

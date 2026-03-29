@@ -1,3 +1,7 @@
+---
+sidebar_label: "Terraform Governance Profile"
+---
+
 # Terraform Governance Profile
 
 > **Authority Notice:** This profile implements EATGF controls for Infrastructure-as-Code (IaC) using Terraform. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW Terraform codifies Secure SDLC (Layer 01), DevSecOps (Layer 03), and Infrastructure Runtime (Layer 04) requirements.

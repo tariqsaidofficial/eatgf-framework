@@ -1,3 +1,7 @@
+---
+sidebar_label: "Security Exception Management Standard"
+---
+
 # Security Exception Management Standard
 
 ## Document Metadata

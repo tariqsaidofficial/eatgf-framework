@@ -1,3 +1,7 @@
+---
+sidebar_label: "Secure CI/CD Pipeline Governance Standard"
+---
+
 # Secure CI/CD Pipeline Governance Standard
 
 ## Purpose

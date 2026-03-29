@@ -1,3 +1,7 @@
+---
+sidebar_label: "Supply Chain Governance Profile"
+---
+
 # Supply Chain Governance Profile
 
 > **Authority Notice:** This profile implements EATGF controls for software supply chain security, artifact provenance, SBOM generation, and Software Supply-chain Levels for Software Artifacts (SLSA) compliance. It does NOT define new controls, redefine severity, or override standards. This profile clarifies HOW organizations satisfy Secure SDLC (Layer 01), DevSecOps (Layer 03), and Supply Chain Security requirements per ISO 27001 A.8.28 and NIST SSDF PW.4/PW.7.

@@ -1,3 +1,7 @@
+---
+sidebar_label: "AIMS Manual v1.0"
+---
+
 # AIMS Manual v1.0
 
 | Field          | Value                                             |

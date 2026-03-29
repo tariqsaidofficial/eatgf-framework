@@ -1,3 +1,7 @@
+---
+sidebar_label: "How to Adopt EATGF v1.0-Foundation"
+---
+
 # How to Adopt EATGF v1.0-Foundation
 
 **A Practical Guide for Organizations Implementing Enterprise Governance**

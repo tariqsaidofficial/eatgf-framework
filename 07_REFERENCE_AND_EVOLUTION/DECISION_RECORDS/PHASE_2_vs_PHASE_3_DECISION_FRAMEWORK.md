@@ -1,3 +1,7 @@
+---
+sidebar_label: "Phase 2 vs Phase 3 Decision Framework"
+---
+
 # PHASE_2_vs_PHASE_3_DECISION_FRAMEWORK.md
 
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**
