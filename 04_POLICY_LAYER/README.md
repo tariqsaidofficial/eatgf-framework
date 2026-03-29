@@ -1,4 +1,8 @@
-# 04_POLICY_LAYER
+---
+sidebar_label: Policy Layer
+---
+
+# Policy Layer
 
 | Field | Value |
 |-------|-------|

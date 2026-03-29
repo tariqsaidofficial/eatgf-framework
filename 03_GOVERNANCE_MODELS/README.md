@@ -1,4 +1,8 @@
-# 03_GOVERNANCE_MODELS
+---
+sidebar_label: Governance Models
+---
+
+# Governance Models
 
 | Field | Value |
 |-------|-------|

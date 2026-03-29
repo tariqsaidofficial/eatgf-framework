@@ -1,4 +1,8 @@
-# 01_MANAGEMENT_SYSTEMS
+---
+sidebar_label: Management Systems
+---
+
+# Management Systems
 
 | Field | Value |
 |-------|-------|

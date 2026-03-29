@@ -1,4 +1,8 @@
-# 05_DOMAIN_FRAMEWORKS
+---
+sidebar_label: Domain Frameworks
+---
+
+# Domain Frameworks
 
 | Field | Value |
 |-------|-------|

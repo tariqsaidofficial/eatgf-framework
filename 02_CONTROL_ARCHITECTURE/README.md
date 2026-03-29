@@ -1,4 +1,8 @@
-# 02_CONTROL_ARCHITECTURE
+---
+sidebar_label: Control Architecture
+---
+
+# Control Architecture
 
 | Field | Value |
 |-------|-------|
