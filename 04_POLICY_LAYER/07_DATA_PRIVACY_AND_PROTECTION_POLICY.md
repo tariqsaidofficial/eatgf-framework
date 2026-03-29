@@ -2,7 +2,7 @@
 sidebar_label: "Data Privacy and Protection Policy"
 ---
 
-# 07_DATA_PRIVACY_AND_PROTECTION_POLICY
+# Data Privacy and Protection Policy
 
 | Field          | Value                                                        |
 | -------------- | ------------------------------------------------------------ |
@@ -12,7 +12,7 @@ sidebar_label: "Data Privacy and Protection Policy"
 | Classification | Controlled                                                   |
 | Effective Date | 2026-02-16                                                   |
 | Authority      | Chief Privacy Officer and Chief Information Security Officer |
-| EATGF Layer    | 04_POLICY_LAYER                                              |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-DATA-PRIV-01, EATGF-DATA-RET-01, EATGF-DATA-MIN-01     |
 
 ---
@@ -23,9 +23,9 @@ This policy establishes mandatory data protection and privacy standards for coll
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the primary data privacy governance document.
+This policy operates within **Policy Layer** as the primary data privacy governance document.
 
-- **Upstream dependency:** Governance Charter (01_GOVERNANCE_CHARTER.md) establishes Chief Privacy Officer authority; Information Security Policy (02_INFORMATION_SECURITY_POLICY.md) defines technical protection requirements for data
+- **Upstream dependency:** Governance Charter (Governance Charter.md) establishes Chief Privacy Officer authority; Information Security Policy (Information Security Policy.md) defines technical protection requirements for data
 - **Downstream usage:** Operationalized through Data Processing Agreements (GDPR), Privacy Impact Assessments, data subject rights procedures, and Data Protection Officer (DPO) functions; enforced through privacy-by-design controls and data governance procedures
 - **Cross-layer reference:** Maps to EATGF privacy controls in Layer 02 (APO-PRI domain for privacy governance, DSS-PRI domain for privacy protections), implements MCM controls for personal data handling, works with Vendor Risk Policy (Layer 04) for processor data agreements, implements audit procedures in Layer 06 for privacy compliance audits
 

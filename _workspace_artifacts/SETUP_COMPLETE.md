@@ -28,9 +28,9 @@ eatgf-framework/
 ├── IMPLEMENTATION_ROADMAP.md              # 12-month deployment plan
 │
 ├── /policies                              # Core governance policies
-│   ├── 01_GOVERNANCE_CHARTER.md          # Strategic foundation
-│   ├── 02_INFORMATION_SECURITY_POLICY.md # Data protection
-│   └── 03_DATA_GOVERNANCE_POLICY.md      # Data management
+│   ├── Governance Charter.md          # Strategic foundation
+│   ├── Information Security Policy.md # Data protection
+│   └── Data Governance Policy.md      # Data management
 │
 ├── /controls                              # Control framework
 │   └── CONTROL_OBJECTIVES.md              # 14 controls across domains

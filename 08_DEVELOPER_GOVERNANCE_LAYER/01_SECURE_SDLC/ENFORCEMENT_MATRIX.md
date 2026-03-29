@@ -8,8 +8,8 @@ sidebar_label: "Secure SDLC Enforcement Matrix"
 
 **Version:** 1.0
 **Issue Date:** 2026-02-14
-**Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Domain:** 01_SECURE_SDLC
+**Layer:** Developer Governance Layer
+**Domain:** Secure SDLC
 **Classification:** Operational Enforcement Standard
 **Reference:** SECURE_SDLC_GOVERNANCE_STANDARD.md
 

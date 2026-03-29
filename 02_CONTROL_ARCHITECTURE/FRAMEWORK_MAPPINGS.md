@@ -21,7 +21,7 @@ This document is retained for reference and historical completeness only and is 
 | Classification | Controlled                                    |
 | Effective Date | 2026-02-14                                    |
 | Authority      | Enterprise Architecture and Governance Office |
-| EATGF Layer    | 02_CONTROL_ARCHITECTURE                       |
+| EATGF Layer    | Control Architecture |
 | MCM Reference  | All 35 EATGF Controls                         |
 
 ---
@@ -32,7 +32,7 @@ This document defines authoritative mappings between EATGF's 35 controls and ext
 
 ## Architectural Position
 
-This document operates within **02_CONTROL_ARCHITECTURE** as the authoritative cross-framework mapping reference.
+This document operates within **Control Architecture** as the authoritative cross-framework mapping reference.
 
 - **Upstream dependency:** Master Control Matrix (MCM) establishes 35 controls as single source of truth
 - **Downstream usage:** Utilized by ISMS/AIMS procedures (Layer 01), audit procedures (Layer 06), and Statement of Applicability documentation

@@ -11,7 +11,7 @@ sidebar_label: "Supply Chain Security Standard"
 | Classification | Controlled                                              |
 | Effective Date | 2026-02-16                                              |
 | Authority      | Chief Security Officer and Chief Technology Officer     |
-| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| EATGF Layer    | Developer Governance Layer / DevSecOps Governance |
 | MCM Reference  | EATGF-DEV-SUP-01                                        |
 
 ---
@@ -24,7 +24,7 @@ This standard protects against software supply chain attacks by ensuring integri
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer / DevSecOps Governance
 
 - **Upstream dependency:** Layer 02 Control Objectives (supply chain risk); Layer 04 Information Security Policy (vendor management, third-party risk)
 - **Downstream usage:** Prevents compromise at every stage: code → build → artifact → deployment

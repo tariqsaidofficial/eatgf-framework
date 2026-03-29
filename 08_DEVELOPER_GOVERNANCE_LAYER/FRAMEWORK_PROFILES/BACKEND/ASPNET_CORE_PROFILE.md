@@ -24,7 +24,7 @@ This profile applies to:
 
 **EATGF Layer:**
 
-- Primary: `08_DEVELOPER_GOVERNANCE_LAYER` → `FRAMEWORK_PROFILES` → `BACKEND`
+- Primary: `Developer Governance Layer` → `FRAMEWORK_PROFILES` → `BACKEND`
 - References: Layer 01 (Secure SDLC), Layer 05 (API Governance), Layer 03 (DevSecOps)
 
 **Scope:**
@@ -48,8 +48,8 @@ Backend application layer responsible for:
 
 **Conformance Obligations:**
 
--  01_SECURE_SDLC standards
--  02_API_GOVERNANCE standards (REST/GraphQL-specific controls)
+-  Secure SDLC standards
+-  API Governance standards (REST/GraphQL-specific controls)
 -  03_DEVSECOPS standards
 -  04_CLOUD standards (if deployed in cloud context)
 

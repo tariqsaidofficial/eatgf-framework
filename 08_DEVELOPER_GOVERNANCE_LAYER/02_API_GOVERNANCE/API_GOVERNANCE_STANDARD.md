@@ -24,8 +24,8 @@ This document operationalizes API-related controls from the EATGF Master Control
 
 ## Architectural Position
 
-EATGF Layer: 08_DEVELOPER_GOVERNANCE_LAYER
-Sub-Layer: 02_API_GOVERNANCE
+EATGF Layer: Developer Governance Layer
+Sub-Layer: API Governance
 Authority: Root Authority for API Governance Domain
 Control Reference: SDLC-API-01
 
@@ -268,5 +268,5 @@ Before production deployment:
 
 Version: 1.0
 Status: Authoritative Root Authority
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER / 02_API_GOVERNANCE
+Layer: Developer Governance Layer / API Governance
 Classification: Public Governance Standard

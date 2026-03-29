@@ -11,7 +11,7 @@ sidebar_label: "Rollback and Incident Response Standard"
 | **Classification** | Governance                                                                                     |
 | **Effective Date** | February 16, 2026                                                                              |
 | **Authority**      | Vice President of Engineering                                                                  |
-| **EATGF Layer**    | 08_DEVELOPER_GOVERNANCE_LAYER / 06_APPLICATION_LIFECYCLE_GOVERNANCE                            |
+| **EATGF Layer**    | Developer Governance Layer / Application Lifecycle Governance                            |
 | **MCM Reference**  | [EATGF-DSS-INC-01: Incident Response Management](../../00_FOUNDATION/MASTER_CONTROL_MATRIX.md) |
 
 ---
@@ -44,7 +44,7 @@ Production failures happen. Rapid recovery minimizes customer impact. This stand
 
 **Cross-Layer References:**
 
-- 04_INCIDENT_RESPONSE_POLICY.md (incident severity P1-P4)
+- Incident Response Policy.md (incident severity P1-P4)
 - MONITORING_AND_OBSERVABILITY_STANDARD.md (alerting thresholds)
 
 ---

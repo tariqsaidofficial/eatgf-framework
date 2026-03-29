@@ -8,7 +8,7 @@ sidebar_label: "Kubernetes Governance Profile"
 
 ## Architectural Position
 
-- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 04_INFRASTRUCTURE_RUNTIME (Primary) + Layer 03 (DevSecOps) + Layer 01 (Secure SDLC)
+- **EATGF Layer:** Developer Governance Layer / Infrastructure and Runtime (Primary) + Layer 03 (DevSecOps) + Layer 01 (Secure SDLC)
 - **Governance Scope:** Implementation Standard for Container Orchestration Security
 - **Control Authority:** Implements controls from MASTER_CONTROL_MATRIX via Secure SDLC, DevSecOps, and Zero-Trust Networking standards
 

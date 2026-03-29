@@ -14,8 +14,8 @@ Ensures APIs are discoverable, understandable, and implementable.
 
 ## Architectural Position
 
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
-Sub-Layer: 02_API_GOVERNANCE
+Layer: Developer Governance Layer
+Sub-Layer: API Governance
 Authority: Subordinate to API_GOVERNANCE_STANDARD.md
 Control Reference: SDLC-DOCS-06
 
@@ -241,5 +241,5 @@ Undocumented APIs = adoption failures.
 
 Version: 1.0
 Status: Authoritative Annex
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER / 02_API_GOVERNANCE
+Layer: Developer Governance Layer / API Governance
 Classification: Public Governance Standard

@@ -46,9 +46,9 @@ Determine whether 22 key EATGF framework documents conform to the mandatory Docu
 | 11  | 03    | GOVERNANCE_BY_TEAM_SIZE.md             | 2.0 | NO                  | NO                  | NO                  | NO                  | NO                  | YES     | NON-CONFORMANT |
 | 12  | 03    | MATURITY_ASSESSMENT.md                 | 1.1 | NO                  | NO                  | NO                  | NO                  | NO                  | YES     | NON-CONFORMANT |
 | 13  | 03    | PERFORMANCE_MODEL.md                   | 1.1 | NO                  | NO                  | NO                  | NO                  | NO                  | YES     | NON-CONFORMANT |
-| 14  | 04    | 01_GOVERNANCE_CHARTER.md               | 2.0 | YES                 | YES                 | YES                 | YES                 | YES                 | YES     | COMPLETE       |
-| 15  | 04    | 02_INFORMATION_SECURITY_POLICY.md      | 2.0 | YES                 | YES                 | YES                 | YES                 | YES                 | YES     | COMPLETE       |
-| 16  | 04    | 03_DATA_GOVERNANCE_POLICY.md           | 2.0 | YES                 | YES                 | YES                 | YES                 | YES                 | YES     | COMPLETE       |
+| 14  | 04    | Governance Charter.md               | 2.0 | YES                 | YES                 | YES                 | YES                 | YES                 | YES     | COMPLETE       |
+| 15  | 04    | Information Security Policy.md      | 2.0 | YES                 | YES                 | YES                 | YES                 | YES                 | YES     | COMPLETE       |
+| 16  | 04    | Data Governance Policy.md           | 2.0 | YES                 | YES                 | YES                 | YES                 | YES                 | YES     | COMPLETE       |
 | 17  | 04    | EATGF_GIT_GOVERNANCE_POLICY.md         | 1.2 | YES                 | YES                 | YES\*               | YES\*               | YES\*               | YES     | COMPLETE\*     |
 | 18  | 04    | EATGF_VERSION_GOVERNANCE_POLICY.md     | 1.2 | YES                 | YES                 | YES\*               | YES\*               | YES\*               | YES     | COMPLETE\*     |
 | 19  | 04    | GOVERNANCE_CHARTER_FORMAL_v2.md        | 2.0 | YES                 | YES                 | YES                 | YES                 | YES                 | YES     | COMPLETE       |
@@ -173,9 +173,9 @@ The following 15 documents fully conform to the Document Signature Template:
 | 6   | RISK_FRAMEWORK.md                      | 2.0     | 02    | Enterprise risk assessment methodology                |
 | 7   | FRAMEWORK_MAPPINGS.md                  | 2.0     | 02    | Cross-framework control mappings (summary)            |
 | 8   | FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md | 2.0     | 02    | Comprehensive bidirectional control mappings          |
-| 9   | 01_GOVERNANCE_CHARTER.md               | 2.0     | 04    | Enterprise governance framework charter               |
-| 10  | 02_INFORMATION_SECURITY_POLICY.md      | 2.0     | 04    | Information security requirements (CIA triad)         |
-| 11  | 03_DATA_GOVERNANCE_POLICY.md           | 2.0     | 04    | Data classification, quality, privacy, retention      |
+| 9   | Governance Charter.md               | 2.0     | 04    | Enterprise governance framework charter               |
+| 10  | Information Security Policy.md      | 2.0     | 04    | Information security requirements (CIA triad)         |
+| 11  | Data Governance Policy.md           | 2.0     | 04    | Data classification, quality, privacy, retention      |
 | 12  | EATGF_GIT_GOVERNANCE_POLICY.md         | 1.2     | 04    | Git workflow and version control governance           |
 | 13  | EATGF_VERSION_GOVERNANCE_POLICY.md     | 1.2     | 04    | Semantic versioning and release management            |
 | 14  | GOVERNANCE_CHARTER_FORMAL_v2.md        | 2.0     | 04    | Board-level formal governance charter                 |
@@ -188,13 +188,13 @@ The following 15 documents fully conform to the Document Signature Template:
 
 | Layer                   | Documents Audited | Complete | Partial | Non-Conformant | Conformance Rate |
 | ----------------------- | ----------------- | -------- | ------- | -------------- | ---------------- |
-| 00_FOUNDATION           | 4                 | 2        | 1       | 1              | 50%              |
-| 01_MANAGEMENT_SYSTEMS   | 2                 | 2        | 0       | 0              | 100%             |
-| 02_CONTROL_ARCHITECTURE | 4                 | 4        | 0       | 0              | 100%             |
-| 03_GOVERNANCE_MODELS    | 3                 | 0        | 0       | 3              | 0%               |
-| 04_POLICY_LAYER         | 6                 | 6        | 0       | 0              | 100%             |
-| 05_DOMAIN_FRAMEWORKS    | 2                 | 2        | 0       | 0              | 100%             |
-| 06_AUDIT_AND_ASSURANCE  | 1                 | 0        | 0       | 1              | 0%               |
+| Foundation           | 4                 | 2        | 1       | 1              | 50%              |
+| Management Systems   | 2                 | 2        | 0       | 0              | 100%             |
+| Control Architecture | 4                 | 4        | 0       | 0              | 100%             |
+| Governance Models    | 3                 | 0        | 0       | 3              | 0%               |
+| Policy Layer         | 6                 | 6        | 0       | 0              | 100%             |
+| Domain Frameworks    | 2                 | 2        | 0       | 0              | 100%             |
+| Audit and Assurance  | 1                 | 0        | 0       | 1              | 0%               |
 | **Total**               | **22**            | **16**   | **1**   | **5**          | **72.7%**        |
 
 ---
@@ -239,4 +239,4 @@ The most significant finding is that three of the five non-conformant documents 
 ---
 
 _Report generated: 2026-02-15_
-_Reference: EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md (00_FOUNDATION)_
+_Reference: EATGF_DOCUMENT_SIGNATURE_TEMPLATE.md (Foundation)_

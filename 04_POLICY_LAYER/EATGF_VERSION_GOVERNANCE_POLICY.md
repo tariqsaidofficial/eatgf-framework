@@ -11,7 +11,7 @@ sidebar_label: "EATGF Version Governance Policy"
 | Classification | Controlled                                                    |
 | Effective Date | 2026-02-14                                                    |
 | Authority      | Enterprise Architecture and Governance Office                 |
-| EATGF Layer    | 04_POLICY_LAYER                                               |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-BAI-CHG-01, EATGF-BAI-CONF-01                           |
 | Standards      | ISO 27001:2022 A.8.32/A.8.9, NIST SSDF PW.3/PW.4, COBIT BAI06 |
 
@@ -23,10 +23,10 @@ This policy defines official version governance model for EATGF framework establ
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the authoritative framework version control and release management standard.
+This policy operates within **Policy Layer** as the authoritative framework version control and release management standard.
 
-- **Upstream dependency:** Governance Charter (Layer 04) establishes change approval authority; Git Governance Policy defines branch and tag enforcement; BASELINE_DECLARATION (00_FOUNDATION) establishes version 1.0 baseline
-- **Downstream usage:** All EATGF framework documents reference version numbers per this policy; CHANGELOG.md tracked in 00_FOUNDATION per release requirements; governance documentation site displays current version; audit reports reference specific version baselines
+- **Upstream dependency:** Governance Charter (Layer 04) establishes change approval authority; Git Governance Policy defines branch and tag enforcement; BASELINE_DECLARATION (Foundation) establishes version 1.0 baseline
+- **Downstream usage:** All EATGF framework documents reference version numbers per this policy; CHANGELOG.md tracked in Foundation per release requirements; governance documentation site displays current version; audit reports reference specific version baselines
 - **Cross-layer reference:** BAI-CHG-01 (Change Management) implemented through version release workflow; MEA-AUD-01 (Internal Audit) audits version compliance; MASTER_CONTROL_MATRIX remains control authority across all versions
 
 ## Governance Principles
@@ -226,8 +226,8 @@ Formalization of Git Governance and Version Governance policies with comprehensi
 
 ### Affected Layers
 
-- 04_POLICY_LAYER (Git and Version governance policies added)
-- 00_FOUNDATION (FORMATTING_STANDARDS_OFFICIAL.md added)
+- Policy Layer (Git and Version governance policies added)
+- Foundation (FORMATTING_STANDARDS_OFFICIAL.md added)
 
 ### Changes
 
@@ -426,7 +426,7 @@ This policy ensures structural stability, traceability, and audit defensibility.
 
 ## Architectural Position
 
-**EATGF Layer:** 00_FOUNDATION
+**EATGF Layer:** Foundation
 
 **Scope:** Governance Meta-Control (Framework-Level Control)
 

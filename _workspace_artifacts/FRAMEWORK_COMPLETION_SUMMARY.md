@@ -265,7 +265,7 @@ spec:
 
 | Phase     | Deliverable                                            | Status          | Size             |
 | --------- | ------------------------------------------------------ | --------------- | ---------------- |
-| 1a        | Framework Architecture                                 | ✅              | 00_FOUNDATION    |
+| 1a        | Framework Architecture                                 | ✅              | Foundation    |
 | 1b        | EATGF_DOCUMENT_SIGNATURE_TEMPLATE                      | ✅              | 850 lines        |
 | 2a        | MASTER_CONTROL_MATRIX (v1.0)                           | ✅              | 200 controls     |
 | 3a        | 7 Backend Framework Profiles                           | ✅              | 8000 lines       |

@@ -11,7 +11,7 @@ sidebar_label: "Framework Mappings Comprehensive"
 | Classification | Controlled |
 | Effective Date | 2026-02-14 |
 | Authority | Enterprise Architecture and Governance Office |
-| EATGF Layer | 02_CONTROL_ARCHITECTURE |
+| EATGF Layer | Control Architecture |
 | MCM Reference | All 35 EATGF Controls |
 | Standards | COBIT 2019, ISO 27001:2022, ISO 42001:2023, NIST AI RMF, NIST SP 800-53, OWASP 2023 |
 
@@ -23,9 +23,9 @@ This document provides authoritative bidirectional mappings between EATGF Master
 
 ## Architectural Position
 
-This document operates within **02_CONTROL_ARCHITECTURE** as the comprehensive cross-framework mapping authority.
+This document operates within **Control Architecture** as the comprehensive cross-framework mapping authority.
 
-- **Upstream dependency:** Master Control Matrix (00_FOUNDATION) defines 35 EATGF controls as central hub; Control Objectives document specifies requirements for each control; Governance Charter (Layer 04 establishes control authority
+- **Upstream dependency:** Master Control Matrix (Foundation) defines 35 EATGF controls as central hub; Control Objectives document specifies requirements for each control; Governance Charter (Layer 04 establishes control authority
 - **Downstream usage:** Statement of Applicability (Layer 01) maps organizational context to standard requirements; Internal Audit Procedure (Layer 06) uses mappings to scope multi-framework audits; Maturity Assessment (Layer 03) evaluates implementation across mapped standards
 - **Cross-layer reference:** Framework Mappings (basic) provides summary mappings; this document provides comprehensive detail for audit and compliance teams
 
@@ -880,7 +880,7 @@ Before implementing comprehensive framework mappings:
 
 ### Central Hub Authority
 
-- Master Control Matrix (MCM) in Layer 00_FOUNDATION is single source of truth for all control requirements
+- Master Control Matrix (MCM) in Layer Foundation is single source of truth for all control requirements
 - External framework controls (ISO/COBIT/NIST) map TO the MCM (not vice versa) to establish unified governance
 - Organizations implement EATGF controls once; mappings demonstrate compliance to multiple frameworks simultaneously
 - Evidence collection unified under EATGF control structure eliminates redundant audit artifacts

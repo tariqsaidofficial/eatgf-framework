@@ -11,7 +11,7 @@ This report provides a full, file-level inventory of the EATGF framework reposit
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 07_REFERENCE_AND_EVOLUTION
+**EATGF Layer Placement:** Reference and Evolution
 **Governance Scope:** Audit Methodology
 **Control Authority Relationship:** References controls
 
@@ -88,7 +88,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
     - AIMS/
       - AIMS_MANUAL_v1.0.md
     - ISMS/
-      - 01_STATEMENT_OF_APPLICABILITY_TEMPLATE.md
+      - Statement of Applicability.md
       - ISMS_MANUAL_v1.0.md
   - 02_CONTROL_ARCHITECTURE/
     - API_GOVERNANCE_AUTHORITY_CLARIFICATION.md
@@ -106,14 +106,14 @@ Note: Hidden/system entries (including .git) are excluded from this view.
     - PERFORMANCE_MODEL/
       - PERFORMANCE_MODEL.md
   - 04_POLICY_LAYER/
-    - 01_GOVERNANCE_CHARTER.md
-    - 02_INFORMATION_SECURITY_POLICY.md
-    - 03_DATA_GOVERNANCE_POLICY.md
-    - 04_INCIDENT_RESPONSE_POLICY.md
-    - 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY.md
-    - 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY.md
-    - 07_DATA_PRIVACY_AND_PROTECTION_POLICY.md
-    - 08_ACCEPTABLE_USE_POLICY.md
+    - Governance Charter.md
+    - Information Security Policy.md
+    - Data Governance Policy.md
+    - Incident Response Policy.md
+    - Business Continuity and Disaster Recovery Policy.md
+    - Vendor and Third Party Risk Management Policy.md
+    - Data Privacy and Protection Policy.md
+    - Acceptable Use Policy.md
     - EATGF_GIT_GOVERNANCE_POLICY.md
     - EATGF_VERSION_GOVERNANCE_POLICY.md
     - GOVERNANCE_CHARTER_FORMAL_v2.md
@@ -2014,7 +2014,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 2696 bytes
 - Last modified: 2026-02-15 21:28:44 UTC
-- Title (H1): 00_FOUNDATION
+- Title (H1): Foundation
 - H2 Topics:
   - Layer Purpose
   - Contents
@@ -2110,7 +2110,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 13167 bytes
 - Last modified: 2026-02-15 20:26:01 UTC
-- Title (H1): 06_AUDIT_AND_ASSURANCE
+- Title (H1): Audit and Assurance
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2125,7 +2125,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 10050 bytes
 - Last modified: 2026-02-15 21:31:11 UTC
-- Title (H1): 07_REFERENCE_AND_EVOLUTION
+- Title (H1): Reference and Evolution
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2368,7 +2368,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 8372 bytes
 - Last modified: 2026-02-15 21:31:12 UTC
-- Title (H1): 01_MANAGEMENT_SYSTEMS
+- Title (H1): Management Systems
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2469,7 +2469,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 7314 bytes
 - Last modified: 2026-02-14 06:33:13 UTC
-- Title (H1): 03_GOVERNANCE_MODELS
+- Title (H1): Governance Models
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2576,7 +2576,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 6234 bytes
 - Last modified: 2026-02-14 06:33:12 UTC
-- Title (H1): 05_DOMAIN_FRAMEWORKS
+- Title (H1): Domain Frameworks
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2591,7 +2591,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 13529 bytes
 - Last modified: 2026-02-15 13:44:25 UTC
-- Title (H1): 01_GOVERNANCE_CHARTER -- DEPRECATED
+- Title (H1): Governance Charter -- DEPRECATED
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2606,7 +2606,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 13562 bytes
 - Last modified: 2026-02-15 21:31:12 UTC
-- Title (H1): 02_INFORMATION_SECURITY_POLICY
+- Title (H1): Information Security Policy
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2621,7 +2621,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 15523 bytes
 - Last modified: 2026-02-14 06:41:44 UTC
-- Title (H1): 03_DATA_GOVERNANCE_POLICY
+- Title (H1): Data Governance Policy
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2636,7 +2636,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 22124 bytes
 - Last modified: 2026-02-15 21:21:20 UTC
-- Title (H1): 04_INCIDENT_RESPONSE_POLICY
+- Title (H1): Incident Response Policy
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2651,7 +2651,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 27651 bytes
 - Last modified: 2026-02-15 21:21:20 UTC
-- Title (H1): 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY
+- Title (H1): Business Continuity and Disaster Recovery Policy
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2666,7 +2666,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 27891 bytes
 - Last modified: 2026-02-15 21:21:20 UTC
-- Title (H1): 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY
+- Title (H1): Vendor and Third Party Risk Management Policy
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2681,7 +2681,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 35324 bytes
 - Last modified: 2026-02-15 21:21:20 UTC
-- Title (H1): 07_DATA_PRIVACY_AND_PROTECTION_POLICY
+- Title (H1): Data Privacy and Protection Policy
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2696,7 +2696,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 26043 bytes
 - Last modified: 2026-02-15 21:21:20 UTC
-- Title (H1): 08_ACCEPTABLE_USE_POLICY
+- Title (H1): Acceptable Use Policy
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2794,7 +2794,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 11635 bytes
 - Last modified: 2026-02-15 21:31:12 UTC
-- Title (H1): 04_POLICY_LAYER
+- Title (H1): Policy Layer
 - H2 Topics:
   - Purpose
   - Architectural Position
@@ -2882,7 +2882,7 @@ Note: Hidden/system entries (including .git) are excluded from this view.
 
 - File size: 6212 bytes
 - Last modified: 2026-02-15 21:31:12 UTC
-- Title (H1): 02_CONTROL_ARCHITECTURE
+- Title (H1): Control Architecture
 - H2 Topics:
   - Purpose
   - Architectural Position

@@ -11,7 +11,7 @@ sidebar_label: Policy Layer
 | Classification | Controlled                  |
 | Effective Date | 2026-02-16                  |
 | Authority      | Governance Office and CISO  |
-| EATGF Layer    | 04_POLICY_LAYER             |
+| EATGF Layer    | Policy Layer |
 
 ---
 
@@ -21,7 +21,7 @@ This layer contains the formal governance policies and charters that establish o
 
 ## Architectural Position
 
-This layer operates within **04_POLICY_LAYER** as the definitive source for formal governance policies.
+This layer operates within **Policy Layer** as the definitive source for formal governance policies.
 
 - **Upstream dependency:** Layers 00-02 define controls and their architecture
 - **Downstream usage:** Policies operationalized through implementation teams; Layer 06 audits compliance
@@ -53,7 +53,7 @@ This authoritative charter establishes:
 
 ### Governance Charter Components
 
-Document: 01_GOVERNANCE_CHARTER.md
+Document: Governance Charter.md
 
 Breakdown of governance structure including:
 
@@ -66,7 +66,7 @@ Breakdown of governance structure including:
 
 ### Information Security Policy
 
-Document: 02_INFORMATION_SECURITY_POLICY.md
+Document: Information Security Policy.md
 
 Formal security policy establishing:
 
@@ -81,7 +81,7 @@ Formal security policy establishing:
 
 ### Data Governance Policy
 
-Document: 03_DATA_GOVERNANCE_POLICY.md
+Document: Data Governance Policy.md
 
 Formal data governance policy establishing:
 
@@ -96,7 +96,7 @@ Formal data governance policy establishing:
 
 ### Incident Response Policy
 
-Document: 04_INCIDENT_RESPONSE_POLICY.md
+Document: Incident Response Policy.md
 
 Formal incident response policy establishing:
 
@@ -111,7 +111,7 @@ Formal incident response policy establishing:
 
 ### Business Continuity and Disaster Recovery Policy
 
-Document: 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY.md
+Document: Business Continuity and Disaster Recovery Policy.md
 
 Formal BC/DR policy establishing:
 
@@ -126,7 +126,7 @@ Formal BC/DR policy establishing:
 
 ### Vendor and Third-Party Risk Management Policy
 
-Document: 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY.md
+Document: Vendor and Third Party Risk Management Policy.md
 
 Formal vendor risk management policy establishing:
 
@@ -142,7 +142,7 @@ Formal vendor risk management policy establishing:
 
 ### Data Privacy and Protection Policy
 
-Document: 07_DATA_PRIVACY_AND_PROTECTION_POLICY.md
+Document: Data Privacy and Protection Policy.md
 
 Formal data privacy policy establishing:
 
@@ -160,7 +160,7 @@ Formal data privacy policy establishing:
 
 ### Acceptable Use Policy
 
-Document: 08_ACCEPTABLE_USE_POLICY.md
+Document: Acceptable Use Policy.md
 
 Formal acceptable use policy establishing:
 
@@ -213,14 +213,14 @@ Before governance operations:
 
 - [ ] GOVERNANCE_CHARTER_FORMAL_v2.md reviewed and understood
 - [ ] Governance structure and decision rights documented
-- [ ] 01_GOVERNANCE_CHARTER.md implementation completed
-- [ ] 02_INFORMATION_SECURITY_POLICY.md requirements integrated into security program
-- [ ] 03_DATA_GOVERNANCE_POLICY.md data stewardship procedures established
-- [ ] 04_INCIDENT_RESPONSE_POLICY.md incident team structure and procedures operational
-- [ ] 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY.md RTO/RPO targets and recovery tiers configured
-- [ ] 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY.md vendor assessment and monitoring program established
-- [ ] 07_DATA_PRIVACY_AND_PROTECTION_POLICY.md privacy procedures and GDPR compliance controls implemented
-- [ ] 08_ACCEPTABLE_USE_POLICY.md monitoring and discipline procedures in place
+- [ ] Governance Charter implementation completed
+- [ ] Information Security Policy requirements integrated into security program
+- [ ] Data Governance Policy data stewardship procedures established
+- [ ] Incident Response Policy incident team structure and procedures operational
+- [ ] Business Continuity and Disaster Recovery Policy RTO/RPO targets and recovery tiers configured
+- [ ] Vendor and Third Party Risk Management Policy vendor assessment and monitoring program established
+- [ ] Data Privacy and Protection Policy privacy procedures and GDPR compliance controls implemented
+- [ ] Acceptable Use Policy monitoring and discipline procedures in place
 - [ ] All policies communicated and training program established
 - [ ] Policy compliance monitoring and escalation procedures defined
 - [ ] Annual policy review and effectiveness assessment scheduled

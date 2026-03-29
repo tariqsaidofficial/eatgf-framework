@@ -14,8 +14,8 @@ Ensures APIs can evolve without breaking existing clients.
 
 ## Architectural Position
 
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
-Sub-Layer: 02_API_GOVERNANCE
+Layer: Developer Governance Layer
+Sub-Layer: API Governance
 Authority: Subordinate to API_GOVERNANCE_STANDARD.md
 Control Reference: SDLC-VERSION-03
 
@@ -170,5 +170,5 @@ Broken integrations = support incidents = operational cost.
 
 Version: 1.0
 Status: Authoritative Annex
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER / 02_API_GOVERNANCE
+Layer: Developer Governance Layer / API Governance
 Classification: Public Governance Standard

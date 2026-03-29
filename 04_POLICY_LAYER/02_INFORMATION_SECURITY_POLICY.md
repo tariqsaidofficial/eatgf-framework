@@ -2,7 +2,7 @@
 sidebar_label: "Information Security Policy"
 ---
 
-# 02_INFORMATION_SECURITY_POLICY
+# Information Security Policy
 
 | Field          | Value                                                                   |
 | -------------- | ----------------------------------------------------------------------- |
@@ -11,7 +11,7 @@ sidebar_label: "Information Security Policy"
 | Classification | Controlled                                                              |
 | Effective Date | 2026-02-14                                                              |
 | Authority      | Chief Information Security Officer                                      |
-| EATGF Layer    | 04_POLICY_LAYER                                                         |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-APO-SEC-01, EATGF-DSS-SEC-01, EATGF-DSS-ENC-01, EATGF-DSS-VULN-01 |
 
 ---
@@ -22,9 +22,9 @@ This policy establishes information security requirements for protecting confide
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the primary security governance document.
+This policy operates within **Policy Layer** as the primary security governance document.
 
-- **Upstream dependency:** Governance Charter (01_GOVERNANCE_CHARTER.md) establishes authority structure; Baseline Declaration establishes security as foundational control
+- **Upstream dependency:** Governance Charter (Governance Charter.md) establishes authority structure; Baseline Declaration establishes security as foundational control
 - **Downstream usage:** Operationalized through ISO 27001:2022 ISMS procedures; enforced through data protection procedures, incident response, and access control procedures
 - **Cross-layer reference:** Maps to EATGF security controls in Layer 02 (APO-SEC domain, DSS security controls for confidentiality/encryption/vulnerability management)
 

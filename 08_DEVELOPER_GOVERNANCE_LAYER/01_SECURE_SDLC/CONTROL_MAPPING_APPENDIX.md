@@ -8,8 +8,8 @@ sidebar_label: "Control Mapping Appendix – Secure SDLC"
 
 **Version:** 1.0
 **Issue Date:** 2026-02-14
-**Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Domain:** 01_SECURE_SDLC
+**Layer:** Developer Governance Layer
+**Domain:** Secure SDLC
 **Classification:** Reference Standard
 **Reference:** SECURE_SDLC_GOVERNANCE_STANDARD.md
 

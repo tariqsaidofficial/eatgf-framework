@@ -8,14 +8,14 @@ sidebar_label: "Technical Decision Authority Model"
 
 **Version:** 1.0
 **Issue Date:** 2026-02-14
-**Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Subdomain:** 07_TECHNICAL_ACCOUNTABILITY_MODEL
+**Layer:** Developer Governance Layer
+**Subdomain:** Technical Accountability Model
 **Governance Scope:** Decision Framework
 **Control Authority Relationship:** Implements controls
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / 07_TECHNICAL_ACCOUNTABILITY_MODEL
+**EATGF Layer Placement:** Developer Governance Layer / Technical Accountability Model
 
 **Governance Scope:** Technical decision-making authority, escalation, and Architecture Decision Records (ADRs).
 

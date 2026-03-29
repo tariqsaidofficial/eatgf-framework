@@ -2,7 +2,7 @@
 sidebar_label: "Data Governance Policy"
 ---
 
-# 03_DATA_GOVERNANCE_POLICY
+# Data Governance Policy
 
 | Field          | Value                                                    |
 | -------------- | -------------------------------------------------------- |
@@ -11,7 +11,7 @@ sidebar_label: "Data Governance Policy"
 | Classification | Controlled                                               |
 | Effective Date | 2026-02-14                                               |
 | Authority      | Chief Data Officer                                       |
-| EATGF Layer    | 04_POLICY_LAYER                                          |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-DATA-PRIV-01, EATGF-DATA-RET-01, EATGF-DATA-MIN-01 |
 
 ---
@@ -22,9 +22,9 @@ This policy establishes data governance as foundational discipline for organizat
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the primary data governance specification.
+This policy operates within **Policy Layer** as the primary data governance specification.
 
-- **Upstream dependency:** Governance Charter (01_GOVERNANCE_CHARTER.md) establishes governance structure; Information Security Policy (02_INFORMATION_SECURITY_POLICY.md) provides data protection foundation
+- **Upstream dependency:** Governance Charter (Governance Charter.md) establishes governance structure; Information Security Policy (Information Security Policy.md) provides data protection foundation
 - **Downstream usage:** Operationalized through data classification procedures, privacy procedures, data retention procedures, and access control procedures aligned to ISO 27001:2022 and GDPR
 - **Cross-layer reference:** Maps to EATGF Data domain controls (DATA-PRIV, DATA-RET, DATA-MIN, DATA-QUAL) in Layer 02; implements Layer 03 governance models through data governance maturity assessment
 

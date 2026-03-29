@@ -10,7 +10,7 @@ Enterprise AI-Aligned Technical Governance Framework (EATGF)
 | ------------------- | ------------------------------ |
 | **Version**         | 1.0-Foundation                 |
 | **Authority Level** | Highest Control Authority      |
-| **EATGF Layer**     | 00_FOUNDATION                  |
+| **EATGF Layer**     | Foundation                  |
 | **Classification**  | Controlled - Internal Use Only |
 | **Effective Date**  | February 2026                  |
 | **Last Updated**    | February 15, 2026              |
@@ -36,7 +36,7 @@ No other EATGF document defines controls. All governance documents either refere
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 00_FOUNDATION (Highest authority layer)
+**EATGF Layer Placement:** Foundation (Highest authority layer)
 
 **Governance Scope:** Control Definition (Central Authority)
 

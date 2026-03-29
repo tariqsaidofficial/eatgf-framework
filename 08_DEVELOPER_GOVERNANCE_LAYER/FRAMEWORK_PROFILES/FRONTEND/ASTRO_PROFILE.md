@@ -12,7 +12,7 @@ sidebar_label: "Astro Framework Governance Profile"
 
 **CLASSIFICATION:** Framework Implementation Profile (Cross-Cutting)
 
-**AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
+**AUTHORITY LAYER:** Developer Governance Layer → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
 
@@ -42,7 +42,7 @@ This document defines governance conformance requirements for Astro applications
 **EATGF Layer Placement:**
 
 ```
-08_DEVELOPER_GOVERNANCE_LAYER
+Developer Governance Layer
 ├── FRAMEWORK_PROFILES
 │   └── FRONTEND
 │       ├── Next.js (full-stack SSR)

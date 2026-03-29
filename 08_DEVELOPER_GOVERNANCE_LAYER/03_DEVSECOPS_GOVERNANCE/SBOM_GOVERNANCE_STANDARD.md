@@ -11,7 +11,7 @@ sidebar_label: "Software Bill of Materials (SBOM) Governance Standard"
 | Classification | Controlled                                              |
 | Effective Date | 2026-02-16                                              |
 | Authority      | Chief Security Officer and Chief Technology Officer     |
-| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| EATGF Layer    | Developer Governance Layer / DevSecOps Governance |
 | MCM Reference  | EATGF-DEV-SUP-01                                        |
 
 ---
@@ -24,11 +24,11 @@ This standard mandates Software Bill of Materials (SBOM) creation, validation, a
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer / DevSecOps Governance
 
 - **Upstream dependency:** NIST SSDF RV.1 (artifact documentation); NTIA minimum elements for SBOM
 - **Downstream usage:** SBOM used at deployment for vulnerability scanning, compliance verification, license audit
-- **Cross-layer reference:** Maps to supply chain security (03_DEVSECOPS_GOVERNANCE), API governance (02_API_GOVERNANCE) for API SBOM, cloud governance (05_SAAS_AND_CLOUD_GOVERNANCE) for infrastructure SBOMs
+- **Cross-layer reference:** Maps to supply chain security (DevSecOps Governance), API governance (API Governance) for API SBOM, cloud governance (SaaS and Cloud Governance) for infrastructure SBOMs
 
 ## Governance Principles
 

@@ -11,7 +11,7 @@ sidebar_label: Audit and Assurance
 | Classification | Controlled                                      |
 | Effective Date | 2026-02-16                                      |
 | Authority      | Chief Audit Officer and Internal Audit Function |
-| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                          |
+| EATGF Layer    | Audit and Assurance                             |
 
 ---
 
@@ -21,7 +21,7 @@ This layer defines the internal audit methodology for independently assessing co
 
 ## Architectural Position
 
-This layer operates within **06_AUDIT_AND_ASSURANCE** as the independent assurance authority for governance.
+This layer operates within **Audit and Assurance** as the independent assurance authority for governance.
 
 - **Upstream dependency:** Layers 00-05 describe what is being audited
 - **Downstream usage:** Audit findings inform improvement in Layers 00-05
@@ -143,7 +143,7 @@ Management review and reporting:
 
 ### Audit Schedule Standard
 
-Document: AUDIT_SCHEDULE_STANDARD.md
+Document: Audit Schedule Standard
 
 Formal audit scheduling standard establishing:
 
@@ -159,7 +159,7 @@ Formal audit scheduling standard establishing:
 
 ### Corrective Action Register Standard
 
-Document: CORRECTIVE_ACTION_REGISTER_STANDARD.md
+Document: Corrective Action Register Standard
 
 Formal CAR standard establishing:
 
@@ -177,7 +177,7 @@ Formal CAR standard establishing:
 
 ### Certification Readiness Checklist Standard
 
-Document: CERTIFICATION_READINESS_CHECKLIST_STANDARD.md
+Document: Certification Readiness Checklist Standard
 
 Formal certification readiness standard establishing:
 
@@ -193,7 +193,7 @@ Formal certification readiness standard establishing:
 
 ### Evidence Governance Standard
 
-Document: EVIDENCE_GOVERNANCE_STANDARD.md
+Document: Evidence Governance Standard
 
 Formal evidence governance standard establishing:
 
@@ -240,15 +240,15 @@ Before audit implementation:
 - [ ] INTERNAL_AUDIT_PROCEDURE_v1.0.md reviewed per ISO 19011:2018
 - [ ] Auditor independence requirements established and documented
 - [ ] Auditor competencies assessed; professional certifications verified
-- [ ] AUDIT_SCHEDULE_STANDARD.md adopted with 5-quarter rolling cycle
+- [ ] Audit Schedule Standard adopted with 5-quarter rolling cycle
 - [ ] Quarterly audit roadmap published with control assignments and timeline
 - [ ] Annual audit resource allocation planned (7-8 FTE; 670 hours)
-- [ ] CORRECTIVE_ACTION_REGISTER_STANDARD.md system configured with data model
+- [ ] Corrective Action Register Standard system configured with data model
 - [ ] CAR tracking tool or system implemented with status reporting dashboard
 - [ ] Severity classification matrix and remediation timelines established
-- [ ] CERTIFICATION_READINESS_CHECKLIST_STANDARD.md 5-section template distributed
+- [ ] Certification Readiness Checklist Standard 5-section template distributed
 - [ ] Control owner training on certification checklist process completed
-- [ ] EVIDENCE_GOVERNANCE_STANDARD.md evidence repository established
+- [ ] Evidence Governance Standard evidence repository established
 - [ ] Evidence classification, retention matrix, and access permissions configured
 - [ ] Litigation hold procedure and chain of custody process documented
 - [ ] Governance council audit reporting and oversight structure established

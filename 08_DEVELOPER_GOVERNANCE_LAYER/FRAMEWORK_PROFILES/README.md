@@ -2,7 +2,7 @@
 
 ## Architectural Position
 
-- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / Cross-Layer (01, 03, 04, 05)
+- **EATGF Layer:** Developer Governance Layer / Cross-Layer (01, 03, 04, 05)
 - **Governance Scope:** Framework Profile Patterns (Implementation, not Control Definition)
 - **Control Authority:** Implements controls from multiple layers; never redefines
 
@@ -116,8 +116,8 @@ Each Framework Profile must include:
 ## Not In FRAMEWORK_PROFILES
 
 - API architecture patterns (REST, GraphQL, gRPC) → Layer 05 / 02_API_GOVERNANCE/PROFILES
-- DevSecOps standards (Linux hardening, container rootless) → Layer 03 / 03_DEVSECOPS_GOVERNANCE
-- Cloud foundational security (VPC, IAM, encryption) → Layer 04 / 04_CLOUD_GOVERNANCE
+- DevSecOps standards (Linux hardening, container rootless) → Layer 03 / DevSecOps Governance
+- Cloud foundational security (VPC, IAM, encryption) → Layer 04 / Cloud Governance
 
 ---
 

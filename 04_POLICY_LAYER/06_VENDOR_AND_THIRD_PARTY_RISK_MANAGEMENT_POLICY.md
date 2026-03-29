@@ -2,7 +2,7 @@
 sidebar_label: "Vendor and Third Party Risk Management Policy"
 ---
 
-# 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY
+# Vendor and Third Party Risk Management Policy
 
 | Field          | Value                                                            |
 | -------------- | ---------------------------------------------------------------- |
@@ -12,7 +12,7 @@ sidebar_label: "Vendor and Third Party Risk Management Policy"
 | Classification | Controlled                                                       |
 | Effective Date | 2026-02-16                                                       |
 | Authority      | Chief Procurement Officer and Chief Information Security Officer |
-| EATGF Layer    | 04_POLICY_LAYER                                                  |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-APO-RISK-01, EATGF-DSS-SEC-01, EATGF-MEA-AUD-01            |
 
 ---
@@ -23,9 +23,9 @@ This policy establishes the mandatory vendor and third-party risk management fra
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the primary vendor risk governance document.
+This policy operates within **Policy Layer** as the primary vendor risk governance document.
 
-- **Upstream dependency:** Governance Charter (01_GOVERNANCE_CHARTER.md) establishes CPO and CISO authority for vendor management; Information Security Policy (02_INFORMATION_SECURITY_POLICY.md) defines security requirements that vendors must meet
+- **Upstream dependency:** Governance Charter (Governance Charter.md) establishes CPO and CISO authority for vendor management; Information Security Policy (Information Security Policy.md) defines security requirements that vendors must meet
 - **Downstream usage:** Operationalized through vendor risk assessments, security questionnaires, and vendor performance monitoring maintained by Procurement and Security teams; enforced through contract terms and vendor audits
 - **Cross-layer reference:** Maps to EATGF vendor controls in Layer 02 (APO-VEN domain for vendor selection and monitoring), implements MCM controls for third-party risk assessment and compliance, implements audit procedures in Layer 06 for vendor audit compliance and remediation tracking
 

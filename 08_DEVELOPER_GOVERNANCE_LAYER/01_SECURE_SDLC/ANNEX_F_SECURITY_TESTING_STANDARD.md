@@ -10,7 +10,7 @@ Defines governance for SAST, DAST, and penetration testing.
 
 ## Architectural Position
 
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
+Layer: Developer Governance Layer
 Control Reference: SDLC-TEST-06
 
 ## Governance Principles
@@ -71,5 +71,5 @@ Security testing provides measurable compliance evidence.
 
 Version: 1.0
 Status: Authoritative Annex
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
+Layer: Developer Governance Layer
 Classification: Public Governance Standard

@@ -346,12 +346,12 @@ The following violations were identified during the documentation style audit an
 | GOVERNANCE_FRAMEWORK_README.md                 | Marketing tone (throughout)       | Badges, , FAQ format, tagline         | Full rewrite: remove badges, emoji, FAQ format, marketing tagline; apply EATGF header and institutional tone  |
 | GOVERNANCE_BY_TEAM_SIZE.md                     | Casual language                   | "Avoid lengthy 50-page policies nobody reads" | "Policy documents shall not exceed the scope required for governance clarity."                                |
 | EVIDENCE_REGISTER_EXCEL_BUILD_SPECIFICATION.md | Marketing tagline                 | "Buildable. Testable. Audit-Defensible."      | Remove tagline; purpose is conveyed by Section 1                                                              |
-| 03_DATA_GOVERNANCE_POLICY.md                   | Strategic marketing               | "Data is a strategic asset"                   | "Data governance ensures classification, protection, and lifecycle management of organizational data assets." |
+| Data Governance Policy.md                   | Strategic marketing               | "Data is a strategic asset"                   | "Data governance ensures classification, protection, and lifecycle management of organizational data assets." |
 | GOVERNANCE_FRAMEWORK_README.md                 | Placeholder email                 | `governance@enterprise.com`                   | `[designated-contact]@[organization-domain]`                                                                  |
 | FRAMEWORK_MAPPINGS.md                          | Placeholder email                 | `governance@enterprise.com`                   | `[designated-contact]@[organization-domain]`                                                                  |
-| 01_GOVERNANCE_CHARTER.md                       | Placeholder email                 | `governance@enterprise.com`                   | `[designated-contact]@[organization-domain]`                                                                  |
-| 02_INFORMATION_SECURITY_POLICY.md              | Placeholder email                 | `security@enterprise.com`                     | `[designated-contact]@[organization-domain]`                                                                  |
-| 03_DATA_GOVERNANCE_POLICY.md                   | Placeholder email                 | `data-governance@enterprise.com`              | `[designated-contact]@[organization-domain]`                                                                  |
+| Governance Charter.md                       | Placeholder email                 | `governance@enterprise.com`                   | `[designated-contact]@[organization-domain]`                                                                  |
+| Information Security Policy.md              | Placeholder email                 | `security@enterprise.com`                     | `[designated-contact]@[organization-domain]`                                                                  |
+| Data Governance Policy.md                   | Placeholder email                 | `data-governance@enterprise.com`              | `[designated-contact]@[organization-domain]`                                                                  |
 
 ---
 

@@ -8,14 +8,14 @@ sidebar_label: "RACI for Engineering"
 
 **Version:** 1.0
 **Issue Date:** 2026-02-14
-**Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Subdomain:** 07_TECHNICAL_ACCOUNTABILITY_MODEL
+**Layer:** Developer Governance Layer
+**Subdomain:** Technical Accountability Model
 **Governance Scope:** Accountability Framework
 **Control Authority Relationship:** Implements controls
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / 07_TECHNICAL_ACCOUNTABILITY_MODEL
+**EATGF Layer Placement:** Developer Governance Layer / Technical Accountability Model
 
 **Governance Scope:** Responsibility assignment matrix for engineering activities and decision-making.
 

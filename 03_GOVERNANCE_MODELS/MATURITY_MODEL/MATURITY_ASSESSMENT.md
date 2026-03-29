@@ -14,7 +14,7 @@ sidebar_label: "Governance Maturity Model"
 | Effective Date       | 2026-02-15                                  |
 | Assessment Frequency | Annual                                      |
 | Authority            | Enterprise Architecture & Governance Office |
-| EATGF Layer          | 03_GOVERNANCE_MODELS                        |
+| EATGF Layer          | Governance Models |
 | MCM Reference        | EATGF-MEA-MAT-01                            |
 
 ---
@@ -23,7 +23,7 @@ sidebar_label: "Governance Maturity Model"
 
 This document operates within **03_GOVERNANCE_MODELS/MATURITY_MODEL** as the governance maturity assessment framework.
 
-- **EATGF Layer Placement:** 03_GOVERNANCE_MODELS
+- **EATGF Layer Placement:** Governance Models
 - **Governance Scope:** Assessment Framework
 - **Control Authority Relationship:** Implements control EATGF-MEA-MAT-01 as defined in the MCM
 

@@ -12,8 +12,8 @@ API Gateways function as unified entry points for all service-to-service and cli
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Governance Scope:** 02_API_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer
+**Governance Scope:** API Governance
 **Document Type:** Root Authority Standard
 **Control Authority Relationship:** Defines mandatory gateway controls that all API proxies must implement
 **Applicable Profiles:** Enterprise, SaaS, Startup, Developer

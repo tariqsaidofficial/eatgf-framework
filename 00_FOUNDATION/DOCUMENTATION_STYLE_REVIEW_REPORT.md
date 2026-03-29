@@ -73,7 +73,7 @@ Every EATGF document shall conform to the following 10-element structure:
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
 | 01_MANAGEMENT_SYSTEMS/README.md |  |  |  |  |  |  |  |  |  |
 | ISMS_MANUAL_v1.0.md |  |  |  |  |  |  |  |  |  |
-| 01_STATEMENT_OF_APPLICABILITY_TEMPLATE.md |  |  |  |  |  |  |  |  |  |
+| Statement of Applicability.md |  |  |  |  |  |  |  |  |  |
 | AIMS_MANUAL_v1.0.md |  |  |  |  |  |  |  |  |  |
 
 **Layer 01 Compliance Rate:** 75% (27 of 36 elements)
@@ -106,10 +106,10 @@ Every EATGF document shall conform to the following 10-element structure:
 | Document | Title | Header Sig | Purpose | Scope | Definitions | Responsibilities | Enforcement | Version Block | Auth Sign-Off |
 |----------|-------|-----------|---------|-------|-------------|-----------------|-------------|---------------|---------------|
 | 04_POLICY_LAYER/README.md |  |  |  |  |  |  |  |  |  |
-| 01_GOVERNANCE_CHARTER.md |  |  |  |  |  |  |  |  |  |
+| Governance Charter.md |  |  |  |  |  |  |  |  |  |
 | GOVERNANCE_CHARTER_FORMAL_v2.md |  |  |  |  |  Partial |  |  |  |  |
-| 02_INFORMATION_SECURITY_POLICY.md |  |  |  |  |  |  |  Partial |  Partial |  |
-| 03_DATA_GOVERNANCE_POLICY.md |  |  |  |  |  |  Partial |  |  Partial |  |
+| Information Security Policy.md |  |  |  |  |  |  |  Partial |  Partial |  |
+| Data Governance Policy.md |  |  |  |  |  |  Partial |  |  Partial |  |
 
 **Layer 04 Compliance Rate:** 58% (26 of 45 elements)
 
@@ -168,7 +168,7 @@ The Master Control Matrix (MCM) defines the authoritative control taxonomy using
 | FRAMEWORK_MAPPINGS.md | SEC-01, AC-01, RISK-01 | 14 |
 | RISK_FRAMEWORK.md | SEC-01, SEC-02, SEC-03 | 14 |
 | GOVERNANCE_BY_TEAM_SIZE.md | SEC-01, AC-01, AI-01 | 14 |
-| 01_GOVERNANCE_CHARTER.md | No MCM references | 0 |
+| Governance Charter.md | No MCM references | 0 |
 
 **Remediation:** Update all five documents in-place to reference the 35-control EATGF taxonomy as defined in the MCM.
 
@@ -178,10 +178,10 @@ Two governance charters exist with overlapping scope:
 
 | Document | Formality | Control Count | MCM Alignment |
 |----------|-----------|--------------|---------------|
-| 01_GOVERNANCE_CHARTER.md | Moderate — no EATGF header | Not specified | No MCM references |
+| Governance Charter.md | Moderate — no EATGF header | Not specified | No MCM references |
 | GOVERNANCE_CHARTER_FORMAL_v2.md | High — full EATGF header | 21 (outdated) | Partial alignment |
 
-**Remediation:** Update 01_GOVERNANCE_CHARTER.md to explicitly defer to GOVERNANCE_CHARTER_FORMAL_v2.md as the authoritative charter. Update v2 to reference 35 controls.
+**Remediation:** Update Governance Charter.md to explicitly defer to GOVERNANCE_CHARTER_FORMAL_v2.md as the authoritative charter. Update v2 to reference 35 controls.
 
 ### 6.3 CRITICAL — Legacy README Conflict
 
@@ -204,10 +204,10 @@ ISO/IEC 42001 was published 18 December 2023. No 2024 edition or amendment exist
 
 | Placeholder | Documents |
 |-------------|-----------|
-| `governance@enterprise.com` | GOVERNANCE_FRAMEWORK_README.md, FRAMEWORK_MAPPINGS.md, 01_GOVERNANCE_CHARTER.md |
-| `security@enterprise.com` | 02_INFORMATION_SECURITY_POLICY.md |
-| `data-governance@enterprise.com` | 03_DATA_GOVERNANCE_POLICY.md |
-| `[Organization Name]` | GOVERNANCE_CHARTER_FORMAL_v2.md, 01_STATEMENT_OF_APPLICABILITY_TEMPLATE.md |
+| `governance@enterprise.com` | GOVERNANCE_FRAMEWORK_README.md, FRAMEWORK_MAPPINGS.md, Governance Charter.md |
+| `security@enterprise.com` | Information Security Policy.md |
+| `data-governance@enterprise.com` | Data Governance Policy.md |
+| `[Organization Name]` | GOVERNANCE_CHARTER_FORMAL_v2.md, Statement of Applicability.md |
 
 **Remediation:** Replace with standardized placeholder format `[designated-contact]@[organization-domain]` or actual organizational addresses.
 
@@ -219,7 +219,7 @@ ISO/IEC 42001 was published 18 December 2023. No 2024 edition or amendment exist
 | Marketing tone | GOVERNANCE_FRAMEWORK_README.md | Badges, , , FAQ format |
 | Casual language | GOVERNANCE_BY_TEAM_SIZE.md | "Avoid lengthy 50-page policies nobody reads" |
 | Marketing tagline | EVIDENCE_REGISTER_EXCEL_BUILD_SPECIFICATION.md | "Buildable. Testable. Audit-Defensible." |
-| Strategic marketing | 03_DATA_GOVERNANCE_POLICY.md | "Data is a strategic asset" |
+| Strategic marketing | Data Governance Policy.md | "Data is a strategic asset" |
 
 **Remediation:** Correct each instance per the EATGF Writing Identity Framework.
 
@@ -271,7 +271,7 @@ Five documents include the `.md` filename extension in their H1 heading:
 | Document | Required Changes |
 |----------|-----------------|
 | GOVERNANCE_BY_TEAM_SIZE.md | Update control IDs to EATGF-xxx; remove casual language; add EATGF header |
-| 01_GOVERNANCE_CHARTER.md | Add EATGF header; add MCM control references; clarify relationship to v2 charter |
+| Governance Charter.md | Add EATGF header; add MCM control references; clarify relationship to v2 charter |
 | GOVERNANCE_CHARTER_FORMAL_v2.md | Update control count from 21 to 35; fix ISO 42001 to 2023; remove number emoji from H2s |
 | FRAMEWORK_MAPPINGS_COMPREHENSIVE_v2.md | Update hub diagram from 21 to 35 controls; fix ISO 42001 to 2023 |
 
@@ -279,8 +279,8 @@ Five documents include the `.md` filename extension in their H1 heading:
 
 | Document | Required Changes |
 |----------|-----------------|
-| 02_INFORMATION_SECURITY_POLICY.md | Add EATGF header; add MCM control references; replace placeholder email |
-| 03_DATA_GOVERNANCE_POLICY.md | Add EATGF header; add MCM control references; replace placeholder email; correct marketing language |
+| Information Security Policy.md | Add EATGF header; add MCM control references; replace placeholder email |
+| Data Governance Policy.md | Add EATGF header; add MCM control references; replace placeholder email; correct marketing language |
 | AI_GOVERNANCE_FRAMEWORK.md | Add EATGF header; add Authority Signature Block |
 | API_GOVERNANCE_FRAMEWORK.md | Add EATGF header; add Authority Signature Block |
 | MATURITY_ASSESSMENT.md | Add EATGF header; add Authority Signature Block |

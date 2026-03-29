@@ -12,7 +12,7 @@ Before creating or editing any document in the EATGF framework, you MUST follow 
 
 Every document must declare:
 
-- **EATGF Layer Placement**: (00_FOUNDATION / 01_MANAGEMENT_SYSTEMS / 02_CONTROL_ARCHITECTURE / 03_GOVERNANCE_MODELS / 04_POLICY_LAYER / 05_DOMAIN_FRAMEWORKS / 06_AUDIT_AND_ASSURANCE / 07_REFERENCE_AND_EVOLUTION / 08_DEVELOPER_GOVERNANCE_LAYER)
+- **EATGF Layer Placement**: (Foundation / Management Systems / Control Architecture / Governance Models / Policy Layer / Domain Frameworks / Audit and Assurance / Reference and Evolution / Developer Governance Layer)
 - **Governance Scope**: (Policy / Architecture / Control Definition / Implementation Standard / Audit Methodology)
 - **Control Authority Relationship**: (Defines controls / Interprets controls / Implements controls / References controls)
 

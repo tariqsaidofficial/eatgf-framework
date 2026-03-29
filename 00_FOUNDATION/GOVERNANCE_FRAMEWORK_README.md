@@ -11,7 +11,7 @@ sidebar_label: "Enterprise AI-Aligned Technical Governance Framework (EATGF)"
 | Classification | Public |
 | Effective Date | 2026-02-14 |
 | Authority | Enterprise Architecture and Governance Office |
-| EATGF Layer | 00_FOUNDATION |
+| EATGF Layer | Foundation |
 | MCM Reference | EATGF-EDM-GOV-01 |
 
 ---
@@ -22,7 +22,7 @@ This document provides a comprehensive navigational overview of the Enterprise A
 
 ## Architectural Position
 
-This specification operates within **00_FOUNDATION** of EATGF as the authoritative framework navigation guide and structural overview.
+This specification operates within **Foundation** of EATGF as the authoritative framework navigation guide and structural overview.
 
 - **Upstream dependency:** Depends on Official Designation and Baseline Declaration for authority
 - **Downstream usage:** Referenced by all 01-07 layers for framework navigation and context

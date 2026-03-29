@@ -9,8 +9,8 @@ sidebar_label: "Secure Software Development Lifecycle Governance Standard"
 **Version:** 1.0
 **Issue Date:** 2026-02-14
 **Change Type:** Major
-**Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Domain:** 01_SECURE_SDLC
+**Layer:** Developer Governance Layer
+**Domain:** Secure SDLC
 **Classification:** Developer Governance Standard
 **Governance Scope:** Standard, Policy, Architecture
 **Control Authority Relationship:** Implements controls from ISO 27001, NIST SSDF, OWASP SAMM, COBIT
@@ -29,9 +29,9 @@ The objective is to integrate security, quality, compliance, and traceability in
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER
+**EATGF Layer Placement:** Developer Governance Layer
 
-**Domain:** 01_SECURE_SDLC
+**Domain:** Secure SDLC
 
 **Classification:** Developer Governance Standard
 
@@ -39,9 +39,9 @@ The objective is to integrate security, quality, compliance, and traceability in
 
 **Control Authority Relationship:** Implements controls from:
 
-- Layer 02_CONTROL_ARCHITECTURE: Secure Development Controls
-- Layer 04_POLICY_LAYER: Information Security Policy
-- MASTER_CONTROL_MATRIX (Layer 00_FOUNDATION)
+- Layer Control Architecture: Secure Development Controls
+- Layer Policy Layer: Information Security Policy
+- MASTER_CONTROL_MATRIX (Layer Foundation)
 
 **Authority Relationship:**
 
@@ -956,8 +956,8 @@ Secure SDLC maturity is measured across 5 levels. Organizations can be at differ
 
 If conflict exists, resolution order:
 
-1. **MASTER_CONTROL_MATRIX** (Layer 00_FOUNDATION)
-2. **Information Security Policy** (Layer 04_POLICY_LAYER)
+1. **MASTER_CONTROL_MATRIX** (Layer Foundation)
+2. **Information Security Policy** (Layer Policy Layer)
 3. **Secure SDLC Governance Standard** (this document)
 4. **Annex Standards** (A-G)
 5. **Framework Profiles**

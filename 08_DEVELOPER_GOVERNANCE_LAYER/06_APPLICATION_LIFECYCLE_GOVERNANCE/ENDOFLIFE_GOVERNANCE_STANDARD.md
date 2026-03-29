@@ -11,7 +11,7 @@ sidebar_label: "End-of-Life Governance Standard"
 | **Classification** | Governance                                                                                               |
 | **Effective Date** | February 16, 2026                                                                                        |
 | **Authority**      | Chief Technology Officer                                                                                 |
-| **EATGF Layer**    | 08_DEVELOPER_GOVERNANCE_LAYER / 06_APPLICATION_LIFECYCLE_GOVERNANCE                                      |
+| **EATGF Layer**    | Developer Governance Layer / Application Lifecycle Governance                                      |
 | **MCM Reference**  | [EATGF-DEV-SDLC-01: Secure Software Development Lifecycle](../../00_FOUNDATION/MASTER_CONTROL_MATRIX.md) |
 
 ---

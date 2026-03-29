@@ -10,7 +10,7 @@ Defines controls to secure applications during execution.
 
 ## Architectural Position
 
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
+Layer: Developer Governance Layer
 Control Reference: SDLC-RUN-05
 
 ## Governance Principles
@@ -81,5 +81,5 @@ Runtime misconfiguration is a leading breach cause.
 
 Version: 1.0
 Status: Authoritative Annex
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
+Layer: Developer Governance Layer
 Classification: Public Governance Standard

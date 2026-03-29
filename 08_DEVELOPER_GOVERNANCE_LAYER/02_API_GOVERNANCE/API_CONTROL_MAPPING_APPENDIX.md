@@ -12,8 +12,8 @@ Enables ISO 27001, SOC 2 Type II, PCI-DSS, FedRAMP, and GDPR audit defensibility
 
 ## Architectural Position
 
-- **Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-- **Domain:** 02_API_GOVERNANCE / Operational
+- **Layer:** Developer Governance Layer
+- **Domain:** API Governance / Operational
 - **Authority Source:** API_GOVERNANCE_STANDARD.md (root authority)
 - **Control Authority Relationship:** Subordinate operational document implementing root standard controls with framework alignment evidence
 

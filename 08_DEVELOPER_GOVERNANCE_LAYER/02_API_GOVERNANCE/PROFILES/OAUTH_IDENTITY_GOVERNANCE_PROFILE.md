@@ -14,8 +14,8 @@ OAuth 2.0 and OpenID Connect provide standardized mechanisms for authentication 
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Governance Scope:** 02_API_GOVERNANCE / Implementation Profile
+**EATGF Layer:** Developer Governance Layer
+**Governance Scope:** API Governance / Implementation Profile
 **Document Type:** Authentication & Delegation Profile
 **Applicable Standards:** OAuth 2.0 (RFC 6749), OpenID Connect 1.0, PKCE (RFC 7636)
 **Integration Points:** API Gateway, Service Mesh, API Security Controls

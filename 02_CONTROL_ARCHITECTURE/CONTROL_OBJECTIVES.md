@@ -11,7 +11,7 @@ sidebar_label: "Control Objectives"
 | Classification | Controlled                                                 |
 | Effective Date | 2026-02-14                                                 |
 | Authority      | Enterprise Architecture and Governance Office              |
-| EATGF Layer    | 02_CONTROL_ARCHITECTURE                                    |
+| EATGF Layer    | Control Architecture |
 | MCM Reference  | All 35 EATGF Controls                                      |
 | Standards      | COBIT 2019, ISO 27001:2022, ISO 42001:2023, OWASP ASVS 4.0 |
 
@@ -23,9 +23,9 @@ This document establishes authoritative control objectives for all 35 controls w
 
 ## Architectural Position
 
-This document operates within **02_CONTROL_ARCHITECTURE** as the definitive control objectives specification.
+This document operates within **Control Architecture** as the definitive control objectives specification.
 
-- **Upstream dependency:** Master Control Matrix (00_FOUNDATION) defines 35 control taxonomy; Governance Charter (Layer 04) establishes control governance authority; Framework Mappings defines ISO 27001/COBIT/OWASP alignment
+- **Upstream dependency:** Master Control Matrix (Foundation) defines 35 control taxonomy; Governance Charter (Layer 04) establishes control governance authority; Framework Mappings defines ISO 27001/COBIT/OWASP alignment
 - **Downstream usage:** Internal Audit Procedure (Layer 06) references control objectives for audit scope; Maturity Assessment (Layer 03) evaluates control implementation maturity; Statement of Applicability (Layer 01) maps controls to organizational requirements
 - **Cross-layer reference:** AI Governance Framework (Layer 05) implements AI-LC-01 and AI-RISK-01 controls; API Governance Framework (Layer 05) implements API-SEC-01 and API-LC-01 controls; Developer Governance Layer (Layer 08) implements DEV domain controls
 
@@ -912,7 +912,7 @@ Before implementing EATGF controls:
 
 ### Control Authority and Ownership
 
-- Master Control Matrix (MCM) in Layer 00_FOUNDATION is single source of truth for control taxonomy
+- Master Control Matrix (MCM) in Layer Foundation is single source of truth for control taxonomy
 - Control owners designated in Implementation Summary table are accountable for control implementation and evidence production
 - Governance Council has authority to approve control exceptions documented in Statement of Applicability
 - Board-level controls (EDM domain) require executive or board sign-off

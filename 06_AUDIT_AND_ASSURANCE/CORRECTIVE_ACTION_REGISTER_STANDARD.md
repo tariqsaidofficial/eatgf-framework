@@ -12,7 +12,7 @@ sidebar_label: "Corrective Action Register Standard"
 | Classification | Controlled                                 |
 | Effective Date | 2026-02-16                                 |
 | Authority      | Chief Audit Officer and Governance Officer |
-| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                     |
+| EATGF Layer    | Audit and Assurance |
 | MCM Reference  | EATGF-MEA-AUD-01, EATGF-MEA-PERF-01        |
 
 ---
@@ -23,7 +23,7 @@ This standard establishes the mandatory Corrective Action Register (CAR) framewo
 
 ## Architectural Position
 
-This standard operates within **06_AUDIT_AND_ASSURANCE** as the corrective action tracking and closure standard.
+This standard operates within **Audit and Assurance** as the corrective action tracking and closure standard.
 
 - **Upstream dependency:** Internal Audit Procedure (06_AUDIT_AND_ASSURANCE/INTERNAL_AUDIT_PROCEDURE_v1.0.md) defines audit findings; Audit Schedule Standard (peer document) defines audit cycle generating findings
 - **Downstream usage:** CAR drives operational remediation; findings tracked through remediation to closure; executive reporting derived from CAR data; trend analysis identifies systemic deficiencies

@@ -14,7 +14,7 @@ The authoritative supply chain security standard is maintained at:
 
 | Field         | Value                                                   |
 | ------------- | ------------------------------------------------------- |
-| Location      | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| Location      | Developer Governance Layer / DevSecOps Governance |
 | MCM Reference | EATGF-DEV-SUP-01                                        |
 | Status        | Active (Authoritative)                                  |
 

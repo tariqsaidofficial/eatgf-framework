@@ -12,7 +12,7 @@ sidebar_label: "Evidence Governance Standard"
 | Classification | Controlled                                    |
 | Effective Date | 2026-02-16                                    |
 | Authority      | Chief Audit Officer and Records Administrator |
-| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                        |
+| EATGF Layer    | Audit and Assurance |
 | MCM Reference  | EATGF-MEA-AUD-01, EATGF-MEA-PERF-01           |
 
 ---
@@ -23,7 +23,7 @@ This standard establishes the mandatory governance framework for managing eviden
 
 ## Architectural Position
 
-This standard operates within **06_AUDIT_AND_ASSURANCE** as the evidence management and records governance standard.
+This standard operates within **Audit and Assurance** as the evidence management and records governance standard.
 
 - **Upstream dependency:** Internal Audit Procedure (peer document), Audit Schedule Standard (peer document), Corrective Action Register Standard (peer document) all generate evidence requiring governance
 - **Downstream usage:** Evidence sourced by auditors for control testing, by incident responders for investigation, by certifiers (SOC 2, ISO 27001) for audit, by legal in litigation

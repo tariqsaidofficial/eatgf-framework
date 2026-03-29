@@ -2,7 +2,7 @@
 sidebar_label: "Acceptable Use Policy"
 ---
 
-# 08_ACCEPTABLE_USE_POLICY
+# Acceptable Use Policy
 
 | Field          | Value                                                                |
 | -------------- | -------------------------------------------------------------------- |
@@ -12,7 +12,7 @@ sidebar_label: "Acceptable Use Policy"
 | Classification | Internal                                                             |
 | Effective Date | 2026-02-16                                                           |
 | Authority      | Chief Information Security Officer and Chief Human Resources Officer |
-| EATGF Layer    | 04_POLICY_LAYER                                                      |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-DSS-SEC-01, EATGF-APO-SEC-01, EATGF-EDM-GOV-01                 |
 
 ---
@@ -23,9 +23,9 @@ This policy defines acceptable and prohibited uses of organizational systems, da
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the primary acceptable use governance document.
+This policy operates within **Policy Layer** as the primary acceptable use governance document.
 
-- **Upstream dependency:** Governance Charter (01_GOVERNANCE_CHARTER.md) establishes authority for acceptable use enforcement; Information Security Policy (02_INFORMATION_SECURITY_POLICY.md) defines protection requirements that acceptable use supports
+- **Upstream dependency:** Governance Charter (Governance Charter.md) establishes authority for acceptable use enforcement; Information Security Policy (Information Security Policy.md) defines protection requirements that acceptable use supports
 - **Downstream usage:** Operationalized through system access agreements, acceptable use acknowledgment forms, monitoring procedures, and investigation protocols; enforced through system audit logging, user activity monitoring, and incident investigation
 - **Cross-layer reference:** Maps to EATGF control domain APO-POL (policy governance) and DSS-USE (system usage governance), implements MCM controls for system behavior expectations and consequences, works with Incident Response Policy and privacy controls for investigatory procedures
 

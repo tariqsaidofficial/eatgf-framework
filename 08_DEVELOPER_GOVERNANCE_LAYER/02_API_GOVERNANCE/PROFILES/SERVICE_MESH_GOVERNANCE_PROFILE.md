@@ -14,8 +14,8 @@ Service mesh platforms (Istio, Linkerd, Kuma) manage service-to-service communic
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-**Governance Scope:** 02_API_GOVERNANCE / Implementation Profile
+**EATGF Layer:** Developer Governance Layer
+**Governance Scope:** API Governance / Implementation Profile
 **Document Type:** Runtime Security Profile
 **Applicable Platforms:** Istio, Linkerd, Kuma, AWS App Mesh
 **Integration Points:** API Gateway governance, PKI/mTLS governance, observability governance

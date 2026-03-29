@@ -2,7 +2,7 @@
 sidebar_label: "Incident Response Policy"
 ---
 
-# 04_INCIDENT_RESPONSE_POLICY
+# Incident Response Policy
 
 | Field          | Value                                                              |
 | -------------- | ------------------------------------------------------------------ |
@@ -12,7 +12,7 @@ sidebar_label: "Incident Response Policy"
 | Classification | Controlled                                                         |
 | Effective Date | 2026-02-16                                                         |
 | Authority      | Chief Information Security Officer and Incident Response Team Lead |
-| EATGF Layer    | 04_POLICY_LAYER                                                    |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-DSS-INC-01, EATGF-MEA-AUD-01                                 |
 
 ---
@@ -23,9 +23,9 @@ This policy establishes the mandatory incident response framework for detecting,
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the primary incident response governance document.
+This policy operates within **Policy Layer** as the primary incident response governance document.
 
-- **Upstream dependency:** Governance Charter (01_GOVERNANCE_CHARTER.md) establishes CISO authority; Information Security Policy (02_INFORMATION_SECURITY_POLICY.md) defines baseline protections that incident response enforces
+- **Upstream dependency:** Governance Charter (Governance Charter.md) establishes CISO authority; Information Security Policy (Information Security Policy.md) defines baseline protections that incident response enforces
 - **Downstream usage:** Operationalized through incident response runbooks maintained by Security Operations Center (SOC); enforced through SLA tracking and executive reporting
 - **Cross-layer reference:** Maps to EATGF incident controls in Layer 02 (DSS domain incident detection and response), implements MCM controls for incident management, implements audit procedures in Layer 06 for evidence preservation and corrective action tracking
 

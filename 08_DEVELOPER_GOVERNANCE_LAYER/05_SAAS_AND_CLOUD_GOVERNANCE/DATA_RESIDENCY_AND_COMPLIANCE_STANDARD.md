@@ -11,7 +11,7 @@ sidebar_label: "Data Residency and Compliance Standard"
 | **Classification** | Governance                                                                                            |
 | **Effective Date** | February 16, 2026                                                                                     |
 | **Authority**      | Chief Legal Officer / Data Protection Officer                                                         |
-| **EATGF Layer**    | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE                                          |
+| **EATGF Layer**    | Developer Governance Layer / SaaS and Cloud Governance                                          |
 | **MCM Reference**  | [EATGF-DATA-PRIV-01: Data Protection Impact Assessment](../../00_FOUNDATION/MASTER_CONTROL_MATRIX.md) |
 
 ---

@@ -13,7 +13,7 @@ sidebar_label: "Governance Performance Model"
 | Classification | Internal                                    |
 | Effective Date | 2026-02-15                                  |
 | Authority      | Enterprise Architecture & Governance Office |
-| EATGF Layer    | 03_GOVERNANCE_MODELS                        |
+| EATGF Layer    | Governance Models |
 | MCM Reference  | EATGF-MEA-PERF-01                           |
 
 ---
@@ -22,7 +22,7 @@ sidebar_label: "Governance Performance Model"
 
 This document operates within **03_GOVERNANCE_MODELS/PERFORMANCE_MODEL** as the governance performance measurement framework.
 
-- **EATGF Layer Placement:** 03_GOVERNANCE_MODELS
+- **EATGF Layer Placement:** Governance Models
 - **Governance Scope:** Assessment Framework (Performance Measurement)
 - **Control Authority Relationship:** Implements control EATGF-MEA-PERF-01 as defined in the MCM
 

@@ -14,8 +14,8 @@ Ensures API availability through traffic shaping and quota enforcement.
 
 ## Architectural Position
 
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
-Sub-Layer: 02_API_GOVERNANCE
+Layer: Developer Governance Layer
+Sub-Layer: API Governance
 Authority: Subordinate to API_GOVERNANCE_STANDARD.md
 Control Reference: SDLC-RATELIMIT-05
 
@@ -154,5 +154,5 @@ Resource exhaustion = service unavailability = SLA breach.
 
 Version: 1.0
 Status: Authoritative Annex
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER / 02_API_GOVERNANCE
+Layer: Developer Governance Layer / API Governance
 Classification: Public Governance Standard

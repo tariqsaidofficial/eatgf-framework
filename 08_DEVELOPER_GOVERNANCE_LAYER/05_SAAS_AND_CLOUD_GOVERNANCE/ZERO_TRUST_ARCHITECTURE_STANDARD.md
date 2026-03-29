@@ -11,7 +11,7 @@ sidebar_label: "Infrastructure Zero Trust Architecture Standard"
 | Classification | Controlled                                                   |
 | Effective Date | 2026-02-16                                                   |
 | Authority      | Chief Information Security Officer                           |
-| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE |
+| EATGF Layer    | Developer Governance Layer / SaaS and Cloud Governance |
 | MCM Reference  | EATGF-DSS-SEC-01                                             |
 
 ---
@@ -24,7 +24,7 @@ Implement Zero Trust architecture for cloud infrastructure: assume breach, verif
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer / SaaS and Cloud Governance
 
 - **Upstream dependency:** Layer 04 Information Security Policy; Layer 02 Control Objectives (network security, authentication)
 - **Downstream usage:** Enforces Zero Trust throughout networking, compute, storage, and data layers

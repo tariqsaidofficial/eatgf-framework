@@ -11,7 +11,7 @@ sidebar_label: "API Governance: Authority Hierarchy and Enforcement Clarificatio
 | Classification | Controlled                                                         |
 | Effective Date | 2026-02-16                                                         |
 | Authority      | Chief Information Security Officer and Chief Technology Officer    |
-| EATGF Layer    | Cross-Layer (05_DOMAIN_FRAMEWORKS + 08_DEVELOPER_GOVERNANCE_LAYER) |
+| EATGF Layer    | Cross-Layer (Domain Frameworks + Developer Governance Layer) |
 
 ---
 
@@ -24,7 +24,7 @@ Clarify the architectural relationship between API_GOVERNANCE_FRAMEWORK (Layer 0
 **Cross-Layer Reference:** This document clarifies authority relationships across:
 
 - **Layer 05:** API_GOVERNANCE_FRAMEWORK (strategic governance)
-- **Layer 08 / 02_API_GOVERNANCE:** API_GOVERNANCE_STANDARD (operational enforcement)
+- **Layer 08 / API Governance:** API_GOVERNANCE_STANDARD (operational enforcement)
 
 ## Authority Hierarchy
 
@@ -53,7 +53,7 @@ Clarify the architectural relationship between API_GOVERNANCE_FRAMEWORK (Layer 0
 - Third-party API integrations
 - Mobile app backend APIs
 
-**Authority Reference:** Layer 05_DOMAIN_FRAMEWORKS → maps to Layer 02_CONTROL_ARCHITECTURE (API-SEC-01, API-LC-01 controls)
+**Authority Reference:** Layer Domain Frameworks → maps to Layer Control Architecture (API-SEC-01, API-LC-01 controls)
 
 ---
 
@@ -223,7 +223,7 @@ To verify API security compliance, audit should:
    - EATGF-API-LC-01: API lifecycle control
    - Map to Layer 05 and Layer 08
 
-3. Review exception log (stored in 06_AUDIT_AND_ASSURANCE)
+3. Review exception log (stored in Audit and Assurance)
    - Documents cases where Layer 05 requirements modified
    - Shows Layer 05 → Layer 08 amendment process
 

@@ -11,7 +11,7 @@ sidebar_label: Reference and Evolution
 | Classification | Controlled                                    |
 | Effective Date | 2026-02-14                                    |
 | Authority      | Enterprise Architecture and Governance Office |
-| EATGF Layer    | 07_REFERENCE_AND_EVOLUTION                    |
+| EATGF Layer    | Reference and Evolution |
 
 ---
 
@@ -21,7 +21,7 @@ This layer documents the governance framework's strategic evolution history and 
 
 ## Architectural Position
 
-This layer operates within **07_REFERENCE_AND_EVOLUTION** as the historical and strategic reference archive.
+This layer operates within **Reference and Evolution** as the historical and strategic reference archive.
 
 - **Upstream dependency:** Historical context for Layers 00-06 architecture
 - **Downstream usage:** Implementation guidance and planning reference

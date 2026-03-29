@@ -11,7 +11,7 @@ sidebar_label: "AI Governance Framework"
 | Classification | Controlled                                        |
 | Effective Date | 2026-02-14                                        |
 | Authority      | Chief AI Officer                                  |
-| EATGF Layer    | 05_DOMAIN_FRAMEWORKS                              |
+| EATGF Layer    | Domain Frameworks |
 | MCM Reference  | EATGF-AI-LC-01, EATGF-AI-RISK-01, EATGF-APO-AI-01 |
 | Standards      | ISO/IEC 42001:2023, NIST AI RMF                   |
 
@@ -23,9 +23,9 @@ This framework establishes governance standards for all artificial intelligence 
 
 ## Architectural Position
 
-This framework operates within **05_DOMAIN_FRAMEWORKS** as the specialized AI domain extension.
+This framework operates within **Domain Frameworks** as the specialized AI domain extension.
 
-- **Upstream dependency:** Governance Charter (04_POLICY_LAYER) establishes authority structure; Information Security Policy provides data protection foundation
+- **Upstream dependency:** Governance Charter (Policy Layer) establishes authority structure; Information Security Policy provides data protection foundation
 - **Downstream usage:** Operationalized through AI lifecycle procedures, fairness testing procedures, data governance procedures, and monitoring dashboards
 - **Cross-layer reference:** Maps to EATGF AI domain controls (AI-LC-01 lifecycle, AI-RISK-01 risk management, APO-AI-01 AIMS implementation) in Layer 02; implements Layer 03 governance models through AI governance maturity assessment; operationalized through Layer 01 AIMS (ISO 42001:2023)
 

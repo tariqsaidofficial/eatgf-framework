@@ -11,7 +11,7 @@ sidebar_label: "Governance Charter Formal v2"
 | Classification    | Controlled                                        |
 | Effective Date    | 2026-02-14                                        |
 | Authority         | Board of Directors & Executive Steering Committee |
-| EATGF Layer       | 04_POLICY_LAYER                                   |
+| EATGF Layer       | Policy Layer |
 | Approval Required | Board, CEO, CGO, CISO                             |
 
 ---
@@ -22,7 +22,7 @@ This formal governance charter establishes board-level technology governance fra
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the formal board-level governance charter.
+This policy operates within **Policy Layer** as the formal board-level governance charter.
 
 - **Upstream dependency:** EATGF baseline framework and official designation establish governance foundation
 - **Downstream usage:** Operationalized through Executive Steering Committee governance, Master Control Matrix implementation, management systems (ISMS/AIMS), and internal audit procedures

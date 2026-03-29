@@ -2,7 +2,7 @@
 sidebar_label: "Governance Charter (deprecated)"
 ---
 
-# 01_GOVERNANCE_CHARTER -- DEPRECATED
+# Governance Charter -- DEPRECATED
 
 **NOTICE: This document has been superseded by [GOVERNANCE_CHARTER_FORMAL_v2.md](./GOVERNANCE_CHARTER_FORMAL_v2.md)**
 
@@ -12,7 +12,7 @@ This document is retained for reference and historical completeness only and is 
 
 ---
 
-# DEPRECATED: 01_GOVERNANCE_CHARTER
+# DEPRECATED: Governance Charter
 
 | Field          | Value                                           |
 | -------------- | ----------------------------------------------- |
@@ -21,7 +21,7 @@ This document is retained for reference and historical completeness only and is 
 | Classification | Controlled                                      |
 | Effective Date | 2026-02-14                                      |
 | Authority      | Executive Leadership (Chief Governance Officer) |
-| EATGF Layer    | 04_POLICY_LAYER                                 |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-EDM-GOV-01                                |
 
 ---
@@ -32,7 +32,7 @@ This charter establishes the enterprise governance framework that guides strateg
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the foundational governance charter.
+This policy operates within **Policy Layer** as the foundational governance charter.
 
 - **Upstream dependency:** Framework authority from Layers 00-01 (Official Designation, Baseline Declaration, ISMS/AIMS)
 - **Downstream usage:** Operationalized through specific policies (Information Security Policy, Data Governance Policy, Domain-Specific Policies)

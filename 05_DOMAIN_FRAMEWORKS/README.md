@@ -11,7 +11,7 @@ sidebar_label: Domain Frameworks
 | Classification | Controlled                                  |
 | Effective Date | 2026-02-14                                  |
 | Authority      | Chief AI Officer and Chief Security Officer |
-| EATGF Layer    | 05_DOMAIN_FRAMEWORKS                        |
+| EATGF Layer    | Domain Frameworks |
 
 ---
 
@@ -21,7 +21,7 @@ This layer extends EATGF into specialized technology domains requiring additiona
 
 ## Architectural Position
 
-This layer operates within **05_DOMAIN_FRAMEWORKS** as the extension point for specialized governance.
+This layer operates within **Domain Frameworks** as the extension point for specialized governance.
 
 - **Upstream dependency:** Layers 00-04 provide foundation; domain frameworks extend and specialize
 - **Downstream usage:** Domain-specific controls implement through domain governance bodies

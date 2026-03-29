@@ -11,7 +11,7 @@ sidebar_label: "Risk Framework"
 | Classification | Controlled                                             |
 | Effective Date | 2026-02-14                                             |
 | Authority      | Enterprise Architecture and Governance Office          |
-| EATGF Layer    | 02_CONTROL_ARCHITECTURE                                |
+| EATGF Layer    | Control Architecture |
 | MCM Reference  | EATGF-EDM-RISK-01, EATGF-APO-RISK-01, EATGF-AI-RISK-01 |
 | Standards      | ISO 31000:2018, ISO 27005:2022, COBIT 2019             |
 
@@ -23,7 +23,7 @@ This framework establishes enterprise methodology for identifying, assessing, an
 
 ## Architectural Position
 
-This framework operates within **02_CONTROL_ARCHITECTURE** as the risk assessment and management methodology.
+This framework operates within **Control Architecture** as the risk assessment and management methodology.
 
 - **Upstream dependency:** Master Control Matrix defines 35 controls for risk mitigation; Governance Charter (Layer 04) establishes risk governance structure and escalation authority
 - **Downstream usage:** Risk register maintained per this framework; utilized by internal audit (Layer 06) for risk-based audit planning; informs maturity assessment (Layer 03) risk maturity scoring

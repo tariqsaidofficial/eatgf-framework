@@ -11,7 +11,7 @@ sidebar_label: Management Systems
 | Classification | Controlled                                    |
 | Effective Date | 2026-02-14                                    |
 | Authority      | Enterprise Architecture and Governance Office |
-| EATGF Layer    | 01_MANAGEMENT_SYSTEMS                         |
+| EATGF Layer    | Management Systems |
 
 ---
 
@@ -21,7 +21,7 @@ This layer contains the formal ISO-aligned management systems that operationaliz
 
 ## Architectural Position
 
-This layer operates within **01_MANAGEMENT_SYSTEMS** and establishes formal management system procedures.
+This layer operates within **Management Systems** and establishes formal management system procedures.
 
 - **Upstream dependency:** Layer 00 (Foundation) defines controls; Layer 02 provides control specifications
 - **Downstream usage:** Policies in Layer 04 operationalize these systems; Layer 06 audits compliance
@@ -91,7 +91,7 @@ AIMS Procedures Include:
 
 ### Statement of Applicability Template
 
-**Document:** 01_STATEMENT_OF_APPLICABILITY_TEMPLATE.md
+**Document:** Statement of Applicability.md
 
 The Statement of Applicability (SoA) provides a framework for documenting control applicability:
 

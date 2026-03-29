@@ -11,7 +11,7 @@ sidebar_label: "SAST, DAST, and SCA Testing Policy"
 | Classification | Controlled |
 | Effective Date | 2026-02-16 |
 | Authority | Chief Security Officer and Development Lead |
-| EATGF Layer | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| EATGF Layer | Developer Governance Layer / DevSecOps Governance |
 | MCM Reference | EATGF-DEV-SCAN-01 |
 
 ---
@@ -24,7 +24,7 @@ This policy mandates static application security testing (SAST), dynamic applica
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer / DevSecOps Governance
 
 - **Upstream dependency:** Layer 02 Control Objectives (vulnerability management, code quality); Layer 04 Information Security Policy (security testing requirements)
 - **Downstream usage:** Enforces detection of security defects throughout development lifecycle from code through dependency analysis

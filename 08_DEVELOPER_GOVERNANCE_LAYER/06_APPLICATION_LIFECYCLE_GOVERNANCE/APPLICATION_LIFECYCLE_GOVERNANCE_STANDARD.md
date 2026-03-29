@@ -14,7 +14,7 @@ sidebar_label: "Application Lifecycle Governance Standard"
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / Domain 06_APPLICATION_LIFECYCLE_GOVERNANCE
+**EATGF Layer Placement:** Developer Governance Layer / Domain Application Lifecycle Governance
 
 **Document Authority:** Implements BAI and DSS domain controls related to application release, change management, and incident response:
 

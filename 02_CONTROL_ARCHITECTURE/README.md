@@ -11,7 +11,7 @@ sidebar_label: Control Architecture
 | Classification | Controlled                                    |
 | Effective Date | 2026-02-14                                    |
 | Authority      | Enterprise Architecture and Governance Office |
-| EATGF Layer    | 02_CONTROL_ARCHITECTURE                       |
+| EATGF Layer    | Control Architecture |
 
 ---
 
@@ -21,7 +21,7 @@ This layer defines the principles for how controls work, how they map across int
 
 ## Architectural Position
 
-This layer operates within **02_CONTROL_ARCHITECTURE** as the definitive control alignment and mapping authority.
+This layer operates within **Control Architecture** as the definitive control alignment and mapping authority.
 
 - **Upstream dependency:** Layer 00 (Foundation) defines MCM; Layer 01 implements through management systems
 - **Downstream usage:** Layer 03 measures control maturity; Layer 06 audits against defined objectives
@@ -39,7 +39,7 @@ This layer operates within **02_CONTROL_ARCHITECTURE** as the definitive control
 
 ### Control Objectives Specification
 
-Document: CONTROL_OBJECTIVES.md
+Document: Control Objectives
 
 Defines effectiveness criteria for all 35 MCM controls:
 
@@ -123,7 +123,7 @@ Layer Relationships:
 
 Before control implementation or audit:
 
-- [ ] CONTROL_OBJECTIVES.md reviewed for all relevant controls
+- [ ] Control Objectives reviewed for all relevant controls
 - [ ] FRAMEWORK_MAPPINGS reviewed for standards alignment
 - [ ] RISK_FRAMEWORK methodology understood
 - [ ] Control effectiveness criteria documented

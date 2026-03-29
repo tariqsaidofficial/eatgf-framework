@@ -11,7 +11,7 @@ sidebar_label: "CI/CD Security Architecture Standard"
 | Classification | Controlled                                              |
 | Effective Date | 2026-02-16                                              |
 | Authority      | Chief Security Officer and Platform Engineering Lead    |
-| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| EATGF Layer    | Developer Governance Layer / DevSecOps Governance |
 | MCM Reference  | EATGF-DEV-CI-01                                         |
 
 ---
@@ -24,7 +24,7 @@ This standard defines security architecture requirements for all CI/CD pipelines
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer / DevSecOps Governance
 
 - **Upstream dependency:** Layer 02 Control Objectives (change management, code integrity, audit traceability); Layer 04 Information Security Policy (authentication, encryption)
 - **Downstream usage:** Enforces security controls throughout artifact lifecycle from source code through deployment

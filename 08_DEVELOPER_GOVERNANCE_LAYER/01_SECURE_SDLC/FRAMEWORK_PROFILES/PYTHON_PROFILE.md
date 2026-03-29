@@ -17,7 +17,7 @@ sidebar_label: "Python Secure SDLC Framework Profile"
 
 ## Authority Notice
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 01_SECURE_SDLC  
+**EATGF Layer:** Developer Governance Layer / Secure SDLC  
 **Governance Scope:** Implementation Standard  
 **Control Authority:** Defines controls for Python development lifecycle
 

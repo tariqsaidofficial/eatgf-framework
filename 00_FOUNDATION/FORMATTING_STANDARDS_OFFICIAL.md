@@ -43,7 +43,7 @@ Every governance document must include these eight sections in this precise orde
 | Classification | Controlled / Public / Internal                 |
 | Effective Date | YYYY-MM-DD                                     |
 | Authority      | Role / Team / Council                          |
-| EATGF Layer    | 00_FOUNDATION / 01_MANAGEMENT_SYSTEMS / etc.   |
+| EATGF Layer    | Foundation / Management Systems / etc.   |
 
 ---
 ```
@@ -238,11 +238,11 @@ Every document must explicitly state its position in the 8-layer architecture:
 ```markdown
 ## Architectural Position
 
-This specification operates within **04_POLICY_LAYER** of EATGF.
+This specification operates within **Policy Layer** of EATGF.
 
-- **Upstream dependency:** 02_CONTROL_ARCHITECTURE (defines required controls)
+- **Upstream dependency:** Control Architecture (defines required controls)
 - **Downstream implementation:** Organization-specific policy instantiation
-- **Cross-layer reference:** 01_MANAGEMENT_SYSTEMS (normative reference for ISO compliance)
+- **Cross-layer reference:** Management Systems (normative reference for ISO compliance)
 ```
 
 ### Mandatory Control Mappings

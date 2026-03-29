@@ -11,7 +11,7 @@ sidebar_label: "API Governance Framework"
 | Classification | Controlled |
 | Effective Date | 2026-02-14 |
 | Authority | API Governance Lead |
-| EATGF Layer | 05_DOMAIN_FRAMEWORKS |
+| EATGF Layer | Domain Frameworks |
 | MCM Reference | EATGF-API-SEC-01, EATGF-API-LC-01 |
 | Standards | OWASP API Security Top 10:2023, OpenAPI 3.0 Specification |
 
@@ -23,9 +23,9 @@ This framework establishes governance standards for all APIs created, acquired, 
 
 ## Architectural Position
 
-This framework operates within **05_DOMAIN_FRAMEWORKS** as the specialized API domain extension.
+This framework operates within **Domain Frameworks** as the specialized API domain extension.
 
-- **Upstream dependency:** Governance Charter (04_POLICY_LAYER) establishes authority structure; Information Security Policy provides encryption and access control foundation
+- **Upstream dependency:** Governance Charter (Policy Layer) establishes authority structure; Information Security Policy provides encryption and access control foundation
 - **Downstream usage:** Operationalized through API security procedures, lifecycle procedures, API catalog management, and monitoring/operations procedures
 - **Cross-layer reference:** Maps to EATGF API domain controls (API-SEC-01 security, API-LC-01 lifecycle) in Layer 02; implements Layer 03 governance models through API governance maturity assessment; aligned with OWASP Top 10 security controls in Layer 02
 

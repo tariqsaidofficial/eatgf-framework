@@ -11,7 +11,7 @@ sidebar_label: "Official Designation"
 | Classification | Controlled |
 | Effective Date | 2026-02-13 |
 | Authority | Framework Authority - Tariq Said Official |
-| EATGF Layer | 00_FOUNDATION |
+| EATGF Layer | Foundation |
 
 ---
 
@@ -21,7 +21,7 @@ This document establishes the official legal designation, naming conventions, ve
 
 ## Architectural Position
 
-This specification operates within **00_FOUNDATION** of EATGF as the definitive authority on framework identity and naming.
+This specification operates within **Foundation** of EATGF as the definitive authority on framework identity and naming.
 
 - **Upstream requirement:** None (foundational)
 - **Downstream enforcement:** All documents, repositories, and communications must comply

@@ -22,7 +22,7 @@ Define governance controls for policy-as-code deployment, enabling declarative e
 
 ## Architectural Position
 
-- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 04_INFRASTRUCTURE_RUNTIME (Primary) + Layer 01 (Secure SDLC) + Layer 03 (DevSecOps)
+- **EATGF Layer:** Developer Governance Layer / Infrastructure and Runtime (Primary) + Layer 01 (Secure SDLC) + Layer 03 (DevSecOps)
 - **Governance Scope:** Policy Declaration, Enforcement Engines, Compliance Automation, Admission Control
 - **Control Authority:** Implements controls from MASTER_CONTROL_MATRIX for governance automation (ISO 27001 A.8.1, Kubernetes security hardening, CIS Kubernetes Benchmarks)
 

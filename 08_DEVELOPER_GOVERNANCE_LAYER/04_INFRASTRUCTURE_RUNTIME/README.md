@@ -4,13 +4,13 @@
 
 **Version:** 1.0
 **Issue Date:** 2026-02-16
-**Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 04_INFRASTRUCTURE_RUNTIME
+**Layer:** Developer Governance Layer / Infrastructure and Runtime
 **Governance Scope:** Implementation Standard
 **Control Authority Relationship:** Implements controls
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER
+**EATGF Layer Placement:** Developer Governance Layer
 
 **Governance Scope:** This sub-layer provides infrastructure-level runtime governance profiles, translating enterprise security control objectives into production-grade operational requirements for container, cloud, and infrastructure toolchains.
 

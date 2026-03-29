@@ -13,16 +13,16 @@ sidebar_label: "Governance by Team Size"
 | Classification | Internal                                            |
 | Effective Date | 2026-02-15                                          |
 | Authority      | Enterprise Architecture & Governance Office         |
-| EATGF Layer    | 03_GOVERNANCE_MODELS                                |
+| EATGF Layer    | Governance Models |
 | MCM Reference  | All EATGF Controls (Edition-specific applicability) |
 
 ---
 
 ## Architectural Position
 
-This document operates within **03_GOVERNANCE_MODELS** as the edition-based governance implementation guide.
+This document operates within **Governance Models** as the edition-based governance implementation guide.
 
-- **EATGF Layer Placement:** 03_GOVERNANCE_MODELS
+- **EATGF Layer Placement:** Governance Models
 - **Governance Scope:** Implementation Standard
 - **Control Authority Relationship:** Interprets controls defined in the MCM and maps them to organization size-appropriate implementation levels
 

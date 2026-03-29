@@ -11,7 +11,7 @@ sidebar_label: "Multi-Tenancy Governance Standard"
 | Classification | Controlled                                                   |
 | Effective Date | 2026-02-16                                                   |
 | Authority      | Chief Technology Officer and Chief Security Officer          |
-| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE |
+| EATGF Layer    | Developer Governance Layer / SaaS and Cloud Governance |
 | MCM Reference  | EATGF-CLD-SEC-01                                             |
 
 ---
@@ -24,7 +24,7 @@ Define architectural patterns and security controls for multi-tenant SaaS applic
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer / SaaS and Cloud Governance
 
 - **Upstream dependency:** Layer 04 Data Governance Policy; Layer 05 API Governance Framework
 - **Downstream usage:** Enforces tenant isolation throughout application stack

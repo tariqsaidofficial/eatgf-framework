@@ -10,7 +10,7 @@ sidebar_label: "REST API Governance Profile"
 
 Enterprise AI-Aligned Technical Governance Framework (EATGF)
 Version: 1.0
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER → 02_API_GOVERNANCE
+Layer: Developer Governance Layer → API Governance
 Profile Type: REST Architecture Implementation
 Status: Authoritative Implementation Profile
 
@@ -33,7 +33,7 @@ This profile operationalizes the [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_
 - **Parent Standard:** [API_GOVERNANCE_STANDARD.md](../API_GOVERNANCE_STANDARD.md)
 - **Enforcement Model:** [API_ENFORCEMENT_MATRIX.md](../API_ENFORCEMENT_MATRIX.md)
 - **Mapping Authority:** [API_CONTROL_MAPPING_APPENDIX.md](../API_CONTROL_MAPPING_APPENDIX.md)
-- **Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 02_API_GOVERNANCE
+- **Layer:** Developer Governance Layer / API Governance
 - **Control Authority Relationship:** Implements root standard controls using REST-specific patterns
 
 **Applies to:**

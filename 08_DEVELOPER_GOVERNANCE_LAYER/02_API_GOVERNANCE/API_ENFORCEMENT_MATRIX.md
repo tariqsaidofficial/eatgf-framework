@@ -12,8 +12,8 @@ Transforms abstract API_GOVERNANCE_STANDARD principles into concrete, machine-ve
 
 ## Architectural Position
 
-- **Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
-- **Domain:** 02_API_GOVERNANCE
+- **Layer:** Developer Governance Layer
+- **Domain:** API Governance
 - **Authority Source:** API_GOVERNANCE_STANDARD.md (root authority)
 - **Operational Scope:** Pre-merge, pre-release, canary, and production deployment gates
 - **Control Authority Relationship:** Implements controls defined in root standard

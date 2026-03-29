@@ -11,7 +11,7 @@ sidebar_label: "Release Governance Standard"
 | **Classification** | Governance                                                                                     |
 | **Effective Date** | February 16, 2026                                                                              |
 | **Authority**      | Vice President of Engineering                                                                  |
-| **EATGF Layer**    | 08_DEVELOPER_GOVERNANCE_LAYER / 06_APPLICATION_LIFECYCLE_GOVERNANCE                            |
+| **EATGF Layer**    | Developer Governance Layer / Application Lifecycle Governance                            |
 | **MCM Reference**  | [EATGF-BAI-CHG-01: Controlled Change Management](../../00_FOUNDATION/MASTER_CONTROL_MATRIX.md) |
 
 ---

@@ -11,7 +11,7 @@ sidebar_label: Governance Models
 | Classification | Controlled                                    |
 | Effective Date | 2026-02-14                                    |
 | Authority      | Enterprise Architecture and Governance Office |
-| EATGF Layer    | 03_GOVERNANCE_MODELS                          |
+| EATGF Layer    | Governance Models |
 
 ---
 
@@ -21,7 +21,7 @@ This layer provides frameworks for assessing capability maturity, measuring perf
 
 ## Architectural Position
 
-This layer operates within **03_GOVERNANCE_MODELS** as the assessment and scalability framework.
+This layer operates within **Governance Models** as the assessment and scalability framework.
 
 - **Upstream dependency:** Layers 00-02 define what to measure; Layer 04 policies are scaled
 - **Downstream usage:** Layer 06 audits against maturity and performance standards

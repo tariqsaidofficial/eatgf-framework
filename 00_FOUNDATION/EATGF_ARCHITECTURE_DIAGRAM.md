@@ -7,7 +7,7 @@ sidebar_label: "EATGF Architecture Model & Structural Diagram"
 **Enterprise AI-Aligned Technical Governance Framework (EATGF)**
 
 **Version:** 1.1
-**Layer:** 00_FOUNDATION
+**Layer:** Foundation
 **Status:** Structured Refactor
 
 ---
@@ -30,7 +30,7 @@ The architecture ensures that governance logic, operational controls, and develo
 
 ## Architectural Position
 
-**EATGF Layer:** 00_FOUNDATION
+**EATGF Layer:** Foundation
 
 **Scope:** Meta-Architecture Definition
 
@@ -58,14 +58,14 @@ This document governs how the framework is organized, not how individual control
 ### 1. EATGF Layer Taxonomy
 
 ```
-00_FOUNDATION
-01_MANAGEMENT_SYSTEMS
-02_CONTROL_ARCHITECTURE
-03_GOVERNANCE_MODELS
-04_POLICY_LAYER
-05_DOMAIN_FRAMEWORKS
-06_AUDIT_AND_ASSURANCE
-07_REFERENCE_AND_EVOLUTION
+Foundation
+Management Systems
+Control Architecture
+Governance Models
+Policy Layer
+Domain Frameworks
+Audit and Assurance
+Reference and Evolution
 08_DEVELOPER_LAYER (Planned Integration)
 ```
 
@@ -73,7 +73,7 @@ This document governs how the framework is organized, not how individual control
 
 ```
                         ┌───────────────────────────┐
-                        │        00_FOUNDATION       │
+                        │        Foundation       │
                         │  Identity / Version / MCM  │
                         └──────────────┬────────────┘
                                        │

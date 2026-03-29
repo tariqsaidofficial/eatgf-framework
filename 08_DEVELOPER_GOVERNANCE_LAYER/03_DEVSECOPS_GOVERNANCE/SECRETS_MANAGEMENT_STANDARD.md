@@ -11,7 +11,7 @@ sidebar_label: "Secrets Management Standard"
 | Classification | Restricted                                              |
 | Effective Date | 2026-02-16                                              |
 | Authority      | Chief Security Officer and Platform Engineering Lead    |
-| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| EATGF Layer    | Developer Governance Layer / DevSecOps Governance |
 | MCM Reference  | EATGF-DSS-ENC-01                                        |
 
 ---
@@ -24,7 +24,7 @@ This standard defines mandatory requirements for managing cryptographic secrets,
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer / DevSecOps Governance
 
 - **Upstream dependency:** Layer 04 Information Security Policy (credential management); Layer 02 Control Objectives (secret handling)
 - **Downstream usage:** Ensures secrets protected throughout application lifecycle from development through production operations

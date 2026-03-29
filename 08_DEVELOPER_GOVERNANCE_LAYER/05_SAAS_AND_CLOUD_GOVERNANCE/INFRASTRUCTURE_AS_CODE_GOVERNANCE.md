@@ -11,7 +11,7 @@ sidebar_label: "Infrastructure as Code Governance Standard"
 | Classification | Controlled                                                   |
 | Effective Date | 2026-02-16                                                   |
 | Authority      | Chief Technology Officer                                     |
-| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE |
+| EATGF Layer    | Developer Governance Layer / SaaS and Cloud Governance |
 | MCM Reference  | EATGF-CLD-ARCH-01                                            |
 
 ---
@@ -24,9 +24,9 @@ Define security and governance requirements for Infrastructure as Code (Terrafor
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 05_SAAS_AND_CLOUD_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer / SaaS and Cloud Governance
 
-- **Upstream dependency:** CI/CD Security Architecture (03_DEVSECOPS_GOVERNANCE); Layer 04 Information Security Policy
+- **Upstream dependency:** CI/CD Security Architecture (DevSecOps Governance); Layer 04 Information Security Policy
 - **Downstream usage:** IaC code reviewed, tested, deployed through secure pipelines
 - **Cross-layer reference:** Maps to NIST CSF, ISO 27001 A.8.1 (infrastructure security)
 

@@ -199,7 +199,7 @@ graph LR
    └─ Tells you: "Stage 2: Implement Policies"
    
 2. POLICIES: Go to LAYER 04_POLICY_LAYER/
-   └─ Read: 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY.md
+   └─ Read: Vendor and Third Party Risk Management Policy.md
    └─ Action: Customize policy for your organization
    
 3. CONTEXT: Want to know WHY?

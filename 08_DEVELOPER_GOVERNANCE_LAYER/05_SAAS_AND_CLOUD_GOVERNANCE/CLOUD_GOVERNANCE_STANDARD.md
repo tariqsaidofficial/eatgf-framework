@@ -14,7 +14,7 @@ sidebar_label: "Cloud & SaaS Governance Standard"
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / Domain 05_SAAS_AND_CLOUD_GOVERNANCE
+**EATGF Layer Placement:** Developer Governance Layer / Domain SaaS and Cloud Governance
 
 **Document Authority:** Implements (does not define new) MCM controls:
 

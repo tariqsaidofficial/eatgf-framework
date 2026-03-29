@@ -11,7 +11,7 @@ sidebar_label: "SLSA Framework Implementation Standard"
 | Classification | Controlled                                              |
 | Effective Date | 2026-02-16                                              |
 | Authority      | Chief Information Security Officer                      |
-| EATGF Layer    | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| EATGF Layer    | Developer Governance Layer / DevSecOps Governance |
 | MCM Reference  | EATGF-DEV-SUP-01                                        |
 
 ---
@@ -24,7 +24,7 @@ Implement SLSA (Supply chain Levels for Software Artifacts) framework to increas
 
 ## Architectural Position
 
-**EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE
+**EATGF Layer:** Developer Governance Layer / DevSecOps Governance
 
 - **Upstream dependency:** Supply Chain Security Standard, CI/CD Security Architecture
 - **Downstream usage:** SLSA provenance attestations created during builds; verified at deployment

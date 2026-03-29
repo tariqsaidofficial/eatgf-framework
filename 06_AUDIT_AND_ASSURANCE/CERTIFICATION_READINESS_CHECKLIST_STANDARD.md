@@ -12,7 +12,7 @@ sidebar_label: "Certification Readiness Checklist Standard"
 | Classification | Internal                               |
 | Effective Date | 2026-02-16                             |
 | Authority      | Chief Audit Officer and Control Owners |
-| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                 |
+| EATGF Layer    | Audit and Assurance |
 | MCM Reference  | EATGF-MEA-AUD-01, EATGF-MEA-MAT-01     |
 
 ---
@@ -23,7 +23,7 @@ This standard defines the mandatory pre-audit certification checklist that contr
 
 ## Architectural Position
 
-This standard operates within **06_AUDIT_AND_ASSURANCE** as the control certification and audit readiness standard.
+This standard operates within **Audit and Assurance** as the control certification and audit readiness standard.
 
 - **Upstream dependency:** Audit Schedule Standard (peer document) provides audit schedule and 30-day notification; Internal Audit Procedure defines audit scope and evidence expectations
 - **Downstream usage:** Certification checklist submitted to auditors 15 days before audit; auditors use checklist to scope audit work; certified controls audit faster/more efficiently

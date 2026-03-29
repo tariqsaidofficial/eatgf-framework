@@ -74,14 +74,14 @@ EATGF (Enterprise AI-Aligned Technical Governance Framework) is a **vendor-neutr
 
 | Policy                                                 | Read Time | Adaptation Time | Applicability                   |
 | ------------------------------------------------------ | --------- | --------------- | ------------------------------- |
-| 01_GOVERNANCE_CHARTER.md                               | 20 min    | 2 hours         | 100% (governance structure)     |
-| 02_INFORMATION_SECURITY_POLICY.md                      | 30 min    | 4 hours         | 100% (all orgs)                 |
-| 03_DATA_GOVERNANCE_POLICY.md                           | 30 min    | 4 hours         | 100% (data handling)            |
-| 04_INCIDENT_RESPONSE_POLICY.md                         | 20 min    | 3 hours         | 80% (if not classified systems) |
-| 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY.md | 25 min    | 5 hours         | 100% (infrastructure)           |
-| 06_VENDOR_AND_THIRD_PARTY_RISK_MANAGEMENT_POLICY.md    | 25 min    | 4 hours         | 80% (if using vendors)          |
-| 07_DATA_PRIVACY_AND_PROTECTION_POLICY.md               | 25 min    | 6 hours         | 100% (GDPR/CCPA compliance)     |
-| 08_ACCEPTABLE_USE_POLICY.md                            | 20 min    | 2 hours         | 100% (user conduct)             |
+| Governance Charter.md                               | 20 min    | 2 hours         | 100% (governance structure)     |
+| Information Security Policy.md                      | 30 min    | 4 hours         | 100% (all orgs)                 |
+| Data Governance Policy.md                           | 30 min    | 4 hours         | 100% (data handling)            |
+| Incident Response Policy.md                         | 20 min    | 3 hours         | 80% (if not classified systems) |
+| Business Continuity and Disaster Recovery Policy.md | 25 min    | 5 hours         | 100% (infrastructure)           |
+| Vendor and Third Party Risk Management Policy.md    | 25 min    | 4 hours         | 80% (if using vendors)          |
+| Data Privacy and Protection Policy.md               | 25 min    | 6 hours         | 100% (GDPR/CCPA compliance)     |
+| Acceptable Use Policy.md                            | 20 min    | 2 hours         | 100% (user conduct)             |
 
 **Adaptation Process:**
 

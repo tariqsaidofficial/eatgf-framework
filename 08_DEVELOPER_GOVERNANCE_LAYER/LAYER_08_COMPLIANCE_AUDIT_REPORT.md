@@ -12,7 +12,7 @@ sidebar_label: "Layer 08 Compliance Audit Report"
 ## Executive Summary
 
 **Audit Date:** February 15, 2026
-**Audited Layer:** 08_DEVELOPER_GOVERNANCE_LAYER
+**Audited Layer:** Developer Governance Layer
 **Audit Scope:** All governance documents (48 files)
 **Overall Compliance Rate:** 98.0% (47/48 compliant)
 
@@ -272,8 +272,8 @@ This audit validates Layer 08 documents against:
 
 **Missing Blocks (Out of Audit Scope):**
 
-- 03_DEVSECOPS_GOVERNANCE (Not yet deployed)
-- 06_APPLICATION_LIFECYCLE_GOVERNANCE (Not yet deployed)
+- DevSecOps Governance (Not yet deployed)
+- Application Lifecycle Governance (Not yet deployed)
 
 ### Production Readiness Verdict
 

@@ -11,7 +11,7 @@ sidebar_label: "ISMS Manual v1.0"
 | Classification | Controlled |
 | Effective Date | 2026-02-13 |
 | Authority | Board of Directors / Executive Steering Committee |
-| EATGF Layer | 01_MANAGEMENT_SYSTEMS |
+| EATGF Layer | Management Systems |
 | MCM Reference | MASTER_CONTROL_MATRIX.md (MCM v1.0) |
 | Standards | ISO/IEC 27001:2022 |
 
@@ -19,9 +19,9 @@ sidebar_label: "ISMS Manual v1.0"
 
 ## Architectural Position
 
-This manual operates within **01_MANAGEMENT_SYSTEMS** as the organizational implementation of ISO/IEC 27001:2022.
+This manual operates within **Management Systems** as the organizational implementation of ISO/IEC 27001:2022.
 
-- **Upstream dependency:** Governance Charter (04_POLICY_LAYER) establishes governance authority; MASTER_CONTROL_MATRIX (00_FOUNDATION) defines all controls
+- **Upstream dependency:** Governance Charter (Policy Layer) establishes governance authority; MASTER_CONTROL_MATRIX (Foundation) defines all controls
 - **Downstream usage:** Operationalized through policies (Information Security Policy, Data Governance Policy), procedures, and control implementations
 - **Cross-layer reference:** ISMS clauses map to EATGF controls across all layers (00-08); Statement of Applicability derives from MCM; Internal Audit Procedure (Layer 06) validates ISMS effectiveness
 

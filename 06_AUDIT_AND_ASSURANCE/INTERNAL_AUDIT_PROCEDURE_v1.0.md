@@ -13,7 +13,7 @@ Enterprise AI-Aligned Technical Governance Framework (EATGF)
 | Classification | Controlled                    |
 | Effective Date | 2026-02-15                    |
 | Authority      | Audit Committee (Board Level) |
-| EATGF Layer    | 06_AUDIT_AND_ASSURANCE        |
+| EATGF Layer    | Audit and Assurance |
 | MCM Reference  | EATGF-MEA-AUD-01              |
 
 ---
@@ -32,9 +32,9 @@ This procedure defines the internal audit framework for validating conformity to
 
 ## Architectural Position
 
-This document operates within **06_AUDIT_AND_ASSURANCE** as the implementation procedure for control EATGF-MEA-AUD-01.
+This document operates within **Audit and Assurance** as the implementation procedure for control EATGF-MEA-AUD-01.
 
-- **EATGF Layer Placement:** 06_AUDIT_AND_ASSURANCE
+- **EATGF Layer Placement:** Audit and Assurance
 - **Governance Scope:** Audit Methodology (Implementation Standard)
 - **Control Authority Relationship:** Implements control EATGF-MEA-AUD-01 as defined in the MCM
 

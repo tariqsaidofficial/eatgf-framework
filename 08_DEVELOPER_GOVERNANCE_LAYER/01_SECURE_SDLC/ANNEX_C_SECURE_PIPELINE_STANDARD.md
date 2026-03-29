@@ -12,8 +12,8 @@ This Annex governs build automation, artifact integrity, deployment gating, and 
 
 ## Architectural Position
 
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
-Domain: 01_SECURE_SDLC
+Layer: Developer Governance Layer
+Domain: Secure SDLC
 Authority: Subordinate to SECURE_SDLC_GOVERNANCE_STANDARD.md
 Control Reference: SDLC-PIPE-03
 
@@ -119,5 +119,5 @@ Secure pipelines are non-negotiable for SaaS and Enterprise.
 
 Version: 1.0
 Status: Authoritative Annex
-Layer: 08_DEVELOPER_GOVERNANCE_LAYER
+Layer: Developer Governance Layer
 Classification: Public Governance Standard

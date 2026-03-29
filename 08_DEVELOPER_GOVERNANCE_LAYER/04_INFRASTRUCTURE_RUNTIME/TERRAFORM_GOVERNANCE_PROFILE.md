@@ -8,7 +8,7 @@ sidebar_label: "Terraform Governance Profile"
 
 ## Architectural Position
 
-- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 04_INFRASTRUCTURE_RUNTIME (Primary) + Layer 01 (Secure SDLC) + Layer 03 (DevSecOps)
+- **EATGF Layer:** Developer Governance Layer / Infrastructure and Runtime (Primary) + Layer 01 (Secure SDLC) + Layer 03 (DevSecOps)
 - **Governance Scope:** Implementation Standard for Infrastructure-as-Code
 - **Control Authority:** Implements controls from MASTER_CONTROL_MATRIX via Secure SDLC, DevSecOps, and Cloud Governance standards
 

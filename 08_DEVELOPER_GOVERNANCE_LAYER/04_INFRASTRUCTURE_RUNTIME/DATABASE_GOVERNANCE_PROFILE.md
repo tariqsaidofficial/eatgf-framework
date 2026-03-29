@@ -12,7 +12,7 @@ Defines mandatory governance controls for relational and non-relational database
 
 ## Architectural Position
 
-- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 04_INFRASTRUCTURE_RUNTIME (Primary) + Layer 05 (Domain Frameworks - Data Governance)
+- **EATGF Layer:** Developer Governance Layer / Infrastructure and Runtime (Primary) + Layer 05 (Domain Frameworks - Data Governance)
 - **Governance Scope:** Data Storage, Access Control, Encryption, Multi-Tenancy Isolation
 - **Control Authority:** Implements controls from MASTER_CONTROL_MATRIX for data protection and access control
 

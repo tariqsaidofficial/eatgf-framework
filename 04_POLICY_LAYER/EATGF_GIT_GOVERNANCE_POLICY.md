@@ -11,7 +11,7 @@ sidebar_label: "EATGF Git Governance Policy"
 | Classification | Controlled                                                    |
 | Effective Date | 2026-02-14                                                    |
 | Authority      | Enterprise Architecture and Governance Office                 |
-| EATGF Layer    | 04_POLICY_LAYER                                               |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-BAI-CHG-01, EATGF-BAI-CONF-01, EATGF-DEV-CI-01          |
 | Standards      | ISO 27001:2022 A.8.32/A.8.9, NIST SSDF PW.3/PW.4, COBIT BAI06 |
 
@@ -23,7 +23,7 @@ This policy defines official Git governance model for EATGF framework repositori
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the authoritative Git workflow and version control governance standard.
+This policy operates within **Policy Layer** as the authoritative Git workflow and version control governance standard.
 
 - **Upstream dependency:** Governance Charter (Layer 04) establishes change authority; Version Governance Policy defines semantic versioning rules; Master Control Matrix references change management controls (BAI-CHG-01)
 - **Downstream usage:** All EATGF framework repositories (`eatgf-framework`, `governance-docs-site`) implement branch protection and PR workflows per this policy; developer workflows (Layer 08) enforce Git standards; audit evidence collection (Layer 06) references Git commit history
@@ -90,15 +90,15 @@ Version impact: MINOR"
 
 Layer codes:
 
-- 00_FOUNDATION
-- 01_MANAGEMENT_SYSTEMS
-- 02_CONTROL_ARCHITECTURE
-- 03_GOVERNANCE_MODELS
-- 04_POLICY_LAYER
-- 05_DOMAIN_FRAMEWORKS
-- 06_AUDIT_AND_ASSURANCE
-- 07_REFERENCE_AND_EVOLUTION
-- 08_DEVELOPER_GOVERNANCE_LAYER
+- Foundation
+- Management Systems
+- Control Architecture
+- Governance Models
+- Policy Layer
+- Domain Frameworks
+- Audit and Assurance
+- Reference and Evolution
+- Developer Governance Layer
 
 ### Pull Request Requirements
 
@@ -117,15 +117,15 @@ Each pull request must include:
 [Detailed description of what changed and why]
 
 ## Affected Layers
-- [ ] 00_FOUNDATION
-- [ ] 01_MANAGEMENT_SYSTEMS
-- [ ] 02_CONTROL_ARCHITECTURE
-- [ ] 03_GOVERNANCE_MODELS
-- [ ] 04_POLICY_LAYER
-- [ ] 05_DOMAIN_FRAMEWORKS
-- [ ] 06_AUDIT_AND_ASSURANCE
-- [ ] 07_REFERENCE_AND_EVOLUTION
-- [ ] 08_DEVELOPER_GOVERNANCE_LAYER
+- [ ] Foundation
+- [ ] Management Systems
+- [ ] Control Architecture
+- [ ] Governance Models
+- [ ] Policy Layer
+- [ ] Domain Frameworks
+- [ ] Audit and Assurance
+- [ ] Reference and Evolution
+- [ ] Developer Governance Layer
 
 ## Control Impact Statement
 [List affected control IDs and impact description]
@@ -335,7 +335,7 @@ This policy ensures that framework evolution is controlled, auditable, and resis
 
 ## Architectural Position
 
-**EATGF Layer:** 00_FOUNDATION
+**EATGF Layer:** Foundation
 
 **Control Scope:** Framework Source Integrity
 

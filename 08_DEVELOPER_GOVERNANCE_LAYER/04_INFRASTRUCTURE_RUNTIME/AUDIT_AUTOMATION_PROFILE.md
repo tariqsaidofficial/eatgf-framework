@@ -23,7 +23,7 @@ Define governance controls for automated audit logging architecture, enabling re
 
 ## Architectural Position
 
-- **EATGF Layer:** 08_DEVELOPER_GOVERNANCE_LAYER / 06_AUDIT_AND_ASSURANCE (Primary) + Layer 03 (DevSecOps) + Layer 01 (Secure SDLC)
+- **EATGF Layer:** Developer Governance Layer / Audit and Assurance (Primary) + Layer 03 (DevSecOps) + Layer 01 (Secure SDLC)
 - **Governance Scope:** Audit Log Generation, Aggregation, Analysis, Compliance Reporting, Incident Investigation
 - **Control Authority:** Implements controls from MASTER_CONTROL_MATRIX for monitoring & logging (ISO 27001 A.8.15, NIST SP 800-53 AU-2, NIST SP 800-61 Incident Response)
 

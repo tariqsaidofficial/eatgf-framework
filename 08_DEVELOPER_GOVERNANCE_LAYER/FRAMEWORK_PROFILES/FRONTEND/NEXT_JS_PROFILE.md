@@ -12,7 +12,7 @@ sidebar_label: "Next.js Framework Governance Profile"
 
 **CLASSIFICATION:** Framework Implementation Profile (Cross-Cutting)
 
-**AUTHORITY LAYER:** 08_DEVELOPER_GOVERNANCE_LAYER → FRAMEWORK_PROFILES → FRONTEND
+**AUTHORITY LAYER:** Developer Governance Layer → FRAMEWORK_PROFILES → FRONTEND
 
 **CONTROL AUTHORITY RELATIONSHIP:**
 
@@ -49,7 +49,7 @@ This document defines governance conformance requirements for Next.js applicatio
 **EATGF Layer Placement:**
 
 ```
-08_DEVELOPER_GOVERNANCE_LAYER
+Developer Governance Layer
 ├── FRAMEWORK_PROFILES
 │   ├── BACKEND (Django, FastAPI, Node.js, Spring Boot)
 │   ├── FRONTEND

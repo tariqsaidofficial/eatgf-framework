@@ -24,7 +24,7 @@ This profile applies to:
 
 **EATGF Layer:**
 
-- Primary: `08_DEVELOPER_GOVERNANCE_LAYER` → `FRAMEWORK_PROFILES` → `BACKEND`
+- Primary: `Developer Governance Layer` → `FRAMEWORK_PROFILES` → `BACKEND`
 - References: Layer 01 (Secure SDLC), Layer 05 (API Governance), Layer 03 (DevSecOps)
 
 **Scope:**
@@ -46,8 +46,8 @@ FastAPI acts as:
 
 **Conformance Obligations:**
 
--  01_SECURE_SDLC standards
--  02_API_GOVERNANCE standards (REST-specific controls)
+-  Secure SDLC standards
+-  API Governance standards (REST-specific controls)
 -  03_DEVSECOPS standards
 -  04_CLOUD standards (if deployed in SaaS context)
 

@@ -26,7 +26,7 @@ It ensures:
 Every document must explicitly declare:
 
 ### EATGF Layer Placement
-(e.g., 00_FOUNDATION / 02_CONTROL_ARCHITECTURE / 08_DEVELOPER_IMPLEMENTATION_LAYER)
+(e.g., Foundation / Control Architecture / 08_DEVELOPER_IMPLEMENTATION_LAYER)
 
 ### Governance Scope
 (Policy / Architecture / Control Definition / Implementation Standard / Audit Methodology)
@@ -36,7 +36,7 @@ Every document must explicitly declare:
 
 **Example:**
 
-- **Layer:** 02_CONTROL_ARCHITECTURE
+- **Layer:** Control Architecture
 - **Scope:** Control Interpretation & Mapping
 - **Authority:** References MASTER_CONTROL_MATRIX as the sole control source
 

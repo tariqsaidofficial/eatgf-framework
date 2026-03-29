@@ -2,7 +2,7 @@
 sidebar_label: "Business Continuity and Disaster Recovery Policy"
 ---
 
-# 05_BUSINESS_CONTINUITY_AND_DISASTER_RECOVERY_POLICY
+# Business Continuity and Disaster Recovery Policy
 
 | Field          | Value                                                   |
 | -------------- | ------------------------------------------------------- |
@@ -12,7 +12,7 @@ sidebar_label: "Business Continuity and Disaster Recovery Policy"
 | Classification | Controlled                                              |
 | Effective Date | 2026-02-16                                              |
 | Authority      | Chief Operating Officer and Crisis Management Team Lead |
-| EATGF Layer    | 04_POLICY_LAYER                                         |
+| EATGF Layer    | Policy Layer |
 | MCM Reference  | EATGF-BCP-PLAN-01, EATGF-BCP-TEST-01, EATGF-BCP-RTO-01  |
 
 ---
@@ -23,9 +23,9 @@ This policy establishes the mandatory business continuity and disaster recovery 
 
 ## Architectural Position
 
-This policy operates within **04_POLICY_LAYER** as the primary business continuity governance document.
+This policy operates within **Policy Layer** as the primary business continuity governance document.
 
-- **Upstream dependency:** Governance Charter (01_GOVERNANCE_CHARTER.md) establishes COO authority for operational resilience; Information Security Policy (02_INFORMATION_SECURITY_POLICY.md) defines data protection during recovery
+- **Upstream dependency:** Governance Charter (Governance Charter.md) establishes COO authority for operational resilience; Information Security Policy (Information Security Policy.md) defines data protection during recovery
 - **Downstream usage:** Operationalized through disaster recovery runbooks and annual testing plans maintained by Operations and IT teams; enforced through system deployment gate reviews and BC/DR test execution
 - **Cross-layer reference:** Maps to EATGF resilience controls in Layer 02 (APO-BCM domain for planning, BAI-REC domain for recovery, DSS-RES domain for resilience), implements MCM controls for continuity planning and testing, implements audit procedures in Layer 06 for recovery test verification and RTO/RPO compliance
 

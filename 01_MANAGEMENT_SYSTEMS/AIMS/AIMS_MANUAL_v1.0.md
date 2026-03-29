@@ -11,7 +11,7 @@ sidebar_label: "AIMS Manual v1.0"
 | Classification | Controlled                                        |
 | Effective Date | 2026-02-13                                        |
 | Authority      | Board of Directors / Executive Steering Committee |
-| EATGF Layer    | 01_MANAGEMENT_SYSTEMS                             |
+| EATGF Layer    | Management Systems |
 | MCM Reference  | MASTER_CONTROL_MATRIX.md (MCM v1.0)               |
 | Standards      | ISO/IEC 42001:2023, NIST AI RMF 1.0               |
 
@@ -19,9 +19,9 @@ sidebar_label: "AIMS Manual v1.0"
 
 ## Architectural Position
 
-This manual operates within **01_MANAGEMENT_SYSTEMS** as the organizational implementation of ISO/IEC 42001:2023 (Artificial Intelligence Management System).
+This manual operates within **Management Systems** as the organizational implementation of ISO/IEC 42001:2023 (Artificial Intelligence Management System).
 
-- **Upstream dependency:** Governance Charter (04_POLICY_LAYER) establishes AI governance authority; MASTER_CONTROL_MATRIX (00_FOUNDATION) defines AI-specific controls; ISMS provides security foundation
+- **Upstream dependency:** Governance Charter (Policy Layer) establishes AI governance authority; MASTER_CONTROL_MATRIX (Foundation) defines AI-specific controls; ISMS provides security foundation
 - **Downstream usage:** Operationalized through AI Governance Framework (05_DOMAIN_FRAMEWORKS/AI_GOVERNANCE_FRAMEWORK.md), AI lifecycle procedures, fairness assessment procedures
 - **Cross-layer reference:** AIMS integrates with ISMS (Layer 01); implements AI domain controls (EATGF-AI-LC-01, EATGF-AI-RISK-01, EATGF-APO-AI-01); supports AI governance maturity assessment (Layer 03)
 

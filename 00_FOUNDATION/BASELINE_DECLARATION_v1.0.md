@@ -11,7 +11,7 @@ sidebar_label: "Baseline Declaration v1.0"
 | Classification | Controlled |
 | Effective Date | 2026-02-13 |
 | Authority | Framework Authority - Tariq Said Official |
-| EATGF Layer | 00_FOUNDATION |
+| EATGF Layer | Foundation |
 
 ---
 
@@ -21,7 +21,7 @@ This document establishes the official baseline declaration for the Enterprise A
 
 ## Architectural Position
 
-This specification operates within **00_FOUNDATION** of EATGF as the definitive governance baseline and version anchor.
+This specification operates within **Foundation** of EATGF as the definitive governance baseline and version anchor.
 
 - **Upstream requirement:** Depends on Official Designation (framework naming authority)
 - **Downstream enforcement:** All implementation and version management must comply

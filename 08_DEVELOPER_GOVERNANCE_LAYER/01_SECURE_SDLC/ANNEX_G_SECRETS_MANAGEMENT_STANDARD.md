@@ -14,7 +14,7 @@ The authoritative secrets management standard is maintained at:
 
 | Field         | Value                                                   |
 | ------------- | ------------------------------------------------------- |
-| Location      | 08_DEVELOPER_GOVERNANCE_LAYER / 03_DEVSECOPS_GOVERNANCE |
+| Location      | Developer Governance Layer / DevSecOps Governance |
 | MCM Reference | EATGF-DSS-ENC-01                                        |
 | Status        | Active (Authoritative)                                  |
 

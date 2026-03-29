@@ -9,8 +9,8 @@ sidebar_label: "Threat Modeling Governance Standard"
 **Version:** 1.0  
 **Issue Date:** 2026-02-14  
 **Change Type:** Major  
-**Layer:** 08_DEVELOPER_GOVERNANCE_LAYER  
-**Domain:** 01_SECURE_SDLC  
+**Layer:** Developer Governance Layer  
+**Domain:** Secure SDLC  
 **Classification:** Annex Standard  
 **Authority:** Subordinate to SECURE_SDLC_GOVERNANCE_STANDARD.md  
 **Control Reference:** SDLC-TM-01
@@ -29,7 +29,7 @@ It establishes a structured, repeatable, and auditable threat modeling process a
 
 ## Architectural Position
 
-**EATGF Layer Placement:** 08_DEVELOPER_GOVERNANCE_LAYER / 01_SECURE_SDLC
+**EATGF Layer Placement:** Developer Governance Layer / Secure SDLC
 
 **Classification:** Subordinate Annex to SECURE_SDLC_GOVERNANCE_STANDARD.md
 

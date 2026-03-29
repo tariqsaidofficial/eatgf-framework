@@ -12,7 +12,7 @@ sidebar_label: "Audit Schedule Standard"
 | Classification | Controlled                                      |
 | Effective Date | 2026-02-16                                      |
 | Authority      | Chief Audit Officer and Internal Audit Function |
-| EATGF Layer    | 06_AUDIT_AND_ASSURANCE                          |
+| EATGF Layer    | Audit and Assurance |
 | MCM Reference  | EATGF-MEA-AUD-01, EATGF-MEA-PERF-01             |
 
 ---
@@ -23,7 +23,7 @@ This standard establishes the mandatory audit schedule for assessing compliance 
 
 ## Architectural Position
 
-This standard operates within **06_AUDIT_AND_ASSURANCE** as the audit scheduling and planning methodology.
+This standard operates within **Audit and Assurance** as the audit scheduling and planning methodology.
 
 - **Upstream dependency:** Internal Audit Procedure (06_AUDIT_AND_ASSURANCE/INTERNAL_AUDIT_PROCEDURE_v1.0.md) defines audit methodology; Master Control Matrix (Layer 00) defines 35 EATGF controls subject to audit
 - **Downstream usage:** Schedule drives audit planning, resource allocation, control owner notifications, and evidence collection schedules; audit results tracked in corrective action register and reported to governance committee
