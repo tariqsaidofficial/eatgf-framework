@@ -1,0 +1,3 @@
+[   84852ms] [ERROR] [webpack-dev-server] Errors while compiling. Reload prevented. @ webpack-internal:///./node_modules/webpack-dev-server/client/modules/logger/index.js:607
+[   84857ms] [ERROR] [webpack-dev-server] ERROR in ./node_modules/@docusaurus/plugin-pwa/lib/renderReloadPopup.js 6:485-516
+Module not found: Error: Can't resolve '@theme/PwaReloadPopup' in '/Users/sunmarke/Downloads/Knowledge Centre/governance-docs-site/portal/node_modules/@docusaurus/plugin-pwa/lib' @ webpack-internal:///./node_modules/webpack-dev-server/client/modules/logger/index.js:607

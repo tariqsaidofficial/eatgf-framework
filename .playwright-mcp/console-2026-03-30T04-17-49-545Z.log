@@ -1,0 +1,12 @@
+[     310ms] [ERROR] Docusaurus React Root onRecoverableError: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at _a (http://localhost:4010/assets/js/main.f9f4ed61.js:2:253436)
+    at is (http://localhost:4010/assets/js/main.f9f4ed61.js:2:302817)
+    at uu (http://localhost:4010/assets/js/main.f9f4ed61.js:2:340796)
+    at cu (http://localhost:4010/assets/js/main.f9f4ed61.js:2:340768)
+    at http://localhost:4010/assets/js/main.f9f4ed61.js:2:335885
+    at qc (http://localhost:4010/assets/js/main.f9f4ed61.js:2:335983)
+    at Uu (http://localhost:4010/assets/js/main.f9f4ed61.js:2:351862)
+    at MessagePort.L (http://localhost:4010/assets/js/main.f9f4ed61.js:2:436415) {componentStack: 
+    at p (<anonymous>)
+    at p (<anonymous>)
+   …calhost:4010/assets/js/main.f9f4ed61.js:2:404646)} @ http://localhost:4010/assets/js/main.f9f4ed61.js:1
